@@ -27,6 +27,24 @@ ROUND_DEPTH = {
     "W": 4,
 }
 
+# 2020 COVID season: ~60 games, roughly full opening-day payrolls.
+# Rate metrics (win%) need no special case. Counting wins vs full payroll would
+# systematically tank payroll efficiency for that year — prorate wins to a
+# 162-game pace for efficiency only. Titles / pennants / playoff depth still
+# count as one full championship season (a World Series is a World Series).
+COVID_SEASON = 2020
+FULL_SEASON_GAMES = 162
+
+
+def efficiency_wins(season: int, wins: int, losses: int) -> float:
+    """Wins counted toward payroll efficiency (2020 paced to 162 games)."""
+    if int(season) != COVID_SEASON:
+        return float(wins)
+    games = int(wins) + int(losses)
+    if games <= 0:
+        return 0.0
+    return float(wins) * (FULL_SEASON_GAMES / games)
+
 
 def zscore(values: list[float]) -> list[float]:
     if not values:
@@ -95,10 +113,10 @@ def rank_descending(scores: list[float]) -> list[int]:
     return ranks
 
 
-def wins_per_100m(wins: int, payroll: float | None) -> float:
+def wins_per_100m(wins: float | int, payroll: float | None) -> float:
     if not payroll or payroll <= 0:
         return 0.0
-    return wins / (payroll / 100_000_000.0)
+    return float(wins) / (payroll / 100_000_000.0)
 
 
 def attach_rates(metrics: dict[str, Any]) -> dict[str, Any]:

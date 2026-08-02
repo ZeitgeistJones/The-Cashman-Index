@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import AcquisitionPanel from "@/components/AcquisitionPanel";
 import DraftTable from "@/components/DraftTable";
@@ -68,7 +69,12 @@ export default function IndexApp({
   return (
     <main>
       <header>
-        <h1>Front Office Index</h1>
+        <div className="site-header-row">
+          <h1>Front Office Index</h1>
+          <Link href="/about" className="about-link">
+            About
+          </Link>
+        </div>
         <p className="tagline">
           Every MLB franchise and GM, {windowLabel}: payroll efficiency, draft
           value, peer trades, and results — same weights for everyone.

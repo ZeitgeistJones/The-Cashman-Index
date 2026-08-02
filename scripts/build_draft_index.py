@@ -293,8 +293,18 @@ def main() -> int:
             time.sleep(args.pause)
 
     war_seasons: dict[int, list[dict[str, Any]]] = {}
-    if not args.skip_war:
+    if args.skip_war:
+        print(
+            "WARNING: --skip-war set; franchise WAR / VOS will be zero. "
+            "Do not ship draft_index.json from this run.",
+            file=sys.stderr,
+        )
+    else:
         war_seasons = load_war_seasons()
+        if not war_seasons:
+            raise SystemExit(
+                "WAR tables loaded empty — refusing to overwrite draft indexes with zeros"
+            )
 
     for pick in picks:
         mlbam = pick.get("mlbam_id")
@@ -302,6 +312,27 @@ def main() -> int:
         pick["career_war"] = war  # kept key name; value is franchise-tenure WAR
         pick["franchise_war"] = war
         pick["mature"] = pick["draft_year"] <= mature_through
+
+    if not args.skip_war:
+        mature_with_id = [
+            p
+            for p in picks
+            if p.get("mature") and p.get("mlbam_id")
+        ]
+        hit = sum(1 for p in mature_with_id if float(p.get("career_war") or 0.0) != 0.0)
+        # Most draftees never reach MLB; a healthy attach still lights up several
+        # percent of mature picks (stars + role players for drafting clubs).
+        hit_rate = hit / len(mature_with_id) if mature_with_id else 0.0
+        print(
+            f"  franchise-WAR hits: {hit}/{len(mature_with_id)} mature picks "
+            f"({hit_rate:.1%})",
+            file=sys.stderr,
+        )
+        if hit_rate < 0.02:
+            raise SystemExit(
+                f"franchise-WAR hit rate {hit_rate:.1%} looks broken "
+                "(team-code join or empty WAR). Refusing to write all-zero draft grades."
+            )
 
     curve = build_slot_curve(picks, mature_through)
     for pick in picks:

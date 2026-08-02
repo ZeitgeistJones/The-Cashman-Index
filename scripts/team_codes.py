@@ -42,7 +42,9 @@ TEAMS: dict[int, dict[str, str]] = {
 
 YANKEES_MLBAM_ID = 147
 
-# Historical BRef aliases so mid-era code flips don't zero tenure WAR.
+# Historical + current BRef aliases so mid-era code flips don't zero tenure WAR.
+# pybaseball's Baseball Reference tables use modern codes (SFG/SDP/TBR/KCR/…)
+# for recent seasons; keep Lahman-style aliases (SFN/SDN/TBA/KCA/…) for older rows.
 TEAM_BREF_CODES: dict[int, frozenset[str]] = {
     108: frozenset({"ANA", "LAA", "CAL"}),
     109: frozenset({"ARI"}),
@@ -54,17 +56,17 @@ TEAM_BREF_CODES: dict[int, frozenset[str]] = {
     115: frozenset({"COL"}),
     116: frozenset({"DET"}),
     117: frozenset({"HOU"}),
-    118: frozenset({"KCA", "KC"}),
+    118: frozenset({"KCA", "KC", "KCR"}),
     119: frozenset({"LAN", "LAD"}),
-    120: frozenset({"WAS", "WSN", "MON"}),
+    120: frozenset({"WAS", "WSN", "WSH", "MON"}),
     121: frozenset({"NYN", "NYM"}),
     133: frozenset({"OAK", "ATH"}),
     134: frozenset({"PIT"}),
-    135: frozenset({"SDN", "SD"}),
+    135: frozenset({"SDN", "SD", "SDP"}),
     136: frozenset({"SEA"}),
-    137: frozenset({"SFN", "SF"}),
+    137: frozenset({"SFN", "SF", "SFG"}),
     138: frozenset({"SLN", "STL"}),
-    139: frozenset({"TBA", "TBD", "TB"}),
+    139: frozenset({"TBA", "TBD", "TB", "TBR"}),
     140: frozenset({"TEX"}),
     141: frozenset({"TOR"}),
     142: frozenset({"MIN"}),

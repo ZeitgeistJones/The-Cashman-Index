@@ -31,6 +31,7 @@ from scoring import (
     attach_rates,
     category_ranks,
     composite_scores,
+    efficiency_wins,
     rank_descending,
     tenure_shrink,
     wins_per_100m,
@@ -380,7 +381,13 @@ def aggregate_franchise(seasons: list[dict[str, Any]], weights: dict[str, float]
         pennants = sum(1 for r in team_rows if r.get("pennant"))
         ws = sum(1 for r in team_rows if r.get("world_series"))
         win_pct = round(wins / games, 4) if games else 0.0
-        efficiency = wins_per_100m(wins, float(payroll_sum) if payroll_sum else None)
+        # 2020 wins paced to 162 for $ efficiency; raw wins kept for win% / totals.
+        paced_wins = sum(
+            efficiency_wins(r["season"], r["wins"], r["losses"]) for r in team_rows
+        )
+        efficiency = wins_per_100m(
+            paced_wins, float(payroll_sum) if payroll_sum else None
+        )
         row = attach_rates(
             {
                 "team_id": tid,
@@ -468,6 +475,9 @@ def metrics_from_seasons(season_rows: list[dict[str, Any]]) -> dict[str, Any]:
     payroll_sum = int(sum(payroll_vals)) if payroll_vals else None
     playoff_years = sorted({r["season"] for r in season_rows if r.get("playoffs")})
     playoff_depth = sum(int(r.get("playoff_depth") or 0) for r in season_rows)
+    paced_wins = sum(
+        efficiency_wins(r["season"], r["wins"], r["losses"]) for r in season_rows
+    )
     return attach_rates(
         {
             "seasons": len(season_rows),
@@ -481,7 +491,10 @@ def metrics_from_seasons(season_rows: list[dict[str, Any]]) -> dict[str, Any]:
             "world_series": sum(1 for r in season_rows if r.get("world_series")),
             "payroll_sum": payroll_sum,
             "payroll_efficiency": round(
-                wins_per_100m(wins, float(payroll_sum) if payroll_sum else None), 4
+                wins_per_100m(
+                    paced_wins, float(payroll_sum) if payroll_sum else None
+                ),
+                4,
             ),
         }
     )

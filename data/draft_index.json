@@ -1,461 +1,573 @@
 {
-  "generated_at": "2026-08-02T16:22:18.182213+00:00",
+  "generated_at": "2026-08-02T16:41:45.751329+00:00",
   "window": [
     2006,
     2026
   ],
   "mature_through": 2020,
   "slot_curve": {
-    "1": 0.0,
-    "2-5": 0.0,
-    "6-10": 0.0,
-    "11-20": 0.0,
-    "21-30": 0.0,
-    "31-50": 0.0,
-    "51-100": 0.0,
-    "101-200": 0.0,
-    "201-400": 0.0,
-    "401+": 0.0
+    "1": 11.0153,
+    "2-5": 7.4428,
+    "6-10": 5.6461,
+    "11-20": 2.6561,
+    "21-30": 2.2182,
+    "31-50": 1.5818,
+    "51-100": 0.9199,
+    "101-200": 0.3759,
+    "201-400": 0.216,
+    "401+": 0.0271
   },
   "framing": "Draft grade = average value over slot among mature picks, using WAR produced for the drafting club only. Same slot curve for every club \u2014 extra picks mean more chances, not a second grading curve.",
   "franchises": [
     {
-      "team_id": 118,
-      "team_abbr": "KC",
-      "team_name": "Kansas City Royals",
-      "picks": 634,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8638,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "team_id": 138,
+      "team_abbr": "STL",
+      "team_name": "St. Louis Cardinals",
+      "picks": 645,
+      "avg_vos_raw": 0.1698,
+      "avg_vos": 0.147,
+      "vos_shrink": 0.8658,
+      "total_vos": 109.5431,
+      "avg_career_war": 0.3781,
+      "avg_expected_war": 0.2082,
       "small_sample": false,
       "rank": 1
-    },
-    {
-      "team_id": 115,
-      "team_abbr": "COL",
-      "team_name": "Colorado Rockies",
-      "picks": 639,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8647,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 2
-    },
-    {
-      "team_id": 139,
-      "team_abbr": "TB",
-      "team_name": "Tampa Bay Rays",
-      "picks": 647,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8661,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 3
-    },
-    {
-      "team_id": 134,
-      "team_abbr": "PIT",
-      "team_name": "Pittsburgh Pirates",
-      "picks": 637,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8643,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 4
-    },
-    {
-      "team_id": 136,
-      "team_abbr": "SEA",
-      "team_name": "Seattle Mariners",
-      "picks": 632,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8634,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 5
-    },
-    {
-      "team_id": 116,
-      "team_abbr": "DET",
-      "team_name": "Detroit Tigers",
-      "picks": 620,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8611,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 6
-    },
-    {
-      "team_id": 119,
-      "team_abbr": "LAD",
-      "team_name": "Los Angeles Dodgers",
-      "picks": 619,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8609,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 7
-    },
-    {
-      "team_id": 113,
-      "team_abbr": "CIN",
-      "team_name": "Cincinnati Reds",
-      "picks": 637,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8643,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 8
-    },
-    {
-      "team_id": 110,
-      "team_abbr": "BAL",
-      "team_name": "Baltimore Orioles",
-      "picks": 627,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8624,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 9
     },
     {
       "team_id": 137,
       "team_abbr": "SF",
       "team_name": "San Francisco Giants",
       "picks": 629,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.1329,
+      "avg_vos": 0.1147,
       "vos_shrink": 0.8628,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 83.5828,
+      "avg_career_war": 0.3638,
+      "avg_expected_war": 0.2309,
       "small_sample": false,
-      "rank": 10
+      "rank": 2
     },
     {
-      "team_id": 109,
-      "team_abbr": "ARI",
-      "team_name": "Arizona Diamondbacks",
-      "picks": 647,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8661,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "team_id": 119,
+      "team_abbr": "LAD",
+      "team_name": "Los Angeles Dodgers",
+      "picks": 619,
+      "avg_vos_raw": 0.1312,
+      "avg_vos": 0.113,
+      "vos_shrink": 0.8609,
+      "total_vos": 81.2355,
+      "avg_career_war": 0.33,
+      "avg_expected_war": 0.1987,
       "small_sample": false,
-      "rank": 11
-    },
-    {
-      "team_id": 140,
-      "team_abbr": "TEX",
-      "team_name": "Texas Rangers",
-      "picks": 638,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8645,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 12
-    },
-    {
-      "team_id": 112,
-      "team_abbr": "CHC",
-      "team_name": "Chicago Cubs",
-      "picks": 626,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8623,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 13
-    },
-    {
-      "team_id": 141,
-      "team_abbr": "TOR",
-      "team_name": "Toronto Blue Jays",
-      "picks": 623,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8617,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 14
-    },
-    {
-      "team_id": 120,
-      "team_abbr": "WSH",
-      "team_name": "Washington Nationals",
-      "picks": 632,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8634,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 15
-    },
-    {
-      "team_id": 158,
-      "team_abbr": "MIL",
-      "team_name": "Milwaukee Brewers",
-      "picks": 633,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8636,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 16
-    },
-    {
-      "team_id": 135,
-      "team_abbr": "SD",
-      "team_name": "San Diego Padres",
-      "picks": 624,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8619,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 17
-    },
-    {
-      "team_id": 143,
-      "team_abbr": "PHI",
-      "team_name": "Philadelphia Phillies",
-      "picks": 630,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.863,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 18
-    },
-    {
-      "team_id": 146,
-      "team_abbr": "MIA",
-      "team_name": "Miami Marlins",
-      "picks": 634,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8638,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 19
-    },
-    {
-      "team_id": 142,
-      "team_abbr": "MIN",
-      "team_name": "Minnesota Twins",
-      "picks": 636,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8641,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 20
-    },
-    {
-      "team_id": 147,
-      "team_abbr": "NYY",
-      "team_name": "New York Yankees",
-      "picks": 627,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8624,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 21
-    },
-    {
-      "team_id": 117,
-      "team_abbr": "HOU",
-      "team_name": "Houston Astros",
-      "picks": 627,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8624,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 22
-    },
-    {
-      "team_id": 144,
-      "team_abbr": "ATL",
-      "team_name": "Atlanta Braves",
-      "picks": 636,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8641,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 23
-    },
-    {
-      "team_id": 108,
-      "team_abbr": "LAA",
-      "team_name": "Los Angeles Angels",
-      "picks": 627,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8624,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 24
-    },
-    {
-      "team_id": 111,
-      "team_abbr": "BOS",
-      "team_name": "Boston Red Sox",
-      "picks": 634,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8638,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 25
-    },
-    {
-      "team_id": 145,
-      "team_abbr": "CWS",
-      "team_name": "Chicago White Sox",
-      "picks": 622,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8615,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 26
-    },
-    {
-      "team_id": 138,
-      "team_abbr": "STL",
-      "team_name": "St. Louis Cardinals",
-      "picks": 645,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8658,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 27
-    },
-    {
-      "team_id": 114,
-      "team_abbr": "CLE",
-      "team_name": "Cleveland Guardians",
-      "picks": 632,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8634,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 28
+      "rank": 3
     },
     {
       "team_id": 121,
       "team_abbr": "NYM",
       "team_name": "New York Mets",
       "picks": 620,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.1133,
+      "avg_vos": 0.0975,
       "vos_shrink": 0.8611,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 70.2346,
+      "avg_career_war": 0.3193,
+      "avg_expected_war": 0.206,
       "small_sample": false,
-      "rank": 29
+      "rank": 4
+    },
+    {
+      "team_id": 147,
+      "team_abbr": "NYY",
+      "team_name": "New York Yankees",
+      "picks": 627,
+      "avg_vos_raw": 0.0945,
+      "avg_vos": 0.0815,
+      "vos_shrink": 0.8624,
+      "total_vos": 59.282,
+      "avg_career_war": 0.2681,
+      "avg_expected_war": 0.1736,
+      "small_sample": false,
+      "rank": 5
+    },
+    {
+      "team_id": 144,
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Braves",
+      "picks": 636,
+      "avg_vos_raw": 0.0858,
+      "avg_vos": 0.0741,
+      "vos_shrink": 0.8641,
+      "total_vos": 54.5662,
+      "avg_career_war": 0.3108,
+      "avg_expected_war": 0.225,
+      "small_sample": false,
+      "rank": 6
+    },
+    {
+      "team_id": 108,
+      "team_abbr": "LAA",
+      "team_name": "Los Angeles Angels",
+      "picks": 627,
+      "avg_vos_raw": 0.0687,
+      "avg_vos": 0.0592,
+      "vos_shrink": 0.8624,
+      "total_vos": 43.0473,
+      "avg_career_war": 0.255,
+      "avg_expected_war": 0.1864,
+      "small_sample": false,
+      "rank": 7
+    },
+    {
+      "team_id": 117,
+      "team_abbr": "HOU",
+      "team_name": "Houston Astros",
+      "picks": 627,
+      "avg_vos_raw": 0.0677,
+      "avg_vos": 0.0583,
+      "vos_shrink": 0.8624,
+      "total_vos": 42.4191,
+      "avg_career_war": 0.3293,
+      "avg_expected_war": 0.2616,
+      "small_sample": false,
+      "rank": 8
+    },
+    {
+      "team_id": 114,
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Guardians",
+      "picks": 632,
+      "avg_vos_raw": 0.0635,
+      "avg_vos": 0.0548,
+      "vos_shrink": 0.8634,
+      "total_vos": 40.1172,
+      "avg_career_war": 0.2696,
+      "avg_expected_war": 0.2061,
+      "small_sample": false,
+      "rank": 9
+    },
+    {
+      "team_id": 139,
+      "team_abbr": "TB",
+      "team_name": "Tampa Bay Rays",
+      "picks": 647,
+      "avg_vos_raw": 0.0621,
+      "avg_vos": 0.0538,
+      "vos_shrink": 0.8661,
+      "total_vos": 40.1627,
+      "avg_career_war": 0.3245,
+      "avg_expected_war": 0.2624,
+      "small_sample": false,
+      "rank": 10
+    },
+    {
+      "team_id": 110,
+      "team_abbr": "BAL",
+      "team_name": "Baltimore Orioles",
+      "picks": 627,
+      "avg_vos_raw": 0.0391,
+      "avg_vos": 0.0337,
+      "vos_shrink": 0.8624,
+      "total_vos": 24.4963,
+      "avg_career_war": 0.3029,
+      "avg_expected_war": 0.2638,
+      "small_sample": false,
+      "rank": 11
+    },
+    {
+      "team_id": 111,
+      "team_abbr": "BOS",
+      "team_name": "Boston Red Sox",
+      "picks": 634,
+      "avg_vos_raw": -0.0012,
+      "avg_vos": -0.001,
+      "vos_shrink": 0.8638,
+      "total_vos": -0.7294,
+      "avg_career_war": 0.205,
+      "avg_expected_war": 0.2062,
+      "small_sample": false,
+      "rank": 12
+    },
+    {
+      "team_id": 115,
+      "team_abbr": "COL",
+      "team_name": "Colorado Rockies",
+      "picks": 639,
+      "avg_vos_raw": -0.0055,
+      "avg_vos": -0.0047,
+      "vos_shrink": 0.8647,
+      "total_vos": -3.4952,
+      "avg_career_war": 0.2551,
+      "avg_expected_war": 0.2606,
+      "small_sample": false,
+      "rank": 13
+    },
+    {
+      "team_id": 142,
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Twins",
+      "picks": 636,
+      "avg_vos_raw": -0.0061,
+      "avg_vos": -0.0053,
+      "vos_shrink": 0.8641,
+      "total_vos": -3.8661,
+      "avg_career_war": 0.2383,
+      "avg_expected_war": 0.2444,
+      "small_sample": false,
+      "rank": 14
+    },
+    {
+      "team_id": 118,
+      "team_abbr": "KC",
+      "team_name": "Kansas City Royals",
+      "picks": 634,
+      "avg_vos_raw": -0.0092,
+      "avg_vos": -0.008,
+      "vos_shrink": 0.8638,
+      "total_vos": -5.858,
+      "avg_career_war": 0.2704,
+      "avg_expected_war": 0.2796,
+      "small_sample": false,
+      "rank": 15
+    },
+    {
+      "team_id": 112,
+      "team_abbr": "CHC",
+      "team_name": "Chicago Cubs",
+      "picks": 626,
+      "avg_vos_raw": -0.0118,
+      "avg_vos": -0.0102,
+      "vos_shrink": 0.8623,
+      "total_vos": -7.3718,
+      "avg_career_war": 0.2109,
+      "avg_expected_war": 0.2227,
+      "small_sample": false,
+      "rank": 16
     },
     {
       "team_id": 133,
       "team_abbr": "OAK",
       "team_name": "Athletics",
       "picks": 623,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": -0.0181,
+      "avg_vos": -0.0156,
       "vos_shrink": 0.8617,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": -11.2873,
+      "avg_career_war": 0.1909,
+      "avg_expected_war": 0.2091,
+      "small_sample": false,
+      "rank": 17
+    },
+    {
+      "team_id": 113,
+      "team_abbr": "CIN",
+      "team_name": "Cincinnati Reds",
+      "picks": 637,
+      "avg_vos_raw": -0.0259,
+      "avg_vos": -0.0224,
+      "vos_shrink": 0.8643,
+      "total_vos": -16.4844,
+      "avg_career_war": 0.2244,
+      "avg_expected_war": 0.2503,
+      "small_sample": false,
+      "rank": 18
+    },
+    {
+      "team_id": 136,
+      "team_abbr": "SEA",
+      "team_name": "Seattle Mariners",
+      "picks": 632,
+      "avg_vos_raw": -0.0321,
+      "avg_vos": -0.0277,
+      "vos_shrink": 0.8634,
+      "total_vos": -20.2617,
+      "avg_career_war": 0.2021,
+      "avg_expected_war": 0.2342,
+      "small_sample": false,
+      "rank": 19
+    },
+    {
+      "team_id": 158,
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Brewers",
+      "picks": 633,
+      "avg_vos_raw": -0.0351,
+      "avg_vos": -0.0303,
+      "vos_shrink": 0.8636,
+      "total_vos": -22.2342,
+      "avg_career_war": 0.1905,
+      "avg_expected_war": 0.2256,
+      "small_sample": false,
+      "rank": 20
+    },
+    {
+      "team_id": 120,
+      "team_abbr": "WSH",
+      "team_name": "Washington Nationals",
+      "picks": 632,
+      "avg_vos_raw": -0.04,
+      "avg_vos": -0.0346,
+      "vos_shrink": 0.8634,
+      "total_vos": -25.3039,
+      "avg_career_war": 0.1995,
+      "avg_expected_war": 0.2395,
+      "small_sample": false,
+      "rank": 21
+    },
+    {
+      "team_id": 116,
+      "team_abbr": "DET",
+      "team_name": "Detroit Tigers",
+      "picks": 620,
+      "avg_vos_raw": -0.0424,
+      "avg_vos": -0.0365,
+      "vos_shrink": 0.8611,
+      "total_vos": -26.2869,
+      "avg_career_war": 0.1896,
+      "avg_expected_war": 0.232,
+      "small_sample": false,
+      "rank": 22
+    },
+    {
+      "team_id": 109,
+      "team_abbr": "ARI",
+      "team_name": "Arizona Diamondbacks",
+      "picks": 647,
+      "avg_vos_raw": -0.0465,
+      "avg_vos": -0.0403,
+      "vos_shrink": 0.8661,
+      "total_vos": -30.0702,
+      "avg_career_war": 0.2191,
+      "avg_expected_war": 0.2655,
+      "small_sample": false,
+      "rank": 23
+    },
+    {
+      "team_id": 145,
+      "team_abbr": "CWS",
+      "team_name": "Chicago White Sox",
+      "picks": 622,
+      "avg_vos_raw": -0.0558,
+      "avg_vos": -0.048,
+      "vos_shrink": 0.8615,
+      "total_vos": -34.6873,
+      "avg_career_war": 0.1726,
+      "avg_expected_war": 0.2284,
+      "small_sample": false,
+      "rank": 24
+    },
+    {
+      "team_id": 146,
+      "team_abbr": "MIA",
+      "team_name": "Miami Marlins",
+      "picks": 634,
+      "avg_vos_raw": -0.0617,
+      "avg_vos": -0.0533,
+      "vos_shrink": 0.8638,
+      "total_vos": -39.1265,
+      "avg_career_war": 0.1811,
+      "avg_expected_war": 0.2428,
+      "small_sample": false,
+      "rank": 25
+    },
+    {
+      "team_id": 141,
+      "team_abbr": "TOR",
+      "team_name": "Toronto Blue Jays",
+      "picks": 623,
+      "avg_vos_raw": -0.0649,
+      "avg_vos": -0.0559,
+      "vos_shrink": 0.8617,
+      "total_vos": -40.4047,
+      "avg_career_war": 0.1894,
+      "avg_expected_war": 0.2542,
+      "small_sample": false,
+      "rank": 26
+    },
+    {
+      "team_id": 143,
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia Phillies",
+      "picks": 630,
+      "avg_vos_raw": -0.0969,
+      "avg_vos": -0.0836,
+      "vos_shrink": 0.863,
+      "total_vos": -61.0588,
+      "avg_career_war": 0.1218,
+      "avg_expected_war": 0.2187,
+      "small_sample": false,
+      "rank": 27
+    },
+    {
+      "team_id": 140,
+      "team_abbr": "TEX",
+      "team_name": "Texas Rangers",
+      "picks": 638,
+      "avg_vos_raw": -0.1097,
+      "avg_vos": -0.0948,
+      "vos_shrink": 0.8645,
+      "total_vos": -69.97,
+      "avg_career_war": 0.1145,
+      "avg_expected_war": 0.2242,
+      "small_sample": false,
+      "rank": 28
+    },
+    {
+      "team_id": 134,
+      "team_abbr": "PIT",
+      "team_name": "Pittsburgh Pirates",
+      "picks": 637,
+      "avg_vos_raw": -0.1306,
+      "avg_vos": -0.1129,
+      "vos_shrink": 0.8643,
+      "total_vos": -83.2005,
+      "avg_career_war": 0.1538,
+      "avg_expected_war": 0.2844,
+      "small_sample": false,
+      "rank": 29
+    },
+    {
+      "team_id": 135,
+      "team_abbr": "SD",
+      "team_name": "San Diego Padres",
+      "picks": 624,
+      "avg_vos_raw": -0.235,
+      "avg_vos": -0.2026,
+      "vos_shrink": 0.8619,
+      "total_vos": -146.6697,
+      "avg_career_war": 0.0512,
+      "avg_expected_war": 0.2863,
       "small_sample": false,
       "rank": 30
     }
   ],
   "gms": [
     {
-      "person_id": "dayton-moore",
-      "name": "Dayton Moore",
+      "person_id": "john-schuerholz",
+      "name": "John Schuerholz",
       "teams": [
-        "KC"
+        "ATL"
       ],
-      "picks": 634,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8638,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "picks": 106,
+      "avg_vos_raw": 0.6046,
+      "avg_vos": 0.3111,
+      "vos_shrink": 0.5146,
+      "total_vos": 64.0891,
+      "avg_career_war": 0.8179,
+      "avg_expected_war": 0.2133,
       "small_sample": false,
       "rank": 1
+    },
+    {
+      "person_id": "tony-reagins",
+      "name": "Tony Reagins",
+      "teams": [
+        "LAA"
+      ],
+      "picks": 208,
+      "avg_vos_raw": 0.396,
+      "avg_vos": 0.2675,
+      "vos_shrink": 0.6753,
+      "total_vos": 82.3767,
+      "avg_career_war": 0.5912,
+      "avg_expected_war": 0.1952,
+      "small_sample": false,
+      "rank": 2
+    },
+    {
+      "person_id": "brian-sabean",
+      "name": "Brian Sabean",
+      "teams": [
+        "SF"
+      ],
+      "picks": 422,
+      "avg_vos_raw": 0.2823,
+      "avg_vos": 0.2282,
+      "vos_shrink": 0.8084,
+      "total_vos": 119.1129,
+      "avg_career_war": 0.497,
+      "avg_expected_war": 0.2147,
+      "small_sample": false,
+      "rank": 3
+    },
+    {
+      "person_id": "john-mozeliak",
+      "name": "John Mozeliak",
+      "teams": [
+        "STL"
+      ],
+      "picks": 540,
+      "avg_vos_raw": 0.1981,
+      "avg_vos": 0.1672,
+      "vos_shrink": 0.8438,
+      "total_vos": 106.9894,
+      "avg_career_war": 0.4096,
+      "avg_expected_war": 0.2114,
+      "small_sample": false,
+      "rank": 4
+    },
+    {
+      "person_id": "omar-minaya",
+      "name": "Omar Minaya",
+      "teams": [
+        "NYM"
+      ],
+      "picks": 241,
+      "avg_vos_raw": 0.2219,
+      "avg_vos": 0.1568,
+      "vos_shrink": 0.7067,
+      "total_vos": 53.476,
+      "avg_career_war": 0.394,
+      "avg_expected_war": 0.1721,
+      "small_sample": false,
+      "rank": 5
+    },
+    {
+      "person_id": "ned-colletti",
+      "name": "Ned Colletti",
+      "teams": [
+        "LAD"
+      ],
+      "picks": 408,
+      "avg_vos_raw": 0.1752,
+      "avg_vos": 0.1407,
+      "vos_shrink": 0.8031,
+      "total_vos": 71.4656,
+      "avg_career_war": 0.3599,
+      "avg_expected_war": 0.1848,
+      "small_sample": false,
+      "rank": 6
+    },
+    {
+      "person_id": "wayne-krivsky",
+      "name": "Wayne Krivsky",
+      "teams": [
+        "CIN"
+      ],
+      "picks": 103,
+      "avg_vos_raw": 0.2188,
+      "avg_vos": 0.111,
+      "vos_shrink": 0.5074,
+      "total_vos": 22.5387,
+      "avg_career_war": 0.4267,
+      "avg_expected_war": 0.2079,
+      "small_sample": false,
+      "rank": 7
+    },
+    {
+      "person_id": "jeff-luhnow",
+      "name": "Jeff Luhnow",
+      "teams": [
+        "HOU"
+      ],
+      "picks": 326,
+      "avg_vos_raw": 0.141,
+      "avg_vos": 0.1079,
+      "vos_shrink": 0.7653,
+      "total_vos": 45.9719,
+      "avg_career_war": 0.4671,
+      "avg_expected_war": 0.3261,
+      "small_sample": false,
+      "rank": 8
     },
     {
       "person_id": "dan-odowd",
@@ -464,14 +576,46 @@
         "COL"
       ],
       "picks": 428,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.129,
+      "avg_vos": 0.1046,
       "vos_shrink": 0.8106,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 55.2131,
+      "avg_career_war": 0.3615,
+      "avg_expected_war": 0.2325,
       "small_sample": false,
-      "rank": 2
+      "rank": 9
+    },
+    {
+      "person_id": "brian-cashman",
+      "name": "Brian Cashman",
+      "teams": [
+        "NYY"
+      ],
+      "picks": 627,
+      "avg_vos_raw": 0.0945,
+      "avg_vos": 0.0815,
+      "vos_shrink": 0.8624,
+      "total_vos": 59.282,
+      "avg_career_war": 0.2681,
+      "avg_expected_war": 0.1736,
+      "small_sample": false,
+      "rank": 10
+    },
+    {
+      "person_id": "mike-elias",
+      "name": "Mike Elias",
+      "teams": [
+        "BAL"
+      ],
+      "picks": 47,
+      "avg_vos_raw": 0.2419,
+      "avg_vos": 0.0773,
+      "vos_shrink": 0.3197,
+      "total_vos": 11.3673,
+      "avg_career_war": 0.8989,
+      "avg_expected_war": 0.6571,
+      "small_sample": true,
+      "rank": 11
     },
     {
       "person_id": "andrew-friedman",
@@ -481,353 +625,30 @@
         "TB"
       ],
       "picks": 645,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.079,
+      "avg_vos": 0.0684,
       "vos_shrink": 0.8658,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 3
-    },
-    {
-      "person_id": "dave-littlefield",
-      "name": "Dave Littlefield",
-      "teams": [
-        "PIT"
-      ],
-      "picks": 100,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.5,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 4
-    },
-    {
-      "person_id": "bill-bavasi",
-      "name": "Bill Bavasi",
-      "teams": [
-        "SEA"
-      ],
-      "picks": 151,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6016,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 5
-    },
-    {
-      "person_id": "dave-dombrowski",
-      "name": "Dave Dombrowski",
-      "teams": [
-        "BOS",
-        "DET"
-      ],
-      "picks": 616,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8603,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 6
-    },
-    {
-      "person_id": "ned-colletti",
-      "name": "Ned Colletti",
-      "teams": [
-        "LAD"
-      ],
-      "picks": 408,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8031,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 7
-    },
-    {
-      "person_id": "wayne-krivsky",
-      "name": "Wayne Krivsky",
-      "teams": [
-        "CIN"
-      ],
-      "picks": 103,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.5074,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 8
-    },
-    {
-      "person_id": "mike-flanagan",
-      "name": "Mike Flanagan",
-      "teams": [
-        "BAL"
-      ],
-      "picks": 99,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.4975,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 9
-    },
-    {
-      "person_id": "brian-sabean",
-      "name": "Brian Sabean",
-      "teams": [
-        "SF"
-      ],
-      "picks": 422,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8084,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 10
-    },
-    {
-      "person_id": "josh-byrnes",
-      "name": "Josh Byrnes",
-      "teams": [
-        "ARI",
-        "SD"
-      ],
-      "picks": 385,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7938,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 11
-    },
-    {
-      "person_id": "jon-daniels",
-      "name": "Jon Daniels",
-      "teams": [
-        "TEX"
-      ],
-      "picks": 638,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8645,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 50.9501,
+      "avg_career_war": 0.322,
+      "avg_expected_war": 0.243,
       "small_sample": false,
       "rank": 12
     },
     {
-      "person_id": "jim-hendry",
-      "name": "Jim Hendry",
+      "person_id": "sandy-alderson",
+      "name": "Sandy Alderson",
       "teams": [
-        "CHC"
+        "NYM"
       ],
-      "picks": 298,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7487,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "picks": 333,
+      "avg_vos_raw": 0.0859,
+      "avg_vos": 0.0661,
+      "vos_shrink": 0.7691,
+      "total_vos": 28.6135,
+      "avg_career_war": 0.3028,
+      "avg_expected_war": 0.2169,
       "small_sample": false,
       "rank": 13
-    },
-    {
-      "person_id": "jp-ricciardi",
-      "name": "J.P. Ricciardi",
-      "teams": [
-        "TOR"
-      ],
-      "picks": 180,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6429,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 14
-    },
-    {
-      "person_id": "jim-bowden",
-      "name": "Jim Bowden",
-      "teams": [
-        "WSH"
-      ],
-      "picks": 155,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6078,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 15
-    },
-    {
-      "person_id": "doug-melvin",
-      "name": "Doug Melvin",
-      "teams": [
-        "MIL"
-      ],
-      "picks": 467,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8236,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 16
-    },
-    {
-      "person_id": "kevin-towers",
-      "name": "Kevin Towers",
-      "teams": [
-        "ARI",
-        "SD"
-      ],
-      "picks": 360,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7826,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 17
-    },
-    {
-      "person_id": "pat-gillick",
-      "name": "Pat Gillick",
-      "teams": [
-        "PHI"
-      ],
-      "picks": 156,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6094,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 18
-    },
-    {
-      "person_id": "larry-beinfest",
-      "name": "Larry Beinfest",
-      "teams": [
-        "MIA"
-      ],
-      "picks": 384,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7934,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 19
-    },
-    {
-      "person_id": "terry-ryan",
-      "name": "Terry Ryan",
-      "teams": [
-        "MIN"
-      ],
-      "picks": 306,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7537,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 20
-    },
-    {
-      "person_id": "brian-cashman",
-      "name": "Brian Cashman",
-      "teams": [
-        "NYY"
-      ],
-      "picks": 627,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8624,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 21
-    },
-    {
-      "person_id": "tim-purpura",
-      "name": "Tim Purpura",
-      "teams": [
-        "HOU"
-      ],
-      "picks": 92,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.4792,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 22
-    },
-    {
-      "person_id": "john-schuerholz",
-      "name": "John Schuerholz",
-      "teams": [
-        "ATL"
-      ],
-      "picks": 106,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.5146,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 23
-    },
-    {
-      "person_id": "bill-stoneman",
-      "name": "Bill Stoneman",
-      "teams": [
-        "LAA"
-      ],
-      "picks": 98,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.4949,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 24
     },
     {
       "person_id": "theo-epstein",
@@ -837,288 +658,14 @@
         "CHC"
       ],
       "picks": 636,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.0725,
+      "avg_vos": 0.0626,
       "vos_shrink": 0.8641,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 46.0834,
+      "avg_career_war": 0.2984,
+      "avg_expected_war": 0.2259,
       "small_sample": false,
-      "rank": 25
-    },
-    {
-      "person_id": "kenny-williams",
-      "name": "Kenny Williams",
-      "teams": [
-        "CWS"
-      ],
-      "picks": 338,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7717,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 26
-    },
-    {
-      "person_id": "walt-jocketty",
-      "name": "Walt Jocketty",
-      "teams": [
-        "CIN",
-        "STL"
-      ],
-      "picks": 511,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8363,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 27
-    },
-    {
-      "person_id": "mark-shapiro",
-      "name": "Mark Shapiro",
-      "teams": [
-        "CLE"
-      ],
-      "picks": 251,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7151,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 28
-    },
-    {
-      "person_id": "omar-minaya",
-      "name": "Omar Minaya",
-      "teams": [
-        "NYM"
-      ],
-      "picks": 241,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7067,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 29
-    },
-    {
-      "person_id": "billy-beane",
-      "name": "Billy Beane",
-      "teams": [
-        "OAK"
-      ],
-      "picks": 455,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8198,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 30
-    },
-    {
-      "person_id": "neal-huntington",
-      "name": "Neal Huntington",
-      "teams": [
-        "PIT"
-      ],
-      "picks": 531,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8415,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 31
-    },
-    {
-      "person_id": "andy-macphail",
-      "name": "Andy MacPhail",
-      "teams": [
-        "BAL"
-      ],
-      "picks": 199,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6656,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 32
-    },
-    {
-      "person_id": "ed-wade",
-      "name": "Ed Wade",
-      "teams": [
-        "HOU"
-      ],
-      "picks": 205,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6721,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 33
-    },
-    {
-      "person_id": "john-mozeliak",
-      "name": "John Mozeliak",
-      "teams": [
-        "STL"
-      ],
-      "picks": 540,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8438,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 34
-    },
-    {
-      "person_id": "bill-smith",
-      "name": "Bill Smith",
-      "teams": [
-        "MIN"
-      ],
-      "picks": 205,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6721,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 35
-    },
-    {
-      "person_id": "frank-wren",
-      "name": "Frank Wren",
-      "teams": [
-        "ATL"
-      ],
-      "picks": 321,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7625,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 36
-    },
-    {
-      "person_id": "tony-reagins",
-      "name": "Tony Reagins",
-      "teams": [
-        "LAA"
-      ],
-      "picks": 208,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6753,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 37
-    },
-    {
-      "person_id": "mike-rizzo",
-      "name": "Mike Rizzo",
-      "teams": [
-        "WSH"
-      ],
-      "picks": 477,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.8267,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 38
-    },
-    {
-      "person_id": "jack-zduriencik",
-      "name": "Jack Zduriencik",
-      "teams": [
-        "SEA"
-      ],
-      "picks": 314,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7585,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 39
-    },
-    {
-      "person_id": "ruben-amaro-jr",
-      "name": "Ruben Amaro Jr.",
-      "teams": [
-        "PHI"
-      ],
-      "picks": 313,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7579,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 40
-    },
-    {
-      "person_id": "jed-hoyer",
-      "name": "Jed Hoyer",
-      "teams": [
-        "SD"
-      ],
-      "picks": 103,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.5074,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 41
-    },
-    {
-      "person_id": "alex-anthopoulos",
-      "name": "Alex Anthopoulos",
-      "teams": [
-        "ATL",
-        "TOR"
-      ],
-      "picks": 360,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7826,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 42
+      "rank": 14
     },
     {
       "person_id": "chris-antonetti",
@@ -1127,46 +674,110 @@
         "CLE"
       ],
       "picks": 381,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.0778,
+      "avg_vos": 0.0616,
       "vos_shrink": 0.7921,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 29.6485,
+      "avg_career_war": 0.3067,
+      "avg_expected_war": 0.2289,
       "small_sample": false,
-      "rank": 43
+      "rank": 15
     },
     {
-      "person_id": "sandy-alderson",
-      "name": "Sandy Alderson",
+      "person_id": "matt-silverman",
+      "name": "Matt Silverman",
       "teams": [
-        "NYM"
+        "TB"
       ],
-      "picks": 333,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7691,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "picks": 81,
+      "avg_vos_raw": 0.082,
+      "avg_vos": 0.0367,
+      "vos_shrink": 0.4475,
+      "total_vos": 6.6455,
+      "avg_career_war": 0.2877,
+      "avg_expected_war": 0.2056,
       "small_sample": false,
-      "rank": 44
+      "rank": 16
     },
     {
-      "person_id": "jeff-luhnow",
-      "name": "Jeff Luhnow",
+      "person_id": "larry-beinfest",
+      "name": "Larry Beinfest",
       "teams": [
-        "HOU"
+        "MIA"
       ],
-      "picks": 326,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7653,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "picks": 384,
+      "avg_vos_raw": 0.0434,
+      "avg_vos": 0.0344,
+      "vos_shrink": 0.7934,
+      "total_vos": 16.6538,
+      "avg_career_war": 0.2394,
+      "avg_expected_war": 0.1961,
       "small_sample": false,
-      "rank": 45
+      "rank": 17
+    },
+    {
+      "person_id": "mark-shapiro",
+      "name": "Mark Shapiro",
+      "teams": [
+        "CLE"
+      ],
+      "picks": 251,
+      "avg_vos_raw": 0.0417,
+      "avg_vos": 0.0298,
+      "vos_shrink": 0.7151,
+      "total_vos": 10.4687,
+      "avg_career_war": 0.2133,
+      "avg_expected_war": 0.1716,
+      "small_sample": false,
+      "rank": 18
+    },
+    {
+      "person_id": "bill-smith",
+      "name": "Bill Smith",
+      "teams": [
+        "MIN"
+      ],
+      "picks": 205,
+      "avg_vos_raw": 0.0411,
+      "avg_vos": 0.0276,
+      "vos_shrink": 0.6721,
+      "total_vos": 8.4256,
+      "avg_career_war": 0.2204,
+      "avg_expected_war": 0.1793,
+      "small_sample": false,
+      "rank": 19
+    },
+    {
+      "person_id": "billy-beane",
+      "name": "Billy Beane",
+      "teams": [
+        "OAK"
+      ],
+      "picks": 455,
+      "avg_vos_raw": 0.0332,
+      "avg_vos": 0.0272,
+      "vos_shrink": 0.8198,
+      "total_vos": 15.0901,
+      "avg_career_war": 0.2092,
+      "avg_expected_war": 0.176,
+      "small_sample": false,
+      "rank": 20
+    },
+    {
+      "person_id": "mike-flanagan",
+      "name": "Mike Flanagan",
+      "teams": [
+        "BAL"
+      ],
+      "picks": 99,
+      "avg_vos_raw": 0.0536,
+      "avg_vos": 0.0267,
+      "vos_shrink": 0.4975,
+      "total_vos": 5.3047,
+      "avg_career_war": 0.2939,
+      "avg_expected_war": 0.2404,
+      "small_sample": false,
+      "rank": 21
     },
     {
       "person_id": "dan-duquette",
@@ -1175,31 +786,78 @@
         "BAL"
       ],
       "picks": 282,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.0346,
+      "avg_vos": 0.0255,
       "vos_shrink": 0.7382,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 9.7563,
+      "avg_career_war": 0.2448,
+      "avg_expected_war": 0.2102,
       "small_sample": false,
-      "rank": 46
+      "rank": 22
     },
     {
-      "person_id": "ben-cherington",
-      "name": "Ben Cherington",
+      "person_id": "ed-wade",
+      "name": "Ed Wade",
       "teams": [
-        "BOS",
-        "PIT"
+        "HOU"
       ],
-      "picks": 168,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6269,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "picks": 205,
+      "avg_vos_raw": 0.0341,
+      "avg_vos": 0.0229,
+      "vos_shrink": 0.6721,
+      "total_vos": 6.9821,
+      "avg_career_war": 0.251,
+      "avg_expected_war": 0.217,
       "small_sample": false,
-      "rank": 47
+      "rank": 23
+    },
+    {
+      "person_id": "al-avila",
+      "name": "Al Avila",
+      "teams": [
+        "DET"
+      ],
+      "picks": 164,
+      "avg_vos_raw": 0.0347,
+      "avg_vos": 0.0216,
+      "vos_shrink": 0.6212,
+      "total_vos": 5.6923,
+      "avg_career_war": 0.4154,
+      "avg_expected_war": 0.3807,
+      "small_sample": false,
+      "rank": 24
+    },
+    {
+      "person_id": "kenny-williams",
+      "name": "Kenny Williams",
+      "teams": [
+        "CWS"
+      ],
+      "picks": 338,
+      "avg_vos_raw": 0.0166,
+      "avg_vos": 0.0128,
+      "vos_shrink": 0.7717,
+      "total_vos": 5.6111,
+      "avg_career_war": 0.1839,
+      "avg_expected_war": 0.1673,
+      "small_sample": false,
+      "rank": 25
+    },
+    {
+      "person_id": "mike-hazen",
+      "name": "Mike Hazen",
+      "teams": [
+        "ARI"
+      ],
+      "picks": 132,
+      "avg_vos_raw": 0.0218,
+      "avg_vos": 0.0124,
+      "vos_shrink": 0.569,
+      "total_vos": 2.8712,
+      "avg_career_war": 0.3433,
+      "avg_expected_war": 0.3216,
+      "small_sample": false,
+      "rank": 26
     },
     {
       "person_id": "jerry-dipoto",
@@ -1209,254 +867,14 @@
         "SEA"
       ],
       "picks": 324,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.0078,
+      "avg_vos": 0.006,
       "vos_shrink": 0.7642,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 2.536,
+      "avg_career_war": 0.2117,
+      "avg_expected_war": 0.2038,
       "small_sample": false,
-      "rank": 48
-    },
-    {
-      "person_id": "rick-hahn",
-      "name": "Rick Hahn",
-      "teams": [
-        "CWS"
-      ],
-      "picks": 284,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7396,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 49
-    },
-    {
-      "person_id": "michael-hill",
-      "name": "Michael Hill",
-      "teams": [
-        "MIA"
-      ],
-      "picks": 250,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.7143,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 50
-    },
-    {
-      "person_id": "dave-stewart",
-      "name": "Dave Stewart",
-      "teams": [
-        "ARI"
-      ],
-      "picks": 80,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.4444,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 51
-    },
-    {
-      "person_id": "jeff-bridich",
-      "name": "Jeff Bridich",
-      "teams": [
-        "COL"
-      ],
-      "picks": 211,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6785,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 52
-    },
-    {
-      "person_id": "matt-silverman",
-      "name": "Matt Silverman",
-      "teams": [
-        "TB"
-      ],
-      "picks": 81,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.4475,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 53
-    },
-    {
-      "person_id": "john-hart",
-      "name": "John Hart",
-      "teams": [
-        "ATL"
-      ],
-      "picks": 125,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.5556,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 54
-    },
-    {
-      "person_id": "bobby-evans",
-      "name": "Bobby Evans",
-      "teams": [
-        "SF"
-      ],
-      "picks": 160,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6154,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 55
-    },
-    {
-      "person_id": "aj-preller",
-      "name": "A.J. Preller",
-      "teams": [
-        "SD"
-      ],
-      "picks": 211,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6785,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 56
-    },
-    {
-      "person_id": "matt-klentak",
-      "name": "Matt Klentak",
-      "teams": [
-        "PHI"
-      ],
-      "picks": 161,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6169,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 57
-    },
-    {
-      "person_id": "david-stearns",
-      "name": "David Stearns",
-      "teams": [
-        "MIL"
-      ],
-      "picks": 166,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6241,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 58
-    },
-    {
-      "person_id": "david-forst",
-      "name": "David Forst",
-      "teams": [
-        "OAK"
-      ],
-      "picks": 168,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6269,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 59
-    },
-    {
-      "person_id": "al-avila",
-      "name": "Al Avila",
-      "teams": [
-        "DET"
-      ],
-      "picks": 164,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6212,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 60
-    },
-    {
-      "person_id": "billy-eppler",
-      "name": "Billy Eppler",
-      "teams": [
-        "LAA"
-      ],
-      "picks": 164,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6212,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 61
-    },
-    {
-      "person_id": "ross-atkins",
-      "name": "Ross Atkins",
-      "teams": [
-        "TOR"
-      ],
-      "picks": 167,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.6255,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 62
-    },
-    {
-      "person_id": "derek-falvey",
-      "name": "Derek Falvey",
-      "teams": [
-        "MIN"
-      ],
-      "picks": 125,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.5556,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 63
+      "rank": 27
     },
     {
       "person_id": "dick-williams",
@@ -1465,126 +883,207 @@
         "CIN"
       ],
       "picks": 41,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": 0.004,
+      "avg_vos": 0.0012,
       "vos_shrink": 0.2908,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": 0.1624,
+      "avg_career_war": 0.3712,
+      "avg_expected_war": 0.3673,
       "small_sample": true,
-      "rank": 64
+      "rank": 28
     },
     {
-      "person_id": "erik-neander",
-      "name": "Erik Neander",
+      "person_id": "jack-zduriencik",
+      "name": "Jack Zduriencik",
       "teams": [
-        "TB"
+        "SEA"
       ],
-      "picks": 132,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.569,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "picks": 314,
+      "avg_vos_raw": -0.0005,
+      "avg_vos": -0.0004,
+      "vos_shrink": 0.7585,
+      "total_vos": -0.1696,
+      "avg_career_war": 0.2391,
+      "avg_expected_war": 0.2397,
       "small_sample": false,
-      "rank": 65
+      "rank": 29
     },
     {
-      "person_id": "mike-hazen",
-      "name": "Mike Hazen",
+      "person_id": "derek-falvey",
+      "name": "Derek Falvey",
       "teams": [
-        "ARI"
+        "MIN"
       ],
-      "picks": 132,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.569,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "picks": 125,
+      "avg_vos_raw": -0.0089,
+      "avg_vos": -0.005,
+      "vos_shrink": 0.5556,
+      "total_vos": -1.1165,
+      "avg_career_war": 0.3024,
+      "avg_expected_war": 0.3113,
       "small_sample": false,
-      "rank": 66
+      "rank": 30
     },
     {
-      "person_id": "nick-krall",
-      "name": "Nick Krall",
-      "teams": [
-        "CIN"
-      ],
-      "picks": 87,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.4652,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": false,
-      "rank": 67
-    },
-    {
-      "person_id": "mike-elias",
-      "name": "Mike Elias",
+      "person_id": "andy-macphail",
+      "name": "Andy MacPhail",
       "teams": [
         "BAL"
       ],
-      "picks": 47,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.3197,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": true,
-      "rank": 68
+      "picks": 199,
+      "avg_vos_raw": -0.0097,
+      "avg_vos": -0.0065,
+      "vos_shrink": 0.6656,
+      "total_vos": -1.932,
+      "avg_career_war": 0.2488,
+      "avg_expected_war": 0.2585,
+      "small_sample": false,
+      "rank": 31
     },
     {
-      "person_id": "farhan-zaidi",
-      "name": "Farhan Zaidi",
+      "person_id": "dayton-moore",
+      "name": "Dayton Moore",
       "teams": [
-        "SF"
+        "KC"
       ],
-      "picks": 47,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.3197,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": true,
-      "rank": 69
+      "picks": 634,
+      "avg_vos_raw": -0.0092,
+      "avg_vos": -0.008,
+      "vos_shrink": 0.8638,
+      "total_vos": -5.858,
+      "avg_career_war": 0.2704,
+      "avg_expected_war": 0.2796,
+      "small_sample": false,
+      "rank": 32
     },
     {
-      "person_id": "brodie-van-wagenen",
-      "name": "Brodie Van Wagenen",
+      "person_id": "ruben-amaro-jr",
+      "name": "Ruben Amaro Jr.",
       "teams": [
-        "NYM"
+        "PHI"
       ],
-      "picks": 46,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.3151,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": true,
-      "rank": 70
+      "picks": 313,
+      "avg_vos_raw": -0.0124,
+      "avg_vos": -0.0094,
+      "vos_shrink": 0.7579,
+      "total_vos": -3.8836,
+      "avg_career_war": 0.1736,
+      "avg_expected_war": 0.186,
+      "small_sample": false,
+      "rank": 33
     },
     {
-      "person_id": "chaim-bloom",
-      "name": "Chaim Bloom",
+      "person_id": "josh-byrnes",
+      "name": "Josh Byrnes",
       "teams": [
-        "BOS"
+        "ARI",
+        "SD"
       ],
-      "picks": 4,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
-      "vos_shrink": 0.0385,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
-      "small_sample": true,
-      "rank": 71
+      "picks": 385,
+      "avg_vos_raw": -0.016,
+      "avg_vos": -0.0127,
+      "vos_shrink": 0.7938,
+      "total_vos": -6.1586,
+      "avg_career_war": 0.2233,
+      "avg_expected_war": 0.2393,
+      "small_sample": false,
+      "rank": 34
+    },
+    {
+      "person_id": "john-hart",
+      "name": "John Hart",
+      "teams": [
+        "ATL"
+      ],
+      "picks": 125,
+      "avg_vos_raw": -0.023,
+      "avg_vos": -0.0128,
+      "vos_shrink": 0.5556,
+      "total_vos": -2.8705,
+      "avg_career_war": 0.3134,
+      "avg_expected_war": 0.3363,
+      "small_sample": false,
+      "rank": 35
+    },
+    {
+      "person_id": "ross-atkins",
+      "name": "Ross Atkins",
+      "teams": [
+        "TOR"
+      ],
+      "picks": 167,
+      "avg_vos_raw": -0.026,
+      "avg_vos": -0.0163,
+      "vos_shrink": 0.6255,
+      "total_vos": -4.3449,
+      "avg_career_war": 0.2356,
+      "avg_expected_war": 0.2616,
+      "small_sample": false,
+      "rank": 36
+    },
+    {
+      "person_id": "frank-wren",
+      "name": "Frank Wren",
+      "teams": [
+        "ATL"
+      ],
+      "picks": 321,
+      "avg_vos_raw": -0.0243,
+      "avg_vos": -0.0185,
+      "vos_shrink": 0.7625,
+      "total_vos": -7.7977,
+      "avg_career_war": 0.1343,
+      "avg_expected_war": 0.1586,
+      "small_sample": false,
+      "rank": 37
+    },
+    {
+      "person_id": "david-stearns",
+      "name": "David Stearns",
+      "teams": [
+        "MIL"
+      ],
+      "picks": 166,
+      "avg_vos_raw": -0.042,
+      "avg_vos": -0.0262,
+      "vos_shrink": 0.6241,
+      "total_vos": -6.9745,
+      "avg_career_war": 0.2371,
+      "avg_expected_war": 0.2791,
+      "small_sample": false,
+      "rank": 38
+    },
+    {
+      "person_id": "mike-rizzo",
+      "name": "Mike Rizzo",
+      "teams": [
+        "WSH"
+      ],
+      "picks": 477,
+      "avg_vos_raw": -0.0323,
+      "avg_vos": -0.0267,
+      "vos_shrink": 0.8267,
+      "total_vos": -15.3974,
+      "avg_career_war": 0.2062,
+      "avg_expected_war": 0.2385,
+      "small_sample": false,
+      "rank": 39
+    },
+    {
+      "person_id": "doug-melvin",
+      "name": "Doug Melvin",
+      "teams": [
+        "MIL"
+      ],
+      "picks": 467,
+      "avg_vos_raw": -0.0327,
+      "avg_vos": -0.0269,
+      "vos_shrink": 0.8236,
+      "total_vos": -15.2597,
+      "avg_career_war": 0.1739,
+      "avg_expected_war": 0.2066,
+      "small_sample": false,
+      "rank": 40
     },
     {
       "person_id": "james-click",
@@ -1593,13 +1092,514 @@
         "HOU"
       ],
       "picks": 4,
-      "avg_vos_raw": 0.0,
-      "avg_vos": 0.0,
+      "avg_vos_raw": -0.6994,
+      "avg_vos": -0.0269,
       "vos_shrink": 0.0385,
-      "total_vos": 0.0,
-      "avg_career_war": 0.0,
-      "avg_expected_war": 0.0,
+      "total_vos": -2.7976,
+      "avg_career_war": -0.1875,
+      "avg_expected_war": 0.5119,
       "small_sample": true,
+      "rank": 41
+    },
+    {
+      "person_id": "terry-ryan",
+      "name": "Terry Ryan",
+      "teams": [
+        "MIN"
+      ],
+      "picks": 306,
+      "avg_vos_raw": -0.0365,
+      "avg_vos": -0.0275,
+      "vos_shrink": 0.7537,
+      "total_vos": -11.1752,
+      "avg_career_war": 0.2241,
+      "avg_expected_war": 0.2606,
+      "small_sample": false,
+      "rank": 42
+    },
+    {
+      "person_id": "alex-anthopoulos",
+      "name": "Alex Anthopoulos",
+      "teams": [
+        "ATL",
+        "TOR"
+      ],
+      "picks": 360,
+      "avg_vos_raw": -0.0403,
+      "avg_vos": -0.0316,
+      "vos_shrink": 0.7826,
+      "total_vos": -14.5131,
+      "avg_career_war": 0.2411,
+      "avg_expected_war": 0.2814,
+      "small_sample": false,
+      "rank": 43
+    },
+    {
+      "person_id": "erik-neander",
+      "name": "Erik Neander",
+      "teams": [
+        "TB"
+      ],
+      "picks": 132,
+      "avg_vos_raw": -0.0581,
+      "avg_vos": -0.033,
+      "vos_shrink": 0.569,
+      "total_vos": -7.663,
+      "avg_career_war": 0.2752,
+      "avg_expected_war": 0.3333,
+      "small_sample": false,
+      "rank": 44
+    },
+    {
+      "person_id": "bill-stoneman",
+      "name": "Bill Stoneman",
+      "teams": [
+        "LAA"
+      ],
+      "picks": 98,
+      "avg_vos_raw": -0.0688,
+      "avg_vos": -0.0341,
+      "vos_shrink": 0.4949,
+      "total_vos": -6.747,
+      "avg_career_war": 0.0397,
+      "avg_expected_war": 0.1085,
+      "small_sample": false,
+      "rank": 45
+    },
+    {
+      "person_id": "walt-jocketty",
+      "name": "Walt Jocketty",
+      "teams": [
+        "CIN",
+        "STL"
+      ],
+      "picks": 511,
+      "avg_vos_raw": -0.0447,
+      "avg_vos": -0.0374,
+      "vos_shrink": 0.8363,
+      "total_vos": -22.8474,
+      "avg_career_war": 0.1712,
+      "avg_expected_war": 0.2159,
+      "small_sample": false,
+      "rank": 46
+    },
+    {
+      "person_id": "jim-bowden",
+      "name": "Jim Bowden",
+      "teams": [
+        "WSH"
+      ],
+      "picks": 155,
+      "avg_vos_raw": -0.0639,
+      "avg_vos": -0.0388,
+      "vos_shrink": 0.6078,
+      "total_vos": -9.9065,
+      "avg_career_war": 0.1788,
+      "avg_expected_war": 0.2427,
+      "small_sample": false,
+      "rank": 47
+    },
+    {
+      "person_id": "tim-purpura",
+      "name": "Tim Purpura",
+      "teams": [
+        "HOU"
+      ],
+      "picks": 92,
+      "avg_vos_raw": -0.0841,
+      "avg_vos": -0.0403,
+      "vos_shrink": 0.4792,
+      "total_vos": -7.7373,
+      "avg_career_war": 0.0377,
+      "avg_expected_war": 0.1218,
+      "small_sample": false,
+      "rank": 48
+    },
+    {
+      "person_id": "chaim-bloom",
+      "name": "Chaim Bloom",
+      "teams": [
+        "BOS"
+      ],
+      "picks": 4,
+      "avg_vos_raw": -1.0819,
+      "avg_vos": -0.0416,
+      "vos_shrink": 0.0385,
+      "total_vos": -4.3278,
+      "avg_career_war": 0.0,
+      "avg_expected_war": 1.0819,
+      "small_sample": true,
+      "rank": 49
+    },
+    {
+      "person_id": "dave-dombrowski",
+      "name": "Dave Dombrowski",
+      "teams": [
+        "BOS",
+        "DET"
+      ],
+      "picks": 616,
+      "avg_vos_raw": -0.0529,
+      "avg_vos": -0.0455,
+      "vos_shrink": 0.8603,
+      "total_vos": -32.6025,
+      "avg_career_war": 0.1248,
+      "avg_expected_war": 0.1777,
+      "small_sample": false,
+      "rank": 50
+    },
+    {
+      "person_id": "dave-littlefield",
+      "name": "Dave Littlefield",
+      "teams": [
+        "PIT"
+      ],
+      "picks": 100,
+      "avg_vos_raw": -0.1113,
+      "avg_vos": -0.0557,
+      "vos_shrink": 0.5,
+      "total_vos": -11.1318,
+      "avg_career_war": 0.1554,
+      "avg_expected_war": 0.2667,
+      "small_sample": false,
+      "rank": 51
+    },
+    {
+      "person_id": "jim-hendry",
+      "name": "Jim Hendry",
+      "teams": [
+        "CHC"
+      ],
+      "picks": 298,
+      "avg_vos_raw": -0.0785,
+      "avg_vos": -0.0588,
+      "vos_shrink": 0.7487,
+      "total_vos": -23.3884,
+      "avg_career_war": 0.1049,
+      "avg_expected_war": 0.1834,
+      "small_sample": false,
+      "rank": 52
+    },
+    {
+      "person_id": "farhan-zaidi",
+      "name": "Farhan Zaidi",
+      "teams": [
+        "SF"
+      ],
+      "picks": 47,
+      "avg_vos_raw": -0.1948,
+      "avg_vos": -0.0623,
+      "vos_shrink": 0.3197,
+      "total_vos": -9.1567,
+      "avg_career_war": 0.2011,
+      "avg_expected_war": 0.3959,
+      "small_sample": true,
+      "rank": 53
+    },
+    {
+      "person_id": "jp-ricciardi",
+      "name": "J.P. Ricciardi",
+      "teams": [
+        "TOR"
+      ],
+      "picks": 180,
+      "avg_vos_raw": -0.1133,
+      "avg_vos": -0.0729,
+      "vos_shrink": 0.6429,
+      "total_vos": -20.4014,
+      "avg_career_war": 0.1142,
+      "avg_expected_war": 0.2275,
+      "small_sample": false,
+      "rank": 54
+    },
+    {
+      "person_id": "nick-krall",
+      "name": "Nick Krall",
+      "teams": [
+        "CIN"
+      ],
+      "picks": 87,
+      "avg_vos_raw": -0.1584,
+      "avg_vos": -0.0737,
+      "vos_shrink": 0.4652,
+      "total_vos": -13.7844,
+      "avg_career_war": 0.2179,
+      "avg_expected_war": 0.3764,
+      "small_sample": false,
+      "rank": 55
+    },
+    {
+      "person_id": "brodie-van-wagenen",
+      "name": "Brodie Van Wagenen",
+      "teams": [
+        "NYM"
+      ],
+      "picks": 46,
+      "avg_vos_raw": -0.2577,
+      "avg_vos": -0.0812,
+      "vos_shrink": 0.3151,
+      "total_vos": -11.8549,
+      "avg_career_war": 0.0474,
+      "avg_expected_war": 0.3051,
+      "small_sample": true,
+      "rank": 56
+    },
+    {
+      "person_id": "pat-gillick",
+      "name": "Pat Gillick",
+      "teams": [
+        "PHI"
+      ],
+      "picks": 156,
+      "avg_vos_raw": -0.1524,
+      "avg_vos": -0.0929,
+      "vos_shrink": 0.6094,
+      "total_vos": -23.7784,
+      "avg_career_war": 0.032,
+      "avg_expected_war": 0.1844,
+      "small_sample": false,
+      "rank": 57
+    },
+    {
+      "person_id": "jon-daniels",
+      "name": "Jon Daniels",
+      "teams": [
+        "TEX"
+      ],
+      "picks": 638,
+      "avg_vos_raw": -0.1097,
+      "avg_vos": -0.0948,
+      "vos_shrink": 0.8645,
+      "total_vos": -69.97,
+      "avg_career_war": 0.1145,
+      "avg_expected_war": 0.2242,
+      "small_sample": false,
+      "rank": 58
+    },
+    {
+      "person_id": "jed-hoyer",
+      "name": "Jed Hoyer",
+      "teams": [
+        "SD"
+      ],
+      "picks": 103,
+      "avg_vos_raw": -0.1906,
+      "avg_vos": -0.0967,
+      "vos_shrink": 0.5074,
+      "total_vos": -19.6365,
+      "avg_career_war": 0.0713,
+      "avg_expected_war": 0.2619,
+      "small_sample": false,
+      "rank": 59
+    },
+    {
+      "person_id": "david-forst",
+      "name": "David Forst",
+      "teams": [
+        "OAK"
+      ],
+      "picks": 168,
+      "avg_vos_raw": -0.157,
+      "avg_vos": -0.0984,
+      "vos_shrink": 0.6269,
+      "total_vos": -26.3774,
+      "avg_career_war": 0.1415,
+      "avg_expected_war": 0.2985,
+      "small_sample": false,
+      "rank": 60
+    },
+    {
+      "person_id": "bill-bavasi",
+      "name": "Bill Bavasi",
+      "teams": [
+        "SEA"
+      ],
+      "picks": 151,
+      "avg_vos_raw": -0.1639,
+      "avg_vos": -0.0986,
+      "vos_shrink": 0.6016,
+      "total_vos": -24.7416,
+      "avg_career_war": 0.0339,
+      "avg_expected_war": 0.1978,
+      "small_sample": false,
+      "rank": 61
+    },
+    {
+      "person_id": "ben-cherington",
+      "name": "Ben Cherington",
+      "teams": [
+        "BOS",
+        "PIT"
+      ],
+      "picks": 168,
+      "avg_vos_raw": -0.1606,
+      "avg_vos": -0.1007,
+      "vos_shrink": 0.6269,
+      "total_vos": -26.9865,
+      "avg_career_war": 0.1365,
+      "avg_expected_war": 0.2971,
+      "small_sample": false,
+      "rank": 62
+    },
+    {
+      "person_id": "bobby-evans",
+      "name": "Bobby Evans",
+      "teams": [
+        "SF"
+      ],
+      "picks": 160,
+      "avg_vos_raw": -0.1648,
+      "avg_vos": -0.1014,
+      "vos_shrink": 0.6154,
+      "total_vos": -26.3734,
+      "avg_career_war": 0.0602,
+      "avg_expected_war": 0.225,
+      "small_sample": false,
+      "rank": 63
+    },
+    {
+      "person_id": "rick-hahn",
+      "name": "Rick Hahn",
+      "teams": [
+        "CWS"
+      ],
+      "picks": 284,
+      "avg_vos_raw": -0.1419,
+      "avg_vos": -0.1049,
+      "vos_shrink": 0.7396,
+      "total_vos": -40.2984,
+      "avg_career_war": 0.1591,
+      "avg_expected_war": 0.301,
+      "small_sample": false,
+      "rank": 64
+    },
+    {
+      "person_id": "neal-huntington",
+      "name": "Neal Huntington",
+      "teams": [
+        "PIT"
+      ],
+      "picks": 531,
+      "avg_vos_raw": -0.1336,
+      "avg_vos": -0.1124,
+      "vos_shrink": 0.8415,
+      "total_vos": -70.9273,
+      "avg_career_war": 0.1376,
+      "avg_expected_war": 0.2712,
+      "small_sample": false,
+      "rank": 65
+    },
+    {
+      "person_id": "billy-eppler",
+      "name": "Billy Eppler",
+      "teams": [
+        "LAA"
+      ],
+      "picks": 164,
+      "avg_vos_raw": -0.1858,
+      "avg_vos": -0.1154,
+      "vos_shrink": 0.6212,
+      "total_vos": -30.4689,
+      "avg_career_war": 0.073,
+      "avg_expected_war": 0.2588,
+      "small_sample": false,
+      "rank": 66
+    },
+    {
+      "person_id": "dave-stewart",
+      "name": "Dave Stewart",
+      "teams": [
+        "ARI"
+      ],
+      "picks": 80,
+      "avg_vos_raw": -0.264,
+      "avg_vos": -0.1173,
+      "vos_shrink": 0.4444,
+      "total_vos": -21.1213,
+      "avg_career_war": 0.034,
+      "avg_expected_war": 0.298,
+      "small_sample": false,
+      "rank": 67
+    },
+    {
+      "person_id": "matt-klentak",
+      "name": "Matt Klentak",
+      "teams": [
+        "PHI"
+      ],
+      "picks": 161,
+      "avg_vos_raw": -0.2074,
+      "avg_vos": -0.128,
+      "vos_shrink": 0.6169,
+      "total_vos": -33.3968,
+      "avg_career_war": 0.1082,
+      "avg_expected_war": 0.3156,
+      "small_sample": false,
+      "rank": 68
+    },
+    {
+      "person_id": "kevin-towers",
+      "name": "Kevin Towers",
+      "teams": [
+        "ARI",
+        "SD"
+      ],
+      "picks": 360,
+      "avg_vos_raw": -0.1846,
+      "avg_vos": -0.1445,
+      "vos_shrink": 0.7826,
+      "total_vos": -66.4627,
+      "avg_career_war": 0.0743,
+      "avg_expected_war": 0.2589,
+      "small_sample": false,
+      "rank": 69
+    },
+    {
+      "person_id": "michael-hill",
+      "name": "Michael Hill",
+      "teams": [
+        "MIA"
+      ],
+      "picks": 250,
+      "avg_vos_raw": -0.2231,
+      "avg_vos": -0.1594,
+      "vos_shrink": 0.7143,
+      "total_vos": -55.7803,
+      "avg_career_war": 0.0915,
+      "avg_expected_war": 0.3146,
+      "small_sample": false,
+      "rank": 70
+    },
+    {
+      "person_id": "jeff-bridich",
+      "name": "Jeff Bridich",
+      "teams": [
+        "COL"
+      ],
+      "picks": 211,
+      "avg_vos_raw": -0.2782,
+      "avg_vos": -0.1888,
+      "vos_shrink": 0.6785,
+      "total_vos": -58.7083,
+      "avg_career_war": 0.0391,
+      "avg_expected_war": 0.3174,
+      "small_sample": false,
+      "rank": 71
+    },
+    {
+      "person_id": "aj-preller",
+      "name": "A.J. Preller",
+      "teams": [
+        "SD"
+      ],
+      "picks": 211,
+      "avg_vos_raw": -0.3139,
+      "avg_vos": -0.213,
+      "vos_shrink": 0.6785,
+      "total_vos": -66.232,
+      "avg_career_war": 0.0266,
+      "avg_expected_war": 0.3405,
+      "small_sample": false,
       "rank": 72
     }
   ]

@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from scoring import (
     attach_rates,
     composite_scores,
+    efficiency_wins,
     rank_descending,
     tenure_shrink,
     wins_per_100m,
@@ -41,6 +42,18 @@ def test_zscore_identity() -> None:
 def test_wins_per_100m() -> None:
     check(abs(wins_per_100m(90, 180_000_000) - 50.0) < 1e-9, "90 wins / $180M = 50")
     check(wins_per_100m(90, None) == 0.0, "missing payroll → 0")
+
+
+def test_efficiency_wins_2020_proration() -> None:
+    # 40-20 in 60 games → 108 paced wins (40 * 162/60)
+    paced = efficiency_wins(2020, 40, 20)
+    check(abs(paced - 108.0) < 1e-9, f"2020 40-20 → 108 paced, got {paced}")
+    check(efficiency_wins(2019, 40, 20) == 40.0, "non-2020 wins unchanged")
+    check(efficiency_wins(2020, 0, 0) == 0.0, "zero games → 0")
+    # Relative efficiency preserved: better 2020 team still scores higher.
+    good = wins_per_100m(efficiency_wins(2020, 40, 20), 120_000_000)
+    bad = wins_per_100m(efficiency_wins(2020, 20, 40), 120_000_000)
+    check(good > bad, "proration keeps 2020 relative order")
 
 
 def test_rates_normalize_longevity() -> None:
@@ -107,6 +120,7 @@ def test_rank_ties() -> None:
 def main() -> int:
     test_zscore_identity()
     test_wins_per_100m()
+    test_efficiency_wins_2020_proration()
     test_rates_normalize_longevity()
     test_payroll_heavy_prefers_cheap_contention()
     test_tenure_shrink()
