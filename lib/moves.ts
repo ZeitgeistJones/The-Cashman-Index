@@ -13,6 +13,8 @@ export type Move = {
   players_sent_away: Player[];
   salary_paid: number | null;
   contract_years: number | null;
+  /** True while the deal is still being paid — the surplus is a midpoint, not a verdict. */
+  contract_active?: boolean | null;
   surplus_value: number | null;
   net_war_exchange: number | null;
   war_acquired?: number | null;

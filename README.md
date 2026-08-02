@@ -16,28 +16,42 @@ app/page.tsx             data/moves.json             ->  the table
 
 ## Quickstart
 
+### Refresh the data (no local setup needed)
+
+**Actions tab → "Refresh moves data" → Run workflow.**
+
+That runs the whole pipeline on GitHub's runners, which have unrestricted
+network access, and commits the new `data/moves.json` straight back to the
+branch. Vercel redeploys on the commit. It also runs itself every Monday.
+
+If the run goes red, the data may still be fine — open the run and download the
+`moves-data` artifact. The last step is a strict check that every salary
+override matched a real move, and it deliberately runs *after* the data is
+committed.
+
+### Or run it locally
+
 ```bash
-# 1. Web app
 npm install
 npm run dev            # http://localhost:3000
 
-# 2. Data (writes data/moves.json, then refresh the page)
 pip install -r scripts/requirements.txt
 python scripts/build_moves.py
 ```
 
 `data/moves.json` is checked in, so the app runs before you ever touch Python.
 
-> **The checked-in `data/moves.json` is placeholder data.** The transactions,
-> dates and player names in it are real, but every WAR, salary and score is a
-> made-up illustrative number, and `mlbam_id` is `0` throughout. The page shows
-> a yellow banner while that file has `"data_source": "sample"`. Running the
-> script overwrites it with real data and the banner disappears.
+> **The checked-in `data/moves.json` is placeholder data.** Transactions, dates,
+> player names, salaries and contract terms in it are real and sourced — but
+> **every WAR figure is a made-up illustrative number**, so both scores are
+> fiction, and `mlbam_id` is `0` throughout. The page shows a yellow banner
+> while that file has `"data_source": "sample"`. One pipeline run overwrites it
+> and the banner disappears.
 >
-> It ships that way because the sandbox this was built in blocks outbound
-> connections to `statsapi.mlb.com` and `baseball-reference.com`, so the
-> pipeline could not be run against live data here. The logic is covered by
-> offline tests (`python scripts/test_build_moves.py`, 30 checks).
+> It ships that way because the sandbox it was built in blocks outbound
+> connections to `statsapi.mlb.com` and `baseball-reference.com`. That is
+> exactly why the GitHub Action above exists. The logic itself is covered by
+> offline tests (`python scripts/test_build_moves.py`, 40 checks).
 
 ---
 
@@ -122,30 +136,55 @@ total guarantee.
 
 `contract_years` has no automated source and is `null` unless you supply it.
 
-For anything you want exact, use `data/salary_overrides.json`:
+For anything you want exact, use `data/salary_overrides.json`, which ships with
+researched terms for the fifteen biggest Yankees commitments of the last decade
+(Cole, Judge, Rodón, Fried, Stanton, both LeMahieu deals, both Bellinger deals,
+Chapman, Donaldson, Rizzo, Soto, Goldschmidt, Grisham):
 
 ```json
 [
   {
     "match": { "player": "Gerrit Cole", "date": "2019-12-18" },
     "salary_paid": 324000000,
-    "contract_years": 9
+    "contract_years": 9,
+    "contract_through": 2028
   }
 ]
 ```
 
 Entries match by `move_id` (copy it out of `data/moves.json`) or by
-`player` + `date`. Overrides beat scraped salaries and force `surplus_value` to
-be recomputed. Each move records where its salary came from in `salary_source`:
-`"override"`, `"bref"`, or `null`.
+`player` + `date`. Reported signing dates routinely differ from the league's
+filing date, so a player match **within 14 days** counts. Overrides beat scraped
+salaries and force `surplus_value` to be recomputed. Each move records where its
+salary came from in `salary_source`: `"override"`, `"bref"`, or `null`.
+
+Every entry carries `confidence`, `source` and `note` fields for auditing. The
+script ignores them; they exist so you can see which figures are solid and which
+are approximations. The ones flagged `medium` are Stanton (how the Marlins' $30M
+offset is dated), the Bellinger trade (he opted out early), Rizzo (two separate
+deals in 2022), Goldschmidt (exact date) and Grisham (qualifying-offer
+acceptances are recorded inconsistently upstream).
+
+**An override that matches nothing is never silently dropped.** The script lists
+unmatched entries at the end of every run, and `--strict-overrides` turns that
+into a non-zero exit so CI catches it.
+
+### Contracts still being paid
+
+`contract_through` marks the final season of a deal. Anything at or beyond the
+current season sets `contract_active`, and the table tags those rows **still
+paying**. It matters: a nine-year contract signed in 2022 has banked only part
+of the WAR it was bought for, so charging the full guarantee against it makes an
+unfinished deal look like a disaster. Those scores are midpoints, not verdicts.
 
 ---
 
 ## Known limitations of this pass
 
 - **Three-team trades** split into two Yankees-vs-counterparty moves.
-- **`salary_paid` is money spent to date**, not total guarantee, unless
-  overridden. Long active contracts therefore look worse than they will finish.
+- **Two salary semantics coexist.** Overridden moves use the total guarantee;
+  Baseball-Reference-sourced ones use money paid to date. The difference only
+  bites on long active deals, which is what `contract_active` flags.
 - **Prospects who never reach the majors** contribute `0.0` WAR, which is
   correct for realized value but reads harshly on trades that are still open.
 - **No chained asset trees.** If a traded prospect is later flipped for someone
@@ -169,6 +208,7 @@ Vercel rebuilds.
 ## Layout
 
 ```
+.github/workflows/           refresh-data (the pipeline) + ci (tests and build)
 app/page.tsx                 the page (server component, static)
 app/globals.css              styles, light + dark
 components/MovesTable.tsx    the sortable table (client component)

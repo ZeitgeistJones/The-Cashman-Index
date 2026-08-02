@@ -100,8 +100,14 @@ def fetch_transactions(start: dt.date, end: dt.date, pause: float = 0.5) -> list
 
 
 def _row_date(row: dict) -> str | None:
-    """Prefer the effective date; fall back to the announcement date."""
-    for key in ("effectiveDate", "date", "resolutionDate"):
+    """The date the move was made.
+
+    `date` (announcement) comes first rather than `effectiveDate`, for two
+    reasons: it is what "when did Cashman make this move" actually means, and
+    it is identical across every row of a trade. Effective dates can drift a
+    day between players in the same deal, which would split one trade into two.
+    """
+    for key in ("date", "effectiveDate", "resolutionDate"):
         value = row.get(key)
         if value:
             return str(value)[:10]
@@ -221,6 +227,8 @@ def group_into_moves(rows: list[dict], all_types: bool = False) -> list[dict]:
                 "salary_paid": None,
                 "salary_source": None,
                 "contract_years": None,
+                "contract_through": None,
+                "contract_active": None,
                 "surplus_value": None,
                 "net_war_exchange": None,
                 "war_acquired": None,
@@ -376,19 +384,36 @@ def enrich_moves(moves: list[dict], index: dict[int, list[dict]],
 # ---------------------------------------------------------------------------
 
 
-def apply_overrides(moves: list[dict], overrides_path: Path) -> int:
+def _days_apart(left: str, right: str) -> int:
+    try:
+        a = dt.date.fromisoformat(left)
+        b = dt.date.fromisoformat(right)
+    except ValueError:
+        return 10**6
+    return abs((a - b).days)
+
+
+def apply_overrides(moves: list[dict], overrides_path: Path,
+                    date_tolerance: int = 14) -> tuple[int, list[str]]:
     """Layer hand-entered contract terms on top of the scraped data.
 
     The MLB Stats API carries no contract information at all, and Baseball
     Reference salaries thin out for recent seasons, so `data/salary_overrides.json`
     is where real contract totals get recorded. Each entry matches either by
     `move_id` or by `{player, date}`.
+
+    Hand-entered dates come from news coverage, which routinely disagrees with
+    the league's filing date by a few days, so a player match within
+    `date_tolerance` days counts. Returns (applied, unmatched labels) — an
+    override that matches nothing is a silent wrong number on the site
+    otherwise, so callers are expected to surface the unmatched list.
     """
     if not overrides_path.exists():
-        return 0
+        return 0, []
 
     entries = json.loads(overrides_path.read_text())
     applied = 0
+    unmatched: list[str] = []
 
     for entry in entries:
         match = entry.get("match") or {}
@@ -396,30 +421,48 @@ def apply_overrides(moves: list[dict], overrides_path: Path) -> int:
         player = (match.get("player") or "").strip().lower()
         date = match.get("date")
 
+        if not target_id and not (player and date):
+            continue  # comment-only entry
+
+        # Prefer an exact date hit; fall back to the nearest within tolerance so
+        # one override can never land on two different moves.
+        candidates: list[tuple[int, dict]] = []
         for move in moves:
             if target_id:
-                if move["move_id"] != target_id:
-                    continue
-            elif player and date:
-                if move["move_date"] != date:
-                    continue
-                names = [
-                    p["name"].lower()
-                    for p in move["players_acquired"] + move["players_sent_away"]
-                ]
-                if player not in names:
-                    continue
-            else:
+                if move["move_id"] == target_id:
+                    candidates.append((0, move))
                 continue
+            names = [
+                p["name"].lower()
+                for p in move["players_acquired"] + move["players_sent_away"]
+            ]
+            if player not in names:
+                continue
+            distance = _days_apart(move["move_date"], date)
+            if distance <= date_tolerance:
+                candidates.append((distance, move))
 
-            if "salary_paid" in entry:
-                move["salary_paid"] = entry["salary_paid"]
-                move["salary_source"] = "override"
-            if "contract_years" in entry:
-                move["contract_years"] = entry["contract_years"]
-            applied += 1
+        if not candidates:
+            unmatched.append(target_id or f"{match.get('player')} @ {date}")
+            continue
 
-    return applied
+        candidates.sort(key=lambda pair: pair[0])
+        move = candidates[0][1]
+
+        if "salary_paid" in entry:
+            move["salary_paid"] = entry["salary_paid"]
+            move["salary_source"] = "override"
+        if "contract_years" in entry:
+            move["contract_years"] = entry["contract_years"]
+        if "contract_through" in entry:
+            # A deal still being paid has banked only part of the WAR it was
+            # bought for, so its surplus is a midpoint, not a verdict. Flag it
+            # so the site can say so instead of calling Judge a $200M mistake.
+            move["contract_through"] = entry["contract_through"]
+            move["contract_active"] = entry["contract_through"] >= dt.date.today().year
+        applied += 1
+
+    return applied, unmatched
 
 
 # ---------------------------------------------------------------------------
@@ -436,6 +479,7 @@ def public_fields(move: dict) -> dict:
         "players_sent_away": move["players_sent_away"],
         "salary_paid": move["salary_paid"],
         "contract_years": move["contract_years"],
+        "contract_active": move["contract_active"],
         "surplus_value": move["surplus_value"],
         "net_war_exchange": move["net_war_exchange"],
         "war_acquired": move["war_acquired"],
@@ -463,6 +507,8 @@ def main() -> int:
     parser.add_argument("--dollars-per-war", type=float, default=DEFAULT_DOLLARS_PER_WAR)
     parser.add_argument("--all-types", action="store_true",
                         help="keep every transaction type, including roster paperwork")
+    parser.add_argument("--strict-overrides", action="store_true",
+                        help="exit non-zero if any override matched no move (for CI)")
     args = parser.parse_args()
 
     today = dt.date.today()
@@ -484,7 +530,7 @@ def main() -> int:
     moves = group_into_moves(rows, all_types=args.all_types)
     print(f"Grouped into {len(moves)} moves", file=sys.stderr)
 
-    applied = apply_overrides(moves, args.overrides)
+    applied, unmatched = apply_overrides(moves, args.overrides)
     if applied:
         print(f"Applied {applied} manual contract override(s)", file=sys.stderr)
 
@@ -503,6 +549,16 @@ def main() -> int:
                         move["war_acquired"] * args.dollars_per_war - move["salary_paid"], 2
                     )
 
+    # An override that matched nothing means a contract you meant to record is
+    # missing from the site. Loud, and non-zero exit under --strict-overrides so
+    # CI can fail on it.
+    if unmatched:
+        print(f"\nWARNING: {len(unmatched)} override(s) matched no move:", file=sys.stderr)
+        for label in unmatched:
+            print(f"  - {label}", file=sys.stderr)
+        print("Check the player spelling and date against data/moves.json.\n",
+              file=sys.stderr)
+
     payload = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "data_source": "mlb-stats-api+bref",
@@ -514,7 +570,23 @@ def main() -> int:
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(payload, indent=2) + "\n")
-    print(f"Wrote {len(moves)} moves to {args.out}", file=sys.stderr)
+
+    scored = [m for m in moves if m["net_war_exchange"] is not None]
+    priced = [m for m in moves if m["surplus_value"] is not None]
+    print(f"\nWrote {len(moves)} moves to {args.out}", file=sys.stderr)
+    print(f"  {len(scored)} scored (net WAR exchange)", file=sys.stderr)
+    print(f"  {len(priced)} priced (surplus value; the rest have no salary on file)",
+          file=sys.stderr)
+    if priced:
+        best = max(priced, key=lambda m: m["surplus_value"])
+        worst = min(priced, key=lambda m: m["surplus_value"])
+        print(f"  best:  {best['move_date']} {best['summary'][:60]}"
+              f" ({best['surplus_value']:+,.0f})", file=sys.stderr)
+        print(f"  worst: {worst['move_date']} {worst['summary'][:60]}"
+              f" ({worst['surplus_value']:+,.0f})", file=sys.stderr)
+
+    if unmatched and args.strict_overrides:
+        return 1
     return 0
 
 

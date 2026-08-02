@@ -1,0 +1,69 @@
+name: Refresh moves data
+
+# Builds data/moves.json from the live MLB Stats API and Baseball Reference and
+# commits it back. GitHub's runners have unrestricted outbound network, so this
+# is the supported way to refresh the dataset — nobody needs a local Python
+# setup. Run it by hand from the Actions tab ("Run workflow"), or let the weekly
+# schedule handle it.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Mondays, 11:00 UTC. Scheduled runs only fire on the repository's default
+    # branch.
+    - cron: "0 11 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Verify pipeline logic
+        run: python scripts/test_build_moves.py
+
+      - name: Build moves.json
+        run: python scripts/build_moves.py
+
+      - name: Upload data as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: moves-data
+          path: |
+            data/moves.json
+            data/transactions.raw.json
+          if-no-files-found: warn
+
+      - name: Commit refreshed data
+        run: |
+          if git diff --quiet -- data/moves.json; then
+            echo "moves.json unchanged; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/moves.json
+          git commit -m "Refresh moves.json from MLB Stats API + Baseball Reference"
+          git push
+
+      # Last, deliberately: a mistyped override is a wrong number on the site,
+      # so the job should go red — but only after the good data has landed.
+      - name: Check every salary override matched a move
+        run: python scripts/build_moves.py --use-cache --strict-overrides --out /tmp/override-check.json

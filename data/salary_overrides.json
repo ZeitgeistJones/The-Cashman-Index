@@ -3,18 +3,154 @@
     "_comment": [
       "Hand-entered contract terms. The MLB Stats API carries no contract data at all,",
       "and Baseball Reference salaries thin out for the most recent seasons, so this file",
-      "is the source of truth for anything you enter here — it overrides scraped salaries",
+      "is the source of truth for anything entered here — it overrides scraped salaries",
       "and forces surplus_value to be recomputed.",
       "",
-      "Each entry matches either by \"move_id\" (copy it out of data/moves.json) or by",
-      "{\"match\": {\"player\": \"Full Name\", \"date\": \"YYYY-MM-DD\"}}.",
-      "salary_paid is the total guaranteed dollars, not the average annual value.",
-      "Entries without a move_id or a player+date match (like this one) are ignored."
+      "Fields per entry:",
+      "  match.player / match.date  the move to attach to. Reported dates routinely differ",
+      "                             from the league's filing date, so a player match within",
+      "                             14 days counts. Use \"move_id\" instead for an exact hit.",
+      "  salary_paid                total guaranteed dollars, NOT average annual value.",
+      "  contract_years             length in years.",
+      "  contract_through           final season of the deal. Anything at or beyond the",
+      "                             current season marks the move as still in progress, so",
+      "                             the site can flag that its score is not yet a verdict.",
+      "  confidence / source / note documentation only; the script ignores them.",
+      "",
+      "Entries without a move_id or a player+date match (like this one) are ignored.",
+      "Any override that matches no move is reported loudly at the end of a run, and",
+      "fails CI under --strict-overrides. It is never silently dropped."
     ]
+  },
+
+  {
+    "match": { "player": "Aroldis Chapman", "date": "2016-12-08" },
+    "salary_paid": 86000000,
+    "contract_years": 5,
+    "contract_through": 2021,
+    "confidence": "high",
+    "source": "ESPN / MLB.com, Dec 2016 — record reliever deal, opt-out after year 3",
+    "note": "Chapman opted out after 2019, so the Yankees did not pay the full $86M. Total guarantee used here."
+  },
+  {
+    "match": { "player": "Giancarlo Stanton", "date": "2017-12-11" },
+    "salary_paid": 265000000,
+    "contract_years": 10,
+    "contract_through": 2028,
+    "confidence": "medium",
+    "source": "ESPN / MLB.com, Dec 2017",
+    "note": "$295M remained on Stanton's 13yr/$325M deal at the trade; Miami sent $30M back, so the Yankees assumed ~$265M net. Widely reported figures vary slightly with how the $30M offset is dated."
+  },
+  {
+    "match": { "player": "DJ LeMahieu", "date": "2019-01-11" },
+    "salary_paid": 24000000,
+    "contract_years": 2,
+    "contract_through": 2020,
+    "confidence": "high",
+    "source": "SI / MLB.com, Jan 2019"
   },
   {
     "match": { "player": "Gerrit Cole", "date": "2019-12-18" },
     "salary_paid": 324000000,
-    "contract_years": 9
+    "contract_years": 9,
+    "contract_through": 2028,
+    "confidence": "high",
+    "source": "ESPN / Forbes, Dec 2019 — agreed Dec 11, finalized Dec 18"
+  },
+  {
+    "match": { "player": "DJ LeMahieu", "date": "2021-01-20" },
+    "salary_paid": 90000000,
+    "contract_years": 6,
+    "contract_through": 2026,
+    "confidence": "high",
+    "source": "ESPN / MLB.com, Jan 2021",
+    "note": "Reported mid-January, finalized late January; the date-tolerance window covers both."
+  },
+  {
+    "match": { "player": "Josh Donaldson", "date": "2022-03-13" },
+    "salary_paid": 50000000,
+    "contract_years": 2,
+    "contract_through": 2023,
+    "confidence": "high",
+    "source": "MLB Trade Rumors, Mar 2022 — Yankees assumed Donaldson's remaining $50M"
+  },
+  {
+    "match": { "player": "Anthony Rizzo", "date": "2022-11-15" },
+    "salary_paid": 40000000,
+    "contract_years": 2,
+    "contract_through": 2024,
+    "confidence": "medium",
+    "source": "Spotrac / CBS Sports, Nov 2022",
+    "note": "Rizzo signed 2yr/$32M in Mar 2022, opted out, then re-signed 2yr/$40M in Nov 2022. This entry is the second deal; the March 2022 one is not separately recorded."
+  },
+  {
+    "match": { "player": "Aaron Judge", "date": "2022-12-07" },
+    "salary_paid": 360000000,
+    "contract_years": 9,
+    "contract_through": 2031,
+    "confidence": "high",
+    "source": "ESPN / NBC Sports, Dec 2022"
+  },
+  {
+    "match": { "player": "Carlos Rodon", "date": "2022-12-18" },
+    "salary_paid": 162000000,
+    "contract_years": 6,
+    "contract_through": 2028,
+    "confidence": "high",
+    "source": "MLB.com / CBS Sports — reported Dec 15, announced Dec 21, 2022",
+    "note": "Name may appear as \"Carlos Rodón\" in the MLB API. If this override reports as unmatched, copy the accented spelling from data/moves.json."
+  },
+  {
+    "match": { "player": "Juan Soto", "date": "2023-12-07" },
+    "salary_paid": 31000000,
+    "contract_years": 1,
+    "contract_through": 2024,
+    "confidence": "high",
+    "source": "NBC News / SI, Jan 2024 — record $31M arbitration settlement",
+    "note": "Soto arrived with one year of control left. The $31M is his 2024 salary, agreed in Jan 2024 and charged here against the trade that acquired him."
+  },
+  {
+    "match": { "player": "Max Fried", "date": "2024-12-13" },
+    "salary_paid": 218000000,
+    "contract_years": 8,
+    "contract_through": 2032,
+    "confidence": "high",
+    "source": "ESPN / NBC Sports, Dec 2024 — largest deal ever for a left-handed pitcher"
+  },
+  {
+    "match": { "player": "Cody Bellinger", "date": "2024-12-17" },
+    "salary_paid": 25000000,
+    "contract_years": 1,
+    "contract_through": 2025,
+    "confidence": "medium",
+    "source": "MLB Trade Rumors, Dec 2024 — Cubs covered $2.5M of the salary",
+    "note": "Bellinger had ~$27.5M left (2025 salary plus a 2026 player option buyout); Chicago paid $2.5M. He opted out after 2025, so the Yankees' actual outlay on this trade is approximate."
+  },
+  {
+    "match": { "player": "Paul Goldschmidt", "date": "2024-12-20" },
+    "salary_paid": 12500000,
+    "contract_years": 1,
+    "contract_through": 2025,
+    "confidence": "medium",
+    "source": "Yahoo Sports, Dec 2024",
+    "note": "Dollar figure is well sourced; the exact signing date is less certain, hence the tolerance window."
+  },
+  {
+    "match": { "player": "Trent Grisham", "date": "2025-11-18" },
+    "salary_paid": 22000000,
+    "contract_years": 1,
+    "contract_through": 2026,
+    "confidence": "medium",
+    "source": "MLB Trade Rumors / Pinstripe Alley, Nov 2025 — accepted the qualifying offer",
+    "note": "Qualifying-offer acceptances are recorded inconsistently in the transactions feed; this one is the likeliest to come back unmatched."
+  },
+  {
+    "match": { "player": "Cody Bellinger", "date": "2026-01-26" },
+    "salary_paid": 162500000,
+    "contract_years": 5,
+    "contract_through": 2030,
+    "confidence": "high",
+    "source": "ESPN / MLB.com / CBS Sports, Jan 2026",
+    "note": "$20M signing bonus, $32.5M in 2026-27, $25.8M in 2028-29, $25.9M in 2030; opt-outs after 2027 and 2028."
   }
 ]

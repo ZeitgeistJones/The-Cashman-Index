@@ -105,6 +105,11 @@ export default function MovesTable({ moves }: { moves: Move[] }) {
               </td>
               <td className={scoreClass(move.surplus_value)}>
                 {formatMoney(move.surplus_value)}
+                {move.contract_active && move.surplus_value !== null && (
+                  <span className="pending" title="This contract is still being paid, so the score counts the full guarantee against only the WAR banked so far.">
+                    still paying
+                  </span>
+                )}
               </td>
               <td className={scoreClass(move.net_war_exchange)}>
                 {formatWar(move.net_war_exchange)}

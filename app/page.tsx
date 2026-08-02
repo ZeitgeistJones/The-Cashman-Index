@@ -22,9 +22,10 @@ export default function Home() {
 
       {isSampleData(data) && (
         <div className="banner">
-          <strong>Sample data — not real results.</strong>
-          These rows are placeholders so the page renders end to end. Run{" "}
-          <code>python scripts/build_moves.py</code> to replace{" "}
+          <strong>Sample data — the WAR numbers here are made up.</strong>
+          Transactions, dates and contract terms are real and sourced, but every
+          WAR figure is a placeholder, so both scores are illustrative only. Run
+          the <em>Refresh moves data</em> GitHub Action to replace{" "}
           <code>data/moves.json</code> with live MLB Stats API transactions and
           real Baseball Reference WAR.
         </div>
@@ -54,6 +55,12 @@ export default function Home() {
           per win, minus the salary actually paid. Positive means the Yankees got
           more on the field than they paid for. Blank means no reliable salary
           figure is on file for that move.
+        </p>
+        <p>
+          Moves marked <em>still paying</em> are on contracts that have not
+          finished. Their score charges the full guarantee against only the wins
+          banked so far, so it reads harsher than the deal will finish — treat it
+          as a midpoint, not a verdict.
         </p>
         <p>
           <strong>Net WAR exchange</strong> — WAR the acquired players produced

@@ -7,6 +7,7 @@ Reference WAR rows, so it runs with no network access.
     python scripts/test_build_moves.py
 """
 
+import datetime as dt
 import json
 import sys
 import tempfile
@@ -172,14 +173,98 @@ with tempfile.TemporaryDirectory() as tmp:
         {"_comment": ["ignored — no move_id and no match"]},
         {"match": {"player": "Gerrit Cole", "date": "2019-12-18"},
          "salary_paid": 324000000, "contract_years": 9},
+        # Reported dates drift from league filing dates; 4 days off must still land.
+        {"match": {"player": "Juan Soto", "date": "2023-12-02"},
+         "salary_paid": 31000000, "contract_years": 1},
+        # Right player, date far outside tolerance -> must be reported, not applied.
+        {"match": {"player": "Trent Grisham", "date": "2020-01-01"},
+         "salary_paid": 999},
+        # Player who appears in no move at all.
+        {"match": {"player": "Nobody At All", "date": "2023-12-06"},
+         "salary_paid": 123},
     ]))
-    applied = apply_overrides(moves, path)
+    applied, unmatched = apply_overrides(moves, path)
 
-check("override applied once", applied, 1)
+check("overrides applied", applied, 2)
 check("override sets salary", signing["salary_paid"], 324000000)
 check("override sets contract years", signing["contract_years"], 9)
 check("override source recorded", signing["salary_source"], "override")
-check("comment-only entry ignored", padres["salary_source"], "bref")
+check("near-miss date still matches", padres["salary_paid"], 31000000)
+check("comment-only entry ignored silently", len(unmatched), 2)
+check("out-of-tolerance date reported",
+      any("Trent Grisham" in u for u in unmatched), True)
+check("unknown player reported",
+      any("Nobody At All" in u for u in unmatched), True)
+
+with tempfile.TemporaryDirectory() as tmp:
+    path = Path(tmp) / "ambiguous.json"
+    # Grisham appears in exactly one move here; an override must never fan out
+    # across several moves even when the date is loose.
+    path.write_text(json.dumps([
+        {"match": {"player": "Trent Grisham", "date": "2023-12-08"},
+         "salary_paid": 5500000},
+    ]))
+    applied2, unmatched2 = apply_overrides(moves, path)
+check("override lands on exactly one move", (applied2, len(unmatched2)), (1, 0))
+
+with tempfile.TemporaryDirectory() as tmp:
+    path = Path(tmp) / "active.json"
+    this_year = dt.date.today().year
+    path.write_text(json.dumps([
+        {"match": {"player": "Juan Soto", "date": "2023-12-06"},
+         "salary_paid": 31000000, "contract_through": 2024},
+        {"match": {"player": "Gerrit Cole", "date": "2019-12-18"},
+         "salary_paid": 324000000, "contract_through": this_year + 2},
+    ]))
+    apply_overrides(moves, path)
+check("finished contract not marked active", padres["contract_active"], False)
+check("running contract marked active", signing["contract_active"], True)
+
+print("\nreal overrides file")
+REAL_OVERRIDES = Path(__file__).resolve().parent.parent / "data" / "salary_overrides.json"
+real = json.loads(REAL_OVERRIDES.read_text())
+real_entries = [e for e in real if e.get("move_id") or e.get("match")]
+check("file parses and has entries", len(real_entries) > 0, True)
+
+problems: list[str] = []
+seen: set[tuple[str, str]] = set()
+for entry in real_entries:
+    match = entry.get("match") or {}
+    label = f"{match.get('player')} @ {match.get('date')}"
+    if not entry.get("move_id"):
+        if not match.get("player") or not match.get("date"):
+            problems.append(f"{label}: needs both player and date")
+            continue
+        try:
+            dt.date.fromisoformat(match["date"])
+        except ValueError:
+            problems.append(f"{label}: date is not YYYY-MM-DD")
+        key = (match["player"].lower(), match["date"])
+        if key in seen:
+            problems.append(f"{label}: duplicate entry")
+        seen.add(key)
+    salary = entry.get("salary_paid")
+    if not isinstance(salary, (int, float)) or salary <= 0:
+        problems.append(f"{label}: salary_paid must be a positive number")
+    # Guards against an AAV being pasted in where a total belongs.
+    elif salary < 1_000_000:
+        problems.append(f"{label}: salary_paid looks too small to be a total guarantee")
+    years = entry.get("contract_years")
+    if years is not None and not (isinstance(years, int) and 1 <= years <= 15):
+        problems.append(f"{label}: contract_years out of range")
+    through = entry.get("contract_through")
+    if through is not None and not (isinstance(through, int) and 2015 <= through <= 2045):
+        problems.append(f"{label}: contract_through out of range")
+    if through is not None and years is not None and match.get("date"):
+        # A 9-year deal signed in 2022 should end around 2031, not 2025.
+        expected = int(match["date"][:4]) + years
+        if abs(through - expected) > 2:
+            problems.append(
+                f"{label}: contract_through {through} disagrees with "
+                f"{years} years from {match['date'][:4]}"
+            )
+
+check("every entry is well formed", problems, [])
 
 print()
 if failures:
