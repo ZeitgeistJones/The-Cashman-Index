@@ -65,5 +65,10 @@ jobs:
 
       # Last, deliberately: a mistyped override is a wrong number on the site,
       # so the job should go red — but only after the good data has landed.
+      # --no-war keeps this to seconds: override matching happens before WAR
+      # enrichment, so there is no need to re-download Baseball Reference.
       - name: Check every salary override matched a move
-        run: python scripts/build_moves.py --use-cache --strict-overrides --out /tmp/override-check.json
+        run: |
+          python scripts/build_moves.py \
+            --use-cache --no-war --strict-overrides \
+            --out /tmp/override-check.json

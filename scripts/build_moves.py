@@ -29,18 +29,22 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import math
 import sys
 import time
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
 
-import requests
-
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 YANKEES_MLBAM_ID = 147
-YANKEES_BREF_CODE = "NYA"
+# Baseball Reference's war_daily files have used both the Lahman-style "NYA" and
+# the familiar "NYY" for the Yankees. Accept either: picking the wrong one makes
+# every Yankees stint invisible, which silently zeroes every score rather than
+# failing. load_bref_war() hard-errors if neither shows up.
+YANKEES_BREF_CODES = frozenset({"NYA", "NYY"})
 
 STATS_API = "https://statsapi.mlb.com/api/v1/transactions"
 
@@ -76,6 +80,10 @@ DEPARTURE_TYPE_CODES = {"FA", "REL", "OUT"}
 
 def fetch_transactions(start: dt.date, end: dt.date, pause: float = 0.5) -> list[dict]:
     """Fetch Yankees transactions, one calendar year per request."""
+    # Imported here, not at module scope, so the grouping and scoring logic can
+    # be imported and tested with no third-party packages installed at all.
+    import requests
+
     rows: list[dict] = []
     session = requests.Session()
     session.headers["User-Agent"] = "the-cashman-index/0.1 (personal project)"
@@ -294,12 +302,21 @@ def load_bref_war() -> dict[int, list[dict]]:
             except (TypeError, ValueError):
                 continue  # unmatched or non-numeric rows
 
+            # pandas fills blanks with NaN, and float(nan) succeeds. Left alone,
+            # a single NaN poisons every sum it touches and json.dump writes the
+            # literal `NaN`, which is not valid JSON and breaks the web build.
+            if math.isnan(war):
+                continue
+
             salary = None
             if has_salary:
                 try:
                     salary = float(record["salary"])
                 except (TypeError, ValueError, KeyError):
                     salary = None
+                else:
+                    if math.isnan(salary):
+                        salary = None
 
             index[mlbam].append(
                 {
@@ -310,7 +327,24 @@ def load_bref_war() -> dict[int, list[dict]]:
                 }
             )
 
-    print(f"  indexed {len(index)} players", file=sys.stderr)
+    # A team-code mismatch would zero out every acquired-player score while
+    # still producing a plausible-looking file, so fail loudly instead.
+    yankees_rows = sum(
+        1
+        for seasons in index.values()
+        for season in seasons
+        if season["team"] in YANKEES_BREF_CODES
+    )
+    if not yankees_rows:
+        observed = sorted({s["team"] for seasons in index.values() for s in seasons})
+        raise SystemExit(
+            "No Baseball Reference rows matched the Yankees team codes "
+            f"{sorted(YANKEES_BREF_CODES)}. Add the right code to "
+            f"YANKEES_BREF_CODES. Codes present in the data: {observed}"
+        )
+
+    print(f"  indexed {len(index)} players, {yankees_rows} Yankees player-seasons",
+          file=sys.stderr)
     return index
 
 
@@ -328,12 +362,17 @@ def _sum_seasons(index: dict[int, list[dict]], mlbam_id: int, from_season: int,
     for season in index.get(mlbam_id, []):
         if season["year"] < from_season:
             continue
-        is_yankees = season["team"] == YANKEES_BREF_CODE
+        is_yankees = season["team"] in YANKEES_BREF_CODES
         if is_yankees != yankees:
             continue
-        war_total += season["war"]
-        if season["salary"] is not None:
-            salary_total += season["salary"]
+        # Belt and braces against NaN: one bad value would otherwise turn the
+        # whole sum into NaN, which is not representable in JSON.
+        war = season["war"]
+        if war is not None and not math.isnan(war):
+            war_total += war
+        salary = season["salary"]
+        if salary is not None and not math.isnan(salary):
+            salary_total += salary
             saw_salary = True
     return round(war_total, 2), (round(salary_total, 2) if saw_salary else None)
 
@@ -384,6 +423,17 @@ def enrich_moves(moves: list[dict], index: dict[int, list[dict]],
 # ---------------------------------------------------------------------------
 
 
+def _fold_name(name: str) -> str:
+    """Lowercase and strip accents, so "Carlos Rodon" matches "Carlos Rodón".
+
+    Overrides are typed by hand from news coverage, which is inconsistent about
+    accents; the MLB API is not. Folding both sides avoids a whole class of
+    override that silently fails to match.
+    """
+    decomposed = unicodedata.normalize("NFKD", name)
+    return "".join(c for c in decomposed if not unicodedata.combining(c)).strip().lower()
+
+
 def _days_apart(left: str, right: str) -> int:
     try:
         a = dt.date.fromisoformat(left)
@@ -418,7 +468,7 @@ def apply_overrides(moves: list[dict], overrides_path: Path,
     for entry in entries:
         match = entry.get("match") or {}
         target_id = entry.get("move_id")
-        player = (match.get("player") or "").strip().lower()
+        player = _fold_name(match.get("player") or "")
         date = match.get("date")
 
         if not target_id and not (player and date):
@@ -433,7 +483,7 @@ def apply_overrides(moves: list[dict], overrides_path: Path,
                     candidates.append((0, move))
                 continue
             names = [
-                p["name"].lower()
+                _fold_name(p["name"])
                 for p in move["players_acquired"] + move["players_sent_away"]
             ]
             if player not in names:
@@ -569,7 +619,7 @@ def main() -> int:
     }
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(payload, indent=2) + "\n")
+    args.out.write_text(json.dumps(payload, indent=2, allow_nan=False) + "\n")
 
     scored = [m for m in moves if m["net_war_exchange"] is not None]
     priced = [m for m in moves if m["surplus_value"] is not None]

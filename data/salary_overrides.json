@@ -98,7 +98,7 @@
     "contract_through": 2028,
     "confidence": "high",
     "source": "MLB.com / CBS Sports — reported Dec 15, announced Dec 21, 2022",
-    "note": "Name may appear as \"Carlos Rodón\" in the MLB API. If this override reports as unmatched, copy the accented spelling from data/moves.json."
+    "note": "The API spells him \"Carlos Rodón\". Name matching folds accents, so either spelling works here."
   },
   {
     "match": { "player": "Juan Soto", "date": "2023-12-07" },

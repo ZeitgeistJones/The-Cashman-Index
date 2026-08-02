@@ -220,6 +220,64 @@ with tempfile.TemporaryDirectory() as tmp:
 check("finished contract not marked active", padres["contract_active"], False)
 check("running contract marked active", signing["contract_active"], True)
 
+print("\nbaseball reference team codes")
+# The first live run scored every move 0.0 because Baseball Reference labels
+# Yankees stints "NYY", not the Lahman-style "NYA" this originally assumed.
+# Wrong code => no Yankees stint ever matches => silent zeroes, not an error.
+for code in ("NYA", "NYY"):
+    coded_moves = group_into_moves(TRANSACTION_ROWS)
+    coded_index = {
+        665742: [{"year": 2024, "team": code, "war": 7.9, "salary": 31000000.0}],
+        663757: [{"year": 2024, "team": code, "war": 0.4, "salary": 5500000.0}],
+    }
+    enrich_moves(coded_moves, coded_index, dollars_per_war=8_000_000)
+    sd = next(m for m in coded_moves if m["counterparty"] == "San Diego Padres")
+    check(f"{code} counts as a Yankees stint", sd["war_acquired"], 8.3)
+
+other = group_into_moves(TRANSACTION_ROWS)
+enrich_moves(other, {665742: [{"year": 2024, "team": "SDN", "war": 7.9, "salary": 1.0}]},
+             dollars_per_war=8_000_000)
+sd_other = next(m for m in other if m["counterparty"] == "San Diego Padres")
+check("a non-Yankees stint is not credited as acquired", sd_other["war_acquired"], 0.0)
+
+print("\nNaN handling")
+# pandas fills blanks with NaN and float(nan) succeeds, so a single NaN used to
+# poison every sum and land the literal `NaN` in moves.json — invalid JSON that
+# broke the web build.
+nan_moves = group_into_moves(TRANSACTION_ROWS)
+enrich_moves(nan_moves, {
+    665742: [{"year": 2024, "team": "NYY", "war": float("nan"), "salary": float("nan")},
+             {"year": 2025, "team": "NYY", "war": 3.0, "salary": 20000000.0}],
+    650633: [{"year": 2024, "team": "SDN", "war": float("nan"), "salary": None}],
+}, dollars_per_war=8_000_000)
+nan_sd = next(m for m in nan_moves if m["counterparty"] == "San Diego Padres")
+check("NaN WAR does not poison the acquired sum", nan_sd["war_acquired"], 3.0)
+check("NaN WAR does not poison the departing sum", nan_sd["war_sent_away"], 0.0)
+check("NaN salary is dropped, not summed", nan_sd["salary_paid"], 20000000.0)
+try:
+    json.dumps({"moves": nan_moves}, allow_nan=False)
+    serialisable = True
+except ValueError:
+    serialisable = False
+check("output is valid JSON", serialisable, True)
+
+print("\naccented names")
+accented = group_into_moves([
+    {"id": 99, "date": "2022-12-21", "typeCode": "SFA",
+     "typeDesc": "Signed as Free Agent",
+     "person": {"id": 607074, "fullName": "Carlos Rodón"},
+     "team": YANKEES, "description": "New York Yankees signed free agent LHP Carlos Rodón."},
+])
+with tempfile.TemporaryDirectory() as tmp:
+    path = Path(tmp) / "accent.json"
+    path.write_text(json.dumps([
+        {"match": {"player": "Carlos Rodon", "date": "2022-12-18"},
+         "salary_paid": 162000000, "contract_years": 6},
+    ]))
+    applied3, unmatched3 = apply_overrides(accented, path)
+check("unaccented override matches accented name", (applied3, unmatched3), (1, []))
+check("accented override sets salary", accented[0]["salary_paid"], 162000000)
+
 print("\nreal overrides file")
 REAL_OVERRIDES = Path(__file__).resolve().parent.parent / "data" / "salary_overrides.json"
 real = json.loads(REAL_OVERRIDES.read_text())
