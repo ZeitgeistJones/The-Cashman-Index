@@ -85,7 +85,7 @@ export default function MovesTable({ moves }: { moves: Move[] }) {
           ))}
         </select>
       </label>
-      <div className="table-scroll">
+      <div className="table-wrap">
         <table>
           <thead>
             <tr>

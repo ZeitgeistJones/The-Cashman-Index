@@ -72,7 +72,7 @@ export default function FranchiseTable({
   }
 
   return (
-    <div className="table-wrap">
+    <div className="table-wrap sticky-2">
       <table>
         <thead>
           <tr>

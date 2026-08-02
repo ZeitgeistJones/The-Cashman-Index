@@ -77,10 +77,12 @@ export default function GmTable({ gms }: { gms: GmRow[] }) {
           checked={hideSmall}
           onChange={(e) => setHideSmall(e.target.checked)}
         />
-        Hide small samples (&lt; 3 seasons) — short tenures stay in by default,
-        with index shrunk toward average
+        <span>
+          Hide small samples (&lt; 3 seasons). Short tenures stay in by default,
+          index shrunk toward average.
+        </span>
       </label>
-      <div className="table-wrap">
+      <div className="table-wrap sticky-2">
         <table>
           <thead>
             <tr>

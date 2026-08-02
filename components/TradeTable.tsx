@@ -44,6 +44,7 @@ export default function TradeTable({ data }: { data: TradeFile }) {
   return (
     <>
       <p className="section-note">{data.framing}</p>
+      <p className="scroll-hint">Swipe tables sideways for more columns.</p>
       <div className="tabs" role="tablist" aria-label="Trade view">
         <button
           type="button"
@@ -62,7 +63,7 @@ export default function TradeTable({ data }: { data: TradeFile }) {
       </div>
 
       {view === "franchises" ? (
-        <div className="table-wrap">
+        <div className="table-wrap sticky-2">
           <table>
             <thead>
               <tr>
@@ -90,7 +91,7 @@ export default function TradeTable({ data }: { data: TradeFile }) {
           </table>
         </div>
       ) : (
-        <div className="table-wrap">
+        <div className="table-wrap sticky-2">
           <table>
             <thead>
               <tr>

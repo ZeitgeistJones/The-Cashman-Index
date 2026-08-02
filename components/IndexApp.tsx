@@ -28,15 +28,15 @@ type Tab =
   | "exits"
   | "moves";
 
-const TABS: { id: Tab; label: string }[] = [
-  { id: "franchises", label: "Franchises" },
-  { id: "gms", label: "GMs" },
-  { id: "yearly", label: "Yearly / exits" },
-  { id: "draft", label: "Draft" },
-  { id: "trades", label: "Trades" },
-  { id: "acquisition", label: "Acquisition channels" },
-  { id: "exits", label: "GM exits" },
-  { id: "moves", label: "Trade ledger" },
+const TABS: { id: Tab; label: string; short: string }[] = [
+  { id: "franchises", label: "Franchises", short: "Clubs" },
+  { id: "gms", label: "GMs", short: "GMs" },
+  { id: "yearly", label: "Yearly / exits", short: "Yearly" },
+  { id: "draft", label: "Draft", short: "Draft" },
+  { id: "trades", label: "Trades", short: "Trades" },
+  { id: "acquisition", label: "Acquisition channels", short: "Channels" },
+  { id: "exits", label: "GM exits", short: "Exits" },
+  { id: "moves", label: "Trade ledger", short: "Ledger" },
 ];
 
 export default function IndexApp({
@@ -118,7 +118,8 @@ export default function IndexApp({
             className={tab === item.id ? "tab active" : "tab"}
             onClick={() => setTab(item.id)}
           >
-            {item.label}
+            <span className="tab-label-full">{item.label}</span>
+            <span className="tab-label-short">{item.short}</span>
           </button>
         ))}
       </div>
@@ -131,6 +132,7 @@ export default function IndexApp({
             expensive title runs. Playoff depth scores how far you went (wild
             card exit ≠ World Series appearance).
           </p>
+          <p className="scroll-hint">Swipe tables sideways for more columns.</p>
           <FranchiseTable franchises={franchises.franchises} />
         </section>
       )}
@@ -143,6 +145,7 @@ export default function IndexApp({
             tenure-shrunk so a one-year spike does not beat a long career
             without context.
           </p>
+          <p className="scroll-hint">Swipe tables sideways for more columns.</p>
           <GmTable gms={gms.gms} />
         </section>
       )}
@@ -177,6 +180,7 @@ export default function IndexApp({
             Every GM exit in the window with their rate-based resume that day.
             Filter to firings for job-security context.
           </p>
+          <p className="scroll-hint">Swipe tables sideways for more columns.</p>
           <ExitLedger data={exits} />
         </section>
       )}
@@ -188,6 +192,7 @@ export default function IndexApp({
             produced elsewhere. Season coverage: {moves.season_range[0]}–
             {moves.season_range[1]}. Dollar surplus when salary is on file.
           </p>
+          <p className="scroll-hint">Swipe the ledger sideways for surplus &amp; net WAR.</p>
           <ul className="stats compact">
             <li>
               Trades<span>{moves.moves.length}</span>

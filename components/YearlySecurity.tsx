@@ -28,6 +28,7 @@ export default function YearlySecurity({ data }: { data: YearlyFile }) {
         Active GM leaderboard by season (rate index to that date), plus who left
         in the following offseason.
       </p>
+      <p className="scroll-hint">Swipe tables sideways for more columns.</p>
 
       <label className="filter-row">
         Season
@@ -59,7 +60,7 @@ export default function YearlySecurity({ data }: { data: YearlyFile }) {
           <p className="section-note">
             Active GM leaderboard for {current.season} (rate index to date).
           </p>
-          <div className="table-wrap">
+          <div className="table-wrap sticky-2">
             <table>
               <thead>
                 <tr>

@@ -56,6 +56,7 @@ export default function DraftTable({ data }: { data: DraftFile }) {
         MLB WAR). Slot #1 historically ~{data.slot_curve["1"]} WAR; late rounds
         near zero. Same curve for every club.
       </p>
+      <p className="scroll-hint">Swipe tables sideways for more columns.</p>
       <ul className="stats compact">
         <li>
           Franchises graded
@@ -66,7 +67,7 @@ export default function DraftTable({ data }: { data: DraftFile }) {
           <span>{data.mature_through}</span>
         </li>
       </ul>
-      <div className="table-wrap">
+      <div className="table-wrap sticky-2">
         <table>
           <thead>
             <tr>

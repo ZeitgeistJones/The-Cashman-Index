@@ -65,6 +65,7 @@ export default function AcquisitionPanel({ data }: { data: AcquisitionFile }) {
   return (
     <>
       <p className="section-note">{data.framing}</p>
+      <p className="scroll-hint">Swipe tables sideways for more columns.</p>
 
       <label className="filter-row">
         Club
