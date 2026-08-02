@@ -1,0 +1,20 @@
+[
+  {
+    "_comment": [
+      "Hand-entered contract terms. The MLB Stats API carries no contract data at all,",
+      "and Baseball Reference salaries thin out for the most recent seasons, so this file",
+      "is the source of truth for anything you enter here — it overrides scraped salaries",
+      "and forces surplus_value to be recomputed.",
+      "",
+      "Each entry matches either by \"move_id\" (copy it out of data/moves.json) or by",
+      "{\"match\": {\"player\": \"Full Name\", \"date\": \"YYYY-MM-DD\"}}.",
+      "salary_paid is the total guaranteed dollars, not the average annual value.",
+      "Entries without a move_id or a player+date match (like this one) are ignored."
+    ]
+  },
+  {
+    "match": { "player": "Gerrit Cole", "date": "2019-12-18" },
+    "salary_paid": 324000000,
+    "contract_years": 9
+  }
+]

@@ -1,0 +1,21 @@
+node_modules/
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+.env
+.env.local
+.env*.local
+.vercel
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# pybaseball's on-disk HTTP cache
+.pybaseball_cache/
+
+.DS_Store

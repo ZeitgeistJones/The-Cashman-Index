@@ -1,0 +1,234 @@
+:root {
+  --bg: #ffffff;
+  --panel: #f7f8fa;
+  --text: #12161c;
+  --muted: #667085;
+  --border: #e3e6ea;
+  --positive: #1a7f4b;
+  --negative: #b3261e;
+  --accent: #0c2340; /* Yankees navy */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1116;
+    --panel: #161b22;
+    --text: #e6e9ee;
+    --muted: #97a0ae;
+    --border: #262d38;
+    --positive: #4ade80;
+    --negative: #f87171;
+    --accent: #dfe6f0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+header p.tagline {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.banner {
+  margin: 1.75rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e0b44a;
+  background: rgba(224, 180, 74, 0.12);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.banner strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.stats span {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.table-scroll {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+thead th.num {
+  text-align: right;
+}
+
+thead th button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  text-align: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+thead th.num button {
+  justify-content: flex-end;
+}
+
+thead th button:hover {
+  color: var(--text);
+}
+
+thead th button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.arrow {
+  opacity: 0.55;
+  font-size: 0.7em;
+}
+
+tbody td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover td {
+  background: var(--panel);
+}
+
+td.date {
+  white-space: nowrap;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.summary {
+  display: block;
+}
+
+.meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+td.num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.positive {
+  color: var(--positive);
+}
+
+.negative {
+  color: var(--negative);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+td.empty {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875em;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+footer p {
+  margin: 0.4rem 0;
+  max-width: 80ch;
+}
