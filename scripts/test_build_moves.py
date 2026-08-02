@@ -80,7 +80,9 @@ TRANSACTION_ROWS = [
 
 # (mlb_id, year, team, WAR, salary)
 WAR_ROWS = [
-    # Soto: one Yankees season, then leaves.
+    # Soto: prior elsewhere, one Yankees season, then leaves.
+    (665742, 2022, "SDN", 5.8, 17000000.0),
+    (665742, 2023, "SDN", 6.2, 23000000.0),
     (665742, 2024, "NYA", 7.9, 31000000.0),
     (665742, 2025, "NYN", 5.0, 51000000.0),
     # Grisham: two Yankees seasons.
@@ -152,6 +154,9 @@ enrich_moves(moves, WAR_INDEX, dollars_per_war=8_000_000)
 check("acquired WAR counts Yankees stints only", padres["war_acquired"], 10.4)
 check("departing WAR excludes pre-trade Yankees stint", padres["war_sent_away"], 5.8)
 check("net WAR exchange", padres["net_war_exchange"], 4.6)
+check("prior WAR on acquired side (buy-high/low context)", padres["war_prior_acquired"], 12.0)
+check("prior Yankees WAR on sent side", padres["war_prior_sent"], 1.9)
+check("after-exit WAR for acquired who left", padres["war_after_exit_acquired"], 5.0)
 check("salary summed from Yankees stints", padres["salary_paid"], 41500000.0)
 check("salary source recorded", padres["salary_source"], "bref")
 check("surplus value", padres["surplus_value"], 10.4 * 8_000_000 - 41500000.0)

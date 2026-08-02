@@ -2,10 +2,16 @@ export type Player = {
   mlbam_id: number;
   name: string;
   war_after_move?: number | null;
+  war_prior?: number | null;
+  war_during?: number | null;
+  war_after_exit?: number | null;
 };
 
 export type Move = {
   move_id: string;
+  team_id?: number | null;
+  team_abbr?: string | null;
+  team_name?: string | null;
   move_date: string;
   move_type: string;
   summary: string;
@@ -19,8 +25,22 @@ export type Move = {
   net_war_exchange: number | null;
   war_acquired?: number | null;
   war_sent_away?: number | null;
+  war_prior_acquired?: number | null;
+  war_prior_sent?: number | null;
+  war_after_exit_acquired?: number | null;
   salary_source?: string | null;
   counterparty?: string | null;
+  acquisition_channel?: string | null;
+  deal_archetype?: string | null;
+  talent_grade?: number | null;
+  talent_per_control_year?: number | null;
+  ledger_grade?: number | null;
+  control_years_remaining?: number | null;
+  control_bucket?: string | null;
+  control_source?: string | null;
+  salary_per_control_year?: number | null;
+  win_now_window?: boolean | null;
+  mentions_cash?: boolean | null;
 };
 
 export type MovesFile = {

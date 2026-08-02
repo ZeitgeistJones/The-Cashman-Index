@@ -13,17 +13,14 @@ const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
   { key: "net_war_exchange", label: "Net WAR Exchange", numeric: true },
 ];
 
-/** Nulls always sort to the bottom, whichever direction is active. */
 function compare(a: Move, b: Move, key: SortKey, direction: Direction): number {
   const left = a[key];
   const right = b[key];
-
   const leftMissing = left === null || left === undefined;
   const rightMissing = right === null || right === undefined;
   if (leftMissing && rightMissing) return 0;
   if (leftMissing) return 1;
   if (rightMissing) return -1;
-
   const sign = direction === "asc" ? 1 : -1;
   if (typeof left === "number" && typeof right === "number") {
     return (left - right) * sign;
@@ -41,10 +38,25 @@ function scoreClass(value: number | null | undefined): string {
 export default function MovesTable({ moves }: { moves: Move[] }) {
   const [sortKey, setSortKey] = useState<SortKey>("move_date");
   const [direction, setDirection] = useState<Direction>("desc");
+  const [club, setClub] = useState<string>("all");
+
+  const clubs = useMemo(() => {
+    const set = new Set<string>();
+    for (const m of moves) {
+      if (m.team_abbr) set.add(m.team_abbr);
+    }
+    return [...set].sort();
+  }, [moves]);
+
+  const filtered = useMemo(
+    () =>
+      club === "all" ? moves : moves.filter((m) => m.team_abbr === club),
+    [moves, club],
+  );
 
   const sorted = useMemo(
-    () => [...moves].sort((a, b) => compare(a, b, sortKey, direction)),
-    [moves, sortKey, direction],
+    () => [...filtered].sort((a, b) => compare(a, b, sortKey, direction)),
+    [filtered, sortKey, direction],
   );
 
   function toggleSort(key: SortKey) {
@@ -52,80 +64,103 @@ export default function MovesTable({ moves }: { moves: Move[] }) {
       setDirection((current) => (current === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(key);
-      // Numbers and dates are most useful biggest-first; text reads best A-Z.
       setDirection(key === "summary" ? "asc" : "desc");
     }
   }
 
   return (
-    <div className="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            {COLUMNS.map((column) => {
-              const active = column.key === sortKey;
-              return (
-                <th
-                  key={column.key}
-                  className={column.numeric ? "num" : undefined}
-                  aria-sort={
-                    active
-                      ? direction === "asc"
-                        ? "ascending"
-                        : "descending"
-                      : "none"
-                  }
-                >
-                  <button type="button" onClick={() => toggleSort(column.key)}>
-                    {column.label}
-                    <span className="arrow" aria-hidden="true">
-                      {active ? (direction === "asc" ? "▲" : "▼") : "↕"}
-                    </span>
-                  </button>
-                </th>
-              );
-            })}
-          </tr>
-        </thead>
-        <tbody>
-          {sorted.map((move) => (
-            <tr key={move.move_id}>
-              <td className="date">{formatDate(move.move_date)}</td>
-              <td>
-                <span className="summary">{move.summary}</span>
-                <span className="meta">
-                  {move.move_type}
-                  {move.war_acquired !== null && move.war_acquired !== undefined
-                    ? ` · in ${formatWar(move.war_acquired)} WAR / out ${formatWar(move.war_sent_away)} WAR`
-                    : ""}
-                  {move.salary_paid !== null
-                    ? ` · ${formatMoney(move.salary_paid)} paid`
-                    : ""}
-                </span>
-              </td>
-              <td className={scoreClass(move.surplus_value)}>
-                {formatMoney(move.surplus_value)}
-                {move.contract_active && move.surplus_value !== null && (
-                  <span className="pending" title="This contract is still being paid, so the score counts the full guarantee against only the WAR banked so far.">
-                    still paying
-                  </span>
-                )}
-              </td>
-              <td className={scoreClass(move.net_war_exchange)}>
-                {formatWar(move.net_war_exchange)}
-              </td>
-            </tr>
+    <>
+      <label className="filter-row">
+        Club
+        <select
+          value={club}
+          onChange={(e) => setClub(e.target.value)}
+          aria-label="Filter by club"
+        >
+          <option value="all">All clubs</option>
+          {clubs.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
           ))}
-          {sorted.length === 0 && (
+        </select>
+      </label>
+      <div className="table-scroll">
+        <table>
+          <thead>
             <tr>
-              <td colSpan={COLUMNS.length} className="empty">
-                No moves in <code>data/moves.json</code>. Run{" "}
-                <code>python scripts/build_moves.py</code> to populate it.
-              </td>
+              {COLUMNS.map((column) => {
+                const active = column.key === sortKey;
+                return (
+                  <th
+                    key={column.key}
+                    className={column.numeric ? "num" : undefined}
+                    aria-sort={
+                      active
+                        ? direction === "asc"
+                          ? "ascending"
+                          : "descending"
+                        : "none"
+                    }
+                  >
+                    <button type="button" onClick={() => toggleSort(column.key)}>
+                      {column.label}
+                      <span className="arrow" aria-hidden="true">
+                        {active ? (direction === "asc" ? "▲" : "▼") : "↕"}
+                      </span>
+                    </button>
+                  </th>
+                );
+              })}
             </tr>
-          )}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {sorted.map((move) => (
+              <tr key={move.move_id}>
+                <td className="date">{formatDate(move.move_date)}</td>
+                <td>
+                  <span className="summary">{move.summary}</span>
+                  <span className="meta">
+                    {move.team_abbr ? `${move.team_abbr} · ` : ""}
+                    {move.move_type}
+                    {move.deal_archetype
+                      ? ` · ${move.deal_archetype.replaceAll("_", " ")}`
+                      : ""}
+                    {move.win_now_window ? " · win-now window" : ""}
+                    {move.war_acquired !== null && move.war_acquired !== undefined
+                      ? ` · during ${formatWar(move.war_acquired)} / sent→ ${formatWar(move.war_sent_away)}`
+                      : ""}
+                    {move.salary_paid !== null
+                      ? ` · ${formatMoney(move.salary_paid)} paid`
+                      : ""}
+                  </span>
+                </td>
+                <td className={scoreClass(move.surplus_value)}>
+                  {formatMoney(move.surplus_value)}
+                  {move.contract_active && move.surplus_value !== null && (
+                    <span
+                      className="pending"
+                      title="Contract still being paid — surplus is a midpoint."
+                    >
+                      still paying
+                    </span>
+                  )}
+                </td>
+                <td className={scoreClass(move.net_war_exchange)}>
+                  {formatWar(move.net_war_exchange)}
+                </td>
+              </tr>
+            ))}
+            {sorted.length === 0 && (
+              <tr>
+                <td colSpan={COLUMNS.length} className="empty">
+                  No trades for this filter.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }

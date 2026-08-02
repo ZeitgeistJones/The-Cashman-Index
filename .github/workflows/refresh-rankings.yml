@@ -1,0 +1,80 @@
+name: Refresh ranking data
+
+# Rebuilds franchise / GM / exit datasets from MLB Stats API + Baseball Cube
+# payrolls, using the checked-in GM tenure file. Commits JSON back to the branch.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 11 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-rankings
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Verify scoring logic
+        run: python scripts/test_scoring.py
+
+      - name: Build ranking datasets
+        run: |
+          python scripts/build_draft_index.py --use-cache || python scripts/build_draft_index.py
+          python scripts/build_rankings.py
+
+      - name: Upload data as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ranking-data
+          path: |
+            data/team_seasons.json
+            data/franchise_index.json
+            data/gm_index.json
+            data/exit_resumes.json
+            data/yearly_index.json
+            data/draft_index.json
+            data/draft_picks.json
+          if-no-files-found: warn
+
+      - name: Commit refreshed rankings
+        run: |
+          if git diff --quiet -- \
+            data/team_seasons.json \
+            data/franchise_index.json \
+            data/gm_index.json \
+            data/exit_resumes.json \
+            data/yearly_index.json \
+            data/draft_index.json \
+            data/draft_picks.json; then
+            echo "ranking data unchanged; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/team_seasons.json \
+            data/franchise_index.json \
+            data/gm_index.json \
+            data/exit_resumes.json \
+            data/yearly_index.json \
+            data/draft_index.json \
+            data/draft_picks.json
+          git commit -m "Refresh franchise, GM, and draft ranking datasets"
+          git push

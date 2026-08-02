@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The Cashman Index",
+  title: "Front Office Index",
   description:
-    "Brian Cashman's Yankees front-office moves, scored with objective baseball math.",
+    "MLB franchises and GMs ranked on payroll efficiency, draft value, peer trades, and results — same weights for every club, 2006–present.",
 };
 
 export default function RootLayout({

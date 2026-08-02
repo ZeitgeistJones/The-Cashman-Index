@@ -32,3 +32,4 @@ jobs:
       # No pybaseball here on purpose: the tests use offline fixtures, so this
       # job stays fast and never depends on Baseball Reference being reachable.
       - run: python scripts/test_build_moves.py
+      - run: python scripts/test_scoring.py

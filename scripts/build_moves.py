@@ -1,26 +1,7 @@
 #!/usr/bin/env python3
-"""Build data/moves.json for The Cashman Index.
+"""Build data/moves.json for the Front Office Index (single-club convenience).
 
-Two stages, both in this one script:
-
-  1. Pull New York Yankees transactions from the MLB Stats API for the last N
-     years and fold the per-player rows into one record per front-office move.
-  2. Attach two calculated fields per move using Baseball Reference WAR
-     (downloaded via pybaseball):
-
-       surplus_value    = (WAR the acquired players produced for the Yankees
-                          after the move) x $/WAR benchmark - salary paid
-       net_war_exchange = that same acquired WAR
-                          - WAR the departing players produced elsewhere
-                            after the move
-
-Usage:
-    python scripts/build_moves.py                  # fetch + enrich, write data/moves.json
-    python scripts/build_moves.py --no-war         # transactions only, scores left null
-    python scripts/build_moves.py --use-cache      # re-run enrichment on cached transactions
-    python scripts/build_moves.py --years 5 --dollars-per-war 9000000
-
-Requires: pip install -r scripts/requirements.txt
+Prefer scripts/build_league_moves.py for all 30 clubs.
 """
 
 from __future__ import annotations
@@ -31,6 +12,7 @@ import hashlib
 import json
 import math
 import sys
+import sys
 import time
 import unicodedata
 from collections import defaultdict
@@ -38,13 +20,18 @@ from pathlib import Path
 from typing import Any, Iterable
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from classify_moves import classify_move
+from team_codes import (
+    TEAM_BREF_CODES,
+    YANKEES_MLBAM_ID,
+    bref_codes,
+    team_abbr,
+    team_name,
+)
 
-YANKEES_MLBAM_ID = 147
-# Baseball Reference's war_daily files have used both the Lahman-style "NYA" and
-# the familiar "NYY" for the Yankees. Accept either: picking the wrong one makes
-# every Yankees stint invisible, which silently zeroes every score rather than
-# failing. load_bref_war() hard-errors if neither shows up.
-YANKEES_BREF_CODES = frozenset({"NYA", "NYY"})
+# Back-compat alias for tests / older imports.
+YANKEES_BREF_CODES = TEAM_BREF_CODES[YANKEES_MLBAM_ID]
 
 STATS_API = "https://statsapi.mlb.com/api/v1/transactions"
 
@@ -78,29 +65,35 @@ DEPARTURE_TYPE_CODES = {"FA", "REL", "OUT"}
 # ---------------------------------------------------------------------------
 
 
-def fetch_transactions(start: dt.date, end: dt.date, pause: float = 0.5) -> list[dict]:
-    """Fetch Yankees transactions, one calendar year per request."""
+def fetch_transactions(
+    start: dt.date,
+    end: dt.date,
+    team_id: int = YANKEES_MLBAM_ID,
+    pause: float = 0.35,
+) -> list[dict]:
+    """Fetch one club's transactions, one calendar year per request."""
     # Imported here, not at module scope, so the grouping and scoring logic can
     # be imported and tested with no third-party packages installed at all.
     import requests
 
     rows: list[dict] = []
     session = requests.Session()
-    session.headers["User-Agent"] = "the-cashman-index/0.1 (personal project)"
+    session.headers["User-Agent"] = "front-office-index/0.1 (personal project)"
+    label = team_abbr(team_id)
 
     for year in range(start.year, end.year + 1):
         window_start = max(start, dt.date(year, 1, 1))
         window_end = min(end, dt.date(year, 12, 31))
         params = {
-            "teamId": YANKEES_MLBAM_ID,
+            "teamId": team_id,
             "startDate": window_start.strftime("%m/%d/%Y"),
             "endDate": window_end.strftime("%m/%d/%Y"),
         }
-        print(f"  fetching {window_start} .. {window_end}", file=sys.stderr)
+        print(f"  {label} {window_start} .. {window_end}", file=sys.stderr)
         response = session.get(STATS_API, params=params, timeout=60)
         response.raise_for_status()
         year_rows = response.json().get("transactions", []) or []
-        print(f"    {len(year_rows)} transaction rows", file=sys.stderr)
+        print(f"    {len(year_rows)} rows", file=sys.stderr)
         rows.extend(year_rows)
         time.sleep(pause)
 
@@ -111,7 +104,6 @@ def _row_date(row: dict) -> str | None:
     """The date the move was made.
 
     `date` (announcement) comes first rather than `effectiveDate`, for two
-    reasons: it is what "when did Cashman make this move" actually means, and
     it is identical across every row of a trade. Effective dates can drift a
     day between players in the same deal, which would split one trade into two.
     """
@@ -122,57 +114,60 @@ def _row_date(row: dict) -> str | None:
     return None
 
 
-def _direction(row: dict) -> str:
-    """'acquired' if the player is joining the Yankees, else 'sent_away'."""
+def _direction(row: dict, team_id: int = YANKEES_MLBAM_ID) -> str:
+    """'acquired' if the player is joining the focal club, else 'sent_away'."""
     if row.get("typeCode") in DEPARTURE_TYPE_CODES:
         return "sent_away"
     to_team = (row.get("team") or {}).get("id")
-    if to_team == YANKEES_MLBAM_ID:
+    if to_team == team_id:
         return "acquired"
     from_team = (row.get("fromTeam") or {}).get("id")
-    if from_team == YANKEES_MLBAM_ID:
+    if from_team == team_id:
         return "sent_away"
-    # Neither side is the Yankees (minor-league affiliate rows can look like
-    # this). Treat as an acquisition so the row is at least visible.
     return "acquired"
 
 
-def _group_key(row: dict) -> tuple:
-    """Rows that belong to the same real-world move share a key.
-
-    A trade shows up as one API row per player, so trades are grouped by
-    (date, the other club). Everything else stands on its own.
-    """
+def _group_key(row: dict, team_id: int = YANKEES_MLBAM_ID) -> tuple:
+    """Rows that belong to the same real-world move share a key."""
     date = _row_date(row)
     type_code = row.get("typeCode")
     if type_code == "TR":
         to_team = (row.get("team") or {}).get("id")
         from_team = (row.get("fromTeam") or {}).get("id")
-        counterparty = from_team if to_team == YANKEES_MLBAM_ID else to_team
+        counterparty = from_team if to_team == team_id else to_team
         return (date, "TR", counterparty)
     return (date, type_code, row.get("id"))
 
 
-def _make_move_id(date: str, type_code: str, player_ids: Iterable[int], extra: Any) -> str:
+def _make_move_id(
+    date: str, type_code: str, player_ids: Iterable[int], extra: Any,
+    team_id: int = YANKEES_MLBAM_ID,
+) -> str:
     digest = hashlib.sha1(
-        f"{date}|{type_code}|{sorted(player_ids)}|{extra}".encode()
+        f"{team_id}|{date}|{type_code}|{sorted(player_ids)}|{extra}".encode()
     ).hexdigest()[:6]
-    return f"{date}-{type_code}-{digest}"
+    return f"{team_id}-{date}-{type_code}-{digest}"
 
 
-def _counterparty_name(rows: list[dict]) -> str | None:
+def _counterparty_name(rows: list[dict], team_id: int = YANKEES_MLBAM_ID) -> str | None:
     for row in rows:
         for side in ("team", "fromTeam"):
             club = row.get(side) or {}
-            if club.get("id") and club.get("id") != YANKEES_MLBAM_ID:
+            if club.get("id") and club.get("id") != team_id:
                 return club.get("name")
     return None
 
 
-def _summarize(type_code: str, type_desc: str, rows: list[dict],
-               acquired: list[dict], sent_away: list[dict]) -> str:
+def _summarize(
+    type_code: str,
+    type_desc: str,
+    rows: list[dict],
+    acquired: list[dict],
+    sent_away: list[dict],
+    team_id: int = YANKEES_MLBAM_ID,
+) -> str:
     if type_code == "TR":
-        other = _counterparty_name(rows) or "another club"
+        other = _counterparty_name(rows, team_id) or "another club"
         parts = []
         if acquired:
             parts.append("acquired " + ", ".join(p["name"] for p in acquired))
@@ -181,7 +176,6 @@ def _summarize(type_code: str, type_desc: str, rows: list[dict],
         if parts:
             return f"Trade with {other}: " + "; ".join(parts)
 
-    # For non-trades the API's own sentence is already the cleanest summary.
     descriptions = [
         str(row.get("description")).strip().rstrip(".")
         for row in rows
@@ -194,15 +188,19 @@ def _summarize(type_code: str, type_desc: str, rows: list[dict],
     return f"{type_desc}: {names}"
 
 
-def group_into_moves(rows: list[dict], all_types: bool = False) -> list[dict]:
-    """Fold per-player transaction rows into one record per move."""
+def group_into_moves(
+    rows: list[dict],
+    all_types: bool = False,
+    team_id: int = YANKEES_MLBAM_ID,
+) -> list[dict]:
+    """Fold per-player transaction rows into one record per move for team_id."""
     buckets: dict[tuple, list[dict]] = defaultdict(list)
     for row in rows:
         if not _row_date(row):
             continue
         if not all_types and row.get("typeCode") not in FRONT_OFFICE_TYPE_CODES:
             continue
-        buckets[_group_key(row)].append(row)
+        buckets[_group_key(row, team_id)].append(row)
 
     moves: list[dict] = []
     for key, group in buckets.items():
@@ -217,19 +215,24 @@ def group_into_moves(rows: list[dict], all_types: bool = False) -> list[dict]:
             if not person.get("id"):
                 continue
             entry = {"mlbam_id": person["id"], "name": person.get("fullName") or "Unknown"}
-            bucket = acquired if _direction(row) == "acquired" else sent_away
+            bucket = acquired if _direction(row, team_id) == "acquired" else sent_away
             if not any(p["mlbam_id"] == entry["mlbam_id"] for p in bucket):
                 bucket.append(entry)
 
         player_ids = [p["mlbam_id"] for p in acquired + sent_away]
         moves.append(
             {
-                "move_id": _make_move_id(date, type_code, player_ids, key[2]),
+                "move_id": _make_move_id(date, type_code, player_ids, key[2], team_id),
+                "team_id": team_id,
+                "team_abbr": team_abbr(team_id),
+                "team_name": team_name(team_id),
                 "move_date": date,
                 "move_type": type_desc,
                 "move_type_code": type_code,
-                "counterparty": _counterparty_name(group),
-                "summary": _summarize(type_code, type_desc, group, acquired, sent_away),
+                "counterparty": _counterparty_name(group, team_id),
+                "summary": _summarize(
+                    type_code, type_desc, group, acquired, sent_away, team_id
+                ),
                 "players_acquired": acquired,
                 "players_sent_away": sent_away,
                 "salary_paid": None,
@@ -348,25 +351,39 @@ def load_bref_war() -> dict[int, list[dict]]:
     return index
 
 
-def _sum_seasons(index: dict[int, list[dict]], mlbam_id: int, from_season: int,
-                 yankees: bool) -> tuple[float, float | None]:
-    """Sum (WAR, salary) over seasons at/after `from_season`.
+def _sum_seasons(
+    index: dict[int, list[dict]],
+    mlbam_id: int,
+    *,
+    club_codes: frozenset[str] | None = None,
+    for_club: bool | None = None,
+    yankees: bool | None = None,
+    from_season: int | None = None,
+    before_season: int | None = None,
+    through_season: int | None = None,
+) -> tuple[float, float | None]:
+    """Sum (WAR, salary) with optional season / club filters.
 
-    `yankees=True` counts only Yankees stints — what an acquired player produced
-    for the club. `yankees=False` counts only non-Yankees stints — what a
-    departing player produced once he was gone.
+    `for_club=True` → focal-club stints only; `False` → elsewhere; `None` → any.
+    `yankees=` is a back-compat alias for `for_club=` (Yankees codes).
     """
+    codes = club_codes or YANKEES_BREF_CODES
+    if for_club is None and yankees is not None:
+        for_club = yankees
     war_total = 0.0
     salary_total = 0.0
     saw_salary = False
     for season in index.get(mlbam_id, []):
-        if season["year"] < from_season:
+        year = season["year"]
+        if from_season is not None and year < from_season:
             continue
-        is_yankees = season["team"] in YANKEES_BREF_CODES
-        if is_yankees != yankees:
+        if before_season is not None and year >= before_season:
             continue
-        # Belt and braces against NaN: one bad value would otherwise turn the
-        # whole sum into NaN, which is not representable in JSON.
+        if through_season is not None and year > through_season:
+            continue
+        is_club = season["team"] in codes
+        if for_club is not None and is_club != for_club:
+            continue
         war = season["war"]
         if war is not None and not math.isnan(war):
             war_total += war
@@ -377,32 +394,109 @@ def _sum_seasons(index: dict[int, list[dict]], mlbam_id: int, from_season: int,
     return round(war_total, 2), (round(salary_total, 2) if saw_salary else None)
 
 
-def enrich_moves(moves: list[dict], index: dict[int, list[dict]],
-                 dollars_per_war: float) -> None:
-    """Fill in WAR, salary and both scores. Mutates `moves` in place."""
+def _last_club_season_from(
+    index: dict[int, list[dict]],
+    mlbam_id: int,
+    from_season: int,
+    club_codes: frozenset[str],
+) -> int | None:
+    """Last focal-club season at/after from_season."""
+    years = [
+        s["year"]
+        for s in index.get(mlbam_id, [])
+        if s["year"] >= from_season and s["team"] in club_codes
+    ]
+    return max(years) if years else None
+
+
+def _last_yankees_season_from(
+    index: dict[int, list[dict]], mlbam_id: int, from_season: int
+) -> int | None:
+    return _last_club_season_from(index, mlbam_id, from_season, YANKEES_BREF_CODES)
+
+
+def enrich_moves(
+    moves: list[dict],
+    index: dict[int, list[dict]],
+    dollars_per_war: float,
+    team_id: int | None = None,
+) -> None:
+    """Fill in WAR splits, salary and both scores. Mutates `moves` in place.
+
+    Spine: war_acquired (during for focal club) − war_sent_away (elsewhere after leave).
+    """
     for move in moves:
+        tid = team_id if team_id is not None else move.get("team_id", YANKEES_MLBAM_ID)
+        codes = bref_codes(tid)
         first_season = _effective_season(move["move_date"])
 
         war_acquired = 0.0
+        war_prior_in = 0.0
+        war_after_exit = 0.0
         salary_acquired = 0.0
         saw_salary = False
         for player in move["players_acquired"]:
-            war, salary = _sum_seasons(index, player["mlbam_id"], first_season, yankees=True)
-            player["war_after_move"] = war
-            war_acquired += war
+            mid = player["mlbam_id"]
+            prior, _ = _sum_seasons(index, mid, before_season=first_season)
+            during, salary = _sum_seasons(
+                index, mid, from_season=first_season, club_codes=codes, for_club=True
+            )
+            last_club = _last_club_season_from(index, mid, first_season, codes)
+            if last_club is not None:
+                after, _ = _sum_seasons(
+                    index,
+                    mid,
+                    from_season=last_club + 1,
+                    club_codes=codes,
+                    for_club=False,
+                )
+            else:
+                after = 0.0
+            player["war_prior"] = prior
+            player["war_after_move"] = during
+            player["war_during"] = during
+            player["war_after_exit"] = after
+            war_prior_in += prior
+            war_acquired += during
+            war_after_exit += after
             if salary is not None:
                 salary_acquired += salary
                 saw_salary = True
 
         war_sent_away = 0.0
+        war_prior_out = 0.0
         for player in move["players_sent_away"]:
-            war, _ = _sum_seasons(index, player["mlbam_id"], first_season, yankees=False)
-            player["war_after_move"] = war
-            war_sent_away += war
+            mid = player["mlbam_id"]
+            prior, _ = _sum_seasons(
+                index,
+                mid,
+                before_season=first_season,
+                club_codes=codes,
+                for_club=True,
+            )
+            after, _ = _sum_seasons(
+                index,
+                mid,
+                from_season=first_season,
+                club_codes=codes,
+                for_club=False,
+            )
+            player["war_prior"] = prior
+            player["war_after_move"] = after
+            player["war_during"] = prior
+            player["war_after_exit"] = after
+            war_prior_out += prior
+            war_sent_away += after
 
+        move["team_id"] = tid
+        move["team_abbr"] = team_abbr(tid)
+        move["team_name"] = team_name(tid)
         move["war_acquired"] = round(war_acquired, 2)
         move["war_sent_away"] = round(war_sent_away, 2)
         move["net_war_exchange"] = round(war_acquired - war_sent_away, 2)
+        move["war_prior_acquired"] = round(war_prior_in, 2)
+        move["war_prior_sent"] = round(war_prior_out, 2)
+        move["war_after_exit_acquired"] = round(war_after_exit, 2)
 
         if move["salary_paid"] is None and saw_salary:
             move["salary_paid"] = round(salary_acquired, 2)
@@ -413,9 +507,9 @@ def enrich_moves(moves: list[dict], index: dict[int, list[dict]],
                 war_acquired * dollars_per_war - move["salary_paid"], 2
             )
         else:
-            # No salary figure means no honest surplus number. Leave it null
-            # rather than pretending the move was free.
             move["surplus_value"] = None
+
+        classify_move(move, dollars_per_war)
 
 
 # ---------------------------------------------------------------------------
@@ -482,6 +576,9 @@ def apply_overrides(moves: list[dict], overrides_path: Path,
                 if move["move_id"] == target_id:
                     candidates.append((0, move))
                 continue
+            # Hand overrides are Yankees-first; skip other clubs unless move_id set.
+            if move.get("team_id") not in (None, YANKEES_MLBAM_ID):
+                continue
             names = [
                 _fold_name(p["name"])
                 for p in move["players_acquired"] + move["players_sent_away"]
@@ -522,6 +619,9 @@ def public_fields(move: dict) -> dict:
     """The shape the web app consumes."""
     return {
         "move_id": move["move_id"],
+        "team_id": move.get("team_id"),
+        "team_abbr": move.get("team_abbr"),
+        "team_name": move.get("team_name"),
         "move_date": move["move_date"],
         "move_type": move["move_type"],
         "summary": move["summary"],
@@ -534,16 +634,32 @@ def public_fields(move: dict) -> dict:
         "net_war_exchange": move["net_war_exchange"],
         "war_acquired": move["war_acquired"],
         "war_sent_away": move["war_sent_away"],
+        "war_prior_acquired": move.get("war_prior_acquired"),
+        "war_prior_sent": move.get("war_prior_sent"),
+        "war_after_exit_acquired": move.get("war_after_exit_acquired"),
         "salary_source": move["salary_source"],
         "counterparty": move["counterparty"],
+        "acquisition_channel": move.get("acquisition_channel"),
+        "deal_archetype": move.get("deal_archetype"),
+        "talent_grade": move.get("talent_grade"),
+        "talent_per_control_year": move.get("talent_per_control_year"),
+        "ledger_grade": move.get("ledger_grade"),
+        "control_years_remaining": move.get("control_years_remaining"),
+        "control_bucket": move.get("control_bucket"),
+        "control_source": move.get("control_source"),
+        "salary_per_control_year": move.get("salary_per_control_year"),
+        "win_now_window": move.get("win_now_window"),
+        "mentions_cash": move.get("mentions_cash"),
     }
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--years", type=int, default=10,
-                        help="how many years back to pull (default: 10)")
+    parser.add_argument("--years", type=int, default=None,
+                        help="how many years back to pull (default: since --start-year)")
+    parser.add_argument("--start-year", type=int, default=2006,
+                        help="first calendar year to include (default: 2006)")
     parser.add_argument("--out", type=Path, default=REPO_ROOT / "data" / "moves.json")
     parser.add_argument("--cache", type=Path,
                         default=REPO_ROOT / "data" / "transactions.raw.json",
@@ -562,7 +678,10 @@ def main() -> int:
     args = parser.parse_args()
 
     today = dt.date.today()
-    start = today.replace(year=today.year - args.years)
+    if args.years is not None:
+        start = today.replace(year=today.year - args.years)
+    else:
+        start = dt.date(args.start_year, 1, 1)
 
     if args.use_cache:
         if not args.cache.exists():
@@ -598,6 +717,10 @@ def main() -> int:
                     move["surplus_value"] = round(
                         move["war_acquired"] * args.dollars_per_war - move["salary_paid"], 2
                     )
+
+    # Always classify channels / archetypes / talent vs ledger grades.
+    for move in moves:
+        classify_move(move, args.dollars_per_war)
 
     # An override that matched nothing means a contract you meant to record is
     # missing from the site. Loud, and non-zero exit under --strict-overrides so

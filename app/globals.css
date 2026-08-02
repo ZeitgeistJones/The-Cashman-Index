@@ -42,7 +42,7 @@ body {
 }
 
 main {
-  max-width: 1080px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 3rem 1.25rem 5rem;
 }
@@ -242,4 +242,111 @@ footer {
 footer p {
   margin: 0.4rem 0;
   max-width: 80ch;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 1.75rem 0 0.5rem;
+  padding: 0.25rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.tab {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab.active {
+  background: var(--bg);
+  color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+.section-note {
+  margin: 1rem 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 70ch;
+}
+
+.table-wrap {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.highlight-row td {
+  background: rgba(12, 35, 64, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  .highlight-row td {
+    background: rgba(223, 230, 240, 0.06);
+  }
+}
+
+.muted-inline {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.filter-row select {
+  margin-left: 0.35rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.25rem 0.45rem;
+}
+
+.stats.compact {
+  margin-top: 0.75rem;
+}
+
+.resume-cell {
+  font-size: 0.82rem;
+  color: var(--muted);
+  max-width: 18rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.badge.stronger {
+  color: var(--positive);
+  border-color: color-mix(in srgb, var(--positive) 40%, var(--border));
+}
+
+.badge.weaker {
+  color: var(--negative);
+  border-color: color-mix(in srgb, var(--negative) 40%, var(--border));
+}
+
+.badge.similar {
+  color: var(--muted);
 }

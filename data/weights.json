@@ -1,0 +1,26 @@
+{
+  "window_start": 2006,
+  "window_end": 2026,
+  "as_of": "2026-08-02",
+  "min_seasons_for_full_rank": 3,
+  "tenure_prior_seasons": 4,
+  "components": {
+    "world_series_rate": 0.12,
+    "pennants_rate": 0.07,
+    "playoff_depth_rate": 0.12,
+    "win_pct": 0.10,
+    "payroll_efficiency": 0.36,
+    "draft_vos": 0.11,
+    "trade_net_rate": 0.12
+  },
+  "category_labels": {
+    "world_series_rate": "Titles / season",
+    "pennants_rate": "Pennants / season",
+    "playoff_depth_rate": "Playoff depth / season",
+    "win_pct": "Win%",
+    "payroll_efficiency": "Wins / $100M",
+    "draft_vos": "Draft value over slot",
+    "trade_net_rate": "Trade net WAR / season"
+  },
+  "notes": "Rates + payroll + draft VOS + peer trade net. Trade = club-perspective net WAR per season from league_moves (all 30 clubs). Intl still deferred."
+}
