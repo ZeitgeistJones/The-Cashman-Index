@@ -118,13 +118,18 @@ export default function AboutPage() {
             (wild card = 1 … World Series = 4), pennant, title.
           </li>
           <li>
-            Aggregate to franchise or GM: win% = wins / games; title / pennant /
-            depth rates = counts ÷ seasons; payroll efficiency = paced wins per
-            $100M of opening-day payroll summed over the window.
+            Aggregate to franchise or GM through the last <em>complete</em>{" "}
+            championship season (drop the in-progress year before October).
+            Win% = wins / games; title / pennant / depth rates = counts ÷
+            seasons; payroll efficiency = paced wins per $100M using only
+            seasons that have opening-day payroll on file (missing-payroll years
+            drop out of both sides).
           </li>
           <li>
             Attach draft value-over-slot (franchise-tenure WAR vs slot curve) and
-            peer trade net WAR per season from the league trade ledger.
+            peer trade net WAR per season from the league trade ledger. Yearly
+            and exit resumes cut draft picks and trades at the as-of date so
+            future deals cannot leak into a historical score.
           </li>
           <li>
             Z-score each of the seven components across the peer set; weighted

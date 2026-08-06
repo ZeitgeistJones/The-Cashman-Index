@@ -32,6 +32,8 @@ from scoring import (
     category_ranks,
     composite_scores,
     efficiency_wins,
+    last_complete_season,
+    payroll_efficiency_from_seasons,
     rank_descending,
     tenure_shrink,
     wins_per_100m,
@@ -43,6 +45,10 @@ DATA = REPO_ROOT / "data"
 WINDOW_START = 2006
 WINDOW_END = 2026
 AS_OF = dt.date(2026, 8, 1)
+# Draft VOS shrink prior (matches build_draft_index.grade_groups).
+DRAFT_PRIOR_PICKS = 100
+DRAFT_MATURE_LAG = 6
+TRADE_PRIOR_SEASONS = 4
 
 SESSION_HEADERS = {"User-Agent": "front-office-index/0.1 (personal project)"}
 
@@ -360,9 +366,109 @@ def load_trade_rates() -> tuple[dict[int, float], dict[str, float]]:
     return by_team, by_gm
 
 
+_DRAFT_PICKS: list[dict[str, Any]] | None = None
+_LEAGUE_MOVES: list[dict[str, Any]] | None = None
+
+
+def load_draft_picks() -> list[dict[str, Any]]:
+    global _DRAFT_PICKS
+    if _DRAFT_PICKS is None:
+        path = DATA / "draft_picks.json"
+        if not path.exists():
+            _DRAFT_PICKS = []
+        else:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            _DRAFT_PICKS = list(payload.get("picks") or [])
+    return _DRAFT_PICKS
+
+
+def load_league_moves() -> list[dict[str, Any]]:
+    global _LEAGUE_MOVES
+    if _LEAGUE_MOVES is None:
+        path = DATA / "league_moves.json"
+        if not path.exists():
+            alt = DATA / "moves.json"
+            path = alt if alt.exists() else path
+        if not path.exists():
+            _LEAGUE_MOVES = []
+        else:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            _LEAGUE_MOVES = list(payload.get("moves") or [])
+    return _LEAGUE_MOVES
+
+
+def draft_vos_through(person_id: str, as_of: dt.date) -> float:
+    """Shrunk avg VOS for picks drafted on/before as_of (mature relative to as_of)."""
+    mature_through = as_of.year - DRAFT_MATURE_LAG
+    vos_list: list[float] = []
+    for pick in load_draft_picks():
+        if pick.get("gm_person_id") != person_id:
+            continue
+        year = int(pick.get("draft_year") or 0)
+        if year <= 0 or year > mature_through:
+            continue
+        if dt.date(year, 6, 15) > as_of:
+            continue
+        vos_list.append(float(pick.get("vos") or 0.0))
+    if not vos_list:
+        return 0.0
+    avg = sum(vos_list) / len(vos_list)
+    shrink = len(vos_list) / (len(vos_list) + DRAFT_PRIOR_PICKS)
+    return round(avg * shrink, 4)
+
+
+def trade_net_rate_through(
+    person_id: str,
+    as_of: dt.date,
+    stints: list[dict[str, Any]],
+    seasons: float,
+) -> float:
+    """Trade net WAR / season using only deals on/before as_of."""
+    net = 0.0
+    as_of_s = as_of.isoformat()
+    person_stints = [s for s in stints if s["person_id"] == person_id]
+    for move in load_league_moves():
+        move_date = move.get("move_date")
+        if not move_date or str(move_date) > as_of_s:
+            continue
+        if move.get("net_war_exchange") is None:
+            continue
+        try:
+            tid = int(move["team_id"])
+            day = dt.date.fromisoformat(str(move_date)[:10])
+        except (KeyError, TypeError, ValueError):
+            continue
+        attributed = False
+        for stint in person_stints:
+            if stint["team_id"] != tid:
+                continue
+            start = (
+                dt.date.fromisoformat(stint["start"])
+                if stint.get("start")
+                else dt.date(1900, 1, 1)
+            )
+            end = (
+                dt.date.fromisoformat(stint["end"])
+                if stint.get("end")
+                else AS_OF
+            )
+            if start <= day <= end:
+                attributed = True
+                break
+        if not attributed:
+            continue
+        net += float(move["net_war_exchange"])
+    seasons_n = max(0.5, float(seasons))
+    raw = net / seasons_n
+    return tenure_shrink(raw, int(round(seasons_n)), TRADE_PRIOR_SEASONS)
+
+
 def aggregate_franchise(seasons: list[dict[str, Any]], weights: dict[str, float]) -> dict[str, Any]:
+    complete_end = last_complete_season(AS_OF, WINDOW_END)
     by_team: dict[int, list[dict]] = defaultdict(list)
     for row in seasons:
+        if int(row["season"]) > complete_end:
+            continue
         by_team[row["team_id"]].append(row)
 
     draft_by_team, _ = load_draft_vos()
@@ -374,20 +480,12 @@ def aggregate_franchise(seasons: list[dict[str, Any]], weights: dict[str, float]
         wins = sum(r["wins"] for r in team_rows)
         losses = sum(r["losses"] for r in team_rows)
         games = wins + losses
-        payroll_vals = [r["payroll"] for r in team_rows if r.get("payroll")]
-        payroll_sum = int(sum(payroll_vals)) if payroll_vals else None
         playoff_years = sorted({r["season"] for r in team_rows if r.get("playoffs")})
         playoff_depth = sum(int(r.get("playoff_depth") or 0) for r in team_rows)
         pennants = sum(1 for r in team_rows if r.get("pennant"))
         ws = sum(1 for r in team_rows if r.get("world_series"))
         win_pct = round(wins / games, 4) if games else 0.0
-        # 2020 wins paced to 162 for $ efficiency; raw wins kept for win% / totals.
-        paced_wins = sum(
-            efficiency_wins(r["season"], r["wins"], r["losses"]) for r in team_rows
-        )
-        efficiency = wins_per_100m(
-            paced_wins, float(payroll_sum) if payroll_sum else None
-        )
+        efficiency, payroll_sum = payroll_efficiency_from_seasons(team_rows)
         row = attach_rates(
             {
                 "team_id": tid,
@@ -403,7 +501,7 @@ def aggregate_franchise(seasons: list[dict[str, Any]], weights: dict[str, float]
                 "pennants": pennants,
                 "world_series": ws,
                 "payroll_sum": payroll_sum,
-                "payroll_efficiency": round(efficiency, 4),
+                "payroll_efficiency": efficiency,
                 "draft_vos": round(draft_by_team.get(tid, 0.0), 4),
                 "trade_net_rate": round(trade_by_team.get(tid, 0.0), 4),
             }
@@ -421,7 +519,7 @@ def aggregate_franchise(seasons: list[dict[str, Any]], weights: dict[str, float]
     rows.sort(key=lambda r: r["rank"])
     return {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "window": [WINDOW_START, WINDOW_END],
+        "window": [WINDOW_START, complete_end],
         "weights": weights,
         "franchises": rows,
     }
@@ -471,13 +569,9 @@ def metrics_from_seasons(season_rows: list[dict[str, Any]]) -> dict[str, Any]:
     wins = sum(r["wins"] for r in season_rows)
     losses = sum(r["losses"] for r in season_rows)
     games = wins + losses
-    payroll_vals = [r["payroll"] for r in season_rows if r.get("payroll")]
-    payroll_sum = int(sum(payroll_vals)) if payroll_vals else None
     playoff_years = sorted({r["season"] for r in season_rows if r.get("playoffs")})
     playoff_depth = sum(int(r.get("playoff_depth") or 0) for r in season_rows)
-    paced_wins = sum(
-        efficiency_wins(r["season"], r["wins"], r["losses"]) for r in season_rows
-    )
+    efficiency, payroll_sum = payroll_efficiency_from_seasons(season_rows)
     return attach_rates(
         {
             "seasons": len(season_rows),
@@ -490,12 +584,7 @@ def metrics_from_seasons(season_rows: list[dict[str, Any]]) -> dict[str, Any]:
             "pennants": sum(1 for r in season_rows if r.get("pennant")),
             "world_series": sum(1 for r in season_rows if r.get("world_series")),
             "payroll_sum": payroll_sum,
-            "payroll_efficiency": round(
-                wins_per_100m(
-                    paced_wins, float(payroll_sum) if payroll_sum else None
-                ),
-                4,
-            ),
+            "payroll_efficiency": efficiency,
         }
     )
 
@@ -507,6 +596,9 @@ def build_gm_index(
     min_seasons: int,
     tenure_prior: int,
 ) -> dict[str, Any]:
+    complete_end = last_complete_season(AS_OF, WINDOW_END)
+    seasons = [r for r in seasons if int(r["season"]) <= complete_end]
+
     # Map each team-season → person_id
     attribution: dict[tuple[int, int], str] = {}
     for row in seasons:
@@ -569,7 +661,7 @@ def build_gm_index(
     rows.sort(key=lambda r: (r["rank"], r["name"]))
     return {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "window": [WINDOW_START, WINDOW_END],
+        "window": [WINDOW_START, complete_end],
         "weights": weights,
         "tenure_prior_seasons": tenure_prior,
         "gm_count": len(rows),
@@ -583,7 +675,11 @@ def resume_through_date(
     seasons: list[dict[str, Any]],
     stints: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    """Career metrics for person_id using seasons attributed to them with season mid <= as_of."""
+    """Career metrics for person_id using seasons attributed to them with season mid <= as_of.
+
+    Draft VOS and trade net rate are also cut at as_of so yearly/exit composites
+    cannot credit picks or deals that had not happened yet.
+    """
     attributed: list[dict] = []
     for row in seasons:
         mid = dt.date(row["season"], 7, 1)
@@ -592,10 +688,10 @@ def resume_through_date(
         if season_gm(row["team_id"], row["season"], stints) == person_id:
             attributed.append(row)
     metrics = metrics_from_seasons(attributed)
-    _, draft_by_gm = load_draft_vos()
-    _, trade_by_gm = load_trade_rates()
-    metrics["draft_vos"] = round(draft_by_gm.get(person_id, 0.0), 4)
-    metrics["trade_net_rate"] = round(trade_by_gm.get(person_id, 0.0), 4)
+    metrics["draft_vos"] = draft_vos_through(person_id, as_of)
+    metrics["trade_net_rate"] = trade_net_rate_through(
+        person_id, as_of, stints, metrics["seasons"]
+    )
     return metrics
 
 
@@ -673,9 +769,7 @@ def build_yearly_index(
     names = {s["person_id"]: s["name"] for s in stints}
     years: list[dict[str, Any]] = []
 
-    last_complete = min(WINDOW_END, AS_OF.year if AS_OF.month >= 10 else AS_OF.year - 1)
-    if AS_OF.month < 10:
-        last_complete = min(last_complete, AS_OF.year - 1)
+    last_complete = last_complete_season(AS_OF, WINDOW_END)
 
     for year in range(WINDOW_START, last_complete + 1):
         active_ids: set[str] = set()

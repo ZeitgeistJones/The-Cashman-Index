@@ -119,6 +119,41 @@ def wins_per_100m(wins: float | int, payroll: float | None) -> float:
     return float(wins) / (payroll / 100_000_000.0)
 
 
+def payroll_efficiency_from_seasons(
+    season_rows: list[dict[str, Any]],
+) -> tuple[float, int | None]:
+    """Wins/$100M using only seasons that have payroll on file.
+
+    Seasons missing payroll are dropped from both the numerator and the
+    denominator so Cube gaps cannot inflate efficiency.
+    """
+    paced = 0.0
+    payroll_sum = 0
+    for row in season_rows:
+        pay = row.get("payroll")
+        if not pay:
+            continue
+        paced += efficiency_wins(
+            int(row["season"]), int(row["wins"]), int(row["losses"])
+        )
+        payroll_sum += int(pay)
+    if payroll_sum <= 0:
+        return 0.0, None
+    return round(wins_per_100m(paced, float(payroll_sum)), 4), payroll_sum
+
+
+def last_complete_season(as_of: Any, window_end: int) -> int:
+    """Last finished championship season for ranking aggregates.
+
+    Before October, the current calendar year's season is still in progress
+    (or just ended without a settled postseason book), so drop it.
+    """
+    year = int(as_of.year)
+    month = int(as_of.month)
+    complete = year if month >= 10 else year - 1
+    return min(int(window_end), complete)
+
+
 def attach_rates(metrics: dict[str, Any]) -> dict[str, Any]:
     """Add per-season rates; keep counts under *_count aliases when present."""
     seasons = max(int(metrics.get("seasons") or 0), 1)

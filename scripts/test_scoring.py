@@ -7,10 +7,14 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import datetime as dt
+
 from scoring import (
     attach_rates,
     composite_scores,
     efficiency_wins,
+    last_complete_season,
+    payroll_efficiency_from_seasons,
     rank_descending,
     tenure_shrink,
     wins_per_100m,
@@ -117,6 +121,26 @@ def test_rank_ties() -> None:
     check(ranks == [1, 1, 3], f"tied scores share rank 1, got {ranks}")
 
 
+def test_payroll_efficiency_skips_missing_payroll() -> None:
+    rows = [
+        {"season": 2019, "wins": 90, "losses": 72, "payroll": 100_000_000},
+        {"season": 2021, "wins": 100, "losses": 62, "payroll": None},
+    ]
+    eff, payroll_sum = payroll_efficiency_from_seasons(rows)
+    check(payroll_sum == 100_000_000, "only paid season in sum")
+    check(abs(eff - 90.0) < 1e-9, f"missing-payroll wins excluded, got {eff}")
+    empty_eff, empty_sum = payroll_efficiency_from_seasons(
+        [{"season": 2022, "wins": 80, "losses": 82, "payroll": None}]
+    )
+    check(empty_sum is None and empty_eff == 0.0, "all-missing → 0")
+
+
+def test_last_complete_season() -> None:
+    check(last_complete_season(dt.date(2026, 8, 1), 2026) == 2025, "Aug → prior year")
+    check(last_complete_season(dt.date(2026, 10, 15), 2026) == 2026, "Oct → current ok")
+    check(last_complete_season(dt.date(2026, 11, 1), 2025) == 2025, "window_end caps")
+
+
 def main() -> int:
     test_zscore_identity()
     test_wins_per_100m()
@@ -125,6 +149,8 @@ def main() -> int:
     test_payroll_heavy_prefers_cheap_contention()
     test_tenure_shrink()
     test_rank_ties()
+    test_payroll_efficiency_skips_missing_payroll()
+    test_last_complete_season()
     print("all ranking checks passed")
     return 0
 

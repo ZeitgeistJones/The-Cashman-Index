@@ -125,6 +125,7 @@ export type YearlySeason = {
   job_security: {
     exits_in_cycle: number;
     exits?: {
+      person_id?: string;
       name: string;
       team_abbr?: string;
       exit_type?: string;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { formatDate } from "@/lib/moves";
 import { formatPct, type YearlyFile, type YearlySeason } from "@/lib/rankings";
 
 export default function YearlySecurity({ data }: { data: YearlyFile }) {
@@ -13,6 +14,8 @@ export default function YearlySecurity({ data }: { data: YearlyFile }) {
     () => years.find((y) => y.season === season),
     [years, season],
   );
+
+  const exits = current?.job_security.exits ?? [];
 
   if (!years.length) {
     return (
@@ -94,6 +97,60 @@ export default function YearlySecurity({ data }: { data: YearlyFile }) {
               </tbody>
             </table>
           </div>
+
+          <p className="section-note">
+            Offseason exits after {current.season} (fired / contract expired
+            before the next July 1).
+          </p>
+          {exits.length === 0 ? (
+            <p className="section-note">No tracked exits in this cycle.</p>
+          ) : (
+            <div className="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Exit</th>
+                    <th>GM</th>
+                    <th>Type</th>
+                    <th className="num">Seasons</th>
+                    <th className="num">Win%</th>
+                    <th className="num">Wins/$100M</th>
+                    <th className="num">Depth/yr</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {exits.map((row) => (
+                    <tr
+                      key={`${row.person_id}-${row.exit_date}-${row.team_abbr}`}
+                    >
+                      <td className="num">
+                        {row.exit_date ? formatDate(row.exit_date) : "—"}
+                      </td>
+                      <td>
+                        <span className="summary">{row.name}</span>
+                        <span className="meta">{row.team_abbr}</span>
+                      </td>
+                      <td>{row.exit_type?.replace(/_/g, " ") ?? "—"}</td>
+                      <td className="num">{row.seasons ?? "—"}</td>
+                      <td className="num">
+                        {row.win_pct != null ? formatPct(row.win_pct) : "—"}
+                      </td>
+                      <td className="num">
+                        {row.payroll_efficiency != null
+                          ? row.payroll_efficiency.toFixed(1)
+                          : "—"}
+                      </td>
+                      <td className="num">
+                        {row.playoff_depth_rate != null
+                          ? row.playoff_depth_rate.toFixed(2)
+                          : "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </>
       )}
     </>
