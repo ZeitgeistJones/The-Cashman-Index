@@ -20,8 +20,10 @@ name: Refresh moves data
 on:
   workflow_dispatch:
   schedule:
-    # Daily 06:00 UTC — early morning, away from peak US/EU API traffic.
-    - cron: "0 6 * * *"
+    # Off :00 to dodge GitHub's top-of-hour schedule contention (missed Aug 4–6).
+    # Primary early-UTC pass, then a US-afternoon backstop if the first drops.
+    - cron: "17 6 * * *"
+    - cron: "41 18 * * *"
 
 permissions:
   contents: write

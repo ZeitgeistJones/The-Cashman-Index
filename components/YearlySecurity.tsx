@@ -380,7 +380,14 @@ export default function YearlySecurity({
                       <span className="summary">{row.name}</span>
                       <span className="meta">{row.teams.join(" · ")}</span>
                     </td>
-                    <td className="num">
+                    <td
+                      className="num"
+                      title={
+                        row.trade_vintage_net == null
+                          ? "Peer trade ledger coverage starts mid-2009 — blank means not collected, not zero trades"
+                          : undefined
+                      }
+                    >
                       {row.trade_vintage_net == null ? (
                         "—"
                       ) : (

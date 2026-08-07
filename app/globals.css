@@ -122,6 +122,13 @@ header p.tagline {
   max-width: 60ch;
 }
 
+.freshness-line {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
 /* ——— About ——— */
 .about-nav {
   margin: 0 0 1.25rem;

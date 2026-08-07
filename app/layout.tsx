@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Front Office Index",
   description:
-    "MLB franchises and GMs ranked on payroll efficiency, draft value, peer trades, and results — same weights for every club, 2006–present.",
+    "MLB franchises and GMs ranked on payroll efficiency, draft value, peer trades, and results — same weights for every club since 2006 (peer trade ledger from 2009).",
 };
 
 export const viewport: Viewport = {

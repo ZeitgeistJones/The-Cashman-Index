@@ -22,7 +22,7 @@ import {
   rescoreRows,
   type LensId,
 } from "@/lib/lenses";
-import { isSampleData, type MovesFile } from "@/lib/moves";
+import { formatDate, isSampleData, type MovesFile } from "@/lib/moves";
 import type {
   DraftFile,
   ExitFile,
@@ -164,6 +164,54 @@ export default function IndexApp({
   const why = topFranchise ? whyTopFranchise(topFranchise) : [];
   const lensLabel = LENSES[lens].label;
 
+  // Ledger is sorted newest-first; first move_date is the coverage tip.
+  const ledgerThrough = moves.moves[0]?.move_date ?? null;
+  const rebuiltAt = moves.generated_at ?? null;
+  const freshnessLabel = useMemo(() => {
+    const parts: string[] = [];
+    if (ledgerThrough) {
+      parts.push(`Trades through ${formatDate(ledgerThrough)}`);
+    }
+    if (rebuiltAt) {
+      const day = rebuiltAt.slice(0, 10);
+      parts.push(
+        day
+          ? `Indexes rebuilt ${formatDate(day)}`
+          : `Indexes rebuilt ${rebuiltAt}`,
+      );
+    }
+    return parts.join(" · ");
+  }, [ledgerThrough, rebuiltAt]);
+
+  useEffect(() => {
+    // #region agent log
+    fetch("http://127.0.0.1:7881/ingest/9b61bbfe-6c28-461c-a358-3c161de0af36", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Debug-Session-Id": "fd1639",
+      },
+      body: JSON.stringify({
+        sessionId: "fd1639",
+        runId: "pre-fix",
+        hypothesisId: "A",
+        location: "IndexApp.tsx:freshness",
+        message: "Freshness stamp inputs",
+        data: {
+          ledgerThrough,
+          rebuiltAt,
+          freshnessLabel,
+          moveCount: moves.move_count ?? moves.moves.length,
+          firstMoveDate: moves.moves[0]?.move_date ?? null,
+          lastMoveDate:
+            moves.moves[moves.moves.length - 1]?.move_date ?? null,
+        },
+        timestamp: Date.now(),
+      }),
+    }).catch(() => {});
+    // #endregion
+  }, [ledgerThrough, rebuiltAt, freshnessLabel, moves]);
+
   return (
     <main>
       <header>
@@ -175,8 +223,14 @@ export default function IndexApp({
         </div>
         <p className="tagline">
           All 30 clubs and every GM, {windowLabel} — same ingredients for
-          everyone; Clubs, GMs, and By year can reweight the mix.
+          everyone; Clubs, GMs, and By year can reweight the mix. Peer trades
+          in the ledger start mid-2009.
         </p>
+        {freshnessLabel ? (
+          <p className="freshness-line" aria-live="polite">
+            {freshnessLabel}
+          </p>
+        ) : null}
       </header>
 
       {isSampleData(moves) && (
@@ -253,7 +307,9 @@ export default function IndexApp({
       {tab === "franchises" && (
         <section>
           <p className="section-note">
-            One score per club. Blank cells mean missing data, not a zero.
+            One score per club. Blank cells mean missing data, not a zero —
+            trade rates need 2009+ ledger coverage; recent draft classes wait
+            six years before grading.
           </p>
           <p className="scroll-hint">Swipe tables sideways for more columns.</p>
           <LensToggle value={lens} onChange={chooseLens} />
@@ -265,7 +321,8 @@ export default function IndexApp({
         <section>
           <p className="section-note">
             Career grades. Short tenures are shrunk so a one-year spike does not
-            win by default.
+            win by default. Blank draft or trade cells are coverage gaps (pre-2009
+            trades, immature drafts), not zeros.
           </p>
           <p className="scroll-hint">Swipe tables sideways for more columns.</p>
           <LensToggle value={lens} onChange={chooseLens} />

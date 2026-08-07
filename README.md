@@ -2,6 +2,8 @@
 
 Every MLB franchise and GM from **2006–present**, ranked with the same weights:
 payroll efficiency, draft value over slot, peer trade net WAR, and on-field results.
+Peer trade coverage in the MLB Stats API ledger starts **mid-April 2009** — earlier
+seasons leave trade cells blank (not zero) and drop that component from the row.
 
 See [CHANGELOG.md](CHANGELOG.md) for notable changes from 2026-08-06 onward.
 

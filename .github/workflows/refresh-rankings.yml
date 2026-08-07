@@ -12,8 +12,10 @@ name: Refresh ranking data
 on:
   workflow_dispatch:
   schedule:
-    # Mondays, 11:30 UTC (after the daily 06:00 refresh-data window).
-    - cron: "30 11 * * 1"
+    # Mondays, off :00/:30 contention; after the daily refresh-data window.
+    # Second weekday backstop in case the morning slot is delayed.
+    - cron: "17 11 * * 1"
+    - cron: "41 20 * * 1"
 
 permissions:
   contents: write

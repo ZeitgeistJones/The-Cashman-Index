@@ -217,7 +217,9 @@ export default function SeasonLedger({
         <strong>#1</strong> is the highest-graded executive-year in the pool
         {gradedCount > 0 ? ` (${gradedCount.toLocaleString()} graded)` : ""}.
         Names can repeat: many elite years for one GM is the finding. Click a
-        name to see that executive’s run.
+        name to see that executive’s run. Blank trade figures for 2006–2008 mean
+        the peer ledger does not cover those years yet (not “no trades”); blank
+        draft figures mean the class is still inside the maturity wait.
       </p>
 
       <div className="ledger-controls">

@@ -138,7 +138,16 @@ export default function GmTable({ gms }: { gms: GmRow[] }) {
                   {row.payroll_sum ? row.payroll_efficiency.toFixed(2) : "—"}
                 </td>
                 <td className="num">{formatSigned(row.draft_vos)}</td>
-                <td className="num">{formatSigned(row.trade_net_rate)}</td>
+                <td
+                  className="num"
+                  title={
+                    row.trade_net_rate == null
+                      ? "Peer trade ledger coverage starts mid-2009 — blank means not collected, not zero trades"
+                      : undefined
+                  }
+                >
+                  {formatSigned(row.trade_net_rate)}
+                </td>
                 <td className="num">
                   {formatComposite(row.composite)}
                   {row.small_sample && row.tenure_weight !== undefined && (

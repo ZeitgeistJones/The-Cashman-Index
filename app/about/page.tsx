@@ -33,9 +33,11 @@ export default function AboutPage() {
         <p className="section-note">
           Rankings use seasons through the last <em>complete</em> championship
           year (currently {weights.window_start}–2025 while {weights.window_end}{" "}
-          is still in progress). Methodology pin{" "}
-          <code>as_of</code> = {weights.as_of}. Details below; start with the
-          weight table if you only want the recipe.
+          is still in progress). Scoring pin{" "}
+          <code>as_of</code> = {weights.as_of} (methodology cutoff for draft
+          maturity and WAR horizons — not the site&apos;s last data refresh).
+          Peer trade ledger coverage starts mid-2009. Details below; start with
+          the weight table if you only want the recipe.
         </p>
       </header>
 
@@ -215,7 +217,9 @@ export default function AboutPage() {
         <h2 id="every-season">Every season ledger</h2>
         <p>
           The <strong>Every season</strong> tab is a single-season leaderboard:
-          every graded executive-year since 2006 in one pool. Columns lead with{" "}
+          every graded executive-year since {weights.window_start} in one pool.
+          Trade cells for 2006–2008 stay blank (ledger begins 2009); immature
+          draft classes stay blank until the six-year lag. Columns lead with{" "}
           <strong>#</strong> (all-time place in that pool — #1 is the best FO
           season on the site), then executive, year, and <strong>Score</strong>{" "}
           (construction grade). <strong>In that year</strong> is only the peer
