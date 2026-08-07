@@ -1,0 +1,14 @@
+---
+description: After a successful /verify, commit and push without waiting to be asked.
+alwaysApply: true
+---
+
+# Post-verify git
+
+When `/verify` (or an equivalent verification pass) succeeds for work that changed the tree:
+
+1. Commit the verified changes with a concise message focused on why.
+2. Push to the tracked remote (`-u` when setting upstream).
+3. Do not leave a clean verification sitting uncommitted unless the user explicitly said not to push/commit.
+
+Still follow normal git safety: no force-push to main/master, no secrets, no amending others' commits, no skipping hooks.
