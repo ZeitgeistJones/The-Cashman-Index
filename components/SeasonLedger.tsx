@@ -50,7 +50,8 @@ const COLUMNS: { key: SortKey; label: string; numeric: boolean; help: string }[]
     key: "season_rank",
     label: "Rank that year",
     numeric: true,
-    help: "Where this season placed among the 30 clubs in the same year",
+    help:
+      "Place among executives graded that year (often ~30; can be 31–32+ when chairs change mid-season)",
   },
   {
     key: "resume_rank",
@@ -132,6 +133,11 @@ export default function SeasonLedger({
     return out;
   }, [seasonIndex, yearly]);
 
+  const hiddenRecent = useMemo(
+    () => rows.filter((r) => !r.fully_scored).length,
+    [rows],
+  );
+
   const visible = useMemo(() => {
     let list = rows;
     if (onlyScored) list = list.filter((r) => r.fully_scored);
@@ -182,7 +188,8 @@ export default function SeasonLedger({
             checked={onlyScored}
             onChange={(e) => setOnlyScored(e.target.checked)}
           />
-          Hide seasons too recent to grade
+          Hide seasons still too young to grade
+          {hiddenRecent > 0 ? ` (${hiddenRecent.toLocaleString()} recent)` : ""}
         </label>
         {focus && (
           <button type="button" className="clear-focus" onClick={() => setFocus(null)}>
@@ -191,6 +198,9 @@ export default function SeasonLedger({
         )}
         <span className="count">
           {visible.length.toLocaleString()} shown
+          {onlyScored && hiddenRecent > 0
+            ? ` of ${(rows.length - hiddenRecent).toLocaleString()} graded`
+            : ` of ${rows.length.toLocaleString()}`}
           {focus ? ` · ${focusName}` : ""}
         </span>
       </div>
@@ -247,8 +257,17 @@ export default function SeasonLedger({
                 <td className={scoreClass(r.season_score)}>
                   {r.season_score === null ? "—" : formatComposite(r.season_score)}
                 </td>
-                <td className="num">
-                  {r.season_rank === null ? "—" : `#${r.season_rank} of ${r.gm_count}`}
+                <td
+                  className="num"
+                  title={
+                    r.gm_count > 30
+                      ? `${r.gm_count} executives that year — mid-season chair changes, not a bug`
+                      : undefined
+                  }
+                >
+                  {r.season_rank === null
+                    ? "—"
+                    : `#${r.season_rank}/${r.gm_count}`}
                 </td>
                 <td className="num muted">
                   {r.resume_rank === null ? "—" : `#${r.resume_rank}`}

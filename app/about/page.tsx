@@ -78,6 +78,15 @@ export default function AboutPage() {
           different opinions about what “good FO” means. Guardrails: every
           component stays on (no zeros), and no single weight exceeds ~42%.
         </p>
+        <p>
+          <strong>Lenses move less than they look.</strong> Titles, pennants,
+          playoff depth, and win% are highly correlated (playoff depth ↔ win%
+          ≈ +0.88). Together they are ~0.41 of Balanced and more under October —
+          four channels measuring nearly the same “winning” construct. Mean rank
+          shifts between lenses are only a few places. That is honest overlap,
+          not a broken toggle. Craft-heavy lenses (Value / Builder) move thrift,
+          draft, and trade more than October vs Balanced does.
+        </p>
         <ul className="about-examples">
           {Object.entries(
             (weights as { lenses?: Record<string, { label: string; blurb: string }> })
@@ -89,8 +98,8 @@ export default function AboutPage() {
           ))}
         </ul>
         <p>
-          Season construction grades (moves that year) keep their own recipe and
-          are not reweighted by these lenses.
+          Season construction grades (moves that year) and the Every season
+          ledger keep their own recipes and are not reweighted by these lenses.
         </p>
       </section>
 
@@ -178,11 +187,11 @@ export default function AboutPage() {
             axis — titles still count separately via rates.
           </li>
           <li>
-            <strong>Trade net WAR.</strong> For each peer trade, credit WAR the
-            club received <em>during its tenure with those players</em> and debit
-            WAR those it sent produced <em>for the receiving club</em> (not
-            everywhere forever). Horizons match so the league sum of net
-            exchange is ~0. Divide by seasons for <code>trade_net_rate</code>.
+            <strong>Trade net WAR.</strong> Scored as player movements: buyer
+            credit and seller charge share one ledger entry, so multi-team
+            packages cancel in a closed market (league sum of net ≈ 0). Matching
+            post-move WAR on both sides; surplus still uses during-club
+            production. Divide by seasons for <code>trade_net_rate</code>.
           </li>
           <li>
             <strong>Draft = franchise-tenure WAR only.</strong> A pick’s grade
@@ -192,6 +201,24 @@ export default function AboutPage() {
             excluded from the primary VOS grade.
           </li>
         </ul>
+      </section>
+
+      <section className="about-section" aria-labelledby="every-season">
+        <h2 id="every-season">Every season ledger</h2>
+        <p>
+          The <strong>Every season</strong> tab pools every executive-season
+          since 2006 so a 2011 can sit next to a 2008.{" "}
+          <strong>This season</strong> is the construction-style grade for that
+          year alone; <strong>career rank then</strong> is the resume composite
+          as of that year. Names repeat on purpose — many strong seasons for one
+          executive is the finding.
+        </p>
+        <p>
+          Rank that year is among executives graded in that year (often ~30;
+          sometimes 31–32+ when chairs change mid-season). Seasons still too
+          young to grade (immature drafts) hide by default; uncheck the filter
+          to see them as blanks.
+        </p>
       </section>
 
       <section className="about-section" aria-labelledby="season-grade">

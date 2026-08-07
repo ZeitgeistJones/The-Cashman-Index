@@ -30,6 +30,12 @@ export default function LensToggle({
         ))}
       </div>
       <p className="section-note lens-blurb">{active.blurb}</p>
+      <p className="section-note lens-honesty">
+        Titles, pennants, playoff depth, and win% largely move together (~0.41 of
+        Balanced). Switching lenses usually shifts ranks only a few places — that
+        is the overlap, not a broken control. Value and Builder move craft axes
+        more; October leans harder into the same winning block.
+      </p>
     </div>
   );
 }

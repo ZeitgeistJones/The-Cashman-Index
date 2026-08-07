@@ -35,3 +35,4 @@ jobs:
       - run: python scripts/test_scoring.py
       - run: python scripts/test_season_index.py
       - run: python scripts/test_reconcile.py
+      - run: python scripts/check_invariants.py
