@@ -31,8 +31,11 @@ export default function AboutPage() {
           trades, and October results. Not a home-team thesis.
         </p>
         <p className="section-note">
-          Window {weights.window_start}–{weights.window_end}. Details below;
-          start with the weight table if you only want the recipe.
+          Rankings use seasons through the last <em>complete</em> championship
+          year (currently {weights.window_start}–2025 while {weights.window_end}{" "}
+          is still in progress). Methodology pin{" "}
+          <code>as_of</code> = {weights.as_of}. Details below; start with the
+          weight table if you only want the recipe.
         </p>
       </header>
 
@@ -73,10 +76,11 @@ export default function AboutPage() {
       <section className="about-section" aria-labelledby="lenses">
         <h2 id="lenses">Success lenses</h2>
         <p>
-          The Clubs / GMs boards (and By year · career grade) let you switch
-          how those same seven components are weighted. No new metrics — just
-          different opinions about what “good FO” means. Guardrails: every
-          component stays on (no zeros), and no single weight exceeds ~42%.
+          On <strong>Clubs</strong>, <strong>GMs</strong>, and{" "}
+          <strong>By year · career grade</strong>, success-lens toggles sit
+          directly above the board (not in the page hero). They reweight the
+          same seven components — no new metrics. Guardrails: every component
+          stays on (no zeros), and no single weight exceeds ~42%.
         </p>
         <p>
           <strong>Lenses move less than they look.</strong> Titles, pennants,
@@ -98,8 +102,8 @@ export default function AboutPage() {
           ))}
         </ul>
         <p>
-          Season construction grades (moves that year) and the Every season
-          ledger keep their own recipes and are not reweighted by these lenses.
+          Draft, Trades, Acquisition, Exits, Every season, and Trade detail keep
+          their own recipes and are <em>not</em> reweighted by these lenses.
         </p>
       </section>
 
@@ -191,7 +195,10 @@ export default function AboutPage() {
             credit and seller charge share one ledger entry, so multi-team
             packages cancel in a closed market (league sum of net ≈ 0). Matching
             post-move WAR on both sides; surplus still uses during-club
-            production. Divide by seasons for <code>trade_net_rate</code>.
+            production. Divide by seasons for <code>trade_net_rate</code>. The
+            daily refresh pulls transactions through <em>today</em>;{" "}
+            <code>weights.as_of</code> is only the scoring pin (complete seasons
+            / contract flags), not the fetch cutoff.
           </li>
           <li>
             <strong>Draft = franchise-tenure WAR only.</strong> A pick’s grade
@@ -207,12 +214,13 @@ export default function AboutPage() {
         <h2 id="every-season">Every season ledger</h2>
         <p>
           The <strong>Every season</strong> tab is a single-season leaderboard:
-          every graded executive-year since 2006 in one pool.{" "}
-          <strong>#1</strong> is the best FO season in that pool (not “best in
-          2011 only”). <strong>Score</strong> is the construction grade for that
-          year; <strong>In that year</strong> is the peer place among executives
-          graded the same calendar year. Names repeat on purpose — many elite
-          seasons for one executive is the finding.
+          every graded executive-year since 2006 in one pool. Columns lead with{" "}
+          <strong>#</strong> (all-time place in that pool — #1 is the best FO
+          season on the site), then executive, year, and <strong>Score</strong>{" "}
+          (construction grade). <strong>In that year</strong> is only the peer
+          place among executives graded the same calendar year. Names repeat on
+          purpose — many elite seasons for one executive is the finding. Hover
+          column headers for short definitions.
         </p>
         <p>
           Seasons still too young to grade (immature drafts) hide by default and
@@ -297,10 +305,15 @@ export default function AboutPage() {
         <h2 id="left-out">Intentionally left out</h2>
         <ul className="about-examples">
           <li>
+            <strong>Exit-pool index.</strong> The Exits tab scores a resume among
+            other exits — not the live active-GM board on that calendar day.
+          </li>
+          <li>
             <strong>Payroll thrift is era-relative.</strong> Raw wins/$100M
             trends down as payrolls inflate; we divide each season by that
             year&apos;s league mean so early tenures are not automatic thrift
-            leaders.
+            leaders. A top-payroll club is still structurally weak on this
+            heaviest weight — that is the house formula, disclosed here.
           </li>
           <li>
             <strong>Winning-block collinearity.</strong> World Series, pennant,
