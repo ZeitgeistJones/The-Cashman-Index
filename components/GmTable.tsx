@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import {
   formatComposite,
   formatPct,
+  formatSigned,
   type GmRow,
 } from "@/lib/rankings";
 
@@ -128,17 +129,11 @@ export default function GmTable({ gms }: { gms: GmRow[] }) {
                 <td className="num">{row.pennants}</td>
                 <td className="num">{row.playoff_depth}</td>
                 <td className="num">{formatPct(row.win_pct)}</td>
-                <td className="num">{row.payroll_efficiency.toFixed(1)}</td>
                 <td className="num">
-                  {row.draft_vos !== undefined
-                    ? `${row.draft_vos > 0 ? "+" : ""}${row.draft_vos.toFixed(2)}`
-                    : "—"}
+                  {row.payroll_sum ? row.payroll_efficiency.toFixed(1) : "—"}
                 </td>
-                <td className="num">
-                  {row.trade_net_rate !== undefined
-                    ? `${row.trade_net_rate > 0 ? "+" : ""}${row.trade_net_rate.toFixed(2)}`
-                    : "—"}
-                </td>
+                <td className="num">{formatSigned(row.draft_vos)}</td>
+                <td className="num">{formatSigned(row.trade_net_rate)}</td>
                 <td className="num">
                   {formatComposite(row.composite)}
                   {row.small_sample && row.tenure_weight !== undefined && (

@@ -231,6 +231,16 @@ export function formatComposite(value: number | null | undefined): string {
   return value > 0 ? `+${value.toFixed(2)}` : value.toFixed(2);
 }
 
+/** Signed rate for tables; missing values are an em dash, never a fake 0. */
+export function formatSigned(
+  value: number | null | undefined,
+  digits = 2,
+): string {
+  if (value === null || value === undefined || Number.isNaN(value)) return "—";
+  const body = value.toFixed(digits);
+  return value > 0 ? `+${body}` : body;
+}
+
 export function formatResume(r: Resume): string {
   const depthRate =
     r.playoff_depth_rate !== undefined

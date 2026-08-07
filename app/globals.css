@@ -203,6 +203,87 @@ main.about footer {
   margin-bottom: 0.2rem;
 }
 
+.start-here {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 0 0.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.start-here-kicker {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.start-here h2 {
+  margin: 0.35rem 0 0.4rem;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.start-here-lede {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.start-here-why {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.start-here-why li + li {
+  margin-top: 0.25rem;
+}
+
+.start-here-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.start-here-cta {
+  font: inherit;
+  min-height: 44px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.start-here-cta.secondary {
+  border-color: var(--border);
+  background: transparent;
+  color: var(--muted);
+}
+
+.start-here-cta:focus-visible,
+.start-here-more:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.start-here-more {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.meta-line {
+  margin: 0.85rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));

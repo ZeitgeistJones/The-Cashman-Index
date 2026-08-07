@@ -27,35 +27,20 @@ export default function AboutPage() {
       <header>
         <h1>About the Index</h1>
         <p className="tagline">
-          How every MLB front office is scored — same ruler, same window, no
-          home-team thesis.
+          Same ruler for every MLB front office — payroll efficiency, draft,
+          trades, and October results. Not a home-team thesis.
+        </p>
+        <p className="section-note">
+          Window {weights.window_start}–{weights.window_end}. Details below;
+          start with the weight table if you only want the recipe.
         </p>
       </header>
-
-      <section className="about-section" aria-labelledby="what-it-is">
-        <h2 id="what-it-is">What this is</h2>
-        <p>
-          <strong>Front Office Index</strong> ranks all 30 franchises and every
-          roster-running GM in the window{" "}
-          <strong>
-            {weights.window_start}–{weights.window_end}
-          </strong>{" "}
-          on the same composite. It is a league-wide evaluation of front-office
-          results and acquisition — not a Yankees or Cashman profile piece.
-        </p>
-        <p>
-          The score blends how efficiently you win relative to payroll, how you
-          draft and trade, and how often you actually advance in October. One
-          weight file drives both franchise and GM boards.
-        </p>
-      </section>
 
       <section className="about-section" aria-labelledby="weights">
         <h2 id="weights">Composite weights</h2>
         <p>
-          Each component is converted to a z-score among peers, then weighted.
-          Weights live in <code>data/weights.json</code> (sum{" "}
-          {WEIGHT_SUM.toFixed(2)}):
+          Each piece is z-scored among peers, then weighted (sum{" "}
+          {WEIGHT_SUM.toFixed(2)}). Tunable in <code>data/weights.json</code>.
         </p>
         <div className="table-wrap about-weights">
           <table>
