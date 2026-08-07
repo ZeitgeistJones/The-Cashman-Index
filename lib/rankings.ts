@@ -80,7 +80,7 @@ export type Resume = {
   world_series_rate?: number;
   playoff_depth_rate?: number;
   payroll_sum: number | null;
-  payroll_efficiency: number;
+  payroll_efficiency: number | null;
 };
 
 export type ExitRow = {
@@ -246,8 +246,14 @@ export function formatSigned(
 
 export function formatResume(r: Resume): string {
   const depthRate =
-    r.playoff_depth_rate !== undefined
+    r.playoff_depth_rate !== undefined && r.playoff_depth_rate !== null
       ? r.playoff_depth_rate.toFixed(2)
-      : String(r.playoff_depth);
-  return `${r.world_series} WS · ${r.pennants} pennants · depth/yr ${depthRate} · ${formatPct(r.win_pct)} · thrift ${r.payroll_efficiency.toFixed(2)}× era · ${r.seasons} seasons`;
+      : String(r.playoff_depth ?? "—");
+  const thrift =
+    r.payroll_efficiency !== null &&
+    r.payroll_efficiency !== undefined &&
+    !Number.isNaN(r.payroll_efficiency)
+      ? `${r.payroll_efficiency.toFixed(2)}× era`
+      : "—";
+  return `${r.world_series ?? 0} WS · ${r.pennants ?? 0} pennants · depth/yr ${depthRate} · ${formatPct(r.win_pct)} · thrift ${thrift} · ${r.seasons ?? 0} seasons`;
 }

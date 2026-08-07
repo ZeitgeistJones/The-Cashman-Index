@@ -11,19 +11,21 @@ export default function ExitLedger({ data }: { data: ExitFile }) {
 
   const rows = useMemo(() => {
     const list = firedOnly
-      ? data.exits.filter((e) => e.exit_type === "fired")
-      : data.exits;
-    return [...list].sort((a, b) => b.exit_date.localeCompare(a.exit_date));
+      ? (data.exits ?? []).filter((e) => e.exit_type === "fired")
+      : (data.exits ?? []);
+    return [...list].sort((a, b) =>
+      String(b.exit_date ?? "").localeCompare(String(a.exit_date ?? "")),
+    );
   }, [data.exits, firedOnly]);
 
   return (
     <>
       <ul className="stats compact">
         <li>
-          Exits<span>{data.exit_count}</span>
+          Exits<span>{data.exit_count ?? rows.length}</span>
         </li>
         <li>
-          Firings<span>{data.summary.fired_count}</span>
+          Firings<span>{data.summary?.fired_count ?? "—"}</span>
         </li>
       </ul>
 
@@ -54,14 +56,19 @@ export default function ExitLedger({ data }: { data: ExitFile }) {
           <tbody>
             {rows.map((row: ExitRow) => (
               <tr key={`${row.person_id}-${row.exit_date}-${row.team_abbr}`}>
-                <td className="date">{formatDate(row.exit_date)}</td>
+                <td className="date">
+                  {row.exit_date ? formatDate(row.exit_date) : "—"}
+                </td>
                 <td>
                   <span className="summary">{row.name}</span>
                   <span className="meta">
-                    {row.team_abbr} · {row.exit_type.replaceAll("_", " ")}
+                    {row.team_abbr} ·{" "}
+                    {(row.exit_type ?? "other").replaceAll("_", " ")}
                   </span>
                 </td>
-                <td className="resume-cell">{formatResume(row.peer_resume)}</td>
+                <td className="resume-cell">
+                  {row.peer_resume ? formatResume(row.peer_resume) : "—"}
+                </td>
                 <td className="num">
                   {row.peer_score != null
                     ? row.peer_score.toFixed(2)
