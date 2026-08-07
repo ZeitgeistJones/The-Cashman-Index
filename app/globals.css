@@ -50,19 +50,6 @@ body {
   overflow-x: clip;
 }
 
-/*
- * Desktop density — one zoom on body only (Tripwire pattern).
- * Compact ON  → no .comfort-view → 0.85 zoom (more columns fit).
- * Compact OFF → html.comfort-view → 100% (readable / “stretched”).
- * Do not add zoom/transform:scale on tables or panels — that double-shrinks
- * and breaks sticky columns / scroll width.
- */
-@media (min-width: 1024px) {
-  html:not(.comfort-view) body {
-    zoom: 0.85;
-  }
-}
-
 main {
   max-width: 1180px;
   margin: 0 auto;
@@ -76,38 +63,6 @@ main {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-}
-
-.site-header-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.65rem 0.85rem;
-  flex: 0 0 auto;
-}
-
-.compact-toggle {
-  font: inherit;
-  font-size: 0.78rem;
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.3rem 0.7rem;
-  min-height: 2rem;
-  cursor: pointer;
-}
-
-.compact-toggle.active {
-  color: var(--text);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  font-weight: 600;
-}
-
-.compact-toggle:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 
 header h1 {

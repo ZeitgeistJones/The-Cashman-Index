@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import AcquisitionPanel from "@/components/AcquisitionPanel";
-import CompactToggle from "@/components/CompactToggle";
 import DraftTable from "@/components/DraftTable";
 import ExitLedger from "@/components/ExitLedger";
 import FranchiseTable from "@/components/FranchiseTable";
@@ -170,12 +169,9 @@ export default function IndexApp({
       <header>
         <div className="site-header-row">
           <h1>Front Office Index</h1>
-          <div className="site-header-actions">
-            <CompactToggle />
-            <Link href="/about" className="about-link">
-              About
-            </Link>
-          </div>
+          <Link href="/about" className="about-link">
+            About
+          </Link>
         </div>
         <p className="tagline">
           All 30 clubs and every GM, {windowLabel} — same ingredients for
