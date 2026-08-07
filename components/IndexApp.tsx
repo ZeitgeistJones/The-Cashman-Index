@@ -36,24 +36,28 @@ import type {
 type Tab =
   | "franchises"
   | "gms"
-  | "yearly"
-  | "seasons"
   | "draft"
   | "trades"
   | "acquisition"
   | "exits"
   | "moves";
 
+type GmView = "career" | "by-year" | "best-seasons";
+
 const TABS: { id: Tab; label: string; short: string }[] = [
   { id: "franchises", label: "Clubs", short: "Clubs" },
   { id: "gms", label: "GMs", short: "GMs" },
-  { id: "yearly", label: "By year", short: "Year" },
-  { id: "seasons", label: "Every season", short: "Seasons" },
   { id: "draft", label: "Draft", short: "Draft" },
   { id: "trades", label: "Trades", short: "Trades" },
   { id: "acquisition", label: "How they acquire", short: "Acquire" },
   { id: "exits", label: "Exits", short: "Exits" },
   { id: "moves", label: "Trade detail", short: "Detail" },
+];
+
+const GM_VIEWS: { id: GmView; label: string; short: string }[] = [
+  { id: "career", label: "Career board", short: "Career" },
+  { id: "by-year", label: "By year", short: "Year" },
+  { id: "best-seasons", label: "Best seasons", short: "Seasons" },
 ];
 
 function whyTopFranchise(row: FranchiseRow): string[] {
@@ -122,7 +126,13 @@ export default function IndexApp({
   trade: any;
 }) {
   const [tab, setTab] = useState<Tab>("franchises");
+  const [gmView, setGmView] = useState<GmView>("career");
   const [lens, setLens] = useState<LensId>(DEFAULT_LENS);
+
+  function openGms(view: GmView = "career") {
+    setGmView(view);
+    setTab("gms");
+  }
 
   useEffect(() => {
     try {
@@ -194,7 +204,7 @@ export default function IndexApp({
         </div>
         <p className="tagline">
           All 30 clubs and every GM, {windowLabel} — same ingredients for
-          everyone; Clubs, GMs, and By year can reweight the mix. Peer trades
+          everyone; Clubs and GMs can reweight the mix. Peer trades
           in the ledger start mid-2009.
         </p>
         {freshnessLabel ? (
@@ -244,7 +254,7 @@ export default function IndexApp({
             <button
               type="button"
               className="start-here-cta secondary"
-              onClick={() => setTab("yearly")}
+              onClick={() => openGms("by-year")}
             >
               Grades by year
             </button>
@@ -290,35 +300,54 @@ export default function IndexApp({
 
       {tab === "gms" && (
         <section>
-          <p className="section-note">
-            Career grades. Short tenures are shrunk so a one-year spike does not
-            win by default. Blank draft or trade cells are coverage gaps (pre-2009
-            trades, immature drafts), not zeros.
-          </p>
-          <p className="scroll-hint">Swipe tables sideways for more columns.</p>
-          <LensToggle value={lens} onChange={chooseLens} />
-          <GmTable gms={scoredGms} />
-        </section>
-      )}
+          <div className="filter-row mode-toggle gm-view-toggle" role="tablist" aria-label="GM views">
+            {GM_VIEWS.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                role="tab"
+                aria-selected={gmView === item.id}
+                className={gmView === item.id ? "active" : undefined}
+                onClick={() => setGmView(item.id)}
+              >
+                <span className="tab-label-full">{item.label}</span>
+                <span className="tab-label-short">{item.short}</span>
+              </button>
+            ))}
+          </div>
 
-      {tab === "yearly" && (
-        <section>
-          <YearlySecurity
-            data={yearly}
-            seasonData={seasonIndex}
-            lensId={lens}
-            onLensChange={chooseLens}
-          />
-        </section>
-      )}
-      {tab === "seasons" && (
-        <section className="panel" role="tabpanel">
-          <h2>Every executive-season, side by side</h2>
-          <p className="scroll-hint">Tap a name to see that executive's whole career.</p>
-          <SeasonLedger seasonIndex={seasonIndex} yearly={yearly} />
-        </section>
-      )}
+          {gmView === "career" && (
+            <>
+              <p className="section-note">
+                Career grades. Short tenures are shrunk so a one-year spike does
+                not win by default. Blank draft or trade cells are coverage gaps
+                (pre-2009 trades, immature drafts), not zeros.
+              </p>
+              <p className="scroll-hint">Swipe tables sideways for more columns.</p>
+              <LensToggle value={lens} onChange={chooseLens} />
+              <GmTable gms={scoredGms} />
+            </>
+          )}
 
+          {gmView === "by-year" && (
+            <YearlySecurity
+              data={yearly}
+              seasonData={seasonIndex}
+              lensId={lens}
+              onLensChange={chooseLens}
+            />
+          )}
+
+          {gmView === "best-seasons" && (
+            <>
+              <p className="scroll-hint">
+                Tap a name to see that executive&apos;s whole career.
+              </p>
+              <SeasonLedger seasonIndex={seasonIndex} yearly={yearly} />
+            </>
+          )}
+        </section>
+      )}
 
       {tab === "draft" && (
         <section>

@@ -78,12 +78,12 @@ export default function AboutPage() {
       <section className="about-section" aria-labelledby="lenses">
         <h2 id="lenses">Success lenses</h2>
         <p>
-          On <strong>Clubs</strong>, <strong>GMs</strong>, and{" "}
-          <strong>By year · career grade</strong>, compact lens pills sit
-          immediately above the ranking table (after the short intro). They
-          reweight the same seven components — no new metrics. Guardrails: every
-          component stays on (no zeros), and no single weight exceeds ~42%.
-          Hover a pill for that lens&apos;s blurb.
+          On <strong>Clubs</strong> and <strong>GMs</strong> (Career board and
+          By year · career grade), compact lens pills sit immediately above the
+          ranking table (after the short intro). They reweight the same seven
+          components — no new metrics. Guardrails: every component stays on (no
+          zeros), and no single weight exceeds ~42%. Hover a pill for that
+          lens&apos;s blurb.
         </p>
         <p>
           <strong>Lenses move less than they look.</strong> Titles, pennants,
@@ -105,8 +105,10 @@ export default function AboutPage() {
           ))}
         </ul>
         <p>
-          Draft, Trades, Acquisition, Exits, Every season, and Trade detail keep
+          Draft, Trades, Acquisition, Exits, and Trade detail keep
           their own recipes and are <em>not</em> reweighted by these lenses.
+          Under <strong>GMs</strong>, switch Career / By year / Best seasons —
+          only Career and By year&apos;s career-grade view take lenses.
         </p>
       </section>
 
@@ -216,8 +218,9 @@ export default function AboutPage() {
       <section className="about-section" aria-labelledby="every-season">
         <h2 id="every-season">Every season ledger</h2>
         <p>
-          The <strong>Every season</strong> tab is a single-season leaderboard:
-          every graded executive-year since {weights.window_start} in one pool.
+          The <strong>GMs → Best seasons</strong> view is a single-season
+          leaderboard: every graded executive-year since {weights.window_start}{" "}
+          in one pool.
           Trade cells for 2006–2008 stay blank (ledger begins 2009); immature
           draft classes stay blank until the six-year lag. Columns lead with{" "}
           <strong>#</strong> (all-time place in that pool — #1 is the best FO

@@ -769,6 +769,14 @@ footer p {
   outline-offset: 2px;
 }
 
+.gm-view-toggle {
+  margin: 0 0 0.75rem;
+}
+
+.gm-view-toggle .tab-label-short {
+  display: none;
+}
+
 .resume-cell {
   font-size: 0.82rem;
   color: var(--muted);
@@ -871,6 +879,14 @@ footer p {
   }
 
   .tab-label-short {
+    display: inline;
+  }
+
+  .gm-view-toggle .tab-label-full {
+    display: none;
+  }
+
+  .gm-view-toggle .tab-label-short {
     display: inline;
   }
 
