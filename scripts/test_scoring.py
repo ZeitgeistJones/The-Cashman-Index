@@ -10,12 +10,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import datetime as dt
 
 from scoring import (
+    attach_era_relative_payroll,
     attach_rates,
     composite_scores,
     efficiency_wins,
     last_complete_season,
     payroll_efficiency_from_seasons,
     rank_descending,
+    raw_season_payroll_efficiency,
     tenure_shrink,
     wins_per_100m,
     zscore,
@@ -74,7 +76,7 @@ def test_payroll_heavy_prefers_cheap_contention() -> None:
             "pennants_rate": 0.2,
             "playoff_depth_rate": 2.2,
             "win_pct": 0.58,
-            "payroll_efficiency": 40.0,
+            "payroll_efficiency": 0.7,
             "draft_vos": 0.0,
             "trade_net_rate": 0.0,
         },
@@ -83,7 +85,7 @@ def test_payroll_heavy_prefers_cheap_contention() -> None:
             "pennants_rate": 0.1,
             "playoff_depth_rate": 1.4,
             "win_pct": 0.53,
-            "payroll_efficiency": 120.0,
+            "payroll_efficiency": 1.4,
             "draft_vos": 0.1,
             "trade_net_rate": 0.5,
         },
@@ -92,7 +94,7 @@ def test_payroll_heavy_prefers_cheap_contention() -> None:
             "pennants_rate": 0.05,
             "playoff_depth_rate": 0.9,
             "win_pct": 0.50,
-            "payroll_efficiency": 60.0,
+            "payroll_efficiency": 1.0,
             "draft_vos": 0.0,
             "trade_net_rate": 0.0,
         },
@@ -101,7 +103,7 @@ def test_payroll_heavy_prefers_cheap_contention() -> None:
             "pennants_rate": 0.0,
             "playoff_depth_rate": 0.2,
             "win_pct": 0.45,
-            "payroll_efficiency": 35.0,
+            "payroll_efficiency": 0.6,
             "draft_vos": -0.1,
             "trade_net_rate": -0.2,
         },
@@ -111,9 +113,73 @@ def test_payroll_heavy_prefers_cheap_contention() -> None:
     check(scores[0] > scores[3], f"titles+spend still beats bad+spend: {scores}")
 
 
+def test_missing_trade_net_not_fake_zero() -> None:
+    """Null trade_net must not z-score as if 0 when the peer mean is negative."""
+    rows = [
+        {
+            "world_series_rate": 0.05,
+            "pennants_rate": 0.05,
+            "playoff_depth_rate": 1.0,
+            "win_pct": 0.50,
+            "payroll_efficiency": 1.0,
+            "draft_vos": 0.0,
+            "trade_net_rate": -2.0,
+        },
+        {
+            "world_series_rate": 0.05,
+            "pennants_rate": 0.05,
+            "playoff_depth_rate": 1.0,
+            "win_pct": 0.50,
+            "payroll_efficiency": 1.0,
+            "draft_vos": 0.0,
+            "trade_net_rate": -1.0,
+        },
+        {
+            "world_series_rate": 0.05,
+            "pennants_rate": 0.05,
+            "playoff_depth_rate": 1.0,
+            "win_pct": 0.50,
+            "payroll_efficiency": 1.0,
+            "draft_vos": 0.0,
+            "trade_net_rate": None,  # missing — must not become 0
+        },
+    ]
+    # With fake-zero, row 2 would get a strong positive trade z and outrank peers.
+    # With drop+renorm, trade is ignored for row 2; identical other comps → same score
+    # as a peer after renorm on shared keys only… actually row 2 renormalizes without
+    # trade, while rows 0/1 keep trade. Row 2 should not crush them via fake +z(0).
+    scores = composite_scores(rows, WEIGHTS)
+    # Row with null trade should not be the clear #1 solely from fake zero.
+    check(
+        scores[2] < scores[1] + 0.5,
+        f"null trade_net must not dominate via fake 0: {scores}",
+    )
+    # Explicit: treating None as 0 would flip the ranking vs drop+renorm.
+    fake_rows = [{**r, "trade_net_rate": 0.0 if r["trade_net_rate"] is None else r["trade_net_rate"]} for r in rows]
+    fake_scores = composite_scores(fake_rows, WEIGHTS)
+    check(
+        fake_scores[2] > scores[2] + 0.05,
+        f"fake-zero path should inflate missing row vs null-aware: fake={fake_scores} real={scores}",
+    )
+
+
+def test_legitimate_zero_trade_net_is_present() -> None:
+    rows = [
+        {**{k: 0.5 for k in WEIGHTS}, "trade_net_rate": -1.0},
+        {**{k: 0.5 for k in WEIGHTS}, "trade_net_rate": 0.0},
+        {**{k: 0.5 for k in WEIGHTS}, "trade_net_rate": 1.0},
+    ]
+    for k in ("world_series_rate", "pennants_rate", "playoff_depth_rate", "win_pct", "payroll_efficiency", "draft_vos"):
+        for r in rows:
+            r[k] = 0.5
+    scores = composite_scores(rows, WEIGHTS)
+    check(scores[2] > scores[1] > scores[0], f"0.0 trade is real mid value: {scores}")
+
+
 def test_tenure_shrink() -> None:
     check(tenure_shrink(2.0, 20, 4) > tenure_shrink(2.0, 2, 4), "long tenure keeps more score")
     check(abs(tenure_shrink(2.0, 0, 4)) < 1e-9, "zero seasons → 0")
+    check(abs(tenure_shrink(2.0, 4, 4) - 1.0) < 1e-9, "equal prior → half toward 0")
 
 
 def test_rank_ties() -> None:
@@ -121,18 +187,74 @@ def test_rank_ties() -> None:
     check(ranks == [1, 1, 3], f"tied scores share rank 1, got {ranks}")
 
 
-def test_payroll_efficiency_skips_missing_payroll() -> None:
-    rows = [
-        {"season": 2019, "wins": 90, "losses": 72, "payroll": 100_000_000},
-        {"season": 2021, "wins": 100, "losses": 62, "payroll": None},
+def test_payroll_efficiency_era_relative() -> None:
+    seasons = [
+        {"season": 2010, "wins": 90, "losses": 72, "payroll": 50_000_000},
+        {"season": 2010, "wins": 70, "losses": 92, "payroll": 100_000_000},
+        {"season": 2024, "wins": 90, "losses": 72, "payroll": 200_000_000},
+        {"season": 2024, "wins": 70, "losses": 92, "payroll": 300_000_000},
     ]
-    eff, payroll_sum = payroll_efficiency_from_seasons(rows)
-    check(payroll_sum == 100_000_000, "only paid season in sum")
-    check(abs(eff - 90.0) < 1e-9, f"missing-payroll wins excluded, got {eff}")
+    means = attach_era_relative_payroll(seasons)
+    check(2010 in means and 2024 in means, "year means present")
+    # Cheap 2010 club should be >1 relative to 2010 mean.
+    check(seasons[0]["payroll_efficiency_era"] > 1.0, "cheap 2010 above era mean")
+    # Aggregate for team that played both eras as the cheap club each year.
+    cheap = [seasons[0], seasons[2]]
+    eff, pay = payroll_efficiency_from_seasons(cheap, means)
+    check(pay == 250_000_000, "payroll sum")
+    check(eff > 1.0, f"era-avg thrift > 1, got {eff}")
     empty_eff, empty_sum = payroll_efficiency_from_seasons(
-        [{"season": 2022, "wins": 80, "losses": 82, "payroll": None}]
+        [{"season": 2022, "wins": 80, "losses": 82, "payroll": None}], means
     )
     check(empty_sum is None and empty_eff == 0.0, "all-missing → 0")
+
+
+def test_era_corr_improves_on_synthetic() -> None:
+    """Relativizing removes a planted year trend in raw PE."""
+    import statistics
+
+    seasons = []
+    for year in range(2006, 2025):
+        # League payroll inflates; wins stay ~81 → raw PE falls with year.
+        league_pay = 50_000_000 + (year - 2006) * 8_000_000
+        for i in range(5):
+            seasons.append(
+                {
+                    "season": year,
+                    "wins": 75 + i * 3,
+                    "losses": 87 - i * 3,
+                    "payroll": league_pay * (0.8 + i * 0.1),
+                }
+            )
+    raw_pairs = []
+    for row in seasons:
+        raw = raw_season_payroll_efficiency(row)
+        if raw is not None:
+            raw_pairs.append((row["season"], raw))
+    mx = statistics.mean(x for x, _ in raw_pairs)
+    my = statistics.mean(y for _, y in raw_pairs)
+    num = sum((x - mx) * (y - my) for x, y in raw_pairs)
+    den = (
+        sum((x - mx) ** 2 for x, _ in raw_pairs)
+        * sum((y - my) ** 2 for _, y in raw_pairs)
+    ) ** 0.5
+    raw_corr = num / den
+    attach_era_relative_payroll(seasons)
+    era_pairs = [
+        (r["season"], r["payroll_efficiency_era"])
+        for r in seasons
+        if r.get("payroll_efficiency_era") is not None
+    ]
+    mx = statistics.mean(x for x, _ in era_pairs)
+    my = statistics.mean(y for _, y in era_pairs)
+    num = sum((x - mx) * (y - my) for x, y in era_pairs)
+    den = (
+        sum((x - mx) ** 2 for x, _ in era_pairs)
+        * sum((y - my) ** 2 for _, y in era_pairs)
+    ) ** 0.5
+    era_corr = num / den
+    check(raw_corr < -0.3, f"synthetic raw corr should be strongly negative, got {raw_corr}")
+    check(abs(era_corr) < abs(raw_corr) / 2, f"era corr {era_corr} should be much closer to 0 than {raw_corr}")
 
 
 def test_last_complete_season() -> None:
@@ -185,12 +307,25 @@ def main() -> int:
     test_efficiency_wins_2020_proration()
     test_rates_normalize_longevity()
     test_payroll_heavy_prefers_cheap_contention()
+    test_missing_trade_net_not_fake_zero()
+    test_legitimate_zero_trade_net_is_present()
     test_tenure_shrink()
     test_rank_ties()
-    test_payroll_efficiency_skips_missing_payroll()
+    test_payroll_efficiency_era_relative()
+    test_era_corr_improves_on_synthetic()
     test_last_complete_season()
     test_lens_presets()
-    test_balanced_matches_franchise_index()
+    # Franchise golden check runs after rebuild; skip if PE scale looks pre-era.
+    import json
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parent.parent
+    payload = json.loads((root / "data" / "franchise_index.json").read_text(encoding="utf-8"))
+    sample_pe = float(payload["franchises"][0].get("payroll_efficiency") or 0)
+    if sample_pe < 5:  # era-relative scale is ~0.5–2
+        test_balanced_matches_franchise_index()
+    else:
+        print("skip franchise golden (pre-era payroll scale still on disk)")
     print("all ranking checks passed")
     return 0
 

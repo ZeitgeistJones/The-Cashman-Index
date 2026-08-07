@@ -1,369 +1,370 @@
 {
-  "generated_at": "2026-08-07T04:39:36.756877+00:00",
+  "generated_at": "2026-08-07T05:53:01.245638+00:00",
+  "as_of": "2026-08-02",
   "window": [
     2006,
-    2026
+    2025
   ],
-  "framing": "Trade grade = shrunk net WAR per season from club-perspective trades. Same definition for every franchise and GM.",
+  "framing": "Trade grade = shrunk net WAR per season from club-perspective trades through the last complete season (2025). Same definition for every franchise and GM.",
   "franchises": [
     {
       "team_id": 143,
       "team_abbr": "PHI",
       "team_name": "Philadelphia Phillies",
-      "seasons": 21.0,
-      "net_war": 6.01,
-      "trades": 207,
-      "net_war_per_season_raw": 0.2862,
-      "net_war_per_season": 0.2404,
-      "trade_net_rate": 0.2404,
+      "seasons": 20.0,
+      "net_war": 101.75,
+      "trades": 196,
+      "net_war_per_season_raw": 5.0875,
+      "net_war_per_season": 4.2396,
+      "trade_net_rate": 4.2396,
       "rank": 1
-    },
-    {
-      "team_id": 121,
-      "team_abbr": "NYM",
-      "team_name": "New York Mets",
-      "seasons": 21.0,
-      "net_war": -11.66,
-      "trades": 180,
-      "net_war_per_season_raw": -0.5552,
-      "net_war_per_season": -0.4664,
-      "trade_net_rate": -0.4664,
-      "rank": 2
-    },
-    {
-      "team_id": 137,
-      "team_abbr": "SF",
-      "team_name": "San Francisco Giants",
-      "seasons": 21.0,
-      "net_war": -16.75,
-      "trades": 157,
-      "net_war_per_season_raw": -0.7976,
-      "net_war_per_season": -0.67,
-      "trade_net_rate": -0.67,
-      "rank": 3
-    },
-    {
-      "team_id": 119,
-      "team_abbr": "LAD",
-      "team_name": "Los Angeles Dodgers",
-      "seasons": 21.0,
-      "net_war": -31.07,
-      "trades": 234,
-      "net_war_per_season_raw": -1.4795,
-      "net_war_per_season": -1.2428,
-      "trade_net_rate": -1.2428,
-      "rank": 4
     },
     {
       "team_id": 158,
       "team_abbr": "MIL",
       "team_name": "Milwaukee Brewers",
-      "seasons": 21.0,
-      "net_war": -48.28,
-      "trades": 209,
-      "net_war_per_season_raw": -2.299,
-      "net_war_per_season": -1.9312,
-      "trade_net_rate": -1.9312,
-      "rank": 5
+      "seasons": 20.0,
+      "net_war": 93.86,
+      "trades": 195,
+      "net_war_per_season_raw": 4.693,
+      "net_war_per_season": 3.9108,
+      "trade_net_rate": 3.9108,
+      "rank": 2
     },
     {
       "team_id": 147,
       "team_abbr": "NYY",
       "team_name": "New York Yankees",
-      "seasons": 21.0,
-      "net_war": -64.19,
-      "trades": 208,
-      "net_war_per_season_raw": -3.0567,
-      "net_war_per_season": -2.5676,
-      "trade_net_rate": -2.5676,
-      "rank": 6
-    },
-    {
-      "team_id": 144,
-      "team_abbr": "ATL",
-      "team_name": "Atlanta Braves",
-      "seasons": 21.0,
-      "net_war": -65.03,
-      "trades": 228,
-      "net_war_per_season_raw": -3.0967,
-      "net_war_per_season": -2.6012,
-      "trade_net_rate": -2.6012,
-      "rank": 7
-    },
-    {
-      "team_id": 108,
-      "team_abbr": "LAA",
-      "team_name": "Los Angeles Angels",
-      "seasons": 21.0,
-      "net_war": -73.19,
-      "trades": 187,
-      "net_war_per_season_raw": -3.4852,
-      "net_war_per_season": -2.9276,
-      "trade_net_rate": -2.9276,
-      "rank": 8
-    },
-    {
-      "team_id": 138,
-      "team_abbr": "STL",
-      "team_name": "St. Louis Cardinals",
-      "seasons": 21.0,
-      "net_war": -83.28,
-      "trades": 103,
-      "net_war_per_season_raw": -3.9657,
-      "net_war_per_season": -3.3312,
-      "trade_net_rate": -3.3312,
-      "rank": 9
+      "seasons": 20.0,
+      "net_war": 85.81,
+      "trades": 199,
+      "net_war_per_season_raw": 4.2905,
+      "net_war_per_season": 3.5754,
+      "trade_net_rate": 3.5754,
+      "rank": 3
     },
     {
       "team_id": 120,
       "team_abbr": "WSH",
       "team_name": "Washington Nationals",
-      "seasons": 21.0,
-      "net_war": -100.88,
-      "trades": 122,
-      "net_war_per_season_raw": -4.8038,
-      "net_war_per_season": -4.0352,
-      "trade_net_rate": -4.0352,
+      "seasons": 20.0,
+      "net_war": 73.99,
+      "trades": 106,
+      "net_war_per_season_raw": 3.6995,
+      "net_war_per_season": 3.0829,
+      "trade_net_rate": 3.0829,
+      "rank": 4
+    },
+    {
+      "team_id": 119,
+      "team_abbr": "LAD",
+      "team_name": "Los Angeles Dodgers",
+      "seasons": 20.0,
+      "net_war": 70.09,
+      "trades": 222,
+      "net_war_per_season_raw": 3.5045,
+      "net_war_per_season": 2.9204,
+      "trade_net_rate": 2.9204,
+      "rank": 5
+    },
+    {
+      "team_id": 144,
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Braves",
+      "seasons": 20.0,
+      "net_war": 68.37,
+      "trades": 218,
+      "net_war_per_season_raw": 3.4185,
+      "net_war_per_season": 2.8487,
+      "trade_net_rate": 2.8487,
+      "rank": 6
+    },
+    {
+      "team_id": 141,
+      "team_abbr": "TOR",
+      "team_name": "Toronto Blue Jays",
+      "seasons": 20.0,
+      "net_war": 54.37,
+      "trades": 219,
+      "net_war_per_season_raw": 2.7185,
+      "net_war_per_season": 2.2654,
+      "trade_net_rate": 2.2654,
+      "rank": 7
+    },
+    {
+      "team_id": 137,
+      "team_abbr": "SF",
+      "team_name": "San Francisco Giants",
+      "seasons": 20.0,
+      "net_war": 48.64,
+      "trades": 149,
+      "net_war_per_season_raw": 2.432,
+      "net_war_per_season": 2.0267,
+      "trade_net_rate": 2.0267,
+      "rank": 8
+    },
+    {
+      "team_id": 114,
+      "team_abbr": "CLE",
+      "team_name": "Cleveland Guardians",
+      "seasons": 20.0,
+      "net_war": 40.04,
+      "trades": 189,
+      "net_war_per_season_raw": 2.002,
+      "net_war_per_season": 1.6683,
+      "trade_net_rate": 1.6683,
+      "rank": 9
+    },
+    {
+      "team_id": 139,
+      "team_abbr": "TB",
+      "team_name": "Tampa Bay Rays",
+      "seasons": 20.0,
+      "net_war": 33.61,
+      "trades": 258,
+      "net_war_per_season_raw": 1.6805,
+      "net_war_per_season": 1.4004,
+      "trade_net_rate": 1.4004,
       "rank": 10
     },
     {
-      "team_id": 117,
-      "team_abbr": "HOU",
-      "team_name": "Houston Astros",
-      "seasons": 21.0,
-      "net_war": -113.43,
-      "trades": 157,
-      "net_war_per_season_raw": -5.4014,
-      "net_war_per_season": -4.5372,
-      "trade_net_rate": -4.5372,
+      "team_id": 116,
+      "team_abbr": "DET",
+      "team_name": "Detroit Tigers",
+      "seasons": 20.0,
+      "net_war": 32.04,
+      "trades": 131,
+      "net_war_per_season_raw": 1.602,
+      "net_war_per_season": 1.335,
+      "trade_net_rate": 1.335,
       "rank": 11
     },
     {
       "team_id": 112,
       "team_abbr": "CHC",
       "team_name": "Chicago Cubs",
-      "seasons": 21.0,
-      "net_war": -120.88,
-      "trades": 185,
-      "net_war_per_season_raw": -5.7562,
-      "net_war_per_season": -4.8352,
-      "trade_net_rate": -4.8352,
+      "seasons": 20.0,
+      "net_war": 31.44,
+      "trades": 175,
+      "net_war_per_season_raw": 1.572,
+      "net_war_per_season": 1.31,
+      "trade_net_rate": 1.31,
       "rank": 12
     },
     {
-      "team_id": 115,
-      "team_abbr": "COL",
-      "team_name": "Colorado Rockies",
-      "seasons": 21.0,
-      "net_war": -122.33,
-      "trades": 130,
-      "net_war_per_season_raw": -5.8252,
-      "net_war_per_season": -4.8932,
-      "trade_net_rate": -4.8932,
+      "team_id": 121,
+      "team_abbr": "NYM",
+      "team_name": "New York Mets",
+      "seasons": 20.0,
+      "net_war": 28.24,
+      "trades": 168,
+      "net_war_per_season_raw": 1.412,
+      "net_war_per_season": 1.1767,
+      "trade_net_rate": 1.1767,
       "rank": 13
-    },
-    {
-      "team_id": 114,
-      "team_abbr": "CLE",
-      "team_name": "Cleveland Guardians",
-      "seasons": 21.0,
-      "net_war": -124.11,
-      "trades": 198,
-      "net_war_per_season_raw": -5.91,
-      "net_war_per_season": -4.9644,
-      "trade_net_rate": -4.9644,
-      "rank": 14
-    },
-    {
-      "team_id": 139,
-      "team_abbr": "TB",
-      "team_name": "Tampa Bay Rays",
-      "seasons": 21.0,
-      "net_war": -124.4,
-      "trades": 275,
-      "net_war_per_season_raw": -5.9238,
-      "net_war_per_season": -4.976,
-      "trade_net_rate": -4.976,
-      "rank": 15
-    },
-    {
-      "team_id": 141,
-      "team_abbr": "TOR",
-      "team_name": "Toronto Blue Jays",
-      "seasons": 21.0,
-      "net_war": -126.39,
-      "trades": 235,
-      "net_war_per_season_raw": -6.0186,
-      "net_war_per_season": -5.0556,
-      "trade_net_rate": -5.0556,
-      "rank": 16
-    },
-    {
-      "team_id": 110,
-      "team_abbr": "BAL",
-      "team_name": "Baltimore Orioles",
-      "seasons": 21.0,
-      "net_war": -131.81,
-      "trades": 227,
-      "net_war_per_season_raw": -6.2767,
-      "net_war_per_season": -5.2724,
-      "trade_net_rate": -5.2724,
-      "rank": 17
-    },
-    {
-      "team_id": 116,
-      "team_abbr": "DET",
-      "team_name": "Detroit Tigers",
-      "seasons": 21.0,
-      "net_war": -132.69,
-      "trades": 142,
-      "net_war_per_season_raw": -6.3186,
-      "net_war_per_season": -5.3076,
-      "trade_net_rate": -5.3076,
-      "rank": 18
-    },
-    {
-      "team_id": 140,
-      "team_abbr": "TEX",
-      "team_name": "Texas Rangers",
-      "seasons": 21.0,
-      "net_war": -142.49,
-      "trades": 223,
-      "net_war_per_season_raw": -6.7852,
-      "net_war_per_season": -5.6996,
-      "trade_net_rate": -5.6996,
-      "rank": 19
-    },
-    {
-      "team_id": 145,
-      "team_abbr": "CWS",
-      "team_name": "Chicago White Sox",
-      "seasons": 21.0,
-      "net_war": -145.32,
-      "trades": 199,
-      "net_war_per_season_raw": -6.92,
-      "net_war_per_season": -5.8128,
-      "trade_net_rate": -5.8128,
-      "rank": 20
-    },
-    {
-      "team_id": 118,
-      "team_abbr": "KC",
-      "team_name": "Kansas City Royals",
-      "seasons": 21.0,
-      "net_war": -147.65,
-      "trades": 201,
-      "net_war_per_season_raw": -7.031,
-      "net_war_per_season": -5.906,
-      "trade_net_rate": -5.906,
-      "rank": 21
-    },
-    {
-      "team_id": 142,
-      "team_abbr": "MIN",
-      "team_name": "Minnesota Twins",
-      "seasons": 21.0,
-      "net_war": -147.79,
-      "trades": 153,
-      "net_war_per_season_raw": -7.0376,
-      "net_war_per_season": -5.9116,
-      "trade_net_rate": -5.9116,
-      "rank": 22
-    },
-    {
-      "team_id": 113,
-      "team_abbr": "CIN",
-      "team_name": "Cincinnati Reds",
-      "seasons": 21.0,
-      "net_war": -150.46,
-      "trades": 163,
-      "net_war_per_season_raw": -7.1648,
-      "net_war_per_season": -6.0184,
-      "trade_net_rate": -6.0184,
-      "rank": 23
     },
     {
       "team_id": 133,
       "team_abbr": "OAK",
       "team_name": "Athletics",
-      "seasons": 21.0,
-      "net_war": -153.62,
-      "trades": 227,
-      "net_war_per_season_raw": -7.3152,
-      "net_war_per_season": -6.1448,
-      "trade_net_rate": -6.1448,
-      "rank": 24
+      "seasons": 20.0,
+      "net_war": 27.62,
+      "trades": 213,
+      "net_war_per_season_raw": 1.381,
+      "net_war_per_season": 1.1508,
+      "trade_net_rate": 1.1508,
+      "rank": 14
+    },
+    {
+      "team_id": 108,
+      "team_abbr": "LAA",
+      "team_name": "Los Angeles Angels",
+      "seasons": 20.0,
+      "net_war": 26.15,
+      "trades": 179,
+      "net_war_per_season_raw": 1.3075,
+      "net_war_per_season": 1.0896,
+      "trade_net_rate": 1.0896,
+      "rank": 15
+    },
+    {
+      "team_id": 138,
+      "team_abbr": "STL",
+      "team_name": "St. Louis Cardinals",
+      "seasons": 20.0,
+      "net_war": 23.57,
+      "trades": 93,
+      "net_war_per_season_raw": 1.1785,
+      "net_war_per_season": 0.9821,
+      "trade_net_rate": 0.9821,
+      "rank": 16
     },
     {
       "team_id": 134,
       "team_abbr": "PIT",
       "team_name": "Pittsburgh Pirates",
-      "seasons": 21.0,
-      "net_war": -165.72,
-      "trades": 247,
-      "net_war_per_season_raw": -7.8914,
-      "net_war_per_season": -6.6288,
-      "trade_net_rate": -6.6288,
-      "rank": 25
+      "seasons": 20.0,
+      "net_war": 20.96,
+      "trades": 232,
+      "net_war_per_season_raw": 1.048,
+      "net_war_per_season": 0.8733,
+      "trade_net_rate": 0.8733,
+      "rank": 17
     },
     {
-      "team_id": 111,
-      "team_abbr": "BOS",
-      "team_name": "Boston Red Sox",
-      "seasons": 21.0,
-      "net_war": -179.97,
-      "trades": 220,
-      "net_war_per_season_raw": -8.57,
-      "net_war_per_season": -7.1988,
-      "trade_net_rate": -7.1988,
-      "rank": 26
+      "team_id": 117,
+      "team_abbr": "HOU",
+      "team_name": "Houston Astros",
+      "seasons": 20.0,
+      "net_war": 4.15,
+      "trades": 146,
+      "net_war_per_season_raw": 0.2075,
+      "net_war_per_season": 0.1729,
+      "trade_net_rate": 0.1729,
+      "rank": 18
+    },
+    {
+      "team_id": 118,
+      "team_abbr": "KC",
+      "team_name": "Kansas City Royals",
+      "seasons": 20.0,
+      "net_war": 1.7,
+      "trades": 190,
+      "net_war_per_season_raw": 0.085,
+      "net_war_per_season": 0.0708,
+      "trade_net_rate": 0.0708,
+      "rank": 19
+    },
+    {
+      "team_id": 110,
+      "team_abbr": "BAL",
+      "team_name": "Baltimore Orioles",
+      "seasons": 20.0,
+      "net_war": -2.21,
+      "trades": 210,
+      "net_war_per_season_raw": -0.1105,
+      "net_war_per_season": -0.0921,
+      "trade_net_rate": -0.0921,
+      "rank": 20
+    },
+    {
+      "team_id": 113,
+      "team_abbr": "CIN",
+      "team_name": "Cincinnati Reds",
+      "seasons": 20.0,
+      "net_war": -4.97,
+      "trades": 156,
+      "net_war_per_season_raw": -0.2485,
+      "net_war_per_season": -0.2071,
+      "trade_net_rate": -0.2071,
+      "rank": 21
     },
     {
       "team_id": 136,
       "team_abbr": "SEA",
       "team_name": "Seattle Mariners",
-      "seasons": 21.0,
-      "net_war": -184.54,
-      "trades": 263,
-      "net_war_per_season_raw": -8.7876,
-      "net_war_per_season": -7.3816,
-      "trade_net_rate": -7.3816,
+      "seasons": 20.0,
+      "net_war": -10.83,
+      "trades": 249,
+      "net_war_per_season_raw": -0.5415,
+      "net_war_per_season": -0.4512,
+      "trade_net_rate": -0.4512,
+      "rank": 22
+    },
+    {
+      "team_id": 145,
+      "team_abbr": "CWS",
+      "team_name": "Chicago White Sox",
+      "seasons": 20.0,
+      "net_war": -16.36,
+      "trades": 185,
+      "net_war_per_season_raw": -0.818,
+      "net_war_per_season": -0.6817,
+      "trade_net_rate": -0.6817,
+      "rank": 23
+    },
+    {
+      "team_id": 142,
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Twins",
+      "seasons": 20.0,
+      "net_war": -23.87,
+      "trades": 136,
+      "net_war_per_season_raw": -1.1935,
+      "net_war_per_season": -0.9946,
+      "trade_net_rate": -0.9946,
+      "rank": 24
+    },
+    {
+      "team_id": 111,
+      "team_abbr": "BOS",
+      "team_name": "Boston Red Sox",
+      "seasons": 20.0,
+      "net_war": -26.14,
+      "trades": 210,
+      "net_war_per_season_raw": -1.307,
+      "net_war_per_season": -1.0892,
+      "trade_net_rate": -1.0892,
+      "rank": 25
+    },
+    {
+      "team_id": 140,
+      "team_abbr": "TEX",
+      "team_name": "Texas Rangers",
+      "seasons": 20.0,
+      "net_war": -34.06,
+      "trades": 217,
+      "net_war_per_season_raw": -1.703,
+      "net_war_per_season": -1.4192,
+      "trade_net_rate": -1.4192,
+      "rank": 26
+    },
+    {
+      "team_id": 115,
+      "team_abbr": "COL",
+      "team_name": "Colorado Rockies",
+      "seasons": 20.0,
+      "net_war": -40.42,
+      "trades": 121,
+      "net_war_per_season_raw": -2.021,
+      "net_war_per_season": -1.6842,
+      "trade_net_rate": -1.6842,
       "rank": 27
     },
     {
-      "team_id": 146,
-      "team_abbr": "MIA",
-      "team_name": "Miami Marlins",
-      "seasons": 21.0,
-      "net_war": -269.56,
-      "trades": 176,
-      "net_war_per_season_raw": -12.8362,
-      "net_war_per_season": -10.7824,
-      "trade_net_rate": -10.7824,
+      "team_id": 109,
+      "team_abbr": "ARI",
+      "team_name": "Arizona Diamondbacks",
+      "seasons": 20.0,
+      "net_war": -40.73,
+      "trades": 182,
+      "net_war_per_season_raw": -2.0365,
+      "net_war_per_season": -1.6971,
+      "trade_net_rate": -1.6971,
       "rank": 28
     },
     {
       "team_id": 135,
       "team_abbr": "SD",
       "team_name": "San Diego Padres",
-      "seasons": 21.0,
-      "net_war": -297.77,
-      "trades": 175,
-      "net_war_per_season_raw": -14.1795,
-      "net_war_per_season": -11.9108,
-      "trade_net_rate": -11.9108,
+      "seasons": 20.0,
+      "net_war": -62.69,
+      "trades": 173,
+      "net_war_per_season_raw": -3.1345,
+      "net_war_per_season": -2.6121,
+      "trade_net_rate": -2.6121,
       "rank": 29
     },
     {
-      "team_id": 109,
-      "team_abbr": "ARI",
-      "team_name": "Arizona Diamondbacks",
-      "seasons": 21.0,
-      "net_war": -300.03,
-      "trades": 190,
-      "net_war_per_season_raw": -14.2871,
-      "net_war_per_season": -12.0012,
-      "trade_net_rate": -12.0012,
+      "team_id": 146,
+      "team_abbr": "MIA",
+      "team_name": "Miami Marlins",
+      "seasons": 20.0,
+      "net_war": -82.41,
+      "trades": 164,
+      "net_war_per_season_raw": -4.1205,
+      "net_war_per_season": -3.4337,
+      "trade_net_rate": -3.4337,
       "rank": 30
     }
   ],
@@ -374,13 +375,257 @@
       "teams": [
         "MIL"
       ],
-      "seasons": 3.75,
-      "net_war": 32.29,
-      "trades": 70,
-      "net_war_per_season_raw": 8.6107,
-      "net_war_per_season": 4.3053,
-      "trade_net_rate": 4.3053,
+      "seasons": 3.0833333333333335,
+      "net_war": 42.7,
+      "trades": 56,
+      "net_war_per_season_raw": 13.8486,
+      "net_war_per_season": 5.9351,
+      "trade_net_rate": 5.9351,
       "rank": 1
+    },
+    {
+      "person_id": "dave-dombrowski",
+      "name": "Dave Dombrowski",
+      "teams": [
+        "BOS",
+        "DET",
+        "PHI"
+      ],
+      "seasons": 18.666666666666668,
+      "net_war": 113.44,
+      "trades": 160,
+      "net_war_per_season_raw": 6.0771,
+      "net_war_per_season": 5.0202,
+      "trade_net_rate": 5.0202,
+      "rank": 2
+    },
+    {
+      "person_id": "ruben-amaro-jr",
+      "name": "Ruben Amaro Jr.",
+      "teams": [
+        "PHI"
+      ],
+      "seasons": 6.916666666666667,
+      "net_war": 52.8,
+      "trades": 44,
+      "net_war_per_season_raw": 7.6337,
+      "net_war_per_season": 4.8578,
+      "trade_net_rate": 4.8578,
+      "rank": 3
+    },
+    {
+      "person_id": "alex-anthopoulos",
+      "name": "Alex Anthopoulos",
+      "teams": [
+        "ATL",
+        "TOR"
+      ],
+      "seasons": 14.083333333333334,
+      "net_war": 78.39,
+      "trades": 186,
+      "net_war_per_season_raw": 5.5662,
+      "net_war_per_season": 4.3293,
+      "trade_net_rate": 4.3293,
+      "rank": 4
+    },
+    {
+      "person_id": "matt-klentak",
+      "name": "Matt Klentak",
+      "teams": [
+        "PHI"
+      ],
+      "seasons": 5.0,
+      "net_war": 36.29,
+      "trades": 68,
+      "net_war_per_season_raw": 7.258,
+      "net_war_per_season": 4.0322,
+      "trade_net_rate": 4.0322,
+      "rank": 5
+    },
+    {
+      "person_id": "mike-rizzo",
+      "name": "Mike Rizzo",
+      "teams": [
+        "WSH"
+      ],
+      "seasons": 16.333333333333332,
+      "net_war": 76.75,
+      "trades": 101,
+      "net_war_per_season_raw": 4.699,
+      "net_war_per_season": 3.7592,
+      "trade_net_rate": 3.7592,
+      "rank": 6
+    },
+    {
+      "person_id": "brian-cashman",
+      "name": "Brian Cashman",
+      "teams": [
+        "NYY"
+      ],
+      "seasons": 19.916666666666668,
+      "net_war": 85.81,
+      "trades": 199,
+      "net_war_per_season_raw": 4.3085,
+      "net_war_per_season": 3.5904,
+      "trade_net_rate": 3.5904,
+      "rank": 7
+    },
+    {
+      "person_id": "theo-epstein",
+      "name": "Theo Epstein",
+      "teams": [
+        "BOS",
+        "CHC"
+      ],
+      "seasons": 14.833333333333334,
+      "net_war": 67.46,
+      "trades": 125,
+      "net_war_per_season_raw": 4.5479,
+      "net_war_per_season": 3.5904,
+      "trade_net_rate": 3.5904,
+      "rank": 8
+    },
+    {
+      "person_id": "david-stearns",
+      "name": "David Stearns",
+      "teams": [
+        "MIL",
+        "NYM"
+      ],
+      "seasons": 9.333333333333334,
+      "net_war": 47.19,
+      "trades": 137,
+      "net_war_per_season_raw": 5.0561,
+      "net_war_per_season": 3.5004,
+      "trade_net_rate": 3.5004,
+      "rank": 9
+    },
+    {
+      "person_id": "billy-eppler",
+      "name": "Billy Eppler",
+      "teams": [
+        "LAA",
+        "NYM"
+      ],
+      "seasons": 7.0,
+      "net_war": 37.03,
+      "trades": 93,
+      "net_war_per_season_raw": 5.29,
+      "net_war_per_season": 3.3664,
+      "trade_net_rate": 3.3664,
+      "rank": 10
+    },
+    {
+      "person_id": "farhan-zaidi",
+      "name": "Farhan Zaidi",
+      "teams": [
+        "SF"
+      ],
+      "seasons": 5.833333333333333,
+      "net_war": 28.77,
+      "trades": 86,
+      "net_war_per_season_raw": 4.932,
+      "net_war_per_season": 2.9592,
+      "trade_net_rate": 2.9592,
+      "rank": 11
+    },
+    {
+      "person_id": "chris-antonetti",
+      "name": "Chris Antonetti",
+      "teams": [
+        "CLE"
+      ],
+      "seasons": 15.166666666666666,
+      "net_war": 54.22,
+      "trades": 169,
+      "net_war_per_season_raw": 3.5749,
+      "net_war_per_season": 2.8223,
+      "trade_net_rate": 2.8223,
+      "rank": 12
+    },
+    {
+      "person_id": "ned-colletti",
+      "name": "Ned Colletti",
+      "teams": [
+        "LAD"
+      ],
+      "seasons": 8.75,
+      "net_war": 35.02,
+      "trades": 43,
+      "net_war_per_season_raw": 4.0023,
+      "net_war_per_season": 2.7708,
+      "trade_net_rate": 2.7708,
+      "rank": 13
+    },
+    {
+      "person_id": "brian-sabean",
+      "name": "Brian Sabean",
+      "teams": [
+        "SF"
+      ],
+      "seasons": 9.25,
+      "net_war": 34.67,
+      "trades": 28,
+      "net_war_per_season_raw": 3.7481,
+      "net_war_per_season": 2.5948,
+      "trade_net_rate": 2.5948,
+      "rank": 14
+    },
+    {
+      "person_id": "billy-beane",
+      "name": "Billy Beane",
+      "teams": [
+        "OAK"
+      ],
+      "seasons": 9.75,
+      "net_war": 33.77,
+      "trades": 95,
+      "net_war_per_season_raw": 3.4636,
+      "net_war_per_season": 2.474,
+      "trade_net_rate": 2.474,
+      "rank": 15
+    },
+    {
+      "person_id": "andy-macphail",
+      "name": "Andy MacPhail",
+      "teams": [
+        "BAL"
+      ],
+      "seasons": 4.416666666666667,
+      "net_war": 21.51,
+      "trades": 18,
+      "net_war_per_season_raw": 4.8702,
+      "net_war_per_season": 2.4351,
+      "trade_net_rate": 2.4351,
+      "rank": 16
+    },
+    {
+      "person_id": "ross-atkins",
+      "name": "Ross Atkins",
+      "teams": [
+        "TOR"
+      ],
+      "seasons": 10.0,
+      "net_war": 32.58,
+      "trades": 141,
+      "net_war_per_season_raw": 3.258,
+      "net_war_per_season": 2.3271,
+      "trade_net_rate": 2.3271,
+      "rank": 17
+    },
+    {
+      "person_id": "brodie-van-wagenen",
+      "name": "Brodie Van Wagenen",
+      "teams": [
+        "NYM"
+      ],
+      "seasons": 2.1666666666666665,
+      "net_war": 14.66,
+      "trades": 15,
+      "net_war_per_season_raw": 6.7662,
+      "net_war_per_season": 2.2554,
+      "trade_net_rate": 2.2554,
+      "rank": 18
     },
     {
       "person_id": "jp-ricciardi",
@@ -394,149 +639,64 @@
       "net_war_per_season_raw": 4.4267,
       "net_war_per_season": 2.2134,
       "trade_net_rate": 2.2134,
-      "rank": 2
+      "rank": 19
     },
     {
-      "person_id": "brodie-van-wagenen",
-      "name": "Brodie Van Wagenen",
+      "person_id": "derek-falvey",
+      "name": "Derek Falvey",
       "teams": [
-        "NYM"
+        "MIN"
       ],
-      "seasons": 2.1666666666666665,
-      "net_war": 11.69,
-      "trades": 15,
-      "net_war_per_season_raw": 5.3954,
-      "net_war_per_season": 1.7985,
-      "trade_net_rate": 1.7985,
-      "rank": 3
+      "seasons": 9.083333333333334,
+      "net_war": 28.51,
+      "trades": 92,
+      "net_war_per_season_raw": 3.1387,
+      "net_war_per_season": 2.1729,
+      "trade_net_rate": 2.1729,
+      "rank": 20
     },
     {
-      "person_id": "billy-eppler",
-      "name": "Billy Eppler",
+      "person_id": "andrew-friedman",
+      "name": "Andrew Friedman",
       "teams": [
-        "LAA",
-        "NYM"
+        "LAD",
+        "TB"
       ],
-      "seasons": 7.0,
-      "net_war": 18.02,
-      "trades": 93,
-      "net_war_per_season_raw": 2.5743,
-      "net_war_per_season": 1.6382,
-      "trade_net_rate": 1.6382,
-      "rank": 4
+      "seasons": 19.916666666666664,
+      "net_war": 50.89,
+      "trades": 224,
+      "net_war_per_season_raw": 2.5551,
+      "net_war_per_season": 2.1292,
+      "trade_net_rate": 2.1292,
+      "rank": 21
     },
     {
-      "person_id": "andy-macphail",
-      "name": "Andy MacPhail",
+      "person_id": "erik-neander",
+      "name": "Erik Neander",
       "teams": [
-        "BAL"
+        "TB"
       ],
-      "seasons": 4.416666666666667,
-      "net_war": 11.15,
-      "trades": 18,
-      "net_war_per_season_raw": 2.5245,
-      "net_war_per_season": 1.2623,
-      "trade_net_rate": 1.2623,
-      "rank": 5
+      "seasons": 8.916666666666666,
+      "net_war": 26.73,
+      "trades": 185,
+      "net_war_per_season_raw": 2.9978,
+      "net_war_per_season": 2.0754,
+      "trade_net_rate": 2.0754,
+      "rank": 22
     },
     {
-      "person_id": "dana-brown",
-      "name": "Dana Brown",
+      "person_id": "neal-huntington",
+      "name": "Neal Huntington",
       "teams": [
-        "HOU"
+        "PIT"
       ],
-      "seasons": 3.5833333333333335,
-      "net_war": 8.08,
-      "trades": 43,
-      "net_war_per_season_raw": 2.2549,
-      "net_war_per_season": 1.1275,
-      "trade_net_rate": 1.1275,
-      "rank": 6
-    },
-    {
-      "person_id": "paul-depodesta",
-      "name": "Paul DePodesta",
-      "teams": [
-        "COL"
-      ],
-      "seasons": 0.75,
-      "net_war": 3.69,
-      "trades": 11,
-      "net_war_per_season_raw": 4.92,
-      "net_war_per_season": 0.984,
-      "trade_net_rate": 0.984,
-      "rank": 7
-    },
-    {
-      "person_id": "farhan-zaidi",
-      "name": "Farhan Zaidi",
-      "teams": [
-        "SF"
-      ],
-      "seasons": 5.833333333333333,
-      "net_war": 9.32,
-      "trades": 86,
-      "net_war_per_season_raw": 1.5977,
-      "net_war_per_season": 0.9586,
-      "trade_net_rate": 0.9586,
-      "rank": 8
-    },
-    {
-      "person_id": "brian-sabean",
-      "name": "Brian Sabean",
-      "teams": [
-        "SF"
-      ],
-      "seasons": 9.25,
-      "net_war": 11.94,
-      "trades": 28,
-      "net_war_per_season_raw": 1.2908,
-      "net_war_per_season": 0.8936,
-      "trade_net_rate": 0.8936,
-      "rank": 9
-    },
-    {
-      "person_id": "ned-colletti",
-      "name": "Ned Colletti",
-      "teams": [
-        "LAD"
-      ],
-      "seasons": 8.75,
-      "net_war": 10.6,
-      "trades": 43,
-      "net_war_per_season_raw": 1.2114,
-      "net_war_per_season": 0.8387,
-      "trade_net_rate": 0.8387,
-      "rank": 10
-    },
-    {
-      "person_id": "dick-williams",
-      "name": "Dick Williams",
-      "teams": [
-        "CIN"
-      ],
-      "seasons": 1.5833333333333333,
-      "net_war": 2.3,
-      "trades": 17,
-      "net_war_per_season_raw": 1.4526,
-      "net_war_per_season": 0.4842,
-      "trade_net_rate": 0.4842,
-      "rank": 11
-    },
-    {
-      "person_id": "david-stearns",
-      "name": "David Stearns",
-      "teams": [
-        "MIL",
-        "NYM"
-      ],
-      "seasons": 10.0,
-      "net_war": 6.63,
-      "trades": 149,
-      "net_war_per_season_raw": 0.663,
-      "net_war_per_season": 0.4736,
-      "trade_net_rate": 0.4736,
-      "rank": 12
+      "seasons": 12.166666666666666,
+      "net_war": 33.4,
+      "trades": 146,
+      "net_war_per_season_raw": 2.7452,
+      "net_war_per_season": 2.0589,
+      "trade_net_rate": 2.0589,
+      "rank": 23
     },
     {
       "person_id": "kim-ng",
@@ -545,26 +705,208 @@
         "MIA"
       ],
       "seasons": 3.0,
-      "net_war": 2.66,
+      "net_war": 11.67,
       "trades": 40,
-      "net_war_per_season_raw": 0.8867,
-      "net_war_per_season": 0.38,
-      "trade_net_rate": 0.38,
-      "rank": 13
+      "net_war_per_season_raw": 3.89,
+      "net_war_per_season": 1.6671,
+      "trade_net_rate": 1.6671,
+      "rank": 24
     },
     {
-      "person_id": "matt-klentak",
-      "name": "Matt Klentak",
+      "person_id": "mike-hazen",
+      "name": "Mike Hazen",
       "teams": [
-        "PHI"
+        "ARI"
       ],
-      "seasons": 5.0,
-      "net_war": 1.71,
-      "trades": 68,
-      "net_war_per_season_raw": 0.342,
-      "net_war_per_season": 0.19,
-      "trade_net_rate": 0.19,
-      "rank": 14
+      "seasons": 9.166666666666666,
+      "net_war": 19.34,
+      "trades": 95,
+      "net_war_per_season_raw": 2.1098,
+      "net_war_per_season": 1.4606,
+      "trade_net_rate": 1.4606,
+      "rank": 25
+    },
+    {
+      "person_id": "john-hart",
+      "name": "John Hart",
+      "teams": [
+        "ATL"
+      ],
+      "seasons": 3.1666666666666665,
+      "net_war": 10.3,
+      "trades": 65,
+      "net_war_per_season_raw": 3.2526,
+      "net_war_per_season": 1.394,
+      "trade_net_rate": 1.394,
+      "rank": 26
+    },
+    {
+      "person_id": "john-mozeliak",
+      "name": "John Mozeliak",
+      "teams": [
+        "STL"
+      ],
+      "seasons": 17.916666666666668,
+      "net_war": 29.8,
+      "trades": 91,
+      "net_war_per_season_raw": 1.6633,
+      "net_war_per_season": 1.3609,
+      "trade_net_rate": 1.3609,
+      "rank": 27
+    },
+    {
+      "person_id": "dana-brown",
+      "name": "Dana Brown",
+      "teams": [
+        "HOU"
+      ],
+      "seasons": 2.9166666666666665,
+      "net_war": 7.67,
+      "trades": 32,
+      "net_war_per_season_raw": 2.6297,
+      "net_war_per_season": 1.127,
+      "trade_net_rate": 1.127,
+      "rank": 28
+    },
+    {
+      "person_id": "jeff-luhnow",
+      "name": "Jeff Luhnow",
+      "teams": [
+        "HOU"
+      ],
+      "seasons": 8.166666666666666,
+      "net_war": 13.61,
+      "trades": 78,
+      "net_war_per_season_raw": 1.6665,
+      "net_war_per_season": 1.111,
+      "trade_net_rate": 1.111,
+      "rank": 29
+    },
+    {
+      "person_id": "scott-harris",
+      "name": "Scott Harris",
+      "teams": [
+        "DET"
+      ],
+      "seasons": 3.25,
+      "net_war": 5.96,
+      "trades": 37,
+      "net_war_per_season_raw": 1.8338,
+      "net_war_per_season": 0.7859,
+      "trade_net_rate": 0.7859,
+      "rank": 30
+    },
+    {
+      "person_id": "tony-reagins",
+      "name": "Tony Reagins",
+      "teams": [
+        "LAA"
+      ],
+      "seasons": 4.0,
+      "net_war": 5.56,
+      "trades": 8,
+      "net_war_per_season_raw": 1.39,
+      "net_war_per_season": 0.695,
+      "trade_net_rate": 0.695,
+      "rank": 31
+    },
+    {
+      "person_id": "buster-posey",
+      "name": "Buster Posey",
+      "teams": [
+        "SF"
+      ],
+      "seasons": 1.25,
+      "net_war": 3.54,
+      "trades": 11,
+      "net_war_per_season_raw": 2.832,
+      "net_war_per_season": 0.5664,
+      "trade_net_rate": 0.5664,
+      "rank": 32
+    },
+    {
+      "person_id": "doug-melvin",
+      "name": "Doug Melvin",
+      "teams": [
+        "MIL"
+      ],
+      "seasons": 9.666666666666666,
+      "net_war": 6.93,
+      "trades": 43,
+      "net_war_per_season_raw": 0.7169,
+      "net_war_per_season": 0.5121,
+      "trade_net_rate": 0.5121,
+      "rank": 33
+    },
+    {
+      "person_id": "dick-williams",
+      "name": "Dick Williams",
+      "teams": [
+        "CIN"
+      ],
+      "seasons": 1.5833333333333333,
+      "net_war": 2.11,
+      "trades": 17,
+      "net_war_per_season_raw": 1.3326,
+      "net_war_per_season": 0.4442,
+      "trade_net_rate": 0.4442,
+      "rank": 34
+    },
+    {
+      "person_id": "nick-krall",
+      "name": "Nick Krall",
+      "teams": [
+        "CIN"
+      ],
+      "seasons": 7.583333333333333,
+      "net_war": 4.47,
+      "trades": 99,
+      "net_war_per_season_raw": 0.5895,
+      "net_war_per_season": 0.393,
+      "trade_net_rate": 0.393,
+      "rank": 35
+    },
+    {
+      "person_id": "dayton-moore",
+      "name": "Dayton Moore",
+      "teams": [
+        "KC"
+      ],
+      "seasons": 16.25,
+      "net_war": 7.23,
+      "trades": 143,
+      "net_war_per_season_raw": 0.4449,
+      "net_war_per_season": 0.3559,
+      "trade_net_rate": 0.3559,
+      "rank": 36
+    },
+    {
+      "person_id": "aj-preller",
+      "name": "A.J. Preller",
+      "teams": [
+        "SD"
+      ],
+      "seasons": 11.333333333333334,
+      "net_war": 2.99,
+      "trades": 121,
+      "net_war_per_season_raw": 0.2638,
+      "net_war_per_season": 0.1935,
+      "trade_net_rate": 0.1935,
+      "rank": 37
+    },
+    {
+      "person_id": "sandy-alderson",
+      "name": "Sandy Alderson",
+      "teams": [
+        "NYM"
+      ],
+      "seasons": 7.666666666666667,
+      "net_war": 1.08,
+      "trades": 60,
+      "net_war_per_season_raw": 0.1409,
+      "net_war_per_season": 0.0939,
+      "trade_net_rate": 0.0939,
+      "rank": 38
     },
     {
       "person_id": "jared-porter",
@@ -573,12 +915,26 @@
         "NYM"
       ],
       "seasons": 0.5,
-      "net_war": 24.79,
+      "net_war": 26.88,
       "trades": 4,
-      "net_war_per_season_raw": 49.58,
+      "net_war_per_season_raw": 53.76,
       "net_war_per_season": 0.0,
       "trade_net_rate": 0.0,
-      "rank": 15
+      "rank": 39
+    },
+    {
+      "person_id": "paul-depodesta",
+      "name": "Paul DePodesta",
+      "teams": [
+        "COL"
+      ],
+      "seasons": 0.5,
+      "net_war": 1.52,
+      "trades": 2,
+      "net_war_per_season_raw": 3.04,
+      "net_war_per_season": 0.0,
+      "trade_net_rate": 0.0,
+      "rank": 40
     },
     {
       "person_id": "ned-rice",
@@ -592,7 +948,7 @@
       "net_war_per_season_raw": 0.0,
       "net_war_per_season": 0.0,
       "trade_net_rate": 0.0,
-      "rank": 16
+      "rank": 41
     },
     {
       "person_id": "sam-menzin",
@@ -606,7 +962,7 @@
       "net_war_per_season_raw": 0.0,
       "net_war_per_season": 0.0,
       "trade_net_rate": 0.0,
-      "rank": 17
+      "rank": 42
     },
     {
       "person_id": "john-ricco",
@@ -615,26 +971,12 @@
         "NYM"
       ],
       "seasons": 0.5,
-      "net_war": -0.78,
+      "net_war": -0.48,
       "trades": 5,
-      "net_war_per_season_raw": -1.56,
+      "net_war_per_season_raw": -0.96,
       "net_war_per_season": 0.0,
       "trade_net_rate": 0.0,
-      "rank": 18
-    },
-    {
-      "person_id": "rob-antony",
-      "name": "Rob Antony",
-      "teams": [
-        "MIN"
-      ],
-      "seasons": 0.5,
-      "net_war": -2.52,
-      "trades": 2,
-      "net_war_per_season_raw": -5.04,
-      "net_war_per_season": 0.0,
-      "trade_net_rate": 0.0,
-      "rank": 19
+      "rank": 43
     },
     {
       "person_id": "mike-debartolo",
@@ -643,12 +985,40 @@
         "WSH"
       ],
       "seasons": 0.5,
-      "net_war": -3.62,
+      "net_war": -0.75,
       "trades": 3,
-      "net_war_per_season_raw": -7.24,
+      "net_war_per_season_raw": -1.5,
       "net_war_per_season": 0.0,
       "trade_net_rate": 0.0,
-      "rank": 20
+      "rank": 44
+    },
+    {
+      "person_id": "paul-toboni",
+      "name": "Paul Toboni",
+      "teams": [
+        "WSH"
+      ],
+      "seasons": 0.5,
+      "net_war": -2.01,
+      "trades": 2,
+      "net_war_per_season_raw": -4.02,
+      "net_war_per_season": 0.0,
+      "trade_net_rate": 0.0,
+      "rank": 45
+    },
+    {
+      "person_id": "rob-antony",
+      "name": "Rob Antony",
+      "teams": [
+        "MIN"
+      ],
+      "seasons": 0.5,
+      "net_war": -3.76,
+      "trades": 2,
+      "net_war_per_season_raw": -7.52,
+      "net_war_per_season": 0.0,
+      "trade_net_rate": 0.0,
+      "rank": 46
     },
     {
       "person_id": "tony-lacava",
@@ -657,12 +1027,26 @@
         "TOR"
       ],
       "seasons": 0.5,
-      "net_war": -10.22,
+      "net_war": -6.22,
       "trades": 1,
-      "net_war_per_season_raw": -20.44,
+      "net_war_per_season_raw": -12.44,
       "net_war_per_season": 0.0,
       "trade_net_rate": 0.0,
-      "rank": 21
+      "rank": 47
+    },
+    {
+      "person_id": "chris-young",
+      "name": "Chris Young",
+      "teams": [
+        "TEX"
+      ],
+      "seasons": 3.3333333333333335,
+      "net_war": -0.5,
+      "trades": 35,
+      "net_war_per_season_raw": -0.15,
+      "net_war_per_season": -0.0643,
+      "trade_net_rate": -0.0643,
+      "rank": 48
     },
     {
       "person_id": "bill-stoneman",
@@ -676,176 +1060,7 @@
       "net_war_per_season_raw": -0.32,
       "net_war_per_season": -0.1067,
       "trade_net_rate": -0.1067,
-      "rank": 22
-    },
-    {
-      "person_id": "omar-minaya",
-      "name": "Omar Minaya",
-      "teams": [
-        "NYM"
-      ],
-      "seasons": 4.75,
-      "net_war": -1.5,
-      "trades": 9,
-      "net_war_per_season_raw": -0.3158,
-      "net_war_per_season": -0.1754,
-      "trade_net_rate": -0.1754,
-      "rank": 23
-    },
-    {
-      "person_id": "ruben-amaro-jr",
-      "name": "Ruben Amaro Jr.",
-      "teams": [
-        "PHI"
-      ],
-      "seasons": 6.916666666666667,
-      "net_war": -2.39,
-      "trades": 44,
-      "net_war_per_season_raw": -0.3455,
-      "net_war_per_season": -0.2199,
-      "trade_net_rate": -0.2199,
-      "rank": 24
-    },
-    {
-      "person_id": "buster-posey",
-      "name": "Buster Posey",
-      "teams": [
-        "SF"
-      ],
-      "seasons": 1.9166666666666667,
-      "net_war": -1.69,
-      "trades": 19,
-      "net_war_per_season_raw": -0.8817,
-      "net_war_per_season": -0.2939,
-      "trade_net_rate": -0.2939,
-      "rank": 25
-    },
-    {
-      "person_id": "paul-toboni",
-      "name": "Paul Toboni",
-      "teams": [
-        "WSH"
-      ],
-      "seasons": 0.9166666666666666,
-      "net_war": -1.68,
-      "trades": 18,
-      "net_war_per_season_raw": -1.8327,
-      "net_war_per_season": -0.3665,
-      "trade_net_rate": -0.3665,
-      "rank": 26
-    },
-    {
-      "person_id": "scott-harris",
-      "name": "Scott Harris",
-      "teams": [
-        "DET"
-      ],
-      "seasons": 3.9166666666666665,
-      "net_war": -3.54,
-      "trades": 48,
-      "net_war_per_season_raw": -0.9038,
-      "net_war_per_season": -0.4519,
-      "trade_net_rate": -0.4519,
-      "rank": 27
-    },
-    {
-      "person_id": "chris-young",
-      "name": "Chris Young",
-      "teams": [
-        "TEX"
-      ],
-      "seasons": 4.0,
-      "net_war": -5.2,
-      "trades": 41,
-      "net_war_per_season_raw": -1.3,
-      "net_war_per_season": -0.65,
-      "trade_net_rate": -0.65,
-      "rank": 28
-    },
-    {
-      "person_id": "chris-getz",
-      "name": "Chris Getz",
-      "teams": [
-        "CWS"
-      ],
-      "seasons": 3.0,
-      "net_war": -9.44,
-      "trades": 48,
-      "net_war_per_season_raw": -3.1467,
-      "net_war_per_season": -1.3486,
-      "trade_net_rate": -1.3486,
-      "rank": 29
-    },
-    {
-      "person_id": "bill-schmidt",
-      "name": "Bill Schmidt",
-      "teams": [
-        "COL"
-      ],
-      "seasons": 4.5,
-      "net_war": -12.48,
-      "trades": 33,
-      "net_war_per_season_raw": -2.7733,
-      "net_war_per_season": -1.3866,
-      "trade_net_rate": -1.3866,
-      "rank": 30
-    },
-    {
-      "person_id": "jj-picollo",
-      "name": "J.J. Picollo",
-      "teams": [
-        "KC"
-      ],
-      "seasons": 3.9166666666666665,
-      "net_war": -11.34,
-      "trades": 58,
-      "net_war_per_season_raw": -2.8953,
-      "net_war_per_season": -1.4477,
-      "trade_net_rate": -1.4477,
-      "rank": 31
-    },
-    {
-      "person_id": "james-click",
-      "name": "James Click",
-      "teams": [
-        "HOU"
-      ],
-      "seasons": 2.9166666666666665,
-      "net_war": -10.44,
-      "trades": 16,
-      "net_war_per_season_raw": -3.5794,
-      "net_war_per_season": -1.534,
-      "trade_net_rate": -1.534,
-      "rank": 32
-    },
-    {
-      "person_id": "chaim-bloom",
-      "name": "Chaim Bloom",
-      "teams": [
-        "BOS",
-        "STL"
-      ],
-      "seasons": 4.916666666666667,
-      "net_war": -13.99,
-      "trades": 63,
-      "net_war_per_season_raw": -2.8454,
-      "net_war_per_season": -1.5808,
-      "trade_net_rate": -1.5808,
-      "rank": 33
-    },
-    {
-      "person_id": "tony-reagins",
-      "name": "Tony Reagins",
-      "teams": [
-        "LAA"
-      ],
-      "seasons": 4.0,
-      "net_war": -13.65,
-      "trades": 8,
-      "net_war_per_season_raw": -3.4125,
-      "net_war_per_season": -1.7063,
-      "trade_net_rate": -1.7063,
-      "rank": 34
+      "rank": 49
     },
     {
       "person_id": "mike-elias",
@@ -853,594 +1068,27 @@
       "teams": [
         "BAL"
       ],
-      "seasons": 7.75,
-      "net_war": -20.87,
-      "trades": 104,
-      "net_war_per_season_raw": -2.6929,
-      "net_war_per_season": -1.7953,
-      "trade_net_rate": -1.7953,
-      "rank": 35
-    },
-    {
-      "person_id": "theo-epstein",
-      "name": "Theo Epstein",
-      "teams": [
-        "BOS",
-        "CHC"
-      ],
-      "seasons": 14.833333333333334,
-      "net_war": -34.55,
-      "trades": 125,
-      "net_war_per_season_raw": -2.3292,
-      "net_war_per_season": -1.8388,
-      "trade_net_rate": -1.8388,
-      "rank": 36
-    },
-    {
-      "person_id": "kenny-williams",
-      "name": "Kenny Williams",
-      "teams": [
-        "CWS"
-      ],
-      "seasons": 6.75,
-      "net_war": -19.62,
-      "trades": 27,
-      "net_war_per_season_raw": -2.9067,
-      "net_war_per_season": -1.8497,
-      "trade_net_rate": -1.8497,
-      "rank": 37
-    },
-    {
-      "person_id": "sandy-alderson",
-      "name": "Sandy Alderson",
-      "teams": [
-        "NYM"
-      ],
-      "seasons": 7.666666666666667,
-      "net_war": -25.07,
-      "trades": 60,
-      "net_war_per_season_raw": -3.27,
-      "net_war_per_season": -2.18,
-      "trade_net_rate": -2.18,
-      "rank": 38
-    },
-    {
-      "person_id": "andrew-friedman",
-      "name": "Andrew Friedman",
-      "teams": [
-        "LAD",
-        "TB"
-      ],
-      "seasons": 20.583333333333336,
-      "net_war": -56.66,
-      "trades": 236,
-      "net_war_per_season_raw": -2.7527,
-      "net_war_per_season": -2.3123,
-      "trade_net_rate": -2.3123,
-      "rank": 39
-    },
-    {
-      "person_id": "dave-dombrowski",
-      "name": "Dave Dombrowski",
-      "teams": [
-        "BOS",
-        "DET",
-        "PHI"
-      ],
-      "seasons": 19.333333333333336,
-      "net_war": -55.63,
-      "trades": 171,
-      "net_war_per_season_raw": -2.8774,
-      "net_war_per_season": -2.377,
-      "trade_net_rate": -2.377,
-      "rank": 40
-    },
-    {
-      "person_id": "alex-anthopoulos",
-      "name": "Alex Anthopoulos",
-      "teams": [
-        "ATL",
-        "TOR"
-      ],
-      "seasons": 14.75,
-      "net_war": -46.61,
-      "trades": 196,
-      "net_war_per_season_raw": -3.16,
-      "net_war_per_season": -2.4947,
-      "trade_net_rate": -2.4947,
-      "rank": 41
-    },
-    {
-      "person_id": "brian-cashman",
-      "name": "Brian Cashman",
-      "teams": [
-        "NYY"
-      ],
-      "seasons": 20.583333333333332,
-      "net_war": -64.19,
-      "trades": 208,
-      "net_war_per_season_raw": -3.1185,
-      "net_war_per_season": -2.6195,
-      "trade_net_rate": -2.6195,
-      "rank": 42
-    },
-    {
-      "person_id": "zack-scott",
-      "name": "Zack Scott",
-      "teams": [
-        "NYM"
-      ],
-      "seasons": 0.8333333333333334,
-      "net_war": -11.01,
-      "trades": 13,
-      "net_war_per_season_raw": -13.212,
-      "net_war_per_season": -2.6424,
-      "trade_net_rate": -2.6424,
-      "rank": 43
-    },
-    {
-      "person_id": "craig-breslow",
-      "name": "Craig Breslow",
-      "teams": [
-        "BOS"
-      ],
-      "seasons": 2.8333333333333335,
-      "net_war": -18.27,
-      "trades": 54,
-      "net_war_per_season_raw": -6.4482,
-      "net_war_per_season": -2.7635,
-      "trade_net_rate": -2.7635,
-      "rank": 44
-    },
-    {
-      "person_id": "ed-wade",
-      "name": "Ed Wade",
-      "teams": [
-        "HOU"
-      ],
-      "seasons": 4.25,
-      "net_war": -23.81,
-      "trades": 20,
-      "net_war_per_season_raw": -5.6024,
-      "net_war_per_season": -2.8012,
-      "trade_net_rate": -2.8012,
-      "rank": 45
-    },
-    {
-      "person_id": "mark-shapiro",
-      "name": "Mark Shapiro",
-      "teams": [
-        "CLE"
-      ],
-      "seasons": 4.75,
-      "net_war": -24.02,
-      "trades": 20,
-      "net_war_per_season_raw": -5.0568,
-      "net_war_per_season": -2.8093,
-      "trade_net_rate": -2.8093,
-      "rank": 46
-    },
-    {
-      "person_id": "nick-krall",
-      "name": "Nick Krall",
-      "teams": [
-        "CIN"
-      ],
-      "seasons": 8.25,
-      "net_war": -40.24,
-      "trades": 106,
-      "net_war_per_season_raw": -4.8776,
-      "net_war_per_season": -3.2517,
-      "trade_net_rate": -3.2517,
-      "rank": 47
-    },
-    {
-      "person_id": "perry-minasian",
-      "name": "Perry Minasian",
-      "teams": [
-        "LAA"
-      ],
-      "seasons": 5.75,
-      "net_war": -31.86,
-      "trades": 57,
-      "net_war_per_season_raw": -5.5409,
-      "net_war_per_season": -3.3245,
-      "trade_net_rate": -3.3245,
-      "rank": 48
-    },
-    {
-      "person_id": "dan-odowd",
-      "name": "Dan O'Dowd",
-      "teams": [
-        "COL"
-      ],
-      "seasons": 8.75,
-      "net_war": -43.35,
-      "trades": 47,
-      "net_war_per_season_raw": -4.9543,
-      "net_war_per_season": -3.4299,
-      "trade_net_rate": -3.4299,
-      "rank": 49
-    },
-    {
-      "person_id": "terry-ryan",
-      "name": "Terry Ryan",
-      "teams": [
-        "MIN"
-      ],
-      "seasons": 6.416666666666667,
-      "net_war": -36.95,
-      "trades": 26,
-      "net_war_per_season_raw": -5.7584,
-      "net_war_per_season": -3.455,
-      "trade_net_rate": -3.455,
+      "seasons": 7.083333333333333,
+      "net_war": -1.28,
+      "trades": 87,
+      "net_war_per_season_raw": -0.1807,
+      "net_war_per_season": -0.115,
+      "trade_net_rate": -0.115,
       "rank": 50
     },
     {
-      "person_id": "john-mozeliak",
-      "name": "John Mozeliak",
+      "person_id": "chris-getz",
+      "name": "Chris Getz",
       "teams": [
-        "STL"
+        "CWS"
       ],
-      "seasons": 17.916666666666668,
-      "net_war": -76.19,
-      "trades": 91,
-      "net_war_per_season_raw": -4.2525,
-      "net_war_per_season": -3.4793,
-      "trade_net_rate": -3.4793,
+      "seasons": 2.3333333333333335,
+      "net_war": -1.01,
+      "trades": 34,
+      "net_war_per_season_raw": -0.4329,
+      "net_war_per_season": -0.1443,
+      "trade_net_rate": -0.1443,
       "rank": 51
-    },
-    {
-      "person_id": "ross-atkins",
-      "name": "Ross Atkins",
-      "teams": [
-        "TOR"
-      ],
-      "seasons": 10.666666666666666,
-      "net_war": -50.94,
-      "trades": 157,
-      "net_war_per_season_raw": -4.7756,
-      "net_war_per_season": -3.5021,
-      "trade_net_rate": -3.5021,
-      "rank": 52
-    },
-    {
-      "person_id": "jim-hendry",
-      "name": "Jim Hendry",
-      "teams": [
-        "CHC"
-      ],
-      "seasons": 5.583333333333333,
-      "net_war": -37.95,
-      "trades": 17,
-      "net_war_per_season_raw": -6.797,
-      "net_war_per_season": -4.0782,
-      "trade_net_rate": -4.0782,
-      "rank": 53
-    },
-    {
-      "person_id": "billy-beane",
-      "name": "Billy Beane",
-      "teams": [
-        "OAK"
-      ],
-      "seasons": 9.75,
-      "net_war": -60.52,
-      "trades": 95,
-      "net_war_per_season_raw": -6.2072,
-      "net_war_per_season": -4.4337,
-      "trade_net_rate": -4.4337,
-      "rank": 54
-    },
-    {
-      "person_id": "larry-beinfest",
-      "name": "Larry Beinfest",
-      "teams": [
-        "MIA"
-      ],
-      "seasons": 7.666666666666667,
-      "net_war": -52.63,
-      "trades": 24,
-      "net_war_per_season_raw": -6.8648,
-      "net_war_per_season": -4.5765,
-      "trade_net_rate": -4.5765,
-      "rank": 55
-    },
-    {
-      "person_id": "mike-rizzo",
-      "name": "Mike Rizzo",
-      "teams": [
-        "WSH"
-      ],
-      "seasons": 16.333333333333332,
-      "net_war": -95.58,
-      "trades": 101,
-      "net_war_per_season_raw": -5.8518,
-      "net_war_per_season": -4.6814,
-      "trade_net_rate": -4.6814,
-      "rank": 56
-    },
-    {
-      "person_id": "erik-neander",
-      "name": "Erik Neander",
-      "teams": [
-        "TB"
-      ],
-      "seasons": 9.583333333333334,
-      "net_war": -64.11,
-      "trades": 202,
-      "net_war_per_season_raw": -6.6897,
-      "net_war_per_season": -4.7784,
-      "trade_net_rate": -4.7784,
-      "rank": 57
-    },
-    {
-      "person_id": "derek-falvey",
-      "name": "Derek Falvey",
-      "teams": [
-        "MIN"
-      ],
-      "seasons": 9.75,
-      "net_war": -65.76,
-      "trades": 109,
-      "net_war_per_season_raw": -6.7446,
-      "net_war_per_season": -4.8176,
-      "trade_net_rate": -4.8176,
-      "rank": 58
-    },
-    {
-      "person_id": "chris-antonetti",
-      "name": "Chris Antonetti",
-      "teams": [
-        "CLE"
-      ],
-      "seasons": 15.833333333333334,
-      "net_war": -100.09,
-      "trades": 178,
-      "net_war_per_season_raw": -6.3215,
-      "net_war_per_season": -5.0572,
-      "trade_net_rate": -5.0572,
-      "rank": 59
-    },
-    {
-      "person_id": "bobby-evans",
-      "name": "Bobby Evans",
-      "teams": [
-        "SF"
-      ],
-      "seasons": 3.5833333333333335,
-      "net_war": -36.32,
-      "trades": 24,
-      "net_war_per_season_raw": -10.1358,
-      "net_war_per_season": -5.0679,
-      "trade_net_rate": -5.0679,
-      "rank": 60
-    },
-    {
-      "person_id": "bill-smith",
-      "name": "Bill Smith",
-      "teams": [
-        "MIN"
-      ],
-      "seasons": 4.083333333333333,
-      "net_war": -42.56,
-      "trades": 16,
-      "net_war_per_season_raw": -10.4229,
-      "net_war_per_season": -5.2115,
-      "trade_net_rate": -5.2115,
-      "rank": 61
-    },
-    {
-      "person_id": "frank-wren",
-      "name": "Frank Wren",
-      "teams": [
-        "ATL"
-      ],
-      "seasons": 6.916666666666667,
-      "net_war": -57.91,
-      "trades": 43,
-      "net_war_per_season_raw": -8.3725,
-      "net_war_per_season": -5.328,
-      "trade_net_rate": -5.328,
-      "rank": 62
-    },
-    {
-      "person_id": "mike-hazen",
-      "name": "Mike Hazen",
-      "teams": [
-        "ARI"
-      ],
-      "seasons": 9.833333333333334,
-      "net_war": -74.49,
-      "trades": 103,
-      "net_war_per_season_raw": -7.5753,
-      "net_war_per_season": -5.4109,
-      "trade_net_rate": -5.4109,
-      "rank": 63
-    },
-    {
-      "person_id": "peter-bendix",
-      "name": "Peter Bendix",
-      "teams": [
-        "MIA"
-      ],
-      "seasons": 2.75,
-      "net_war": -35.35,
-      "trades": 47,
-      "net_war_per_season_raw": -12.8545,
-      "net_war_per_season": -5.5091,
-      "trade_net_rate": -5.5091,
-      "rank": 64
-    },
-    {
-      "person_id": "john-hart",
-      "name": "John Hart",
-      "teams": [
-        "ATL"
-      ],
-      "seasons": 3.1666666666666665,
-      "net_war": -42.34,
-      "trades": 65,
-      "net_war_per_season_raw": -13.3705,
-      "net_war_per_season": -5.7302,
-      "trade_net_rate": -5.7302,
-      "rank": 65
-    },
-    {
-      "person_id": "neal-huntington",
-      "name": "Neal Huntington",
-      "teams": [
-        "PIT"
-      ],
-      "seasons": 12.166666666666666,
-      "net_war": -99.47,
-      "trades": 146,
-      "net_war_per_season_raw": -8.1756,
-      "net_war_per_season": -6.1317,
-      "trade_net_rate": -6.1317,
-      "rank": 66
-    },
-    {
-      "person_id": "david-forst",
-      "name": "David Forst",
-      "teams": [
-        "OAK"
-      ],
-      "seasons": 10.833333333333334,
-      "net_war": -93.1,
-      "trades": 132,
-      "net_war_per_season_raw": -8.5938,
-      "net_war_per_season": -6.3021,
-      "trade_net_rate": -6.3021,
-      "rank": 67
-    },
-    {
-      "person_id": "doug-melvin",
-      "name": "Doug Melvin",
-      "teams": [
-        "MIL"
-      ],
-      "seasons": 9.666666666666666,
-      "net_war": -89.23,
-      "trades": 43,
-      "net_war_per_season_raw": -9.2307,
-      "net_war_per_season": -6.5934,
-      "trade_net_rate": -6.5934,
-      "rank": 68
-    },
-    {
-      "person_id": "jon-daniels",
-      "name": "Jon Daniels",
-      "teams": [
-        "TEX"
-      ],
-      "seasons": 16.583333333333332,
-      "net_war": -137.29,
-      "trades": 182,
-      "net_war_per_season_raw": -8.2788,
-      "net_war_per_season": -6.7019,
-      "trade_net_rate": -6.7019,
-      "rank": 69
-    },
-    {
-      "person_id": "dayton-moore",
-      "name": "Dayton Moore",
-      "teams": [
-        "KC"
-      ],
-      "seasons": 16.25,
-      "net_war": -136.31,
-      "trades": 143,
-      "net_war_per_season_raw": -8.3883,
-      "net_war_per_season": -6.7106,
-      "trade_net_rate": -6.7106,
-      "rank": 70
-    },
-    {
-      "person_id": "matt-silverman",
-      "name": "Matt Silverman",
-      "teams": [
-        "TB"
-      ],
-      "seasons": 2.25,
-      "net_war": -45.3,
-      "trades": 28,
-      "net_war_per_season_raw": -20.1333,
-      "net_war_per_season": -6.7111,
-      "trade_net_rate": -6.7111,
-      "rank": 71
-    },
-    {
-      "person_id": "jeff-bridich",
-      "name": "Jeff Bridich",
-      "teams": [
-        "COL"
-      ],
-      "seasons": 6.583333333333333,
-      "net_war": -70.19,
-      "trades": 39,
-      "net_war_per_season_raw": -10.6618,
-      "net_war_per_season": -6.7848,
-      "trade_net_rate": -6.7848,
-      "rank": 72
-    },
-    {
-      "person_id": "jack-zduriencik",
-      "name": "Jack Zduriencik",
-      "teams": [
-        "SEA"
-      ],
-      "seasons": 6.916666666666667,
-      "net_war": -75.01,
-      "trades": 59,
-      "net_war_per_season_raw": -10.8448,
-      "net_war_per_season": -6.9012,
-      "trade_net_rate": -6.9012,
-      "rank": 73
-    },
-    {
-      "person_id": "kevin-towers",
-      "name": "Kevin Towers",
-      "teams": [
-        "ARI",
-        "SD"
-      ],
-      "seasons": 7.75,
-      "net_war": -81.93,
-      "trades": 53,
-      "net_war_per_season_raw": -10.5716,
-      "net_war_per_season": -7.0477,
-      "trade_net_rate": -7.0477,
-      "rank": 74
-    },
-    {
-      "person_id": "jeff-luhnow",
-      "name": "Jeff Luhnow",
-      "teams": [
-        "HOU"
-      ],
-      "seasons": 8.166666666666666,
-      "net_war": -87.26,
-      "trades": 78,
-      "net_war_per_season_raw": -10.6849,
-      "net_war_per_season": -7.1233,
-      "trade_net_rate": -7.1233,
-      "rank": 75
-    },
-    {
-      "person_id": "walt-jocketty",
-      "name": "Walt Jocketty",
-      "teams": [
-        "CIN",
-        "STL"
-      ],
-      "seasons": 10.25,
-      "net_war": -112.52,
-      "trades": 40,
-      "net_war_per_season_raw": -10.9776,
-      "net_war_per_season": -7.8411,
-      "trade_net_rate": -7.8411,
-      "rank": 76
     },
     {
       "person_id": "rick-hahn",
@@ -1449,26 +1097,68 @@
         "CWS"
       ],
       "seasons": 10.833333333333334,
-      "net_war": -116.26,
+      "net_war": -3.91,
       "trades": 124,
-      "net_war_per_season_raw": -10.7317,
-      "net_war_per_season": -7.8699,
-      "trade_net_rate": -7.8699,
-      "rank": 77
+      "net_war_per_season_raw": -0.3609,
+      "net_war_per_season": -0.2647,
+      "trade_net_rate": -0.2647,
+      "rank": 52
     },
     {
-      "person_id": "al-avila",
-      "name": "Al Avila",
+      "person_id": "james-click",
+      "name": "James Click",
       "teams": [
-        "DET"
+        "HOU"
       ],
-      "seasons": 7.0,
-      "net_war": -90.59,
-      "trades": 48,
-      "net_war_per_season_raw": -12.9414,
-      "net_war_per_season": -8.2354,
-      "trade_net_rate": -8.2354,
-      "rank": 78
+      "seasons": 2.9166666666666665,
+      "net_war": -1.9,
+      "trades": 16,
+      "net_war_per_season_raw": -0.6514,
+      "net_war_per_season": -0.2792,
+      "trade_net_rate": -0.2792,
+      "rank": 53
+    },
+    {
+      "person_id": "omar-minaya",
+      "name": "Omar Minaya",
+      "teams": [
+        "NYM"
+      ],
+      "seasons": 4.75,
+      "net_war": -2.9,
+      "trades": 9,
+      "net_war_per_season_raw": -0.6105,
+      "net_war_per_season": -0.3392,
+      "trade_net_rate": -0.3392,
+      "rank": 54
+    },
+    {
+      "person_id": "david-forst",
+      "name": "David Forst",
+      "teams": [
+        "OAK"
+      ],
+      "seasons": 10.166666666666666,
+      "net_war": -6.15,
+      "trades": 118,
+      "net_war_per_season_raw": -0.6049,
+      "net_war_per_season": -0.4321,
+      "trade_net_rate": -0.4321,
+      "rank": 55
+    },
+    {
+      "person_id": "dan-odowd",
+      "name": "Dan O'Dowd",
+      "teams": [
+        "COL"
+      ],
+      "seasons": 8.75,
+      "net_war": -7.3,
+      "trades": 47,
+      "net_war_per_season_raw": -0.8343,
+      "net_war_per_season": -0.5776,
+      "trade_net_rate": -0.5776,
+      "rank": 56
     },
     {
       "person_id": "jerry-dipoto",
@@ -1478,42 +1168,211 @@
         "LAA",
         "SEA"
       ],
-      "seasons": 15.166666666666666,
-      "net_war": -168.78,
-      "trades": 254,
-      "net_war_per_season_raw": -11.1284,
-      "net_war_per_season": -8.7856,
-      "trade_net_rate": -8.7856,
-      "rank": 79
+      "seasons": 14.5,
+      "net_war": -11.27,
+      "trades": 240,
+      "net_war_per_season_raw": -0.7772,
+      "net_war_per_season": -0.6045,
+      "trade_net_rate": -0.6045,
+      "rank": 57
     },
     {
-      "person_id": "jed-hoyer",
-      "name": "Jed Hoyer",
+      "person_id": "jj-picollo",
+      "name": "J.J. Picollo",
       "teams": [
-        "CHC",
-        "SD"
+        "KC"
       ],
-      "seasons": 7.75,
-      "net_war": -103.98,
-      "trades": 84,
-      "net_war_per_season_raw": -13.4168,
-      "net_war_per_season": -8.9445,
-      "trade_net_rate": -8.9445,
-      "rank": 80
+      "seasons": 3.25,
+      "net_war": -5.53,
+      "trades": 47,
+      "net_war_per_season_raw": -1.7015,
+      "net_war_per_season": -0.7292,
+      "trade_net_rate": -0.7292,
+      "rank": 58
     },
     {
-      "person_id": "aj-preller",
-      "name": "A.J. Preller",
+      "person_id": "walt-jocketty",
+      "name": "Walt Jocketty",
       "teams": [
-        "SD"
+        "CIN",
+        "STL"
       ],
-      "seasons": 12.0,
-      "net_war": -169.39,
-      "trades": 123,
-      "net_war_per_season_raw": -14.1158,
-      "net_war_per_season": -10.5869,
-      "trade_net_rate": -10.5869,
-      "rank": 81
+      "seasons": 10.25,
+      "net_war": -11.55,
+      "trades": 40,
+      "net_war_per_season_raw": -1.1268,
+      "net_war_per_season": -0.8049,
+      "trade_net_rate": -0.8049,
+      "rank": 59
+    },
+    {
+      "person_id": "jack-zduriencik",
+      "name": "Jack Zduriencik",
+      "teams": [
+        "SEA"
+      ],
+      "seasons": 6.916666666666667,
+      "net_war": -8.78,
+      "trades": 59,
+      "net_war_per_season_raw": -1.2694,
+      "net_war_per_season": -0.8078,
+      "trade_net_rate": -0.8078,
+      "rank": 60
+    },
+    {
+      "person_id": "frank-wren",
+      "name": "Frank Wren",
+      "teams": [
+        "ATL"
+      ],
+      "seasons": 6.916666666666667,
+      "net_war": -8.91,
+      "trades": 43,
+      "net_war_per_season_raw": -1.2882,
+      "net_war_per_season": -0.8198,
+      "trade_net_rate": -0.8198,
+      "rank": 61
+    },
+    {
+      "person_id": "bill-schmidt",
+      "name": "Bill Schmidt",
+      "teams": [
+        "COL"
+      ],
+      "seasons": 4.5,
+      "net_war": -8.57,
+      "trades": 33,
+      "net_war_per_season_raw": -1.9044,
+      "net_war_per_season": -0.9522,
+      "trade_net_rate": -0.9522,
+      "rank": 62
+    },
+    {
+      "person_id": "kenny-williams",
+      "name": "Kenny Williams",
+      "teams": [
+        "CWS"
+      ],
+      "seasons": 6.75,
+      "net_war": -11.44,
+      "trades": 27,
+      "net_war_per_season_raw": -1.6948,
+      "net_war_per_season": -1.0785,
+      "trade_net_rate": -1.0785,
+      "rank": 63
+    },
+    {
+      "person_id": "terry-ryan",
+      "name": "Terry Ryan",
+      "teams": [
+        "MIN"
+      ],
+      "seasons": 6.416666666666667,
+      "net_war": -14.03,
+      "trades": 26,
+      "net_war_per_season_raw": -2.1865,
+      "net_war_per_season": -1.3119,
+      "trade_net_rate": -1.3119,
+      "rank": 64
+    },
+    {
+      "person_id": "matt-silverman",
+      "name": "Matt Silverman",
+      "teams": [
+        "TB"
+      ],
+      "seasons": 2.25,
+      "net_war": -8.94,
+      "trades": 28,
+      "net_war_per_season_raw": -3.9733,
+      "net_war_per_season": -1.3244,
+      "trade_net_rate": -1.3244,
+      "rank": 65
+    },
+    {
+      "person_id": "perry-minasian",
+      "name": "Perry Minasian",
+      "teams": [
+        "LAA"
+      ],
+      "seasons": 5.083333333333333,
+      "net_war": -13.85,
+      "trades": 49,
+      "net_war_per_season_raw": -2.7246,
+      "net_war_per_season": -1.5137,
+      "trade_net_rate": -1.5137,
+      "rank": 66
+    },
+    {
+      "person_id": "jon-daniels",
+      "name": "Jon Daniels",
+      "teams": [
+        "TEX"
+      ],
+      "seasons": 16.583333333333332,
+      "net_war": -33.56,
+      "trades": 182,
+      "net_war_per_season_raw": -2.0237,
+      "net_war_per_season": -1.6382,
+      "trade_net_rate": -1.6382,
+      "rank": 67
+    },
+    {
+      "person_id": "mark-shapiro",
+      "name": "Mark Shapiro",
+      "teams": [
+        "CLE"
+      ],
+      "seasons": 4.75,
+      "net_war": -14.18,
+      "trades": 20,
+      "net_war_per_season_raw": -2.9853,
+      "net_war_per_season": -1.6585,
+      "trade_net_rate": -1.6585,
+      "rank": 68
+    },
+    {
+      "person_id": "jim-hendry",
+      "name": "Jim Hendry",
+      "teams": [
+        "CHC"
+      ],
+      "seasons": 5.583333333333333,
+      "net_war": -15.82,
+      "trades": 17,
+      "net_war_per_season_raw": -2.8334,
+      "net_war_per_season": -1.7,
+      "trade_net_rate": -1.7,
+      "rank": 69
+    },
+    {
+      "person_id": "ed-wade",
+      "name": "Ed Wade",
+      "teams": [
+        "HOU"
+      ],
+      "seasons": 4.25,
+      "net_war": -15.23,
+      "trades": 20,
+      "net_war_per_season_raw": -3.5835,
+      "net_war_per_season": -1.7917,
+      "trade_net_rate": -1.7917,
+      "rank": 70
+    },
+    {
+      "person_id": "chaim-bloom",
+      "name": "Chaim Bloom",
+      "teams": [
+        "BOS",
+        "STL"
+      ],
+      "seasons": 4.5,
+      "net_war": -17.58,
+      "trades": 53,
+      "net_war_per_season_raw": -3.9067,
+      "net_war_per_season": -1.9533,
+      "trade_net_rate": -1.9533,
+      "rank": 71
     },
     {
       "person_id": "dan-duquette",
@@ -1522,26 +1381,112 @@
         "BAL"
       ],
       "seasons": 7.0,
-      "net_war": -122.09,
+      "net_war": -22.44,
       "trades": 105,
-      "net_war_per_season_raw": -17.4414,
-      "net_war_per_season": -11.0991,
-      "trade_net_rate": -11.0991,
-      "rank": 82
+      "net_war_per_season_raw": -3.2057,
+      "net_war_per_season": -2.04,
+      "trade_net_rate": -2.04,
+      "rank": 72
     },
     {
-      "person_id": "dave-stewart",
-      "name": "Dave Stewart",
+      "person_id": "craig-breslow",
+      "name": "Craig Breslow",
       "teams": [
-        "ARI"
+        "BOS"
       ],
-      "seasons": 2.0833333333333335,
-      "net_war": -70.57,
-      "trades": 26,
-      "net_war_per_season_raw": -33.8736,
-      "net_war_per_season": -11.2912,
-      "trade_net_rate": -11.2912,
-      "rank": 83
+      "seasons": 2.1666666666666665,
+      "net_war": -13.79,
+      "trades": 44,
+      "net_war_per_season_raw": -6.3646,
+      "net_war_per_season": -2.1215,
+      "trade_net_rate": -2.1215,
+      "rank": 73
+    },
+    {
+      "person_id": "larry-beinfest",
+      "name": "Larry Beinfest",
+      "teams": [
+        "MIA"
+      ],
+      "seasons": 7.666666666666667,
+      "net_war": -25.34,
+      "trades": 24,
+      "net_war_per_season_raw": -3.3052,
+      "net_war_per_season": -2.2035,
+      "trade_net_rate": -2.2035,
+      "rank": 74
+    },
+    {
+      "person_id": "jeff-bridich",
+      "name": "Jeff Bridich",
+      "teams": [
+        "COL"
+      ],
+      "seasons": 6.583333333333333,
+      "net_war": -26.07,
+      "trades": 39,
+      "net_war_per_season_raw": -3.96,
+      "net_war_per_season": -2.52,
+      "trade_net_rate": -2.52,
+      "rank": 75
+    },
+    {
+      "person_id": "bobby-evans",
+      "name": "Bobby Evans",
+      "teams": [
+        "SF"
+      ],
+      "seasons": 3.5833333333333335,
+      "net_war": -18.34,
+      "trades": 24,
+      "net_war_per_season_raw": -5.1181,
+      "net_war_per_season": -2.5591,
+      "trade_net_rate": -2.5591,
+      "rank": 76
+    },
+    {
+      "person_id": "jed-hoyer",
+      "name": "Jed Hoyer",
+      "teams": [
+        "CHC",
+        "SD"
+      ],
+      "seasons": 7.083333333333333,
+      "net_war": -29.27,
+      "trades": 74,
+      "net_war_per_season_raw": -4.1322,
+      "net_war_per_season": -2.6296,
+      "trade_net_rate": -2.6296,
+      "rank": 77
+    },
+    {
+      "person_id": "kevin-towers",
+      "name": "Kevin Towers",
+      "teams": [
+        "ARI",
+        "SD"
+      ],
+      "seasons": 7.75,
+      "net_war": -30.93,
+      "trades": 53,
+      "net_war_per_season_raw": -3.991,
+      "net_war_per_season": -2.6607,
+      "trade_net_rate": -2.6607,
+      "rank": 78
+    },
+    {
+      "person_id": "zack-scott",
+      "name": "Zack Scott",
+      "teams": [
+        "NYM"
+      ],
+      "seasons": 0.8333333333333334,
+      "net_war": -11.44,
+      "trades": 13,
+      "net_war_per_season_raw": -13.728,
+      "net_war_per_season": -2.7456,
+      "trade_net_rate": -2.7456,
+      "rank": 79
     },
     {
       "person_id": "josh-byrnes",
@@ -1551,12 +1496,26 @@
         "SD"
       ],
       "seasons": 7.333333333333334,
-      "net_war": -130.17,
+      "net_war": -36.64,
       "trades": 44,
-      "net_war_per_season_raw": -17.7505,
-      "net_war_per_season": -11.2958,
-      "trade_net_rate": -11.2958,
-      "rank": 84
+      "net_war_per_season_raw": -4.9964,
+      "net_war_per_season": -3.1795,
+      "trade_net_rate": -3.1795,
+      "rank": 80
+    },
+    {
+      "person_id": "peter-bendix",
+      "name": "Peter Bendix",
+      "teams": [
+        "MIA"
+      ],
+      "seasons": 2.0833333333333335,
+      "net_war": -21.39,
+      "trades": 35,
+      "net_war_per_season_raw": -10.2672,
+      "net_war_per_season": -3.4224,
+      "trade_net_rate": -3.4224,
+      "rank": 81
     },
     {
       "person_id": "ben-cherington",
@@ -1565,13 +1524,27 @@
         "BOS",
         "PIT"
       ],
-      "seasons": 11.083333333333334,
-      "net_war": -206.42,
-      "trades": 155,
-      "net_war_per_season_raw": -18.6244,
-      "net_war_per_season": -13.6579,
-      "trade_net_rate": -13.6579,
-      "rank": 85
+      "seasons": 10.416666666666666,
+      "net_war": -52.64,
+      "trades": 140,
+      "net_war_per_season_raw": -5.0534,
+      "net_war_per_season": -3.6096,
+      "trade_net_rate": -3.6096,
+      "rank": 82
+    },
+    {
+      "person_id": "dave-stewart",
+      "name": "Dave Stewart",
+      "teams": [
+        "ARI"
+      ],
+      "seasons": 2.0833333333333335,
+      "net_war": -26.01,
+      "trades": 26,
+      "net_war_per_season_raw": -12.4848,
+      "net_war_per_season": -4.1616,
+      "trade_net_rate": -4.1616,
+      "rank": 83
     },
     {
       "person_id": "michael-hill",
@@ -1580,11 +1553,39 @@
         "MIA"
       ],
       "seasons": 7.166666666666667,
-      "net_war": -184.24,
+      "net_war": -47.35,
       "trades": 65,
-      "net_war_per_season_raw": -25.7079,
-      "net_war_per_season": -16.3596,
-      "trade_net_rate": -16.3596,
+      "net_war_per_season_raw": -6.607,
+      "net_war_per_season": -4.2045,
+      "trade_net_rate": -4.2045,
+      "rank": 84
+    },
+    {
+      "person_id": "bill-smith",
+      "name": "Bill Smith",
+      "teams": [
+        "MIN"
+      ],
+      "seasons": 4.083333333333333,
+      "net_war": -34.59,
+      "trades": 16,
+      "net_war_per_season_raw": -8.471,
+      "net_war_per_season": -4.2355,
+      "trade_net_rate": -4.2355,
+      "rank": 85
+    },
+    {
+      "person_id": "al-avila",
+      "name": "Al Avila",
+      "teams": [
+        "DET"
+      ],
+      "seasons": 7.0,
+      "net_war": -53.77,
+      "trades": 48,
+      "net_war_per_season_raw": -7.6814,
+      "net_war_per_season": -4.8882,
+      "trade_net_rate": -4.8882,
       "rank": 86
     }
   ]

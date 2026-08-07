@@ -28,6 +28,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from scoring import (
     ROUND_DEPTH,
+    attach_era_relative_payroll,
     attach_rates,
     category_ranks,
     composite_scores,
@@ -44,11 +45,13 @@ DATA = REPO_ROOT / "data"
 
 WINDOW_START = 2006
 WINDOW_END = 2026
-AS_OF = dt.date(2026, 8, 1)
+AS_OF = dt.date(2026, 8, 2)  # overwritten by data/weights.json
 # Draft VOS shrink prior (matches build_draft_index.grade_groups).
 DRAFT_PRIOR_PICKS = 100
 DRAFT_MATURE_LAG = 6
 TRADE_PRIOR_SEASONS = 4
+_YEAR_PE_MEANS: dict[int, float] = {}
+_WAR_INDEX: dict[int, list[dict]] | None = None
 
 SESSION_HEADERS = {"User-Agent": "front-office-index/0.1 (personal project)"}
 
@@ -136,7 +139,25 @@ def _session():
 
 
 def load_weights() -> dict[str, Any]:
-    return json.loads((DATA / "weights.json").read_text(encoding="utf-8"))
+    """Load weights.json and pin window / as_of globals from it."""
+    global WINDOW_START, WINDOW_END, AS_OF
+    raw = json.loads((DATA / "weights.json").read_text(encoding="utf-8"))
+    WINDOW_START = int(raw.get("window_start", WINDOW_START))
+    WINDOW_END = int(raw.get("window_end", WINDOW_END))
+    if raw.get("as_of"):
+        AS_OF = dt.date.fromisoformat(str(raw["as_of"])[:10])
+    return raw
+
+
+def get_war_index() -> dict[int, list[dict]]:
+    """Lazy-load BRef WAR for point-in-time trade/draft clips on resumes."""
+    global _WAR_INDEX
+    if _WAR_INDEX is None:
+        from build_moves import load_bref_war
+
+        print("loading Baseball Reference WAR for as-of clips…", file=sys.stderr)
+        _WAR_INDEX = load_bref_war()
+    return _WAR_INDEX
 
 
 def write_json(path: Path, payload: Any) -> None:
@@ -330,36 +351,48 @@ def attach_payroll(session, seasons: list[dict[str, Any]], pause: float) -> dict
 # ---------------------------------------------------------------------------
 
 
-def load_draft_vos() -> tuple[dict[int, float], dict[str, float]]:
+def load_draft_vos() -> tuple[dict[int, float | None], dict[str, float | None]]:
     """Optional draft grades keyed by team_id and gm person_id."""
     path = DATA / "draft_index.json"
     if not path.exists():
         return {}, {}
     payload = json.loads(path.read_text(encoding="utf-8"))
-    by_team = {
-        int(row["team_id"]): float(row.get("avg_vos") or 0.0)
+    by_team: dict[int, float | None] = {
+        int(row["team_id"]): (
+            float(row["avg_vos"]) if row.get("avg_vos") is not None else None
+        )
         for row in payload.get("franchises") or []
     }
-    by_gm = {
-        str(row["person_id"]): float(row.get("avg_vos") or 0.0)
+    by_gm: dict[str, float | None] = {
+        str(row["person_id"]): (
+            float(row["avg_vos"]) if row.get("avg_vos") is not None else None
+        )
         for row in payload.get("gms") or []
         if row.get("person_id")
     }
     return by_team, by_gm
 
 
-def load_trade_rates() -> tuple[dict[int, float], dict[str, float]]:
+def load_trade_rates() -> tuple[dict[int, float | None], dict[str, float | None]]:
     """Optional trade net WAR/season keyed by team_id and gm person_id."""
     path = DATA / "trade_index.json"
     if not path.exists():
         return {}, {}
     payload = json.loads(path.read_text(encoding="utf-8"))
-    by_team = {
-        int(row["team_id"]): float(row.get("trade_net_rate") or 0.0)
+    by_team: dict[int, float | None] = {
+        int(row["team_id"]): (
+            float(row["trade_net_rate"])
+            if row.get("trade_net_rate") is not None
+            else None
+        )
         for row in payload.get("franchises") or []
     }
-    by_gm = {
-        str(row["person_id"]): float(row.get("trade_net_rate") or 0.0)
+    by_gm: dict[str, float | None] = {
+        str(row["person_id"]): (
+            float(row["trade_net_rate"])
+            if row.get("trade_net_rate") is not None
+            else None
+        )
         for row in payload.get("gms") or []
         if row.get("person_id")
     }
@@ -397,8 +430,18 @@ def load_league_moves() -> list[dict[str, Any]]:
     return _LEAGUE_MOVES
 
 
-def draft_vos_through(person_id: str, as_of: dt.date) -> float:
-    """Shrunk avg VOS for picks drafted on/before as_of (mature relative to as_of)."""
+def draft_vos_through(
+    person_id: str,
+    as_of: dt.date,
+    war_index: dict[int, list[dict]] | None = None,
+) -> float | None:
+    """Shrunk avg VOS for picks drafted on/before as_of (mature relative to as_of).
+
+    When ``war_index`` is provided, franchise WAR is capped at ``as_of.year`` so
+    living post-cutoff seasons cannot leak into yearly/exit resumes.
+    """
+    from team_codes import TEAM_BREF_CODES
+
     mature_through = as_of.year - DRAFT_MATURE_LAG
     vos_list: list[float] = []
     for pick in load_draft_picks():
@@ -409,12 +452,51 @@ def draft_vos_through(person_id: str, as_of: dt.date) -> float:
             continue
         if dt.date(year, 6, 15) > as_of:
             continue
-        vos_list.append(float(pick.get("vos") or 0.0))
+        expected = float(pick.get("expected_war") or 0.0)
+        if war_index is not None and pick.get("mlbam_id"):
+            codes = TEAM_BREF_CODES.get(int(pick["team_id"])) or frozenset()
+            war = 0.0
+            for row in war_index.get(int(pick["mlbam_id"]), []):
+                y = int(row["year"])
+                if y < year or y > as_of.year:
+                    continue
+                if row.get("team") in codes:
+                    war += float(row["war"])
+            vos_list.append(war - expected)
+        else:
+            vos_list.append(float(pick.get("vos") or 0.0))
     if not vos_list:
-        return 0.0
+        return None
     avg = sum(vos_list) / len(vos_list)
     shrink = len(vos_list) / (len(vos_list) + DRAFT_PRIOR_PICKS)
     return round(avg * shrink, 4)
+
+
+def _clip_trade_net(
+    move: dict[str, Any],
+    war_index: dict[int, list[dict]],
+    through_year: int,
+) -> float:
+    """Recompute one move's net WAR with seasons capped at through_year."""
+    from build_moves import enrich_moves
+
+    # enrich_moves mutates; work on a shallow copy of player lists.
+    clone = {
+        **move,
+        "players_acquired": [dict(p) for p in (move.get("players_acquired") or [])],
+        "players_sent_away": [dict(p) for p in (move.get("players_sent_away") or [])],
+        "salary_paid": move.get("salary_paid"),
+        "surplus_value": None,
+    }
+    enrich_moves(
+        [clone],
+        war_index,
+        dollars_per_war=8_000_000,
+        team_id=int(move["team_id"]),
+        through_season=through_year,
+    )
+    net = clone.get("net_war_exchange")
+    return float(net) if net is not None else 0.0
 
 
 def trade_net_rate_through(
@@ -422,16 +504,22 @@ def trade_net_rate_through(
     as_of: dt.date,
     stints: list[dict[str, Any]],
     seasons: float,
-) -> float:
-    """Trade net WAR / season using only deals on/before as_of."""
+    war_index: dict[int, list[dict]] | None = None,
+) -> float | None:
+    """Trade net WAR / season using only deals on/before as_of.
+
+    When ``war_index`` is set, each deal's WAR is clipped to ``as_of.year``
+    (point-in-time), not the living rebuild total on league_moves.json.
+    """
     net = 0.0
+    hits = 0
     as_of_s = as_of.isoformat()
     person_stints = [s for s in stints if s["person_id"] == person_id]
     for move in load_league_moves():
         move_date = move.get("move_date")
         if not move_date or str(move_date) > as_of_s:
             continue
-        if move.get("net_war_exchange") is None:
+        if move.get("net_war_exchange") is None and war_index is None:
             continue
         try:
             tid = int(move["team_id"])
@@ -457,7 +545,13 @@ def trade_net_rate_through(
                 break
         if not attributed:
             continue
-        net += float(move["net_war_exchange"])
+        if war_index is not None:
+            net += _clip_trade_net(move, war_index, as_of.year)
+        else:
+            net += float(move["net_war_exchange"])
+        hits += 1
+    if hits == 0:
+        return None
     seasons_n = max(0.5, float(seasons))
     raw = net / seasons_n
     return tenure_shrink(raw, int(round(seasons_n)), TRADE_PRIOR_SEASONS)
@@ -485,7 +579,11 @@ def aggregate_franchise(seasons: list[dict[str, Any]], weights: dict[str, float]
         pennants = sum(1 for r in team_rows if r.get("pennant"))
         ws = sum(1 for r in team_rows if r.get("world_series"))
         win_pct = round(wins / games, 4) if games else 0.0
-        efficiency, payroll_sum = payroll_efficiency_from_seasons(team_rows)
+        efficiency, payroll_sum = payroll_efficiency_from_seasons(
+            team_rows, _YEAR_PE_MEANS
+        )
+        draft_v = draft_by_team.get(tid)
+        trade_v = trade_by_team.get(tid)
         row = attach_rates(
             {
                 "team_id": tid,
@@ -501,9 +599,11 @@ def aggregate_franchise(seasons: list[dict[str, Any]], weights: dict[str, float]
                 "pennants": pennants,
                 "world_series": ws,
                 "payroll_sum": payroll_sum,
-                "payroll_efficiency": efficiency,
-                "draft_vos": round(draft_by_team.get(tid, 0.0), 4),
-                "trade_net_rate": round(trade_by_team.get(tid, 0.0), 4),
+                "payroll_efficiency": (
+                    efficiency if payroll_sum is not None else None
+                ),
+                "draft_vos": round(draft_v, 4) if draft_v is not None else None,
+                "trade_net_rate": round(trade_v, 4) if trade_v is not None else None,
             }
         )
         rows.append(row)
@@ -571,7 +671,9 @@ def metrics_from_seasons(season_rows: list[dict[str, Any]]) -> dict[str, Any]:
     games = wins + losses
     playoff_years = sorted({r["season"] for r in season_rows if r.get("playoffs")})
     playoff_depth = sum(int(r.get("playoff_depth") or 0) for r in season_rows)
-    efficiency, payroll_sum = payroll_efficiency_from_seasons(season_rows)
+    efficiency, payroll_sum = payroll_efficiency_from_seasons(
+        season_rows, _YEAR_PE_MEANS
+    )
     return attach_rates(
         {
             "seasons": len(season_rows),
@@ -584,7 +686,7 @@ def metrics_from_seasons(season_rows: list[dict[str, Any]]) -> dict[str, Any]:
             "pennants": sum(1 for r in season_rows if r.get("pennant")),
             "world_series": sum(1 for r in season_rows if r.get("world_series")),
             "payroll_sum": payroll_sum,
-            "payroll_efficiency": efficiency,
+            "payroll_efficiency": efficiency if payroll_sum is not None else None,
         }
     )
 
@@ -628,8 +730,12 @@ def build_gm_index(
     rows: list[dict[str, Any]] = []
     for pid, season_rows in by_person_seasons.items():
         metrics = metrics_from_seasons(season_rows)
-        metrics["draft_vos"] = round(draft_by_gm.get(pid, 0.0), 4)
-        metrics["trade_net_rate"] = round(trade_by_gm.get(pid, 0.0), 4)
+        draft_v = draft_by_gm.get(pid)
+        trade_v = trade_by_gm.get(pid)
+        metrics["draft_vos"] = round(draft_v, 4) if draft_v is not None else None
+        metrics["trade_net_rate"] = (
+            round(trade_v, 4) if trade_v is not None else None
+        )
         rows.append(
             {
                 "person_id": pid,
@@ -674,11 +780,12 @@ def resume_through_date(
     as_of: dt.date,
     seasons: list[dict[str, Any]],
     stints: list[dict[str, Any]],
+    war_index: dict[int, list[dict]] | None = None,
 ) -> dict[str, Any]:
     """Career metrics for person_id using seasons attributed to them with season mid <= as_of.
 
-    Draft VOS and trade net rate are also cut at as_of so yearly/exit composites
-    cannot credit picks or deals that had not happened yet.
+    Draft VOS and trade net rate are cut at as_of. When ``war_index`` is passed,
+    observed WAR inside those grades is also capped at as_of.year (no living leak).
     """
     attributed: list[dict] = []
     for row in seasons:
@@ -688,9 +795,9 @@ def resume_through_date(
         if season_gm(row["team_id"], row["season"], stints) == person_id:
             attributed.append(row)
     metrics = metrics_from_seasons(attributed)
-    metrics["draft_vos"] = draft_vos_through(person_id, as_of)
+    metrics["draft_vos"] = draft_vos_through(person_id, as_of, war_index)
     metrics["trade_net_rate"] = trade_net_rate_through(
-        person_id, as_of, stints, metrics["seasons"]
+        person_id, as_of, stints, metrics["seasons"], war_index
     )
     return metrics
 
@@ -699,6 +806,8 @@ def build_exit_resumes(
     seasons: list[dict[str, Any]],
     stints: list[dict[str, Any]],
     weights: dict[str, float],
+    tenure_prior: int,
+    war_index: dict[int, list[dict]] | None = None,
 ) -> dict[str, Any]:
     exits: list[dict[str, Any]] = []
     for stint in stints:
@@ -707,7 +816,9 @@ def build_exit_resumes(
         end = parse_date(stint["end"])
         if end is None or end < dt.date(WINDOW_START, 1, 1) or end > AS_OF:
             continue
-        resume = resume_through_date(stint["person_id"], end, seasons, stints)
+        resume = resume_through_date(
+            stint["person_id"], end, seasons, stints, war_index
+        )
         exits.append(
             {
                 "exit_date": stint["end"],
@@ -721,11 +832,13 @@ def build_exit_resumes(
             }
         )
 
-    # Score each exit resume within the exit pool (same weights as franchise/GM index).
+    # Score each exit resume within the exit pool (same weights + tenure shrink as GM board).
     if exits:
-        scores = composite_scores([e["peer_resume"] for e in exits], weights)
-        for exit_row, score in zip(exits, scores):
-            exit_row["peer_score"] = score
+        raw_scores = composite_scores([e["peer_resume"] for e in exits], weights)
+        for exit_row, raw in zip(exits, raw_scores):
+            seasons_n = int(exit_row["peer_resume"].get("seasons") or 0)
+            exit_row["peer_score_raw"] = raw
+            exit_row["peer_score"] = tenure_shrink(raw, seasons_n, tenure_prior)
 
     exits.sort(key=lambda e: e["exit_date"])
     fired = [e for e in exits if e["exit_type"] in {"fired", "contract_expired"}]
@@ -733,6 +846,7 @@ def build_exit_resumes(
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "window": [WINDOW_START, WINDOW_END],
         "as_of": AS_OF.isoformat(),
+        "tenure_prior_seasons": tenure_prior,
         "exit_count": len(exits),
         "summary": {
             "fired_count": len(fired),
@@ -764,6 +878,8 @@ def build_yearly_index(
     seasons: list[dict[str, Any]],
     stints: list[dict[str, Any]],
     weights: dict[str, float],
+    tenure_prior: int,
+    war_index: dict[int, list[dict]] | None = None,
 ) -> dict[str, Any]:
     """Year-by-year rate ranks among active GMs + that offseason's exits."""
     names = {s["person_id"]: s["name"] for s in stints}
@@ -783,7 +899,9 @@ def build_yearly_index(
         active_rows: list[dict[str, Any]] = []
         for pid in sorted(active_ids):
             cutoff = dt.date(year, 10, 15)
-            metrics = resume_through_date(pid, cutoff, seasons, stints)
+            metrics = resume_through_date(
+                pid, cutoff, seasons, stints, war_index
+            )
             if metrics["seasons"] <= 0:
                 continue
             teams = sorted(
@@ -808,11 +926,23 @@ def build_yearly_index(
         if not active_rows:
             continue
 
-        scores = composite_scores(active_rows, weights)
-        ranks = rank_descending(scores)
+        raw_scores = composite_scores(active_rows, weights)
+        adj_scores = [
+            tenure_shrink(score, row["seasons"], tenure_prior)
+            for score, row in zip(raw_scores, active_rows)
+        ]
+        ranks = rank_descending(adj_scores)
         cats = category_ranks(active_rows)
-        for row, score, rank, cat in zip(active_rows, scores, ranks, cats):
-            row["composite"] = score
+        for row, raw, adj, rank, cat in zip(
+            active_rows, raw_scores, adj_scores, ranks, cats
+        ):
+            row["composite_raw"] = raw
+            row["composite"] = adj
+            row["tenure_weight"] = (
+                round(row["seasons"] / (row["seasons"] + tenure_prior), 4)
+                if row["seasons"]
+                else 0.0
+            )
             row["rank"] = rank
             row["category_ranks"] = cat
 
@@ -822,7 +952,9 @@ def build_yearly_index(
         exit_profiles: list[dict[str, Any]] = []
         for stint in exit_stints:
             end = parse_date(stint["end"]) or dt.date(year + 1, 1, 1)
-            metrics = resume_through_date(stint["person_id"], end, seasons, stints)
+            metrics = resume_through_date(
+                stint["person_id"], end, seasons, stints, war_index
+            )
             if metrics["seasons"] <= 0:
                 continue
             exit_profiles.append(
@@ -855,6 +987,8 @@ def build_yearly_index(
                         "name": r["name"],
                         "teams": r["teams"],
                         "composite": r["composite"],
+                        "composite_raw": r["composite_raw"],
+                        "tenure_weight": r["tenure_weight"],
                         "category_ranks": r["category_ranks"],
                         "seasons": r["seasons"],
                         "win_pct": r["win_pct"],
@@ -874,9 +1008,13 @@ def build_yearly_index(
     return {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "window": [WINDOW_START, last_complete],
+        "as_of": AS_OF.isoformat(),
         "weights": weights,
+        "tenure_prior_seasons": tenure_prior,
         "framing": (
-            "Rate-based yearly ranks among active GMs, plus who left that offseason."
+            "Rate-based yearly ranks among active GMs (tenure-shrunk like the "
+            "career board), plus who left that offseason. Draft/trade WAR clipped "
+            "to each year's as-of."
         ),
         "summary": {
             "years": len(years),
@@ -903,6 +1041,11 @@ def main() -> int:
         help="reuse data/team_seasons.json instead of refetching",
     )
     parser.add_argument("--skip-payroll", action="store_true")
+    parser.add_argument(
+        "--skip-war-clips",
+        action="store_true",
+        help="skip BRef load for as-of trade/draft clips on yearly/exit",
+    )
     args = parser.parse_args()
 
     weights_file = load_weights()
@@ -937,9 +1080,24 @@ def main() -> int:
         }
         write_json(seasons_path, payload)
 
+    global _YEAR_PE_MEANS
+    _YEAR_PE_MEANS = attach_era_relative_payroll(seasons)
+    print(
+        f"era-relative payroll means for {len(_YEAR_PE_MEANS)} seasons",
+        file=sys.stderr,
+    )
+
     stints = json.loads((DATA / "gm_tenures.json").read_text(encoding="utf-8"))
     if isinstance(stints, dict):
         stints = stints["stints"]
+
+    # Point-in-time WAR clips for yearly/exit (skip if --skip-war-clips).
+    war_index: dict[int, list[dict]] | None = None
+    if not getattr(args, "skip_war_clips", False):
+        try:
+            war_index = get_war_index()
+        except SystemExit as exc:
+            print(f"WARNING: WAR clips unavailable ({exc}); using living nets", file=sys.stderr)
 
     print("building franchise index", file=sys.stderr)
     franchise = aggregate_franchise(seasons, weights)
@@ -950,11 +1108,13 @@ def main() -> int:
     write_json(DATA / "gm_index.json", gm_index)
 
     print("building exit resumes", file=sys.stderr)
-    exits = build_exit_resumes(seasons, stints, weights)
+    exits = build_exit_resumes(seasons, stints, weights, tenure_prior, war_index)
     write_json(DATA / "exit_resumes.json", exits)
 
     print("building yearly job-security index", file=sys.stderr)
-    yearly = build_yearly_index(seasons, stints, weights)
+    yearly = build_yearly_index(
+        seasons, stints, weights, tenure_prior, war_index
+    )
     write_json(DATA / "yearly_index.json", yearly)
 
     top_f = franchise["franchises"][0] if franchise["franchises"] else None

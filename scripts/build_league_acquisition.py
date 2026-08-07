@@ -68,7 +68,11 @@ def main() -> int:
     parser.add_argument("--dollars-per-war", type=float, default=DEFAULT_DOLLARS_PER_WAR)
     args = parser.parse_args()
 
-    today = dt.date.today()
+    today = dt.date(2026, 8, 2)
+    if (DATA / "weights.json").exists():
+        raw = json.loads((DATA / "weights.json").read_text(encoding="utf-8"))
+        if raw.get("as_of"):
+            today = dt.date.fromisoformat(str(raw["as_of"])[:10])
     start = dt.date(args.start_year, 1, 1)
     war_index = None if args.no_war else load_bref_war()
 
@@ -102,6 +106,7 @@ def main() -> int:
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "scope": "league",
         "season_range": [start.year, today.year],
+        "as_of": today.isoformat(),
         "framing": (
             "How every club acquired value by channel. WAR in = production for "
             "that club after the move; net WAR uses trade exchange when applicable. "

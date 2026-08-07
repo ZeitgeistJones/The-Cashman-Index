@@ -34,7 +34,21 @@ DATA = REPO_ROOT / "data"
 WINDOW_START = 2006
 # Classes need time to produce MLB WAR before we grade harshly.
 MATURE_LAG = 6
-AS_OF = dt.date(2026, 8, 1)
+AS_OF = dt.date(2026, 8, 2)  # overwritten from weights.json
+WINDOW_END = 2026
+
+
+def load_as_of() -> dt.date:
+    global AS_OF, WINDOW_START, WINDOW_END
+    path = DATA / "weights.json"
+    if path.exists():
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        WINDOW_START = int(raw.get("window_start", WINDOW_START))
+        WINDOW_END = int(raw.get("window_end", WINDOW_END))
+        if raw.get("as_of"):
+            AS_OF = dt.date.fromisoformat(str(raw["as_of"])[:10])
+    return AS_OF
+
 
 SESSION_HEADERS = {"User-Agent": "front-office-index/0.1 (personal project)"}
 
@@ -271,6 +285,12 @@ def main() -> int:
     )
     parser.add_argument("--skip-war", action="store_true")
     args = parser.parse_args()
+    load_as_of()
+    from scoring import last_complete_season
+
+    complete_end = last_complete_season(AS_OF, WINDOW_END)
+    # Fetch may include the open year for immature listing; scored window matches rankings.
+    fetch_end = max(args.end, AS_OF.year)
 
     mature_through = AS_OF.year - MATURE_LAG
     picks_path = DATA / "draft_picks.json"
@@ -282,7 +302,7 @@ def main() -> int:
     else:
         session = _session()
         picks = []
-        for year in range(args.start, args.end + 1):
+        for year in range(args.start, fetch_end + 1):
             print(f"  draft {year}", file=sys.stderr)
             try:
                 year_picks = fetch_draft_year(session, year)
@@ -349,7 +369,8 @@ def main() -> int:
 
     picks_payload = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "window": [args.start, args.end],
+        "as_of": AS_OF.isoformat(),
+        "window": [args.start, complete_end],
         "mature_through": mature_through,
         "mature_lag_years": MATURE_LAG,
         "slot_curve": curve,
@@ -399,7 +420,8 @@ def main() -> int:
 
     index = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "window": [args.start, args.end],
+        "as_of": AS_OF.isoformat(),
+        "window": [args.start, complete_end],
         "mature_through": mature_through,
         "slot_curve": curve,
         "framing": (

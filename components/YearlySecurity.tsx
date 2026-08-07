@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { formatDate } from "@/lib/moves";
 import {
   LENSES,
+  TENURE_PRIOR,
   lensWeights,
   rescoreRows,
   type LensId,
@@ -69,7 +70,9 @@ export default function YearlySecurity({
   const resumeBoard = useMemo(() => {
     if (!current) return [];
     const weights = lensWeights(lensId);
-    return rescoreRows(current.leaderboard, weights).sort(
+    return rescoreRows(current.leaderboard, weights, {
+      tenurePrior: TENURE_PRIOR,
+    }).sort(
       (a, b) => a.rank - b.rank || a.name.localeCompare(b.name),
     );
   }, [current, lensId]);
@@ -158,7 +161,7 @@ export default function YearlySecurity({
                   <th>GM</th>
                   <th className="num">Seasons</th>
                   <th className="num">Win%</th>
-                  <th className="num">Wins/$100M</th>
+                  <th className="num">Thrift vs era</th>
                   <th className="num">Depth/yr</th>
                   <th className="num">Index</th>
                 </tr>
@@ -173,7 +176,7 @@ export default function YearlySecurity({
                     </td>
                     <td className="num">{row.seasons}</td>
                     <td className="num">{formatPct(row.win_pct)}</td>
-                    <td className="num">{row.payroll_efficiency.toFixed(1)}</td>
+                    <td className="num">{row.payroll_efficiency.toFixed(2)}</td>
                     <td className="num">{row.playoff_depth_rate.toFixed(2)}</td>
                     <td className="num">
                       {row.composite > 0 ? "+" : ""}
@@ -201,7 +204,7 @@ export default function YearlySecurity({
                     <th>Type</th>
                     <th className="num">Seasons</th>
                     <th className="num">Win%</th>
-                    <th className="num">Wins/$100M</th>
+                    <th className="num">Thrift vs era</th>
                     <th className="num">Depth/yr</th>
                   </tr>
                 </thead>
@@ -224,7 +227,7 @@ export default function YearlySecurity({
                       </td>
                       <td className="num">
                         {row.payroll_efficiency != null
-                          ? row.payroll_efficiency.toFixed(1)
+                          ? row.payroll_efficiency.toFixed(2)
                           : "—"}
                       </td>
                       <td className="num">

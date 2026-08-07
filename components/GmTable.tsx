@@ -30,7 +30,7 @@ const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
   { key: "pennants", label: "Pennants", numeric: true },
   { key: "playoff_depth", label: "PO depth", numeric: true },
   { key: "win_pct", label: "Win%", numeric: true },
-  { key: "payroll_efficiency", label: "Wins/$100M", numeric: true },
+    { key: "payroll_efficiency", label: "Thrift vs era", numeric: true },
   { key: "draft_vos", label: "Draft", numeric: true },
   { key: "trade_net_rate", label: "Trade/yr", numeric: true },
   { key: "composite", label: "Index", numeric: true },
@@ -80,7 +80,7 @@ export default function GmTable({ gms }: { gms: GmRow[] }) {
         />
         <span>
           Hide small samples (&lt; 3 seasons). Short tenures stay in by default,
-          index shrunk toward average.
+          index shrunk toward 0.
         </span>
       </label>
       <div className="table-wrap sticky-2">
@@ -130,7 +130,7 @@ export default function GmTable({ gms }: { gms: GmRow[] }) {
                 <td className="num">{row.playoff_depth}</td>
                 <td className="num">{formatPct(row.win_pct)}</td>
                 <td className="num">
-                  {row.payroll_sum ? row.payroll_efficiency.toFixed(1) : "—"}
+                  {row.payroll_sum ? row.payroll_efficiency.toFixed(2) : "—"}
                 </td>
                 <td className="num">{formatSigned(row.draft_vos)}</td>
                 <td className="num">{formatSigned(row.trade_net_rate)}</td>
@@ -139,7 +139,7 @@ export default function GmTable({ gms }: { gms: GmRow[] }) {
                   {row.small_sample && row.tenure_weight !== undefined && (
                     <span
                       className="pending"
-                      title={`Raw index ${row.composite_raw?.toFixed(2) ?? "—"}; tenure weight ${(row.tenure_weight * 100).toFixed(0)}% after shrink toward average.`}
+                      title={`Raw index ${row.composite_raw?.toFixed(2) ?? "—"}; tenure weight ${(row.tenure_weight * 100).toFixed(0)}% after shrink toward 0.`}
                     >
                       {(row.tenure_weight * 100).toFixed(0)}% tenure
                     </span>

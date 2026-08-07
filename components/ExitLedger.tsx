@@ -41,7 +41,7 @@ export default function ExitLedger({ data }: { data: ExitFile }) {
               <th>Date</th>
               <th>GM / Club</th>
               <th>Resume at exit</th>
-              <th>Index that day</th>
+              <th>Exit-pool index</th>
             </tr>
           </thead>
           <tbody>

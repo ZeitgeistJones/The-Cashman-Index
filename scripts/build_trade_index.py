@@ -20,14 +20,33 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from scoring import tenure_shrink  # noqa: E402
+from scoring import last_complete_season, tenure_shrink  # noqa: E402
 from team_codes import (  # noqa: E402
     TEAMS,
     team_abbr,
 )
 
 DATA = REPO_ROOT / "data"
-AS_OF = dt.date.today()
+AS_OF = dt.date(2026, 8, 2)  # overwritten from weights.json
+WINDOW_START = 2006
+WINDOW_END = 2026
+
+
+def load_as_of() -> dt.date:
+    global AS_OF, WINDOW_START, WINDOW_END
+    path = DATA / "weights.json"
+    if path.exists():
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        WINDOW_START = int(raw.get("window_start", WINDOW_START))
+        WINDOW_END = int(raw.get("window_end", WINDOW_END))
+        if raw.get("as_of"):
+            AS_OF = dt.date.fromisoformat(str(raw["as_of"])[:10])
+    return AS_OF
+
+
+def scoring_window() -> tuple[int, int]:
+    """Same championship window as franchise/GM rankings (last complete season)."""
+    return WINDOW_START, last_complete_season(AS_OF, WINDOW_END)
 
 
 def load_json(path: Path) -> Any:
@@ -104,6 +123,7 @@ def main() -> int:
     parser.add_argument("--moves", type=Path, default=DATA / "league_moves.json")
     parser.add_argument("--prior-seasons", type=float, default=4.0)
     args = parser.parse_args()
+    load_as_of()
 
     if not args.moves.exists():
         print(f"Missing {args.moves}; run build_league_moves.py first.", file=sys.stderr)
@@ -111,7 +131,8 @@ def main() -> int:
 
     payload = load_json(args.moves)
     moves = payload.get("moves") or []
-    window = tuple(payload.get("season_range") or [2006, AS_OF.year])
+    window = scoring_window()
+    cutoff = dt.date(window[1], 12, 31)
     stints = load_gm_stints()
     names = {s["person_id"]: s["name"] for s in stints}
 
@@ -131,6 +152,12 @@ def main() -> int:
     for move in moves:
         net = move.get("net_war_exchange")
         if net is None:
+            continue
+        try:
+            day = dt.date.fromisoformat(str(move.get("move_date") or "")[:10])
+        except ValueError:
+            continue
+        if day > cutoff:
             continue
         tid = move.get("team_id")
         if tid not in by_team:
@@ -168,9 +195,11 @@ def main() -> int:
 
     out = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "as_of": AS_OF.isoformat(),
         "window": list(window),
         "framing": (
-            "Trade grade = shrunk net WAR per season from club-perspective trades. "
+            "Trade grade = shrunk net WAR per season from club-perspective trades "
+            f"through the last complete season ({window[1]}). "
             "Same definition for every franchise and GM."
         ),
         "franchises": franchises,

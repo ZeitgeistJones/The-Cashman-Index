@@ -18,7 +18,7 @@
     "pennants_rate": "Pennants / season",
     "playoff_depth_rate": "Playoff depth / season",
     "win_pct": "Win%",
-    "payroll_efficiency": "Wins / $100M",
+    "payroll_efficiency": "Thrift vs era mean",
     "draft_vos": "Draft value over slot",
     "trade_net_rate": "Trade net WAR / season"
   },
@@ -108,5 +108,5 @@
       "payroll_efficiency": 0.25
     }
   },
-  "notes": "Career boards: rates + payroll + draft VOS + peer trade net. Success lenses (weights.lenses) reweight the same seven components client-side — same z-score method, no zeros, no single weight over ~42%. Season construction board unchanged by lenses. Intl deferred. 2020 payroll efficiency paces wins to 162."
+  "notes": "Career boards: rates + era-relative payroll thrift + draft VOS + peer trade net (symmetric horizons). Missing components drop/renormalize (blank ≠ 0). Success lenses reweight the same seven components client-side. Yearly/exit use tenure shrink toward 0 and as-of WAR clips. Season construction board unchanged by lenses. Intl deferred. 2020 payroll efficiency paces wins to 162 before era relativization."
 }

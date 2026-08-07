@@ -42,6 +42,17 @@ from team_codes import (  # noqa: E402
 
 DATA = REPO_ROOT / "data"
 CACHE_DIR = DATA / "transactions" / "by_team"
+AS_OF = dt.date(2026, 8, 2)
+
+
+def load_as_of() -> dt.date:
+    global AS_OF
+    path = DATA / "weights.json"
+    if path.exists():
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        if raw.get("as_of"):
+            AS_OF = dt.date.fromisoformat(str(raw["as_of"])[:10])
+    return AS_OF
 
 
 def _parse_teams(raw: str | None) -> list[int]:
@@ -86,8 +97,9 @@ def main() -> int:
     parser.add_argument("--teams", type=str, default=None)
     parser.add_argument("--overrides", type=Path, default=DATA / "salary_overrides.json")
     args = parser.parse_args()
+    load_as_of()
 
-    today = dt.date.today()
+    end = AS_OF
     start = dt.date(args.start_year, 1, 1)
     team_ids = _parse_teams(args.teams)
 
@@ -98,13 +110,13 @@ def main() -> int:
 
     for tid in team_ids:
         print(f"\n=== {team_abbr(tid)} ({tid}) ===", file=sys.stderr)
-        rows = load_or_fetch_rows(tid, start, today, args.use_cache, args.pause)
+        rows = load_or_fetch_rows(tid, start, end, args.use_cache, args.pause)
         moves = group_into_moves(rows, team_id=tid)
         print(f"  {len(moves)} FO moves", file=sys.stderr)
 
         applied = 0
         if tid == YANKEES_MLBAM_ID:
-            applied, unmatched = apply_overrides(moves, args.overrides)
+            applied, unmatched = apply_overrides(moves, args.overrides, as_of=AS_OF)
             if applied:
                 print(f"  applied {applied} overrides", file=sys.stderr)
             if unmatched:
@@ -113,7 +125,7 @@ def main() -> int:
         if war_index is not None:
             enrich_moves(moves, war_index, args.dollars_per_war, team_id=tid)
             if applied:
-                apply_overrides(moves, args.overrides)
+                apply_overrides(moves, args.overrides, as_of=AS_OF)
                 for move in moves:
                     if (
                         move.get("salary_source") == "override"
@@ -146,14 +158,15 @@ def main() -> int:
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "data_source": "mlb-stats-api+bref",
         "scope": "league_trades",
-        "season_range": [start.year, today.year],
+        "season_range": [start.year, end.year],
+        "as_of": AS_OF.isoformat(),
         "dollars_per_war": args.dollars_per_war,
         "team_count": len(team_ids),
         "move_count": len(all_trades),
         "framing": (
             "Every club's trades scored the same way: during-tenure WAR for the "
-            "focal club minus what leavers produced elsewhere. Peer comparison "
-            "for FO trade books — every club scored the same way."
+            "focal club minus WAR leavers produced for the receiving club "
+            "(symmetric horizons; league sum of net ≈ 0)."
         ),
         "moves": [public_fields(m) for m in all_trades],
     }
@@ -165,7 +178,8 @@ def main() -> int:
         nyy_payload = {
             "generated_at": league_payload["generated_at"],
             "data_source": "mlb-stats-api+bref",
-            "season_range": [start.year, today.year],
+            "season_range": [start.year, end.year],
+            "as_of": AS_OF.isoformat(),
             "dollars_per_war": args.dollars_per_war,
             "move_count": len(yankees_all),
             "moves": [public_fields(m) for m in yankees_all],

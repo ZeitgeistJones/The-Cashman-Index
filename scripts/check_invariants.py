@@ -45,7 +45,7 @@ def load(name: str) -> Any:
     path = DATA / name
     if not path.exists():
         return None
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def rows_of(blob: Any, *keys: str) -> list[dict]:
@@ -218,7 +218,7 @@ def pinned_as_of() -> tuple[bool | None, str]:
     """
     offenders = []
     for path in sorted(SCRIPTS.glob("build_*.py")):
-        for num, line in enumerate(path.read_text().splitlines(), 1):
+        for num, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
             stripped = line.lstrip()
             if stripped.startswith("#") or "date.today()" not in stripped:
                 continue
@@ -255,7 +255,7 @@ def shrink_parity() -> tuple[bool | None, str]:
     path = SCRIPTS / "build_rankings.py"
     if not path.exists():
         return None, "scripts/build_rankings.py not present"
-    lines = path.read_text().splitlines()
+    lines = path.read_text(encoding="utf-8").splitlines()
     composites = [i + 1 for i, l in enumerate(lines) if "composite_scores(" in l and "def " not in l]
     shrinks = [i + 1 for i, l in enumerate(lines) if "tenure_shrink(" in l and "def " not in l]
     return (
@@ -304,7 +304,7 @@ def json_is_finite() -> tuple[bool | None, str]:
     """
     bad = []
     for path in sorted(DATA.glob("*.json")):
-        text = path.read_text()
+        text = path.read_text(encoding="utf-8")
         if re.search(r"\bNaN\b|\b-?Infinity\b", text):
             bad.append(path.name)
     return not bad, ("none" if not bad else "non-finite literals in: " + ", ".join(bad))

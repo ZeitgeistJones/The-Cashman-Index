@@ -12,7 +12,6 @@ import hashlib
 import json
 import math
 import sys
-import sys
 import time
 import unicodedata
 from collections import defaultdict
@@ -38,6 +37,19 @@ STATS_API = "https://statsapi.mlb.com/api/v1/transactions"
 # ~$8M per win is the commonly cited free-agent market rate in recent seasons.
 # Override with --dollars-per-war to re-run the whole index at a different price.
 DEFAULT_DOLLARS_PER_WAR = 8_000_000
+
+AS_OF = dt.date(2026, 8, 2)  # overwritten from data/weights.json
+
+
+def load_as_of() -> dt.date:
+    """Pin scored outputs to weights.json as_of (never wall-clock)."""
+    global AS_OF
+    path = REPO_ROOT / "data" / "weights.json"
+    if path.exists():
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        if raw.get("as_of"):
+            AS_OF = dt.date.fromisoformat(str(raw["as_of"])[:10])
+    return AS_OF
 
 # Transaction typeCodes that represent an actual front-office decision. Everything
 # else the API returns (options, recalls, status changes, uniform numbers, DFAs)
@@ -127,8 +139,22 @@ def _direction(row: dict, team_id: int = YANKEES_MLBAM_ID) -> str:
     return "acquired"
 
 
+def _counterparty_id(rows: list[dict], team_id: int = YANKEES_MLBAM_ID) -> int | None:
+    for row in rows:
+        for side in ("team", "fromTeam"):
+            club = row.get(side) or {}
+            cid = club.get("id")
+            if cid and cid != team_id:
+                return int(cid)
+    return None
+
+
 def _group_key(row: dict, team_id: int = YANKEES_MLBAM_ID) -> tuple:
-    """Rows that belong to the same real-world move share a key."""
+    """Rows that belong to the same real-world move share a key.
+
+    Trades group by counterparty. Non-trades group by player identity — never
+    the Stats API row ``id``, which duplicates the same signing/release.
+    """
     date = _row_date(row)
     type_code = row.get("typeCode")
     if type_code == "TR":
@@ -136,7 +162,10 @@ def _group_key(row: dict, team_id: int = YANKEES_MLBAM_ID) -> tuple:
         from_team = (row.get("fromTeam") or {}).get("id")
         counterparty = from_team if to_team == team_id else to_team
         return (date, "TR", counterparty)
-    return (date, type_code, row.get("id"))
+    person_id = (row.get("person") or {}).get("id")
+    direction = _direction(row, team_id)
+    # Content key (date, type, direction, player) — merges redundant API rows.
+    return (date, type_code, direction, person_id)
 
 
 def _make_move_id(
@@ -220,6 +249,7 @@ def group_into_moves(
                 bucket.append(entry)
 
         player_ids = [p["mlbam_id"] for p in acquired + sent_away]
+        cp_id = _counterparty_id(group, team_id) if type_code == "TR" else None
         moves.append(
             {
                 "move_id": _make_move_id(date, type_code, player_ids, key[2], team_id),
@@ -230,6 +260,7 @@ def group_into_moves(
                 "move_type": type_desc,
                 "move_type_code": type_code,
                 "counterparty": _counterparty_name(group, team_id),
+                "counterparty_id": cp_id,
                 "summary": _summarize(
                     type_code, type_desc, group, acquired, sent_away, team_id
                 ),
@@ -248,7 +279,34 @@ def group_into_moves(
         )
 
     moves.sort(key=lambda m: (m["move_date"], m["move_id"]), reverse=True)
-    return moves
+    return _dedupe_non_trade_moves(moves)
+
+
+def _dedupe_non_trade_moves(moves: list[dict]) -> list[dict]:
+    """Merge non-trade FO moves that share date/type/player names.
+
+    Stats API row ids used to split one signing into many; content identity
+    (date, type, acquired names, sent names) collapses those duplicates.
+    Trades stay grouped by counterparty only.
+    """
+    seen: dict[tuple, dict] = {}
+    out: list[dict] = []
+    for move in moves:
+        if move.get("move_type_code") == "TR":
+            out.append(move)
+            continue
+        key = (
+            move["move_date"],
+            move.get("move_type_code") or move.get("move_type"),
+            tuple(sorted(p.get("name") or "" for p in move.get("players_acquired") or [])),
+            tuple(sorted(p.get("name") or "" for p in move.get("players_sent_away") or [])),
+        )
+        if key in seen:
+            continue
+        seen[key] = move
+        out.append(move)
+    out.sort(key=lambda m: (m["move_date"], m["move_id"]), reverse=True)
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -420,15 +478,28 @@ def enrich_moves(
     index: dict[int, list[dict]],
     dollars_per_war: float,
     team_id: int | None = None,
+    *,
+    through_season: int | None = None,
 ) -> None:
     """Fill in WAR splits, salary and both scores. Mutates `moves` in place.
 
-    Spine: war_acquired (during for focal club) − war_sent_away (elsewhere after leave).
+    Closed-market net WAR (symmetric horizons):
+      war_acquired  = WAR for the focal club after the move (through leave)
+      war_sent_away = WAR for the *receiving* club after the move (not “anywhere
+                      forever”). When counterparty codes are unknown, fall back
+                      to non-focal WAR (legacy asymmetry).
+    Optional ``through_season`` caps both sides (point-in-time / as-of resumes).
+    ``war_after_exit_acquired`` remains diagnostic only (not in the net).
     """
     for move in moves:
         tid = team_id if team_id is not None else move.get("team_id", YANKEES_MLBAM_ID)
         codes = bref_codes(tid)
         first_season = _effective_season(move["move_date"])
+        cp_id = move.get("counterparty_id")
+        try:
+            recv_codes = bref_codes(int(cp_id)) if cp_id is not None else None
+        except (KeyError, TypeError, ValueError):
+            recv_codes = None
 
         war_acquired = 0.0
         war_prior_in = 0.0
@@ -439,17 +510,27 @@ def enrich_moves(
             mid = player["mlbam_id"]
             prior, _ = _sum_seasons(index, mid, before_season=first_season)
             during, salary = _sum_seasons(
-                index, mid, from_season=first_season, club_codes=codes, for_club=True
+                index,
+                mid,
+                from_season=first_season,
+                through_season=through_season,
+                club_codes=codes,
+                for_club=True,
             )
             last_club = _last_club_season_from(index, mid, first_season, codes)
             if last_club is not None:
-                after, _ = _sum_seasons(
-                    index,
-                    mid,
-                    from_season=last_club + 1,
-                    club_codes=codes,
-                    for_club=False,
-                )
+                after_from = last_club + 1
+                if through_season is not None and after_from > through_season:
+                    after = 0.0
+                else:
+                    after, _ = _sum_seasons(
+                        index,
+                        mid,
+                        from_season=after_from,
+                        through_season=through_season,
+                        club_codes=codes,
+                        for_club=False,
+                    )
             else:
                 after = 0.0
             player["war_prior"] = prior
@@ -474,13 +555,25 @@ def enrich_moves(
                 club_codes=codes,
                 for_club=True,
             )
-            after, _ = _sum_seasons(
-                index,
-                mid,
-                from_season=first_season,
-                club_codes=codes,
-                for_club=False,
-            )
+            # Symmetric debit: WAR produced for the receiving club only.
+            if recv_codes is not None:
+                after, _ = _sum_seasons(
+                    index,
+                    mid,
+                    from_season=first_season,
+                    through_season=through_season,
+                    club_codes=recv_codes,
+                    for_club=True,
+                )
+            else:
+                after, _ = _sum_seasons(
+                    index,
+                    mid,
+                    from_season=first_season,
+                    through_season=through_season,
+                    club_codes=codes,
+                    for_club=False,
+                )
             player["war_prior"] = prior
             player["war_after_move"] = after
             player["war_during"] = prior
@@ -493,6 +586,7 @@ def enrich_moves(
         move["team_name"] = team_name(tid)
         move["war_acquired"] = round(war_acquired, 2)
         move["war_sent_away"] = round(war_sent_away, 2)
+        # net = during(focal) − during(receiver); league sum ≈ 0 for peer trades.
         move["net_war_exchange"] = round(war_acquired - war_sent_away, 2)
         move["war_prior_acquired"] = round(war_prior_in, 2)
         move["war_prior_sent"] = round(war_prior_out, 2)
@@ -537,8 +631,12 @@ def _days_apart(left: str, right: str) -> int:
     return abs((a - b).days)
 
 
-def apply_overrides(moves: list[dict], overrides_path: Path,
-                    date_tolerance: int = 14) -> tuple[int, list[str]]:
+def apply_overrides(
+    moves: list[dict],
+    overrides_path: Path,
+    date_tolerance: int = 14,
+    as_of: dt.date | None = None,
+) -> tuple[int, list[str]]:
     """Layer hand-entered contract terms on top of the scraped data.
 
     The MLB Stats API carries no contract information at all, and Baseball
@@ -555,6 +653,7 @@ def apply_overrides(moves: list[dict], overrides_path: Path,
     if not overrides_path.exists():
         return 0, []
 
+    pin = as_of or load_as_of()
     entries = json.loads(overrides_path.read_text())
     applied = 0
     unmatched: list[str] = []
@@ -606,7 +705,7 @@ def apply_overrides(moves: list[dict], overrides_path: Path,
             # bought for, so its surplus is a midpoint, not a verdict. Flag it
             # so the site can say so instead of calling Judge a $200M mistake.
             move["contract_through"] = entry["contract_through"]
-            move["contract_active"] = entry["contract_through"] >= dt.date.today().year
+            move["contract_active"] = entry["contract_through"] >= pin.year
         applied += 1
 
     return applied, unmatched
@@ -639,6 +738,7 @@ def public_fields(move: dict) -> dict:
         "war_after_exit_acquired": move.get("war_after_exit_acquired"),
         "salary_source": move["salary_source"],
         "counterparty": move["counterparty"],
+        "counterparty_id": move.get("counterparty_id"),
         "acquisition_channel": move.get("acquisition_channel"),
         "deal_archetype": move.get("deal_archetype"),
         "talent_grade": move.get("talent_grade"),
@@ -677,7 +777,7 @@ def main() -> int:
                         help="exit non-zero if any override matched no move (for CI)")
     args = parser.parse_args()
 
-    today = dt.date.today()
+    today = load_as_of()
     if args.years is not None:
         start = today.replace(year=today.year - args.years)
     else:
@@ -699,7 +799,7 @@ def main() -> int:
     moves = group_into_moves(rows, all_types=args.all_types)
     print(f"Grouped into {len(moves)} moves", file=sys.stderr)
 
-    applied, unmatched = apply_overrides(moves, args.overrides)
+    applied, unmatched = apply_overrides(moves, args.overrides, as_of=today)
     if applied:
         print(f"Applied {applied} manual contract override(s)", file=sys.stderr)
 
@@ -711,7 +811,7 @@ def main() -> int:
         # Overrides win over Baseball Reference salaries, so re-apply and
         # recompute surplus for anything the user specified by hand.
         if applied:
-            apply_overrides(moves, args.overrides)
+            apply_overrides(moves, args.overrides, as_of=today)
             for move in moves:
                 if move["salary_source"] == "override" and move["war_acquired"] is not None:
                     move["surplus_value"] = round(
@@ -736,6 +836,7 @@ def main() -> int:
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "data_source": "mlb-stats-api+bref",
         "season_range": [start.year, today.year],
+        "as_of": today.isoformat(),
         "dollars_per_war": args.dollars_per_war,
         "move_count": len(moves),
         "moves": [public_fields(m) for m in moves],

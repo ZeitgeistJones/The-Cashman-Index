@@ -60,8 +60,12 @@ TRANSACTION_ROWS = [
      "person": {"id": 111111, "fullName": "Some Reliever"},
      "team": YANKEES, "fromTeam": RANGERS, "description": "..."},
 
-    # A free-agent signing.
+    # A free-agent signing (two API rows — same player — must collapse).
     {"id": 6, "date": "2019-12-18", "typeCode": "SFA", "typeDesc": "Signed as Free Agent",
+     "person": {"id": 543037, "fullName": "Gerrit Cole"},
+     "team": YANKEES,
+     "description": "New York Yankees signed free agent RHP Gerrit Cole."},
+    {"id": 66, "date": "2019-12-18", "typeCode": "SFA", "typeDesc": "Signed as Free Agent",
      "person": {"id": 543037, "fullName": "Gerrit Cole"},
      "team": YANKEES,
      "description": "New York Yankees signed free agent RHP Gerrit Cole."},
@@ -119,8 +123,11 @@ print("\ngrouping")
 moves = group_into_moves(TRANSACTION_ROWS)
 by_date_type = {(m["move_date"], m["move_type"]): m for m in moves}
 check("roster paperwork filtered out", len(moves), 4)
+check("duplicate API rows for same signing collapse",
+      sum(1 for m in moves if m["move_type"] == "Signed as Free Agent"), 1)
 
 padres = next(m for m in moves if m["counterparty"] == "San Diego Padres")
+check("counterparty_id stored on trade", padres.get("counterparty_id"), 135)
 check("multi-player trade collapses to one move",
       sorted(p["name"] for p in padres["players_acquired"]),
       ["Juan Soto", "Trent Grisham"])
@@ -157,6 +164,29 @@ check("net WAR exchange", padres["net_war_exchange"], 4.6)
 check("prior WAR on acquired side (buy-high/low context)", padres["war_prior_acquired"], 12.0)
 check("prior Yankees WAR on sent side", padres["war_prior_sent"], 1.9)
 check("after-exit WAR for acquired who left", padres["war_after_exit_acquired"], 5.0)
+
+# Closed-market identity: score both clubs on the same deal.
+padres_view_rows = [
+    {"id": 1, "date": "2023-12-06", "typeCode": "TR", "typeDesc": "Trade",
+     "person": {"id": 665742, "fullName": "Juan Soto"},
+     "team": YANKEES, "fromTeam": PADRES, "description": "..."},
+    {"id": 2, "date": "2023-12-06", "typeCode": "TR", "typeDesc": "Trade",
+     "person": {"id": 663757, "fullName": "Trent Grisham"},
+     "team": YANKEES, "fromTeam": PADRES, "description": "..."},
+    {"id": 3, "date": "2023-12-06", "typeCode": "TR", "typeDesc": "Trade",
+     "person": {"id": 650633, "fullName": "Michael King"},
+     "team": PADRES, "fromTeam": YANKEES, "description": "..."},
+    {"id": 4, "date": "2023-12-06", "typeCode": "TR", "typeDesc": "Trade",
+     "person": {"id": 543877, "fullName": "Kyle Higashioka"},
+     "team": PADRES, "fromTeam": YANKEES, "description": "..."},
+]
+sd_moves = group_into_moves(padres_view_rows, team_id=135)
+nyy_moves = group_into_moves(padres_view_rows, team_id=147)
+enrich_moves(sd_moves, WAR_INDEX, dollars_per_war=8_000_000, team_id=135)
+enrich_moves(nyy_moves, WAR_INDEX, dollars_per_war=8_000_000, team_id=147)
+pair_sum = sd_moves[0]["net_war_exchange"] + nyy_moves[0]["net_war_exchange"]
+check("two-club trade nets sum ~0 (symmetric horizons)", abs(pair_sum) < 0.05, True)
+
 check("salary summed from Yankees stints", padres["salary_paid"], 41500000.0)
 check("salary source recorded", padres["salary_source"], "bref")
 check("surplus value", padres["surplus_value"], 10.4 * 8_000_000 - 41500000.0)
@@ -214,16 +244,36 @@ check("override lands on exactly one move", (applied2, len(unmatched2)), (1, 0))
 
 with tempfile.TemporaryDirectory() as tmp:
     path = Path(tmp) / "active.json"
-    this_year = dt.date.today().year
+    this_year = 2026  # pinned; matches weights.json as_of year in tests
     path.write_text(json.dumps([
         {"match": {"player": "Juan Soto", "date": "2023-12-06"},
          "salary_paid": 31000000, "contract_through": 2024},
         {"match": {"player": "Gerrit Cole", "date": "2019-12-18"},
          "salary_paid": 324000000, "contract_through": this_year + 2},
     ]))
-    apply_overrides(moves, path)
+    apply_overrides(moves, path, as_of=dt.date(this_year, 8, 2))
 check("finished contract not marked active", padres["contract_active"], False)
 check("running contract marked active", signing["contract_active"], True)
+
+print("\nleague closed-market regression (live file if present)")
+LEAGUE = Path(__file__).resolve().parent.parent / "data" / "league_moves.json"
+if LEAGUE.exists():
+    league = json.loads(LEAGUE.read_text(encoding="utf-8"))
+    live_nets = [
+        float(m["net_war_exchange"])
+        for m in league.get("moves") or []
+        if m.get("net_war_exchange") is not None
+    ]
+    if live_nets:
+        live_sum = sum(live_nets)
+        live_abs = sum(abs(x) for x in live_nets)
+        check(
+            "league |sum(net)| << legacy bias",
+            abs(live_sum) < 0.15 * live_abs and abs(live_sum) < 1500,
+            True,
+        )
+else:
+    print("  (skip — no league_moves.json)")
 
 print("\nbaseball reference team codes")
 # The first live run scored every move 0.0 because Baseball Reference labels

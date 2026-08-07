@@ -29,7 +29,7 @@ const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
   { key: "pennants", label: "Pennants", numeric: true },
   { key: "playoff_depth", label: "PO depth", numeric: true },
   { key: "win_pct", label: "Win%", numeric: true },
-  { key: "payroll_efficiency", label: "Wins/$100M", numeric: true },
+    { key: "payroll_efficiency", label: "Thrift vs era", numeric: true },
   { key: "draft_vos", label: "Draft VOS", numeric: true },
   { key: "trade_net_rate", label: "Trade/yr", numeric: true },
   { key: "composite", label: "Index", numeric: true },
@@ -124,7 +124,7 @@ export default function FranchiseTable({
               <td className="num">{formatPct(row.win_pct)}</td>
               <td className="num">
                 {row.payroll_sum
-                  ? row.payroll_efficiency.toFixed(1)
+                  ? row.payroll_efficiency.toFixed(2)
                   : "—"}
               </td>
               <td className="num">{formatSigned(row.draft_vos)}</td>

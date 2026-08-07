@@ -45,13 +45,13 @@ export const TENURE_PRIOR = Number(
 export const LENS_ORDER: LensId[] = ["balanced", "october", "value", "builder"];
 
 export type ScoreableRow = {
-  world_series_rate?: number;
-  pennants_rate?: number;
-  playoff_depth_rate?: number;
-  win_pct?: number;
-  payroll_efficiency?: number;
-  draft_vos?: number;
-  trade_net_rate?: number;
+  world_series_rate?: number | null;
+  pennants_rate?: number | null;
+  playoff_depth_rate?: number | null;
+  win_pct?: number | null;
+  payroll_efficiency?: number | null;
+  draft_vos?: number | null;
+  trade_net_rate?: number | null;
   seasons?: number;
   composite?: number;
   composite_raw?: number;
@@ -87,9 +87,8 @@ function round4(n: number): number {
   return Math.round(n * 10000) / 10000;
 }
 
-function componentValue(row: ScoreableRow, key: ComponentKey): number {
-  const v = row[key];
-  return typeof v === "number" && !Number.isNaN(v) ? v : 0;
+function isMissing(value: unknown): boolean {
+  return value === null || value === undefined || Number.isNaN(value as number);
 }
 
 /** Competition ranks (1 = best); ties share the minimum rank. */
@@ -114,22 +113,50 @@ export function rankDescending(scores: number[]): number[] {
   return ranks;
 }
 
+/**
+ * Weighted z-score sum. Missing components (null/undefined) are dropped and
+ * weights renormalized per row — never coerced to a fake 0.
+ */
 export function compositeScores(
   rows: ScoreableRow[],
   weights: ComponentWeights,
 ): number[] {
   if (!rows.length) return [];
-  const zByKey: Record<ComponentKey, number[]> = {} as Record<
+  const zByKey: Record<ComponentKey, (number | null)[]> = {} as Record<
     ComponentKey,
-    number[]
+    (number | null)[]
   >;
   for (const key of COMPONENT_KEYS) {
-    zByKey[key] = zscore(rows.map((r) => componentValue(r, key)));
+    const presentIdx: number[] = [];
+    const presentVals: number[] = [];
+    rows.forEach((r, i) => {
+      const v = r[key];
+      if (!isMissing(v)) {
+        presentIdx.push(i);
+        presentVals.push(v as number);
+      }
+    });
+    const zs = zscore(presentVals);
+    const slot: (number | null)[] = rows.map(() => null);
+    presentIdx.forEach((i, j) => {
+      slot[i] = zs[j];
+    });
+    zByKey[key] = slot;
   }
   return rows.map((_, i) => {
+    const active: Partial<Record<ComponentKey, number>> = {};
+    for (const key of COMPONENT_KEYS) {
+      if (zByKey[key][i] == null) continue;
+      const w = weights[key] ?? 0;
+      if (w > 0) active[key] = w;
+    }
+    const totalW = Object.values(active).reduce((a, b) => a + (b ?? 0), 0);
+    if (totalW <= 0) return 0;
     let total = 0;
     for (const key of COMPONENT_KEYS) {
-      total += (weights[key] ?? 0) * zByKey[key][i];
+      const w = active[key];
+      if (w == null) continue;
+      total += (w / totalW) * (zByKey[key][i] as number);
     }
     return round4(total);
   });
@@ -144,7 +171,7 @@ export type Rescored<T extends ScoreableRow> = T & {
 
 /**
  * Recompute composite + rank for a peer set under a lens.
- * When tenurePrior is set (GMs), apply tenure shrink like build_gm_index.
+ * When tenurePrior is set (GMs / yearly resumes), apply tenure shrink toward 0.
  */
 export function rescoreRows<T extends ScoreableRow>(
   rows: T[],

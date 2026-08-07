@@ -249,5 +249,5 @@ export function formatResume(r: Resume): string {
     r.playoff_depth_rate !== undefined
       ? r.playoff_depth_rate.toFixed(2)
       : String(r.playoff_depth);
-  return `${r.world_series} WS · ${r.pennants} pennants · depth/yr ${depthRate} · ${formatPct(r.win_pct)} · ${r.payroll_efficiency.toFixed(1)} wins/$100M · ${r.seasons} seasons`;
+  return `${r.world_series} WS · ${r.pennants} pennants · depth/yr ${depthRate} · ${formatPct(r.win_pct)} · thrift ${r.payroll_efficiency.toFixed(2)}× era · ${r.seasons} seasons`;
 }

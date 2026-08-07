@@ -113,9 +113,11 @@ export default function AboutPage() {
         </p>
         <p>
           With a prior of {weights.tenure_prior_seasons} seasons, a one-year
-          spike is damped; a long book approaches its raw composite. Rows with
-          fewer than {weights.min_seasons_for_full_rank} seasons are flagged as
-          small samples but still ranked.
+          spike is damped toward <em>0</em> (not the peer mean); a long book
+          approaches its raw composite. Yearly career grades and exit-pool
+          scores use the same shrink. Rows with fewer than{" "}
+          {weights.min_seasons_for_full_rank} seasons are flagged as small
+          samples but still ranked.
         </p>
       </section>
 
@@ -130,26 +132,38 @@ export default function AboutPage() {
             Aggregate to franchise or GM through the last <em>complete</em>{" "}
             championship season (drop the in-progress year before October).
             Win% = wins / games; title / pennant / depth rates = counts ÷
-            seasons; payroll efficiency = paced wins per $100M using only
-            seasons that have opening-day payroll on file (missing-payroll years
-            drop out of both sides).
+            seasons. Payroll thrift is <em>era-relative</em>: paced wins /
+            $100M for each team-season, divided by that year&apos;s league mean,
+            then averaged over the tenure (missing-payroll years drop out). 1.0
+            ≈ average thrift for the eras played; early low-payroll decades no
+            longer look automatically thrifty.
           </li>
           <li>
             Attach draft value-over-slot (franchise-tenure WAR vs slot curve) and
             peer trade net WAR per season from the league trade ledger. Yearly
-            and exit resumes cut draft picks and trades at the as-of date so
-            future deals cannot leak into a historical score.
+            and exit resumes cut draft picks and trades at the as-of date, and
+            clip observed WAR to that cutoff so living rebuild totals cannot
+            leak into a historical score.
           </li>
           <li>
             Z-score each of the seven components across the peer set; weighted
-            sum → composite. Competition ranks (1 = best) are shown per category
-            as well.
+            sum → composite. Missing components (blank, not zero) are dropped and
+            weights renormalized for that row. Competition ranks (1 = best) are
+            shown per category as well.
           </li>
         </ol>
         <p>
           Playoff depth scores how far you went that year, not merely “made the
           dance.” A wild-card exit and a World Series appearance are not the
-          same October.
+          same October. Titles, pennants, depth, and win% nest — stacked October
+          influence is higher than the three small weights imply (~
+          {pct(
+            (COMPONENTS.world_series_rate ?? 0) +
+              (COMPONENTS.pennants_rate ?? 0) +
+              (COMPONENTS.playoff_depth_rate ?? 0) +
+              (COMPONENTS.win_pct ?? 0),
+          )}
+          when win% is included).
         </p>
       </section>
 
@@ -157,18 +171,18 @@ export default function AboutPage() {
         <h2 id="examples">Plain examples</h2>
         <ul className="about-examples">
           <li>
-            <strong>Cheap contention vs expensive titles.</strong> Payroll
-            efficiency is the largest weight ({pct(COMPONENTS.payroll_efficiency)}
-            ). A club that wins a lot on a modest opening-day payroll outranks a
-            bigger spender with the same October hardware on that axis — titles
-            still count separately via rates.
+            <strong>Cheap contention vs expensive titles.</strong> Era-relative
+            payroll thrift is the largest weight ({pct(COMPONENTS.payroll_efficiency)}
+            ). A club that wins a lot relative to that year&apos;s league payroll
+            bar outranks a bigger spender with the same October hardware on that
+            axis — titles still count separately via rates.
           </li>
           <li>
             <strong>Trade net WAR.</strong> For each peer trade, credit WAR the
-            club received during the relevant tenure and debit WAR produced by
-            players it sent away elsewhere. Divide by seasons for{" "}
-            <code>trade_net_rate</code>. One bad deadline can be offset by a
-            decade of good ones — the rate keeps longevity honest.
+            club received <em>during its tenure with those players</em> and debit
+            WAR those it sent produced <em>for the receiving club</em> (not
+            everywhere forever). Horizons match so the league sum of net
+            exchange is ~0. Divide by seasons for <code>trade_net_rate</code>.
           </li>
           <li>
             <strong>Draft = franchise-tenure WAR only.</strong> A pick’s grade
@@ -256,6 +270,23 @@ export default function AboutPage() {
       <section className="about-section" aria-labelledby="left-out">
         <h2 id="left-out">Intentionally left out</h2>
         <ul className="about-examples">
+          <li>
+            <strong>Payroll thrift is era-relative.</strong> Raw wins/$100M
+            trends down as payrolls inflate; we divide each season by that
+            year&apos;s league mean so early tenures are not automatic thrift
+            leaders.
+          </li>
+          <li>
+            <strong>Winning-block collinearity.</strong> World Series, pennant,
+            playoff depth, and win% nest. Stacked influence exceeds the three
+            small October weights alone — disclosed here, not collapsed in this
+            release.
+          </li>
+          <li>
+            <strong>Call-ups vs acquisitions.</strong> Ledger promotions are not
+            yet separated from true FO acquisitions; treat arrival channels as
+            approximate.
+          </li>
           <li>
             <strong>Contemporaneous prospect values.</strong> Season construction
             grades revise with observed WAR after the horizon / mature lag — we

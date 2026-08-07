@@ -145,7 +145,9 @@ def horizon_trade_net(
     as_of: dt.date,
     horizon: int,
 ) -> float:
-    """Club-perspective net WAR clipped to deal_date + H years."""
+    """Club-perspective net WAR clipped to deal_date + H years (symmetric horizons)."""
+    from team_codes import bref_codes as _bref
+
     tid = int(move["team_id"])
     codes = bref_codes(tid)
     first_season = _effective_season(move["move_date"])
@@ -168,18 +170,33 @@ def horizon_trade_net(
         war_acquired += during
 
     war_sent = 0.0
+    cp_id = move.get("counterparty_id")
+    try:
+        recv_codes = _bref(int(cp_id)) if cp_id is not None else None
+    except (KeyError, TypeError, ValueError):
+        recv_codes = None
     for player in move.get("players_sent_away") or []:
         mid = player.get("mlbam_id")
         if not mid:
             continue
-        after, _ = _sum_seasons(
-            war_index,
-            int(mid),
-            from_season=first_season,
-            through_season=through,
-            club_codes=codes,
-            for_club=False,
-        )
+        if recv_codes is not None:
+            after, _ = _sum_seasons(
+                war_index,
+                int(mid),
+                from_season=first_season,
+                through_season=through,
+                club_codes=recv_codes,
+                for_club=True,
+            )
+        else:
+            after, _ = _sum_seasons(
+                war_index,
+                int(mid),
+                from_season=first_season,
+                through_season=through,
+                club_codes=codes,
+                for_club=False,
+            )
         war_sent += after
 
     return round(war_acquired - war_sent, 4)
