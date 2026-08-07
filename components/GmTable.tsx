@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TipTh from "@/components/TipTh";
+import { COLUMN_TIPS } from "@/lib/columnTips";
 import {
   formatComposite,
   formatPct,
@@ -22,18 +24,33 @@ type SortKey =
   | "composite";
 type Direction = "asc" | "desc";
 
-const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
-  { key: "rank", label: "Rank", numeric: true },
-  { key: "name", label: "GM", numeric: false },
-  { key: "seasons", label: "Seasons", numeric: true },
-  { key: "world_series", label: "WS", numeric: true },
-  { key: "pennants", label: "Pennants", numeric: true },
-  { key: "playoff_depth", label: "PO depth", numeric: true },
-  { key: "win_pct", label: "Win%", numeric: true },
-    { key: "payroll_efficiency", label: "Thrift vs era", numeric: true },
-  { key: "draft_vos", label: "Draft", numeric: true },
-  { key: "trade_net_rate", label: "Trade/yr", numeric: true },
-  { key: "composite", label: "Index", numeric: true },
+const COLUMNS: {
+  key: SortKey;
+  label: string;
+  numeric: boolean;
+  help: string;
+}[] = [
+  { key: "rank", label: "Rank", numeric: true, help: COLUMN_TIPS.rank },
+  { key: "name", label: "GM", numeric: false, help: COLUMN_TIPS.gm },
+  { key: "seasons", label: "Seasons", numeric: true, help: COLUMN_TIPS.seasons },
+  { key: "world_series", label: "WS", numeric: true, help: COLUMN_TIPS.ws },
+  { key: "pennants", label: "Pennants", numeric: true, help: COLUMN_TIPS.pennants },
+  { key: "playoff_depth", label: "PO depth", numeric: true, help: COLUMN_TIPS.poDepth },
+  { key: "win_pct", label: "Win%", numeric: true, help: COLUMN_TIPS.winPct },
+  {
+    key: "payroll_efficiency",
+    label: "Thrift vs era",
+    numeric: true,
+    help: COLUMN_TIPS.thrift,
+  },
+  { key: "draft_vos", label: "Draft", numeric: true, help: COLUMN_TIPS.draftVos },
+  {
+    key: "trade_net_rate",
+    label: "Trade/yr",
+    numeric: true,
+    help: COLUMN_TIPS.tradeYr,
+  },
+  { key: "composite", label: "Index", numeric: true, help: COLUMN_TIPS.index },
 ];
 
 function compare(a: GmRow, b: GmRow, key: SortKey, direction: Direction): number {
@@ -87,29 +104,17 @@ export default function GmTable({ gms }: { gms: GmRow[] }) {
         <table>
           <thead>
             <tr>
-              {COLUMNS.map((column) => {
-                const active = column.key === sortKey;
-                return (
-                  <th
-                    key={column.key}
-                    className={column.numeric ? "num" : undefined}
-                    aria-sort={
-                      active
-                        ? direction === "asc"
-                          ? "ascending"
-                          : "descending"
-                        : "none"
-                    }
-                  >
-                    <button type="button" onClick={() => toggleSort(column.key)}>
-                      {column.label}
-                      <span className="arrow" aria-hidden="true">
-                        {active ? (direction === "asc" ? "▲" : "▼") : "↕"}
-                      </span>
-                    </button>
-                  </th>
-                );
-              })}
+              {COLUMNS.map((column) => (
+                <TipTh
+                  key={column.key}
+                  label={column.label}
+                  help={column.help}
+                  numeric={column.numeric}
+                  active={column.key === sortKey}
+                  direction={direction}
+                  onSort={() => toggleSort(column.key)}
+                />
+              ))}
             </tr>
           </thead>
           <tbody>

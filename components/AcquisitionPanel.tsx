@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TipTh from "@/components/TipTh";
+import { COLUMN_TIPS } from "@/lib/columnTips";
 import { formatMoney, formatWar } from "@/lib/moves";
 
 type ClubRow = {
@@ -105,10 +107,14 @@ export default function AcquisitionPanel({ data }: { data: AcquisitionFile }) {
         <table>
           <thead>
             <tr>
-              <th>Channel</th>
-              <th className="num">Moves</th>
-              <th className="num">WAR in</th>
-              <th className="num">Net WAR</th>
+              <TipTh
+                label="Channel"
+                help="How the player arrived (draft, trade, FA, etc.)"
+                static
+              />
+              <TipTh label="Moves" help={COLUMN_TIPS.acqMoves} numeric static />
+              <TipTh label="WAR in" help={COLUMN_TIPS.warIn} numeric static />
+              <TipTh label="Net WAR" help={COLUMN_TIPS.acqNet} numeric static />
             </tr>
           </thead>
           <tbody>
@@ -133,10 +139,10 @@ export default function AcquisitionPanel({ data }: { data: AcquisitionFile }) {
         <table>
           <thead>
             <tr>
-              <th>Club</th>
-              <th className="num">Moves</th>
-              <th className="num">WAR in</th>
-              <th className="num">Net WAR</th>
+              <TipTh label="Club" help={COLUMN_TIPS.franchise} static />
+              <TipTh label="Moves" help={COLUMN_TIPS.acqMoves} numeric static />
+              <TipTh label="WAR in" help={COLUMN_TIPS.warIn} numeric static />
+              <TipTh label="Net WAR" help={COLUMN_TIPS.acqNet} numeric static />
             </tr>
           </thead>
           <tbody>

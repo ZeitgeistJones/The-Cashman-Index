@@ -394,6 +394,18 @@ thead th.num {
   text-align: right;
 }
 
+thead th.tip-th,
+thead th.tip-th button {
+  cursor: help;
+}
+
+thead th.tip-th .th-label,
+thead th.tip-th button {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.22em;
+  text-decoration-color: color-mix(in srgb, var(--muted) 55%, transparent);
+}
+
 thead th button {
   width: 100%;
   min-height: 44px;

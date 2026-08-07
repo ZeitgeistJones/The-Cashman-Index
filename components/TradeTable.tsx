@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TipTh from "@/components/TipTh";
+import { COLUMN_TIPS } from "@/lib/columnTips";
 import { formatWar } from "@/lib/moves";
 
 type TradeFranchise = {
@@ -67,11 +69,26 @@ export default function TradeTable({ data }: { data: TradeFile }) {
           <table>
             <thead>
               <tr>
-                <th>Rank</th>
-                <th>Franchise</th>
-                <th className="num">Trades</th>
-                <th className="num">Net WAR</th>
-                <th className="num">Net/season</th>
+                <TipTh label="Rank" help={COLUMN_TIPS.rank} static />
+                <TipTh label="Franchise" help={COLUMN_TIPS.franchise} static />
+                <TipTh
+                  label="Trades"
+                  help={COLUMN_TIPS.tradesCount}
+                  numeric
+                  static
+                />
+                <TipTh
+                  label="Net WAR"
+                  help={COLUMN_TIPS.netWarSum}
+                  numeric
+                  static
+                />
+                <TipTh
+                  label="Net/season"
+                  help={COLUMN_TIPS.netWarSeason}
+                  numeric
+                  static
+                />
               </tr>
             </thead>
             <tbody>
@@ -95,11 +112,26 @@ export default function TradeTable({ data }: { data: TradeFile }) {
           <table>
             <thead>
               <tr>
-                <th>Rank</th>
-                <th>GM</th>
-                <th className="num">Trades</th>
-                <th className="num">Net WAR</th>
-                <th className="num">Net/season</th>
+                <TipTh label="Rank" help={COLUMN_TIPS.rank} static />
+                <TipTh label="GM" help={COLUMN_TIPS.gm} static />
+                <TipTh
+                  label="Trades"
+                  help={COLUMN_TIPS.tradesCount}
+                  numeric
+                  static
+                />
+                <TipTh
+                  label="Net WAR"
+                  help={COLUMN_TIPS.netWarSum}
+                  numeric
+                  static
+                />
+                <TipTh
+                  label="Net/season"
+                  help={COLUMN_TIPS.netWarSeason}
+                  numeric
+                  static
+                />
               </tr>
             </thead>
             <tbody>

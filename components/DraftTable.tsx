@@ -1,17 +1,34 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TipTh from "@/components/TipTh";
+import { COLUMN_TIPS } from "@/lib/columnTips";
 import type { DraftFile, DraftFranchiseRow } from "@/lib/rankings";
 
 type SortKey = "rank" | "team_abbr" | "picks" | "avg_vos" | "total_vos";
 type Direction = "asc" | "desc";
 
-const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
-  { key: "rank", label: "Rank", numeric: true },
-  { key: "team_abbr", label: "Franchise", numeric: false },
-  { key: "picks", label: "Mature picks", numeric: true },
-  { key: "avg_vos", label: "Avg VOS", numeric: true },
-  { key: "total_vos", label: "Total VOS", numeric: true },
+const COLUMNS: {
+  key: SortKey;
+  label: string;
+  numeric: boolean;
+  help: string;
+}[] = [
+  { key: "rank", label: "Rank", numeric: true, help: COLUMN_TIPS.rank },
+  { key: "team_abbr", label: "Franchise", numeric: false, help: COLUMN_TIPS.franchise },
+  {
+    key: "picks",
+    label: "Mature picks",
+    numeric: true,
+    help: COLUMN_TIPS.maturePicks,
+  },
+  { key: "avg_vos", label: "Avg VOS", numeric: true, help: COLUMN_TIPS.avgVos },
+  {
+    key: "total_vos",
+    label: "Total VOS",
+    numeric: true,
+    help: COLUMN_TIPS.totalVos,
+  },
 ];
 
 function compare(
@@ -71,22 +88,17 @@ export default function DraftTable({ data }: { data: DraftFile }) {
         <table>
           <thead>
             <tr>
-              {COLUMNS.map((column) => {
-                const active = column.key === sortKey;
-                return (
-                  <th
-                    key={column.key}
-                    className={column.numeric ? "num" : undefined}
-                  >
-                    <button type="button" onClick={() => toggleSort(column.key)}>
-                      {column.label}
-                      <span className="arrow" aria-hidden="true">
-                        {active ? (direction === "asc" ? "▲" : "▼") : "↕"}
-                      </span>
-                    </button>
-                  </th>
-                );
-              })}
+              {COLUMNS.map((column) => (
+                <TipTh
+                  key={column.key}
+                  label={column.label}
+                  help={column.help}
+                  numeric={column.numeric}
+                  active={column.key === sortKey}
+                  direction={direction}
+                  onSort={() => toggleSort(column.key)}
+                />
+              ))}
             </tr>
           </thead>
           <tbody>

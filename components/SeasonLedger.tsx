@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TipTh from "@/components/TipTh";
 import {
   formatComposite,
   formatSigned,
@@ -248,26 +249,17 @@ export default function SeasonLedger({
         <table>
           <thead>
             <tr>
-              {COLUMNS.map((col) => {
-                const active = col.key === sortKey;
-                return (
-                  <th
+              {COLUMNS.map((col) => (
+                  <TipTh
                     key={col.key}
-                    className={col.numeric ? "num" : undefined}
-                    title={col.help}
-                    aria-sort={
-                      active ? (direction === "asc" ? "ascending" : "descending") : "none"
-                    }
-                  >
-                    <button type="button" onClick={() => toggleSort(col.key)}>
-                      {col.label}
-                      <span className="arrow" aria-hidden="true">
-                        {active ? (direction === "asc" ? "▲" : "▼") : "↕"}
-                      </span>
-                    </button>
-                  </th>
-                );
-              })}
+                    label={col.label}
+                    help={col.help}
+                    numeric={col.numeric}
+                    active={col.key === sortKey}
+                    direction={direction}
+                    onSort={() => toggleSort(col.key)}
+                  />
+                ))}
             </tr>
           </thead>
           <tbody>

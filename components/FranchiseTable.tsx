@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TipTh from "@/components/TipTh";
+import { COLUMN_TIPS } from "@/lib/columnTips";
 import {
   formatComposite,
   formatPct,
@@ -22,17 +24,32 @@ type SortKey =
   | "composite";
 type Direction = "asc" | "desc";
 
-const COLUMNS: { key: SortKey; label: string; numeric: boolean }[] = [
-  { key: "rank", label: "Rank", numeric: true },
-  { key: "team_abbr", label: "Franchise", numeric: false },
-  { key: "world_series", label: "WS", numeric: true },
-  { key: "pennants", label: "Pennants", numeric: true },
-  { key: "playoff_depth", label: "PO depth", numeric: true },
-  { key: "win_pct", label: "Win%", numeric: true },
-    { key: "payroll_efficiency", label: "Thrift vs era", numeric: true },
-  { key: "draft_vos", label: "Draft VOS", numeric: true },
-  { key: "trade_net_rate", label: "Trade/yr", numeric: true },
-  { key: "composite", label: "Index", numeric: true },
+const COLUMNS: {
+  key: SortKey;
+  label: string;
+  numeric: boolean;
+  help: string;
+}[] = [
+  { key: "rank", label: "Rank", numeric: true, help: COLUMN_TIPS.rank },
+  { key: "team_abbr", label: "Franchise", numeric: false, help: COLUMN_TIPS.franchise },
+  { key: "world_series", label: "WS", numeric: true, help: COLUMN_TIPS.ws },
+  { key: "pennants", label: "Pennants", numeric: true, help: COLUMN_TIPS.pennants },
+  { key: "playoff_depth", label: "PO depth", numeric: true, help: COLUMN_TIPS.poDepth },
+  { key: "win_pct", label: "Win%", numeric: true, help: COLUMN_TIPS.winPct },
+  {
+    key: "payroll_efficiency",
+    label: "Thrift vs era",
+    numeric: true,
+    help: COLUMN_TIPS.thrift,
+  },
+  { key: "draft_vos", label: "Draft VOS", numeric: true, help: COLUMN_TIPS.draftVos },
+  {
+    key: "trade_net_rate",
+    label: "Trade/yr",
+    numeric: true,
+    help: COLUMN_TIPS.tradeYr,
+  },
+  { key: "composite", label: "Index", numeric: true, help: COLUMN_TIPS.index },
 ];
 
 function compare(
@@ -77,34 +94,22 @@ export default function FranchiseTable({
       <table>
         <thead>
           <tr>
-            {COLUMNS.map((column) => {
-              const active = column.key === sortKey;
-              return (
-                <th
-                  key={column.key}
-                  className={column.numeric ? "num" : undefined}
-                  aria-sort={
-                    active
-                      ? direction === "asc"
-                        ? "ascending"
-                        : "descending"
-                      : "none"
-                  }
-                >
-                  <button type="button" onClick={() => toggleSort(column.key)}>
-                    {column.label}
-                    <span className="arrow" aria-hidden="true">
-                      {active ? (direction === "asc" ? "▲" : "▼") : "↕"}
-                    </span>
-                  </button>
-                </th>
-              );
-            })}
+            {COLUMNS.map((column) => (
+              <TipTh
+                key={column.key}
+                label={column.label}
+                help={column.help}
+                numeric={column.numeric}
+                active={column.key === sortKey}
+                direction={direction}
+                onSort={() => toggleSort(column.key)}
+              />
+            ))}
           </tr>
         </thead>
         <tbody>
-            {sorted.map((row) => (
-              <tr key={row.team_id}>
+          {sorted.map((row) => (
+            <tr key={row.team_id}>
               <td className="num">{row.rank}</td>
               <td>
                 <span className="summary">{row.team_name}</span>
@@ -123,9 +128,7 @@ export default function FranchiseTable({
               </td>
               <td className="num">{formatPct(row.win_pct)}</td>
               <td className="num">
-                {row.payroll_sum
-                  ? row.payroll_efficiency.toFixed(2)
-                  : "—"}
+                {row.payroll_sum ? row.payroll_efficiency.toFixed(2) : "—"}
               </td>
               <td className="num">{formatSigned(row.draft_vos)}</td>
               <td className="num">{formatSigned(row.trade_net_rate)}</td>

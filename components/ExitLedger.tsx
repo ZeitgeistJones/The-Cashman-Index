@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TipTh from "@/components/TipTh";
+import { COLUMN_TIPS } from "@/lib/columnTips";
 import { formatDate } from "@/lib/moves";
 import { formatResume, type ExitFile, type ExitRow } from "@/lib/rankings";
 
@@ -38,10 +40,15 @@ export default function ExitLedger({ data }: { data: ExitFile }) {
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>GM / Club</th>
-              <th>Resume at exit</th>
-              <th>Exit-pool index</th>
+              <TipTh label="Date" help={COLUMN_TIPS.exitDate} static />
+              <TipTh label="GM / Club" help={COLUMN_TIPS.exitGm} static />
+              <TipTh label="Resume at exit" help={COLUMN_TIPS.exitResume} static />
+              <TipTh
+                label="Exit-pool index"
+                help={COLUMN_TIPS.exitPool}
+                numeric
+                static
+              />
             </tr>
           </thead>
           <tbody>

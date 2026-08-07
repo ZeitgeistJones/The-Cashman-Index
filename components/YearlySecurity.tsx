@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import TipTh from "@/components/TipTh";
+import { COLUMN_TIPS } from "@/lib/columnTips";
 import { formatDate } from "@/lib/moves";
 import {
   LENSES,
@@ -157,13 +159,28 @@ export default function YearlySecurity({
             <table>
               <thead>
                 <tr>
-                  <th className="num">Rank</th>
-                  <th>GM</th>
-                  <th className="num">Seasons</th>
-                  <th className="num">Win%</th>
-                  <th className="num">Thrift vs era</th>
-                  <th className="num">Depth/yr</th>
-                  <th className="num">Index</th>
+                  <TipTh label="Rank" help={COLUMN_TIPS.yearlyRank} numeric static />
+                  <TipTh label="GM" help={COLUMN_TIPS.gm} static />
+                  <TipTh label="Seasons" help={COLUMN_TIPS.seasons} numeric static />
+                  <TipTh label="Win%" help={COLUMN_TIPS.winPct} numeric static />
+                  <TipTh
+                    label="Thrift vs era"
+                    help={COLUMN_TIPS.thrift}
+                    numeric
+                    static
+                  />
+                  <TipTh
+                    label="Depth/yr"
+                    help="Playoff depth rate through this season"
+                    numeric
+                    static
+                  />
+                  <TipTh
+                    label="Index"
+                    help={COLUMN_TIPS.yearlyIndex}
+                    numeric
+                    static
+                  />
                 </tr>
               </thead>
               <tbody>
@@ -199,13 +216,27 @@ export default function YearlySecurity({
               <table>
                 <thead>
                   <tr>
-                    <th>Exit</th>
-                    <th>GM</th>
-                    <th>Type</th>
-                    <th className="num">Seasons</th>
-                    <th className="num">Win%</th>
-                    <th className="num">Thrift vs era</th>
-                    <th className="num">Depth/yr</th>
+                    <TipTh label="Exit" help={COLUMN_TIPS.exitDate} static />
+                    <TipTh label="GM" help={COLUMN_TIPS.gm} static />
+                    <TipTh
+                      label="Type"
+                      help="How the executive left (fired, resigned, contract expired, …)"
+                      static
+                    />
+                    <TipTh label="Seasons" help={COLUMN_TIPS.seasons} numeric static />
+                    <TipTh label="Win%" help={COLUMN_TIPS.winPct} numeric static />
+                    <TipTh
+                      label="Thrift vs era"
+                      help={COLUMN_TIPS.thrift}
+                      numeric
+                      static
+                    />
+                    <TipTh
+                      label="Depth/yr"
+                      help="Playoff depth rate through exit"
+                      numeric
+                      static
+                    />
                   </tr>
                 </thead>
                 <tbody>
@@ -294,14 +325,44 @@ export default function YearlySecurity({
             <table>
               <thead>
                 <tr>
-                  <th className="num">Rank</th>
-                  <th>GM</th>
-                  <th className="num">Trade net</th>
-                  <th className="num">Draft VOS</th>
-                  <th className="num">Other arrivals</th>
-                  <th className="num">Own stock</th>
-                  <th className="num">Club year</th>
-                  <th className="num">Index</th>
+                  <TipTh label="Rank" help={COLUMN_TIPS.yearlyRank} numeric static />
+                  <TipTh label="GM" help={COLUMN_TIPS.gm} static />
+                  <TipTh
+                    label="Trade net"
+                    help="H-horizon trade net WAR for moves in this season’s window"
+                    numeric
+                    static
+                  />
+                  <TipTh
+                    label="Draft VOS"
+                    help={COLUMN_TIPS.draftVos}
+                    numeric
+                    static
+                  />
+                  <TipTh
+                    label="Other arrivals"
+                    help={COLUMN_TIPS.otherArrivals}
+                    numeric
+                    static
+                  />
+                  <TipTh
+                    label="Own stock"
+                    help={COLUMN_TIPS.stockShare}
+                    numeric
+                    static
+                  />
+                  <TipTh
+                    label="Club year"
+                    help={COLUMN_TIPS.clubYear}
+                    numeric
+                    static
+                  />
+                  <TipTh
+                    label="Index"
+                    help={COLUMN_TIPS.yearlyIndex}
+                    numeric
+                    static
+                  />
                 </tr>
               </thead>
               <tbody>
