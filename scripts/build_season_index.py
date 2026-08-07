@@ -490,9 +490,11 @@ def build_season_index(
                 row["fa_n"] += fa_n
 
         # Trades in window → GM on move date
+        window_trade_count = 0
         for move in moves:
             if not move_in_window(move.get("move_date") or "", window_lo, window_hi):
                 continue
+            window_trade_count += 1
             day = parse_date(move["move_date"])
             if not day:
                 continue
@@ -518,6 +520,8 @@ def build_season_index(
             if abbr and abbr not in row["teams"]:
                 row["teams"].append(abbr)
             row["trade_nets"].append(horizon_trade_net(move, war_index, AS_OF, HORIZON_YEARS))
+
+        trades_available = window_trade_count > 0
 
         # Draft class Y
         draft_immature = year > mature_through
@@ -556,8 +560,13 @@ def build_season_index(
         leaderboard: list[dict[str, Any]] = []
         for pid, row in active.items():
             trades = row["trade_nets"]
-            trade_raw = sum(trades) if trades else 0.0
-            trade_vintage = sample_shrink(trade_raw, len(trades), TRADE_PRIOR)
+            if not trades_available:
+                trade_vintage: float | None = None
+                trade_count = 0
+            else:
+                trade_raw = sum(trades) if trades else 0.0
+                trade_vintage = sample_shrink(trade_raw, len(trades), TRADE_PRIOR)
+                trade_count = len(trades)
 
             if draft_immature:
                 draft_vintage = None
@@ -575,20 +584,19 @@ def build_season_index(
                 if row["stock_shares"]
                 else 0.0
             )
+            # Share of club WAR; clamp for display/scoring so negatives don't read as "-4%"
+            stock = max(0.0, min(1.0, stock))
             results = (
                 sum(row["results"]) / len(row["results"]) if row["results"] else 0.0
             )
-
-            # For z-score composite, immature draft → neutral 0 so it does not dominate.
-            draft_for_score = 0.0 if draft_vintage is None else draft_vintage
 
             leaderboard.append(
                 {
                     "person_id": pid,
                     "name": row["name"],
                     "teams": row["teams"],
-                    "trade_vintage_net": round(trade_vintage, 4),
-                    "trade_count": len(trades),
+                    "trade_vintage_net": trade_vintage,
+                    "trade_count": trade_count,
                     "draft_vintage_vos": draft_vintage,
                     "draft_immature": draft_immature,
                     "draft_picks": len(row["draft_vos_list"]),
@@ -596,29 +604,32 @@ def build_season_index(
                     "fa_arrivals": row["fa_n"],
                     "stock_share": round(stock, 4),
                     "season_results": round(results, 4),
-                    "_draft_for_score": draft_for_score,
                 }
             )
 
         if not leaderboard:
             continue
 
+        active_weights = _active_season_weights(
+            SEASON_WEIGHTS,
+            trades_available=trades_available,
+            draft_scored=not draft_immature,
+        )
         score_rows = [
             {
-                "trade_vintage_net": r["trade_vintage_net"],
-                "draft_vintage_vos": r["_draft_for_score"],
+                "trade_vintage_net": float(r["trade_vintage_net"] or 0.0),
+                "draft_vintage_vos": float(r["draft_vintage_vos"] or 0.0),
                 "fa_vintage_war": r["fa_vintage_war"],
                 "stock_share": r["stock_share"],
                 "season_results": r["season_results"],
             }
             for r in leaderboard
         ]
-        scores = _season_composites(score_rows, SEASON_WEIGHTS)
+        scores = _season_composites(score_rows, active_weights)
         ranks = rank_descending(scores)
         for r, score, rank in zip(leaderboard, scores, ranks):
             r["composite"] = score
             r["rank"] = rank
-            del r["_draft_for_score"]
 
         leaderboard.sort(key=lambda r: r["rank"])
         years_out.append(
@@ -626,6 +637,9 @@ def build_season_index(
                 "season": year,
                 "attribution_window": [window_lo.isoformat(), window_hi.isoformat()],
                 "draft_immature": draft_immature,
+                "trades_available": trades_available,
+                "window_trade_count": window_trade_count,
+                "fully_scored": trades_available and not draft_immature,
                 "gm_count": len(leaderboard),
                 "leaderboard": leaderboard,
             }
@@ -649,10 +663,28 @@ def build_season_index(
     }
 
 
+def _active_season_weights(
+    weights: dict[str, float],
+    *,
+    trades_available: bool,
+    draft_scored: bool,
+) -> dict[str, float]:
+    """Drop unavailable components and renormalize so missing data is not a fake 0."""
+    active = dict(weights)
+    if not trades_available:
+        active.pop("trade_vintage_net", None)
+    if not draft_scored:
+        active.pop("draft_vintage_vos", None)
+    total = sum(active.values())
+    if total <= 0:
+        return dict(weights)
+    return {k: v / total for k, v in active.items()}
+
+
 def _season_composites(
     rows: list[dict[str, Any]], weights: dict[str, float]
 ) -> list[float]:
-    """Z-score weighted sum over season construction keys only."""
+    """Z-score weighted sum over active season construction keys only."""
     from scoring import zscore
 
     keys = list(weights.keys())

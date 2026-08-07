@@ -156,7 +156,7 @@ export type SeasonConstructionRow = {
   person_id: string;
   name: string;
   teams: string[];
-  trade_vintage_net: number;
+  trade_vintage_net: number | null;
   trade_count: number;
   draft_vintage_vos: number | null;
   draft_immature: boolean;
@@ -173,6 +173,9 @@ export type SeasonYear = {
   season: number;
   attribution_window: string[];
   draft_immature: boolean;
+  trades_available?: boolean;
+  window_trade_count?: number;
+  fully_scored?: boolean;
   gm_count: number;
   leaderboard: SeasonConstructionRow[];
 };

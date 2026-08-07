@@ -75,12 +75,30 @@ def test_sample_shrink() -> None:
     check(sample_shrink(10.0, 3, 3) == 5.0, "half shrink")
 
 
+def test_active_weights_drop_missing() -> None:
+    from build_season_index import _active_season_weights
+
+    base = {
+        "trade_vintage_net": 0.35,
+        "draft_vintage_vos": 0.25,
+        "fa_vintage_war": 0.2,
+        "stock_share": 0.1,
+        "season_results": 0.1,
+    }
+    no_trade = _active_season_weights(base, trades_available=False, draft_scored=True)
+    check("trade_vintage_net" not in no_trade, "trade dropped")
+    check(abs(sum(no_trade.values()) - 1.0) < 1e-9, f"renorm {no_trade}")
+    no_draft = _active_season_weights(base, trades_available=True, draft_scored=False)
+    check("draft_vintage_vos" not in no_draft, "draft dropped")
+
+
 def main() -> int:
     test_attribution_window()
     test_horizon_clip()
     test_vintage_tags()
     test_stock_share_inherited_vs_own()
     test_sample_shrink()
+    test_active_weights_drop_missing()
     print("all season-index checks passed")
     return 0
 

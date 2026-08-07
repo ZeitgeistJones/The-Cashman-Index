@@ -5,11 +5,25 @@ import { formatDate } from "@/lib/moves";
 import {
   formatPct,
   type SeasonFile,
+  type SeasonYear,
   type YearlyFile,
   type YearlySeason,
 } from "@/lib/rankings";
 
 type Mode = "resume" | "construction";
+
+function bestConstructionSeason(years: SeasonYear[]): number | null {
+  if (!years.length) return null;
+  const fully = [...years].reverse().find((y) => y.fully_scored);
+  if (fully) return fully.season;
+  const traded = [...years].reverse().find((y) => y.trades_available !== false);
+  if (traded) return traded.season;
+  return years[years.length - 1].season;
+}
+
+function clampPct(share: number): number {
+  return Math.round(Math.max(0, Math.min(1, share)) * 100);
+}
 
 export default function YearlySecurity({
   data,
@@ -21,6 +35,7 @@ export default function YearlySecurity({
   const years = data.years;
   const constructionYears = seasonData?.years ?? [];
   const hasConstruction = constructionYears.length > 0;
+  const defaultConstruction = bestConstructionSeason(constructionYears);
   const [mode, setMode] = useState<Mode>("resume");
   const [season, setSeason] = useState(
     years.length ? years[years.length - 1].season : 2006,
@@ -56,12 +71,10 @@ export default function YearlySecurity({
   return (
     <>
       <p className="section-note">
-        <strong>Resume</strong> = career-to-date rate index through that season
-        (plus who left in the offseason). <strong>Construction</strong> = true
-        single-season FO craft: moves in the Nov–Oct window, WAR through a{" "}
-        {seasonData?.horizon_years ?? 3}-year horizon, own-regime roster share,
-        and a thin club-results strip — living revision, not what people thought
-        in October.
+        Two views of the same year. Career grade = how the GM looked through
+        that season. Moves that year = trades, draft, and other arrivals in the
+        Nov–Oct window (value counted for about{" "}
+        {seasonData?.horizon_years ?? 3} years after each deal).
       </p>
       <p className="scroll-hint">Swipe tables sideways for more columns.</p>
 
@@ -74,7 +87,7 @@ export default function YearlySecurity({
             if (years.length) setSeason(years[years.length - 1].season);
           }}
         >
-          Resume as of season
+          Career grade to this year
         </button>
         <button
           type="button"
@@ -82,12 +95,10 @@ export default function YearlySecurity({
           disabled={!hasConstruction}
           onClick={() => {
             setMode("construction");
-            if (constructionYears.length) {
-              setSeason(constructionYears[constructionYears.length - 1].season);
-            }
+            if (defaultConstruction != null) setSeason(defaultConstruction);
           }}
         >
-          Season construction
+          Moves made for this year
         </button>
       </div>
 
@@ -119,7 +130,7 @@ export default function YearlySecurity({
           </ul>
 
           <p className="section-note">
-            Resume leaderboard for {current.season} (career rates to date).
+            Career-to-date ranking for {current.season}.
           </p>
           <div className="table-wrap sticky-2">
             <table>
@@ -219,26 +230,45 @@ export default function YearlySecurity({
               GMs graded<span>{construction.gm_count}</span>
             </li>
             <li>
-              Window
+              Trades in window
               <span>
-                {construction.attribution_window[0]?.slice(0, 10)} →{" "}
-                {construction.attribution_window[1]?.slice(0, 10)}
+                {construction.trades_available === false
+                  ? "none in ledger"
+                  : (construction.window_trade_count ?? "—")}
               </span>
             </li>
             <li>
               Draft
               <span>
-                {construction.draft_immature ? "immature" : "scored"}
+                {construction.draft_immature ? "too recent" : "scored"}
               </span>
             </li>
           </ul>
 
-          <p className="section-note">
-            Construction grades for {construction.season}. Draft VOS is null
-            until the class clears the mature lag (
-            {seasonData?.mature_lag_years ?? 6} years). Trade/FA WAR clipped to
-            deal date + {seasonData?.horizon_years ?? 3} years.
-          </p>
+          {(construction.trades_available === false ||
+            construction.draft_immature) && (
+            <p className="section-note">
+              {construction.trades_available === false
+                ? "Peer trade ledger has no deals in this window (coverage starts 2009) — trade is left blank and dropped from the index, not scored as zero. "
+                : null}
+              {construction.draft_immature
+                ? `Draft class is still inside the ${seasonData?.mature_lag_years ?? 6}-year wait — shown as — and dropped from the index. `
+                : null}
+              Other arrivals = first club seasons that are not in our draft or
+              trade files (FA, Rule 5, intl, gaps) — approximate.
+            </p>
+          )}
+
+          {!construction.draft_immature &&
+            construction.trades_available !== false && (
+              <p className="section-note">
+                {construction.season} moves window. Trade and other-arrival WAR
+                counted for {seasonData?.horizon_years ?? 3} years after the
+                deal. Own stock = share of that year’s club WAR from players
+                this GM’s regime brought in (0–100%).
+              </p>
+            )}
+
           <div className="table-wrap sticky-2">
             <table>
               <thead>
@@ -247,9 +277,9 @@ export default function YearlySecurity({
                   <th>GM</th>
                   <th className="num">Trade net</th>
                   <th className="num">Draft VOS</th>
-                  <th className="num">FA WAR</th>
+                  <th className="num">Other arrivals</th>
                   <th className="num">Own stock</th>
-                  <th className="num">Results</th>
+                  <th className="num">Club year</th>
                   <th className="num">Index</th>
                 </tr>
               </thead>
@@ -262,9 +292,15 @@ export default function YearlySecurity({
                       <span className="meta">{row.teams.join(" · ")}</span>
                     </td>
                     <td className="num">
-                      {row.trade_vintage_net > 0 ? "+" : ""}
-                      {row.trade_vintage_net.toFixed(2)}
-                      <span className="meta">{row.trade_count} deals</span>
+                      {row.trade_vintage_net == null ? (
+                        "—"
+                      ) : (
+                        <>
+                          {row.trade_vintage_net > 0 ? "+" : ""}
+                          {row.trade_vintage_net.toFixed(2)}
+                          <span className="meta">{row.trade_count} deals</span>
+                        </>
+                      )}
                     </td>
                     <td className="num">
                       {row.draft_vintage_vos == null
@@ -274,10 +310,9 @@ export default function YearlySecurity({
                     <td className="num">
                       {row.fa_vintage_war > 0 ? "+" : ""}
                       {row.fa_vintage_war.toFixed(2)}
+                      <span className="meta">{row.fa_arrivals} arrivals</span>
                     </td>
-                    <td className="num">
-                      {(row.stock_share * 100).toFixed(0)}%
-                    </td>
+                    <td className="num">{clampPct(row.stock_share)}%</td>
                     <td className="num">{row.season_results.toFixed(2)}</td>
                     <td className="num">
                       {row.composite > 0 ? "+" : ""}
