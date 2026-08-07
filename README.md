@@ -3,6 +3,8 @@
 Every MLB franchise and GM from **2006–present**, ranked with the same weights:
 payroll efficiency, draft value over slot, peer trade net WAR, and on-field results.
 
+See [CHANGELOG.md](CHANGELOG.md) for notable changes from 2026-08-06 onward.
+
 ```
 scripts/build_rankings.py          standings + payroll + draft + trades -> indexes
 scripts/build_season_index.py      single-season FO construction grades -> season_index.json
