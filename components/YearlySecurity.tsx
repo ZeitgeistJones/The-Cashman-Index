@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import LensToggle from "@/components/LensToggle";
 import TipTh from "@/components/TipTh";
 import { COLUMN_TIPS } from "@/lib/columnTips";
 import { formatDate } from "@/lib/moves";
@@ -38,10 +39,12 @@ export default function YearlySecurity({
   data,
   seasonData,
   lensId = "balanced",
+  onLensChange,
 }: {
   data: YearlyFile;
   seasonData?: SeasonFile | null;
   lensId?: LensId;
+  onLensChange?: (id: LensId) => void;
 }) {
   const years = data.years;
   const constructionYears = seasonData?.years ?? [];
@@ -94,10 +97,10 @@ export default function YearlySecurity({
     <>
       <p className="section-note">
         Two views of the same year. Career grade = how the GM looked through
-        that season (uses the success lens above). Moves that year = trades,
-        draft, and other arrivals in the Nov–Oct window (value counted for about{" "}
-        {seasonData?.horizon_years ?? 3} years after each deal — not reweighted
-        by lens).
+        that season (reweight with the lens pills above the ranking). Moves that
+        year = trades, draft, and other arrivals in the Nov–Oct window (value
+        counted for about {seasonData?.horizon_years ?? 3} years after each deal
+        — not reweighted by lens).
       </p>
       <p className="scroll-hint">Swipe tables sideways for more columns.</p>
 
@@ -153,8 +156,12 @@ export default function YearlySecurity({
           </ul>
 
           <p className="section-note">
-            Career-to-date ranking for {current.season} · {lensLabel} lens.
+            Career-to-date ranking for {current.season}
+            {onLensChange ? "" : ` · ${lensLabel} lens`}.
           </p>
+          {onLensChange ? (
+            <LensToggle value={lensId} onChange={onLensChange} />
+          ) : null}
           <div className="table-wrap sticky-2">
             <table>
               <thead>

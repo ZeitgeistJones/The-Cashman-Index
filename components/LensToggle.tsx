@@ -2,6 +2,9 @@
 
 import { LENS_ORDER, LENSES, type LensId } from "@/lib/lenses";
 
+const OVERLAP_HINT =
+  "Titles, pennants, depth, and win% overlap (~0.41 of Balanced) — lenses usually move ranks only a few places.";
+
 export default function LensToggle({
   value,
   onChange,
@@ -11,11 +14,14 @@ export default function LensToggle({
 }) {
   const active = LENSES[value];
   return (
-    <div className="lens-block">
+    <div className="lens-pills">
+      <span className="lens-pills-label" id="lens-pills-label">
+        Lens
+      </span>
       <div
-        className="filter-row mode-toggle lens-toggle"
+        className="lens-pill-group"
         role="group"
-        aria-label="Success lens"
+        aria-labelledby="lens-pills-label"
       >
         {LENS_ORDER.map((id) => (
           <button
@@ -23,18 +29,15 @@ export default function LensToggle({
             type="button"
             className={value === id ? "active" : undefined}
             aria-pressed={value === id}
+            title={LENSES[id].blurb}
             onClick={() => onChange(id)}
           >
             {LENSES[id].label}
           </button>
         ))}
       </div>
-      <p className="section-note lens-blurb">{active.blurb}</p>
-      <p className="section-note lens-honesty">
-        Titles, pennants, playoff depth, and win% largely move together (~0.41 of
-        Balanced). Switching lenses usually shifts ranks only a few places — that
-        is the overlap, not a broken control. Value and Builder move craft axes
-        more; October leans harder into the same winning block.
+      <p className="lens-pill-blurb" title={OVERLAP_HINT}>
+        {active.blurb}
       </p>
     </div>
   );

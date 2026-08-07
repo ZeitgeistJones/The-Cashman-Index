@@ -250,19 +250,13 @@ export default function IndexApp({
         ))}
       </div>
 
-      {(tab === "franchises" || tab === "gms" || tab === "yearly") && (
-        <div className="lens-near-data">
-          <LensToggle value={lens} onChange={chooseLens} />
-        </div>
-      )}
-
       {tab === "franchises" && (
         <section>
           <p className="section-note">
-            One score per club. Index · {lensLabel} lens. Blank cells mean
-            missing data, not a zero.
+            One score per club. Blank cells mean missing data, not a zero.
           </p>
           <p className="scroll-hint">Swipe tables sideways for more columns.</p>
+          <LensToggle value={lens} onChange={chooseLens} />
           <FranchiseTable franchises={scoredFranchises} />
         </section>
       )}
@@ -270,10 +264,11 @@ export default function IndexApp({
       {tab === "gms" && (
         <section>
           <p className="section-note">
-            Career grades under the {lensLabel} lens. Short tenures are shrunk so
-            a one-year spike does not win by default.
+            Career grades. Short tenures are shrunk so a one-year spike does not
+            win by default.
           </p>
           <p className="scroll-hint">Swipe tables sideways for more columns.</p>
+          <LensToggle value={lens} onChange={chooseLens} />
           <GmTable gms={scoredGms} />
         </section>
       )}
@@ -284,6 +279,7 @@ export default function IndexApp({
             data={yearly}
             seasonData={seasonIndex}
             lensId={lens}
+            onLensChange={chooseLens}
           />
         </section>
       )}

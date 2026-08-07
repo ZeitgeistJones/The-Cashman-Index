@@ -77,10 +77,11 @@ export default function AboutPage() {
         <h2 id="lenses">Success lenses</h2>
         <p>
           On <strong>Clubs</strong>, <strong>GMs</strong>, and{" "}
-          <strong>By year · career grade</strong>, success-lens toggles sit
-          directly above the board (not in the page hero). They reweight the
-          same seven components — no new metrics. Guardrails: every component
-          stays on (no zeros), and no single weight exceeds ~42%.
+          <strong>By year · career grade</strong>, compact lens pills sit
+          immediately above the ranking table (after the short intro). They
+          reweight the same seven components — no new metrics. Guardrails: every
+          component stays on (no zeros), and no single weight exceeds ~42%.
+          Hover a pill for that lens&apos;s blurb.
         </p>
         <p>
           <strong>Lenses move less than they look.</strong> Titles, pennants,
