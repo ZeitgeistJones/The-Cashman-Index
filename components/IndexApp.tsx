@@ -174,8 +174,8 @@ export default function IndexApp({
           </Link>
         </div>
         <p className="tagline">
-          All 30 clubs and every GM, {windowLabel} — same components for
-          everyone; pick a success lens below.
+          All 30 clubs and every GM, {windowLabel} — same ingredients for
+          everyone; Clubs, GMs, and By year can reweight the mix.
         </p>
       </header>
 
@@ -184,8 +184,6 @@ export default function IndexApp({
           <strong>Sample trade ledger — WAR figures are placeholders.</strong>
         </div>
       )}
-
-      <LensToggle value={lens} onChange={chooseLens} />
 
       {topFranchise && (
         <section className="start-here" aria-labelledby="start-here-heading">
@@ -251,6 +249,12 @@ export default function IndexApp({
           </button>
         ))}
       </div>
+
+      {(tab === "franchises" || tab === "gms" || tab === "yearly") && (
+        <div className="lens-near-data">
+          <LensToggle value={lens} onChange={chooseLens} />
+        </div>
+      )}
 
       {tab === "franchises" && (
         <section>
