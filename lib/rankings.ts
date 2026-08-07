@@ -152,6 +152,42 @@ export type YearlyFile = {
   years: YearlySeason[];
 };
 
+export type SeasonConstructionRow = {
+  person_id: string;
+  name: string;
+  teams: string[];
+  trade_vintage_net: number;
+  trade_count: number;
+  draft_vintage_vos: number | null;
+  draft_immature: boolean;
+  draft_picks: number;
+  fa_vintage_war: number;
+  fa_arrivals: number;
+  stock_share: number;
+  season_results: number;
+  composite: number;
+  rank: number;
+};
+
+export type SeasonYear = {
+  season: number;
+  attribution_window: string[];
+  draft_immature: boolean;
+  gm_count: number;
+  leaderboard: SeasonConstructionRow[];
+};
+
+export type SeasonFile = {
+  generated_at: string;
+  as_of: string;
+  window: number[];
+  horizon_years: number;
+  mature_lag_years: number;
+  weights: Record<string, number>;
+  framing: string;
+  years: SeasonYear[];
+};
+
 export type DraftFranchiseRow = {
   team_id: number;
   team_abbr: string;

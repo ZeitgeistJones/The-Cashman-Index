@@ -525,6 +525,37 @@ footer p {
   margin: 0.15rem 0 0;
 }
 
+.mode-toggle {
+  gap: 0.4rem;
+}
+
+.mode-toggle button {
+  font: inherit;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.mode-toggle button.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.mode-toggle button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mode-toggle button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .resume-cell {
   font-size: 0.82rem;
   color: var(--muted);

@@ -171,6 +171,53 @@ export default function AboutPage() {
         </ul>
       </section>
 
+      <section className="about-section" aria-labelledby="season-grade">
+        <h2 id="season-grade">Single-season construction grades</h2>
+        <p>
+          The Yearly tab has two modes. <strong>Resume as of season Y</strong>{" "}
+          is the career-to-date rate index through that year (same composite
+          spirit as the GM board). <strong>Season construction</strong> answers
+          a different question: how good was FO craft <em>in</em> season Y?
+        </p>
+        <p>
+          A championship season mixes inherited players from a prior{" "}
+          <strong>regime</strong>, this GM’s earlier construction, and moves
+          dated in Y. Construction grades separate those:
+        </p>
+        <ul className="about-examples">
+          <li>
+            <strong>Attribution window:</strong> Nov 1 of Y−1 through Oct 31 of
+            Y. GM on the move/draft date gets the credit.
+          </li>
+          <li>
+            <strong>Horizon H = {weights.season?.horizon_years ?? 3} years:</strong>{" "}
+            trade and FA/other arrival WAR is observed through{" "}
+            <code>min(as_of, event_date + H)</code>. Career boards still use full
+            during-club WAR.
+          </li>
+          <li>
+            <strong>Draft:</strong> June Y class enters once{" "}
+            <code>draft_year ≤ as_of − {weights.season?.mature_lag_years ?? 6}</code>
+            ; immature years show “—” not a fake zero. Scores are living
+            revisions, not contemporaneous prospect grades.
+          </li>
+          <li>
+            <strong>StockShare:</strong> share of that club’s season WAR from
+            players acquired under this GM’s regime (own prior + same-year), not
+            inherited from the previous chair.
+          </li>
+          <li>
+            <strong>Thin results strip:</strong> win%, playoff depth, and payroll
+            efficiency for the Jul-1 GM — labeled club results under the chair,
+            not pure FO skill.
+          </li>
+        </ul>
+        <p>
+          Season component weights live under <code>weights.season</code> in{" "}
+          <code>data/weights.json</code>.
+        </p>
+      </section>
+
       <section className="about-section" aria-labelledby="covid-2020">
         <h2 id="covid-2020">How 2020 is treated</h2>
         <p>
@@ -200,6 +247,11 @@ export default function AboutPage() {
       <section className="about-section" aria-labelledby="left-out">
         <h2 id="left-out">Intentionally left out</h2>
         <ul className="about-examples">
+          <li>
+            <strong>Contemporaneous prospect values.</strong> Season construction
+            grades revise with observed WAR after the horizon / mature lag — we
+            do not invent “what scouts thought in draft week.”
+          </li>
           <li>
             <strong>Clutch / postseason WPA.</strong> July–August trades get a
             light “win-now” window tag in the ledger. We do not invent clutch

@@ -5,6 +5,7 @@ payroll efficiency, draft value over slot, peer trade net WAR, and on-field resu
 
 ```
 scripts/build_rankings.py          standings + payroll + draft + trades -> indexes
+scripts/build_season_index.py      single-season FO construction grades -> season_index.json
 scripts/build_league_moves.py      all 30 clubs' trades                 -> league_moves.json
 scripts/build_league_acquisition.py all clubs' FO channels              -> acquisition_index.json
 scripts/build_trade_index.py       peer trade rates                     -> trade_index.json
@@ -18,7 +19,8 @@ app/page.tsx                       those JSON files                     -> the s
 3. **Trades** — club-perspective net WAR for every franchise/GM.
 4. **Acquisition channels** — FA / trade / waiver / Rule 5 WAR by club.
 5. **Trade ledger** — filterable peer trade book.
-6. **GM exits / yearly** — exit resumes and season-by-season active GM boards.
+6. **Yearly** — **Resume** (career-to-date through that season) and **Construction** (true single-season FO craft: Nov–Oct moves, H-horizon WAR, own-regime stock share).
+7. **GM exits** — exit resumes scored within the exit pool.
 
 ### Index weights
 
@@ -32,7 +34,7 @@ app/page.tsx                       those JSON files                     -> the s
 | Win% | 10% |
 | Pennants / season | 7% |
 
-Tunable in [`data/weights.json`](data/weights.json).
+Tunable in [`data/weights.json`](data/weights.json). Season construction weights live under `weights.season`.
 
 ---
 
@@ -46,6 +48,7 @@ npm run dev            # http://localhost:3000
 ```bash
 pip install -r scripts/requirements.txt
 python scripts/build_rankings.py --use-cache
+python scripts/build_season_index.py
 python scripts/build_league_moves.py --use-cache
 python scripts/build_trade_index.py
 python scripts/build_league_acquisition.py --use-cache
@@ -58,3 +61,4 @@ python scripts/build_league_acquisition.py --use-cache
 - International amateur pools not scored yet.
 - Transaction history thin before ~2009 for some clubs.
 - No postseason WPA / clutch model; Jul/Aug trades get a win-now tag only.
+- Season construction grades are living revisions (horizon / mature lag), not contemporaneous scout grades.

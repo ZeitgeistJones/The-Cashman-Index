@@ -16,6 +16,7 @@ import type {
   ExitFile,
   FranchiseFile,
   GmFile,
+  SeasonFile,
   YearlyFile,
 } from "@/lib/rankings";
 
@@ -32,7 +33,7 @@ type Tab =
 const TABS: { id: Tab; label: string; short: string }[] = [
   { id: "franchises", label: "Franchises", short: "Clubs" },
   { id: "gms", label: "GMs", short: "GMs" },
-  { id: "yearly", label: "Yearly / exits", short: "Yearly" },
+  { id: "yearly", label: "Yearly", short: "Yearly" },
   { id: "draft", label: "Draft", short: "Draft" },
   { id: "trades", label: "Trades", short: "Trades" },
   { id: "acquisition", label: "Acquisition channels", short: "Channels" },
@@ -46,6 +47,7 @@ export default function IndexApp({
   gms,
   exits,
   yearly,
+  seasonIndex,
   draft,
   acquisition,
   trade,
@@ -55,6 +57,7 @@ export default function IndexApp({
   gms: GmFile;
   exits: ExitFile;
   yearly: YearlyFile;
+  seasonIndex?: SeasonFile | null;
   draft: DraftFile;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   acquisition: any;
@@ -158,7 +161,7 @@ export default function IndexApp({
 
       {tab === "yearly" && (
         <section>
-          <YearlySecurity data={yearly} />
+          <YearlySecurity data={yearly} seasonData={seasonIndex} />
         </section>
       )}
 

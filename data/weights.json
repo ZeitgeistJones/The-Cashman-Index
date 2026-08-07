@@ -22,5 +22,36 @@
     "draft_vos": "Draft value over slot",
     "trade_net_rate": "Trade net WAR / season"
   },
-  "notes": "Rates + payroll + draft VOS + peer trade net. Trade = club-perspective net WAR per season from league_moves (all 30 clubs). Intl still deferred. 2020: win% / titles / depth / draft / trade use the season as-is (rates already handle short schedules; a WS counts); payroll efficiency prorates 2020 wins to a 162-game pace vs opening-day payroll."
+  "season": {
+    "horizon_years": 3,
+    "mature_lag_years": 6,
+    "trade_prior_moves": 3,
+    "draft_prior_picks": 20,
+    "fa_prior_arrivals": 5,
+    "attribution": {
+      "window_start_month_day": [11, 1],
+      "window_end_month_day": [10, 31],
+      "label": "Nov 1 of Y-1 through Oct 31 of Y"
+    },
+    "components": {
+      "trade_vintage_net": 0.35,
+      "draft_vintage_vos": 0.25,
+      "fa_vintage_war": 0.2,
+      "stock_share": 0.1,
+      "season_results": 0.1
+    },
+    "category_labels": {
+      "trade_vintage_net": "Trade vintage net WAR (H-horizon)",
+      "draft_vintage_vos": "Draft vintage VOS (mature classes)",
+      "fa_vintage_war": "FA / other arrival WAR (H-horizon)",
+      "stock_share": "Own-stock WAR share",
+      "season_results": "Club season results under chair"
+    },
+    "results_blend": {
+      "win_pct": 0.4,
+      "playoff_depth": 0.35,
+      "payroll_efficiency": 0.25
+    }
+  },
+  "notes": "Career boards: rates + payroll + draft VOS + peer trade net. Season construction board (data/season_index.json): trade/FA value observed through deal_date+H years (H=3), draft after mature_lag=6, StockShare = own+same-year WAR / club WAR, thin season results for the Jul-1 GM. Yearly tab = Resume as of Y (career-to-date) vs Construction (single-season FO craft). Living revision — not contemporaneous grades. Intl deferred. 2020 payroll efficiency paces wins to 162."
 }
