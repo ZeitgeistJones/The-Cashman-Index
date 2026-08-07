@@ -860,7 +860,10 @@ def build_yearly_index(
                         "win_pct": r["win_pct"],
                         "payroll_efficiency": r["payroll_efficiency"],
                         "world_series_rate": r["world_series_rate"],
+                        "pennants_rate": r["pennants_rate"],
                         "playoff_depth_rate": r["playoff_depth_rate"],
+                        "draft_vos": r["draft_vos"],
+                        "trade_net_rate": r["trade_net_rate"],
                     }
                     for r in active_rows
                 ],

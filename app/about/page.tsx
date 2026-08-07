@@ -70,6 +70,30 @@ export default function AboutPage() {
         </p>
       </section>
 
+      <section className="about-section" aria-labelledby="lenses">
+        <h2 id="lenses">Success lenses</h2>
+        <p>
+          The Clubs / GMs boards (and By year · career grade) let you switch
+          how those same seven components are weighted. No new metrics — just
+          different opinions about what “good FO” means. Guardrails: every
+          component stays on (no zeros), and no single weight exceeds ~42%.
+        </p>
+        <ul className="about-examples">
+          {Object.entries(
+            (weights as { lenses?: Record<string, { label: string; blurb: string }> })
+              .lenses ?? {},
+          ).map(([id, lens]) => (
+            <li key={id}>
+              <strong>{lens.label}.</strong> {lens.blurb}
+            </li>
+          ))}
+        </ul>
+        <p>
+          Season construction grades (moves that year) keep their own recipe and
+          are not reweighted by these lenses.
+        </p>
+      </section>
+
       <section className="about-section" aria-labelledby="franchise-vs-gm">
         <h2 id="franchise-vs-gm">Franchise vs GM boards</h2>
         <p>

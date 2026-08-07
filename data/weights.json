@@ -8,7 +8,7 @@
     "world_series_rate": 0.12,
     "pennants_rate": 0.07,
     "playoff_depth_rate": 0.12,
-    "win_pct": 0.10,
+    "win_pct": 0.1,
     "payroll_efficiency": 0.36,
     "draft_vos": 0.11,
     "trade_net_rate": 0.12
@@ -21,6 +21,61 @@
     "payroll_efficiency": "Wins / $100M",
     "draft_vos": "Draft value over slot",
     "trade_net_rate": "Trade net WAR / season"
+  },
+  "default_lens": "balanced",
+  "lenses": {
+    "balanced": {
+      "label": "Balanced",
+      "blurb": "House formula — payroll thrift is the largest weight, with October and acquisition in the mix.",
+      "components": {
+        "world_series_rate": 0.12,
+        "pennants_rate": 0.07,
+        "playoff_depth_rate": 0.12,
+        "win_pct": 0.1,
+        "payroll_efficiency": 0.36,
+        "draft_vos": 0.11,
+        "trade_net_rate": 0.12
+      }
+    },
+    "october": {
+      "label": "October",
+      "blurb": "Favors titles and playoff depth over payroll thrift.",
+      "components": {
+        "world_series_rate": 0.18,
+        "pennants_rate": 0.12,
+        "playoff_depth_rate": 0.18,
+        "win_pct": 0.08,
+        "payroll_efficiency": 0.22,
+        "draft_vos": 0.1,
+        "trade_net_rate": 0.12
+      }
+    },
+    "value": {
+      "label": "Value",
+      "blurb": "Favors cheap wins; rings matter less than efficiency.",
+      "components": {
+        "world_series_rate": 0.08,
+        "pennants_rate": 0.05,
+        "playoff_depth_rate": 0.08,
+        "win_pct": 0.12,
+        "payroll_efficiency": 0.42,
+        "draft_vos": 0.12,
+        "trade_net_rate": 0.13
+      }
+    },
+    "builder": {
+      "label": "Builder",
+      "blurb": "Favors draft and trade craft over opening-day payroll thrift.",
+      "components": {
+        "world_series_rate": 0.1,
+        "pennants_rate": 0.06,
+        "playoff_depth_rate": 0.1,
+        "win_pct": 0.1,
+        "payroll_efficiency": 0.24,
+        "draft_vos": 0.2,
+        "trade_net_rate": 0.2
+      }
+    }
   },
   "season": {
     "horizon_years": 3,
@@ -53,5 +108,5 @@
       "payroll_efficiency": 0.25
     }
   },
-  "notes": "Career boards: rates + payroll + draft VOS + peer trade net. Season construction board (data/season_index.json): trade/FA value observed through deal_date+H years (H=3), draft after mature_lag=6, StockShare = own+same-year WAR / club WAR, thin season results for the Jul-1 GM. Yearly tab = Resume as of Y (career-to-date) vs Construction (single-season FO craft). Living revision — not contemporaneous grades. Intl deferred. 2020 payroll efficiency paces wins to 162."
+  "notes": "Career boards: rates + payroll + draft VOS + peer trade net. Success lenses (weights.lenses) reweight the same seven components client-side — same z-score method, no zeros, no single weight over ~42%. Season construction board unchanged by lenses. Intl deferred. 2020 payroll efficiency paces wins to 162."
 }

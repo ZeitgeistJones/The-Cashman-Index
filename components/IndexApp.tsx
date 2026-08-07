@@ -1,15 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import AcquisitionPanel from "@/components/AcquisitionPanel";
 import DraftTable from "@/components/DraftTable";
 import ExitLedger from "@/components/ExitLedger";
 import FranchiseTable from "@/components/FranchiseTable";
 import GmTable from "@/components/GmTable";
+import LensToggle from "@/components/LensToggle";
 import MovesTable from "@/components/MovesTable";
 import TradeTable from "@/components/TradeTable";
 import YearlySecurity from "@/components/YearlySecurity";
+import {
+  DEFAULT_LENS,
+  isLensId,
+  LENSES,
+  LENS_STORAGE_KEY,
+  TENURE_PRIOR,
+  lensWeights,
+  rescoreRows,
+  type LensId,
+} from "@/lib/lenses";
 import { isSampleData, type MovesFile } from "@/lib/moves";
 import type {
   DraftFile,
@@ -70,14 +81,16 @@ function whyTopFranchise(row: FranchiseRow): string[] {
     add("Wins efficiently relative to opening-day payroll");
   } else if ((ranks.payroll_efficiency ?? 0) >= 20) {
     add(
-      "Not a cheap-payroll story — the index still rewards titles and depth heavily enough to lead",
+      "Not a cheap-payroll story — titles and depth can still carry the lead under this lens",
     );
   }
   if ((ranks.trade_net_rate ?? 99) <= 5) {
     add("Peer trade ledger ranks among the better books");
   }
   if (!bullets.length) {
-    add(`Composite ${row.composite > 0 ? "+" : ""}${row.composite.toFixed(2)} leads the league window`);
+    add(
+      `Composite ${row.composite > 0 ? "+" : ""}${row.composite.toFixed(2)} leads under this lens`,
+    );
   }
   return bullets.slice(0, 3);
 }
@@ -106,10 +119,47 @@ export default function IndexApp({
   trade: any;
 }) {
   const [tab, setTab] = useState<Tab>("franchises");
+  const [lens, setLens] = useState<LensId>(DEFAULT_LENS);
+
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem(LENS_STORAGE_KEY);
+      if (isLensId(saved)) setLens(saved);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  function chooseLens(id: LensId) {
+    setLens(id);
+    try {
+      window.localStorage.setItem(LENS_STORAGE_KEY, id);
+    } catch {
+      /* ignore */
+    }
+  }
+
+  const weights = lensWeights(lens);
+  const scoredFranchises = useMemo(
+    () =>
+      rescoreRows(franchises.franchises, weights).sort(
+        (a, b) => a.rank - b.rank || a.team_abbr.localeCompare(b.team_abbr),
+      ),
+    [franchises.franchises, weights],
+  );
+  const scoredGms = useMemo(
+    () =>
+      rescoreRows(gms.gms, weights, { tenurePrior: TENURE_PRIOR }).sort(
+        (a, b) => a.rank - b.rank || a.name.localeCompare(b.name),
+      ),
+    [gms.gms, weights],
+  );
+
   const windowLabel = `${franchises.window[0]}–${franchises.window[1]}`;
-  const topFranchise = franchises.franchises[0];
-  const topGm = gms.gms[0];
+  const topFranchise = scoredFranchises[0];
+  const topGm = scoredGms[0];
   const why = topFranchise ? whyTopFranchise(topFranchise) : [];
+  const lensLabel = LENSES[lens].label;
 
   return (
     <main>
@@ -121,7 +171,8 @@ export default function IndexApp({
           </Link>
         </div>
         <p className="tagline">
-          All 30 clubs and every GM, {windowLabel} — same weights for everyone.
+          All 30 clubs and every GM, {windowLabel} — same components for
+          everyone; pick a success lens below.
         </p>
       </header>
 
@@ -131,20 +182,22 @@ export default function IndexApp({
         </div>
       )}
 
+      <LensToggle value={lens} onChange={chooseLens} />
+
       {topFranchise && (
         <section className="start-here" aria-labelledby="start-here-heading">
           <p className="start-here-kicker" id="start-here-heading">
-            Start here
+            Start here · {lensLabel} lens
           </p>
           <h2>
             #{topFranchise.rank} {topFranchise.team_name}
           </h2>
           <p className="start-here-lede">
-            Leads the franchise board
+            Leads the franchise board under this lens
             {topGm ? (
               <>
                 {" "}
-                · top GM right now: <strong>{topGm.name}</strong>
+                · top GM: <strong>{topGm.name}</strong>
               </>
             ) : null}
             .
@@ -199,28 +252,32 @@ export default function IndexApp({
       {tab === "franchises" && (
         <section>
           <p className="section-note">
-            One score per club. Payroll efficiency is the biggest weight; blank
-            cells mean missing data, not a zero.
+            One score per club. Index · {lensLabel} lens. Blank cells mean
+            missing data, not a zero.
           </p>
           <p className="scroll-hint">Swipe tables sideways for more columns.</p>
-          <FranchiseTable franchises={franchises.franchises} />
+          <FranchiseTable franchises={scoredFranchises} />
         </section>
       )}
 
       {tab === "gms" && (
         <section>
           <p className="section-note">
-            Career grades. Short tenures are shrunk so a one-year spike does not
-            win by default. “Small sample” means fewer seasons on file.
+            Career grades under the {lensLabel} lens. Short tenures are shrunk so
+            a one-year spike does not win by default.
           </p>
           <p className="scroll-hint">Swipe tables sideways for more columns.</p>
-          <GmTable gms={gms.gms} />
+          <GmTable gms={scoredGms} />
         </section>
       )}
 
       {tab === "yearly" && (
         <section>
-          <YearlySecurity data={yearly} seasonData={seasonIndex} />
+          <YearlySecurity
+            data={yearly}
+            seasonData={seasonIndex}
+            lensId={lens}
+          />
         </section>
       )}
 

@@ -141,6 +141,44 @@ def test_last_complete_season() -> None:
     check(last_complete_season(dt.date(2026, 11, 1), 2025) == 2025, "window_end caps")
 
 
+def test_lens_presets() -> None:
+    import json
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parent.parent
+    weights = json.loads((root / "data" / "weights.json").read_text(encoding="utf-8"))
+    lenses = weights["lenses"]
+    check(set(lenses) >= {"balanced", "october", "value", "builder"}, "four lenses")
+    keys = set(WEIGHTS)
+    for name, lens in lenses.items():
+        comps = lens["components"]
+        check(set(comps) == keys, f"{name} keys")
+        total = sum(comps.values())
+        check(abs(total - 1.0) < 1e-9, f"{name} sum {total}")
+        check(min(comps.values()) >= 0.05 - 1e-12, f"{name} min weight")
+        check(max(comps.values()) <= 0.42 + 1e-12, f"{name} max weight")
+        check(lens.get("label") and lens.get("blurb"), f"{name} copy")
+    bal = lenses["balanced"]["components"]
+    for k, v in WEIGHTS.items():
+        check(abs(bal[k] - v) < 1e-12, f"balanced matches house {k}")
+
+
+def test_balanced_matches_franchise_index() -> None:
+    """Balanced lens z-score composite should match shipped franchise composites."""
+    import json
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parent.parent
+    payload = json.loads((root / "data" / "franchise_index.json").read_text(encoding="utf-8"))
+    rows = payload["franchises"]
+    scores = composite_scores(rows, WEIGHTS)
+    for row, score in zip(rows, scores):
+        check(
+            abs(score - float(row["composite"])) < 0.015,
+            f"{row['team_abbr']}: got {score} shipped {row['composite']}",
+        )
+
+
 def main() -> int:
     test_zscore_identity()
     test_wins_per_100m()
@@ -151,6 +189,8 @@ def main() -> int:
     test_rank_ties()
     test_payroll_efficiency_skips_missing_payroll()
     test_last_complete_season()
+    test_lens_presets()
+    test_balanced_matches_franchise_index()
     print("all ranking checks passed")
     return 0
 

@@ -284,6 +284,18 @@ main.about footer {
   color: var(--muted);
 }
 
+.lens-block {
+  margin: 1.1rem 0 0;
+}
+
+.lens-block .lens-toggle {
+  margin-top: 0.35rem;
+}
+
+.lens-blurb {
+  margin-top: 0.45rem;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));

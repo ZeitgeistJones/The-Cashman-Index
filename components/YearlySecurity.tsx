@@ -3,6 +3,12 @@
 import { useMemo, useState } from "react";
 import { formatDate } from "@/lib/moves";
 import {
+  LENSES,
+  lensWeights,
+  rescoreRows,
+  type LensId,
+} from "@/lib/lenses";
+import {
   formatPct,
   type SeasonFile,
   type SeasonYear,
@@ -28,9 +34,11 @@ function clampPct(share: number): number {
 export default function YearlySecurity({
   data,
   seasonData,
+  lensId = "balanced",
 }: {
   data: YearlyFile;
   seasonData?: SeasonFile | null;
+  lensId?: LensId;
 }) {
   const years = data.years;
   const constructionYears = seasonData?.years ?? [];
@@ -58,7 +66,16 @@ export default function YearlySecurity({
     [constructionYears, season],
   );
 
+  const resumeBoard = useMemo(() => {
+    if (!current) return [];
+    const weights = lensWeights(lensId);
+    return rescoreRows(current.leaderboard, weights).sort(
+      (a, b) => a.rank - b.rank || a.name.localeCompare(b.name),
+    );
+  }, [current, lensId]);
+
   const exits = current?.job_security.exits ?? [];
+  const lensLabel = LENSES[lensId].label;
 
   if (!years.length && !hasConstruction) {
     return (
@@ -72,9 +89,10 @@ export default function YearlySecurity({
     <>
       <p className="section-note">
         Two views of the same year. Career grade = how the GM looked through
-        that season. Moves that year = trades, draft, and other arrivals in the
-        Nov–Oct window (value counted for about{" "}
-        {seasonData?.horizon_years ?? 3} years after each deal).
+        that season (uses the success lens above). Moves that year = trades,
+        draft, and other arrivals in the Nov–Oct window (value counted for about{" "}
+        {seasonData?.horizon_years ?? 3} years after each deal — not reweighted
+        by lens).
       </p>
       <p className="scroll-hint">Swipe tables sideways for more columns.</p>
 
@@ -130,7 +148,7 @@ export default function YearlySecurity({
           </ul>
 
           <p className="section-note">
-            Career-to-date ranking for {current.season}.
+            Career-to-date ranking for {current.season} · {lensLabel} lens.
           </p>
           <div className="table-wrap sticky-2">
             <table>
@@ -146,7 +164,7 @@ export default function YearlySecurity({
                 </tr>
               </thead>
               <tbody>
-                {current.leaderboard.slice(0, 25).map((row) => (
+                {resumeBoard.slice(0, 25).map((row) => (
                   <tr key={row.person_id}>
                     <td className="num">{row.rank}</td>
                     <td>

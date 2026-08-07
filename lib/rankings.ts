@@ -116,7 +116,10 @@ export type YearlyLeader = {
   win_pct: number;
   payroll_efficiency: number;
   world_series_rate: number;
+  pennants_rate?: number;
   playoff_depth_rate: number;
+  draft_vos?: number;
+  trade_net_rate?: number;
 };
 
 export type YearlySeason = {
