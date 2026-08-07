@@ -206,18 +206,17 @@ export default function AboutPage() {
       <section className="about-section" aria-labelledby="every-season">
         <h2 id="every-season">Every season ledger</h2>
         <p>
-          The <strong>Every season</strong> tab pools every executive-season
-          since 2006 so a 2011 can sit next to a 2008.{" "}
-          <strong>This season</strong> is the construction-style grade for that
-          year alone; <strong>career rank then</strong> is the resume composite
-          as of that year. Names repeat on purpose — many strong seasons for one
-          executive is the finding.
+          The <strong>Every season</strong> tab is a single-season leaderboard:
+          every graded executive-year since 2006 in one pool.{" "}
+          <strong>#1</strong> is the best FO season in that pool (not “best in
+          2011 only”). <strong>Score</strong> is the construction grade for that
+          year; <strong>In that year</strong> is the peer place among executives
+          graded the same calendar year. Names repeat on purpose — many elite
+          seasons for one executive is the finding.
         </p>
         <p>
-          Rank that year is among executives graded in that year (often ~30;
-          sometimes 31–32+ when chairs change mid-season). Seasons still too
-          young to grade (immature drafts) hide by default; uncheck the filter
-          to see them as blanks.
+          Seasons still too young to grade (immature drafts) hide by default and
+          do not take an all-time number.
         </p>
       </section>
 

@@ -8,7 +8,7 @@ import {
   type YearlyFile,
 } from "@/lib/rankings";
 
-/** One executive, one season, scored two different ways. */
+/** One executive, one season — graded against every other season in the pool. */
 type SeasonRow = {
   key: string;
   season: number;
@@ -17,49 +17,82 @@ type SeasonRow = {
   team: string;
   /** Grade for this season alone. */
   season_score: number | null;
-  season_rank: number | null;
+  /** All-time place among graded executive-seasons (#1 = best ever in the pool). */
+  all_time_rank: number | null;
+  /** Place among executives graded that calendar year only. */
+  year_rank: number | null;
   gm_count: number;
   /** Whether this season's inputs are complete (young drafts stay unscored). */
   fully_scored: boolean;
   /** Where the whole career-to-date stood that year. */
   resume_rank: number | null;
-  resume_score: number | null;
   trade_net: number | null;
   draft_vos: number | null;
-  stock_share: number | null;
 };
 
 type SortKey =
+  | "all_time_rank"
   | "season"
   | "name"
   | "season_score"
-  | "season_rank"
+  | "year_rank"
   | "resume_rank";
 type Direction = "asc" | "desc";
 
 const COLUMNS: { key: SortKey; label: string; numeric: boolean; help: string }[] = [
-  { key: "season", label: "Season", numeric: true, help: "The year being graded" },
-  { key: "name", label: "Executive", numeric: false, help: "Who ran the club" },
+  {
+    key: "all_time_rank",
+    label: "#",
+    numeric: true,
+    help: "All-time rank among graded FO seasons — #1 is the best executive-season in the pool",
+  },
+  {
+    key: "name",
+    label: "Executive",
+    numeric: false,
+    help: "Who ran the club that year",
+  },
+  {
+    key: "season",
+    label: "Year",
+    numeric: true,
+    help: "The season being graded",
+  },
   {
     key: "season_score",
-    label: "This season",
+    label: "Score",
     numeric: true,
-    help: "Graded on this year alone — the moves made, not the reputation carried in",
+    help: "Construction grade for that year alone — not career reputation",
   },
   {
-    key: "season_rank",
-    label: "Rank that year",
+    key: "year_rank",
+    label: "In that year",
     numeric: true,
-    help:
-      "Place among executives graded that year (often ~30; can be 31–32+ when chairs change mid-season)",
-  },
-  {
-    key: "resume_rank",
-    label: "Career rank then",
-    numeric: true,
-    help: "Where the whole career-to-date stood that year — moves slowly, by design",
+    help: "Place among executives graded that same year (often ~30)",
   },
 ];
+
+function competitionRanks(scores: (number | null)[]): (number | null)[] {
+  const indexed = scores
+    .map((score, i) => ({ score, i }))
+    .filter((x): x is { score: number; i: number } => x.score !== null)
+    .sort((a, b) => b.score - a.score);
+  const ranks: (number | null)[] = scores.map(() => null);
+  let i = 0;
+  while (i < indexed.length) {
+    let j = i;
+    while (
+      j + 1 < indexed.length &&
+      Math.abs(indexed[j + 1].score - indexed[i].score) < 1e-12
+    ) {
+      j += 1;
+    }
+    const shared = i + 1;
+    for (let k = i; k <= j; k++) ranks[indexed[k].i] = shared;
+    i = j + 1;
+  }
+  return ranks;
+}
 
 function compare(a: SeasonRow, b: SeasonRow, key: SortKey, dir: Direction): number {
   const left = a[key];
@@ -90,51 +123,55 @@ export default function SeasonLedger({
   seasonIndex?: SeasonFile | null;
   yearly: YearlyFile;
 }) {
-  const [sortKey, setSortKey] = useState<SortKey>("season_score");
-  const [direction, setDirection] = useState<Direction>("desc");
+  const [sortKey, setSortKey] = useState<SortKey>("all_time_rank");
+  const [direction, setDirection] = useState<Direction>("asc");
   const [focus, setFocus] = useState<string | null>(null);
   const [onlyScored, setOnlyScored] = useState(true);
 
   const rows = useMemo<SeasonRow[]>(() => {
-    // Career-to-date standing, keyed by person and year, to sit alongside the
-    // standalone grade. The two answer different questions and often disagree.
-    const resume = new Map<string, { rank: number; composite: number }>();
+    const resume = new Map<string, number>();
     for (const year of yearly.years ?? []) {
       for (const leader of year.leaderboard ?? []) {
-        resume.set(`${leader.person_id}|${year.season}`, {
-          rank: leader.rank,
-          composite: leader.composite,
-        });
+        resume.set(`${leader.person_id}|${year.season}`, leader.rank);
       }
     }
 
-    const out: SeasonRow[] = [];
+    const raw: Omit<SeasonRow, "all_time_rank">[] = [];
     for (const year of seasonIndex?.years ?? []) {
       for (const row of year.leaderboard ?? []) {
-        const prior = resume.get(`${row.person_id}|${year.season}`);
-        out.push({
+        raw.push({
           key: `${row.person_id}|${year.season}`,
           season: year.season,
           person_id: row.person_id,
           name: row.name,
           team: row.teams?.[0] ?? "",
           season_score: row.composite ?? null,
-          season_rank: row.rank ?? null,
+          year_rank: row.rank ?? null,
           gm_count: year.gm_count,
           fully_scored: year.fully_scored !== false,
-          resume_rank: prior?.rank ?? null,
-          resume_score: prior?.composite ?? null,
+          resume_rank: resume.get(`${row.person_id}|${year.season}`) ?? null,
           trade_net: row.trade_vintage_net,
           draft_vos: row.draft_immature ? null : row.draft_vintage_vos,
-          stock_share: row.stock_share ?? null,
         });
       }
     }
-    return out;
+
+    // All-time ranks only among seasons mature enough to grade — like a
+    // single-season leaderboard (#1 = best FO year in the pool).
+    const scoreForRank = raw.map((r) =>
+      r.fully_scored && r.season_score !== null ? r.season_score : null,
+    );
+    const allTime = competitionRanks(scoreForRank);
+    return raw.map((r, i) => ({ ...r, all_time_rank: allTime[i] }));
   }, [seasonIndex, yearly]);
 
   const hiddenRecent = useMemo(
     () => rows.filter((r) => !r.fully_scored).length,
+    [rows],
+  );
+
+  const gradedCount = useMemo(
+    () => rows.filter((r) => r.all_time_rank !== null).length,
     [rows],
   );
 
@@ -145,8 +182,6 @@ export default function SeasonLedger({
     return [...list].sort((a, b) => compare(a, b, sortKey, direction));
   }, [rows, focus, onlyScored, sortKey, direction]);
 
-  // Same filter as the table, so the timeline and the row count never disagree
-  // about how many seasons this executive has.
   const focused = focus
     ? rows.filter((r) => r.person_id === focus && (!onlyScored || r.fully_scored))
     : [];
@@ -158,8 +193,11 @@ export default function SeasonLedger({
       setDirection((d) => (d === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(key);
-      // Ranks read best smallest-first; scores and years biggest-first.
-      setDirection(key === "name" || key.endsWith("rank") ? "asc" : "desc");
+      setDirection(
+        key === "name" || key === "all_time_rank" || key.endsWith("rank")
+          ? "asc"
+          : "desc",
+      );
     }
   }
 
@@ -174,11 +212,11 @@ export default function SeasonLedger({
   return (
     <div className="season-ledger">
       <p className="lede">
-        Every executive-season since 2006 in one pool, so a 2011 can be compared
-        against a 2008 directly. <strong>This season</strong> grades the year on
-        its own; <strong>career rank then</strong> is where the whole record
-        stood at the time. A good executive having many good years is a real
-        result, so names repeat — that is the finding, not a flaw.
+        Best FO seasons since 2006 — a single-season leaderboard.{" "}
+        <strong>#1</strong> is the highest-graded executive-year in the pool
+        {gradedCount > 0 ? ` (${gradedCount.toLocaleString()} graded)` : ""}.
+        Names can repeat: many elite years for one GM is the finding. Click a
+        name to see that executive’s run.
       </p>
 
       <div className="ledger-controls">
@@ -193,14 +231,11 @@ export default function SeasonLedger({
         </label>
         {focus && (
           <button type="button" className="clear-focus" onClick={() => setFocus(null)}>
-            ← All {rows.length.toLocaleString()} seasons
+            ← Full leaderboard
           </button>
         )}
         <span className="count">
           {visible.length.toLocaleString()} shown
-          {onlyScored && hiddenRecent > 0
-            ? ` of ${(rows.length - hiddenRecent).toLocaleString()} graded`
-            : ` of ${rows.length.toLocaleString()}`}
           {focus ? ` · ${focusName}` : ""}
         </span>
       </div>
@@ -209,7 +244,7 @@ export default function SeasonLedger({
         <FocusTimeline rows={focused} name={focusName} />
       )}
 
-      <div className="table-scroll">
+      <div className="table-scroll sticky-2">
         <table>
           <thead>
             <tr>
@@ -238,7 +273,9 @@ export default function SeasonLedger({
           <tbody>
             {visible.map((r) => (
               <tr key={r.key}>
-                <td className="num date">{r.season}</td>
+                <td className="num all-time-rank">
+                  {r.all_time_rank === null ? "—" : r.all_time_rank}
+                </td>
                 <td>
                   <button
                     type="button"
@@ -254,23 +291,19 @@ export default function SeasonLedger({
                     {r.draft_vos !== null ? ` · draft ${formatSigned(r.draft_vos)}` : ""}
                   </span>
                 </td>
+                <td className="num date">{r.season}</td>
                 <td className={scoreClass(r.season_score)}>
                   {r.season_score === null ? "—" : formatComposite(r.season_score)}
                 </td>
                 <td
-                  className="num"
+                  className="num muted"
                   title={
                     r.gm_count > 30
-                      ? `${r.gm_count} executives that year — mid-season chair changes, not a bug`
-                      : undefined
+                      ? `${r.gm_count} executives that year — mid-season chair changes`
+                      : "Rank among GMs graded that calendar year only"
                   }
                 >
-                  {r.season_rank === null
-                    ? "—"
-                    : `#${r.season_rank}/${r.gm_count}`}
-                </td>
-                <td className="num muted">
-                  {r.resume_rank === null ? "—" : `#${r.resume_rank}`}
+                  {r.year_rank === null ? "—" : `#${r.year_rank}/${r.gm_count}`}
                 </td>
               </tr>
             ))}
@@ -291,13 +324,15 @@ export default function SeasonLedger({
 /** A single executive's career as a run of seasons, best to worst visible at a glance. */
 function FocusTimeline({ rows, name }: { rows: SeasonRow[]; name: string }) {
   const ordered = [...rows].sort((a, b) => a.season - b.season);
-  const graded = ordered.filter((r) => r.season_rank !== null);
+  const graded = ordered.filter((r) => r.all_time_rank !== null);
   const best = graded.reduce<SeasonRow | null>(
-    (acc, r) => (!acc || (r.season_rank ?? 99) < (acc.season_rank ?? 99) ? r : acc),
+    (acc, r) =>
+      !acc || (r.all_time_rank ?? 9999) < (acc.all_time_rank ?? 9999) ? r : acc,
     null,
   );
   const worst = graded.reduce<SeasonRow | null>(
-    (acc, r) => (!acc || (r.season_rank ?? 0) > (acc.season_rank ?? 0) ? r : acc),
+    (acc, r) =>
+      !acc || (r.all_time_rank ?? 0) > (acc.all_time_rank ?? 0) ? r : acc,
     null,
   );
 
@@ -306,28 +341,32 @@ function FocusTimeline({ rows, name }: { rows: SeasonRow[]; name: string }) {
       <h3>{name}</h3>
       {best && worst && (
         <p className="focus-summary">
-          Best season <strong>{best.season}</strong> (#{best.season_rank}) · worst{" "}
-          <strong>{worst.season}</strong> (#{worst.season_rank}) · a swing of{" "}
-          {(worst.season_rank ?? 0) - (best.season_rank ?? 0)} places across{" "}
-          {graded.length} graded seasons.
+          Best all-time finish <strong>#{best.all_time_rank}</strong> ({best.season})
+          · worst <strong>#{worst.all_time_rank}</strong> ({worst.season}) ·{" "}
+          {graded.length} graded seasons on the leaderboard.
         </p>
       )}
       <ol className="spark">
         {ordered.map((r) => {
-          // Bar height reads as "how high did this season place", so taller is better.
           const pct =
-            r.season_rank === null
+            r.all_time_rank === null
               ? 0
-              : Math.max(6, ((r.gm_count - r.season_rank + 1) / r.gm_count) * 100);
+              : Math.max(
+                  6,
+                  Math.min(100, 100 - ((r.all_time_rank - 1) / Math.max(graded.length, 1)) * 94),
+                );
           return (
-            <li key={r.key} title={`${r.season}: #${r.season_rank ?? "—"} of ${r.gm_count}`}>
+            <li
+              key={r.key}
+              title={`${r.season}: all-time #${r.all_time_rank ?? "—"} · score ${r.season_score ?? "—"}`}
+            >
               <span
                 className={
-                  r.season_rank === null
+                  r.all_time_rank === null
                     ? "bar none"
-                    : r.season_rank <= 5
+                    : (r.all_time_rank ?? 99) <= 10
                       ? "bar top"
-                      : r.season_rank >= r.gm_count - 4
+                      : (r.all_time_rank ?? 0) >= graded.length - 9
                         ? "bar bottom"
                         : "bar"
                 }

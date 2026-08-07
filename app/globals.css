@@ -897,6 +897,12 @@ footer p {
   font-size: 0.9rem;
 }
 
+.season-ledger .all-time-rank {
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
 .ledger-controls {
   display: flex;
   flex-wrap: wrap;
