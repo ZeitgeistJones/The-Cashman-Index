@@ -1,53 +1,54 @@
 {
-  "generated_at": "2026-08-07T04:40:00.398395+00:00",
+  "generated_at": "2026-08-07T06:16:01.446357+00:00",
   "scope": "league",
   "season_range": [
     2006,
     2026
   ],
+  "as_of": "2026-08-02",
   "framing": "How every club acquired value by channel. WAR in = production for that club after the move; net WAR uses trade exchange when applicable. Same definitions for all thirty franchises.",
   "clubs": [
     {
       "team_id": 119,
       "team_abbr": "LAD",
       "team_name": "Los Angeles Dodgers",
-      "moves": 2713,
-      "war_acquired": 991.64,
-      "net_war": 767.61,
+      "moves": 2670,
+      "war_acquired": 949.22,
+      "net_war": 827.13,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1364,
-          "war_acquired": 395.36,
-          "net_war": 395.36
+          "moves": 1330,
+          "war_acquired": 353.75,
+          "net_war": 353.75
         },
         {
           "channel": "signing",
-          "moves": 498,
-          "war_acquired": 118.52,
-          "net_war": 118.52
+          "moves": 497,
+          "war_acquired": 118.6,
+          "net_war": 118.6
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 254,
-          "war_acquired": 284.32,
-          "net_war": 284.32
+          "moves": 250,
+          "war_acquired": 283.19,
+          "net_war": 283.19
         },
         {
           "channel": "trade",
-          "moves": 234,
-          "war_acquired": 187.28,
-          "net_war": -31.07
+          "moves": 233,
+          "war_acquired": 187.39,
+          "net_war": 70.98
         },
         {
           "channel": "outright",
-          "moves": 145,
+          "moves": 144,
           "war_acquired": 0.0,
           "net_war": 11.32
         },
         {
           "channel": "waiver",
-          "moves": 134,
+          "moves": 133,
           "war_acquired": 6.42,
           "net_war": 3.55
         },
@@ -59,9 +60,9 @@
         },
         {
           "channel": "purchase",
-          "moves": 2,
-          "war_acquired": -0.26,
-          "net_war": -0.26
+          "moves": 1,
+          "war_acquired": -0.13,
+          "net_war": -0.13
         }
       ]
     },
@@ -69,33 +70,33 @@
       "team_id": 147,
       "team_abbr": "NYY",
       "team_name": "New York Yankees",
-      "moves": 2662,
-      "war_acquired": 990.72,
-      "net_war": 581.3,
+      "moves": 2624,
+      "war_acquired": 897.65,
+      "net_war": 636.91,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1273,
-          "war_acquired": 371.89,
-          "net_war": 371.89
+          "moves": 1245,
+          "war_acquired": 282.75,
+          "net_war": 282.75
         },
         {
           "channel": "signing",
-          "moves": 468,
-          "war_acquired": 134.59,
-          "net_war": 134.59
+          "moves": 464,
+          "war_acquired": 134.78,
+          "net_war": 134.78
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 316,
-          "war_acquired": 245.92,
-          "net_war": 245.92
+          "moves": 311,
+          "war_acquired": 242.01,
+          "net_war": 242.01
         },
         {
           "channel": "trade",
-          "moves": 208,
-          "war_acquired": 232.31,
-          "net_war": -64.19
+          "moves": 207,
+          "war_acquired": 232.1,
+          "net_war": 84.28
         },
         {
           "channel": "waiver",
@@ -124,52 +125,110 @@
       ]
     },
     {
-      "team_id": 111,
-      "team_abbr": "BOS",
-      "team_name": "Boston Red Sox",
-      "moves": 2463,
-      "war_acquired": 919.98,
-      "net_war": 510.62,
+      "team_id": 117,
+      "team_abbr": "HOU",
+      "team_name": "Houston Astros",
+      "moves": 2202,
+      "war_acquired": 888.83,
+      "net_war": 630.34,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1133,
-          "war_acquired": 265.12,
-          "net_war": 265.12
+          "moves": 939,
+          "war_acquired": 136.94,
+          "net_war": 136.94
         },
         {
           "channel": "signing",
-          "moves": 442,
-          "war_acquired": 132.48,
-          "net_war": 132.48
+          "moves": 524,
+          "war_acquired": 200.75,
+          "net_war": 200.75
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 286,
-          "war_acquired": 306.75,
-          "net_war": 306.75
-        },
-        {
-          "channel": "trade",
-          "moves": 220,
-          "war_acquired": 168.36,
-          "net_war": -179.97
+          "moves": 243,
+          "war_acquired": 361.45,
+          "net_war": 361.45
         },
         {
           "channel": "outright",
-          "moves": 176,
+          "moves": 158,
           "war_acquired": 0.0,
-          "net_war": -18.99
+          "net_war": -47.01
+        },
+        {
+          "channel": "trade",
+          "moves": 156,
+          "war_acquired": 170.49,
+          "net_war": 5.42
         },
         {
           "channel": "waiver",
-          "moves": 138,
-          "war_acquired": 47.35,
-          "net_war": 19.28
+          "moves": 128,
+          "war_acquired": 19.2,
+          "net_war": 18.51
         },
         {
           "channel": "release",
-          "moves": 66,
+          "moves": 53,
+          "war_acquired": 0.0,
+          "net_war": -45.72
+        },
+        {
+          "channel": "purchase",
+          "moves": 1,
+          "war_acquired": 0.0,
+          "net_war": 0.0
+        }
+      ]
+    },
+    {
+      "team_id": 111,
+      "team_abbr": "BOS",
+      "team_name": "Boston Red Sox",
+      "moves": 2415,
+      "war_acquired": 863.0,
+      "net_war": 607.28,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1100,
+          "war_acquired": 243.09,
+          "net_war": 243.09
+        },
+        {
+          "channel": "signing",
+          "moves": 440,
+          "war_acquired": 132.17,
+          "net_war": 132.17
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 280,
+          "war_acquired": 300.71,
+          "net_war": 300.71
+        },
+        {
+          "channel": "trade",
+          "moves": 219,
+          "war_acquired": 168.38,
+          "net_war": -26.55
+        },
+        {
+          "channel": "outright",
+          "moves": 175,
+          "war_acquired": 0.0,
+          "net_war": -18.75
+        },
+        {
+          "channel": "waiver",
+          "moves": 134,
+          "war_acquired": 18.73,
+          "net_war": -9.34
+        },
+        {
+          "channel": "release",
+          "moves": 65,
           "war_acquired": 0.0,
           "net_war": -13.97
         },
@@ -185,33 +244,33 @@
       "team_id": 141,
       "team_abbr": "TOR",
       "team_name": "Toronto Blue Jays",
-      "moves": 2755,
-      "war_acquired": 918.68,
-      "net_war": 479.99,
+      "moves": 2722,
+      "war_acquired": 807.84,
+      "net_war": 548.55,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1188,
-          "war_acquired": 254.97,
-          "net_war": 254.97
+          "moves": 1172,
+          "war_acquired": 225.94,
+          "net_war": 225.94
         },
         {
           "channel": "signing",
-          "moves": 516,
+          "moves": 514,
           "war_acquired": 107.55,
           "net_war": 107.55
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 304,
-          "war_acquired": 327.19,
-          "net_war": 327.19
+          "moves": 291,
+          "war_acquired": 245.28,
+          "net_war": 245.28
         },
         {
           "channel": "trade",
-          "moves": 235,
-          "war_acquired": 218.04,
-          "net_war": -126.39
+          "moves": 234,
+          "war_acquired": 218.14,
+          "net_war": 53.11
         },
         {
           "channel": "outright",
@@ -221,7 +280,7 @@
         },
         {
           "channel": "waiver",
-          "moves": 209,
+          "moves": 208,
           "war_acquired": 9.91,
           "net_war": -34.3
         },
@@ -240,284 +299,52 @@
       ]
     },
     {
-      "team_id": 117,
-      "team_abbr": "HOU",
-      "team_name": "Houston Astros",
-      "moves": 2218,
-      "war_acquired": 903.42,
-      "net_war": 526.03,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 949,
-          "war_acquired": 152.55,
-          "net_war": 152.55
-        },
-        {
-          "channel": "signing",
-          "moves": 524,
-          "war_acquired": 200.75,
-          "net_war": 200.75
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 248,
-          "war_acquired": 361.39,
-          "net_war": 361.39
-        },
-        {
-          "channel": "outright",
-          "moves": 158,
-          "war_acquired": 0.0,
-          "net_war": -47.01
-        },
-        {
-          "channel": "trade",
-          "moves": 157,
-          "war_acquired": 170.54,
-          "net_war": -113.43
-        },
-        {
-          "channel": "waiver",
-          "moves": 128,
-          "war_acquired": 18.19,
-          "net_war": 17.5
-        },
-        {
-          "channel": "release",
-          "moves": 53,
-          "war_acquired": 0.0,
-          "net_war": -45.72
-        },
-        {
-          "channel": "purchase",
-          "moves": 1,
-          "war_acquired": 0.0,
-          "net_war": 0.0
-        }
-      ]
-    },
-    {
-      "team_id": 121,
-      "team_abbr": "NYM",
-      "team_name": "New York Mets",
-      "moves": 2886,
-      "war_acquired": 849.64,
-      "net_war": 649.19,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1402,
-          "war_acquired": 199.69,
-          "net_war": 199.69
-        },
-        {
-          "channel": "signing",
-          "moves": 459,
-          "war_acquired": 178.83,
-          "net_war": 178.83
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 354,
-          "war_acquired": 368.92,
-          "net_war": 368.92
-        },
-        {
-          "channel": "outright",
-          "moves": 239,
-          "war_acquired": 0.0,
-          "net_war": -15.13
-        },
-        {
-          "channel": "trade",
-          "moves": 180,
-          "war_acquired": 105.56,
-          "net_war": -11.66
-        },
-        {
-          "channel": "waiver",
-          "moves": 174,
-          "war_acquired": -5.0,
-          "net_war": -45.73
-        },
-        {
-          "channel": "release",
-          "moves": 70,
-          "war_acquired": 0.0,
-          "net_war": -27.37
-        },
-        {
-          "channel": "purchase",
-          "moves": 8,
-          "war_acquired": 1.64,
-          "net_war": 1.64
-        }
-      ]
-    },
-    {
-      "team_id": 144,
-      "team_abbr": "ATL",
-      "team_name": "Atlanta Braves",
-      "moves": 2755,
-      "war_acquired": 812.11,
-      "net_war": 522.65,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1212,
-          "war_acquired": 140.11,
-          "net_war": 140.11
-        },
-        {
-          "channel": "signing",
-          "moves": 504,
-          "war_acquired": 139.48,
-          "net_war": 139.48
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 326,
-          "war_acquired": 359.27,
-          "net_war": 359.27
-        },
-        {
-          "channel": "trade",
-          "moves": 228,
-          "war_acquired": 169.3,
-          "net_war": -65.03
-        },
-        {
-          "channel": "outright",
-          "moves": 221,
-          "war_acquired": 0.0,
-          "net_war": 0.87
-        },
-        {
-          "channel": "waiver",
-          "moves": 142,
-          "war_acquired": 3.32,
-          "net_war": -40.62
-        },
-        {
-          "channel": "release",
-          "moves": 119,
-          "war_acquired": 0.0,
-          "net_war": -12.06
-        },
-        {
-          "channel": "purchase",
-          "moves": 3,
-          "war_acquired": 0.63,
-          "net_war": 0.63
-        }
-      ]
-    },
-    {
-      "team_id": 138,
-      "team_abbr": "STL",
-      "team_name": "St. Louis Cardinals",
-      "moves": 1864,
-      "war_acquired": 808.72,
-      "net_war": 539.12,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 723,
-          "war_acquired": 112.03,
-          "net_war": 112.03
-        },
-        {
-          "channel": "signing",
-          "moves": 543,
-          "war_acquired": 223.09,
-          "net_war": 223.09
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 237,
-          "war_acquired": 338.12,
-          "net_war": 338.12
-        },
-        {
-          "channel": "outright",
-          "moves": 110,
-          "war_acquired": 0.0,
-          "net_war": -22.18
-        },
-        {
-          "channel": "trade",
-          "moves": 103,
-          "war_acquired": 137.61,
-          "net_war": -83.28
-        },
-        {
-          "channel": "waiver",
-          "moves": 99,
-          "war_acquired": -0.24,
-          "net_war": -25.22
-        },
-        {
-          "channel": "release",
-          "moves": 46,
-          "war_acquired": 0.0,
-          "net_war": -1.55
-        },
-        {
-          "channel": "purchase",
-          "moves": 3,
-          "war_acquired": -1.89,
-          "net_war": -1.89
-        }
-      ]
-    },
-    {
       "team_id": 139,
       "team_abbr": "TB",
       "team_name": "Tampa Bay Rays",
-      "moves": 2511,
-      "war_acquired": 794.28,
-      "net_war": 319.52,
+      "moves": 2487,
+      "war_acquired": 777.85,
+      "net_war": 461.97,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1082,
-          "war_acquired": 105.98,
-          "net_war": 105.98
+          "moves": 1065,
+          "war_acquired": 96.32,
+          "net_war": 96.32
         },
         {
           "channel": "signing",
-          "moves": 538,
+          "moves": 537,
           "war_acquired": 143.94,
           "net_war": 143.94
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 278,
-          "war_acquired": 229.71,
-          "net_war": 229.71
+          "moves": 276,
+          "war_acquired": 223.17,
+          "net_war": 223.17
         },
         {
           "channel": "trade",
-          "moves": 275,
-          "war_acquired": 304.33,
-          "net_war": -124.4
+          "moves": 274,
+          "war_acquired": 304.1,
+          "net_war": 34.45
         },
         {
           "channel": "outright",
-          "moves": 155,
+          "moves": 154,
           "war_acquired": 0.0,
-          "net_war": -19.84
+          "net_war": -20.04
         },
         {
           "channel": "waiver",
-          "moves": 120,
+          "moves": 119,
           "war_acquired": 10.33,
           "net_war": -3.92
         },
         {
           "channel": "release",
-          "moves": 60,
+          "moves": 59,
           "war_acquired": 0.0,
           "net_war": -11.94
         },
@@ -530,112 +357,60 @@
       ]
     },
     {
-      "team_id": 112,
-      "team_abbr": "CHC",
-      "team_name": "Chicago Cubs",
-      "moves": 2768,
-      "war_acquired": 786.7,
-      "net_war": 381.84,
+      "team_id": 144,
+      "team_abbr": "ATL",
+      "team_name": "Atlanta Braves",
+      "moves": 2735,
+      "war_acquired": 771.39,
+      "net_war": 617.98,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1305,
-          "war_acquired": 187.78,
-          "net_war": 187.78
+          "moves": 1201,
+          "war_acquired": 104.09,
+          "net_war": 104.09
         },
         {
           "channel": "signing",
-          "moves": 466,
-          "war_acquired": 150.21,
-          "net_war": 150.21
+          "moves": 504,
+          "war_acquired": 139.48,
+          "net_war": 139.48
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 320,
-          "war_acquired": 264.95,
-          "net_war": 264.95
-        },
-        {
-          "channel": "outright",
-          "moves": 211,
-          "war_acquired": 0.0,
-          "net_war": -46.06
+          "moves": 322,
+          "war_acquired": 354.57,
+          "net_war": 354.57
         },
         {
           "channel": "trade",
-          "moves": 185,
-          "war_acquired": 176.22,
-          "net_war": -120.88
-        },
-        {
-          "channel": "waiver",
-          "moves": 175,
-          "war_acquired": 7.54,
-          "net_war": -33.24
-        },
-        {
-          "channel": "release",
-          "moves": 106,
-          "war_acquired": 0.0,
-          "net_war": -20.92
-        }
-      ]
-    },
-    {
-      "team_id": 137,
-      "team_abbr": "SF",
-      "team_name": "San Francisco Giants",
-      "moves": 2440,
-      "war_acquired": 782.92,
-      "net_war": 598.09,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1095,
-          "war_acquired": 233.83,
-          "net_war": 233.83
-        },
-        {
-          "channel": "signing",
-          "moves": 491,
-          "war_acquired": 74.74,
-          "net_war": 74.74
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 305,
-          "war_acquired": 356.68,
-          "net_war": 356.68
+          "moves": 227,
+          "war_acquired": 169.3,
+          "net_war": 68.51
         },
         {
           "channel": "outright",
-          "moves": 159,
+          "moves": 218,
           "war_acquired": 0.0,
-          "net_war": -48.2
-        },
-        {
-          "channel": "trade",
-          "moves": 157,
-          "war_acquired": 101.72,
-          "net_war": -16.75
+          "net_war": 3.48
         },
         {
           "channel": "waiver",
-          "moves": 156,
-          "war_acquired": 6.62,
-          "net_war": -20.44
+          "moves": 142,
+          "war_acquired": 3.32,
+          "net_war": -40.62
         },
         {
           "channel": "release",
-          "moves": 75,
+          "moves": 118,
           "war_acquired": 0.0,
-          "net_war": 8.9
+          "net_war": -12.16
         },
         {
           "channel": "purchase",
-          "moves": 2,
-          "war_acquired": 9.33,
-          "net_war": 9.33
+          "moves": 3,
+          "war_acquired": 0.63,
+          "net_war": 0.63
         }
       ]
     },
@@ -643,15 +418,15 @@
       "team_id": 114,
       "team_abbr": "CLE",
       "team_name": "Cleveland Guardians",
-      "moves": 2251,
-      "war_acquired": 765.6,
-      "net_war": 438.35,
+      "moves": 2244,
+      "war_acquired": 763.92,
+      "net_war": 601.68,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 903,
-          "war_acquired": 42.73,
-          "net_war": 42.73
+          "moves": 895,
+          "war_acquired": 40.92,
+          "net_war": 40.92
         },
         {
           "channel": "signing",
@@ -661,15 +436,15 @@
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 289,
-          "war_acquired": 346.1,
-          "net_war": 346.1
+          "moves": 291,
+          "war_acquired": 346.46,
+          "net_war": 346.46
         },
         {
           "channel": "trade",
-          "moves": 198,
-          "war_acquired": 151.75,
-          "net_war": -124.11
+          "moves": 197,
+          "war_acquired": 151.52,
+          "net_war": 40.67
         },
         {
           "channel": "outright",
@@ -698,48 +473,158 @@
       ]
     },
     {
-      "team_id": 158,
-      "team_abbr": "MIL",
-      "team_name": "Milwaukee Brewers",
-      "moves": 2500,
-      "war_acquired": 760.52,
-      "net_war": 427.4,
+      "team_id": 112,
+      "team_abbr": "CHC",
+      "team_name": "Chicago Cubs",
+      "moves": 2718,
+      "war_acquired": 753.01,
+      "net_war": 499.92,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1150,
-          "war_acquired": 126.09,
-          "net_war": 126.09
+          "moves": 1269,
+          "war_acquired": 181.71,
+          "net_war": 181.71
         },
         {
           "channel": "signing",
-          "moves": 473,
+          "moves": 464,
+          "war_acquired": 125.69,
+          "net_war": 125.69
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 314,
+          "war_acquired": 261.99,
+          "net_war": 261.99
+        },
+        {
+          "channel": "outright",
+          "moves": 211,
+          "war_acquired": 0.0,
+          "net_war": -46.06
+        },
+        {
+          "channel": "trade",
+          "moves": 184,
+          "war_acquired": 176.26,
+          "net_war": 30.93
+        },
+        {
+          "channel": "waiver",
+          "moves": 170,
+          "war_acquired": 7.36,
+          "net_war": -33.42
+        },
+        {
+          "channel": "release",
+          "moves": 106,
+          "war_acquired": 0.0,
+          "net_war": -20.92
+        }
+      ]
+    },
+    {
+      "team_id": 138,
+      "team_abbr": "STL",
+      "team_name": "St. Louis Cardinals",
+      "moves": 1849,
+      "war_acquired": 749.8,
+      "net_war": 586.19,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 719,
+          "war_acquired": 103.96,
+          "net_war": 103.96
+        },
+        {
+          "channel": "signing",
+          "moves": 539,
+          "war_acquired": 223.09,
+          "net_war": 223.09
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 234,
+          "war_acquired": 287.37,
+          "net_war": 287.37
+        },
+        {
+          "channel": "outright",
+          "moves": 108,
+          "war_acquired": 0.0,
+          "net_war": -22.18
+        },
+        {
+          "channel": "trade",
+          "moves": 102,
+          "war_acquired": 137.51,
+          "net_war": 22.61
+        },
+        {
+          "channel": "waiver",
+          "moves": 98,
+          "war_acquired": -0.24,
+          "net_war": -25.22
+        },
+        {
+          "channel": "release",
+          "moves": 46,
+          "war_acquired": 0.0,
+          "net_war": -1.55
+        },
+        {
+          "channel": "purchase",
+          "moves": 3,
+          "war_acquired": -1.89,
+          "net_war": -1.89
+        }
+      ]
+    },
+    {
+      "team_id": 158,
+      "team_abbr": "MIL",
+      "team_name": "Milwaukee Brewers",
+      "moves": 2463,
+      "war_acquired": 742.73,
+      "net_war": 551.44,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1130,
+          "war_acquired": 116.75,
+          "net_war": 116.75
+        },
+        {
+          "channel": "signing",
+          "moves": 470,
           "war_acquired": 118.34,
           "net_war": 118.34
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 260,
-          "war_acquired": 256.83,
-          "net_war": 256.83
+          "moves": 250,
+          "war_acquired": 248.28,
+          "net_war": 248.28
+        },
+        {
+          "channel": "trade",
+          "moves": 208,
+          "war_acquired": 240.93,
+          "net_war": 93.48
         },
         {
           "channel": "outright",
-          "moves": 210,
+          "moves": 208,
           "war_acquired": 0.0,
           "net_war": -28.41
         },
         {
-          "channel": "trade",
-          "moves": 209,
-          "war_acquired": 241.0,
-          "net_war": -48.28
-        },
-        {
           "channel": "waiver",
-          "moves": 136,
-          "war_acquired": 18.26,
-          "net_war": 6.42
+          "moves": 135,
+          "war_acquired": 18.43,
+          "net_war": 6.59
         },
         {
           "channel": "release",
@@ -756,112 +641,60 @@
       ]
     },
     {
-      "team_id": 143,
-      "team_abbr": "PHI",
-      "team_name": "Philadelphia Phillies",
-      "moves": 2771,
-      "war_acquired": 732.87,
-      "net_war": 578.9,
+      "team_id": 121,
+      "team_abbr": "NYM",
+      "team_name": "New York Mets",
+      "moves": 2828,
+      "war_acquired": 714.44,
+      "net_war": 552.31,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1338,
-          "war_acquired": 328.28,
-          "net_war": 328.28
+          "moves": 1360,
+          "war_acquired": 155.07,
+          "net_war": 155.07
         },
         {
           "channel": "signing",
-          "moves": 493,
-          "war_acquired": 76.85,
-          "net_war": 76.85
+          "moves": 459,
+          "war_acquired": 178.83,
+          "net_war": 178.83
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 292,
-          "war_acquired": 163.11,
-          "net_war": 163.11
+          "moves": 346,
+          "war_acquired": 277.02,
+          "net_war": 277.02
         },
         {
           "channel": "outright",
-          "moves": 210,
+          "moves": 236,
           "war_acquired": 0.0,
-          "net_war": 7.86
+          "net_war": -15.13
         },
         {
           "channel": "trade",
-          "moves": 207,
-          "war_acquired": 163.81,
-          "net_war": 6.01
+          "moves": 179,
+          "war_acquired": 105.48,
+          "net_war": 26.58
         },
         {
           "channel": "waiver",
-          "moves": 134,
-          "war_acquired": 0.82,
-          "net_war": -2.5
+          "moves": 170,
+          "war_acquired": -3.6,
+          "net_war": -44.33
         },
         {
           "channel": "release",
-          "moves": 97,
+          "moves": 70,
           "war_acquired": 0.0,
-          "net_war": -0.71
-        }
-      ]
-    },
-    {
-      "team_id": 136,
-      "team_abbr": "SEA",
-      "team_name": "Seattle Mariners",
-      "moves": 2731,
-      "war_acquired": 726.9,
-      "net_war": 256.02,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1082,
-          "war_acquired": 171.87,
-          "net_war": 171.87
-        },
-        {
-          "channel": "signing",
-          "moves": 527,
-          "war_acquired": 135.58,
-          "net_war": 135.58
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 328,
-          "war_acquired": 232.41,
-          "net_war": 232.41
-        },
-        {
-          "channel": "trade",
-          "moves": 263,
-          "war_acquired": 185.71,
-          "net_war": -184.54
-        },
-        {
-          "channel": "waiver",
-          "moves": 220,
-          "war_acquired": 0.97,
-          "net_war": -35.31
-        },
-        {
-          "channel": "outright",
-          "moves": 214,
-          "war_acquired": 0.0,
-          "net_war": -47.01
-        },
-        {
-          "channel": "release",
-          "moves": 95,
-          "war_acquired": 0.0,
-          "net_war": -17.34
+          "net_war": -27.37
         },
         {
           "channel": "purchase",
-          "moves": 2,
-          "war_acquired": 0.36,
-          "net_war": 0.36
+          "moves": 8,
+          "war_acquired": 1.64,
+          "net_war": 1.64
         }
       ]
     },
@@ -869,15 +702,15 @@
       "team_id": 133,
       "team_abbr": "OAK",
       "team_name": "Athletics",
-      "moves": 2211,
-      "war_acquired": 717.28,
-      "net_war": 187.83,
+      "moves": 2183,
+      "war_acquired": 697.42,
+      "net_war": 351.96,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 741,
-          "war_acquired": 108.25,
-          "net_war": 108.25
+          "moves": 721,
+          "war_acquired": 102.32,
+          "net_war": 102.32
         },
         {
           "channel": "signing",
@@ -887,27 +720,27 @@
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 280,
-          "war_acquired": 212.91,
-          "net_war": 212.91
+          "moves": 279,
+          "war_acquired": 198.4,
+          "net_war": 198.4
         },
         {
           "channel": "trade",
-          "moves": 227,
+          "moves": 226,
           "war_acquired": 248.88,
-          "net_war": -153.62
+          "net_war": 31.0
         },
         {
           "channel": "outright",
-          "moves": 206,
+          "moves": 203,
           "war_acquired": 0.0,
           "net_war": -88.53
         },
         {
           "channel": "waiver",
-          "moves": 181,
-          "war_acquired": 23.74,
-          "net_war": 7.16
+          "moves": 178,
+          "war_acquired": 24.32,
+          "net_war": 7.11
         },
         {
           "channel": "release",
@@ -924,30 +757,88 @@
       ]
     },
     {
-      "team_id": 142,
-      "team_abbr": "MIN",
-      "team_name": "Minnesota Twins",
-      "moves": 2527,
-      "war_acquired": 694.73,
-      "net_war": 370.22,
+      "team_id": 136,
+      "team_abbr": "SEA",
+      "team_name": "Seattle Mariners",
+      "moves": 2686,
+      "war_acquired": 687.95,
+      "net_war": 389.41,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1151,
-          "war_acquired": 135.43,
-          "net_war": 135.43
+          "moves": 1061,
+          "war_acquired": 142.18,
+          "net_war": 142.18
         },
         {
           "channel": "signing",
-          "moves": 479,
+          "moves": 526,
+          "war_acquired": 135.58,
+          "net_war": 135.58
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 317,
+          "war_acquired": 220.25,
+          "net_war": 220.25
+        },
+        {
+          "channel": "trade",
+          "moves": 262,
+          "war_acquired": 185.8,
+          "net_war": -12.52
+        },
+        {
+          "channel": "waiver",
+          "moves": 215,
+          "war_acquired": 3.78,
+          "net_war": -32.5
+        },
+        {
+          "channel": "outright",
+          "moves": 210,
+          "war_acquired": 0.0,
+          "net_war": -46.6
+        },
+        {
+          "channel": "release",
+          "moves": 93,
+          "war_acquired": 0.0,
+          "net_war": -17.34
+        },
+        {
+          "channel": "purchase",
+          "moves": 2,
+          "war_acquired": 0.36,
+          "net_war": 0.36
+        }
+      ]
+    },
+    {
+      "team_id": 142,
+      "team_abbr": "MIN",
+      "team_name": "Minnesota Twins",
+      "moves": 2479,
+      "war_acquired": 684.01,
+      "net_war": 484.43,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1117,
+          "war_acquired": 135.79,
+          "net_war": 135.79
+        },
+        {
+          "channel": "signing",
+          "moves": 476,
           "war_acquired": 173.94,
           "net_war": 173.94
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 319,
-          "war_acquired": 289.66,
-          "net_war": 289.66
+          "moves": 313,
+          "war_acquired": 279.32,
+          "net_war": 279.32
         },
         {
           "channel": "outright",
@@ -956,20 +847,20 @@
           "net_war": -35.48
         },
         {
-          "channel": "waiver",
-          "moves": 155,
-          "war_acquired": 9.91,
-          "net_war": -26.25
+          "channel": "trade",
+          "moves": 152,
+          "war_acquired": 85.74,
+          "net_war": -22.91
         },
         {
-          "channel": "trade",
-          "moves": 153,
-          "war_acquired": 85.79,
-          "net_war": -147.79
+          "channel": "waiver",
+          "moves": 152,
+          "war_acquired": 9.22,
+          "net_war": -26.94
         },
         {
           "channel": "release",
-          "moves": 70,
+          "moves": 69,
           "war_acquired": 0.0,
           "net_war": -19.29
         },
@@ -982,18 +873,296 @@
       ]
     },
     {
-      "team_id": 140,
-      "team_abbr": "TEX",
-      "team_name": "Texas Rangers",
-      "moves": 2847,
-      "war_acquired": 680.54,
-      "net_war": 361.66,
+      "team_id": 137,
+      "team_abbr": "SF",
+      "team_name": "San Francisco Giants",
+      "moves": 2387,
+      "war_acquired": 659.2,
+      "net_war": 539.48,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1381,
-          "war_acquired": 266.38,
-          "net_war": 266.45
+          "moves": 1054,
+          "war_acquired": 184.95,
+          "net_war": 184.95
+        },
+        {
+          "channel": "signing",
+          "moves": 488,
+          "war_acquired": 74.74,
+          "net_war": 74.74
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 299,
+          "war_acquired": 281.84,
+          "net_war": 281.84
+        },
+        {
+          "channel": "outright",
+          "moves": 159,
+          "war_acquired": 0.0,
+          "net_war": -48.2
+        },
+        {
+          "channel": "trade",
+          "moves": 156,
+          "war_acquired": 101.72,
+          "net_war": 48.36
+        },
+        {
+          "channel": "waiver",
+          "moves": 154,
+          "war_acquired": 6.62,
+          "net_war": -20.44
+        },
+        {
+          "channel": "release",
+          "moves": 75,
+          "war_acquired": 0.0,
+          "net_war": 8.9
+        },
+        {
+          "channel": "purchase",
+          "moves": 2,
+          "war_acquired": 9.33,
+          "net_war": 9.33
+        }
+      ]
+    },
+    {
+      "team_id": 109,
+      "team_abbr": "ARI",
+      "team_name": "Arizona Diamondbacks",
+      "moves": 2728,
+      "war_acquired": 636.23,
+      "net_war": 393.77,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1330,
+          "war_acquired": 96.66,
+          "net_war": 96.66
+        },
+        {
+          "channel": "signing",
+          "moves": 523,
+          "war_acquired": 126.73,
+          "net_war": 126.73
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 278,
+          "war_acquired": 235.64,
+          "net_war": 235.64
+        },
+        {
+          "channel": "trade",
+          "moves": 189,
+          "war_acquired": 162.95,
+          "net_war": -41.87
+        },
+        {
+          "channel": "outright",
+          "moves": 163,
+          "war_acquired": 0.0,
+          "net_war": -1.5
+        },
+        {
+          "channel": "waiver",
+          "moves": 135,
+          "war_acquired": 14.25,
+          "net_war": -15.86
+        },
+        {
+          "channel": "release",
+          "moves": 110,
+          "war_acquired": 0.0,
+          "net_war": -6.03
+        }
+      ]
+    },
+    {
+      "team_id": 110,
+      "team_abbr": "BAL",
+      "team_name": "Baltimore Orioles",
+      "moves": 2894,
+      "war_acquired": 630.45,
+      "net_war": 414.08,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1165,
+          "war_acquired": 43.77,
+          "net_war": 43.77
+        },
+        {
+          "channel": "signing",
+          "moves": 501,
+          "war_acquired": 162.29,
+          "net_war": 162.29
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 339,
+          "war_acquired": 247.63,
+          "net_war": 247.63
+        },
+        {
+          "channel": "outright",
+          "moves": 318,
+          "war_acquired": 0.0,
+          "net_war": -25.52
+        },
+        {
+          "channel": "waiver",
+          "moves": 265,
+          "war_acquired": 73.46,
+          "net_war": -6.79
+        },
+        {
+          "channel": "trade",
+          "moves": 226,
+          "war_acquired": 104.12,
+          "net_war": -0.68
+        },
+        {
+          "channel": "release",
+          "moves": 79,
+          "war_acquired": 0.0,
+          "net_war": -5.8
+        },
+        {
+          "channel": "purchase",
+          "moves": 1,
+          "war_acquired": -0.82,
+          "net_war": -0.82
+        }
+      ]
+    },
+    {
+      "team_id": 108,
+      "team_abbr": "LAA",
+      "team_name": "Los Angeles Angels",
+      "moves": 2708,
+      "war_acquired": 626.8,
+      "net_war": 446.37,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1117,
+          "war_acquired": 83.02,
+          "net_war": 83.02
+        },
+        {
+          "channel": "signing",
+          "moves": 538,
+          "war_acquired": 163.42,
+          "net_war": 163.42
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 348,
+          "war_acquired": 253.29,
+          "net_war": 253.29
+        },
+        {
+          "channel": "outright",
+          "moves": 254,
+          "war_acquired": 0.0,
+          "net_war": -24.22
+        },
+        {
+          "channel": "trade",
+          "moves": 186,
+          "war_acquired": 106.91,
+          "net_war": 25.88
+        },
+        {
+          "channel": "waiver",
+          "moves": 165,
+          "war_acquired": 18.89,
+          "net_war": -16.95
+        },
+        {
+          "channel": "release",
+          "moves": 95,
+          "war_acquired": 0.0,
+          "net_war": -39.34
+        },
+        {
+          "channel": "purchase",
+          "moves": 5,
+          "war_acquired": 1.27,
+          "net_war": 1.27
+        }
+      ]
+    },
+    {
+      "team_id": 143,
+      "team_abbr": "PHI",
+      "team_name": "Philadelphia Phillies",
+      "moves": 2746,
+      "war_acquired": 620.74,
+      "net_war": 562.84,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1323,
+          "war_acquired": 221.96,
+          "net_war": 221.96
+        },
+        {
+          "channel": "signing",
+          "moves": 492,
+          "war_acquired": 76.85,
+          "net_war": 76.85
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 287,
+          "war_acquired": 156.78,
+          "net_war": 156.78
+        },
+        {
+          "channel": "outright",
+          "moves": 207,
+          "war_acquired": 0.0,
+          "net_war": 7.63
+        },
+        {
+          "channel": "trade",
+          "moves": 206,
+          "war_acquired": 164.33,
+          "net_war": 102.83
+        },
+        {
+          "channel": "waiver",
+          "moves": 134,
+          "war_acquired": 0.82,
+          "net_war": -2.5
+        },
+        {
+          "channel": "release",
+          "moves": 97,
+          "war_acquired": 0.0,
+          "net_war": -0.71
+        }
+      ]
+    },
+    {
+      "team_id": 140,
+      "team_abbr": "TEX",
+      "team_name": "Texas Rangers",
+      "moves": 2814,
+      "war_acquired": 599.6,
+      "net_war": 390.29,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1357,
+          "war_acquired": 266.7,
+          "net_war": 266.77
         },
         {
           "channel": "signing",
@@ -1003,15 +1172,15 @@
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 319,
-          "war_acquired": 249.54,
-          "net_war": 249.54
+          "moves": 313,
+          "war_acquired": 166.6,
+          "net_war": 166.6
         },
         {
           "channel": "trade",
-          "moves": 223,
+          "moves": 222,
           "war_acquired": 93.56,
-          "net_war": -142.49
+          "net_war": -32.92
         },
         {
           "channel": "outright",
@@ -1021,9 +1190,9 @@
         },
         {
           "channel": "waiver",
-          "moves": 174,
-          "war_acquired": 2.65,
-          "net_war": -34.92
+          "moves": 172,
+          "war_acquired": 4.33,
+          "net_war": -33.24
         },
         {
           "channel": "release",
@@ -1040,18 +1209,134 @@
       ]
     },
     {
-      "team_id": 145,
-      "team_abbr": "CWS",
-      "team_name": "Chicago White Sox",
-      "moves": 2531,
-      "war_acquired": 655.42,
-      "net_war": 357.56,
+      "team_id": 120,
+      "team_abbr": "WSH",
+      "team_name": "Washington Nationals",
+      "moves": 2311,
+      "war_acquired": 595.57,
+      "net_war": 487.6,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1074,
-          "war_acquired": 194.08,
-          "net_war": 194.08
+          "moves": 1141,
+          "war_acquired": 147.3,
+          "net_war": 147.3
+        },
+        {
+          "channel": "signing",
+          "moves": 478,
+          "war_acquired": 128.8,
+          "net_war": 128.8
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 247,
+          "war_acquired": 135.11,
+          "net_war": 135.11
+        },
+        {
+          "channel": "outright",
+          "moves": 141,
+          "war_acquired": 0.0,
+          "net_war": 4.56
+        },
+        {
+          "channel": "trade",
+          "moves": 121,
+          "war_acquired": 158.29,
+          "net_war": 73.85
+        },
+        {
+          "channel": "release",
+          "moves": 97,
+          "war_acquired": 0.0,
+          "net_war": -15.83
+        },
+        {
+          "channel": "waiver",
+          "moves": 83,
+          "war_acquired": 6.34,
+          "net_war": -5.92
+        },
+        {
+          "channel": "purchase",
+          "moves": 3,
+          "war_acquired": 19.73,
+          "net_war": 19.73
+        }
+      ]
+    },
+    {
+      "team_id": 118,
+      "team_abbr": "KC",
+      "team_name": "Kansas City Royals",
+      "moves": 2364,
+      "war_acquired": 568.59,
+      "net_war": 444.33,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1089,
+          "war_acquired": 102.83,
+          "net_war": 102.83
+        },
+        {
+          "channel": "signing",
+          "moves": 505,
+          "war_acquired": 101.73,
+          "net_war": 101.73
+        },
+        {
+          "channel": "rule5_or_selected",
+          "moves": 254,
+          "war_acquired": 286.25,
+          "net_war": 286.25
+        },
+        {
+          "channel": "trade",
+          "moves": 199,
+          "war_acquired": 79.04,
+          "net_war": 2.43
+        },
+        {
+          "channel": "outright",
+          "moves": 118,
+          "war_acquired": 0.0,
+          "net_war": -25.49
+        },
+        {
+          "channel": "waiver",
+          "moves": 101,
+          "war_acquired": -0.06,
+          "net_war": -27.08
+        },
+        {
+          "channel": "release",
+          "moves": 93,
+          "war_acquired": 0.0,
+          "net_war": 4.74
+        },
+        {
+          "channel": "purchase",
+          "moves": 5,
+          "war_acquired": -1.2,
+          "net_war": -1.08
+        }
+      ]
+    },
+    {
+      "team_id": 145,
+      "team_abbr": "CWS",
+      "team_name": "Chicago White Sox",
+      "moves": 2490,
+      "war_acquired": 560.83,
+      "net_war": 391.97,
+      "channels": [
+        {
+          "channel": "free_agent",
+          "moves": 1047,
+          "war_acquired": 141.34,
+          "net_war": 141.34
         },
         {
           "channel": "signing",
@@ -1061,9 +1346,9 @@
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 294,
-          "war_acquired": 218.69,
-          "net_war": 218.69
+          "moves": 282,
+          "war_acquired": 176.95,
+          "net_war": 176.95
         },
         {
           "channel": "outright",
@@ -1073,13 +1358,13 @@
         },
         {
           "channel": "trade",
-          "moves": 199,
-          "war_acquired": 124.15,
-          "net_war": -145.32
+          "moves": 198,
+          "war_acquired": 124.04,
+          "net_war": -16.43
         },
         {
           "channel": "waiver",
-          "moves": 150,
+          "moves": 149,
           "war_acquired": 15.49,
           "net_war": 6.58
         },
@@ -1098,244 +1383,18 @@
       ]
     },
     {
-      "team_id": 110,
-      "team_abbr": "BAL",
-      "team_name": "Baltimore Orioles",
-      "moves": 2941,
-      "war_acquired": 643.26,
-      "net_war": 296.66,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1193,
-          "war_acquired": 37.67,
-          "net_war": 37.67
-        },
-        {
-          "channel": "signing",
-          "moves": 504,
-          "war_acquired": 162.29,
-          "net_war": 162.29
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 346,
-          "war_acquired": 245.64,
-          "net_war": 245.64
-        },
-        {
-          "channel": "outright",
-          "moves": 319,
-          "war_acquired": 0.0,
-          "net_war": -24.81
-        },
-        {
-          "channel": "waiver",
-          "moves": 272,
-          "war_acquired": 94.55,
-          "net_war": 14.3
-        },
-        {
-          "channel": "trade",
-          "moves": 227,
-          "war_acquired": 103.93,
-          "net_war": -131.81
-        },
-        {
-          "channel": "release",
-          "moves": 79,
-          "war_acquired": 0.0,
-          "net_war": -5.8
-        },
-        {
-          "channel": "purchase",
-          "moves": 1,
-          "war_acquired": -0.82,
-          "net_war": -0.82
-        }
-      ]
-    },
-    {
-      "team_id": 109,
-      "team_abbr": "ARI",
-      "team_name": "Arizona Diamondbacks",
-      "moves": 2753,
-      "war_acquired": 635.13,
-      "net_war": 134.51,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1351,
-          "war_acquired": 97.18,
-          "net_war": 97.18
-        },
-        {
-          "channel": "signing",
-          "moves": 524,
-          "war_acquired": 126.73,
-          "net_war": 126.73
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 280,
-          "war_acquired": 234.02,
-          "net_war": 234.02
-        },
-        {
-          "channel": "trade",
-          "moves": 190,
-          "war_acquired": 162.95,
-          "net_war": -300.03
-        },
-        {
-          "channel": "outright",
-          "moves": 164,
-          "war_acquired": 0.0,
-          "net_war": -1.5
-        },
-        {
-          "channel": "waiver",
-          "moves": 134,
-          "war_acquired": 14.25,
-          "net_war": -15.86
-        },
-        {
-          "channel": "release",
-          "moves": 110,
-          "war_acquired": 0.0,
-          "net_war": -6.03
-        }
-      ]
-    },
-    {
-      "team_id": 116,
-      "team_abbr": "DET",
-      "team_name": "Detroit Tigers",
-      "moves": 2408,
-      "war_acquired": 633.09,
-      "net_war": 318.5,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1119,
-          "war_acquired": 125.23,
-          "net_war": 125.23
-        },
-        {
-          "channel": "signing",
-          "moves": 506,
-          "war_acquired": 97.6,
-          "net_war": 97.6
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 282,
-          "war_acquired": 224.68,
-          "net_war": 224.68
-        },
-        {
-          "channel": "outright",
-          "moves": 168,
-          "war_acquired": 0.0,
-          "net_war": 1.12
-        },
-        {
-          "channel": "trade",
-          "moves": 142,
-          "war_acquired": 164.6,
-          "net_war": -132.69
-        },
-        {
-          "channel": "waiver",
-          "moves": 121,
-          "war_acquired": 20.98,
-          "net_war": 5.74
-        },
-        {
-          "channel": "release",
-          "moves": 68,
-          "war_acquired": 0.0,
-          "net_war": -3.18
-        },
-        {
-          "channel": "purchase",
-          "moves": 2,
-          "war_acquired": 0.0,
-          "net_war": 0.0
-        }
-      ]
-    },
-    {
-      "team_id": 118,
-      "team_abbr": "KC",
-      "team_name": "Kansas City Royals",
-      "moves": 2402,
-      "war_acquired": 616.67,
-      "net_war": 342.56,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1110,
-          "war_acquired": 119.23,
-          "net_war": 119.23
-        },
-        {
-          "channel": "signing",
-          "moves": 506,
-          "war_acquired": 101.73,
-          "net_war": 101.73
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 263,
-          "war_acquired": 317.93,
-          "net_war": 317.93
-        },
-        {
-          "channel": "trade",
-          "moves": 201,
-          "war_acquired": 79.04,
-          "net_war": -147.65
-        },
-        {
-          "channel": "outright",
-          "moves": 120,
-          "war_acquired": 0.0,
-          "net_war": -25.49
-        },
-        {
-          "channel": "waiver",
-          "moves": 103,
-          "war_acquired": -0.06,
-          "net_war": -27.08
-        },
-        {
-          "channel": "release",
-          "moves": 94,
-          "war_acquired": 0.0,
-          "net_war": 4.97
-        },
-        {
-          "channel": "purchase",
-          "moves": 5,
-          "war_acquired": -1.2,
-          "net_war": -1.08
-        }
-      ]
-    },
-    {
       "team_id": 135,
       "team_abbr": "SD",
       "team_name": "San Diego Padres",
-      "moves": 2495,
-      "war_acquired": 610.7,
-      "net_war": 46.9,
+      "moves": 2464,
+      "war_acquired": 559.58,
+      "net_war": 230.6,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1179,
-          "war_acquired": 214.35,
-          "net_war": 214.35
+          "moves": 1154,
+          "war_acquired": 163.99,
+          "net_war": 163.99
         },
         {
           "channel": "signing",
@@ -1345,15 +1404,15 @@
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 284,
-          "war_acquired": 121.49,
-          "net_war": 121.49
+          "moves": 280,
+          "war_acquired": 120.42,
+          "net_war": 120.42
         },
         {
           "channel": "trade",
-          "moves": 175,
-          "war_acquired": 230.68,
-          "net_war": -297.77
+          "moves": 174,
+          "war_acquired": 230.99,
+          "net_war": -62.64
         },
         {
           "channel": "outright",
@@ -1363,7 +1422,7 @@
         },
         {
           "channel": "waiver",
-          "moves": 129,
+          "moves": 128,
           "war_acquired": 13.88,
           "net_war": 1.97
         },
@@ -1382,118 +1441,60 @@
       ]
     },
     {
-      "team_id": 108,
-      "team_abbr": "LAA",
-      "team_name": "Los Angeles Angels",
-      "moves": 2761,
-      "war_acquired": 610.4,
-      "net_war": 325.86,
+      "team_id": 116,
+      "team_abbr": "DET",
+      "team_name": "Detroit Tigers",
+      "moves": 2374,
+      "war_acquired": 557.83,
+      "net_war": 407.73,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1150,
-          "war_acquired": 73.21,
-          "net_war": 73.21
+          "moves": 1097,
+          "war_acquired": 115.0,
+          "net_war": 115.0
         },
         {
           "channel": "signing",
-          "moves": 541,
-          "war_acquired": 163.42,
-          "net_war": 163.42
+          "moves": 506,
+          "war_acquired": 97.6,
+          "net_war": 97.6
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 357,
-          "war_acquired": 246.82,
-          "net_war": 246.82
+          "moves": 276,
+          "war_acquired": 168.08,
+          "net_war": 168.08
         },
         {
           "channel": "outright",
-          "moves": 255,
-          "war_acquired": 0.0,
-          "net_war": -24.22
-        },
-        {
-          "channel": "trade",
-          "moves": 187,
-          "war_acquired": 106.79,
-          "net_war": -73.19
-        },
-        {
-          "channel": "waiver",
           "moves": 167,
-          "war_acquired": 18.89,
-          "net_war": -16.85
-        },
-        {
-          "channel": "release",
-          "moves": 99,
           "war_acquired": 0.0,
-          "net_war": -44.6
-        },
-        {
-          "channel": "purchase",
-          "moves": 5,
-          "war_acquired": 1.27,
-          "net_war": 1.27
-        }
-      ]
-    },
-    {
-      "team_id": 120,
-      "team_abbr": "WSH",
-      "team_name": "Washington Nationals",
-      "moves": 2334,
-      "war_acquired": 604.27,
-      "net_war": 321.66,
-      "channels": [
-        {
-          "channel": "free_agent",
-          "moves": 1153,
-          "war_acquired": 155.36,
-          "net_war": 155.36
-        },
-        {
-          "channel": "signing",
-          "moves": 479,
-          "war_acquired": 128.8,
-          "net_war": 128.8
-        },
-        {
-          "channel": "rule5_or_selected",
-          "moves": 253,
-          "war_acquired": 135.84,
-          "net_war": 135.84
-        },
-        {
-          "channel": "outright",
-          "moves": 142,
-          "war_acquired": 0.0,
-          "net_war": 4.56
+          "net_war": 0.73
         },
         {
           "channel": "trade",
-          "moves": 122,
-          "war_acquired": 158.2,
-          "net_war": -100.88
-        },
-        {
-          "channel": "release",
-          "moves": 98,
-          "war_acquired": 0.0,
-          "net_war": -15.83
+          "moves": 141,
+          "war_acquired": 164.6,
+          "net_war": 32.33
         },
         {
           "channel": "waiver",
-          "moves": 84,
-          "war_acquired": 6.34,
-          "net_war": -5.92
+          "moves": 118,
+          "war_acquired": 12.55,
+          "net_war": -2.69
+        },
+        {
+          "channel": "release",
+          "moves": 67,
+          "war_acquired": 0.0,
+          "net_war": -3.32
         },
         {
           "channel": "purchase",
-          "moves": 3,
-          "war_acquired": 19.73,
-          "net_war": 19.73
+          "moves": 2,
+          "war_acquired": 0.0,
+          "net_war": 0.0
         }
       ]
     },
@@ -1501,27 +1502,27 @@
       "team_id": 113,
       "team_abbr": "CIN",
       "team_name": "Cincinnati Reds",
-      "moves": 2528,
-      "war_acquired": 573.5,
-      "net_war": 276.28,
+      "moves": 2509,
+      "war_acquired": 528.24,
+      "net_war": 377.66,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1143,
-          "war_acquired": 79.84,
-          "net_war": 79.84
+          "moves": 1131,
+          "war_acquired": 72.28,
+          "net_war": 72.28
         },
         {
           "channel": "signing",
-          "moves": 444,
-          "war_acquired": 140.64,
-          "net_war": 140.64
+          "moves": 441,
+          "war_acquired": 138.3,
+          "net_war": 138.3
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 335,
-          "war_acquired": 250.28,
-          "net_war": 250.28
+          "moves": 334,
+          "war_acquired": 214.7,
+          "net_war": 214.7
         },
         {
           "channel": "outright",
@@ -1531,15 +1532,15 @@
         },
         {
           "channel": "trade",
-          "moves": 163,
+          "moves": 162,
           "war_acquired": 99.83,
-          "net_war": -150.46
+          "net_war": -3.82
         },
         {
           "channel": "waiver",
-          "moves": 153,
-          "war_acquired": 2.95,
-          "net_war": -27.84
+          "moves": 151,
+          "war_acquired": 3.17,
+          "net_war": -27.62
         },
         {
           "channel": "release",
@@ -1559,49 +1560,49 @@
       "team_id": 134,
       "team_abbr": "PIT",
       "team_name": "Pittsburgh Pirates",
-      "moves": 2621,
-      "war_acquired": 515.77,
-      "net_war": 196.41,
+      "moves": 2587,
+      "war_acquired": 518.43,
+      "net_war": 384.36,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1035,
-          "war_acquired": 62.75,
-          "net_war": 62.75
+          "moves": 1026,
+          "war_acquired": 58.22,
+          "net_war": 58.22
         },
         {
           "channel": "signing",
-          "moves": 492,
-          "war_acquired": 83.09,
-          "net_war": 83.09
+          "moves": 490,
+          "war_acquired": 86.61,
+          "net_war": 86.61
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 301,
-          "war_acquired": 256.65,
-          "net_war": 256.65
+          "moves": 289,
+          "war_acquired": 256.12,
+          "net_war": 256.12
         },
         {
           "channel": "trade",
-          "moves": 247,
-          "war_acquired": 116.53,
-          "net_war": -165.72
+          "moves": 246,
+          "war_acquired": 116.47,
+          "net_war": 19.58
         },
         {
           "channel": "outright",
-          "moves": 237,
+          "moves": 235,
           "war_acquired": 0.0,
-          "net_war": -23.02
+          "net_war": -23.12
         },
         {
           "channel": "waiver",
-          "moves": 221,
-          "war_acquired": -3.25,
-          "net_war": -10.06
+          "moves": 214,
+          "war_acquired": 1.01,
+          "net_war": -5.77
         },
         {
           "channel": "release",
-          "moves": 88,
+          "moves": 87,
           "war_acquired": 0.0,
           "net_war": -7.28
         }
@@ -1611,15 +1612,15 @@
       "team_id": 115,
       "team_abbr": "COL",
       "team_name": "Colorado Rockies",
-      "moves": 2219,
-      "war_acquired": 495.13,
-      "net_war": 248.71,
+      "moves": 2191,
+      "war_acquired": 464.29,
+      "net_war": 303.21,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 967,
-          "war_acquired": 30.65,
-          "net_war": 30.65
+          "moves": 956,
+          "war_acquired": 27.06,
+          "net_war": 27.06
         },
         {
           "channel": "signing",
@@ -1629,9 +1630,9 @@
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 304,
-          "war_acquired": 237.39,
-          "net_war": 237.39
+          "moves": 292,
+          "war_acquired": 214.83,
+          "net_war": 214.83
         },
         {
           "channel": "outright",
@@ -1641,15 +1642,15 @@
         },
         {
           "channel": "trade",
-          "moves": 130,
+          "moves": 129,
           "war_acquired": 55.93,
-          "net_war": -122.33
+          "net_war": -36.99
         },
         {
           "channel": "waiver",
-          "moves": 102,
-          "war_acquired": 25.65,
-          "net_war": -18.85
+          "moves": 98,
+          "war_acquired": 20.96,
+          "net_war": -23.54
         },
         {
           "channel": "release",
@@ -1669,15 +1670,15 @@
       "team_id": 146,
       "team_abbr": "MIA",
       "team_name": "Miami Marlins",
-      "moves": 2661,
-      "war_acquired": 459.31,
-      "net_war": -23.12,
+      "moves": 2641,
+      "war_acquired": 450.17,
+      "net_war": 152.59,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1096,
-          "war_acquired": 32.52,
-          "net_war": 32.52
+          "moves": 1078,
+          "war_acquired": 23.42,
+          "net_war": 23.42
         },
         {
           "channel": "signing",
@@ -1687,27 +1688,27 @@
         },
         {
           "channel": "rule5_or_selected",
-          "moves": 377,
+          "moves": 382,
           "war_acquired": 173.09,
           "net_war": 173.09
         },
         {
           "channel": "outright",
-          "moves": 276,
+          "moves": 275,
           "war_acquired": 0.0,
           "net_war": -20.17
         },
         {
           "channel": "trade",
-          "moves": 176,
-          "war_acquired": 164.93,
-          "net_war": -269.56
+          "moves": 174,
+          "war_acquired": 164.95,
+          "net_war": -84.69
         },
         {
           "channel": "waiver",
-          "moves": 161,
-          "war_acquired": 14.04,
-          "net_war": -13.75
+          "moves": 157,
+          "war_acquired": 13.98,
+          "net_war": -13.81
         },
         {
           "channel": "release",
@@ -1727,51 +1728,51 @@
   "league_channels": [
     {
       "channel": "free_agent",
-      "moves": 34042,
-      "war_acquired": 4820.41,
-      "net_war": 4820.48
+      "moves": 33389,
+      "war_acquired": 4170.08,
+      "net_war": 4170.15
     },
     {
       "channel": "signing",
-      "moves": 14887,
-      "war_acquired": 3866.45,
-      "net_war": 3866.45
+      "moves": 14846,
+      "war_acquired": 3843.07,
+      "net_war": 3843.07
     },
     {
       "channel": "rule5_or_selected",
-      "moves": 8991,
-      "war_acquired": 7856.3,
-      "net_war": 7856.3
+      "moves": 8817,
+      "war_acquired": 7216.8,
+      "net_war": 7216.8
     },
     {
       "channel": "trade",
-      "moves": 5821,
-      "war_acquired": 4709.33,
-      "net_war": -3769.28
+      "moves": 5789,
+      "war_acquired": 4709.75,
+      "net_war": 525.26
     },
     {
       "channel": "outright",
-      "moves": 5726,
+      "moves": 5693,
       "war_acquired": 0.0,
-      "net_war": -664.57
+      "net_war": -662.94
     },
     {
       "channel": "waiver",
-      "moves": 4551,
-      "war_acquired": 393.98,
-      "net_war": -445.85
+      "moves": 4485,
+      "war_acquired": 342.35,
+      "net_war": -498.18
     },
     {
       "channel": "release",
-      "moves": 2444,
+      "moves": 2430,
       "war_acquired": 0.0,
-      "net_war": -368.25
+      "net_war": -363.46
     },
     {
       "channel": "purchase",
-      "moves": 65,
-      "war_acquired": 43.43,
-      "net_war": 43.55
+      "moves": 64,
+      "war_acquired": 43.56,
+      "net_war": 43.68
     }
   ],
   "limitations": [
