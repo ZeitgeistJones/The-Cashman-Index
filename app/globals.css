@@ -51,11 +51,32 @@ body {
 }
 
 main {
-  max-width: 1180px;
+  /* Ranking boards need horizontal room; 1180px left huge side gutters on
+     ultrawide. Cap still exists so 4K isn't an endless line. */
+  max-width: min(100%, 1680px);
   margin: 0 auto;
   padding: 3rem 1.25rem calc(5rem + var(--safe-bottom));
   padding-left: max(1.25rem, var(--safe-left));
   padding-right: max(1.25rem, var(--safe-right));
+}
+
+@media (min-width: 1500px) {
+  main {
+    max-width: min(calc(100% - 2rem), 1840px);
+    padding-left: max(1.5rem, var(--safe-left));
+    padding-right: max(1.5rem, var(--safe-right));
+  }
+}
+
+/* About is prose — keep a readable measure, don't stretch with the boards. */
+main.about {
+  max-width: min(100%, 44rem);
+}
+
+@media (min-width: 1500px) {
+  main.about {
+    max-width: min(100%, 44rem);
+  }
 }
 
 .site-header-row {
