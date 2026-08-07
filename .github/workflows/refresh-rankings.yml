@@ -94,3 +94,14 @@ jobs:
             data/draft_picks.json
           git commit -m "Refresh franchise, GM, draft, and season ranking datasets"
           git push
+
+      - name: Trigger Vercel deploy hook
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK" ]; then
+            echo "VERCEL_DEPLOY_HOOK unset — relying on Vercel Git auto-deploy."
+            exit 0
+          fi
+          curl -fsS -X POST "$VERCEL_DEPLOY_HOOK"
+          echo "Deploy hook fired."

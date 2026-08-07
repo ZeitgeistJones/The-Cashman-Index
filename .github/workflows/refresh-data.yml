@@ -117,6 +117,21 @@ jobs:
           git commit -m "Refresh league ledger and ranking indexes from live sources"
           git push
 
+      # Optional: force a production rebuild after data lands. Needed if Vercel
+      # production branch drifts from the default branch cron commits to.
+      # Repo secret VERCEL_DEPLOY_HOOK = Deploy Hook URL from Vercel project
+      # Settings → Git → Deploy Hooks. No-op when unset.
+      - name: Trigger Vercel deploy hook
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK" ]; then
+            echo "VERCEL_DEPLOY_HOOK unset — relying on Vercel Git auto-deploy."
+            exit 0
+          fi
+          curl -fsS -X POST "$VERCEL_DEPLOY_HOOK"
+          echo "Deploy hook fired."
+
       # Last, deliberately: a mistyped override is a wrong number on the site,
       # so the job should go red — but only after the good data has landed.
       # --no-war keeps this to seconds. Cache path is the Yankees by_team file

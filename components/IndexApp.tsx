@@ -183,35 +183,6 @@ export default function IndexApp({
     return parts.join(" · ");
   }, [ledgerThrough, rebuiltAt]);
 
-  useEffect(() => {
-    // #region agent log
-    fetch("http://127.0.0.1:7881/ingest/9b61bbfe-6c28-461c-a358-3c161de0af36", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Debug-Session-Id": "fd1639",
-      },
-      body: JSON.stringify({
-        sessionId: "fd1639",
-        runId: "pre-fix",
-        hypothesisId: "A",
-        location: "IndexApp.tsx:freshness",
-        message: "Freshness stamp inputs",
-        data: {
-          ledgerThrough,
-          rebuiltAt,
-          freshnessLabel,
-          moveCount: moves.move_count ?? moves.moves.length,
-          firstMoveDate: moves.moves[0]?.move_date ?? null,
-          lastMoveDate:
-            moves.moves[moves.moves.length - 1]?.move_date ?? null,
-        },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {});
-    // #endregion
-  }, [ledgerThrough, rebuiltAt, freshnessLabel, moves]);
-
   return (
     <main>
       <header>
