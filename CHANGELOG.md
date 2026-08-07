@@ -20,6 +20,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/). Dates are UTC co
 
 ### Changed
 
+- Daily GitHub Actions refresh (`0 6 * * *` UTC) rebuilds `league_moves.json`, trade/acquisition indexes, rankings, and season index from live MLB sources (was weekly Yankees-only `moves.json`)
 - About page documents success lenses, season construction, and intentional omissions
 - Yearly resume leaderboard exports pennants / draft / trade fields so lenses can re-score
 

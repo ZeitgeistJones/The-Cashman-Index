@@ -1,18 +1,26 @@
 name: Refresh ranking data
 
-# Rebuilds franchise / GM / exit datasets from MLB Stats API + Baseball Cube
-# payrolls, using the checked-in GM tenure file. Commits JSON back to the branch.
+# Rebuilds franchise / GM / exit / season datasets from MLB Stats API + Baseball
+# Cube payrolls, using the checked-in GM tenure file. Commits JSON back.
+#
+# The daily refresh-data workflow already rebuilds these indexes after a live
+# league-moves fetch. This weekly job is a lighter rankings-only safety net
+# (draft cache / payroll / season) without re-pulling all 30 clubs' transactions.
+#
+# Scheduled runs only fire on the repository's default branch.
 
 on:
   workflow_dispatch:
   schedule:
+    # Mondays, 11:30 UTC (after the daily 06:00 refresh-data window).
     - cron: "30 11 * * 1"
 
 permissions:
   contents: write
 
 concurrency:
-  group: refresh-rankings
+  # Shared with refresh-data so commit-push jobs cannot race.
+  group: refresh-site-data
   cancel-in-progress: false
 
 jobs:
