@@ -33,7 +33,8 @@ from build_moves import (  # noqa: E402
     load_bref_war,
     public_fields,
 )
-from classify_moves import classify_move  # noqa: E402
+from classify_moves import classify_move
+from reconcile_trades import reconcile, report  # noqa: E402
 from team_codes import (  # noqa: E402
     YANKEES_MLBAM_ID,
     all_team_ids,
@@ -154,6 +155,13 @@ def main() -> int:
         key=lambda m: (m["move_date"], m["team_id"], m["move_id"]), reverse=True
     )
 
+    # Score player movements, not club pairings, so buyer credit and seller
+    # charge are the same number by construction. Must run here, with every
+    # club's trades in hand: no single club can see the other side of its own
+    # deal, and multi-team trades are only coherent league-wide.
+    reconciliation = reconcile(all_trades)
+    report(reconciliation)
+
     league_payload = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "data_source": "mlb-stats-api+bref",
@@ -165,9 +173,11 @@ def main() -> int:
         "move_count": len(all_trades),
         "framing": (
             "Every club's trades scored the same way: during-tenure WAR for the "
-            "focal club minus WAR leavers produced for the receiving club "
-            "(symmetric horizons; league sum of net ≈ 0)."
+            "focal club minus the same WAR charged to whoever sent them. Credit and "
+            "charge are read from one per-player ledger, so the league sum of net "
+            "is zero by construction rather than by coincidence."
         ),
+        "reconciliation": {k: v for k, v in reconciliation.items() if k != "orphan_examples"},
         "moves": [public_fields(m) for m in all_trades],
     }
     out_league = DATA / "league_moves.json"
