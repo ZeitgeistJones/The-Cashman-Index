@@ -62,17 +62,24 @@ def channel_rows(moves: list[dict]) -> list[dict[str, Any]]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--start-year", type=int, default=2006)
+    parser.add_argument(
+        "--end",
+        type=str,
+        default=None,
+        help="Fetch through YYYY-MM-DD (default: weights as_of). Cron should pass UTC today.",
+    )
     parser.add_argument("--use-cache", action="store_true")
     parser.add_argument("--no-war", action="store_true")
     parser.add_argument("--pause", type=float, default=0.25)
     parser.add_argument("--dollars-per-war", type=float, default=DEFAULT_DOLLARS_PER_WAR)
     args = parser.parse_args()
 
-    today = dt.date(2026, 8, 2)
+    as_of = dt.date(2026, 8, 2)
     if (DATA / "weights.json").exists():
         raw = json.loads((DATA / "weights.json").read_text(encoding="utf-8"))
         if raw.get("as_of"):
-            today = dt.date.fromisoformat(str(raw["as_of"])[:10])
+            as_of = dt.date.fromisoformat(str(raw["as_of"])[:10])
+    today = dt.date.fromisoformat(args.end) if args.end else as_of
     start = dt.date(args.start_year, 1, 1)
     war_index = None if args.no_war else load_bref_war()
 

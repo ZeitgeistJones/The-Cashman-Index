@@ -91,6 +91,16 @@ def load_or_fetch_rows(
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--start-year", type=int, default=2006)
+    parser.add_argument(
+        "--end",
+        type=str,
+        default=None,
+        help=(
+            "Last calendar day to fetch transactions (YYYY-MM-DD). "
+            "Defaults to weights.json as_of for reproducible local rebuilds. "
+            "Daily cron must pass today's UTC date so the ledger keeps moving."
+        ),
+    )
     parser.add_argument("--use-cache", action="store_true")
     parser.add_argument("--no-war", action="store_true")
     parser.add_argument("--dollars-per-war", type=float, default=DEFAULT_DOLLARS_PER_WAR)
@@ -100,7 +110,9 @@ def main() -> int:
     args = parser.parse_args()
     load_as_of()
 
-    end = AS_OF
+    # Scoring pin (as_of) ≠ fetch window. Pinning both to as_of froze the live
+    # ledger at 2026-08-02 while cron happily re-scored the same stale trades.
+    end = dt.date.fromisoformat(args.end) if args.end else AS_OF
     start = dt.date(args.start_year, 1, 1)
     team_ids = _parse_teams(args.teams)
 
@@ -168,6 +180,7 @@ def main() -> int:
         "scope": "league_trades",
         "season_range": [start.year, end.year],
         "as_of": AS_OF.isoformat(),
+        "fetched_through": end.isoformat(),
         "dollars_per_war": args.dollars_per_war,
         "team_count": len(team_ids),
         "move_count": len(all_trades),
@@ -190,6 +203,7 @@ def main() -> int:
             "data_source": "mlb-stats-api+bref",
             "season_range": [start.year, end.year],
             "as_of": AS_OF.isoformat(),
+            "fetched_through": end.isoformat(),
             "dollars_per_war": args.dollars_per_war,
             "move_count": len(yankees_all),
             "moves": [public_fields(m) for m in yankees_all],

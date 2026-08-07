@@ -12,6 +12,10 @@ name: Refresh moves data
 # If the default branch changes away from the branch that carries this file,
 # merge (or re-point default) before expecting cron to keep the ledger fresh.
 # workflow_dispatch works on any branch that has this workflow.
+#
+# Fetch window vs scoring pin: builders take --end for the MLB Stats API pull.
+# Cron passes UTC today. weights.json as_of stays the methodology pin (complete
+# seasons / contract flags) and must NOT freeze the transaction end date.
 
 on:
   workflow_dispatch:
@@ -48,19 +52,17 @@ jobs:
           python scripts/test_scoring.py
           python scripts/test_season_index.py
 
-      # Live fetch (no --use-cache): production refresh must pull new
-      # transactions through "today". Writes data/league_moves.json and, when
-      # NYY is included (always in a full run), data/moves.json. Per-team raw
-      # rows land under data/transactions/by_team/ (gitignored) for reuse below.
+      # Live fetch through UTC today. Scoring pin (weights as_of) stays separate
+      # so last-complete-season math does not freeze the transaction pull.
       - name: Build league moves + Yankees ledger
-        run: python scripts/build_league_moves.py --start-year 2006
+        run: python scripts/build_league_moves.py --start-year 2006 --end "$(date -u +%F)"
 
       - name: Build trade index
         run: python scripts/build_trade_index.py
 
       # Reuses the fresh by_team caches from the league-moves step above.
       - name: Build acquisition index
-        run: python scripts/build_league_acquisition.py --use-cache --start-year 2006
+        run: python scripts/build_league_acquisition.py --use-cache --start-year 2006 --end "$(date -u +%F)"
 
       - name: Build draft, rankings, and season indexes
         run: |

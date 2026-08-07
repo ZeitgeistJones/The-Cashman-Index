@@ -775,9 +775,16 @@ def main() -> int:
                         help="keep every transaction type, including roster paperwork")
     parser.add_argument("--strict-overrides", action="store_true",
                         help="exit non-zero if any override matched no move (for CI)")
+    parser.add_argument(
+        "--end",
+        type=str,
+        default=None,
+        help="Fetch through YYYY-MM-DD (default: weights as_of). Cron should pass UTC today.",
+    )
     args = parser.parse_args()
 
-    today = load_as_of()
+    as_of = load_as_of()
+    today = dt.date.fromisoformat(args.end) if args.end else as_of
     if args.years is not None:
         start = today.replace(year=today.year - args.years)
     else:
@@ -799,7 +806,7 @@ def main() -> int:
     moves = group_into_moves(rows, all_types=args.all_types)
     print(f"Grouped into {len(moves)} moves", file=sys.stderr)
 
-    applied, unmatched = apply_overrides(moves, args.overrides, as_of=today)
+    applied, unmatched = apply_overrides(moves, args.overrides, as_of=as_of)
     if applied:
         print(f"Applied {applied} manual contract override(s)", file=sys.stderr)
 
@@ -811,7 +818,7 @@ def main() -> int:
         # Overrides win over Baseball Reference salaries, so re-apply and
         # recompute surplus for anything the user specified by hand.
         if applied:
-            apply_overrides(moves, args.overrides, as_of=today)
+            apply_overrides(moves, args.overrides, as_of=as_of)
             for move in moves:
                 if move["salary_source"] == "override" and move["war_acquired"] is not None:
                     move["surplus_value"] = round(
@@ -836,7 +843,8 @@ def main() -> int:
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "data_source": "mlb-stats-api+bref",
         "season_range": [start.year, today.year],
-        "as_of": today.isoformat(),
+        "as_of": as_of.isoformat(),
+        "fetched_through": today.isoformat(),
         "dollars_per_war": args.dollars_per_war,
         "move_count": len(moves),
         "moves": [public_fields(m) for m in moves],
