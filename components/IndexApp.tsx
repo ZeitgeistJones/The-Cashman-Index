@@ -9,6 +9,7 @@ import FranchiseTable from "@/components/FranchiseTable";
 import GmTable from "@/components/GmTable";
 import LensToggle from "@/components/LensToggle";
 import MovesTable from "@/components/MovesTable";
+import SeasonLedger from "@/components/SeasonLedger";
 import TradeTable from "@/components/TradeTable";
 import YearlySecurity from "@/components/YearlySecurity";
 import {
@@ -36,6 +37,7 @@ type Tab =
   | "franchises"
   | "gms"
   | "yearly"
+  | "seasons"
   | "draft"
   | "trades"
   | "acquisition"
@@ -46,6 +48,7 @@ const TABS: { id: Tab; label: string; short: string }[] = [
   { id: "franchises", label: "Clubs", short: "Clubs" },
   { id: "gms", label: "GMs", short: "GMs" },
   { id: "yearly", label: "By year", short: "Year" },
+  { id: "seasons", label: "Every season", short: "Seasons" },
   { id: "draft", label: "Draft", short: "Draft" },
   { id: "trades", label: "Trades", short: "Trades" },
   { id: "acquisition", label: "How they acquire", short: "Acquire" },
@@ -280,6 +283,14 @@ export default function IndexApp({
           />
         </section>
       )}
+      {tab === "seasons" && (
+        <section className="panel" role="tabpanel">
+          <h2>Every executive-season, side by side</h2>
+          <p className="scroll-hint">Tap a name to see that executive's whole career.</p>
+          <SeasonLedger seasonIndex={seasonIndex} yearly={yearly} />
+        </section>
+      )}
+
 
       {tab === "draft" && (
         <section>

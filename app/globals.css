@@ -880,3 +880,120 @@ footer p {
     color: var(--accent);
   }
 }
+
+/* ---- Every-season ledger ------------------------------------------------ */
+
+.season-ledger .lede {
+  margin: 0 0 1rem;
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.ledger-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.ledger-controls .toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.ledger-controls .count {
+  margin-left: auto;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.clear-focus,
+.link-name {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+  text-align: left;
+}
+
+.clear-focus:hover,
+.link-name:hover {
+  text-decoration: underline;
+}
+
+.focus-timeline {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.1rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.focus-timeline h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.focus-summary {
+  margin: 0.3rem 0 0.9rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Bars run bottom-up: taller means the season placed higher. */
+.spark {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 90px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+}
+
+.spark li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  min-width: 18px;
+  flex: 1 1 18px;
+}
+
+.spark .bar {
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+  background: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.spark .bar.top { background: var(--positive); }
+.spark .bar.bottom { background: var(--negative); }
+.spark .bar.none {
+  background: repeating-linear-gradient(
+    45deg, var(--border), var(--border) 2px, transparent 2px, transparent 4px
+  );
+  height: 100% !important;
+  opacity: 0.5;
+}
+
+.spark .yr {
+  margin-top: 0.25rem;
+  font-size: 0.6rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.empty-note {
+  padding: 2rem 0;
+  color: var(--muted);
+}
