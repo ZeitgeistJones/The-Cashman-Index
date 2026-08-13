@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BrandMark from "@/components/BrandMark";
 import weights from "@/data/weights.json";
 
 export const metadata: Metadata = {
-  title: "About · Front Office Index",
+  title: "About",
   description:
     "Methodology for the Front Office Index: composite weights, franchise vs GM scoring, 2020 treatment, and what we intentionally leave out.",
 };
@@ -21,7 +22,10 @@ export default function AboutPage() {
   return (
     <main className="about">
       <p className="about-nav">
-        <Link href="/">← Front Office Index</Link>
+        <Link href="/" className="brand-lockup about-brand">
+          <BrandMark size={22} />
+          Front Office Index
+        </Link>
       </p>
 
       <header>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import AcquisitionPanel from "@/components/AcquisitionPanel";
+import BrandMark from "@/components/BrandMark";
 import DraftTable from "@/components/DraftTable";
 import ExitLedger from "@/components/ExitLedger";
 import FranchiseTable from "@/components/FranchiseTable";
@@ -197,7 +198,10 @@ export default function IndexApp({
     <main>
       <header>
         <div className="site-header-row">
-          <h1>Front Office Index</h1>
+          <h1 className="brand-lockup">
+            <BrandMark size={36} />
+            Front Office Index
+          </h1>
           <Link href="/about" className="about-link">
             About
           </Link>

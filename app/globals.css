@@ -81,9 +81,21 @@ main.about {
 
 .site-header-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.brand-mark {
+  flex: 0 0 auto;
+  display: block;
 }
 
 header h1 {
@@ -142,6 +154,17 @@ header p.tagline {
 
 .about-nav a:hover {
   color: var(--accent);
+}
+
+.about-nav .about-brand {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  width: fit-content;
+}
+
+.about-nav .about-brand:hover {
+  opacity: 0.85;
 }
 
 .about-section {

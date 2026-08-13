@@ -33,6 +33,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/). Dates are UTC co
 
 ### Added
 
+- Favicon, Apple icon, Open Graph card, manifest, and header mark (navy diamond)
 - Every season tab — all executive-seasons in one pool (`b4c0752`)
 - Success-lens toggles (Balanced / October / Value / Builder) (`f936865`)
 - Start-here strip, construction grades, post-verify commit rule
