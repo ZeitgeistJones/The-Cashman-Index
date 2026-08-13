@@ -171,7 +171,7 @@ export default function YearlySecurity({
                   <TipTh label="Seasons" help={COLUMN_TIPS.seasons} numeric static />
                   <TipTh label="Win%" help={COLUMN_TIPS.winPct} numeric static />
                   <TipTh
-                    label="Thrift vs era"
+                    label="Thrift vs league"
                     help={COLUMN_TIPS.thrift}
                     numeric
                     static
@@ -233,7 +233,7 @@ export default function YearlySecurity({
                     <TipTh label="Seasons" help={COLUMN_TIPS.seasons} numeric static />
                     <TipTh label="Win%" help={COLUMN_TIPS.winPct} numeric static />
                     <TipTh
-                      label="Thrift vs era"
+                      label="Thrift vs league"
                       help={COLUMN_TIPS.thrift}
                       numeric
                       static

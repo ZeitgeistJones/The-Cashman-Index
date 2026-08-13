@@ -167,10 +167,10 @@ def raw_season_payroll_efficiency(row: dict[str, Any]) -> float | None:
     return wins_per_100m(paced, float(pay))
 
 
-def attach_era_relative_payroll(seasons: list[dict[str, Any]]) -> dict[int, float]:
-    """Attach per-season raw PE and era-relative ratio (raw / league-year mean).
+def attach_league_relative_payroll(seasons: list[dict[str, Any]]) -> dict[int, float]:
+    """Attach per-season raw PE and league-relative ratio (raw / that year's mean).
 
-    Mutates each season row: payroll_efficiency_raw, payroll_efficiency_era.
+    Mutates each season row: payroll_efficiency_raw, payroll_efficiency_lg.
     Returns {year: league mean raw PE} for tests/diagnostics.
     """
     by_year: dict[int, list[float]] = {}
@@ -189,9 +189,9 @@ def attach_era_relative_payroll(seasons: list[dict[str, Any]]) -> dict[int, floa
         )
         mean = year_mean.get(int(row["season"]))
         if raw is None or not mean or mean <= 0:
-            row["payroll_efficiency_era"] = None
+            row["payroll_efficiency_lg"] = None
         else:
-            row["payroll_efficiency_era"] = round(raw / mean, 4)
+            row["payroll_efficiency_lg"] = round(raw / mean, 4)
     return year_mean
 
 
@@ -199,11 +199,11 @@ def payroll_efficiency_from_seasons(
     season_rows: list[dict[str, Any]],
     year_means: dict[int, float] | None = None,
 ) -> tuple[float, int | None]:
-    """Era-relative thrift: mean of (wins/$100M ÷ that year's league mean).
+    """League-relative thrift: mean of (wins/$100M ÷ that year's league mean).
 
     Seasons missing payroll are dropped. 1.0 ≈ league-average thrift for the
     years played; >1 is thriftier than peers that season. Prefers pre-attached
-    ``payroll_efficiency_era``; otherwise uses ``year_means`` when provided.
+    ``payroll_efficiency_lg``; otherwise uses ``year_means`` when provided.
     """
     ratios: list[float] = []
     payroll_sum = 0
@@ -211,14 +211,14 @@ def payroll_efficiency_from_seasons(
         pay = row.get("payroll")
         if not pay:
             continue
-        era = row.get("payroll_efficiency_era")
-        if era is None:
+        rel = row.get("payroll_efficiency_lg")
+        if rel is None:
             raw = raw_season_payroll_efficiency(row)
             mean = (year_means or {}).get(int(row["season"]))
             if raw is None or not mean or mean <= 0:
                 continue
-            era = raw / mean
-        ratios.append(float(era))
+            rel = raw / mean
+        ratios.append(float(rel))
         payroll_sum += int(pay)
     if not ratios or payroll_sum <= 0:
         return 0.0, None

@@ -36,7 +36,7 @@ SCRIPTS = REPO / "scripts"
 CLOSED_MARKET_TOL = 0.05   # |league net| as a share of WAR credited
 SYMMETRY_TOL = 1.10        # charged / credited
 MISSING_Z_TOL = 0.25       # |z| a missing component may occupy
-ERA_CORR_TOL = 0.20        # |corr(tenure era, payroll efficiency)|
+ERA_CORR_TOL = 0.20        # |corr(tenure midpoint year, payroll efficiency)|
 
 results: list[tuple[str, bool | None, str]] = []
 
@@ -165,7 +165,7 @@ def era_neutrality() -> tuple[bool | None, str]:
     """Wins per dollar must not correlate with when a GM happened to work.
 
     A win cost roughly half as much in 2006 as in 2025, so raw wins/$100M ranks
-    executives largely by era. This is the heaviest-weighted component.
+    executives largely by decade. This is the heaviest-weighted component.
     """
     gms = rows_of(load("gm_index.json"), "rows", "gms", "index")
     tenures = rows_of(load("gm_tenures.json"), "stints", "rows", "tenures")
@@ -192,7 +192,7 @@ def era_neutrality() -> tuple[bool | None, str]:
         and r["payroll_efficiency"]
     ]
     if len(pairs) < 10:
-        return None, f"only {len(pairs)} GMs with era and efficiency"
+        return None, f"only {len(pairs)} GMs with tenure year and efficiency"
     r = pearson([p[0] for p in pairs], [p[1] for p in pairs])
     return (
         abs(r) <= ERA_CORR_TOL,
@@ -314,7 +314,7 @@ CHECKS = [
     ("closed market (league net WAR ~ 0)", closed_market),
     ("trade symmetry (charged ~ credited)", trade_symmetry),
     ("missing component is not scored as zero", missing_is_not_zero),
-    ("payroll efficiency is era-neutral", era_neutrality),
+    ("payroll efficiency is year-neutral", era_neutrality),
     ("no wall-clock reads in builders", pinned_as_of),
     ("all indexes share one season window", consistent_window),
     ("small-sample shrink applied everywhere", shrink_parity),

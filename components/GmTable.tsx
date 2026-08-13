@@ -39,7 +39,7 @@ const COLUMNS: {
   { key: "win_pct", label: "Win%", numeric: true, help: COLUMN_TIPS.winPct },
   {
     key: "payroll_efficiency",
-    label: "Thrift vs era",
+    label: "Thrift vs league",
     numeric: true,
     help: COLUMN_TIPS.thrift,
   },

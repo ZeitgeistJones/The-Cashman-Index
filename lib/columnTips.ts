@@ -11,7 +11,7 @@ export const COLUMN_TIPS = {
     "Sum of playoff depth scores (wild card = 1 … World Series = 4) across seasons",
   winPct: "Wins ÷ games over attributed seasons",
   thrift:
-    "Wins per $100M of opening-day payroll, divided by that year’s league mean, then averaged (1.0 ≈ era-average thrift)",
+    "Wins per $100M of opening-day payroll, divided by that year’s league mean, then averaged (1.0 ≈ league-average thrift)",
   draftVos:
     "Draft value over slot — WAR vs historical expectation for that pick’s slot (franchise-tenure WAR for the drafting club)",
   tradeYr:

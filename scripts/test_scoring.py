@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import datetime as dt
 
 from scoring import (
-    attach_era_relative_payroll,
+    attach_league_relative_payroll,
     attach_rates,
     composite_scores,
     efficiency_wins,
@@ -187,22 +187,22 @@ def test_rank_ties() -> None:
     check(ranks == [1, 1, 3], f"tied scores share rank 1, got {ranks}")
 
 
-def test_payroll_efficiency_era_relative() -> None:
+def test_payroll_efficiency_league_relative() -> None:
     seasons = [
         {"season": 2010, "wins": 90, "losses": 72, "payroll": 50_000_000},
         {"season": 2010, "wins": 70, "losses": 92, "payroll": 100_000_000},
         {"season": 2024, "wins": 90, "losses": 72, "payroll": 200_000_000},
         {"season": 2024, "wins": 70, "losses": 92, "payroll": 300_000_000},
     ]
-    means = attach_era_relative_payroll(seasons)
+    means = attach_league_relative_payroll(seasons)
     check(2010 in means and 2024 in means, "year means present")
     # Cheap 2010 club should be >1 relative to 2010 mean.
-    check(seasons[0]["payroll_efficiency_era"] > 1.0, "cheap 2010 above era mean")
-    # Aggregate for team that played both eras as the cheap club each year.
+    check(seasons[0]["payroll_efficiency_lg"] > 1.0, "cheap 2010 above league mean")
+    # Aggregate for team that played both decades as the cheap club each year.
     cheap = [seasons[0], seasons[2]]
     eff, pay = payroll_efficiency_from_seasons(cheap, means)
     check(pay == 250_000_000, "payroll sum")
-    check(eff > 1.0, f"era-avg thrift > 1, got {eff}")
+    check(eff > 1.0, f"league-avg thrift > 1, got {eff}")
     empty_eff, empty_sum = payroll_efficiency_from_seasons(
         [{"season": 2022, "wins": 80, "losses": 82, "payroll": None}], means
     )
@@ -239,22 +239,22 @@ def test_era_corr_improves_on_synthetic() -> None:
         * sum((y - my) ** 2 for _, y in raw_pairs)
     ) ** 0.5
     raw_corr = num / den
-    attach_era_relative_payroll(seasons)
-    era_pairs = [
-        (r["season"], r["payroll_efficiency_era"])
+    attach_league_relative_payroll(seasons)
+    lg_pairs = [
+        (r["season"], r["payroll_efficiency_lg"])
         for r in seasons
-        if r.get("payroll_efficiency_era") is not None
+        if r.get("payroll_efficiency_lg") is not None
     ]
-    mx = statistics.mean(x for x, _ in era_pairs)
-    my = statistics.mean(y for _, y in era_pairs)
-    num = sum((x - mx) * (y - my) for x, y in era_pairs)
+    mx = statistics.mean(x for x, _ in lg_pairs)
+    my = statistics.mean(y for _, y in lg_pairs)
+    num = sum((x - mx) * (y - my) for x, y in lg_pairs)
     den = (
-        sum((x - mx) ** 2 for x, _ in era_pairs)
-        * sum((y - my) ** 2 for _, y in era_pairs)
+        sum((x - mx) ** 2 for x, _ in lg_pairs)
+        * sum((y - my) ** 2 for _, y in lg_pairs)
     ) ** 0.5
-    era_corr = num / den
+    lg_corr = num / den
     check(raw_corr < -0.3, f"synthetic raw corr should be strongly negative, got {raw_corr}")
-    check(abs(era_corr) < abs(raw_corr) / 2, f"era corr {era_corr} should be much closer to 0 than {raw_corr}")
+    check(abs(lg_corr) < abs(raw_corr) / 2, f"league corr {lg_corr} should be much closer to 0 than {raw_corr}")
 
 
 def test_last_complete_season() -> None:
@@ -311,21 +311,21 @@ def main() -> int:
     test_legitimate_zero_trade_net_is_present()
     test_tenure_shrink()
     test_rank_ties()
-    test_payroll_efficiency_era_relative()
+    test_payroll_efficiency_league_relative()
     test_era_corr_improves_on_synthetic()
     test_last_complete_season()
     test_lens_presets()
-    # Franchise golden check runs after rebuild; skip if PE scale looks pre-era.
+    # Franchise golden check runs after rebuild; skip if PE scale looks pre-relativization.
     import json
     from pathlib import Path
 
     root = Path(__file__).resolve().parent.parent
     payload = json.loads((root / "data" / "franchise_index.json").read_text(encoding="utf-8"))
     sample_pe = float(payload["franchises"][0].get("payroll_efficiency") or 0)
-    if sample_pe < 5:  # era-relative scale is ~0.5–2
+    if sample_pe < 5:  # league-relative scale is ~0.5–2
         test_balanced_matches_franchise_index()
     else:
-        print("skip franchise golden (pre-era payroll scale still on disk)")
+        print("skip franchise golden (pre-relativization payroll scale still on disk)")
     print("all ranking checks passed")
     return 0
 

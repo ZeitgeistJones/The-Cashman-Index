@@ -28,7 +28,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from scoring import (
     ROUND_DEPTH,
-    attach_era_relative_payroll,
+    attach_league_relative_payroll,
     attach_rates,
     category_ranks,
     composite_scores,
@@ -1081,9 +1081,9 @@ def main() -> int:
         write_json(seasons_path, payload)
 
     global _YEAR_PE_MEANS
-    _YEAR_PE_MEANS = attach_era_relative_payroll(seasons)
+    _YEAR_PE_MEANS = attach_league_relative_payroll(seasons)
     print(
-        f"era-relative payroll means for {len(_YEAR_PE_MEANS)} seasons",
+        f"league-relative payroll means for {len(_YEAR_PE_MEANS)} seasons",
         file=sys.stderr,
     )
 

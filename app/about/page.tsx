@@ -150,10 +150,10 @@ export default function AboutPage() {
             Aggregate to franchise or GM through the last <em>complete</em>{" "}
             championship season (drop the in-progress year before October).
             Win% = wins / games; title / pennant / depth rates = counts ÷
-            seasons. Payroll thrift is <em>era-relative</em>: paced wins /
+            seasons. Payroll thrift is <em>league-relative</em>: paced wins /
             $100M for each team-season, divided by that year&apos;s league mean,
             then averaged over the tenure (missing-payroll years drop out). 1.0
-            ≈ average thrift for the eras played; early low-payroll decades no
+            ≈ average thrift for the years played; early low-payroll decades no
             longer look automatically thrifty.
           </li>
           <li>
@@ -189,7 +189,7 @@ export default function AboutPage() {
         <h2 id="examples">Plain examples</h2>
         <ul className="about-examples">
           <li>
-            <strong>Cheap contention vs expensive titles.</strong> Era-relative
+            <strong>Cheap contention vs expensive titles.</strong> League-relative
             payroll thrift is the largest weight ({pct(COMPONENTS.payroll_efficiency)}
             ). A club that wins a lot relative to that year&apos;s league payroll
             bar outranks a bigger spender with the same October hardware on that
@@ -317,7 +317,7 @@ export default function AboutPage() {
             other exits — not the live active-GM board on that calendar day.
           </li>
           <li>
-            <strong>Payroll thrift is era-relative.</strong> Raw wins/$100M
+            <strong>Payroll thrift is league-relative.</strong> Raw wins/$100M
             trends down as payrolls inflate; we divide each season by that
             year&apos;s league mean so early tenures are not automatic thrift
             leaders. A top-payroll club is still structurally weak on this

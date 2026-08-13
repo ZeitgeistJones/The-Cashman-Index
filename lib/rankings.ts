@@ -253,7 +253,7 @@ export function formatResume(r: Resume): string {
     r.payroll_efficiency !== null &&
     r.payroll_efficiency !== undefined &&
     !Number.isNaN(r.payroll_efficiency)
-      ? `${r.payroll_efficiency.toFixed(2)}× era`
+      ? `${r.payroll_efficiency.toFixed(2)}× lg`
       : "—";
   return `${r.world_series ?? 0} WS · ${r.pennants ?? 0} pennants · depth/yr ${depthRate} · ${formatPct(r.win_pct)} · thrift ${thrift} · ${r.seasons ?? 0} seasons`;
 }

@@ -12,14 +12,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/). Dates are UTC co
   attribution (multi-team residual ~+32 / 0.7%; harness 9/9)
 - Non-trade moves no longer duplicate on Stats API row id
 - Composite scoring treats missing components as null (drop + renormalize), not fake 0.0
-- Payroll thrift is era-relative (wins/$100M ÷ that year’s league mean)
+- Payroll thrift is league-relative (wins/$100M ÷ that year’s league mean)
 - Yearly/exit tenure-shrink like GM board; as-of WAR clips when BRef loads
 - Scored outputs pin `as_of` from `weights.json`; windows `[2006, 2025]` everywhere
 - Exit ledger “Exit-pool index”; GmTable shrink toward 0
 
 ### Changed
 
-- About: era thrift, winning-block ~0.41, player-movement trades, Every season tab
+- About: league-relative thrift, winning-block ~0.41, player-movement trades, Every season tab
+- “Thrift vs era” → “Thrift vs league” (ERA collision)
 - Lens UI states winning components overlap — ranks barely move between lenses
 - Every season: clearer “too young to grade” filter, `#rank/N` + mid-season hint, mobile spark
 - `check_invariants.py` in CI; audit doc post-fix status table
