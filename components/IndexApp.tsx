@@ -43,7 +43,8 @@ type Tab =
   | "exits"
   | "moves";
 
-type GmView = "career" | "by-year" | "best-seasons";
+type GmView = "career" | "after-year" | "season-grades";
+type SeasonGradeYear = number | "all";
 
 const TABS: { id: Tab; label: string; short: string }[] = [
   { id: "franchises", label: "Clubs", short: "Clubs" },
@@ -56,9 +57,9 @@ const TABS: { id: Tab; label: string; short: string }[] = [
 ];
 
 const GM_VIEWS: { id: GmView; label: string; short: string }[] = [
-  { id: "career", label: "Career board", short: "Career" },
-  { id: "by-year", label: "By year", short: "Year" },
-  { id: "best-seasons", label: "Best seasons", short: "Seasons" },
+  { id: "career", label: "Career", short: "Career" },
+  { id: "after-year", label: "After this year", short: "After" },
+  { id: "season-grades", label: "Season grades", short: "Seasons" },
 ];
 
 function whyTopFranchise(row: FranchiseRow): string[] {
@@ -129,6 +130,24 @@ export default function IndexApp({
   const [tab, setTab] = useState<Tab>("franchises");
   const [gmView, setGmView] = useState<GmView>("career");
   const [lens, setLens] = useState<LensId>(DEFAULT_LENS);
+  const latestResumeYear =
+    yearly.years[yearly.years.length - 1]?.season ?? 2025;
+  const constructionYears = seasonIndex?.years ?? [];
+  const [afterYear, setAfterYear] = useState(latestResumeYear);
+  const [seasonGradeYear, setSeasonGradeYear] =
+    useState<SeasonGradeYear>("all");
+
+  function openAfterYear(year?: number) {
+    if (year != null) setAfterYear(year);
+    setGmView("after-year");
+    setTab("gms");
+  }
+
+  function openSeasonGrades(year?: number) {
+    setSeasonGradeYear(year ?? "all");
+    setGmView("season-grades");
+    setTab("gms");
+  }
 
   function openGms(view: GmView = "career") {
     setGmView(view);
@@ -258,9 +277,9 @@ export default function IndexApp({
             <button
               type="button"
               className="start-here-cta secondary"
-              onClick={() => openGms("by-year")}
+              onClick={() => openGms("after-year")}
             >
-              Grades by year
+              After this year
             </button>
             <Link href="/about" className="start-here-more">
               How scoring works
@@ -323,9 +342,9 @@ export default function IndexApp({
           {gmView === "career" && (
             <>
               <p className="section-note">
-                Career grades. Short tenures are shrunk so a one-year spike does
-                not win by default. Blank draft or trade cells are coverage gaps
-                (pre-2009 trades, immature drafts), not zeros.
+                Whole career, right now. Short tenures are shrunk so a one-year
+                spike does not win by default. After this year freezes this
+                recipe at a past season. Season grades score one year of moves.
               </p>
               <p className="scroll-hint">Swipe tables sideways for more columns.</p>
               <LensToggle value={lens} onChange={chooseLens} />
@@ -333,21 +352,74 @@ export default function IndexApp({
             </>
           )}
 
-          {gmView === "by-year" && (
+          {gmView === "after-year" && (
             <YearlySecurity
               data={yearly}
               seasonData={seasonIndex}
               lensId={lens}
               onLensChange={chooseLens}
+              lockedMode="resume"
+              season={afterYear}
+              onSeasonChange={setAfterYear}
+              onOpenSeasonGrades={(year) => openSeasonGrades(year)}
             />
           )}
 
-          {gmView === "best-seasons" && (
+          {gmView === "season-grades" && (
             <>
-              <p className="scroll-hint">
-                Tap a name to see that executive&apos;s whole career.
+              <p className="section-note">
+                One year of front-office moves — not a career grade. All years
+                ranks every FO season together. For standing after a season,
+                use{" "}
+                <button
+                  type="button"
+                  className="link-name"
+                  onClick={() => openAfterYear()}
+                >
+                  After this year
+                </button>
+                .
               </p>
-              <SeasonLedger seasonIndex={seasonIndex} yearly={yearly} />
+              <label className="filter-row">
+                Year
+                <select
+                  value={seasonGradeYear === "all" ? "all" : String(seasonGradeYear)}
+                  onChange={(e) => {
+                    const v = e.target.value;
+                    setSeasonGradeYear(v === "all" ? "all" : Number(v));
+                  }}
+                  aria-label="Season grades year"
+                >
+                  <option value="all">All years</option>
+                  {constructionYears.map((y) => (
+                    <option key={y.season} value={y.season}>
+                      {y.season}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              {seasonGradeYear === "all" ? (
+                <>
+                  <p className="scroll-hint">
+                    Tap a name to see that executive&apos;s whole run of season
+                    grades.
+                  </p>
+                  <SeasonLedger
+                    seasonIndex={seasonIndex}
+                    yearly={yearly}
+                    onOpenAfterYear={() => openAfterYear()}
+                  />
+                </>
+              ) : (
+                <YearlySecurity
+                  data={yearly}
+                  seasonData={seasonIndex}
+                  lockedMode="construction"
+                  season={seasonGradeYear}
+                  hideSeasonSelect
+                  onOpenAfterYear={(year) => openAfterYear(year)}
+                />
+              )}
             </>
           )}
         </section>

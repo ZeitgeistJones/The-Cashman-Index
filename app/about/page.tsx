@@ -82,12 +82,11 @@ export default function AboutPage() {
       <section className="about-section" aria-labelledby="lenses">
         <h2 id="lenses">Success lenses</h2>
         <p>
-          On <strong>Clubs</strong> and <strong>GMs</strong> (Career board and
-          By year · career grade), compact lens pills sit immediately above the
-          ranking table (after the short intro). They reweight the same seven
-          components — no new metrics. Guardrails: every component stays on (no
-          zeros), and no single weight exceeds ~42%. Hover a pill for that
-          lens&apos;s blurb.
+          On <strong>Clubs</strong> and <strong>GMs</strong> (Career and After
+          this year), compact lens pills sit immediately above the ranking table
+          (after the short intro). They reweight the same seven components — no
+          new metrics. Guardrails: every component stays on (no zeros), and no
+          single weight exceeds ~42%. Hover a pill for that lens&apos;s blurb.
         </p>
         <p>
           <strong>Lenses move less than they look.</strong> Titles, pennants,
@@ -111,8 +110,9 @@ export default function AboutPage() {
         <p>
           Draft, Trades, Acquisition, Exits, and Trade detail keep
           their own recipes and are <em>not</em> reweighted by these lenses.
-          Under <strong>GMs</strong>, switch Career / By year / Best seasons —
-          only Career and By year&apos;s career-grade view take lenses.
+          Under <strong>GMs</strong>, switch Career / After this year / Season
+          grades — only Career and After this year take lenses. Season grades
+          score one year of moves and ignore the lens.
         </p>
       </section>
 
@@ -136,8 +136,8 @@ export default function AboutPage() {
         <p>
           With a prior of {weights.tenure_prior_seasons} seasons, a one-year
           spike is damped toward <em>0</em> (not the peer mean); a long book
-          approaches its raw composite. Yearly career grades and exit-pool
-          scores use the same shrink. Rows with fewer than{" "}
+          approaches its raw composite. After-this-year freeze-frames and
+          exit-pool scores use the same shrink. Rows with fewer than{" "}
           {weights.min_seasons_for_full_rank} seasons are flagged as small
           samples but still ranked.
         </p>
@@ -162,10 +162,10 @@ export default function AboutPage() {
           </li>
           <li>
             Attach draft value-over-slot (franchise-tenure WAR vs slot curve) and
-            peer trade net WAR per season from the league trade ledger. Yearly
-            and exit resumes cut draft picks and trades at the as-of date, and
-            clip observed WAR to that cutoff so living rebuild totals cannot
-            leak into a historical score.
+            peer trade net WAR per season from the league trade ledger. After
+            this year and exit resumes cut draft picks and trades at the as-of
+            date, and clip observed WAR to that cutoff so living rebuild totals
+            cannot leak into a historical score.
           </li>
           <li>
             Z-score each of the seven components across the peer set; weighted
@@ -220,13 +220,20 @@ export default function AboutPage() {
       </section>
 
       <section className="about-section" aria-labelledby="every-season">
-        <h2 id="every-season">Every season ledger</h2>
+        <h2 id="every-season">Season grades</h2>
         <p>
-          The <strong>GMs → Best seasons</strong> view is a single-season
-          leaderboard: every graded executive-year since {weights.window_start}{" "}
-          in one pool.
-          Trade cells for 2006–2008 stay blank (ledger begins 2009); immature
-          draft classes stay blank until the six-year lag. Columns lead with{" "}
+          Under <strong>GMs</strong>, three tabs answer three questions.{" "}
+          <strong>Career</strong> is the whole book right now.{" "}
+          <strong>After this year</strong> is the same recipe frozen after a
+          chosen season — earlier clubs still count.{" "}
+          <strong>Season grades</strong> scores one year of moves, not the
+          career.
+        </p>
+        <p>
+          Season grades defaults to <strong>All years</strong>: every graded
+          executive-year since {weights.window_start} in one pool. Trade cells
+          for 2006–2008 stay blank (ledger begins 2009); immature draft classes
+          stay blank until the six-year lag. Columns lead with{" "}
           <strong>#</strong> (all-time place in that pool — #1 is the best FO
           season on the site), then executive, year, and <strong>Score</strong>{" "}
           (construction grade). <strong>In that year</strong> is only the peer
@@ -235,18 +242,20 @@ export default function AboutPage() {
           column headers for short definitions.
         </p>
         <p>
-          Seasons still too young to grade (immature drafts) hide by default and
-          do not take an all-time number.
+          Pick a single year to see that season&apos;s construction table
+          (trades, draft, other arrivals, own stock). Seasons still too young to
+          grade (immature drafts) hide by default on All years and do not take
+          an all-time number.
         </p>
       </section>
 
       <section className="about-section" aria-labelledby="season-grade">
         <h2 id="season-grade">Single-season construction grades</h2>
         <p>
-          The Yearly tab has two modes. <strong>Resume as of season Y</strong>{" "}
-          is the career-to-date rate index through that year (same composite
-          spirit as the GM board). <strong>Season construction</strong> answers
-          a different question: how good was FO craft <em>in</em> season Y?
+          <strong>After this year</strong> is a career freeze-frame through
+          season Y (same composite as the GM board, tenure-shrunk, lenses on).{" "}
+          <strong>Season grades</strong> answers a different question: how good
+          was FO craft <em>in</em> season Y?
         </p>
         <p>
           A championship season mixes inherited players from a prior{" "}

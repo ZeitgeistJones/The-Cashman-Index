@@ -1078,6 +1078,12 @@ footer p {
   font-variant-numeric: tabular-nums;
 }
 
+.section-note .link-name,
+.lede .link-name {
+  display: inline;
+  font-size: inherit;
+}
+
 .clear-focus,
 .link-name {
   background: none;

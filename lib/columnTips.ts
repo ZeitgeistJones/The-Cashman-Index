@@ -38,8 +38,9 @@ export const COLUMN_TIPS = {
   exitResume: "Plain-language career rates through the exit date",
   exitPool:
     "Composite among exited GMs only — not the live active-GM board that day",
-  yearlyRank: "Rank among peers on this board for the selected season",
-  yearlyIndex: "Composite under the active lens (career grade or construction)",
+  yearlyRank: "Rank among peers on this board",
+  yearlyIndex:
+    "Board composite — After this year uses the success lens; Season grades do not",
   stockShare: "Share of club season WAR from this GM’s own regime stock",
   otherArrivals: "FA / waiver / other arrival WAR in the season window",
   clubYear: "Thin results strip — win% / depth / thrift for the Jul-1 chair that year",

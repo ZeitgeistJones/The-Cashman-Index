@@ -20,7 +20,7 @@ import {
   type YearlySeason,
 } from "@/lib/rankings";
 
-type Mode = "resume" | "construction";
+export type YearlyMode = "resume" | "construction";
 
 function bestConstructionSeason(years: SeasonYear[]): number | null {
   if (!years.length) return null;
@@ -40,27 +40,44 @@ export default function YearlySecurity({
   seasonData,
   lensId = "balanced",
   onLensChange,
+  lockedMode,
+  season: seasonProp,
+  onSeasonChange,
+  hideSeasonSelect = false,
+  onOpenSeasonGrades,
+  onOpenAfterYear,
 }: {
   data: YearlyFile;
   seasonData?: SeasonFile | null;
   lensId?: LensId;
   onLensChange?: (id: LensId) => void;
+  /** One question per mount — no inner career-vs-moves toggle. */
+  lockedMode: YearlyMode;
+  season?: number;
+  onSeasonChange?: (year: number) => void;
+  hideSeasonSelect?: boolean;
+  onOpenSeasonGrades?: (year: number) => void;
+  onOpenAfterYear?: (year: number) => void;
 }) {
   const years = data.years;
   const constructionYears = seasonData?.years ?? [];
-  const hasConstruction = constructionYears.length > 0;
-  const defaultConstruction = bestConstructionSeason(constructionYears);
-  const [mode, setMode] = useState<Mode>("resume");
-  const [season, setSeason] = useState(
-    years.length ? years[years.length - 1].season : 2006,
-  );
+  const isResume = lockedMode === "resume";
+  const seasonOptions = isResume
+    ? years.map((y) => y.season)
+    : constructionYears.map((y) => y.season);
+  const fallbackSeason = isResume
+    ? (years.length ? years[years.length - 1].season : 2006)
+    : (bestConstructionSeason(constructionYears) ?? 2006);
 
-  const seasonOptions = useMemo(() => {
-    if (mode === "construction" && hasConstruction) {
-      return constructionYears.map((y) => y.season);
-    }
-    return years.map((y) => y.season);
-  }, [mode, hasConstruction, constructionYears, years]);
+  const [internalSeason, setInternalSeason] = useState(
+    seasonProp ?? fallbackSeason,
+  );
+  const season = seasonProp ?? internalSeason;
+
+  function chooseSeason(year: number) {
+    if (onSeasonChange) onSeasonChange(year);
+    else setInternalSeason(year);
+  }
 
   const current: YearlySeason | undefined = useMemo(
     () => years.find((y) => y.season === season),
@@ -77,73 +94,81 @@ export default function YearlySecurity({
     const weights = lensWeights(lensId);
     return rescoreRows(current.leaderboard, weights, {
       tenurePrior: TENURE_PRIOR,
-    }).sort(
-      (a, b) => a.rank - b.rank || a.name.localeCompare(b.name),
-    );
+    }).sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name));
   }, [current, lensId]);
 
   const exits = current?.job_security.exits ?? [];
   const lensLabel = LENSES[lensId].label;
 
-  if (!years.length && !hasConstruction) {
+  if (isResume && !years.length) {
     return (
-      <p className="section-note">
-        No yearly index yet. Run the rankings pipeline.
-      </p>
+      <p className="section-note">No yearly index yet.</p>
+    );
+  }
+  if (!isResume && !constructionYears.length) {
+    return (
+      <p className="section-note">No season construction grades yet.</p>
     );
   }
 
   return (
     <>
-      <p className="section-note">
-        Two views of the same year. Career grade = how the GM looked through
-        that season (reweight with the lens pills above the ranking). Moves that
-        year = trades, draft, and other arrivals in the Nov–Oct window (value
-        counted for about {seasonData?.horizon_years ?? 3} years after each deal
-        — not reweighted by lens).
-      </p>
+      {isResume ? (
+        <p className="section-note">
+          <strong>Standing after {season}.</strong> Full career through this
+          season. Earlier clubs still count. For moves in {season} only, use{" "}
+          {onOpenSeasonGrades ? (
+            <button
+              type="button"
+              className="link-name"
+              onClick={() => onOpenSeasonGrades(season)}
+            >
+              Season grades
+            </button>
+          ) : (
+            "Season grades"
+          )}
+          .
+        </p>
+      ) : (
+        <p className="section-note">
+          Only moves in that Nov–Oct window. Not the career. Value counted for
+          about {seasonData?.horizon_years ?? 3} years after each deal — not
+          reweighted by lens. For career standing after {season}, use{" "}
+          {onOpenAfterYear ? (
+            <button
+              type="button"
+              className="link-name"
+              onClick={() => onOpenAfterYear(season)}
+            >
+              After this year
+            </button>
+          ) : (
+            "After this year"
+          )}
+          .
+        </p>
+      )}
       <p className="scroll-hint">Swipe tables sideways for more columns.</p>
 
-      <div className="filter-row mode-toggle">
-        <button
-          type="button"
-          className={mode === "resume" ? "active" : undefined}
-          onClick={() => {
-            setMode("resume");
-            if (years.length) setSeason(years[years.length - 1].season);
-          }}
-        >
-          Career grade to this year
-        </button>
-        <button
-          type="button"
-          className={mode === "construction" ? "active" : undefined}
-          disabled={!hasConstruction}
-          onClick={() => {
-            setMode("construction");
-            if (defaultConstruction != null) setSeason(defaultConstruction);
-          }}
-        >
-          Moves made for this year
-        </button>
-      </div>
+      {!hideSeasonSelect && seasonOptions.length > 0 ? (
+        <label className="filter-row">
+          Season
+          <select
+            value={season}
+            onChange={(e) => chooseSeason(Number(e.target.value))}
+            aria-label="Select season"
+          >
+            {seasonOptions.map((y) => (
+              <option key={y} value={y}>
+                {y}
+              </option>
+            ))}
+          </select>
+        </label>
+      ) : null}
 
-      <label className="filter-row">
-        Season
-        <select
-          value={season}
-          onChange={(e) => setSeason(Number(e.target.value))}
-          aria-label="Select season"
-        >
-          {seasonOptions.map((y) => (
-            <option key={y} value={y}>
-              {y}
-            </option>
-          ))}
-        </select>
-      </label>
-
-      {mode === "resume" && current && (
+      {isResume && current && (
         <>
           <ul className="stats compact">
             <li>
@@ -155,13 +180,11 @@ export default function YearlySecurity({
             </li>
           </ul>
 
-          <p className="section-note">
-            Career-to-date ranking for {current.season}
-            {onLensChange ? "" : ` · ${lensLabel} lens`}.
-          </p>
           {onLensChange ? (
             <LensToggle value={lensId} onChange={onLensChange} />
-          ) : null}
+          ) : (
+            <p className="section-note">{lensLabel} lens.</p>
+          )}
           <div className="table-wrap sticky-2">
             <table>
               <thead>
@@ -282,7 +305,11 @@ export default function YearlySecurity({
         </>
       )}
 
-      {mode === "construction" && construction && (
+      {isResume && !current && (
+        <p className="section-note">No resume board for {season}.</p>
+      )}
+
+      {!isResume && construction && (
         <>
           <ul className="stats compact">
             <li>
@@ -422,11 +449,8 @@ export default function YearlySecurity({
         </>
       )}
 
-      {mode === "construction" && !construction && (
-        <p className="section-note">
-          No construction grades for {season}. Run{" "}
-          <code>python scripts/build_season_index.py</code>.
-        </p>
+      {!isResume && !construction && (
+        <p className="section-note">No construction grades for {season}.</p>
       )}
     </>
   );

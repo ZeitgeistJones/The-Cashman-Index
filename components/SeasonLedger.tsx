@@ -120,9 +120,11 @@ function scoreClass(v: number | null): string {
 export default function SeasonLedger({
   seasonIndex,
   yearly,
+  onOpenAfterYear,
 }: {
   seasonIndex?: SeasonFile | null;
   yearly: YearlyFile;
+  onOpenAfterYear?: () => void;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>("all_time_rank");
   const [direction, setDirection] = useState<Direction>("asc");
@@ -213,13 +215,21 @@ export default function SeasonLedger({
   return (
     <div className="season-ledger">
       <p className="lede">
-        Best FO seasons since 2006 — a single-season leaderboard.{" "}
-        <strong>#1</strong> is the highest-graded executive-year in the pool
+        One FO season, not a resume. <strong>#1</strong> is the highest-graded
+        executive-year since 2006
         {gradedCount > 0 ? ` (${gradedCount.toLocaleString()} graded)` : ""}.
         Names can repeat: many elite years for one GM is the finding. Click a
-        name to see that executive’s run. Blank trade figures for 2006–2008 mean
-        the peer ledger does not cover those years yet (not “no trades”); blank
-        draft figures mean the class is still inside the maturity wait.
+        name to see that executive’s run. For career standing after a year, use{" "}
+        {onOpenAfterYear ? (
+          <button type="button" className="link-name" onClick={onOpenAfterYear}>
+            After this year
+          </button>
+        ) : (
+          "After this year"
+        )}
+        . Blank trade figures for 2006–2008 mean the peer ledger does not cover
+        those years yet (not “no trades”); blank draft figures mean the class is
+        still inside the maturity wait.
       </p>
 
       <div className="ledger-controls">
