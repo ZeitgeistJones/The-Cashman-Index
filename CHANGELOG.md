@@ -20,6 +20,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/). Dates are UTC co
 ### Changed
 
 - GM views: Career / After this year / Season grades (one question per tab; no nested resume-vs-moves toggle)
+- Thrift copy: seasons average equally (not by dollars); GM rows show club-season splits (e.g. MIL 7 · NYM 2)
+- Click a GM name to open that executive’s Season grades run
 - About: league-relative thrift, winning-block ~0.41, player-movement trades, Every season tab
 - “Thrift vs era” → “Thrift vs league” (ERA collision)
 - Lens UI states winning components overlap — ranks barely move between lenses

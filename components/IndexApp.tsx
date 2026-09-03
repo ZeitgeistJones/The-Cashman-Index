@@ -33,6 +33,7 @@ import type {
   SeasonFile,
   YearlyFile,
 } from "@/lib/rankings";
+import type { ClubHitIndex } from "@/lib/tenureSplit";
 
 type Tab =
   | "franchises"
@@ -114,6 +115,8 @@ export default function IndexApp({
   draft,
   acquisition,
   trade,
+  clubHits,
+  lastCompleteSeason,
 }: {
   moves: MovesFile;
   franchises: FranchiseFile;
@@ -126,6 +129,8 @@ export default function IndexApp({
   acquisition: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   trade: any;
+  clubHits?: ClubHitIndex;
+  lastCompleteSeason?: number;
 }) {
   const [tab, setTab] = useState<Tab>("franchises");
   const [gmView, setGmView] = useState<GmView>("career");
@@ -136,6 +141,7 @@ export default function IndexApp({
   const [afterYear, setAfterYear] = useState(latestResumeYear);
   const [seasonGradeYear, setSeasonGradeYear] =
     useState<SeasonGradeYear>("all");
+  const [seasonFocus, setSeasonFocus] = useState<string | null>(null);
 
   function openAfterYear(year?: number) {
     if (year != null) setAfterYear(year);
@@ -145,6 +151,13 @@ export default function IndexApp({
 
   function openSeasonGrades(year?: number) {
     setSeasonGradeYear(year ?? "all");
+    setGmView("season-grades");
+    setTab("gms");
+  }
+
+  function openGmSeasons(personId: string) {
+    setSeasonGradeYear("all");
+    setSeasonFocus(personId);
     setGmView("season-grades");
     setTab("gms");
   }
@@ -256,7 +269,14 @@ export default function IndexApp({
             {topGm ? (
               <>
                 {" "}
-                · top GM: <strong>{topGm.name}</strong>
+                · top GM:{" "}
+                <button
+                  type="button"
+                  className="link-name"
+                  onClick={() => openGmSeasons(topGm.person_id)}
+                >
+                  {topGm.name}
+                </button>
               </>
             ) : null}
             .
@@ -342,13 +362,20 @@ export default function IndexApp({
           {gmView === "career" && (
             <>
               <p className="section-note">
-                Whole career, right now. Short tenures are shrunk so a one-year
-                spike does not win by default. After this year freezes this
-                recipe at a past season. Season grades score one year of moves.
+                Whole career, right now. Club counts (MIL 7 · NYM 2) are seasons
+                in the chair — thrift averages those seasons equally, not by
+                dollars spent. After this year freezes this recipe at a past
+                season. Season grades score one year of moves. Click a name for
+                that executive&apos;s season run.
               </p>
               <p className="scroll-hint">Swipe tables sideways for more columns.</p>
               <LensToggle value={lens} onChange={chooseLens} />
-              <GmTable gms={scoredGms} />
+              <GmTable
+                gms={scoredGms}
+                clubHits={clubHits}
+                throughSeason={lastCompleteSeason}
+                onOpenPerson={openGmSeasons}
+              />
             </>
           )}
 
@@ -362,6 +389,8 @@ export default function IndexApp({
               season={afterYear}
               onSeasonChange={setAfterYear}
               onOpenSeasonGrades={(year) => openSeasonGrades(year)}
+              clubHits={clubHits}
+              onOpenPerson={openGmSeasons}
             />
           )}
 
@@ -408,6 +437,8 @@ export default function IndexApp({
                     seasonIndex={seasonIndex}
                     yearly={yearly}
                     onOpenAfterYear={() => openAfterYear()}
+                    focusPersonId={seasonFocus}
+                    onFocusChange={setSeasonFocus}
                   />
                 </>
               ) : (
@@ -418,6 +449,7 @@ export default function IndexApp({
                   season={seasonGradeYear}
                   hideSeasonSelect
                   onOpenAfterYear={(year) => openAfterYear(year)}
+                  onOpenPerson={openGmSeasons}
                 />
               )}
             </>

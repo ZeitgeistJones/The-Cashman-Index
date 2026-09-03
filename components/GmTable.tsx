@@ -9,6 +9,12 @@ import {
   formatSigned,
   type GmRow,
 } from "@/lib/rankings";
+import {
+  clubSplitTitle,
+  clubSplitsThrough,
+  formatClubSplit,
+  type ClubHitIndex,
+} from "@/lib/tenureSplit";
 
 type SortKey =
   | "rank"
@@ -63,7 +69,17 @@ function compare(a: GmRow, b: GmRow, key: SortKey, direction: Direction): number
   return String(left).localeCompare(String(right)) * sign;
 }
 
-export default function GmTable({ gms }: { gms: GmRow[] }) {
+export default function GmTable({
+  gms,
+  clubHits,
+  throughSeason,
+  onOpenPerson,
+}: {
+  gms: GmRow[];
+  clubHits?: ClubHitIndex;
+  throughSeason?: number;
+  onOpenPerson?: (personId: string) => void;
+}) {
   const [sortKey, setSortKey] = useState<SortKey>("rank");
   const [direction, setDirection] = useState<Direction>("asc");
   const [hideSmall, setHideSmall] = useState(false);
@@ -122,9 +138,39 @@ export default function GmTable({ gms }: { gms: GmRow[] }) {
               <tr key={row.person_id}>
                 <td className="num">{row.rank}</td>
                 <td>
-                  <span className="summary">{row.name}</span>
-                  <span className="meta">
-                    {row.teams.join(" · ")}
+                  {onOpenPerson ? (
+                    <button
+                      type="button"
+                      className="link-name summary"
+                      onClick={() => onOpenPerson(row.person_id)}
+                      title={`Season grades for ${row.name}`}
+                    >
+                      {row.name}
+                    </button>
+                  ) : (
+                    <span className="summary">{row.name}</span>
+                  )}
+                  <span
+                    className="meta"
+                    title={
+                      throughSeason
+                        ? clubSplitTitle(
+                            clubSplitsThrough(
+                              clubHits,
+                              row.person_id,
+                              throughSeason,
+                            ),
+                          ) || undefined
+                        : undefined
+                    }
+                  >
+                    {formatClubSplit(
+                      clubSplitsThrough(
+                        clubHits,
+                        row.person_id,
+                        throughSeason ?? 0,
+                      ),
+                    ) || row.teams.join(" · ")}
                     {row.still_active ? " · active" : ""}
                     {row.small_sample ? " · small sample" : ""}
                   </span>

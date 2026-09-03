@@ -121,15 +121,25 @@ export default function SeasonLedger({
   seasonIndex,
   yearly,
   onOpenAfterYear,
+  focusPersonId,
+  onFocusChange,
 }: {
   seasonIndex?: SeasonFile | null;
   yearly: YearlyFile;
   onOpenAfterYear?: () => void;
+  focusPersonId?: string | null;
+  onFocusChange?: (personId: string | null) => void;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>("all_time_rank");
   const [direction, setDirection] = useState<Direction>("asc");
-  const [focus, setFocus] = useState<string | null>(null);
+  const [internalFocus, setInternalFocus] = useState<string | null>(null);
   const [onlyScored, setOnlyScored] = useState(true);
+  const focus = focusPersonId !== undefined ? focusPersonId : internalFocus;
+
+  function chooseFocus(personId: string | null) {
+    if (onFocusChange) onFocusChange(personId);
+    else setInternalFocus(personId);
+  }
 
   const rows = useMemo<SeasonRow[]>(() => {
     const resume = new Map<string, number>();
@@ -243,7 +253,7 @@ export default function SeasonLedger({
           {hiddenRecent > 0 ? ` (${hiddenRecent.toLocaleString()} recent)` : ""}
         </label>
         {focus && (
-          <button type="button" className="clear-focus" onClick={() => setFocus(null)}>
+          <button type="button" className="clear-focus" onClick={() => chooseFocus(null)}>
             ← Full leaderboard
           </button>
         )}
@@ -284,7 +294,7 @@ export default function SeasonLedger({
                   <button
                     type="button"
                     className="link-name"
-                    onClick={() => setFocus(r.person_id)}
+                    onClick={() => chooseFocus(r.person_id)}
                     title={`Show every season for ${r.name}`}
                   >
                     {r.name}

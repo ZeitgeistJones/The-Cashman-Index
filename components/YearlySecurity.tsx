@@ -19,6 +19,12 @@ import {
   type YearlyFile,
   type YearlySeason,
 } from "@/lib/rankings";
+import {
+  clubSplitTitle,
+  clubSplitsThrough,
+  formatClubSplit,
+  type ClubHitIndex,
+} from "@/lib/tenureSplit";
 
 export type YearlyMode = "resume" | "construction";
 
@@ -46,6 +52,8 @@ export default function YearlySecurity({
   hideSeasonSelect = false,
   onOpenSeasonGrades,
   onOpenAfterYear,
+  clubHits,
+  onOpenPerson,
 }: {
   data: YearlyFile;
   seasonData?: SeasonFile | null;
@@ -58,6 +66,8 @@ export default function YearlySecurity({
   hideSeasonSelect?: boolean;
   onOpenSeasonGrades?: (year: number) => void;
   onOpenAfterYear?: (year: number) => void;
+  clubHits?: ClubHitIndex;
+  onOpenPerson?: (personId: string) => void;
 }) {
   const years = data.years;
   const constructionYears = seasonData?.years ?? [];
@@ -218,8 +228,34 @@ export default function YearlySecurity({
                   <tr key={row.person_id}>
                     <td className="num">{row.rank}</td>
                     <td>
-                      <span className="summary">{row.name}</span>
-                      <span className="meta">{row.teams.join(" · ")}</span>
+                      {onOpenPerson ? (
+                        <button
+                          type="button"
+                          className="link-name summary"
+                          onClick={() => onOpenPerson(row.person_id)}
+                          title={`Season grades for ${row.name}`}
+                        >
+                          {row.name}
+                        </button>
+                      ) : (
+                        <span className="summary">{row.name}</span>
+                      )}
+                      <span
+                        className="meta"
+                        title={
+                          clubSplitTitle(
+                            clubSplitsThrough(
+                              clubHits,
+                              row.person_id,
+                              season,
+                            ),
+                          ) || undefined
+                        }
+                      >
+                        {formatClubSplit(
+                          clubSplitsThrough(clubHits, row.person_id, season),
+                        ) || row.teams.join(" · ")}
+                      </span>
                     </td>
                     <td className="num">{row.seasons}</td>
                     <td className="num">{formatPct(row.win_pct)}</td>
@@ -404,7 +440,18 @@ export default function YearlySecurity({
                   <tr key={row.person_id}>
                     <td className="num">{row.rank}</td>
                     <td>
-                      <span className="summary">{row.name}</span>
+                      {onOpenPerson ? (
+                        <button
+                          type="button"
+                          className="link-name summary"
+                          onClick={() => onOpenPerson(row.person_id)}
+                          title={`Season grades for ${row.name}`}
+                        >
+                          {row.name}
+                        </button>
+                      ) : (
+                        <span className="summary">{row.name}</span>
+                      )}
                       <span className="meta">{row.teams.join(" · ")}</span>
                     </td>
                     <td

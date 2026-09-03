@@ -18,13 +18,12 @@ app/page.tsx                       those JSON files                     -> the s
 
 ## What you get
 
-1. **Franchises** — one composite score per club.
-2. **GMs** — career ranking; multi-team careers roll into one person.
-3. **Trades** — club-perspective net WAR for every franchise/GM.
-4. **Acquisition channels** — FA / trade / waiver / Rule 5 WAR by club.
-5. **Trade ledger** — filterable peer trade book.
-6. **Yearly** — **Resume** (career-to-date through that season) and **Construction** (true single-season FO craft: Nov–Oct moves, H-horizon WAR, own-regime stock share).
-7. **GM exits** — exit resumes scored within the exit pool.
+1. **Clubs** — one composite score per franchise.
+2. **GMs → Career** — whole book right now; multi-team careers stay one person.
+3. **GMs → After this year** — same career recipe, frozen after a chosen season (earlier clubs still count).
+4. **GMs → Season grades** — one year of moves (All years = best FO seasons; pick a year for that season’s construction table).
+5. **Draft / Trades / How they acquire** — channel boards. Trade ledger coverage starts mid-2009.
+6. **Exits / Trade detail** — exit-pool resumes and the full peer trade book.
 
 ### Index weights
 
@@ -66,3 +65,4 @@ python scripts/build_league_acquisition.py --use-cache
 - Transaction history thin before ~2009 for some clubs.
 - No postseason WPA / clutch model; Jul/Aug trades get a win-now tag only.
 - Season construction grades are living revisions (horizon / mature lag), not contemporaneous scout grades.
+- Payroll thrift averages each season’s league-relative ratio equally — not weighted by dollars spent.

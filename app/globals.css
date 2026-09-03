@@ -586,7 +586,9 @@ td.date {
   font-variant-numeric: tabular-nums;
 }
 
-.summary {
+.summary,
+button.summary,
+.link-name.summary {
   display: block;
 }
 

@@ -156,9 +156,11 @@ export default function AboutPage() {
             Win% = wins / games; title / pennant / depth rates = counts ÷
             seasons. Payroll thrift is <em>league-relative</em>: paced wins /
             $100M for each team-season, divided by that year&apos;s league mean,
-            then averaged over the tenure (missing-payroll years drop out). 1.0
-            ≈ average thrift for the years played; early low-payroll decades no
-            longer look automatically thrifty.
+            then averaged over the tenure (missing-payroll years drop out).
+            Each season counts once — not weighted by payroll size — so seven
+            cheap years still outvote two expensive ones. 1.0 ≈ average thrift
+            for the years played; early low-payroll decades no longer look
+            automatically thrifty.
           </li>
           <li>
             Attach draft value-over-slot (franchise-tenure WAR vs slot curve) and
@@ -330,11 +332,14 @@ export default function AboutPage() {
             other exits — not the live active-GM board on that calendar day.
           </li>
           <li>
-            <strong>Payroll thrift is league-relative.</strong> Raw wins/$100M
-            trends down as payrolls inflate; we divide each season by that
-            year&apos;s league mean so early tenures are not automatic thrift
-            leaders. A top-payroll club is still structurally weak on this
-            heaviest weight — that is the house formula, disclosed here.
+            <strong>Payroll thrift is league-relative, and seasons are equal.</strong>{" "}
+            Raw wins/$100M trends down as payrolls inflate; we divide each
+            season by that year&apos;s league mean so early tenures are not
+            automatic thrift leaders. Those yearly ratios are then averaged
+            equally. Dollars spent do not weight the mean — two $300M Mets
+            years do not outweigh seven cheaper Brewers years. A top-payroll
+            club is still structurally weak on this heaviest weight — that is
+            the house formula, disclosed here.
           </li>
           <li>
             <strong>Winning-block collinearity.</strong> World Series, pennant,
