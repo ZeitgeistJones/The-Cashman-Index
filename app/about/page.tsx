@@ -40,8 +40,12 @@ export default function AboutPage() {
           is still in progress). Scoring pin{" "}
           <code>as_of</code> = {weights.as_of} (methodology cutoff for draft
           maturity and WAR horizons — not the site&apos;s last data refresh).
-          Peer trade ledger coverage starts mid-2009. Details below; start with
-          the weight table if you only want the recipe.
+          Peer trade ledger coverage starts mid-2009. The address bar keeps tab,
+          lens, year, and who you jumped to — so a view can be shared. The home
+          page Mets desk is a jump list for Mets-nerd fights (Stearns here vs
+          Milwaukee, spend vs titles, a few famous trades) — same scores as the
+          boards, not a home-team card. Details below; start with the weight
+          table if you only want the recipe.
         </p>
       </header>
 

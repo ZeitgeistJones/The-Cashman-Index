@@ -25,6 +25,13 @@ app/page.tsx                       those JSON files                     -> the s
 5. **Draft / Trades / How they acquire** — channel boards. Trade ledger coverage starts mid-2009.
 6. **Exits / Trade detail** — exit-pool resumes and the full peer trade book.
 
+Find a GM or club in the header. The address bar stores tab, lens, year, and who
+(`?tab=gms&view=after&year=2025&lens=value&who=david-stearns`).
+
+The home page also has a **Mets desk** (Evan Roberts) — Mets rank, Stearns
+here-vs-Milwaukee, spend vs October, draft, and a few argument trades
+(Dickey, Díaz/Kelenic, PCA, Céspedes).
+
 ### Index weights
 
 | Component | Weight |

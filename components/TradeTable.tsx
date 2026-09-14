@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import TipTh from "@/components/TipTh";
 import { COLUMN_TIPS } from "@/lib/columnTips";
 import { formatWar } from "@/lib/moves";
@@ -31,8 +31,20 @@ type TradeFile = {
   gms: TradeGm[];
 };
 
-export default function TradeTable({ data }: { data: TradeFile }) {
+export default function TradeTable({
+  data,
+  highlightAbbr,
+}: {
+  data: TradeFile;
+  highlightAbbr?: string | null;
+}) {
   const [view, setView] = useState<"franchises" | "gms">("franchises");
+
+  useEffect(() => {
+    if (!highlightAbbr || view !== "franchises") return;
+    const el = document.getElementById(`trade-${highlightAbbr}`);
+    el?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [highlightAbbr, view]);
 
   const franchises = useMemo(
     () => [...data.franchises].sort((a, b) => a.rank - b.rank),
@@ -93,7 +105,13 @@ export default function TradeTable({ data }: { data: TradeFile }) {
             </thead>
             <tbody>
               {franchises.map((row) => (
-                <tr key={row.team_id}>
+                <tr
+                  key={row.team_id}
+                  id={`trade-${row.team_abbr}`}
+                  className={
+                    row.team_abbr === highlightAbbr ? "row-hit" : undefined
+                  }
+                >
                   <td className="num">{row.rank}</td>
                   <td>
                     <span className="summary">{row.team_name}</span>

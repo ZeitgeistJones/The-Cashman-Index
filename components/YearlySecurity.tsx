@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import LensToggle from "@/components/LensToggle";
 import TipTh from "@/components/TipTh";
 import { COLUMN_TIPS } from "@/lib/columnTips";
@@ -54,6 +54,7 @@ export default function YearlySecurity({
   onOpenAfterYear,
   clubHits,
   onOpenPerson,
+  highlightPersonId,
 }: {
   data: YearlyFile;
   seasonData?: SeasonFile | null;
@@ -68,6 +69,7 @@ export default function YearlySecurity({
   onOpenAfterYear?: (year: number) => void;
   clubHits?: ClubHitIndex;
   onOpenPerson?: (personId: string) => void;
+  highlightPersonId?: string | null;
 }) {
   const years = data.years;
   const constructionYears = seasonData?.years ?? [];
@@ -109,6 +111,20 @@ export default function YearlySecurity({
 
   const exits = current?.job_security.exits ?? [];
   const lensLabel = LENSES[lensId].label;
+
+  const resumeShown = useMemo(() => {
+    const top = resumeBoard.slice(0, 25);
+    if (!highlightPersonId) return top;
+    if (top.some((r) => r.person_id === highlightPersonId)) return top;
+    const extra = resumeBoard.find((r) => r.person_id === highlightPersonId);
+    return extra ? [...top, extra] : top;
+  }, [resumeBoard, highlightPersonId]);
+
+  useEffect(() => {
+    if (!highlightPersonId) return;
+    const el = document.getElementById(`gm-${highlightPersonId}`);
+    el?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [highlightPersonId, season, isResume]);
 
   if (isResume && !years.length) {
     return (
@@ -224,8 +240,14 @@ export default function YearlySecurity({
                 </tr>
               </thead>
               <tbody>
-                {resumeBoard.slice(0, 25).map((row) => (
-                  <tr key={row.person_id}>
+                {resumeShown.map((row) => (
+                  <tr
+                    key={row.person_id}
+                    id={`gm-${row.person_id}`}
+                    className={
+                      row.person_id === highlightPersonId ? "row-hit" : undefined
+                    }
+                  >
                     <td className="num">{row.rank}</td>
                     <td>
                       {onOpenPerson ? (
@@ -437,7 +459,13 @@ export default function YearlySecurity({
               </thead>
               <tbody>
                 {construction.leaderboard.slice(0, 30).map((row) => (
-                  <tr key={row.person_id}>
+                  <tr
+                    key={row.person_id}
+                    id={`gm-${row.person_id}`}
+                    className={
+                      row.person_id === highlightPersonId ? "row-hit" : undefined
+                    }
+                  >
                     <td className="num">{row.rank}</td>
                     <td>
                       {onOpenPerson ? (

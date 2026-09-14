@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import TipTh from "@/components/TipTh";
 import { COLUMN_TIPS } from "@/lib/columnTips";
 import {
@@ -74,20 +74,33 @@ export default function GmTable({
   clubHits,
   throughSeason,
   onOpenPerson,
+  highlightPersonId,
 }: {
   gms: GmRow[];
   clubHits?: ClubHitIndex;
   throughSeason?: number;
   onOpenPerson?: (personId: string) => void;
+  highlightPersonId?: string | null;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>("rank");
   const [direction, setDirection] = useState<Direction>("asc");
   const [hideSmall, setHideSmall] = useState(false);
 
   const filtered = useMemo(
-    () => (hideSmall ? gms.filter((g) => !g.small_sample) : gms),
-    [gms, hideSmall],
+    () =>
+      hideSmall
+        ? gms.filter(
+            (g) => !g.small_sample || g.person_id === highlightPersonId,
+          )
+        : gms,
+    [gms, hideSmall, highlightPersonId],
   );
+
+  useEffect(() => {
+    if (!highlightPersonId) return;
+    const el = document.getElementById(`gm-${highlightPersonId}`);
+    el?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [highlightPersonId]);
 
   const sorted = useMemo(
     () => [...filtered].sort((a, b) => compare(a, b, sortKey, direction)),
@@ -135,7 +148,13 @@ export default function GmTable({
           </thead>
           <tbody>
             {sorted.map((row) => (
-              <tr key={row.person_id}>
+              <tr
+                key={row.person_id}
+                id={`gm-${row.person_id}`}
+                className={
+                  row.person_id === highlightPersonId ? "row-hit" : undefined
+                }
+              >
                 <td className="num">{row.rank}</td>
                 <td>
                   {onOpenPerson ? (

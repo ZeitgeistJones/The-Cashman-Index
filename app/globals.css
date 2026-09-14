@@ -83,7 +83,107 @@ main.about {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
+}
+
+.find-box {
+  position: relative;
+  flex: 1 1 12rem;
+  min-width: min(100%, 12rem);
+  max-width: 22rem;
+}
+
+.find-box-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.find-box input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+}
+
+.find-box input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.find-box-list {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  margin: 0;
+  padding: 0.3rem 0;
+  list-style: none;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--text) 12%, transparent);
+  max-height: 20rem;
+  overflow: auto;
+}
+
+.find-box-list button {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.find-box-list button.active,
+.find-box-list button:hover {
+  background: var(--panel);
+}
+
+.find-box-kind {
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.find-box-label-row {
+  font-weight: 600;
+}
+
+.find-box-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+tr.row-hit {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+tr.row-hit td {
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .brand-lockup {
@@ -327,6 +427,133 @@ main.about footer {
 .start-here-more {
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+.evan-desk {
+  margin: 1.75rem 0 0;
+  padding: 1.15rem 0 0.35rem;
+  border-top: 1px solid var(--border);
+}
+
+.evan-desk h2 {
+  margin: 0.35rem 0 0.4rem;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.evan-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.85rem;
+  margin: 0.9rem 0 0;
+}
+
+.evan-card {
+  padding: 0.85rem 0.95rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.evan-card h3 {
+  margin: 0.2rem 0 0.45rem;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.evan-card p {
+  margin: 0 0 0.55rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.evan-card-kicker {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.evan-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.evan-deals {
+  margin: 1.15rem 0 0;
+}
+
+.evan-deals h3 {
+  margin: 0.35rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.evan-deal-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.85rem 1.25rem;
+}
+
+.evan-deal-cols ul,
+.evan-deal-open {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.evan-deal-cols li + li,
+.evan-deal-open li + li {
+  margin-top: 0.55rem;
+}
+
+.evan-deal {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.evan-deal:hover,
+.evan-deal:focus-visible {
+  border-color: var(--accent);
+}
+
+.evan-deal:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.evan-deal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.evan-deal-head strong {
+  font-weight: 650;
+}
+
+.evan-deal-meta,
+.evan-deal-note {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.evan-deal-open {
+  margin-top: 0.85rem;
 }
 
 .meta-line {
@@ -854,6 +1081,12 @@ footer p {
 
   .site-header-row {
     align-items: center;
+  }
+
+  .find-box {
+    flex: 1 1 100%;
+    max-width: none;
+    order: 3;
   }
 
   .about-link {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import TipTh from "@/components/TipTh";
 import { COLUMN_TIPS } from "@/lib/columnTips";
 import { formatDate, formatMoney, formatWar, type Move } from "@/lib/moves";
@@ -52,10 +52,28 @@ function scoreClass(value: number | null | undefined): string {
   return "num";
 }
 
-export default function MovesTable({ moves }: { moves: Move[] }) {
+export default function MovesTable({
+  moves,
+  initialClub,
+  highlightMoveId,
+}: {
+  moves: Move[];
+  initialClub?: string | null;
+  highlightMoveId?: string | null;
+}) {
   const [sortKey, setSortKey] = useState<SortKey>("move_date");
   const [direction, setDirection] = useState<Direction>("desc");
-  const [club, setClub] = useState<string>("all");
+  const [club, setClub] = useState<string>(initialClub ?? "all");
+
+  useEffect(() => {
+    if (initialClub) setClub(initialClub);
+  }, [initialClub]);
+
+  useEffect(() => {
+    if (!highlightMoveId) return;
+    const el = document.getElementById(`move-${highlightMoveId}`);
+    el?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [highlightMoveId, club, sortKey, direction]);
 
   const clubs = useMemo(() => {
     const set = new Set<string>();
@@ -121,7 +139,13 @@ export default function MovesTable({ moves }: { moves: Move[] }) {
           </thead>
           <tbody>
             {sorted.map((move) => (
-              <tr key={move.move_id}>
+              <tr
+                key={move.move_id}
+                id={`move-${move.move_id}`}
+                className={
+                  move.move_id === highlightMoveId ? "row-hit" : undefined
+                }
+              >
                 <td className="date">{formatDate(move.move_date)}</td>
                 <td>
                   <span className="summary">{move.summary}</span>

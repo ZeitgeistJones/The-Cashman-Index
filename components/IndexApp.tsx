@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import AcquisitionPanel from "@/components/AcquisitionPanel";
 import BrandMark from "@/components/BrandMark";
+import FindBox from "@/components/FindBox";
+import EvanDesk from "@/components/EvanDesk";
 import DraftTable from "@/components/DraftTable";
 import ExitLedger from "@/components/ExitLedger";
 import FranchiseTable from "@/components/FranchiseTable";
@@ -34,17 +36,17 @@ import type {
   YearlyFile,
 } from "@/lib/rankings";
 import type { ClubHitIndex } from "@/lib/tenureSplit";
+import { pickMetsDeskDeals } from "@/lib/metsDesk";
+import {
+  readUrlState,
+  replaceAppUrl,
+  writeUrlState,
+  type AppTab,
+  type AppGmView,
+} from "@/lib/urlState";
 
-type Tab =
-  | "franchises"
-  | "gms"
-  | "draft"
-  | "trades"
-  | "acquisition"
-  | "exits"
-  | "moves";
-
-type GmView = "career" | "after-year" | "season-grades";
+type Tab = AppTab;
+type GmView = AppGmView;
 type SeasonGradeYear = number | "all";
 
 const TABS: { id: Tab; label: string; short: string }[] = [
@@ -142,6 +144,10 @@ export default function IndexApp({
   const [seasonGradeYear, setSeasonGradeYear] =
     useState<SeasonGradeYear>("all");
   const [seasonFocus, setSeasonFocus] = useState<string | null>(null);
+  const [who, setWho] = useState<string | null>(null);
+  const [club, setClub] = useState<string | null>(null);
+  const [moveFocus, setMoveFocus] = useState<string | null>(null);
+  const [urlReady, setUrlReady] = useState(false);
 
   function openAfterYear(year?: number) {
     if (year != null) setAfterYear(year);
@@ -156,10 +162,28 @@ export default function IndexApp({
   }
 
   function openGmSeasons(personId: string) {
+    setWho(personId);
+    setClub(null);
     setSeasonGradeYear("all");
     setSeasonFocus(personId);
     setGmView("season-grades");
     setTab("gms");
+  }
+
+  function jumpToGm(personId: string) {
+    setWho(personId);
+    setClub(null);
+    if (tab !== "gms") {
+      setTab("gms");
+      setGmView("career");
+    }
+    if (gmView === "season-grades") setSeasonFocus(personId);
+  }
+
+  function jumpToClub(abbr: string) {
+    setClub(abbr);
+    setWho(null);
+    setTab("franchises");
   }
 
   function openGms(view: GmView = "career") {
@@ -168,13 +192,69 @@ export default function IndexApp({
   }
 
   useEffect(() => {
+    const fromUrl = readUrlState(window.location.search);
     try {
       const saved = window.localStorage.getItem(LENS_STORAGE_KEY);
-      if (isLensId(saved)) setLens(saved);
+      if (isLensId(saved) && !fromUrl.lens) setLens(saved);
     } catch {
       /* ignore */
     }
+    if (fromUrl.tab) setTab(fromUrl.tab);
+    if (fromUrl.gmView) setGmView(fromUrl.gmView);
+    if (fromUrl.afterYear != null) setAfterYear(fromUrl.afterYear);
+    if (fromUrl.seasonYear != null) setSeasonGradeYear(fromUrl.seasonYear);
+    if (fromUrl.lens) setLens(fromUrl.lens);
+    if (fromUrl.who) {
+      setWho(fromUrl.who);
+      setSeasonFocus(fromUrl.who);
+    }
+    if (fromUrl.club) setClub(fromUrl.club);
+    setUrlReady(true);
   }, []);
+
+  useEffect(() => {
+    function onPop() {
+      const fromUrl = readUrlState(window.location.search);
+      if (fromUrl.tab) setTab(fromUrl.tab);
+      if (fromUrl.gmView) setGmView(fromUrl.gmView);
+      if (fromUrl.afterYear != null) setAfterYear(fromUrl.afterYear);
+      if (fromUrl.seasonYear != null) setSeasonGradeYear(fromUrl.seasonYear);
+      if (fromUrl.lens) setLens(fromUrl.lens);
+      setWho(fromUrl.who ?? null);
+      setClub(fromUrl.club ?? null);
+      if (fromUrl.who) setSeasonFocus(fromUrl.who);
+    }
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
+  useEffect(() => {
+    if (!urlReady) return;
+    replaceAppUrl(
+      writeUrlState(
+        {
+          tab,
+          gmView,
+          afterYear,
+          seasonYear: seasonGradeYear,
+          lens,
+          who,
+          club,
+        },
+        { afterYear: latestResumeYear, seasonYear: "all" },
+      ),
+    );
+  }, [
+    tab,
+    gmView,
+    afterYear,
+    seasonGradeYear,
+    lens,
+    who,
+    club,
+    latestResumeYear,
+    urlReady,
+  ]);
 
   function chooseLens(id: LensId) {
     setLens(id);
@@ -206,6 +286,9 @@ export default function IndexApp({
   const topGm = scoredGms[0];
   const why = topFranchise ? whyTopFranchise(topFranchise) : [];
   const lensLabel = LENSES[lens].label;
+  const mets = scoredFranchises.find((row) => row.team_abbr === "NYM");
+  const stearns = scoredGms.find((row) => row.person_id === "david-stearns");
+  const metsDeals = useMemo(() => pickMetsDeskDeals(moves.moves), [moves.moves]);
 
   // Ledger is sorted newest-first; first move_date is the coverage tip.
   const ledgerThrough = moves.moves[0]?.move_date ?? null;
@@ -234,6 +317,12 @@ export default function IndexApp({
             <BrandMark size={36} />
             Front Office Index
           </h1>
+          <FindBox
+            gms={gms.gms}
+            clubs={franchises.franchises}
+            onPickGm={jumpToGm}
+            onPickClub={jumpToClub}
+          />
           <Link href="/about" className="about-link">
             About
           </Link>
@@ -308,6 +397,37 @@ export default function IndexApp({
         </section>
       )}
 
+      <EvanDesk
+        mets={mets}
+        stearns={stearns}
+        clubHits={clubHits}
+        throughSeason={lastCompleteSeason}
+        seasonIndex={seasonIndex}
+        deals={metsDeals}
+        lensLabel={lensLabel}
+        onOpenMets={() => jumpToClub("NYM")}
+        onOpenStearnsSeasons={() => openGmSeasons("david-stearns")}
+        onOpenStearnsYear={(year) => {
+          setWho("david-stearns");
+          setSeasonFocus("david-stearns");
+          openSeasonGrades(year);
+        }}
+        onOpenDraft={() => {
+          setClub("NYM");
+          setTab("draft");
+        }}
+        onOpenTrades={() => {
+          setClub("NYM");
+          setTab("trades");
+        }}
+        onOpenDeal={(moveId) => {
+          setClub("NYM");
+          setMoveFocus(moveId);
+          setTab("moves");
+        }}
+        onChooseLens={chooseLens}
+      />
+
       <p className="meta-line">
         {franchises.franchises.length} clubs · {gms.gm_count} GMs · {windowLabel}
       </p>
@@ -337,7 +457,10 @@ export default function IndexApp({
           </p>
           <p className="scroll-hint">Swipe tables sideways for more columns.</p>
           <LensToggle value={lens} onChange={chooseLens} />
-          <FranchiseTable franchises={scoredFranchises} />
+          <FranchiseTable
+            franchises={scoredFranchises}
+            highlightAbbr={club}
+          />
         </section>
       )}
 
@@ -375,6 +498,7 @@ export default function IndexApp({
                 clubHits={clubHits}
                 throughSeason={lastCompleteSeason}
                 onOpenPerson={openGmSeasons}
+                highlightPersonId={who}
               />
             </>
           )}
@@ -391,6 +515,7 @@ export default function IndexApp({
               onOpenSeasonGrades={(year) => openSeasonGrades(year)}
               clubHits={clubHits}
               onOpenPerson={openGmSeasons}
+              highlightPersonId={who}
             />
           )}
 
@@ -450,6 +575,7 @@ export default function IndexApp({
                   hideSeasonSelect
                   onOpenAfterYear={(year) => openAfterYear(year)}
                   onOpenPerson={openGmSeasons}
+                  highlightPersonId={who}
                 />
               )}
             </>
@@ -459,13 +585,13 @@ export default function IndexApp({
 
       {tab === "draft" && (
         <section>
-          <DraftTable data={draft} />
+          <DraftTable data={draft} highlightAbbr={club} />
         </section>
       )}
 
       {tab === "trades" && (
         <section>
-          <TradeTable data={trade} />
+          <TradeTable data={trade} highlightAbbr={club} />
         </section>
       )}
 
@@ -493,7 +619,11 @@ export default function IndexApp({
             Trades if you just want the rankings.
           </p>
           <p className="scroll-hint">Swipe for surplus &amp; net WAR.</p>
-          <MovesTable moves={moves.moves} />
+          <MovesTable
+            moves={moves.moves}
+            initialClub={club}
+            highlightMoveId={moveFocus}
+          />
         </section>
       )}
     </main>

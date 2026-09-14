@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import TipTh from "@/components/TipTh";
 import { COLUMN_TIPS } from "@/lib/columnTips";
 import {
@@ -69,8 +69,10 @@ function compare(
 
 export default function FranchiseTable({
   franchises,
+  highlightAbbr,
 }: {
   franchises: FranchiseRow[];
+  highlightAbbr?: string | null;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>("rank");
   const [direction, setDirection] = useState<Direction>("asc");
@@ -79,6 +81,12 @@ export default function FranchiseTable({
     () => [...franchises].sort((a, b) => compare(a, b, sortKey, direction)),
     [franchises, sortKey, direction],
   );
+
+  useEffect(() => {
+    if (!highlightAbbr) return;
+    const el = document.getElementById(`club-${highlightAbbr}`);
+    el?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [highlightAbbr]);
 
   function toggleSort(key: SortKey) {
     if (key === sortKey) {
@@ -109,7 +117,11 @@ export default function FranchiseTable({
         </thead>
         <tbody>
           {sorted.map((row) => (
-            <tr key={row.team_id}>
+            <tr
+              key={row.team_id}
+              id={`club-${row.team_abbr}`}
+              className={row.team_abbr === highlightAbbr ? "row-hit" : undefined}
+            >
               <td className="num">{row.rank}</td>
               <td>
                 <span className="summary">{row.team_name}</span>
