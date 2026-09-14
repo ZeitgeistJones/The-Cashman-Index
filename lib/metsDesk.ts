@@ -27,13 +27,13 @@ export const METS_DESK_SPECS: MetsDeskDealSpec[] = [
     id: "121-2012-12-17-TR-51a7b8",
     side: "good",
     headline: "Syndergaard + d'Arnaud for Dickey",
-    note: "The one they got right — a Cy Young season for two pieces who became the rotation and the pennant catcher.",
+    note: "Traded the reigning Cy Young winner for pieces who became a rotation arm and the 2015 pennant catcher.",
   },
   {
     id: "121-2018-12-03-TR-e8b0a4",
     side: "good",
     headline: "Díaz + Canó for Kelenic, Dunn, Bruce",
-    note: "Díaz became a star. Canó and Kelenic are why people still yell. Net WAR up; surplus down. Both can be true.",
+    note: "Díaz became a star. Canó and Kelenic are why people still yell. Ledger: net WAR up, dollar surplus down. Both can be true.",
   },
   {
     id: "121-2021-07-30-TR-e33d58",
@@ -45,7 +45,7 @@ export const METS_DESK_SPECS: MetsDeskDealSpec[] = [
     id: "121-2015-07-31-TR-371a34",
     side: "bad",
     headline: "Céspedes for Fulmer + Cessa",
-    note: "Helped win a pennant. Fulmer won a Cy Young in Detroit. The Mets nerd fight in one deal.",
+    note: "Helped win a pennant. Fulmer won Rookie of the Year in Detroit. The Mets nerd fight in one deal.",
   },
   {
     id: "121-2025-11-24-TR-c97c58",
@@ -54,6 +54,13 @@ export const METS_DESK_SPECS: MetsDeskDealSpec[] = [
     note: "Too new to treat as a verdict — still moving.",
   },
 ];
+
+/** Skip one-sided ledger rows (e.g. Lindor incoming-only) so fake nets never surface. */
+function isCompleteTradePackage(move: Move): boolean {
+  const acquired = move.players_acquired?.length ?? 0;
+  const sent = move.players_sent_away?.length ?? 0;
+  return acquired > 0 && sent > 0;
+}
 
 export function pickMetsDeskDeals(moves: Move[]): MetsDeskDeal[] {
   const wanted = new Set(METS_DESK_SPECS.map((spec) => spec.id));
@@ -64,7 +71,7 @@ export function pickMetsDeskDeals(moves: Move[]): MetsDeskDeal[] {
   const out: MetsDeskDeal[] = [];
   for (const spec of METS_DESK_SPECS) {
     const move = byId.get(spec.id);
-    if (!move) continue;
+    if (!move || !isCompleteTradePackage(move)) continue;
     out.push({
       ...spec,
       date: move.move_date,

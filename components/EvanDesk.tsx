@@ -193,9 +193,9 @@ export default function EvanDesk({
           <p className="evan-card-kicker">The farm</p>
           <h3>Draft #{ranks.draft_vos ?? "—"}</h3>
           <p>
-            Over the whole window the Mets are a top-five draft shop. Trades sit
-            around #{ranks.trade_net_rate ?? "—"}. If the take is “they never
-            develop anyone,” the draft board disagrees.
+            Over the whole window the Mets draft board is #{ranks.draft_vos ?? "—"}
+            . Trade rate sits around #{ranks.trade_net_rate ?? "—"}. If the take
+            is “they never develop anyone,” the draft board disagrees.
           </p>
           <div className="evan-card-actions">
             <button type="button" className="start-here-cta" onClick={onOpenDraft}>

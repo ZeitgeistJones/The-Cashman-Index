@@ -24,6 +24,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/). Dates are UTC co
 - Click a GM name to open that executive’s Season grades run
 - Shareable URLs (tab / view / year / lens / who / club) plus a Find box for GMs and clubs
 - Mets desk (Evan Roberts): club/Stearns/spend/farm plus curated good-bad Mets trades from the ledger
+- Mets desk copy: Fulmer is Rookie of the Year (not Cy Young); skip incomplete one-sided trade rows
 - About: league-relative thrift, winning-block ~0.41, player-movement trades, Every season tab
 - “Thrift vs era” → “Thrift vs league” (ERA collision)
 - Lens UI states winning components overlap — ranks barely move between lenses
