@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-20T21:09:00+00:00",
+  "generated_at": "2026-09-21T13:03:46+00:00",
   "data_source": "mlb-stats-api+bref",
   "season_range": [
     2006,
     2026
   ],
   "as_of": "2026-08-07",
-  "fetched_through": "2026-09-20",
+  "fetched_through": "2026-09-21",
   "dollars_per_war": 8000000,
   "move_count": 2639,
   "moves": [
@@ -24,18 +24,18 @@
           "mlbam_id": 665828,
           "name": "Oswaldo Cabrera",
           "war_prior": 1.97,
-          "war_after_move": 0.0,
+          "war_after_move": -0.08,
           "war_during": 1.97,
-          "war_after_exit": 0.0
+          "war_after_exit": -0.08
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.0,
+      "net_war_exchange": 0.08,
       "war_acquired": 0.0,
-      "war_sent_away": 0.0,
+      "war_sent_away": -0.08,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 1.97,
       "war_after_exit_acquired": 0.0,
@@ -155,8 +155,8 @@
           "mlbam_id": 670167,
           "name": "John Schreiber",
           "war_prior": 4.13,
-          "war_after_move": 0.43,
-          "war_during": 0.43,
+          "war_after_move": 0.27,
+          "war_during": 0.27,
           "war_after_exit": 0.0
         }
       ],
@@ -165,8 +165,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.43,
-      "war_acquired": 0.43,
+      "net_war_exchange": 0.27,
+      "war_acquired": 0.27,
       "war_sent_away": 0.0,
       "war_prior_acquired": 4.13,
       "war_prior_sent": 0.0,
@@ -176,7 +176,7 @@
       "counterparty_id": null,
       "acquisition_channel": "waiver",
       "deal_archetype": "waiver_claim",
-      "talent_grade": 0.43,
+      "talent_grade": 0.27,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -596,8 +596,8 @@
           "mlbam_id": 806146,
           "name": "George Lombard Jr.",
           "war_prior": 0.0,
-          "war_after_move": 1.02,
-          "war_during": 1.02,
+          "war_after_move": 1.16,
+          "war_during": 1.16,
           "war_after_exit": 0.0
         }
       ],
@@ -606,8 +606,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 1.02,
-      "war_acquired": 1.02,
+      "net_war_exchange": 1.16,
+      "war_acquired": 1.16,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -617,7 +617,7 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 1.02,
+      "talent_grade": 1.16,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -640,16 +640,16 @@
           "mlbam_id": 671218,
           "name": "Heliot Ramos",
           "war_prior": 2.64,
-          "war_after_move": -0.19,
-          "war_during": -0.19,
+          "war_after_move": -0.22,
+          "war_during": -0.22,
           "war_after_exit": 0.0
         },
         {
           "mlbam_id": 671277,
           "name": "Luis Garc\u00eda Jr.",
           "war_prior": 3.31,
-          "war_after_move": 0.74,
-          "war_during": 0.74,
+          "war_after_move": 0.82,
+          "war_during": 0.82,
           "war_after_exit": 0.0
         }
       ],
@@ -688,7 +688,7 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": -0.15
+          "war_charged": -0.4
         },
         {
           "mlbam_id": 700649,
@@ -712,10 +712,10 @@
       "salary_paid": 6875000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": -2475000.0,
-      "net_war_exchange": 0.59,
-      "war_acquired": 0.55,
-      "war_sent_away": -0.04,
+      "surplus_value": -2075000.0,
+      "net_war_exchange": 0.89,
+      "war_acquired": 0.6,
+      "war_sent_away": -0.29,
       "war_prior_acquired": 5.95,
       "war_prior_sent": -0.54,
       "war_after_exit_acquired": 0.0,
@@ -724,9 +724,9 @@
       "counterparty_id": 137,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
-      "talent_grade": 0.55,
+      "talent_grade": 0.6,
       "talent_per_control_year": null,
-      "ledger_grade": -2475000.0,
+      "ledger_grade": -2075000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -3074,19 +3074,19 @@
           "mlbam_id": 678391,
           "name": "Jorbit Vivas",
           "war_prior": -0.3,
-          "war_after_move": 0.94,
+          "war_after_move": 0.92,
           "war_during": -0.3,
-          "war_after_exit": 0.94,
-          "war_charged": 0.94
+          "war_after_exit": 0.92,
+          "war_charged": 0.92
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.94,
+      "net_war_exchange": -0.92,
       "war_acquired": 0.0,
-      "war_sent_away": 0.94,
+      "war_sent_away": 0.92,
       "war_prior_acquired": 0.0,
       "war_prior_sent": -0.3,
       "war_after_exit_acquired": 0.0,
@@ -3095,7 +3095,7 @@
       "counterparty_id": 120,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
-      "talent_grade": -0.94,
+      "talent_grade": -0.92,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -3514,8 +3514,8 @@
           "mlbam_id": 502671,
           "name": "Paul Goldschmidt",
           "war_prior": 63.88,
-          "war_after_move": 1.53,
-          "war_during": 1.53,
+          "war_after_move": 1.33,
+          "war_during": 1.33,
           "war_after_exit": 0.0
         }
       ],
@@ -3523,9 +3523,9 @@
       "salary_paid": 4000000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 8240000.0,
-      "net_war_exchange": 1.53,
-      "war_acquired": 1.53,
+      "surplus_value": 6640000.0,
+      "net_war_exchange": 1.33,
+      "war_acquired": 1.33,
       "war_sent_away": 0.0,
       "war_prior_acquired": 63.88,
       "war_prior_sent": 0.0,
@@ -3535,9 +3535,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "free_agent",
-      "talent_grade": 1.53,
+      "talent_grade": 1.33,
       "talent_per_control_year": null,
-      "ledger_grade": 8240000.0,
+      "ledger_grade": 6640000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -3931,19 +3931,19 @@
           "mlbam_id": 681198,
           "name": "TJ Rumfield",
           "war_prior": 0.0,
-          "war_after_move": 3.53,
+          "war_after_move": 3.5,
           "war_during": 0.0,
-          "war_after_exit": 3.53,
-          "war_charged": 3.53
+          "war_after_exit": 3.5,
+          "war_charged": 3.5
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -3.46,
+      "net_war_exchange": -3.43,
       "war_acquired": 0.07,
-      "war_sent_away": 3.53,
+      "war_sent_away": 3.5,
       "war_prior_acquired": -0.47,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -3952,7 +3952,7 @@
       "counterparty_id": 115,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_loss",
-      "talent_grade": -3.46,
+      "talent_grade": -3.43,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -4767,8 +4767,8 @@
           "mlbam_id": 621112,
           "name": "Paul Blackburn",
           "war_prior": 2.58,
-          "war_after_move": 3.08,
-          "war_during": 3.08,
+          "war_after_move": 3.1,
+          "war_during": 3.1,
           "war_after_exit": 0.0
         }
       ],
@@ -4776,9 +4776,9 @@
       "salary_paid": 4000000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 20640000.0,
-      "net_war_exchange": 3.08,
-      "war_acquired": 3.08,
+      "surplus_value": 20800000.0,
+      "net_war_exchange": 3.1,
+      "war_acquired": 3.1,
       "war_sent_away": 0.0,
       "war_prior_acquired": 2.58,
       "war_prior_sent": 0.0,
@@ -4788,9 +4788,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "bargain_fa",
-      "talent_grade": 3.08,
+      "talent_grade": 3.1,
       "talent_per_control_year": null,
-      "ledger_grade": 20640000.0,
+      "ledger_grade": 20800000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -5075,8 +5075,8 @@
           "mlbam_id": 677960,
           "name": "Ryan Weathers",
           "war_prior": 1.17,
-          "war_after_move": 2.14,
-          "war_during": 2.14,
+          "war_after_move": 2.18,
+          "war_during": 2.18,
           "war_after_exit": 0.0
         }
       ],
@@ -5121,9 +5121,9 @@
       "salary_paid": 1350000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 15770000.0,
-      "net_war_exchange": 2.14,
-      "war_acquired": 2.14,
+      "surplus_value": 16090000.0,
+      "net_war_exchange": 2.18,
+      "war_acquired": 2.18,
       "war_sent_away": 0.0,
       "war_prior_acquired": 1.17,
       "war_prior_sent": 0.0,
@@ -5133,9 +5133,9 @@
       "counterparty_id": 146,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_win",
-      "talent_grade": 2.14,
+      "talent_grade": 2.18,
       "talent_per_control_year": null,
-      "ledger_grade": 15770000.0,
+      "ledger_grade": 16090000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -6212,8 +6212,8 @@
           "mlbam_id": 663757,
           "name": "Trent Grisham",
           "war_prior": 14.55,
-          "war_after_move": 0.61,
-          "war_during": 0.61,
+          "war_after_move": 0.62,
+          "war_during": 0.62,
           "war_after_exit": 0.0
         }
       ],
@@ -6221,9 +6221,9 @@
       "salary_paid": 22000000,
       "contract_years": 1,
       "contract_active": true,
-      "surplus_value": -17120000.0,
-      "net_war_exchange": 0.61,
-      "war_acquired": 0.61,
+      "surplus_value": -17040000.0,
+      "net_war_exchange": 0.62,
+      "war_acquired": 0.62,
       "war_sent_away": 0.0,
       "war_prior_acquired": 14.55,
       "war_prior_sent": 0.0,
@@ -6233,9 +6233,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "free_agent",
-      "talent_grade": 0.61,
-      "talent_per_control_year": 0.61,
-      "ledger_grade": -17120000.0,
+      "talent_grade": 0.62,
+      "talent_per_control_year": 0.62,
+      "ledger_grade": -17040000.0,
       "control_years_remaining": 1.0,
       "control_bucket": "one_year",
       "control_source": "contract_through",
@@ -6256,8 +6256,8 @@
           "mlbam_id": 682987,
           "name": "Spencer Jones",
           "war_prior": 0.0,
-          "war_after_move": 1.03,
-          "war_during": 1.03,
+          "war_after_move": 1.11,
+          "war_during": 1.11,
           "war_after_exit": 0.0
         }
       ],
@@ -6266,8 +6266,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 1.03,
-      "war_acquired": 1.03,
+      "net_war_exchange": 1.11,
+      "war_acquired": 1.11,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -6277,7 +6277,7 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 1.03,
+      "talent_grade": 1.11,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -6609,8 +6609,8 @@
           "mlbam_id": 621112,
           "name": "Paul Blackburn",
           "war_prior": 3.07,
-          "war_after_move": 3.01,
-          "war_during": 3.01,
+          "war_after_move": 3.03,
+          "war_during": 3.03,
           "war_after_exit": 0.0
         }
       ],
@@ -6618,9 +6618,9 @@
       "salary_paid": 4000000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 20080000.0,
-      "net_war_exchange": 3.01,
-      "war_acquired": 3.01,
+      "surplus_value": 20240000.0,
+      "net_war_exchange": 3.03,
+      "war_acquired": 3.03,
       "war_sent_away": 0.0,
       "war_prior_acquired": 3.07,
       "war_prior_sent": 0.0,
@@ -6630,9 +6630,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "bargain_fa",
-      "talent_grade": 3.01,
+      "talent_grade": 3.03,
       "talent_per_control_year": null,
-      "ledger_grade": 20080000.0,
+      "ledger_grade": 20240000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -6917,32 +6917,32 @@
           "mlbam_id": 666808,
           "name": "Camilo Doval",
           "war_prior": 3.35,
-          "war_after_move": -1.12,
-          "war_during": -1.12,
+          "war_after_move": -1.11,
+          "war_during": -1.11,
           "war_after_exit": 0.0
         },
         {
           "mlbam_id": 676609,
           "name": "Jos\u00e9 Caballero",
           "war_prior": 4.08,
-          "war_after_move": 3.52,
-          "war_during": 3.52,
+          "war_after_move": 3.41,
+          "war_during": 3.41,
           "war_after_exit": 0.0
         },
         {
           "mlbam_id": 670280,
           "name": "David Bednar",
           "war_prior": 4.79,
-          "war_after_move": 2.63,
-          "war_during": 2.63,
+          "war_after_move": 2.62,
+          "war_during": 2.62,
           "war_after_exit": 0.0
         },
         {
           "mlbam_id": 656234,
           "name": "Jake Bird",
           "war_prior": 1.49,
-          "war_after_move": -0.97,
-          "war_during": -0.97,
+          "war_after_move": -0.96,
+          "war_during": -0.96,
           "war_after_exit": 0.0
         },
         {
@@ -6971,7 +6971,7 @@
           "war_after_move": 0.0,
           "war_during": 0.06,
           "war_after_exit": 0.0,
-          "war_charged": 0.56
+          "war_charged": 0.61
         },
         {
           "mlbam_id": 804668,
@@ -6980,7 +6980,7 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": 0.93
+          "war_charged": 1.07
         },
         {
           "mlbam_id": 814297,
@@ -7031,10 +7031,10 @@
           "mlbam_id": 683679,
           "name": "Jesus Rodriguez",
           "war_prior": 0.0,
-          "war_after_move": -0.15,
+          "war_after_move": -0.14,
           "war_during": 0.0,
-          "war_after_exit": -0.15,
-          "war_charged": -0.15
+          "war_after_exit": -0.14,
+          "war_charged": -0.14
         },
         {
           "mlbam_id": 801639,
@@ -7058,10 +7058,10 @@
       "salary_paid": 20000000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 12480000.0,
-      "net_war_exchange": 3.02,
-      "war_acquired": 4.06,
-      "war_sent_away": 1.04,
+      "surplus_value": 11680000.0,
+      "net_war_exchange": 2.72,
+      "war_acquired": 3.96,
+      "war_sent_away": 1.24,
       "war_prior_acquired": 13.71,
       "war_prior_sent": -0.55,
       "war_after_exit_acquired": 0.0,
@@ -7070,9 +7070,9 @@
       "counterparty_id": 137,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 4.21,
+      "talent_grade": 4.1,
       "talent_per_control_year": null,
-      "ledger_grade": 12480000.0,
+      "ledger_grade": 11680000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -7095,7 +7095,7 @@
           "war_prior": 5.06,
           "war_after_move": -0.36,
           "war_during": -0.36,
-          "war_after_exit": -0.15
+          "war_after_exit": -0.14
         }
       ],
       "players_sent_away": [
@@ -7118,7 +7118,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 5.06,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": -0.15,
+      "war_after_exit_acquired": -0.14,
       "salary_source": null,
       "counterparty": "Chicago White Sox",
       "counterparty_id": 145,
@@ -7202,10 +7202,10 @@
           "mlbam_id": 690925,
           "name": "Clayton Beeter",
           "war_prior": 0.01,
-          "war_after_move": 0.76,
+          "war_after_move": 0.77,
           "war_during": 0.01,
-          "war_after_exit": 0.76,
-          "war_charged": 0.76
+          "war_after_exit": 0.77,
+          "war_charged": 0.77
         },
         {
           "mlbam_id": 821129,
@@ -7221,9 +7221,9 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": -4260000.0,
-      "net_war_exchange": -0.98,
+      "net_war_exchange": -0.99,
       "war_acquired": -0.22,
-      "war_sent_away": 0.76,
+      "war_sent_away": 0.77,
       "war_prior_acquired": 9.99,
       "war_prior_sent": 0.01,
       "war_after_exit_acquired": 0.0,
@@ -7232,7 +7232,7 @@
       "counterparty_id": 120,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
-      "talent_grade": -0.98,
+      "talent_grade": -0.99,
       "talent_per_control_year": null,
       "ledger_grade": -4260000.0,
       "control_years_remaining": null,
@@ -7255,8 +7255,8 @@
           "mlbam_id": 641857,
           "name": "Ryan McMahon",
           "war_prior": 15.02,
-          "war_after_move": 1.24,
-          "war_during": 1.24,
+          "war_after_move": 1.16,
+          "war_during": 1.16,
           "war_after_exit": 0.0
         }
       ],
@@ -7283,9 +7283,9 @@
       "salary_paid": 16000000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": -6080000.0,
-      "net_war_exchange": 1.24,
-      "war_acquired": 1.24,
+      "surplus_value": -6720000.0,
+      "net_war_exchange": 1.16,
+      "war_acquired": 1.16,
       "war_sent_away": 0.0,
       "war_prior_acquired": 15.02,
       "war_prior_sent": 0.0,
@@ -7295,9 +7295,9 @@
       "counterparty_id": 115,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 1.24,
+      "talent_grade": 1.16,
       "talent_per_control_year": null,
-      "ledger_grade": -6080000.0,
+      "ledger_grade": -6720000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -7319,18 +7319,18 @@
           "mlbam_id": 670329,
           "name": "Rico Garcia",
           "war_prior": 0.0,
-          "war_after_move": 2.29,
+          "war_after_move": 2.28,
           "war_during": 0.0,
-          "war_after_exit": 2.29
+          "war_after_exit": 2.28
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -2.29,
+      "net_war_exchange": -2.28,
       "war_acquired": 0.0,
-      "war_sent_away": 2.29,
+      "war_sent_away": 2.28,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -8552,7 +8552,7 @@
           "war_prior": -0.51,
           "war_after_move": -0.11,
           "war_during": -0.11,
-          "war_after_exit": 1.4
+          "war_after_exit": 1.39
         }
       ],
       "players_sent_away": [],
@@ -8565,7 +8565,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.51,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.4,
+      "war_after_exit_acquired": 1.39,
       "salary_source": null,
       "counterparty": "New York Mets",
       "counterparty_id": null,
@@ -8638,8 +8638,8 @@
           "mlbam_id": 693645,
           "name": "Cam Schlittler",
           "war_prior": 0.0,
-          "war_after_move": 9.02,
-          "war_during": 9.02,
+          "war_after_move": 9.04,
+          "war_during": 9.04,
           "war_after_exit": 0.0
         }
       ],
@@ -8648,8 +8648,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 9.02,
-      "war_acquired": 9.02,
+      "net_war_exchange": 9.04,
+      "war_acquired": 9.04,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -8659,7 +8659,7 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 9.02,
+      "talent_grade": 9.04,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -8729,7 +8729,7 @@
           "war_prior": -1.49,
           "war_after_move": -0.22,
           "war_during": -0.22,
-          "war_after_exit": 0.31
+          "war_after_exit": 0.32
         }
       ],
       "players_sent_away": [],
@@ -8742,7 +8742,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -1.49,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.31,
+      "war_after_exit_acquired": 0.32,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -8860,18 +8860,18 @@
           "mlbam_id": 664129,
           "name": "Geoff Hartlieb",
           "war_prior": 0.0,
-          "war_after_move": 0.27,
+          "war_after_move": 0.28,
           "war_during": 0.0,
-          "war_after_exit": 0.27
+          "war_after_exit": 0.28
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.27,
+      "net_war_exchange": -0.28,
       "war_acquired": 0.0,
-      "war_sent_away": 0.27,
+      "war_sent_away": 0.28,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -8993,7 +8993,7 @@
           "war_prior": -1.49,
           "war_after_move": -0.22,
           "war_during": -0.22,
-          "war_after_exit": 0.31
+          "war_after_exit": 0.32
         }
       ],
       "players_sent_away": [],
@@ -9006,7 +9006,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -1.49,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.31,
+      "war_after_exit_acquired": 0.32,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -9873,18 +9873,18 @@
           "mlbam_id": 672782,
           "name": "Yoendrys G\u00f3mez",
           "war_prior": 0.16,
-          "war_after_move": 0.3,
+          "war_after_move": 0.31,
           "war_during": 0.16,
-          "war_after_exit": 0.3
+          "war_after_exit": 0.31
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.3,
+      "net_war_exchange": -0.31,
       "war_acquired": 0.0,
-      "war_sent_away": 0.3,
+      "war_sent_away": 0.31,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.16,
       "war_after_exit_acquired": 0.0,
@@ -11016,8 +11016,8 @@
           "mlbam_id": 687396,
           "name": "Brent Headrick",
           "war_prior": -0.22,
-          "war_after_move": 3.13,
-          "war_during": 3.13,
+          "war_after_move": 2.95,
+          "war_during": 2.95,
           "war_after_exit": 0.0
         }
       ],
@@ -11026,8 +11026,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 3.13,
-      "war_acquired": 3.13,
+      "net_war_exchange": 2.95,
+      "war_acquired": 2.95,
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.22,
       "war_prior_sent": 0.0,
@@ -11037,7 +11037,7 @@
       "counterparty_id": null,
       "acquisition_channel": "waiver",
       "deal_archetype": "waiver_claim",
-      "talent_grade": 3.13,
+      "talent_grade": 2.95,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -11148,8 +11148,8 @@
           "mlbam_id": 657612,
           "name": "Tim Hill",
           "war_prior": 0.18,
-          "war_after_move": 0.96,
-          "war_during": 0.96,
+          "war_after_move": 1.04,
+          "war_during": 1.04,
           "war_after_exit": 0.0
         }
       ],
@@ -11157,9 +11157,9 @@
       "salary_paid": 5500000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 2180000.0,
-      "net_war_exchange": 0.96,
-      "war_acquired": 0.96,
+      "surplus_value": 2820000.0,
+      "net_war_exchange": 1.04,
+      "war_acquired": 1.04,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.18,
       "war_prior_sent": 0.0,
@@ -11169,9 +11169,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "free_agent",
-      "talent_grade": 0.96,
+      "talent_grade": 1.04,
       "talent_per_control_year": null,
-      "ledger_grade": 2180000.0,
+      "ledger_grade": 2820000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -12468,8 +12468,8 @@
           "mlbam_id": 502671,
           "name": "Paul Goldschmidt",
           "war_prior": 62.75,
-          "war_after_move": 2.66,
-          "war_during": 2.66,
+          "war_after_move": 2.46,
+          "war_during": 2.46,
           "war_after_exit": 0.0
         }
       ],
@@ -12477,9 +12477,9 @@
       "salary_paid": 12500000,
       "contract_years": 1,
       "contract_active": false,
-      "surplus_value": 8780000.0,
-      "net_war_exchange": 2.66,
-      "war_acquired": 2.66,
+      "surplus_value": 7180000.0,
+      "net_war_exchange": 2.46,
+      "war_acquired": 2.46,
       "war_sent_away": 0.0,
       "war_prior_acquired": 62.75,
       "war_prior_sent": 0.0,
@@ -12489,9 +12489,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "free_agent",
-      "talent_grade": 2.66,
-      "talent_per_control_year": 2.66,
-      "ledger_grade": 8780000.0,
+      "talent_grade": 2.46,
+      "talent_per_control_year": 2.46,
+      "ledger_grade": 7180000.0,
       "control_years_remaining": 1.0,
       "control_bucket": "one_year",
       "control_source": "contract_through",
@@ -12564,8 +12564,8 @@
           "mlbam_id": 518585,
           "name": "Fernando Cruz",
           "war_prior": 1.35,
-          "war_after_move": 1.48,
-          "war_during": 1.48,
+          "war_after_move": 1.49,
+          "war_during": 1.49,
           "war_after_exit": 0.0
         }
       ],
@@ -12574,19 +12574,19 @@
           "mlbam_id": 624431,
           "name": "Jose Trevino",
           "war_prior": 3.3,
-          "war_after_move": -0.71,
+          "war_after_move": -0.72,
           "war_during": 3.3,
-          "war_after_exit": -0.71,
-          "war_charged": -0.71
+          "war_after_exit": -0.72,
+          "war_charged": -0.72
         }
       ],
       "salary_paid": 2900000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 8940000.0,
-      "net_war_exchange": 2.19,
-      "war_acquired": 1.48,
-      "war_sent_away": -0.71,
+      "surplus_value": 9020000.0,
+      "net_war_exchange": 2.21,
+      "war_acquired": 1.49,
+      "war_sent_away": -0.72,
       "war_prior_acquired": -0.02,
       "war_prior_sent": 3.3,
       "war_after_exit_acquired": 0.0,
@@ -12595,9 +12595,9 @@
       "counterparty_id": 113,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_win",
-      "talent_grade": 2.19,
+      "talent_grade": 2.21,
       "talent_per_control_year": null,
-      "ledger_grade": 8940000.0,
+      "ledger_grade": 9020000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -12620,7 +12620,7 @@
           "war_prior": 3.98,
           "war_after_move": 0.23,
           "war_during": 0.23,
-          "war_after_exit": 1.63
+          "war_after_exit": 1.72
         }
       ],
       "players_sent_away": [],
@@ -12633,7 +12633,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 3.98,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.63,
+      "war_after_exit_acquired": 1.72,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -12716,8 +12716,8 @@
           "mlbam_id": 608331,
           "name": "Max Fried",
           "war_prior": 23.93,
-          "war_after_move": 8.3,
-          "war_during": 8.3,
+          "war_after_move": 8.31,
+          "war_during": 8.31,
           "war_after_exit": 0.0
         }
       ],
@@ -12725,9 +12725,9 @@
       "salary_paid": 218000000,
       "contract_years": 8,
       "contract_active": true,
-      "surplus_value": -151600000.0,
-      "net_war_exchange": 8.3,
-      "war_acquired": 8.3,
+      "surplus_value": -151520000.0,
+      "net_war_exchange": 8.31,
+      "war_acquired": 8.31,
       "war_sent_away": 0.0,
       "war_prior_acquired": 23.93,
       "war_prior_sent": 0.0,
@@ -12737,9 +12737,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "overpay_fa",
-      "talent_grade": 8.3,
+      "talent_grade": 8.31,
       "talent_per_control_year": 1.04,
-      "ledger_grade": -151600000.0,
+      "ledger_grade": -151520000.0,
       "control_years_remaining": 8.0,
       "control_bucket": "long_term",
       "control_source": "contract_through",
@@ -12938,7 +12938,7 @@
           "war_prior": 8.87,
           "war_after_move": -0.25,
           "war_during": -0.25,
-          "war_after_exit": -0.59
+          "war_after_exit": -0.6
         }
       ],
       "players_sent_away": [
@@ -12970,7 +12970,7 @@
       "war_sent_away": 2.4,
       "war_prior_acquired": 8.87,
       "war_prior_sent": 9.65,
-      "war_after_exit_acquired": -0.59,
+      "war_after_exit_acquired": -0.6,
       "salary_source": "bref",
       "counterparty": "Milwaukee Brewers",
       "counterparty_id": 158,
@@ -13053,19 +13053,19 @@
           "mlbam_id": 665966,
           "name": "Carlos Narv\u00e1ez",
           "war_prior": 0.11,
-          "war_after_move": 2.37,
+          "war_after_move": 2.38,
           "war_during": 0.11,
-          "war_after_exit": 2.37,
-          "war_charged": 2.37
+          "war_after_exit": 2.38,
+          "war_charged": 2.38
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -2.39,
+      "net_war_exchange": -2.4,
       "war_acquired": -0.02,
-      "war_sent_away": 2.37,
+      "war_sent_away": 2.38,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.11,
       "war_after_exit_acquired": 0.0,
@@ -13074,7 +13074,7 @@
       "counterparty_id": 111,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_loss",
-      "talent_grade": -2.39,
+      "talent_grade": -2.4,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -13450,19 +13450,19 @@
           "mlbam_id": 666211,
           "name": "Taylor Trammell",
           "war_prior": -0.08,
-          "war_after_move": -0.67,
+          "war_after_move": -0.66,
           "war_during": -0.08,
-          "war_after_exit": -0.67,
-          "war_charged": -0.67
+          "war_after_exit": -0.66,
+          "war_charged": -0.66
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.67,
+      "net_war_exchange": 0.66,
       "war_acquired": 0,
-      "war_sent_away": -0.67,
+      "war_sent_away": -0.66,
       "war_prior_acquired": 0.0,
       "war_prior_sent": -0.08,
       "war_after_exit_acquired": 0.0,
@@ -13471,7 +13471,7 @@
       "counterparty_id": 117,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
-      "talent_grade": 0.67,
+      "talent_grade": 0.66,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -13672,7 +13672,7 @@
           "war_prior": -1.13,
           "war_after_move": -0.22,
           "war_during": -0.22,
-          "war_after_exit": 0.31
+          "war_after_exit": 0.32
         }
       ],
       "players_sent_away": [],
@@ -13685,7 +13685,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -1.13,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.31,
+      "war_after_exit_acquired": 0.32,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -13715,18 +13715,18 @@
           "mlbam_id": 676760,
           "name": "Ron Marinaccio",
           "war_prior": 1.59,
-          "war_after_move": -0.15,
+          "war_after_move": -0.14,
           "war_during": 1.59,
-          "war_after_exit": -0.15
+          "war_after_exit": -0.14
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.15,
+      "net_war_exchange": 0.14,
       "war_acquired": 0.0,
-      "war_sent_away": -0.15,
+      "war_sent_away": -0.14,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 1.59,
       "war_after_exit_acquired": 0.0,
@@ -14155,18 +14155,18 @@
           "mlbam_id": 660853,
           "name": "Enyel De Los Santos",
           "war_prior": 0.0,
-          "war_after_move": 0.53,
+          "war_after_move": 0.52,
           "war_during": 0.0,
-          "war_after_exit": 0.53
+          "war_after_exit": 0.52
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.53,
+      "net_war_exchange": -0.52,
       "war_acquired": 0.0,
-      "war_sent_away": 0.53,
+      "war_sent_away": 0.52,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -14419,18 +14419,18 @@
           "mlbam_id": 663330,
           "name": "Jahmai Jones",
           "war_prior": 0.0,
-          "war_after_move": 0.68,
+          "war_after_move": 0.64,
           "war_during": 0.0,
-          "war_after_exit": 0.68
+          "war_after_exit": 0.64
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.68,
+      "net_war_exchange": -0.64,
       "war_acquired": 0.0,
-      "war_sent_away": 0.68,
+      "war_sent_away": 0.64,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -14464,7 +14464,7 @@
           "war_prior": 0.27,
           "war_after_move": -0.67,
           "war_during": -0.67,
-          "war_after_exit": 0.53
+          "war_after_exit": 0.55
         },
         {
           "mlbam_id": 660853,
@@ -14472,7 +14472,7 @@
           "war_prior": 1.1,
           "war_after_move": -0.6,
           "war_during": -0.6,
-          "war_after_exit": -0.19
+          "war_after_exit": -0.2
         },
         {
           "mlbam_id": 693647,
@@ -14538,7 +14538,7 @@
       "war_sent_away": -0.21,
       "war_prior_acquired": 1.37,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.34,
+      "war_after_exit_acquired": 0.35,
       "salary_source": "bref",
       "counterparty": "Chicago Cubs",
       "counterparty_id": 112,
@@ -14611,8 +14611,8 @@
           "mlbam_id": 701542,
           "name": "Will Warren",
           "war_prior": 0.0,
-          "war_after_move": 0.44,
-          "war_during": 0.44,
+          "war_after_move": 0.31,
+          "war_during": 0.31,
           "war_after_exit": 0.0
         }
       ],
@@ -14621,8 +14621,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.44,
-      "war_acquired": 0.44,
+      "net_war_exchange": 0.31,
+      "war_acquired": 0.31,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -14632,7 +14632,7 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 0.44,
+      "talent_grade": 0.31,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -14699,8 +14699,8 @@
           "mlbam_id": 665862,
           "name": "Jazz Chisholm Jr.",
           "war_prior": 5.51,
-          "war_after_move": 7.01,
-          "war_during": 7.01,
+          "war_after_move": 7.14,
+          "war_during": 7.14,
           "war_after_exit": 0.0
         }
       ],
@@ -14727,19 +14727,19 @@
           "mlbam_id": 682663,
           "name": "Agust\u00edn Ram\u00edrez",
           "war_prior": 0.0,
-          "war_after_move": -0.44,
+          "war_after_move": -0.39,
           "war_during": 0.0,
-          "war_after_exit": -0.44,
-          "war_charged": -0.44
+          "war_after_exit": -0.39,
+          "war_charged": -0.39
         }
       ],
       "salary_paid": 16050000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 40030000.0,
-      "net_war_exchange": 7.52,
-      "war_acquired": 7.01,
-      "war_sent_away": -0.51,
+      "surplus_value": 41070000.0,
+      "net_war_exchange": 7.6,
+      "war_acquired": 7.14,
+      "war_sent_away": -0.46,
       "war_prior_acquired": 5.51,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -14748,9 +14748,9 @@
       "counterparty_id": 146,
       "acquisition_channel": "trade",
       "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 7.52,
+      "talent_grade": 7.6,
       "talent_per_control_year": null,
-      "ledger_grade": 40030000.0,
+      "ledger_grade": 41070000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -16497,8 +16497,8 @@
           "mlbam_id": 657612,
           "name": "Tim Hill",
           "war_prior": -0.25,
-          "war_after_move": 1.79,
-          "war_during": 1.79,
+          "war_after_move": 1.87,
+          "war_during": 1.87,
           "war_after_exit": 0.0
         }
       ],
@@ -16506,9 +16506,9 @@
       "salary_paid": 5500000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 8820000.0,
-      "net_war_exchange": 1.79,
-      "war_acquired": 1.79,
+      "surplus_value": 9460000.0,
+      "net_war_exchange": 1.87,
+      "war_acquired": 1.87,
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.25,
       "war_prior_sent": 0.0,
@@ -16518,9 +16518,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "free_agent",
-      "talent_grade": 1.79,
+      "talent_grade": 1.87,
       "talent_per_control_year": null,
-      "ledger_grade": 8820000.0,
+      "ledger_grade": 9460000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -16673,8 +16673,8 @@
           "mlbam_id": 700250,
           "name": "Ben Rice",
           "war_prior": 0.0,
-          "war_after_move": 5.29,
-          "war_during": 5.29,
+          "war_after_move": 5.26,
+          "war_during": 5.26,
           "war_after_exit": 0.0
         }
       ],
@@ -16683,8 +16683,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 5.29,
-      "war_acquired": 5.29,
+      "net_war_exchange": 5.26,
+      "war_acquired": 5.26,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -16694,7 +16694,7 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 5.29,
+      "talent_grade": 5.26,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -17202,19 +17202,19 @@
           "mlbam_id": 620443,
           "name": "Luis Torrens",
           "war_prior": 0.0,
-          "war_after_move": 3.86,
+          "war_after_move": 4.02,
           "war_during": 0.0,
-          "war_after_exit": 3.86,
-          "war_charged": 3.86
+          "war_after_exit": 4.02,
+          "war_charged": 4.02
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -3.86,
+      "net_war_exchange": -4.02,
       "war_acquired": 0,
-      "war_sent_away": 3.86,
+      "war_sent_away": 4.02,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -17222,8 +17222,8 @@
       "counterparty": "New York Mets",
       "counterparty_id": 121,
       "acquisition_channel": "trade",
-      "deal_archetype": "trade_loss",
-      "talent_grade": -3.86,
+      "deal_archetype": "talent_sold",
+      "talent_grade": -4.02,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -17511,18 +17511,18 @@
           "mlbam_id": 666211,
           "name": "Taylor Trammell",
           "war_prior": 0.0,
-          "war_after_move": -0.83,
+          "war_after_move": -0.82,
           "war_during": 0.0,
-          "war_after_exit": -0.83
+          "war_after_exit": -0.82
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.83,
+      "net_war_exchange": 0.82,
       "war_acquired": 0.0,
-      "war_sent_away": -0.83,
+      "war_sent_away": -0.82,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -17733,7 +17733,7 @@
           "war_prior": -0.24,
           "war_after_move": -0.08,
           "war_during": -0.08,
-          "war_after_exit": -0.67
+          "war_after_exit": -0.66
         }
       ],
       "players_sent_away": [],
@@ -17746,7 +17746,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.24,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": -0.67,
+      "war_after_exit_acquired": -0.66,
       "salary_source": null,
       "counterparty": "Los Angeles Dodgers",
       "counterparty_id": null,
@@ -18545,7 +18545,7 @@
           "war_prior": -0.44,
           "war_after_move": -0.02,
           "war_during": -0.02,
-          "war_after_exit": 0.68
+          "war_after_exit": 0.64
         }
       ],
       "players_sent_away": [],
@@ -18558,7 +18558,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.44,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.68,
+      "war_after_exit_acquired": 0.64,
       "salary_source": "bref",
       "counterparty": "Milwaukee Brewers",
       "counterparty_id": null,
@@ -18864,7 +18864,7 @@
           "war_prior": 1.13,
           "war_after_move": -0.66,
           "war_during": -0.66,
-          "war_after_exit": 0.95
+          "war_after_exit": 0.94
         }
       ],
       "players_sent_away": [
@@ -18896,7 +18896,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 1.13,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.95,
+      "war_after_exit_acquired": 0.94,
       "salary_source": "bref",
       "counterparty": "Los Angeles Dodgers",
       "counterparty_id": 119,
@@ -19358,7 +19358,7 @@
           "war_prior": 0.85,
           "war_after_move": 2.57,
           "war_during": 2.57,
-          "war_after_exit": 1.77
+          "war_after_exit": 1.75
         }
       ],
       "players_sent_away": [],
@@ -19371,7 +19371,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.85,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.77,
+      "war_after_exit_acquired": 1.75,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -21181,7 +21181,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.3,
           "war_during": -0.3,
-          "war_after_exit": 0.94
+          "war_after_exit": 0.92
         }
       ],
       "players_sent_away": [
@@ -21204,7 +21204,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 1.37,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.94,
+      "war_after_exit_acquired": 0.92,
       "salary_source": "bref",
       "counterparty": "Los Angeles Dodgers",
       "counterparty_id": 119,
@@ -21279,14 +21279,14 @@
           "war_prior": 28.44,
           "war_after_move": 8.0,
           "war_during": 8.0,
-          "war_after_exit": 8.99
+          "war_after_exit": 9.07
         },
         {
           "mlbam_id": 663757,
           "name": "Trent Grisham",
           "war_prior": 10.67,
-          "war_after_move": 4.49,
-          "war_during": 4.49,
+          "war_after_move": 4.5,
+          "war_during": 4.5,
           "war_after_exit": 0.0
         }
       ],
@@ -21304,10 +21304,10 @@
           "mlbam_id": 650633,
           "name": "Michael King",
           "war_prior": 5.59,
-          "war_after_move": 9.54,
+          "war_after_move": 9.58,
           "war_during": 5.59,
-          "war_after_exit": 9.54,
-          "war_charged": 9.54
+          "war_after_exit": 9.58,
+          "war_charged": 9.58
         },
         {
           "mlbam_id": 666745,
@@ -21331,30 +21331,30 @@
           "mlbam_id": 681190,
           "name": "Randy V\u00e1squez",
           "war_prior": 1.02,
-          "war_after_move": 3.67,
+          "war_after_move": 3.7,
           "war_during": 1.02,
-          "war_after_exit": 3.67,
-          "war_charged": 3.67
+          "war_after_exit": 3.7,
+          "war_charged": 3.7
         }
       ],
       "salary_paid": 31000000,
       "contract_years": 1,
       "contract_active": false,
-      "surplus_value": 68920000.0,
-      "net_war_exchange": -2.42,
-      "war_acquired": 12.49,
-      "war_sent_away": 14.91,
+      "surplus_value": 69000000.0,
+      "net_war_exchange": -2.48,
+      "war_acquired": 12.5,
+      "war_sent_away": 14.98,
       "war_prior_acquired": 39.11,
       "war_prior_sent": 8.24,
-      "war_after_exit_acquired": 8.99,
+      "war_after_exit_acquired": 9.07,
       "salary_source": "override",
       "counterparty": "San Diego Padres",
       "counterparty_id": 135,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_loss",
-      "talent_grade": -2.42,
-      "talent_per_control_year": -2.42,
-      "ledger_grade": 68920000.0,
+      "talent_grade": -2.48,
+      "talent_per_control_year": -2.48,
+      "ledger_grade": 69000000.0,
       "control_years_remaining": 1.0,
       "control_bucket": "one_year",
       "control_source": "contract_through",
@@ -21526,10 +21526,10 @@
           "mlbam_id": 669711,
           "name": "Greg Weissert",
           "war_prior": -0.1,
-          "war_after_move": 2.14,
+          "war_after_move": 2.17,
           "war_during": -0.1,
-          "war_after_exit": 2.14,
-          "war_charged": 2.14
+          "war_after_exit": 2.17,
+          "war_charged": 2.17
         },
         {
           "mlbam_id": 690916,
@@ -21545,9 +21545,9 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": -1740000.0,
-      "net_war_exchange": -1.57,
+      "net_war_exchange": -1.6,
       "war_acquired": 0.87,
-      "war_sent_away": 2.44,
+      "war_sent_away": 2.47,
       "war_prior_acquired": 11.05,
       "war_prior_sent": -0.1,
       "war_after_exit_acquired": -0.2,
@@ -21556,7 +21556,7 @@
       "counterparty_id": 111,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
-      "talent_grade": -1.57,
+      "talent_grade": -1.6,
       "talent_per_control_year": null,
       "ledger_grade": -1740000.0,
       "control_years_remaining": null,
@@ -21641,19 +21641,19 @@
           "mlbam_id": 641343,
           "name": "Jake Bauers",
           "war_prior": -0.94,
-          "war_after_move": 3.36,
+          "war_after_move": 3.42,
           "war_during": -0.94,
-          "war_after_exit": 3.36,
-          "war_charged": 3.36
+          "war_after_exit": 3.42,
+          "war_charged": 3.42
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -3.36,
+      "net_war_exchange": -3.42,
       "war_acquired": 0.0,
-      "war_sent_away": 3.36,
+      "war_sent_away": 3.42,
       "war_prior_acquired": 0.0,
       "war_prior_sent": -0.94,
       "war_after_exit_acquired": 0.0,
@@ -21662,7 +21662,7 @@
       "counterparty_id": 158,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_loss",
-      "talent_grade": -3.36,
+      "talent_grade": -3.42,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -21775,7 +21775,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.31,
           "war_during": -0.31,
-          "war_after_exit": 0.13
+          "war_after_exit": 0.14
         }
       ],
       "players_sent_away": [],
@@ -21788,7 +21788,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.13,
+      "war_after_exit_acquired": 0.14,
       "salary_source": "bref",
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -21819,7 +21819,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.11,
           "war_during": 0.11,
-          "war_after_exit": 1.8
+          "war_after_exit": 1.85
         }
       ],
       "players_sent_away": [],
@@ -21832,7 +21832,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.8,
+      "war_after_exit_acquired": 1.85,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -21907,7 +21907,7 @@
           "war_prior": 1.41,
           "war_after_move": 2.89,
           "war_during": 2.89,
-          "war_after_exit": 1.77
+          "war_after_exit": 1.75
         }
       ],
       "players_sent_away": [],
@@ -21920,7 +21920,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 1.41,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.77,
+      "war_after_exit_acquired": 1.75,
       "salary_source": "bref",
       "counterparty": "Seattle Mariners",
       "counterparty_id": null,
@@ -21993,8 +21993,8 @@
           "mlbam_id": 669224,
           "name": "Austin Wells",
           "war_prior": 0.0,
-          "war_after_move": 3.64,
-          "war_during": 3.64,
+          "war_after_move": 3.69,
+          "war_during": 3.69,
           "war_after_exit": 0.0
         }
       ],
@@ -22002,9 +22002,9 @@
       "salary_paid": 750000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 28370000.0,
-      "net_war_exchange": 3.64,
-      "war_acquired": 3.64,
+      "surplus_value": 28770000.0,
+      "net_war_exchange": 3.69,
+      "war_acquired": 3.69,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -22014,9 +22014,9 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 3.64,
+      "talent_grade": 3.69,
       "talent_per_control_year": null,
-      "ledger_grade": 28370000.0,
+      "ledger_grade": 28770000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -22037,8 +22037,8 @@
           "mlbam_id": 691176,
           "name": "Jasson Dom\u00ednguez",
           "war_prior": 0.0,
-          "war_after_move": 0.44,
-          "war_during": 0.44,
+          "war_after_move": 0.45,
+          "war_during": 0.45,
           "war_after_exit": 0.0
         }
       ],
@@ -22046,9 +22046,9 @@
       "salary_paid": 1520000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 2000000.0,
-      "net_war_exchange": 0.44,
-      "war_acquired": 0.44,
+      "surplus_value": 2080000.0,
+      "net_war_exchange": 0.45,
+      "war_acquired": 0.45,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -22058,9 +22058,9 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 0.44,
+      "talent_grade": 0.45,
       "talent_per_control_year": null,
-      "ledger_grade": 2000000.0,
+      "ledger_grade": 2080000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -22082,18 +22082,18 @@
           "mlbam_id": 664056,
           "name": "Harrison Bader",
           "war_prior": 0.01,
-          "war_after_move": 4.65,
+          "war_after_move": 4.63,
           "war_during": 0.01,
-          "war_after_exit": 4.65
+          "war_after_exit": 4.63
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -4.65,
+      "net_war_exchange": -4.63,
       "war_acquired": 0.0,
-      "war_sent_away": 4.65,
+      "war_sent_away": 4.63,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.01,
       "war_after_exit_acquired": 0.0,
@@ -23067,8 +23067,8 @@
           "mlbam_id": 806146,
           "name": "George Lombard Jr.",
           "war_prior": 0.0,
-          "war_after_move": 1.02,
-          "war_during": 1.02,
+          "war_after_move": 1.16,
+          "war_during": 1.16,
           "war_after_exit": 0.0
         }
       ],
@@ -23077,8 +23077,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 1.02,
-      "war_acquired": 1.02,
+      "net_war_exchange": 1.16,
+      "war_acquired": 1.16,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -23088,7 +23088,7 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 1.02,
+      "talent_grade": 1.16,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -24443,7 +24443,7 @@
           "war_prior": -0.59,
           "war_after_move": -0.94,
           "war_during": -0.94,
-          "war_after_exit": 3.36
+          "war_after_exit": 3.42
         }
       ],
       "players_sent_away": [],
@@ -24456,7 +24456,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.59,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 3.36,
+      "war_after_exit_acquired": 3.42,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -25083,8 +25083,8 @@
           "mlbam_id": 683011,
           "name": "Anthony Volpe",
           "war_prior": 0.0,
-          "war_after_move": 9.62,
-          "war_during": 9.62,
+          "war_after_move": 9.71,
+          "war_during": 9.71,
           "war_after_exit": 0.0
         }
       ],
@@ -25092,9 +25092,9 @@
       "salary_paid": 5005100.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 71954900.0,
-      "net_war_exchange": 9.62,
-      "war_acquired": 9.62,
+      "surplus_value": 72674900.0,
+      "net_war_exchange": 9.71,
+      "war_acquired": 9.71,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -25104,9 +25104,9 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 9.62,
+      "talent_grade": 9.71,
       "talent_per_control_year": null,
-      "ledger_grade": 71954900.0,
+      "ledger_grade": 72674900.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -26685,8 +26685,8 @@
           "mlbam_id": 607074,
           "name": "Carlos Rod\u00f3n",
           "war_prior": 16.48,
-          "war_after_move": 7.34,
-          "war_during": 7.34,
+          "war_after_move": 7.35,
+          "war_during": 7.35,
           "war_after_exit": 0.0
         }
       ],
@@ -26694,9 +26694,9 @@
       "salary_paid": 162000000,
       "contract_years": 6,
       "contract_active": true,
-      "surplus_value": -103280000.0,
-      "net_war_exchange": 7.34,
-      "war_acquired": 7.34,
+      "surplus_value": -103200000.0,
+      "net_war_exchange": 7.35,
+      "war_acquired": 7.35,
       "war_sent_away": 0.0,
       "war_prior_acquired": 16.48,
       "war_prior_sent": 0.0,
@@ -26706,9 +26706,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "overpay_fa",
-      "talent_grade": 7.34,
+      "talent_grade": 7.35,
       "talent_per_control_year": 1.22,
-      "ledger_grade": -103280000.0,
+      "ledger_grade": -103200000.0,
       "control_years_remaining": 6.0,
       "control_bucket": "long_term",
       "control_source": "contract_through",
@@ -27303,7 +27303,7 @@
           "war_prior": -0.59,
           "war_after_move": -0.94,
           "war_during": -0.94,
-          "war_after_exit": 3.36
+          "war_after_exit": 3.42
         }
       ],
       "players_sent_away": [],
@@ -27316,7 +27316,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.59,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 3.36,
+      "war_after_exit_acquired": 3.42,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -27778,7 +27778,7 @@
           "war_prior": 0.0,
           "war_after_move": 1.02,
           "war_during": 1.02,
-          "war_after_exit": 3.67
+          "war_after_exit": 3.7
         }
       ],
       "players_sent_away": [],
@@ -27791,7 +27791,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 3.67,
+      "war_after_exit_acquired": 3.7,
       "salary_source": null,
       "counterparty": "Somerset Patriots",
       "counterparty_id": null,
@@ -27910,7 +27910,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.42,
           "war_during": -0.42,
-          "war_after_exit": -0.8
+          "war_after_exit": -0.81
         }
       ],
       "players_sent_away": [],
@@ -27923,7 +27923,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": -0.8,
+      "war_after_exit_acquired": -0.81,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -28393,18 +28393,18 @@
           "mlbam_id": 607455,
           "name": "Anthony Banda",
           "war_prior": 0.0,
-          "war_after_move": 1.21,
+          "war_after_move": 1.22,
           "war_during": 0.0,
-          "war_after_exit": 1.21
+          "war_after_exit": 1.22
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -1.21,
+      "net_war_exchange": -1.22,
       "war_acquired": 0.0,
-      "war_sent_away": 1.21,
+      "war_sent_away": 1.22,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -28658,7 +28658,7 @@
           "war_prior": -0.3,
           "war_after_move": -0.14,
           "war_during": -0.14,
-          "war_after_exit": 1.55
+          "war_after_exit": 1.56
         }
       ],
       "players_sent_away": [],
@@ -28671,7 +28671,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.3,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.55,
+      "war_after_exit_acquired": 1.56,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -28746,7 +28746,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.1,
           "war_during": -0.1,
-          "war_after_exit": 2.14
+          "war_after_exit": 2.17
         }
       ],
       "players_sent_away": [],
@@ -28759,7 +28759,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 2.14,
+      "war_after_exit_acquired": 2.17,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -29142,7 +29142,7 @@
           "war_prior": 10.62,
           "war_after_move": 0.91,
           "war_during": 0.91,
-          "war_after_exit": 4.99
+          "war_after_exit": 4.97
         },
         {
           "mlbam_id": 690925,
@@ -29150,7 +29150,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.31,
           "war_during": -0.31,
-          "war_after_exit": 0.13
+          "war_after_exit": 0.14
         }
       ],
       "players_sent_away": [
@@ -29182,7 +29182,7 @@
       "war_sent_away": 3.37,
       "war_prior_acquired": 10.62,
       "war_prior_sent": 7.12,
-      "war_after_exit_acquired": 5.12,
+      "war_after_exit_acquired": 5.11,
       "salary_source": "bref",
       "counterparty": "St. Louis Cardinals",
       "counterparty_id": 138,
@@ -29264,10 +29264,10 @@
           "mlbam_id": 665622,
           "name": "Luis Medina",
           "war_prior": 0.0,
-          "war_after_move": 2.03,
+          "war_after_move": 2.14,
           "war_during": 0.0,
-          "war_after_exit": 2.03,
-          "war_charged": 2.03
+          "war_after_exit": 2.14,
+          "war_charged": 2.14
         },
         {
           "mlbam_id": 688682,
@@ -29283,9 +29283,9 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": -6170000.0,
-      "net_war_exchange": -9.43,
+      "net_war_exchange": -9.54,
       "war_acquired": 0.36,
-      "war_sent_away": 9.79,
+      "war_sent_away": 9.9,
       "war_prior_acquired": 8.5,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.16,
@@ -29294,7 +29294,7 @@
       "counterparty_id": 133,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_sold",
-      "talent_grade": -8.57,
+      "talent_grade": -8.68,
       "talent_per_control_year": null,
       "ledger_grade": -6170000.0,
       "control_years_remaining": null,
@@ -29451,7 +29451,7 @@
           "war_prior": 13.07,
           "war_after_move": 0.55,
           "war_during": 0.55,
-          "war_after_exit": 0.53
+          "war_after_exit": 0.48
         }
       ],
       "players_sent_away": [
@@ -29492,7 +29492,7 @@
       "war_sent_away": 0.03,
       "war_prior_acquired": 13.07,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.53,
+      "war_after_exit_acquired": 0.48,
       "salary_source": null,
       "counterparty": "Kansas City Royals",
       "counterparty_id": 118,
@@ -29521,8 +29521,8 @@
           "mlbam_id": 693645,
           "name": "Cam Schlittler",
           "war_prior": 0.0,
-          "war_after_move": 9.02,
-          "war_during": 9.02,
+          "war_after_move": 9.04,
+          "war_during": 9.04,
           "war_after_exit": 0.0
         }
       ],
@@ -29531,8 +29531,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 9.02,
-      "war_acquired": 9.02,
+      "net_war_exchange": 9.04,
+      "war_acquired": 9.04,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -29542,7 +29542,7 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 9.02,
+      "talent_grade": 9.04,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -29917,8 +29917,8 @@
           "mlbam_id": 682987,
           "name": "Spencer Jones",
           "war_prior": 0.0,
-          "war_after_move": 1.03,
-          "war_during": 1.03,
+          "war_after_move": 1.11,
+          "war_during": 1.11,
           "war_after_exit": 0.0
         }
       ],
@@ -29927,8 +29927,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 1.03,
-      "war_acquired": 1.03,
+      "net_war_exchange": 1.11,
+      "war_acquired": 1.11,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -29938,7 +29938,7 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 1.03,
+      "talent_grade": 1.11,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -31285,7 +31285,7 @@
           "war_prior": -0.59,
           "war_after_move": -0.94,
           "war_during": -0.94,
-          "war_after_exit": 3.36
+          "war_after_exit": 3.42
         }
       ],
       "players_sent_away": [],
@@ -31298,7 +31298,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.59,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 3.36,
+      "war_after_exit_acquired": 3.42,
       "salary_source": null,
       "counterparty": "Cincinnati Reds",
       "counterparty_id": 113,
@@ -32245,7 +32245,7 @@
           "war_prior": 0.42,
           "war_after_move": 3.3,
           "war_during": 3.3,
-          "war_after_exit": -0.71
+          "war_after_exit": -0.72
         }
       ],
       "players_sent_away": [
@@ -32277,7 +32277,7 @@
       "war_sent_away": -0.58,
       "war_prior_acquired": 0.42,
       "war_prior_sent": -0.22,
-      "war_after_exit_acquired": -0.71,
+      "war_after_exit_acquired": -0.72,
       "salary_source": "bref",
       "counterparty": "Texas Rangers",
       "counterparty_id": 140,
@@ -32924,7 +32924,7 @@
           "war_prior": 7.79,
           "war_after_move": 2.95,
           "war_during": 2.95,
-          "war_after_exit": 6.55
+          "war_after_exit": 6.49
         },
         {
           "mlbam_id": 518626,
@@ -32964,7 +32964,7 @@
       "war_sent_away": 3.63,
       "war_prior_acquired": 52.19,
       "war_prior_sent": 18.14,
-      "war_after_exit_acquired": 6.87,
+      "war_after_exit_acquired": 6.81,
       "salary_source": "override",
       "counterparty": "Minnesota Twins",
       "counterparty_id": 142,
@@ -34994,7 +34994,7 @@
           "war_prior": 0.0,
           "war_after_move": 1.74,
           "war_during": 1.74,
-          "war_after_exit": -0.15
+          "war_after_exit": -0.14
         }
       ],
       "players_sent_away": [],
@@ -35007,7 +35007,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": -0.15,
+      "war_after_exit_acquired": -0.14,
       "salary_source": "bref",
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -35126,7 +35126,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.56,
           "war_during": 0.56,
-          "war_after_exit": 6.15
+          "war_after_exit": 6.16
         }
       ],
       "players_sent_away": [],
@@ -35139,7 +35139,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 6.15,
+      "war_after_exit_acquired": 6.16,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -36005,18 +36005,18 @@
           "mlbam_id": 621139,
           "name": "Brooks Kriske",
           "war_prior": -0.36,
-          "war_after_move": -0.63,
+          "war_after_move": -0.62,
           "war_during": -0.36,
-          "war_after_exit": -0.63
+          "war_after_exit": -0.62
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.63,
+      "net_war_exchange": 0.62,
       "war_acquired": 0.0,
-      "war_sent_away": -0.63,
+      "war_sent_away": -0.62,
       "war_prior_acquired": 0.0,
       "war_prior_sent": -0.36,
       "war_after_exit_acquired": 0.0,
@@ -36886,10 +36886,10 @@
           "mlbam_id": 677649,
           "name": "Ezequiel Duran",
           "war_prior": 0.0,
-          "war_after_move": 6.23,
+          "war_after_move": 6.12,
           "war_during": 0.0,
-          "war_after_exit": 6.23,
-          "war_charged": 6.23
+          "war_after_exit": 6.12,
+          "war_charged": 6.12
         },
         {
           "mlbam_id": 669701,
@@ -36941,9 +36941,9 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": -24355000.0,
-      "net_war_exchange": -7.58,
+      "net_war_exchange": -7.47,
       "war_acquired": 4.49,
-      "war_sent_away": 12.07,
+      "war_sent_away": 11.96,
       "war_prior_acquired": 44.98,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.17,
@@ -36952,7 +36952,7 @@
       "counterparty_id": 140,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_miss",
-      "talent_grade": -7.83,
+      "talent_grade": -7.72,
       "talent_per_control_year": null,
       "ledger_grade": -24355000.0,
       "control_years_remaining": null,
@@ -37029,8 +37029,8 @@
           "mlbam_id": 700250,
           "name": "Ben Rice",
           "war_prior": 0.0,
-          "war_after_move": 5.29,
-          "war_during": 5.29,
+          "war_after_move": 5.26,
+          "war_during": 5.26,
           "war_after_exit": 0.0
         }
       ],
@@ -37039,8 +37039,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 5.29,
-      "war_acquired": 5.29,
+      "net_war_exchange": 5.26,
+      "war_acquired": 5.26,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -37050,7 +37050,7 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 5.29,
+      "talent_grade": 5.26,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -37207,7 +37207,7 @@
           "war_prior": -0.98,
           "war_after_move": 5.06,
           "war_during": 5.06,
-          "war_after_exit": 4.24
+          "war_after_exit": 4.19
         }
       ],
       "players_sent_away": [
@@ -37239,7 +37239,7 @@
       "war_sent_away": -1.54,
       "war_prior_acquired": -0.98,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 4.24,
+      "war_after_exit_acquired": 4.19,
       "salary_source": "bref",
       "counterparty": "Pittsburgh Pirates",
       "counterparty_id": 134,
@@ -37664,8 +37664,8 @@
           "mlbam_id": 701542,
           "name": "Will Warren",
           "war_prior": 0.0,
-          "war_after_move": 0.44,
-          "war_during": 0.44,
+          "war_after_move": 0.31,
+          "war_during": 0.31,
           "war_after_exit": 0.0
         }
       ],
@@ -37674,8 +37674,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.44,
-      "war_acquired": 0.44,
+      "net_war_exchange": 0.31,
+      "war_acquired": 0.31,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -37685,7 +37685,7 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 0.44,
+      "talent_grade": 0.31,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -39709,7 +39709,7 @@
           "war_prior": 0.06,
           "war_after_move": 3.43,
           "war_during": 3.43,
-          "war_after_exit": 2.06
+          "war_after_exit": 2.08
         }
       ],
       "players_sent_away": [
@@ -39732,7 +39732,7 @@
       "war_sent_away": 0.1,
       "war_prior_acquired": 0.06,
       "war_prior_sent": 4.02,
-      "war_after_exit_acquired": 2.06,
+      "war_after_exit_acquired": 2.08,
       "salary_source": "bref",
       "counterparty": "San Francisco Giants",
       "counterparty_id": 137,
@@ -40972,7 +40972,7 @@
           "war_prior": 7.98,
           "war_after_move": 3.7,
           "war_during": 3.7,
-          "war_after_exit": 2.47
+          "war_after_exit": 2.45
         }
       ],
       "players_sent_away": [
@@ -41022,7 +41022,7 @@
       "war_sent_away": -0.68,
       "war_prior_acquired": 7.98,
       "war_prior_sent": 0.18,
-      "war_after_exit_acquired": 2.47,
+      "war_after_exit_acquired": 2.45,
       "salary_source": "bref",
       "counterparty": "Pittsburgh Pirates",
       "counterparty_id": 134,
@@ -41811,7 +41811,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.32,
           "war_during": 0.32,
-          "war_after_exit": 0.44
+          "war_after_exit": 0.45
         }
       ],
       "players_sent_away": [],
@@ -41824,7 +41824,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.44,
+      "war_after_exit_acquired": 0.45,
       "salary_source": "bref",
       "counterparty": "Charleston RiverDogs",
       "counterparty_id": null,
@@ -41943,7 +41943,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.13,
           "war_during": -0.13,
-          "war_after_exit": 1.24
+          "war_after_exit": 1.29
         }
       ],
       "players_sent_away": [],
@@ -41956,7 +41956,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.24,
+      "war_after_exit_acquired": 1.29,
       "salary_source": "bref",
       "counterparty": "Charleston RiverDogs",
       "counterparty_id": null,
@@ -43359,8 +43359,8 @@
           "mlbam_id": 669224,
           "name": "Austin Wells",
           "war_prior": 0.0,
-          "war_after_move": 3.64,
-          "war_during": 3.64,
+          "war_after_move": 3.69,
+          "war_during": 3.69,
           "war_after_exit": 0.0
         }
       ],
@@ -43368,9 +43368,9 @@
       "salary_paid": 750000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 28370000.0,
-      "net_war_exchange": 3.64,
-      "war_acquired": 3.64,
+      "surplus_value": 28770000.0,
+      "net_war_exchange": 3.69,
+      "war_acquired": 3.69,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -43380,9 +43380,9 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 3.64,
+      "talent_grade": 3.69,
       "talent_per_control_year": null,
-      "ledger_grade": 28370000.0,
+      "ledger_grade": 28770000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -44831,8 +44831,8 @@
           "mlbam_id": 543037,
           "name": "Gerrit Cole",
           "war_prior": 23.41,
-          "war_after_move": 22.14,
-          "war_during": 22.14,
+          "war_after_move": 22.15,
+          "war_during": 22.15,
           "war_after_exit": 0.0
         }
       ],
@@ -44840,9 +44840,9 @@
       "salary_paid": 324000000,
       "contract_years": 9,
       "contract_active": true,
-      "surplus_value": -146880000.0,
-      "net_war_exchange": 22.14,
-      "war_acquired": 22.14,
+      "surplus_value": -146800000.0,
+      "net_war_exchange": 22.15,
+      "war_acquired": 22.15,
       "war_sent_away": 0.0,
       "war_prior_acquired": 23.41,
       "war_prior_sent": 0.0,
@@ -44852,9 +44852,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "overpay_fa",
-      "talent_grade": 22.14,
+      "talent_grade": 22.15,
       "talent_per_control_year": 2.46,
-      "ledger_grade": -146880000.0,
+      "ledger_grade": -146800000.0,
       "control_years_remaining": 9.0,
       "control_bucket": "long_term",
       "control_source": "contract_through",
@@ -45316,8 +45316,8 @@
           "mlbam_id": 661563,
           "name": "Luis Gil",
           "war_prior": 0.0,
-          "war_after_move": 4.48,
-          "war_during": 4.48,
+          "war_after_move": 4.53,
+          "war_during": 4.53,
           "war_after_exit": 0.0
         }
       ],
@@ -45325,9 +45325,9 @@
       "salary_paid": 2902500.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 32937500.0,
-      "net_war_exchange": 4.48,
-      "war_acquired": 4.48,
+      "surplus_value": 33337500.0,
+      "net_war_exchange": 4.53,
+      "war_acquired": 4.53,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -45337,9 +45337,9 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 4.48,
+      "talent_grade": 4.53,
       "talent_per_control_year": null,
-      "ledger_grade": 32937500.0,
+      "ledger_grade": 33337500.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -45494,7 +45494,7 @@
           "war_prior": 0.0,
           "war_after_move": -1.11,
           "war_during": -1.11,
-          "war_after_exit": -0.37
+          "war_after_exit": -0.36
         }
       ],
       "players_sent_away": [],
@@ -45507,7 +45507,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": -0.37,
+      "war_after_exit_acquired": -0.36,
       "salary_source": null,
       "counterparty": "Trenton Thunder",
       "counterparty_id": null,
@@ -45890,7 +45890,7 @@
           "war_prior": 0.0,
           "war_after_move": 5.59,
           "war_during": 5.59,
-          "war_after_exit": 9.54
+          "war_after_exit": 9.58
         }
       ],
       "players_sent_away": [],
@@ -45903,7 +45903,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 9.54,
+      "war_after_exit_acquired": 9.58,
       "salary_source": "bref",
       "counterparty": "Trenton Thunder",
       "counterparty_id": null,
@@ -47845,8 +47845,8 @@
           "mlbam_id": 691176,
           "name": "Jasson Dom\u00ednguez",
           "war_prior": 0.0,
-          "war_after_move": 0.44,
-          "war_during": 0.44,
+          "war_after_move": 0.45,
+          "war_during": 0.45,
           "war_after_exit": 0.0
         }
       ],
@@ -47854,9 +47854,9 @@
       "salary_paid": 1520000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 2000000.0,
-      "net_war_exchange": 0.44,
-      "war_acquired": 0.44,
+      "surplus_value": 2080000.0,
+      "net_war_exchange": 0.45,
+      "war_acquired": 0.45,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -47866,9 +47866,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "free_agent",
-      "talent_grade": 0.44,
+      "talent_grade": 0.45,
       "talent_per_control_year": null,
-      "ledger_grade": 2000000.0,
+      "ledger_grade": 2080000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -48989,8 +48989,8 @@
           "mlbam_id": 683011,
           "name": "Anthony Volpe",
           "war_prior": 0.0,
-          "war_after_move": 9.62,
-          "war_during": 9.62,
+          "war_after_move": 9.71,
+          "war_during": 9.71,
           "war_after_exit": 0.0
         }
       ],
@@ -48998,9 +48998,9 @@
       "salary_paid": 5005100.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 71954900.0,
-      "net_war_exchange": 9.62,
-      "war_acquired": 9.62,
+      "surplus_value": 72674900.0,
+      "net_war_exchange": 9.71,
+      "war_acquired": 9.71,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -49010,9 +49010,9 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 9.62,
+      "talent_grade": 9.71,
       "talent_per_control_year": null,
-      "ledger_grade": 71954900.0,
+      "ledger_grade": 72674900.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -56815,7 +56815,7 @@
           "war_prior": 0.0,
           "war_after_move": 1.02,
           "war_during": 1.02,
-          "war_after_exit": 3.67
+          "war_after_exit": 3.7
         }
       ],
       "players_sent_away": [],
@@ -56828,7 +56828,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 3.67,
+      "war_after_exit_acquired": 3.7,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -58275,8 +58275,8 @@
           "mlbam_id": 661563,
           "name": "Luis Gil",
           "war_prior": 0.0,
-          "war_after_move": 4.48,
-          "war_during": 4.48,
+          "war_after_move": 4.53,
+          "war_during": 4.53,
           "war_after_exit": 0.0
         }
       ],
@@ -58294,9 +58294,9 @@
       "salary_paid": 2902500.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 32937500.0,
-      "net_war_exchange": 2.4,
-      "war_acquired": 4.48,
+      "surplus_value": 33337500.0,
+      "net_war_exchange": 2.45,
+      "war_acquired": 4.53,
       "war_sent_away": 2.08,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -58306,9 +58306,9 @@
       "counterparty_id": 142,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_win",
-      "talent_grade": 2.4,
+      "talent_grade": 2.45,
       "talent_per_control_year": null,
-      "ledger_grade": 32937500.0,
+      "ledger_grade": 33337500.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -60202,7 +60202,7 @@
           "war_prior": 0.0,
           "war_after_move": 5.59,
           "war_during": 5.59,
-          "war_after_exit": 9.54
+          "war_after_exit": 9.58
         },
         {
           "mlbam_id": 665665,
@@ -60251,7 +60251,7 @@
       "war_sent_away": 7.25,
       "war_prior_acquired": 0.0,
       "war_prior_sent": -0.15,
-      "war_after_exit_acquired": 9.54,
+      "war_after_exit_acquired": 9.58,
       "salary_source": "bref",
       "counterparty": "Miami Marlins",
       "counterparty_id": 146,
@@ -60326,7 +60326,7 @@
           "war_prior": 0.0,
           "war_after_move": 4.21,
           "war_during": 4.21,
-          "war_after_exit": 1.63
+          "war_after_exit": 1.72
         }
       ],
       "players_sent_away": [],
@@ -60339,7 +60339,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.63,
+      "war_after_exit_acquired": 1.72,
       "salary_source": "bref",
       "counterparty": "Staten Island Ferry Hawks",
       "counterparty_id": null,
@@ -60502,7 +60502,7 @@
           "war_prior": 0.0,
           "war_after_move": 15.87,
           "war_during": 15.87,
-          "war_after_exit": 5.11
+          "war_after_exit": 5.06
         }
       ],
       "players_sent_away": [],
@@ -60515,7 +60515,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 5.11,
+      "war_after_exit_acquired": 5.06,
       "salary_source": "bref",
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -60554,7 +60554,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.56,
           "war_during": 0.56,
-          "war_after_exit": 6.15
+          "war_after_exit": 6.16
         }
       ],
       "players_sent_away": [
@@ -60577,7 +60577,7 @@
       "war_sent_away": -0.43,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.04,
-      "war_after_exit_acquired": 6.15,
+      "war_after_exit_acquired": 6.16,
       "salary_source": null,
       "counterparty": "Seattle Mariners",
       "counterparty_id": 136,
@@ -61048,7 +61048,7 @@
           "war_prior": 9.71,
           "war_after_move": 1.16,
           "war_during": 1.16,
-          "war_after_exit": 24.93
+          "war_after_exit": 24.98
         }
       ],
       "players_sent_away": [
@@ -61098,7 +61098,7 @@
       "war_sent_away": 1.25,
       "war_prior_acquired": 9.71,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 24.93,
+      "war_after_exit_acquired": 24.98,
       "salary_source": "bref",
       "counterparty": "Athletics",
       "counterparty_id": 133,
@@ -63035,7 +63035,7 @@
           "war_prior": 0.0,
           "war_after_move": 1.74,
           "war_during": 1.74,
-          "war_after_exit": -0.15
+          "war_after_exit": -0.14
         }
       ],
       "players_sent_away": [],
@@ -63048,7 +63048,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": -0.15,
+      "war_after_exit_acquired": -0.14,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -65195,7 +65195,7 @@
           "war_prior": 13.16,
           "war_after_move": 5.88,
           "war_during": 5.88,
-          "war_after_exit": 6.99
+          "war_after_exit": 7.0
         }
       ],
       "players_sent_away": [],
@@ -65208,7 +65208,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 13.16,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 6.99,
+      "war_after_exit_acquired": 7.0,
       "salary_source": "override",
       "counterparty": null,
       "counterparty_id": null,
@@ -65590,18 +65590,18 @@
           "mlbam_id": 620443,
           "name": "Luis Torrens",
           "war_prior": 0.0,
-          "war_after_move": 3.48,
+          "war_after_move": 3.64,
           "war_during": 0.0,
-          "war_after_exit": 3.48
+          "war_after_exit": 3.64
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -3.48,
+      "net_war_exchange": -3.64,
       "war_acquired": 0.0,
-      "war_sent_away": 3.48,
+      "war_sent_away": 3.64,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -65722,18 +65722,18 @@
           "mlbam_id": 543135,
           "name": "Nathan Eovaldi",
           "war_prior": 3.5,
-          "war_after_move": 18.58,
+          "war_after_move": 18.55,
           "war_during": 3.5,
-          "war_after_exit": 18.58
+          "war_after_exit": 18.55
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -18.58,
+      "net_war_exchange": -18.55,
       "war_acquired": 0.0,
-      "war_sent_away": 18.58,
+      "war_sent_away": 18.55,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 3.5,
       "war_after_exit_acquired": 0.0,
@@ -66674,18 +66674,18 @@
           "mlbam_id": 489446,
           "name": "Kirby Yates",
           "war_prior": 0.0,
-          "war_after_move": 9.26,
+          "war_after_move": 9.24,
           "war_during": 0.0,
-          "war_after_exit": 9.26
+          "war_after_exit": 9.24
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -9.26,
+      "net_war_exchange": -9.24,
       "war_acquired": 0.0,
-      "war_sent_away": 9.26,
+      "war_sent_away": 9.24,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -67876,7 +67876,7 @@
           "war_prior": 0.0,
           "war_after_move": 15.87,
           "war_during": 15.87,
-          "war_after_exit": 5.11
+          "war_after_exit": 5.06
         }
       ],
       "players_sent_away": [
@@ -67899,7 +67899,7 @@
       "war_sent_away": 1.2,
       "war_prior_acquired": 4.88,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 4.77,
+      "war_after_exit_acquired": 4.72,
       "salary_source": "bref",
       "counterparty": "Chicago Cubs",
       "counterparty_id": 112,
@@ -68370,7 +68370,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.32,
           "war_during": 0.32,
-          "war_after_exit": 0.44
+          "war_after_exit": 0.45
         }
       ],
       "players_sent_away": [],
@@ -68383,7 +68383,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.44,
+      "war_after_exit_acquired": 0.45,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -69074,7 +69074,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.13,
           "war_during": -0.13,
-          "war_after_exit": 1.24
+          "war_after_exit": 1.29
         }
       ],
       "players_sent_away": [],
@@ -69087,7 +69087,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.24,
+      "war_after_exit_acquired": 1.29,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -70042,7 +70042,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.1,
           "war_during": -0.1,
-          "war_after_exit": 2.14
+          "war_after_exit": 2.17
         }
       ],
       "players_sent_away": [],
@@ -70055,7 +70055,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 2.14,
+      "war_after_exit_acquired": 2.17,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -70658,7 +70658,7 @@
           "war_prior": 0.0,
           "war_after_move": -1.11,
           "war_during": -1.11,
-          "war_after_exit": -0.37
+          "war_after_exit": -0.36
         }
       ],
       "players_sent_away": [],
@@ -70671,7 +70671,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": -0.37,
+      "war_after_exit_acquired": -0.36,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -72287,7 +72287,7 @@
           "war_prior": 0.0,
           "war_after_move": 4.21,
           "war_during": 4.21,
-          "war_after_exit": 1.63
+          "war_after_exit": 1.72
         }
       ],
       "players_sent_away": [],
@@ -72300,7 +72300,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.63,
+      "war_after_exit_acquired": 1.72,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -72877,7 +72877,7 @@
           "war_prior": -0.32,
           "war_after_move": -0.07,
           "war_during": -0.07,
-          "war_after_exit": 9.26
+          "war_after_exit": 9.24
         }
       ],
       "players_sent_away": [],
@@ -72890,7 +72890,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.32,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 9.26,
+      "war_after_exit_acquired": 9.24,
       "salary_source": "bref",
       "counterparty": "Cleveland Guardians",
       "counterparty_id": 114,
@@ -73009,7 +73009,7 @@
           "war_prior": 10.58,
           "war_after_move": 7.26,
           "war_during": 7.26,
-          "war_after_exit": 6.99
+          "war_after_exit": 7.0
         }
       ],
       "players_sent_away": [
@@ -73041,7 +73041,7 @@
       "war_sent_away": -1.56,
       "war_prior_acquired": 10.58,
       "war_prior_sent": -0.08,
-      "war_after_exit_acquired": 6.99,
+      "war_after_exit_acquired": 7.0,
       "salary_source": "bref",
       "counterparty": "Cincinnati Reds",
       "counterparty_id": 113,
@@ -75152,7 +75152,7 @@
           "war_prior": 0.0,
           "war_after_move": 11.76,
           "war_during": 11.76,
-          "war_after_exit": 4.15
+          "war_after_exit": 4.17
         }
       ],
       "players_sent_away": [],
@@ -75165,7 +75165,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 4.15,
+      "war_after_exit_acquired": 4.17,
       "salary_source": "bref",
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -76755,7 +76755,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.11,
           "war_during": 0.11,
-          "war_after_exit": 1.8
+          "war_after_exit": 1.85
         }
       ],
       "players_sent_away": [],
@@ -76768,7 +76768,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.8,
+      "war_after_exit_acquired": 1.85,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -81922,7 +81922,7 @@
           "war_prior": 3.94,
           "war_after_move": 3.5,
           "war_during": 3.5,
-          "war_after_exit": 18.58
+          "war_after_exit": 18.55
         }
       ],
       "players_sent_away": [
@@ -81954,7 +81954,7 @@
       "war_sent_away": 8.56,
       "war_prior_acquired": 7.96,
       "war_prior_sent": 3.99,
-      "war_after_exit_acquired": 18.07,
+      "war_after_exit_acquired": 18.04,
       "salary_source": "bref",
       "counterparty": "Miami Marlins",
       "counterparty_id": 146,
@@ -101468,7 +101468,7 @@
           "war_prior": 0.0,
           "war_after_move": 11.76,
           "war_during": 11.76,
-          "war_after_exit": 4.15
+          "war_after_exit": 4.17
         }
       ],
       "players_sent_away": [],
@@ -101481,7 +101481,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 4.15,
+      "war_after_exit_acquired": 4.17,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
