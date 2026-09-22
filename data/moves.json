@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-21T22:19:02+00:00",
+  "generated_at": "2026-09-22T11:53:34+00:00",
   "data_source": "mlb-stats-api+bref",
   "season_range": [
     2006,
     2026
   ],
   "as_of": "2026-08-07",
-  "fetched_through": "2026-09-21",
+  "fetched_through": "2026-09-22",
   "dollars_per_war": 8000000,
   "move_count": 2639,
   "moves": [
@@ -634,22 +634,22 @@
       "team_name": "New York Yankees",
       "move_date": "2026-08-03",
       "move_type": "Trade",
-      "summary": "Trade with San Francisco Giants: acquired Heliot Ramos, Luis Garc\u00eda Jr.; sent Ben Grable, Jack Cebert, Jake Bird, Yovanny Cruz, Henry Lalane, Kaeden Kent",
+      "summary": "Trade with San Francisco Giants: acquired Heliot Ramos, Luis Garc\u00eda Jr.; sent Ben Grable, Jack Cebert, Jake Bird, Yovanny Cruz, Kaeden Kent, Henry Lalane",
       "players_acquired": [
         {
           "mlbam_id": 671218,
           "name": "Heliot Ramos",
           "war_prior": 2.64,
-          "war_after_move": -0.22,
-          "war_during": -0.22,
+          "war_after_move": -0.32,
+          "war_during": -0.32,
           "war_after_exit": 0.0
         },
         {
           "mlbam_id": 671277,
           "name": "Luis Garc\u00eda Jr.",
           "war_prior": 3.31,
-          "war_after_move": 0.82,
-          "war_during": 0.82,
+          "war_after_move": 0.93,
+          "war_during": 0.93,
           "war_after_exit": 0.0
         }
       ],
@@ -679,7 +679,7 @@
           "war_after_move": 0.0,
           "war_during": -0.54,
           "war_after_exit": 0.0,
-          "war_charged": 0.11
+          "war_charged": 0.12
         },
         {
           "mlbam_id": 672442,
@@ -691,8 +691,8 @@
           "war_charged": -0.4
         },
         {
-          "mlbam_id": 700649,
-          "name": "Henry Lalane",
+          "mlbam_id": 809763,
+          "name": "Kaeden Kent",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -700,8 +700,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 809763,
-          "name": "Kaeden Kent",
+          "mlbam_id": 700649,
+          "name": "Henry Lalane",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -712,10 +712,10 @@
       "salary_paid": 6875000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": -2075000.0,
+      "surplus_value": -1995000.0,
       "net_war_exchange": 0.89,
-      "war_acquired": 0.6,
-      "war_sent_away": -0.29,
+      "war_acquired": 0.61,
+      "war_sent_away": -0.28,
       "war_prior_acquired": 5.95,
       "war_prior_sent": -0.54,
       "war_after_exit_acquired": 0.0,
@@ -724,9 +724,9 @@
       "counterparty_id": 137,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
-      "talent_grade": 0.6,
+      "talent_grade": 0.61,
       "talent_per_control_year": null,
-      "ledger_grade": -2075000.0,
+      "ledger_grade": -1995000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -741,19 +741,19 @@
       "team_name": "New York Yankees",
       "move_date": "2026-08-01",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Luis Cruz, Omar Alfonzo; sent Camilo Doval",
+      "summary": "Trade with Pittsburgh Pirates: acquired Omar Alfonzo, Luis Cruz; sent Camilo Doval",
       "players_acquired": [
         {
-          "mlbam_id": 825411,
-          "name": "Luis Cruz",
+          "mlbam_id": 692657,
+          "name": "Omar Alfonzo",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 692657,
-          "name": "Omar Alfonzo",
+          "mlbam_id": 825411,
+          "name": "Luis Cruz",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -3074,19 +3074,19 @@
           "mlbam_id": 678391,
           "name": "Jorbit Vivas",
           "war_prior": -0.3,
-          "war_after_move": 0.92,
+          "war_after_move": 0.99,
           "war_during": -0.3,
-          "war_after_exit": 0.92,
-          "war_charged": 0.92
+          "war_after_exit": 0.99,
+          "war_charged": 0.99
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.92,
+      "net_war_exchange": -0.99,
       "war_acquired": 0.0,
-      "war_sent_away": 0.92,
+      "war_sent_away": 0.99,
       "war_prior_acquired": 0.0,
       "war_prior_sent": -0.3,
       "war_after_exit_acquired": 0.0,
@@ -3095,7 +3095,7 @@
       "counterparty_id": 120,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
-      "talent_grade": -0.92,
+      "talent_grade": -0.99,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -3514,8 +3514,8 @@
           "mlbam_id": 502671,
           "name": "Paul Goldschmidt",
           "war_prior": 63.88,
-          "war_after_move": 1.33,
-          "war_during": 1.33,
+          "war_after_move": 1.43,
+          "war_during": 1.43,
           "war_after_exit": 0.0
         }
       ],
@@ -3523,9 +3523,9 @@
       "salary_paid": 4000000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 6640000.0,
-      "net_war_exchange": 1.33,
-      "war_acquired": 1.33,
+      "surplus_value": 7440000.0,
+      "net_war_exchange": 1.43,
+      "war_acquired": 1.43,
       "war_sent_away": 0.0,
       "war_prior_acquired": 63.88,
       "war_prior_sent": 0.0,
@@ -3535,9 +3535,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "free_agent",
-      "talent_grade": 1.33,
+      "talent_grade": 1.43,
       "talent_per_control_year": null,
-      "ledger_grade": 6640000.0,
+      "ledger_grade": 7440000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -3931,19 +3931,19 @@
           "mlbam_id": 681198,
           "name": "TJ Rumfield",
           "war_prior": 0.0,
-          "war_after_move": 3.5,
+          "war_after_move": 3.49,
           "war_during": 0.0,
-          "war_after_exit": 3.5,
-          "war_charged": 3.5
+          "war_after_exit": 3.49,
+          "war_charged": 3.49
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -3.43,
+      "net_war_exchange": -3.42,
       "war_acquired": 0.07,
-      "war_sent_away": 3.5,
+      "war_sent_away": 3.49,
       "war_prior_acquired": -0.47,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -3952,7 +3952,7 @@
       "counterparty_id": 115,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_loss",
-      "talent_grade": -3.43,
+      "talent_grade": -3.42,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -4151,8 +4151,8 @@
           "mlbam_id": 641355,
           "name": "Cody Bellinger",
           "war_prior": 30.41,
-          "war_after_move": 4.69,
-          "war_during": 4.69,
+          "war_after_move": 4.7,
+          "war_during": 4.7,
           "war_after_exit": 0.0
         }
       ],
@@ -4160,9 +4160,9 @@
       "salary_paid": 162500000,
       "contract_years": 5,
       "contract_active": true,
-      "surplus_value": -124980000.0,
-      "net_war_exchange": 4.69,
-      "war_acquired": 4.69,
+      "surplus_value": -124900000.0,
+      "net_war_exchange": 4.7,
+      "war_acquired": 4.7,
       "war_sent_away": 0.0,
       "war_prior_acquired": 30.41,
       "war_prior_sent": 0.0,
@@ -4172,9 +4172,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "overpay_fa",
-      "talent_grade": 4.69,
+      "talent_grade": 4.7,
       "talent_per_control_year": 0.94,
-      "ledger_grade": -124980000.0,
+      "ledger_grade": -124900000.0,
       "control_years_remaining": 5.0,
       "control_bucket": "long_term",
       "control_source": "contract_through",
@@ -5069,7 +5069,7 @@
       "team_name": "New York Yankees",
       "move_date": "2026-01-13",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Ryan Weathers; sent Brendan Jones, Juan Matheus, Dillon Lewis, Dylan Jasso",
+      "summary": "Trade with Miami Marlins: acquired Ryan Weathers; sent Juan Matheus, Dylan Jasso, Brendan Jones, Dillon Lewis",
       "players_acquired": [
         {
           "mlbam_id": 677960,
@@ -5082,15 +5082,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 800957,
-          "name": "Brendan Jones",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 801276,
           "name": "Juan Matheus",
           "war_prior": 0.0,
@@ -5100,8 +5091,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 827665,
-          "name": "Dillon Lewis",
+          "mlbam_id": 815734,
+          "name": "Dylan Jasso",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -5109,8 +5100,17 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 815734,
-          "name": "Dylan Jasso",
+          "mlbam_id": 800957,
+          "name": "Brendan Jones",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 827665,
+          "name": "Dillon Lewis",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -6300,8 +6300,8 @@
           "mlbam_id": 695684,
           "name": "Elmer Rodr\u00edguez",
           "war_prior": 0.0,
-          "war_after_move": -0.02,
-          "war_during": -0.02,
+          "war_after_move": -0.01,
+          "war_during": -0.01,
           "war_after_exit": 0.0
         }
       ],
@@ -6310,8 +6310,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.02,
-      "war_acquired": -0.02,
+      "net_war_exchange": -0.01,
+      "war_acquired": -0.01,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -6321,7 +6321,7 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": -0.02,
+      "talent_grade": -0.01,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -6742,18 +6742,18 @@
           "mlbam_id": 664141,
           "name": "JT Brubaker",
           "war_prior": 0.0,
-          "war_after_move": 0.53,
+          "war_after_move": 0.54,
           "war_during": 0.0,
-          "war_after_exit": 0.53
+          "war_after_exit": 0.54
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.53,
+      "net_war_exchange": -0.54,
       "war_acquired": 0.0,
-      "war_sent_away": 0.53,
+      "war_sent_away": 0.54,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -6830,18 +6830,18 @@
           "mlbam_id": 650559,
           "name": "Bryan De La Cruz",
           "war_prior": 0.0,
-          "war_after_move": -0.1,
+          "war_after_move": -0.11,
           "war_during": 0.0,
-          "war_after_exit": -0.1
+          "war_after_exit": -0.11
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.1,
+      "net_war_exchange": 0.11,
       "war_acquired": 0.0,
-      "war_sent_away": -0.1,
+      "war_sent_away": -0.11,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -6911,7 +6911,7 @@
       "team_name": "New York Yankees",
       "move_date": "2025-07-31",
       "move_type": "Trade",
-      "summary": "Trade with San Francisco Giants: acquired Camilo Doval, Jos\u00e9 Caballero, David Bednar, Jake Bird, Wilberson De Pena; sent Everson Pereira, Oswald Peraza, Rafael Flores Jr., Edgleen Perez, Brian Sanchez, Roc Riggio, Ben Shields, Parks Harber, Jesus Rodriguez, Trystan Vrieling, Carlos De La Rosa",
+      "summary": "Trade with San Francisco Giants: acquired Camilo Doval, Wilberson De Pena, Jos\u00e9 Caballero, David Bednar, Jake Bird; sent Jesus Rodriguez, Carlos De La Rosa, Oswald Peraza, Everson Pereira, Edgleen Perez, Rafael Flores Jr., Brian Sanchez, Roc Riggio, Ben Shields, Parks Harber, Trystan Vrieling",
       "players_acquired": [
         {
           "mlbam_id": 666808,
@@ -6922,19 +6922,27 @@
           "war_after_exit": 0.0
         },
         {
+          "mlbam_id": 821648,
+          "name": "Wilberson De Pena",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
           "mlbam_id": 676609,
           "name": "Jos\u00e9 Caballero",
           "war_prior": 4.08,
-          "war_after_move": 3.41,
-          "war_during": 3.41,
+          "war_after_move": 3.42,
+          "war_during": 3.42,
           "war_after_exit": 0.0
         },
         {
           "mlbam_id": 670280,
           "name": "David Bednar",
           "war_prior": 4.79,
-          "war_after_move": 2.62,
-          "war_during": 2.62,
+          "war_after_move": 2.64,
+          "war_during": 2.64,
           "war_after_exit": 0.0
         },
         {
@@ -6944,25 +6952,26 @@
           "war_after_move": -0.96,
           "war_during": -0.96,
           "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 821648,
-          "name": "Wilberson De Pena",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 677592,
-          "name": "Everson Pereira",
-          "war_prior": -0.61,
+          "mlbam_id": 683679,
+          "name": "Jesus Rodriguez",
+          "war_prior": 0.0,
+          "war_after_move": -0.15,
+          "war_during": 0.0,
+          "war_after_exit": -0.15,
+          "war_charged": -0.15
+        },
+        {
+          "mlbam_id": 822215,
+          "name": "Carlos De La Rosa",
+          "war_prior": 0.0,
           "war_after_move": 0.0,
-          "war_during": -0.61,
+          "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": -0.3
+          "war_charged": 0.0
         },
         {
           "mlbam_id": 672724,
@@ -6974,13 +6983,13 @@
           "war_charged": 0.61
         },
         {
-          "mlbam_id": 804668,
-          "name": "Rafael Flores Jr.",
-          "war_prior": 0.0,
+          "mlbam_id": 677592,
+          "name": "Everson Pereira",
+          "war_prior": -0.61,
           "war_after_move": 0.0,
-          "war_during": 0.0,
+          "war_during": -0.61,
           "war_after_exit": 0.0,
-          "war_charged": 1.07
+          "war_charged": -0.3
         },
         {
           "mlbam_id": 814297,
@@ -6990,6 +6999,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 804668,
+          "name": "Rafael Flores Jr.",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 1.06
         },
         {
           "mlbam_id": 809331,
@@ -7028,26 +7046,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 683679,
-          "name": "Jesus Rodriguez",
-          "war_prior": 0.0,
-          "war_after_move": -0.14,
-          "war_during": 0.0,
-          "war_after_exit": -0.14,
-          "war_charged": -0.14
-        },
-        {
           "mlbam_id": 801639,
           "name": "Trystan Vrieling",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 822215,
-          "name": "Carlos De La Rosa",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -7058,10 +7058,10 @@
       "salary_paid": 20000000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 11680000.0,
-      "net_war_exchange": 2.72,
-      "war_acquired": 3.96,
-      "war_sent_away": 1.24,
+      "surplus_value": 11920000.0,
+      "net_war_exchange": 2.77,
+      "war_acquired": 3.99,
+      "war_sent_away": 1.22,
       "war_prior_acquired": 13.71,
       "war_prior_sent": -0.55,
       "war_after_exit_acquired": 0.0,
@@ -7070,9 +7070,9 @@
       "counterparty_id": 137,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 4.1,
+      "talent_grade": 4.14,
       "talent_per_control_year": null,
-      "ledger_grade": 11680000.0,
+      "ledger_grade": 11920000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -7319,18 +7319,18 @@
           "mlbam_id": 670329,
           "name": "Rico Garcia",
           "war_prior": 0.0,
-          "war_after_move": 2.28,
+          "war_after_move": 2.34,
           "war_during": 0.0,
-          "war_after_exit": 2.28
+          "war_after_exit": 2.34
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -2.28,
+      "net_war_exchange": -2.34,
       "war_acquired": 0.0,
-      "war_sent_away": 2.28,
+      "war_sent_away": 2.34,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -8552,7 +8552,7 @@
           "war_prior": -0.51,
           "war_after_move": -0.11,
           "war_during": -0.11,
-          "war_after_exit": 1.39
+          "war_after_exit": 1.45
         }
       ],
       "players_sent_away": [],
@@ -8565,7 +8565,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.51,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.39,
+      "war_after_exit_acquired": 1.45,
       "salary_source": null,
       "counterparty": "New York Mets",
       "counterparty_id": null,
@@ -8729,7 +8729,7 @@
           "war_prior": -1.49,
           "war_after_move": -0.22,
           "war_during": -0.22,
-          "war_after_exit": 0.32
+          "war_after_exit": 0.31
         }
       ],
       "players_sent_away": [],
@@ -8742,7 +8742,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -1.49,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.32,
+      "war_after_exit_acquired": 0.31,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -8860,18 +8860,18 @@
           "mlbam_id": 664129,
           "name": "Geoff Hartlieb",
           "war_prior": 0.0,
-          "war_after_move": 0.28,
+          "war_after_move": 0.27,
           "war_during": 0.0,
-          "war_after_exit": 0.28
+          "war_after_exit": 0.27
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.28,
+      "net_war_exchange": -0.27,
       "war_acquired": 0.0,
-      "war_sent_away": 0.28,
+      "war_sent_away": 0.27,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -8993,7 +8993,7 @@
           "war_prior": -1.49,
           "war_after_move": -0.22,
           "war_during": -0.22,
-          "war_after_exit": 0.32
+          "war_after_exit": 0.31
         }
       ],
       "players_sent_away": [],
@@ -9006,7 +9006,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -1.49,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.32,
+      "war_after_exit_acquired": 0.31,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -11016,8 +11016,8 @@
           "mlbam_id": 687396,
           "name": "Brent Headrick",
           "war_prior": -0.22,
-          "war_after_move": 2.95,
-          "war_during": 2.95,
+          "war_after_move": 2.96,
+          "war_during": 2.96,
           "war_after_exit": 0.0
         }
       ],
@@ -11026,8 +11026,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 2.95,
-      "war_acquired": 2.95,
+      "net_war_exchange": 2.96,
+      "war_acquired": 2.96,
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.22,
       "war_prior_sent": 0.0,
@@ -11037,7 +11037,7 @@
       "counterparty_id": null,
       "acquisition_channel": "waiver",
       "deal_archetype": "waiver_claim",
-      "talent_grade": 2.95,
+      "talent_grade": 2.96,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -12468,8 +12468,8 @@
           "mlbam_id": 502671,
           "name": "Paul Goldschmidt",
           "war_prior": 62.75,
-          "war_after_move": 2.46,
-          "war_during": 2.46,
+          "war_after_move": 2.56,
+          "war_during": 2.56,
           "war_after_exit": 0.0
         }
       ],
@@ -12477,9 +12477,9 @@
       "salary_paid": 12500000,
       "contract_years": 1,
       "contract_active": false,
-      "surplus_value": 7180000.0,
-      "net_war_exchange": 2.46,
-      "war_acquired": 2.46,
+      "surplus_value": 7980000.0,
+      "net_war_exchange": 2.56,
+      "war_acquired": 2.56,
       "war_sent_away": 0.0,
       "war_prior_acquired": 62.75,
       "war_prior_sent": 0.0,
@@ -12489,9 +12489,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "free_agent",
-      "talent_grade": 2.46,
-      "talent_per_control_year": 2.46,
-      "ledger_grade": 7180000.0,
+      "talent_grade": 2.56,
+      "talent_per_control_year": 2.56,
+      "ledger_grade": 7980000.0,
       "control_years_remaining": 1.0,
       "control_bucket": "one_year",
       "control_source": "contract_through",
@@ -12564,8 +12564,8 @@
           "mlbam_id": 518585,
           "name": "Fernando Cruz",
           "war_prior": 1.35,
-          "war_after_move": 1.49,
-          "war_during": 1.49,
+          "war_after_move": 1.5,
+          "war_during": 1.5,
           "war_after_exit": 0.0
         }
       ],
@@ -12574,19 +12574,19 @@
           "mlbam_id": 624431,
           "name": "Jose Trevino",
           "war_prior": 3.3,
-          "war_after_move": -0.72,
+          "war_after_move": -0.62,
           "war_during": 3.3,
-          "war_after_exit": -0.72,
-          "war_charged": -0.72
+          "war_after_exit": -0.62,
+          "war_charged": -0.62
         }
       ],
       "salary_paid": 2900000.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 9020000.0,
-      "net_war_exchange": 2.21,
-      "war_acquired": 1.49,
-      "war_sent_away": -0.72,
+      "surplus_value": 9100000.0,
+      "net_war_exchange": 2.12,
+      "war_acquired": 1.5,
+      "war_sent_away": -0.62,
       "war_prior_acquired": -0.02,
       "war_prior_sent": 3.3,
       "war_after_exit_acquired": 0.0,
@@ -12595,9 +12595,9 @@
       "counterparty_id": 113,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_win",
-      "talent_grade": 2.21,
+      "talent_grade": 2.12,
       "talent_per_control_year": null,
-      "ledger_grade": 9020000.0,
+      "ledger_grade": 9100000.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -12662,8 +12662,8 @@
           "mlbam_id": 641355,
           "name": "Cody Bellinger",
           "war_prior": 25.42,
-          "war_after_move": 9.68,
-          "war_during": 9.68,
+          "war_after_move": 9.69,
+          "war_during": 9.69,
           "war_after_exit": 0.0
         }
       ],
@@ -12681,9 +12681,9 @@
       "salary_paid": 25000000,
       "contract_years": 1,
       "contract_active": false,
-      "surplus_value": 52440000.0,
-      "net_war_exchange": 9.68,
-      "war_acquired": 9.68,
+      "surplus_value": 52520000.0,
+      "net_war_exchange": 9.69,
+      "war_acquired": 9.69,
       "war_sent_away": 0.0,
       "war_prior_acquired": 25.42,
       "war_prior_sent": 0.83,
@@ -12693,9 +12693,9 @@
       "counterparty_id": 112,
       "acquisition_channel": "trade",
       "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 9.68,
-      "talent_per_control_year": 9.68,
-      "ledger_grade": 52440000.0,
+      "talent_grade": 9.69,
+      "talent_per_control_year": 9.69,
+      "ledger_grade": 52520000.0,
       "control_years_remaining": 1.0,
       "control_bucket": "one_year",
       "control_source": "contract_through",
@@ -12716,8 +12716,8 @@
           "mlbam_id": 608331,
           "name": "Max Fried",
           "war_prior": 23.93,
-          "war_after_move": 8.31,
-          "war_during": 8.31,
+          "war_after_move": 8.32,
+          "war_during": 8.32,
           "war_after_exit": 0.0
         }
       ],
@@ -12725,9 +12725,9 @@
       "salary_paid": 218000000,
       "contract_years": 8,
       "contract_active": true,
-      "surplus_value": -151520000.0,
-      "net_war_exchange": 8.31,
-      "war_acquired": 8.31,
+      "surplus_value": -151440000.0,
+      "net_war_exchange": 8.32,
+      "war_acquired": 8.32,
       "war_sent_away": 0.0,
       "war_prior_acquired": 23.93,
       "war_prior_sent": 0.0,
@@ -12737,9 +12737,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "overpay_fa",
-      "talent_grade": 8.31,
+      "talent_grade": 8.32,
       "talent_per_control_year": 1.04,
-      "ledger_grade": -151520000.0,
+      "ledger_grade": -151440000.0,
       "control_years_remaining": 8.0,
       "control_bucket": "long_term",
       "control_source": "contract_through",
@@ -12930,7 +12930,7 @@
       "team_name": "New York Yankees",
       "move_date": "2024-12-13",
       "move_type": "Trade",
-      "summary": "Trade with Milwaukee Brewers: acquired Devin Williams; sent Nestor Cortes, Caleb Durbin",
+      "summary": "Trade with Milwaukee Brewers: acquired Devin Williams; sent Caleb Durbin, Nestor Cortes",
       "players_acquired": [
         {
           "mlbam_id": 642207,
@@ -12943,15 +12943,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 641482,
-          "name": "Nestor Cortes",
-          "war_prior": 9.65,
-          "war_after_move": -0.29,
-          "war_during": 9.65,
-          "war_after_exit": -0.29,
-          "war_charged": -0.29
-        },
-        {
           "mlbam_id": 702332,
           "name": "Caleb Durbin",
           "war_prior": 0.0,
@@ -12959,6 +12950,15 @@
           "war_during": 0.0,
           "war_after_exit": 2.69,
           "war_charged": 2.69
+        },
+        {
+          "mlbam_id": 641482,
+          "name": "Nestor Cortes",
+          "war_prior": 9.65,
+          "war_after_move": -0.29,
+          "war_during": 9.65,
+          "war_after_exit": -0.29,
+          "war_charged": -0.29
         }
       ],
       "salary_paid": 8600000.0,
@@ -13043,8 +13043,8 @@
           "mlbam_id": 695684,
           "name": "Elmer Rodr\u00edguez",
           "war_prior": 0.0,
-          "war_after_move": -0.02,
-          "war_during": -0.02,
+          "war_after_move": -0.01,
+          "war_during": -0.01,
           "war_after_exit": 0.0
         }
       ],
@@ -13053,19 +13053,19 @@
           "mlbam_id": 665966,
           "name": "Carlos Narv\u00e1ez",
           "war_prior": 0.11,
-          "war_after_move": 2.38,
+          "war_after_move": 2.48,
           "war_during": 0.11,
-          "war_after_exit": 2.38,
-          "war_charged": 2.38
+          "war_after_exit": 2.48,
+          "war_charged": 2.48
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -2.4,
-      "war_acquired": -0.02,
-      "war_sent_away": 2.38,
+      "net_war_exchange": -2.49,
+      "war_acquired": -0.01,
+      "war_sent_away": 2.48,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.11,
       "war_after_exit_acquired": 0.0,
@@ -13074,7 +13074,7 @@
       "counterparty_id": 111,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_loss",
-      "talent_grade": -2.4,
+      "talent_grade": -2.49,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -13672,7 +13672,7 @@
           "war_prior": -1.13,
           "war_after_move": -0.22,
           "war_during": -0.22,
-          "war_after_exit": 0.32
+          "war_after_exit": 0.31
         }
       ],
       "players_sent_away": [],
@@ -13685,7 +13685,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -1.13,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.32,
+      "war_after_exit_acquired": 0.31,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -14155,18 +14155,18 @@
           "mlbam_id": 660853,
           "name": "Enyel De Los Santos",
           "war_prior": 0.0,
-          "war_after_move": 0.52,
+          "war_after_move": 0.51,
           "war_during": 0.0,
-          "war_after_exit": 0.52
+          "war_after_exit": 0.51
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.52,
+      "net_war_exchange": -0.51,
       "war_acquired": 0.0,
-      "war_sent_away": 0.52,
+      "war_sent_away": 0.51,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -14200,7 +14200,7 @@
           "war_prior": 4.16,
           "war_after_move": -0.01,
           "war_during": -0.01,
-          "war_after_exit": 1.59
+          "war_after_exit": 1.6
         }
       ],
       "players_sent_away": [],
@@ -14213,7 +14213,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 4.16,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.59,
+      "war_after_exit_acquired": 1.6,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -14419,18 +14419,18 @@
           "mlbam_id": 663330,
           "name": "Jahmai Jones",
           "war_prior": 0.0,
-          "war_after_move": 0.64,
+          "war_after_move": 0.65,
           "war_during": 0.0,
-          "war_after_exit": 0.64
+          "war_after_exit": 0.65
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -0.64,
+      "net_war_exchange": -0.65,
       "war_acquired": 0.0,
-      "war_sent_away": 0.64,
+      "war_sent_away": 0.65,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -14456,23 +14456,23 @@
       "team_name": "New York Yankees",
       "move_date": "2024-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Chicago Cubs: acquired Mark Leiter Jr., Enyel De Los Santos, Thomas Balboni Jr., Kelly Austin; sent Brandon Lockridge, Jack Neely, Ben Cowles, Caleb Ferguson",
+      "summary": "Trade with Houston Astros: acquired Kelly Austin, Mark Leiter Jr., Thomas Balboni Jr., Enyel De Los Santos; sent Caleb Ferguson, Jack Neely, Ben Cowles, Brandon Lockridge",
       "players_acquired": [
+        {
+          "mlbam_id": 675502,
+          "name": "Kelly Austin",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
         {
           "mlbam_id": 643410,
           "name": "Mark Leiter Jr.",
           "war_prior": 0.27,
           "war_after_move": -0.67,
           "war_during": -0.67,
-          "war_after_exit": 0.55
-        },
-        {
-          "mlbam_id": 660853,
-          "name": "Enyel De Los Santos",
-          "war_prior": 1.1,
-          "war_after_move": -0.6,
-          "war_during": -0.6,
-          "war_after_exit": -0.2
+          "war_after_exit": 0.54
         },
         {
           "mlbam_id": 693647,
@@ -14483,31 +14483,31 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 675502,
-          "name": "Kelly Austin",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
+          "mlbam_id": 660853,
+          "name": "Enyel De Los Santos",
+          "war_prior": 1.1,
+          "war_after_move": -0.6,
+          "war_during": -0.6,
+          "war_after_exit": -0.21
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 663604,
-          "name": "Brandon Lockridge",
+          "mlbam_id": 657571,
+          "name": "Caleb Ferguson",
           "war_prior": 0.0,
-          "war_after_move": 0.0,
+          "war_after_move": 0.19,
           "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": -0.23
+          "war_after_exit": 0.19,
+          "war_charged": 0.19
         },
         {
           "mlbam_id": 680891,
           "name": "Jack Neely",
           "war_prior": 0.0,
-          "war_after_move": -0.17,
+          "war_after_move": 0.0,
           "war_during": 0.0,
-          "war_after_exit": -0.17,
+          "war_after_exit": 0.0,
           "war_charged": -0.17
         },
         {
@@ -14520,13 +14520,13 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 657571,
-          "name": "Caleb Ferguson",
+          "mlbam_id": 663604,
+          "name": "Brandon Lockridge",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": 0.19
+          "war_charged": -0.23
         }
       ],
       "salary_paid": 2050000.0,
@@ -14538,13 +14538,13 @@
       "war_sent_away": -0.21,
       "war_prior_acquired": 1.37,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.35,
+      "war_after_exit_acquired": 0.33,
       "salary_source": "bref",
-      "counterparty": "Chicago Cubs",
-      "counterparty_id": 112,
+      "counterparty": "Houston Astros",
+      "counterparty_id": 117,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_miss",
-      "talent_grade": -1.1,
+      "talent_grade": -1.46,
       "talent_per_control_year": null,
       "ledger_grade": -12210000.0,
       "control_years_remaining": null,
@@ -14611,8 +14611,8 @@
           "mlbam_id": 701542,
           "name": "Will Warren",
           "war_prior": 0.0,
-          "war_after_move": 0.31,
-          "war_during": 0.31,
+          "war_after_move": 0.32,
+          "war_during": 0.32,
           "war_after_exit": 0.0
         }
       ],
@@ -14621,8 +14621,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.31,
-      "war_acquired": 0.31,
+      "net_war_exchange": 0.32,
+      "war_acquired": 0.32,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -14632,7 +14632,7 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 0.31,
+      "talent_grade": 0.32,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -14727,19 +14727,19 @@
           "mlbam_id": 682663,
           "name": "Agust\u00edn Ram\u00edrez",
           "war_prior": 0.0,
-          "war_after_move": -0.39,
+          "war_after_move": -0.4,
           "war_during": 0.0,
-          "war_after_exit": -0.39,
-          "war_charged": -0.39
+          "war_after_exit": -0.4,
+          "war_charged": -0.4
         }
       ],
       "salary_paid": 16050000.0,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": 41070000.0,
-      "net_war_exchange": 7.6,
+      "net_war_exchange": 7.61,
       "war_acquired": 7.14,
-      "war_sent_away": -0.46,
+      "war_sent_away": -0.47,
       "war_prior_acquired": 5.51,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -14748,7 +14748,7 @@
       "counterparty_id": 146,
       "acquisition_channel": "trade",
       "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 7.6,
+      "talent_grade": 7.61,
       "talent_per_control_year": null,
       "ledger_grade": 41070000.0,
       "control_years_remaining": null,
@@ -16093,7 +16093,7 @@
           "war_prior": 4.16,
           "war_after_move": -0.01,
           "war_during": -0.01,
-          "war_after_exit": 1.59
+          "war_after_exit": 1.6
         }
       ],
       "players_sent_away": [],
@@ -16106,7 +16106,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 4.16,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.59,
+      "war_after_exit_acquired": 1.6,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -16894,18 +16894,18 @@
           "mlbam_id": 642701,
           "name": "Dennis Santana",
           "war_prior": 0.0,
-          "war_after_move": 4.03,
+          "war_after_move": 4.02,
           "war_during": 0.0,
-          "war_after_exit": 4.03
+          "war_after_exit": 4.02
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -4.03,
+      "net_war_exchange": -4.02,
       "war_acquired": 0.0,
-      "war_sent_away": 4.03,
+      "war_sent_away": 4.02,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -18041,7 +18041,7 @@
           "war_prior": -1.22,
           "war_after_move": -0.44,
           "war_during": -0.44,
-          "war_after_exit": 2.74
+          "war_after_exit": 2.73
         }
       ],
       "players_sent_away": [],
@@ -18054,7 +18054,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -1.22,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 2.74,
+      "war_after_exit_acquired": 2.73,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -18350,7 +18350,7 @@
           "war_prior": 0.34,
           "war_after_move": 0.19,
           "war_during": 0.19,
-          "war_after_exit": 0.42
+          "war_after_exit": 0.43
         }
       ],
       "players_sent_away": [],
@@ -18363,7 +18363,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.34,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.42,
+      "war_after_exit_acquired": 0.43,
       "salary_source": "bref",
       "counterparty": "Pittsburgh Pirates",
       "counterparty_id": 134,
@@ -18545,7 +18545,7 @@
           "war_prior": -0.44,
           "war_after_move": -0.02,
           "war_during": -0.02,
-          "war_after_exit": 0.64
+          "war_after_exit": 0.65
         }
       ],
       "players_sent_away": [],
@@ -18558,7 +18558,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.44,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.64,
+      "war_after_exit_acquired": 0.65,
       "salary_source": "bref",
       "counterparty": "Milwaukee Brewers",
       "counterparty_id": null,
@@ -19358,7 +19358,7 @@
           "war_prior": 0.85,
           "war_after_move": 2.57,
           "war_during": 2.57,
-          "war_after_exit": 1.75
+          "war_after_exit": 1.76
         }
       ],
       "players_sent_away": [],
@@ -19371,7 +19371,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.85,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.75,
+      "war_after_exit_acquired": 1.76,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -21165,8 +21165,16 @@
       "team_name": "New York Yankees",
       "move_date": "2023-12-11",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Dodgers: acquired Victor Gonz\u00e1lez, Jorbit Vivas; sent Trey Sweeney",
+      "summary": "Trade with Los Angeles Dodgers: acquired Jorbit Vivas, Victor Gonz\u00e1lez; sent Trey Sweeney",
       "players_acquired": [
+        {
+          "mlbam_id": 678391,
+          "name": "Jorbit Vivas",
+          "war_prior": 0.0,
+          "war_after_move": -0.3,
+          "war_during": -0.3,
+          "war_after_exit": 0.99
+        },
         {
           "mlbam_id": 624647,
           "name": "Victor Gonz\u00e1lez",
@@ -21174,14 +21182,6 @@
           "war_after_move": 0.05,
           "war_during": 0.05,
           "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 678391,
-          "name": "Jorbit Vivas",
-          "war_prior": 0.0,
-          "war_after_move": -0.3,
-          "war_during": -0.3,
-          "war_after_exit": 0.92
         }
       ],
       "players_sent_away": [
@@ -21204,7 +21204,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 1.37,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 0.92,
+      "war_after_exit_acquired": 0.99,
       "salary_source": "bref",
       "counterparty": "Los Angeles Dodgers",
       "counterparty_id": 119,
@@ -21271,7 +21271,7 @@
       "team_name": "New York Yankees",
       "move_date": "2023-12-07",
       "move_type": "Trade",
-      "summary": "Trade with San Diego Padres: acquired Juan Soto, Trent Grisham; sent Drew Thorpe, Michael King, Jhony Brito, Kyle Higashioka, Randy V\u00e1squez",
+      "summary": "Trade with San Diego Padres: acquired Juan Soto, Trent Grisham; sent Kyle Higashioka, Randy V\u00e1squez, Drew Thorpe, Michael King, Jhony Brito",
       "players_acquired": [
         {
           "mlbam_id": 665742,
@@ -21279,7 +21279,7 @@
           "war_prior": 28.44,
           "war_after_move": 8.0,
           "war_during": 8.0,
-          "war_after_exit": 9.07
+          "war_after_exit": 8.98
         },
         {
           "mlbam_id": 663757,
@@ -21291,33 +21291,6 @@
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 689672,
-          "name": "Drew Thorpe",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 650633,
-          "name": "Michael King",
-          "war_prior": 5.59,
-          "war_after_move": 9.58,
-          "war_during": 5.59,
-          "war_after_exit": 9.58,
-          "war_charged": 9.58
-        },
-        {
-          "mlbam_id": 666745,
-          "name": "Jhony Brito",
-          "war_prior": 0.68,
-          "war_after_move": 0.31,
-          "war_during": 0.68,
-          "war_after_exit": 0.31,
-          "war_charged": 0.31
-        },
         {
           "mlbam_id": 543309,
           "name": "Kyle Higashioka",
@@ -21335,25 +21308,52 @@
           "war_during": 1.02,
           "war_after_exit": 3.7,
           "war_charged": 3.7
+        },
+        {
+          "mlbam_id": 689672,
+          "name": "Drew Thorpe",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 650633,
+          "name": "Michael King",
+          "war_prior": 5.59,
+          "war_after_move": 9.57,
+          "war_during": 5.59,
+          "war_after_exit": 9.57,
+          "war_charged": 9.57
+        },
+        {
+          "mlbam_id": 666745,
+          "name": "Jhony Brito",
+          "war_prior": 0.68,
+          "war_after_move": 0.31,
+          "war_during": 0.68,
+          "war_after_exit": 0.31,
+          "war_charged": 0.31
         }
       ],
       "salary_paid": 31000000,
       "contract_years": 1,
       "contract_active": false,
       "surplus_value": 69000000.0,
-      "net_war_exchange": -2.48,
+      "net_war_exchange": -2.47,
       "war_acquired": 12.5,
-      "war_sent_away": 14.98,
+      "war_sent_away": 14.97,
       "war_prior_acquired": 39.11,
       "war_prior_sent": 8.24,
-      "war_after_exit_acquired": 9.07,
+      "war_after_exit_acquired": 8.98,
       "salary_source": "override",
       "counterparty": "San Diego Padres",
       "counterparty_id": 135,
       "acquisition_channel": "trade",
       "deal_archetype": "trade_loss",
-      "talent_grade": -2.48,
-      "talent_per_control_year": -2.48,
+      "talent_grade": -2.47,
+      "talent_per_control_year": -2.47,
       "ledger_grade": 69000000.0,
       "control_years_remaining": 1.0,
       "control_bucket": "one_year",
@@ -21377,7 +21377,7 @@
           "war_prior": -1.22,
           "war_after_move": -0.44,
           "war_during": -0.44,
-          "war_after_exit": 2.74
+          "war_after_exit": 2.73
         }
       ],
       "players_sent_away": [],
@@ -21390,7 +21390,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -1.22,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 2.74,
+      "war_after_exit_acquired": 2.73,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -21501,7 +21501,7 @@
       "team_name": "New York Yankees",
       "move_date": "2023-12-05",
       "move_type": "Trade",
-      "summary": "Trade with Boston Red Sox: acquired Alex Verdugo; sent Nicholas Judice, Greg Weissert, Richard Fitts",
+      "summary": "Trade with Boston Red Sox: acquired Alex Verdugo; sent Richard Fitts, Nicholas Judice, Greg Weissert",
       "players_acquired": [
         {
           "mlbam_id": 657077,
@@ -21513,6 +21513,15 @@
         }
       ],
       "players_sent_away": [
+        {
+          "mlbam_id": 690916,
+          "name": "Richard Fitts",
+          "war_prior": 0.0,
+          "war_after_move": 0.3,
+          "war_during": 0.0,
+          "war_after_exit": 0.3,
+          "war_charged": 0.3
+        },
         {
           "mlbam_id": 700113,
           "name": "Nicholas Judice",
@@ -21526,28 +21535,19 @@
           "mlbam_id": 669711,
           "name": "Greg Weissert",
           "war_prior": -0.1,
-          "war_after_move": 2.17,
+          "war_after_move": 2.16,
           "war_during": -0.1,
-          "war_after_exit": 2.17,
-          "war_charged": 2.17
-        },
-        {
-          "mlbam_id": 690916,
-          "name": "Richard Fitts",
-          "war_prior": 0.0,
-          "war_after_move": 0.3,
-          "war_during": 0.0,
-          "war_after_exit": 0.3,
-          "war_charged": 0.3
+          "war_after_exit": 2.16,
+          "war_charged": 2.16
         }
       ],
       "salary_paid": 8700000.0,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": -1740000.0,
-      "net_war_exchange": -1.6,
+      "net_war_exchange": -1.59,
       "war_acquired": 0.87,
-      "war_sent_away": 2.47,
+      "war_sent_away": 2.46,
       "war_prior_acquired": 11.05,
       "war_prior_sent": -0.1,
       "war_after_exit_acquired": -0.2,
@@ -21556,7 +21556,7 @@
       "counterparty_id": 111,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
-      "talent_grade": -1.6,
+      "talent_grade": -1.59,
       "talent_per_control_year": null,
       "ledger_grade": -1740000.0,
       "control_years_remaining": null,
@@ -21617,19 +21617,19 @@
       "team_name": "New York Yankees",
       "move_date": "2023-11-17",
       "move_type": "Trade",
-      "summary": "Trade with Milwaukee Brewers: acquired Brian Sanchez, Jace Avina; sent Jake Bauers",
+      "summary": "Trade with Milwaukee Brewers: acquired Jace Avina, Brian Sanchez; sent Jake Bauers",
       "players_acquired": [
         {
-          "mlbam_id": 809331,
-          "name": "Brian Sanchez",
+          "mlbam_id": 701778,
+          "name": "Jace Avina",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 701778,
-          "name": "Jace Avina",
+          "mlbam_id": 809331,
+          "name": "Brian Sanchez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -21819,7 +21819,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.11,
           "war_during": 0.11,
-          "war_after_exit": 1.85
+          "war_after_exit": 1.93
         }
       ],
       "players_sent_away": [],
@@ -21832,7 +21832,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.85,
+      "war_after_exit_acquired": 1.93,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -21907,7 +21907,7 @@
           "war_prior": 1.41,
           "war_after_move": 2.89,
           "war_during": 2.89,
-          "war_after_exit": 1.75
+          "war_after_exit": 1.76
         }
       ],
       "players_sent_away": [],
@@ -21920,7 +21920,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 1.41,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.75,
+      "war_after_exit_acquired": 1.76,
       "salary_source": "bref",
       "counterparty": "Seattle Mariners",
       "counterparty_id": null,
@@ -25083,8 +25083,8 @@
           "mlbam_id": 683011,
           "name": "Anthony Volpe",
           "war_prior": 0.0,
-          "war_after_move": 9.71,
-          "war_during": 9.71,
+          "war_after_move": 9.6,
+          "war_during": 9.6,
           "war_after_exit": 0.0
         }
       ],
@@ -25092,9 +25092,9 @@
       "salary_paid": 5005100.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 72674900.0,
-      "net_war_exchange": 9.71,
-      "war_acquired": 9.71,
+      "surplus_value": 71794900.0,
+      "net_war_exchange": 9.6,
+      "war_acquired": 9.6,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -25104,9 +25104,9 @@
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
-      "talent_grade": 9.71,
+      "talent_grade": 9.6,
       "talent_per_control_year": null,
-      "ledger_grade": 72674900.0,
+      "ledger_grade": 71794900.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -26685,8 +26685,8 @@
           "mlbam_id": 607074,
           "name": "Carlos Rod\u00f3n",
           "war_prior": 16.48,
-          "war_after_move": 7.35,
-          "war_during": 7.35,
+          "war_after_move": 7.36,
+          "war_during": 7.36,
           "war_after_exit": 0.0
         }
       ],
@@ -26694,9 +26694,9 @@
       "salary_paid": 162000000,
       "contract_years": 6,
       "contract_active": true,
-      "surplus_value": -103200000.0,
-      "net_war_exchange": 7.35,
-      "war_acquired": 7.35,
+      "surplus_value": -103120000.0,
+      "net_war_exchange": 7.36,
+      "war_acquired": 7.36,
       "war_sent_away": 0.0,
       "war_prior_acquired": 16.48,
       "war_prior_sent": 0.0,
@@ -26706,9 +26706,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "overpay_fa",
-      "talent_grade": 7.35,
-      "talent_per_control_year": 1.22,
-      "ledger_grade": -103200000.0,
+      "talent_grade": 7.36,
+      "talent_per_control_year": 1.23,
+      "ledger_grade": -103120000.0,
       "control_years_remaining": 6.0,
       "control_bucket": "long_term",
       "control_source": "contract_through",
@@ -28746,7 +28746,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.1,
           "war_during": -0.1,
-          "war_after_exit": 2.17
+          "war_after_exit": 2.16
         }
       ],
       "players_sent_away": [],
@@ -28759,7 +28759,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 2.17,
+      "war_after_exit_acquired": 2.16,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -29134,7 +29134,7 @@
       "team_name": "New York Yankees",
       "move_date": "2022-08-02",
       "move_type": "Trade",
-      "summary": "Trade with St. Louis Cardinals: acquired Harrison Bader, Clayton Beeter; sent Jordan Montgomery, Joey Gallo",
+      "summary": "Trade with St. Louis Cardinals: acquired Harrison Bader, Clayton Beeter; sent Joey Gallo, Jordan Montgomery",
       "players_acquired": [
         {
           "mlbam_id": 664056,
@@ -29155,15 +29155,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 656756,
-          "name": "Jordan Montgomery",
-          "war_prior": 6.66,
-          "war_after_move": 3.01,
-          "war_during": 6.66,
-          "war_after_exit": 3.01,
-          "war_charged": 3.01
-        },
-        {
           "mlbam_id": 608336,
           "name": "Joey Gallo",
           "war_prior": 0.46,
@@ -29171,6 +29162,15 @@
           "war_during": 0.46,
           "war_after_exit": 0.0,
           "war_charged": 0.36
+        },
+        {
+          "mlbam_id": 656756,
+          "name": "Jordan Montgomery",
+          "war_prior": 6.66,
+          "war_after_move": 3.01,
+          "war_during": 6.66,
+          "war_after_exit": 3.01,
+          "war_charged": 3.01
         }
       ],
       "salary_paid": 740000.0,
@@ -29205,15 +29205,15 @@
       "team_name": "New York Yankees",
       "move_date": "2022-08-01",
       "move_type": "Trade",
-      "summary": "Trade with Athletics: acquired Lou Trivino III, Scott Effross, Frankie Montas; sent Ken Waldichuk, JP Sears, Hayden Wesneski, Luis Medina, Cooper Bowman",
+      "summary": "Trade with Athletics: acquired Frankie Montas, Scott Effross, Lou Trivino III; sent Cooper Bowman, Hayden Wesneski, JP Sears, Ken Waldichuk, Luis Medina",
       "players_acquired": [
         {
-          "mlbam_id": 642152,
-          "name": "Lou Trivino III",
-          "war_prior": 2.42,
-          "war_after_move": 0.71,
-          "war_during": 0.71,
-          "war_after_exit": -0.15
+          "mlbam_id": 593423,
+          "name": "Frankie Montas",
+          "war_prior": 5.92,
+          "war_after_move": -0.56,
+          "war_during": -0.56,
+          "war_after_exit": -0.01
         },
         {
           "mlbam_id": 664123,
@@ -29224,32 +29224,23 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 593423,
-          "name": "Frankie Montas",
-          "war_prior": 5.92,
-          "war_after_move": -0.56,
-          "war_during": -0.56,
-          "war_after_exit": -0.01
+          "mlbam_id": 642152,
+          "name": "Lou Trivino III",
+          "war_prior": 2.42,
+          "war_after_move": 0.71,
+          "war_during": 0.71,
+          "war_after_exit": -0.15
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 686610,
-          "name": "Ken Waldichuk",
+          "mlbam_id": 688682,
+          "name": "Cooper Bowman",
           "war_prior": 0.0,
-          "war_after_move": 0.37,
+          "war_after_move": 0.0,
           "war_during": 0.0,
-          "war_after_exit": 0.37,
-          "war_charged": 0.37
-        },
-        {
-          "mlbam_id": 676664,
-          "name": "JP Sears",
-          "war_prior": 0.0,
-          "war_after_move": 6.53,
-          "war_during": 0.0,
-          "war_after_exit": 6.53,
-          "war_charged": 6.53
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         },
         {
           "mlbam_id": 669713,
@@ -29261,31 +29252,40 @@
           "war_charged": 0.86
         },
         {
+          "mlbam_id": 676664,
+          "name": "JP Sears",
+          "war_prior": 0.0,
+          "war_after_move": 6.53,
+          "war_during": 0.0,
+          "war_after_exit": 6.53,
+          "war_charged": 6.53
+        },
+        {
+          "mlbam_id": 686610,
+          "name": "Ken Waldichuk",
+          "war_prior": 0.0,
+          "war_after_move": 0.37,
+          "war_during": 0.0,
+          "war_after_exit": 0.37,
+          "war_charged": 0.37
+        },
+        {
           "mlbam_id": 665622,
           "name": "Luis Medina",
           "war_prior": 0.0,
-          "war_after_move": 2.14,
+          "war_after_move": 2.12,
           "war_during": 0.0,
-          "war_after_exit": 2.14,
-          "war_charged": 2.14
-        },
-        {
-          "mlbam_id": 688682,
-          "name": "Cooper Bowman",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
+          "war_after_exit": 2.12,
+          "war_charged": 2.12
         }
       ],
       "salary_paid": 9050000.0,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": -6170000.0,
-      "net_war_exchange": -9.54,
+      "net_war_exchange": -9.52,
       "war_acquired": 0.36,
-      "war_sent_away": 9.9,
+      "war_sent_away": 9.88,
       "war_prior_acquired": 8.5,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.16,
@@ -29294,7 +29294,7 @@
       "counterparty_id": 133,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_sold",
-      "talent_grade": -8.68,
+      "talent_grade": -8.66,
       "talent_per_control_year": null,
       "ledger_grade": -6170000.0,
       "control_years_remaining": null,
@@ -32245,7 +32245,7 @@
           "war_prior": 0.42,
           "war_after_move": 3.3,
           "war_during": 3.3,
-          "war_after_exit": -0.72
+          "war_after_exit": -0.62
         }
       ],
       "players_sent_away": [
@@ -32277,7 +32277,7 @@
       "war_sent_away": -0.58,
       "war_prior_acquired": 0.42,
       "war_prior_sent": -0.22,
-      "war_after_exit_acquired": -0.72,
+      "war_after_exit_acquired": -0.62,
       "salary_source": "bref",
       "counterparty": "Texas Rangers",
       "counterparty_id": 140,
@@ -32741,7 +32741,7 @@
       "team_name": "New York Yankees",
       "move_date": "2022-03-16",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent LF Ryan LaMarre and  to a minor league contract and invited him to spring training; New York Yankees signed free agent 3B Phillip Evans and  to a minor league contract and invited him to spring training; New York Yankees signed free agent 1B Ronald Guzman and  to a minor league contract and invited him to spring training",
+      "summary": "New York Yankees signed free agent 3B Phillip Evans and  to a minor league contract and invited him to spring training; New York Yankees signed free agent 1B Ronald Guzman and  to a minor league contract and invited him to spring training; New York Yankees signed free agent LF Ryan LaMarre and  to a minor league contract and invited him to spring training",
       "players_acquired": [],
       "players_sent_away": [],
       "salary_paid": null,
@@ -32908,16 +32908,8 @@
       "team_name": "New York Yankees",
       "move_date": "2022-03-13",
       "move_type": "Trade",
-      "summary": "Trade with Minnesota Twins: acquired Ben Rortvedt, Isiah Kiner-Falefa, Josh Donaldson; sent Gary S\u00e1nchez, Gio Urshela",
+      "summary": "Trade with Minnesota Twins: acquired Isiah Kiner-Falefa, Josh Donaldson, Ben Rortvedt; sent Gary S\u00e1nchez, Gio Urshela",
       "players_acquired": [
-        {
-          "mlbam_id": 666163,
-          "name": "Ben Rortvedt",
-          "war_prior": -0.05,
-          "war_after_move": -0.2,
-          "war_during": -0.2,
-          "war_after_exit": 0.32
-        },
         {
           "mlbam_id": 643396,
           "name": "Isiah Kiner-Falefa",
@@ -32933,6 +32925,14 @@
           "war_after_move": 2.23,
           "war_during": 2.23,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 666163,
+          "name": "Ben Rortvedt",
+          "war_prior": -0.05,
+          "war_after_move": -0.2,
+          "war_during": -0.2,
+          "war_after_exit": 0.32
         }
       ],
       "players_sent_away": [
@@ -35126,7 +35126,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.56,
           "war_during": 0.56,
-          "war_after_exit": 6.16
+          "war_after_exit": 6.15
         }
       ],
       "players_sent_away": [],
@@ -35139,7 +35139,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 6.16,
+      "war_after_exit_acquired": 6.15,
       "salary_source": null,
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -36854,15 +36854,15 @@
       "team_name": "New York Yankees",
       "move_date": "2021-07-29",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Joey Gallo, Joely Rodr\u00edguez, Anthony Rizzo; sent Ezequiel Duran, Josh Smith, Glenn Otto Jr., Alexander Vizca\u00edno, Kevin Alc\u00e1ntara, Trevor Hauver",
+      "summary": "Trade with Chicago Cubs: acquired Anthony Rizzo, Joely Rodr\u00edguez, Joey Gallo; sent Kevin Alc\u00e1ntara, Alexander Vizca\u00edno, Ezequiel Duran, Trevor Hauver, Josh Smith, Glenn Otto Jr.",
       "players_acquired": [
         {
-          "mlbam_id": 608336,
-          "name": "Joey Gallo",
-          "war_prior": 9.88,
-          "war_after_move": 0.47,
-          "war_during": 0.47,
-          "war_after_exit": 0.73
+          "mlbam_id": 519203,
+          "name": "Anthony Rizzo",
+          "war_prior": 35.43,
+          "war_after_move": 3.7,
+          "war_during": 3.7,
+          "war_after_exit": 0.0
         },
         {
           "mlbam_id": 570257,
@@ -36873,41 +36873,23 @@
           "war_after_exit": -0.9
         },
         {
-          "mlbam_id": 519203,
-          "name": "Anthony Rizzo",
-          "war_prior": 35.43,
-          "war_after_move": 3.7,
-          "war_during": 3.7,
-          "war_after_exit": 0.0
+          "mlbam_id": 608336,
+          "name": "Joey Gallo",
+          "war_prior": 9.88,
+          "war_after_move": 0.47,
+          "war_during": 0.47,
+          "war_after_exit": 0.73
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 677649,
-          "name": "Ezequiel Duran",
+          "mlbam_id": 682634,
+          "name": "Kevin Alc\u00e1ntara",
           "war_prior": 0.0,
-          "war_after_move": 6.12,
+          "war_after_move": -0.25,
           "war_during": 0.0,
-          "war_after_exit": 6.12,
-          "war_charged": 6.12
-        },
-        {
-          "mlbam_id": 669701,
-          "name": "Josh Smith",
-          "war_prior": 0.0,
-          "war_after_move": 6.9,
-          "war_during": 0.0,
-          "war_after_exit": 6.9,
-          "war_charged": 6.9
-        },
-        {
-          "mlbam_id": 657248,
-          "name": "Glenn Otto Jr.",
-          "war_prior": 0.0,
-          "war_after_move": -0.81,
-          "war_during": 0.0,
-          "war_after_exit": -0.81,
-          "war_charged": -0.81
+          "war_after_exit": -0.25,
+          "war_charged": -0.25
         },
         {
           "mlbam_id": 669805,
@@ -36919,13 +36901,13 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 682634,
-          "name": "Kevin Alc\u00e1ntara",
+          "mlbam_id": 677649,
+          "name": "Ezequiel Duran",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": -0.25
+          "war_charged": 6.14
         },
         {
           "mlbam_id": 669386,
@@ -36935,24 +36917,42 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 669701,
+          "name": "Josh Smith",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 6.9
+        },
+        {
+          "mlbam_id": 657248,
+          "name": "Glenn Otto Jr.",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": -0.81
         }
       ],
       "salary_paid": 60275000.0,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": -24355000.0,
-      "net_war_exchange": -7.47,
+      "net_war_exchange": -7.49,
       "war_acquired": 4.49,
-      "war_sent_away": 11.96,
+      "war_sent_away": 11.98,
       "war_prior_acquired": 44.98,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.17,
       "salary_source": "bref",
-      "counterparty": "Texas Rangers",
-      "counterparty_id": 140,
+      "counterparty": "Chicago Cubs",
+      "counterparty_id": 112,
       "acquisition_channel": "trade",
-      "deal_archetype": "deadline_add_miss",
-      "talent_grade": -7.72,
+      "deal_archetype": "deadline_add_hit",
+      "talent_grade": 4.74,
       "talent_per_control_year": null,
       "ledger_grade": -24355000.0,
       "control_years_remaining": null,
@@ -37199,7 +37199,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-07-26",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Clay Holmes; sent Diego Castillo, Hoy Park",
+      "summary": "Trade with Pittsburgh Pirates: acquired Clay Holmes; sent Hoy Park, Diego Castillo",
       "players_acquired": [
         {
           "mlbam_id": 605280,
@@ -37207,19 +37207,10 @@
           "war_prior": -0.98,
           "war_after_move": 5.06,
           "war_during": 5.06,
-          "war_after_exit": 4.19
+          "war_after_exit": 4.2
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 660636,
-          "name": "Diego Castillo",
-          "war_prior": 0.0,
-          "war_after_move": -0.94,
-          "war_during": 0.0,
-          "war_after_exit": -0.94,
-          "war_charged": -0.94
-        },
         {
           "mlbam_id": 660829,
           "name": "Hoy Park",
@@ -37228,6 +37219,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.6,
           "war_charged": -0.6
+        },
+        {
+          "mlbam_id": 660636,
+          "name": "Diego Castillo",
+          "war_prior": 0.0,
+          "war_after_move": -0.94,
+          "war_during": 0.0,
+          "war_after_exit": -0.94,
+          "war_charged": -0.94
         }
       ],
       "salary_paid": 10400000.0,
@@ -37239,7 +37239,7 @@
       "war_sent_away": -1.54,
       "war_prior_acquired": -0.98,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 4.19,
+      "war_after_exit_acquired": 4.2,
       "salary_source": "bref",
       "counterparty": "Pittsburgh Pirates",
       "counterparty_id": 134,
@@ -37664,8 +37664,8 @@
           "mlbam_id": 701542,
           "name": "Will Warren",
           "war_prior": 0.0,
-          "war_after_move": 0.31,
-          "war_during": 0.31,
+          "war_after_move": 0.32,
+          "war_during": 0.32,
           "war_after_exit": 0.0
         }
       ],
@@ -37674,8 +37674,8 @@
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": 0.31,
-      "war_acquired": 0.31,
+      "net_war_exchange": 0.32,
+      "war_acquired": 0.32,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -37685,7 +37685,7 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 0.31,
+      "talent_grade": 0.32,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -38450,16 +38450,8 @@
       "team_name": "New York Yankees",
       "move_date": "2021-07-01",
       "move_type": "Trade",
-      "summary": "Trade with Tampa Bay Rays: acquired Aldenis Sanchez, Tim Locastro; sent Keegan Curtis",
+      "summary": "Trade with Arizona Diamondbacks: acquired Tim Locastro, Aldenis Sanchez; sent Keegan Curtis",
       "players_acquired": [
-        {
-          "mlbam_id": 672479,
-          "name": "Aldenis Sanchez",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 641796,
           "name": "Tim Locastro",
@@ -38467,6 +38459,14 @@
           "war_after_move": -0.38,
           "war_during": -0.38,
           "war_after_exit": 0.43
+        },
+        {
+          "mlbam_id": 672479,
+          "name": "Aldenis Sanchez",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -38491,8 +38491,8 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.43,
       "salary_source": "bref",
-      "counterparty": "Tampa Bay Rays",
-      "counterparty_id": 139,
+      "counterparty": "Arizona Diamondbacks",
+      "counterparty_id": 109,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
       "talent_grade": -0.38,
@@ -39709,7 +39709,7 @@
           "war_prior": 0.06,
           "war_after_move": 3.43,
           "war_during": 3.43,
-          "war_after_exit": 2.08
+          "war_after_exit": 2.07
         }
       ],
       "players_sent_away": [
@@ -39732,7 +39732,7 @@
       "war_sent_away": 0.1,
       "war_prior_acquired": 0.06,
       "war_prior_sent": 4.02,
-      "war_after_exit_acquired": 2.08,
+      "war_after_exit_acquired": 2.07,
       "salary_source": "bref",
       "counterparty": "San Francisco Giants",
       "counterparty_id": 137,
@@ -39800,7 +39800,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-04-06",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Rougned Odor; sent Antonio Cabello, Josh Stowers",
+      "summary": "Trade with Texas Rangers: acquired Rougned Odor; sent Josh Stowers, Antonio Cabello",
       "players_acquired": [
         {
           "mlbam_id": 596059,
@@ -39813,8 +39813,8 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 679737,
-          "name": "Antonio Cabello",
+          "mlbam_id": 663618,
+          "name": "Josh Stowers",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -39822,8 +39822,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 663618,
-          "name": "Josh Stowers",
+          "mlbam_id": 679737,
+          "name": "Antonio Cabello",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -39942,7 +39942,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-03-31",
       "move_type": "Selected",
-      "summary": "New York Yankees selected the contract of P Lucas Luetge from Scranton/Wilkes-Barre RailRiders; New York Yankees selected the contract of LHP Lucas Luetge,  and; New York Yankees selected the contract of P Lucas Luetge",
+      "summary": "New York Yankees selected the contract of P Lucas Luetge; New York Yankees selected the contract of P Lucas Luetge from Scranton/Wilkes-Barre RailRiders; New York Yankees selected the contract of LHP Lucas Luetge,  and",
       "players_acquired": [
         {
           "mlbam_id": 476595,
@@ -40646,7 +40646,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-02-10",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent P Darren O'Day; New York Yankees signed free agent RHP Darren O'Day",
+      "summary": "New York Yankees signed free agent RHP Darren O'Day; New York Yankees signed free agent P Darren O'Day",
       "players_acquired": [
         {
           "mlbam_id": 503285,
@@ -40778,7 +40778,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-02-02",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent P Asher Wojciechowski; New York Yankees signed free agent RHP Asher Wojciechowski to a minor league contract and invited him to spring training",
+      "summary": "New York Yankees signed free agent RHP Asher Wojciechowski to a minor league contract and invited him to spring training; New York Yankees signed free agent P Asher Wojciechowski",
       "players_acquired": [
         {
           "mlbam_id": 592879,
@@ -40910,18 +40910,9 @@
       "team_name": "New York Yankees",
       "move_date": "2021-01-25",
       "move_type": "Trade",
-      "summary": "Trade with Boston Red Sox: sent Adam Ottavino, Frank German",
+      "summary": "Trade with Boston Red Sox: sent Frank German, Adam Ottavino",
       "players_acquired": [],
       "players_sent_away": [
-        {
-          "mlbam_id": 493603,
-          "name": "Adam Ottavino",
-          "war_prior": 2.12,
-          "war_after_move": 0.77,
-          "war_during": 2.12,
-          "war_after_exit": 0.77,
-          "war_charged": 0.77
-        },
         {
           "mlbam_id": 681464,
           "name": "Frank German",
@@ -40930,6 +40921,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.29,
           "war_charged": -0.29
+        },
+        {
+          "mlbam_id": 493603,
+          "name": "Adam Ottavino",
+          "war_prior": 2.12,
+          "war_after_move": 0.77,
+          "war_during": 2.12,
+          "war_after_exit": 0.77,
+          "war_charged": 0.77
         }
       ],
       "salary_paid": null,
@@ -40964,7 +40964,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-01-24",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Jameson Taillon; sent Miguel Yajure, Roansy Contreras, Canaan Smith-Njigba, Maikol Escotto",
+      "summary": "Trade with Pittsburgh Pirates: acquired Jameson Taillon; sent Roansy Contreras, Canaan Smith-Njigba, Maikol Escotto, Miguel Yajure",
       "players_acquired": [
         {
           "mlbam_id": 592791,
@@ -40972,19 +40972,10 @@
           "war_prior": 7.98,
           "war_after_move": 3.7,
           "war_during": 3.7,
-          "war_after_exit": 2.45
+          "war_after_exit": 2.46
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 664337,
-          "name": "Miguel Yajure",
-          "war_prior": 0.18,
-          "war_after_move": -1.43,
-          "war_during": 0.18,
-          "war_after_exit": -1.43,
-          "war_charged": -1.43
-        },
         {
           "mlbam_id": 672710,
           "name": "Roansy Contreras",
@@ -41011,6 +41002,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 664337,
+          "name": "Miguel Yajure",
+          "war_prior": 0.18,
+          "war_after_move": -1.43,
+          "war_during": 0.18,
+          "war_after_exit": -1.43,
+          "war_charged": -1.43
         }
       ],
       "salary_paid": 5800000.0,
@@ -41022,7 +41022,7 @@
       "war_sent_away": -0.68,
       "war_prior_acquired": 7.98,
       "war_prior_sent": 0.18,
-      "war_after_exit_acquired": 2.45,
+      "war_after_exit_acquired": 2.46,
       "salary_source": "bref",
       "counterparty": "Pittsburgh Pirates",
       "counterparty_id": 134,
@@ -41363,7 +41363,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-01-05",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent 3B Andrew Velazquez to a minor league contract and invited him to spring training; New York Yankees signed free agent SS Andrew Velazquez",
+      "summary": "New York Yankees signed free agent SS Andrew Velazquez; New York Yankees signed free agent 3B Andrew Velazquez to a minor league contract and invited him to spring training",
       "players_acquired": [
         {
           "mlbam_id": 623205,
@@ -41583,7 +41583,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-12-13",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent CF Thomas Milone; New York Yankees signed free agent OF Thomas Milone to a minor league contract and invited him to spring training",
+      "summary": "New York Yankees signed free agent OF Thomas Milone to a minor league contract and invited him to spring training; New York Yankees signed free agent CF Thomas Milone",
       "players_acquired": [
         {
           "mlbam_id": 641882,
@@ -41671,7 +41671,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-12-12",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent P Luis Garcia; New York Yankees signed free agent RHP Luis Garcia to a minor league contract and invited him to spring training",
+      "summary": "New York Yankees signed free agent RHP Luis Garcia to a minor league contract and invited him to spring training; New York Yankees signed free agent P Luis Garcia",
       "players_acquired": [
         {
           "mlbam_id": 472610,
@@ -41803,7 +41803,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-11-20",
       "move_type": "Selected",
-      "summary": "New York Yankees selected the contract of RHP Yoendrys Gomez from Charleston RiverDogs; New York Yankees selected the contract of RHP Yoendrys Gomez",
+      "summary": "New York Yankees selected the contract of RHP Yoendrys Gomez; New York Yankees selected the contract of RHP Yoendrys Gomez from Charleston RiverDogs",
       "players_acquired": [
         {
           "mlbam_id": 672782,
@@ -41847,7 +41847,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-11-20",
       "move_type": "Selected",
-      "summary": "New York Yankees selected the contract of RHP Alexander Vizcaino from Tampa Tarpons; New York Yankees selected the contract of RHP Alexander Vizcaino",
+      "summary": "New York Yankees selected the contract of RHP Alexander Vizcaino; New York Yankees selected the contract of RHP Alexander Vizcaino from Tampa Tarpons",
       "players_acquired": [
         {
           "mlbam_id": 669805,
@@ -41979,7 +41979,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-11-17",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent OF Michael Beltre to a minor league contract and invited him to spring training; New York Yankees signed free agent LF Michael Beltre",
+      "summary": "New York Yankees signed free agent LF Michael Beltre; New York Yankees signed free agent OF Michael Beltre to a minor league contract and invited him to spring training",
       "players_acquired": [
         {
           "mlbam_id": 642461,
@@ -44825,14 +44825,14 @@
       "team_name": "New York Yankees",
       "move_date": "2019-12-18",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent RHP Gerrit Cole; New York Yankees signed free agent P Gerrit Cole",
+      "summary": "New York Yankees signed free agent P Gerrit Cole; New York Yankees signed free agent RHP Gerrit Cole",
       "players_acquired": [
         {
           "mlbam_id": 543037,
           "name": "Gerrit Cole",
           "war_prior": 23.41,
-          "war_after_move": 22.15,
-          "war_during": 22.15,
+          "war_after_move": 22.16,
+          "war_during": 22.16,
           "war_after_exit": 0.0
         }
       ],
@@ -44840,9 +44840,9 @@
       "salary_paid": 324000000,
       "contract_years": 9,
       "contract_active": true,
-      "surplus_value": -146800000.0,
-      "net_war_exchange": 22.15,
-      "war_acquired": 22.15,
+      "surplus_value": -146720000.0,
+      "net_war_exchange": 22.16,
+      "war_acquired": 22.16,
       "war_sent_away": 0.0,
       "war_prior_acquired": 23.41,
       "war_prior_sent": 0.0,
@@ -44852,9 +44852,9 @@
       "counterparty_id": null,
       "acquisition_channel": "free_agent",
       "deal_archetype": "overpay_fa",
-      "talent_grade": 22.15,
+      "talent_grade": 22.16,
       "talent_per_control_year": 2.46,
-      "ledger_grade": -146800000.0,
+      "ledger_grade": -146720000.0,
       "control_years_remaining": 9.0,
       "control_bucket": "long_term",
       "control_source": "contract_through",
@@ -45890,7 +45890,7 @@
           "war_prior": 0.0,
           "war_after_move": 5.59,
           "war_during": 5.59,
-          "war_after_exit": 9.58
+          "war_after_exit": 9.57
         }
       ],
       "players_sent_away": [],
@@ -45903,7 +45903,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 9.58,
+      "war_after_exit_acquired": 9.57,
       "salary_source": "bref",
       "counterparty": "Trenton Thunder",
       "counterparty_id": null,
@@ -48989,8 +48989,8 @@
           "mlbam_id": 683011,
           "name": "Anthony Volpe",
           "war_prior": 0.0,
-          "war_after_move": 9.71,
-          "war_during": 9.71,
+          "war_after_move": 9.6,
+          "war_during": 9.6,
           "war_after_exit": 0.0
         }
       ],
@@ -48998,9 +48998,9 @@
       "salary_paid": 5005100.0,
       "contract_years": null,
       "contract_active": null,
-      "surplus_value": 72674900.0,
-      "net_war_exchange": 9.71,
-      "war_acquired": 9.71,
+      "surplus_value": 71794900.0,
+      "net_war_exchange": 9.6,
+      "war_acquired": 9.6,
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
@@ -49010,9 +49010,9 @@
       "counterparty_id": null,
       "acquisition_channel": "signing",
       "deal_archetype": "signing",
-      "talent_grade": 9.71,
+      "talent_grade": 9.6,
       "talent_per_control_year": null,
-      "ledger_grade": 72674900.0,
+      "ledger_grade": 71794900.0,
       "control_years_remaining": null,
       "control_bucket": "unknown",
       "control_source": "unknown",
@@ -50808,7 +50808,7 @@
       "team_name": "New York Yankees",
       "move_date": "2019-01-21",
       "move_type": "Trade",
-      "summary": "Trade with Cincinnati Reds: acquired Shed Long Jr., Josh Stowers; sent Shed Long Jr., Sonny Gray, Reiver Sanmartin",
+      "summary": "Trade with Cincinnati Reds: acquired Shed Long Jr., Josh Stowers; sent Shed Long Jr., Reiver Sanmartin, Sonny Gray",
       "players_acquired": [
         {
           "mlbam_id": 643418,
@@ -50838,15 +50838,6 @@
           "war_charged": -0.43
         },
         {
-          "mlbam_id": 543243,
-          "name": "Sonny Gray",
-          "war_prior": 1.16,
-          "war_after_move": 9.97,
-          "war_during": 1.16,
-          "war_after_exit": 9.97,
-          "war_charged": 9.97
-        },
-        {
           "mlbam_id": 665665,
           "name": "Reiver Sanmartin",
           "war_prior": 0.0,
@@ -50854,6 +50845,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.47,
           "war_charged": -0.47
+        },
+        {
+          "mlbam_id": 543243,
+          "name": "Sonny Gray",
+          "war_prior": 1.16,
+          "war_after_move": 9.97,
+          "war_during": 1.16,
+          "war_after_exit": 9.97,
+          "war_charged": 9.97
         }
       ],
       "salary_paid": null,
@@ -52751,7 +52751,7 @@
       "team_name": "New York Yankees",
       "move_date": "2018-08-31",
       "move_type": "Trade",
-      "summary": "Trade with San Francisco Giants: acquired Andrew McCutchen, Adeiny Hechavarr\u00eda; sent Abiatal Avelino, Juan De Paula",
+      "summary": "Trade with San Francisco Giants: acquired Andrew McCutchen, Adeiny Hechavarr\u00eda; sent Juan De Paula, Abiatal Avelino",
       "players_acquired": [
         {
           "mlbam_id": 457705,
@@ -52772,15 +52772,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 623214,
-          "name": "Abiatal Avelino",
-          "war_prior": 0.0,
-          "war_after_move": -0.05,
-          "war_during": 0.0,
-          "war_after_exit": -0.05,
-          "war_charged": -0.05
-        },
-        {
           "mlbam_id": 660798,
           "name": "Juan De Paula",
           "war_prior": 0.0,
@@ -52788,6 +52779,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 623214,
+          "name": "Abiatal Avelino",
+          "war_prior": 0.0,
+          "war_after_move": -0.05,
+          "war_during": 0.0,
+          "war_after_exit": -0.05,
+          "war_charged": -0.05
         }
       ],
       "salary_paid": null,
@@ -53402,7 +53402,7 @@
       "team_name": "New York Yankees",
       "move_date": "2018-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Minnesota Twins: acquired Lance Lynn; sent Luis Rijo, Tyler Austin, Adam Warren",
+      "summary": "Trade with Minnesota Twins: acquired Lance Lynn; sent Tyler Austin, Luis Rijo, Adam Warren",
       "players_acquired": [
         {
           "mlbam_id": 458681,
@@ -53415,15 +53415,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 665894,
-          "name": "Luis Rijo",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 592122,
           "name": "Tyler Austin",
           "war_prior": -0.15,
@@ -53431,6 +53422,15 @@
           "war_during": -0.15,
           "war_after_exit": 0.28,
           "war_charged": 0.28
+        },
+        {
+          "mlbam_id": 665894,
+          "name": "Luis Rijo",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         },
         {
           "mlbam_id": 476589,
@@ -53590,7 +53590,7 @@
       "team_name": "New York Yankees",
       "move_date": "2018-07-26",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired J.A. Happ; sent Brandon Drury, Billy McKinney",
+      "summary": "Trade with Toronto Blue Jays: acquired J.A. Happ; sent Billy McKinney, Brandon Drury",
       "players_acquired": [
         {
           "mlbam_id": 457918,
@@ -53603,15 +53603,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 592273,
-          "name": "Brandon Drury",
-          "war_prior": 0.0,
-          "war_after_move": -1.74,
-          "war_during": 0.0,
-          "war_after_exit": -1.74,
-          "war_charged": -1.74
-        },
-        {
           "mlbam_id": 641856,
           "name": "Billy McKinney",
           "war_prior": 0.0,
@@ -53619,6 +53610,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.86,
           "war_charged": 0.86
+        },
+        {
+          "mlbam_id": 592273,
+          "name": "Brandon Drury",
+          "war_prior": 0.0,
+          "war_after_move": -1.74,
+          "war_during": 0.0,
+          "war_after_exit": -1.74,
+          "war_charged": -1.74
         }
       ],
       "salary_paid": 51000000.0,
@@ -53697,7 +53697,7 @@
       "team_name": "New York Yankees",
       "move_date": "2018-07-24",
       "move_type": "Trade",
-      "summary": "Trade with Baltimore Orioles: acquired Zack Britton; sent Dillon Tate, Cody Carroll, Josh Rogers",
+      "summary": "Trade with Baltimore Orioles: acquired Zack Britton; sent Cody Carroll, Josh Rogers, Dillon Tate",
       "players_acquired": [
         {
           "mlbam_id": 502154,
@@ -53709,15 +53709,6 @@
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 622253,
-          "name": "Dillon Tate",
-          "war_prior": 0.0,
-          "war_after_move": 2.24,
-          "war_during": 0.0,
-          "war_after_exit": 2.24,
-          "war_charged": 2.24
-        },
         {
           "mlbam_id": 606944,
           "name": "Cody Carroll",
@@ -53735,6 +53726,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.56,
           "war_charged": -0.56
+        },
+        {
+          "mlbam_id": 622253,
+          "name": "Dillon Tate",
+          "war_prior": 0.0,
+          "war_after_move": 2.24,
+          "war_during": 0.0,
+          "war_after_exit": 2.24,
+          "war_charged": 2.24
         }
       ],
       "salary_paid": 79000000.0,
@@ -60078,7 +60078,7 @@
       "team_name": "New York Yankees",
       "move_date": "2017-12-11",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Giancarlo Stanton; sent Jorge Guzm\u00e1n, Starlin Castro, Jos\u00e9 Devers",
+      "summary": "Trade with Miami Marlins: acquired Giancarlo Stanton; sent Starlin Castro, Jos\u00e9 Devers, Jorge Guzm\u00e1n",
       "players_acquired": [
         {
           "mlbam_id": 519317,
@@ -60090,15 +60090,6 @@
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 660422,
-          "name": "Jorge Guzm\u00e1n",
-          "war_prior": 0.0,
-          "war_after_move": -0.36,
-          "war_during": 0.0,
-          "war_after_exit": -0.36,
-          "war_charged": -0.36
-        },
         {
           "mlbam_id": 516770,
           "name": "Starlin Castro",
@@ -60116,6 +60107,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.14,
           "war_charged": -0.14
+        },
+        {
+          "mlbam_id": 660422,
+          "name": "Jorge Guzm\u00e1n",
+          "war_prior": 0.0,
+          "war_after_move": -0.36,
+          "war_during": 0.0,
+          "war_after_exit": -0.36,
+          "war_charged": -0.36
         }
       ],
       "salary_paid": 265000000,
@@ -60194,7 +60194,7 @@
       "team_name": "New York Yankees",
       "move_date": "2017-11-20",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Michael King, Reiver Sanmartin; sent Garrett Cooper, Ronald Herrera, Caleb Smith",
+      "summary": "Trade with Miami Marlins: acquired Michael King, Reiver Sanmartin; sent Caleb Smith, Garrett Cooper, Ronald Herrera",
       "players_acquired": [
         {
           "mlbam_id": 650633,
@@ -60202,7 +60202,7 @@
           "war_prior": 0.0,
           "war_after_move": 5.59,
           "war_during": 5.59,
-          "war_after_exit": 9.58
+          "war_after_exit": 9.57
         },
         {
           "mlbam_id": 665665,
@@ -60214,6 +60214,15 @@
         }
       ],
       "players_sent_away": [
+        {
+          "mlbam_id": 592761,
+          "name": "Caleb Smith",
+          "war_prior": -0.3,
+          "war_after_move": 2.77,
+          "war_during": -0.3,
+          "war_after_exit": 2.77,
+          "war_charged": 2.77
+        },
         {
           "mlbam_id": 643265,
           "name": "Garrett Cooper",
@@ -60231,15 +60240,6 @@
           "war_during": -0.05,
           "war_after_exit": 0.0,
           "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 592761,
-          "name": "Caleb Smith",
-          "war_prior": -0.3,
-          "war_after_move": 2.77,
-          "war_during": -0.3,
-          "war_after_exit": 2.77,
-          "war_charged": 2.77
         }
       ],
       "salary_paid": 1300000.0,
@@ -60251,7 +60251,7 @@
       "war_sent_away": 7.25,
       "war_prior_acquired": 0.0,
       "war_prior_sent": -0.15,
-      "war_after_exit_acquired": 9.58,
+      "war_after_exit_acquired": 9.57,
       "salary_source": "bref",
       "counterparty": "Miami Marlins",
       "counterparty_id": 146,
@@ -60502,7 +60502,7 @@
           "war_prior": 0.0,
           "war_after_move": 15.87,
           "war_during": 15.87,
-          "war_after_exit": 5.06
+          "war_after_exit": 5.03
         }
       ],
       "players_sent_away": [],
@@ -60515,7 +60515,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 5.06,
+      "war_after_exit_acquired": 5.03,
       "salary_source": "bref",
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -60554,7 +60554,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.56,
           "war_during": 0.56,
-          "war_after_exit": 6.16
+          "war_after_exit": 6.15
         }
       ],
       "players_sent_away": [
@@ -60577,7 +60577,7 @@
       "war_sent_away": -0.43,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.04,
-      "war_after_exit_acquired": 6.16,
+      "war_after_exit_acquired": 6.15,
       "salary_source": null,
       "counterparty": "Seattle Mariners",
       "counterparty_id": 136,
@@ -61040,7 +61040,7 @@
       "team_name": "New York Yankees",
       "move_date": "2017-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Athletics: acquired Sonny Gray; sent Yefry Ram\u00edrez, James Kaprielian, Dustin Fowler, Jorge Mateo",
+      "summary": "Trade with Athletics: acquired Sonny Gray; sent James Kaprielian, Yefry Ram\u00edrez, Jorge Mateo, Dustin Fowler",
       "players_acquired": [
         {
           "mlbam_id": 543243,
@@ -61053,15 +61053,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 606162,
-          "name": "Yefry Ram\u00edrez",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": -0.14
-        },
-        {
           "mlbam_id": 621076,
           "name": "James Kaprielian",
           "war_prior": 0.0,
@@ -61071,13 +61062,13 @@
           "war_charged": 2.37
         },
         {
-          "mlbam_id": 641583,
-          "name": "Dustin Fowler",
+          "mlbam_id": 606162,
+          "name": "Yefry Ram\u00edrez",
           "war_prior": 0.0,
-          "war_after_move": -0.98,
+          "war_after_move": 0.0,
           "war_during": 0.0,
-          "war_after_exit": -0.98,
-          "war_charged": -0.98
+          "war_after_exit": 0.0,
+          "war_charged": -0.14
         },
         {
           "mlbam_id": 622761,
@@ -61087,6 +61078,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 641583,
+          "name": "Dustin Fowler",
+          "war_prior": 0.0,
+          "war_after_move": -0.98,
+          "war_during": 0.0,
+          "war_after_exit": -0.98,
+          "war_charged": -0.98
         }
       ],
       "salary_paid": 13000000.0,
@@ -61184,7 +61184,7 @@
       "team_name": "New York Yankees",
       "move_date": "2017-07-23",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Ryan McBroom; sent Dillon McNamara, Rob Refsnyder",
+      "summary": "Trade with Toronto Blue Jays: acquired Ryan McBroom; sent Rob Refsnyder, Dillon McNamara",
       "players_acquired": [
         {
           "mlbam_id": 643436,
@@ -61197,15 +61197,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 621200,
-          "name": "Dillon McNamara",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 608701,
           "name": "Rob Refsnyder",
           "war_prior": 0.31,
@@ -61213,6 +61204,15 @@
           "war_during": 0.31,
           "war_after_exit": -0.21,
           "war_charged": -0.21
+        },
+        {
+          "mlbam_id": 621200,
+          "name": "Dillon McNamara",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": null,
@@ -61335,15 +61335,15 @@
       "team_name": "New York Yankees",
       "move_date": "2017-07-19",
       "move_type": "Trade",
-      "summary": "Trade with Chicago White Sox: acquired Todd Frazier, David Robertson, Tommy Kahnle; sent Blake Rutherford, Tyler Clippard, Tito Polo, Ian Clarkin",
+      "summary": "Trade with Chicago White Sox: acquired Tommy Kahnle, David Robertson, Todd Frazier; sent Blake Rutherford, Ian Clarkin, Tito Polo, Tyler Clippard",
       "players_acquired": [
         {
-          "mlbam_id": 453943,
-          "name": "Todd Frazier",
-          "war_prior": 18.05,
-          "war_after_move": 1.18,
-          "war_during": 1.18,
-          "war_after_exit": 4.81
+          "mlbam_id": 592454,
+          "name": "Tommy Kahnle",
+          "war_prior": 0.22,
+          "war_after_move": 2.66,
+          "war_during": 2.66,
+          "war_after_exit": -0.38
         },
         {
           "mlbam_id": 502085,
@@ -61354,36 +61354,18 @@
           "war_after_exit": 5.91
         },
         {
-          "mlbam_id": 592454,
-          "name": "Tommy Kahnle",
-          "war_prior": 0.22,
-          "war_after_move": 2.66,
-          "war_during": 2.66,
-          "war_after_exit": -0.38
+          "mlbam_id": 453943,
+          "name": "Todd Frazier",
+          "war_prior": 18.05,
+          "war_after_move": 1.18,
+          "war_during": 1.18,
+          "war_after_exit": 4.81
         }
       ],
       "players_sent_away": [
         {
           "mlbam_id": 666164,
           "name": "Blake Rutherford",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 461325,
-          "name": "Tyler Clippard",
-          "war_prior": 0.57,
-          "war_after_move": 0.5,
-          "war_during": 0.57,
-          "war_after_exit": 0.5,
-          "war_charged": 0.5
-        },
-        {
-          "mlbam_id": 622738,
-          "name": "Tito Polo",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -61398,6 +61380,24 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 622738,
+          "name": "Tito Polo",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 461325,
+          "name": "Tyler Clippard",
+          "war_prior": 0.57,
+          "war_after_move": 0.5,
+          "war_during": 0.57,
+          "war_after_exit": 0.5,
+          "war_charged": 0.5
         }
       ],
       "salary_paid": 69549000.0,
@@ -65722,18 +65722,18 @@
           "mlbam_id": 543135,
           "name": "Nathan Eovaldi",
           "war_prior": 3.5,
-          "war_after_move": 18.55,
+          "war_after_move": 18.56,
           "war_during": 3.5,
-          "war_after_exit": 18.55
+          "war_after_exit": 18.56
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -18.55,
+      "net_war_exchange": -18.56,
       "war_acquired": 0.0,
-      "war_sent_away": 18.55,
+      "war_sent_away": 18.56,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 3.5,
       "war_after_exit_acquired": 0.0,
@@ -66253,22 +66253,22 @@
       "team_name": "New York Yankees",
       "move_date": "2016-11-17",
       "move_type": "Trade",
-      "summary": "Trade with Houston Astros: acquired Albert Abreu, Jorge Guzm\u00e1n; sent Brian McCann",
+      "summary": "Trade with Houston Astros: acquired Jorge Guzm\u00e1n, Albert Abreu; sent Brian McCann",
       "players_acquired": [
-        {
-          "mlbam_id": 656061,
-          "name": "Albert Abreu",
-          "war_prior": 0.0,
-          "war_after_move": -0.3,
-          "war_during": -0.3,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 660422,
           "name": "Jorge Guzm\u00e1n",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 656061,
+          "name": "Albert Abreu",
+          "war_prior": 0.0,
+          "war_after_move": -0.3,
+          "war_during": -0.3,
           "war_after_exit": 0.0
         }
       ],
@@ -66367,7 +66367,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.95,
           "war_during": 0.95,
-          "war_after_exit": 3.34
+          "war_after_exit": 3.35
         }
       ],
       "players_sent_away": [],
@@ -66380,7 +66380,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 3.34,
+      "war_after_exit_acquired": 3.35,
       "salary_source": "bref",
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -66674,18 +66674,18 @@
           "mlbam_id": 489446,
           "name": "Kirby Yates",
           "war_prior": 0.0,
-          "war_after_move": 9.24,
+          "war_after_move": 9.23,
           "war_during": 0.0,
-          "war_after_exit": 9.24
+          "war_after_exit": 9.23
         }
       ],
       "salary_paid": null,
       "contract_years": null,
       "contract_active": null,
       "surplus_value": null,
-      "net_war_exchange": -9.24,
+      "net_war_exchange": -9.23,
       "war_acquired": 0.0,
-      "war_sent_away": 9.24,
+      "war_sent_away": 9.23,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
@@ -67108,19 +67108,11 @@
       "team_name": "New York Yankees",
       "move_date": "2016-08-31",
       "move_type": "Trade",
-      "summary": "Trade with Seattle Mariners: acquired Jio Orozco, Juan De Paula, Eric Young Jr.; sent Ben Gamel",
+      "summary": "Trade with Seattle Mariners: acquired Jio Orozco, Eric Young Jr., Juan De Paula; sent Ben Gamel",
       "players_acquired": [
         {
           "mlbam_id": 663463,
           "name": "Jio Orozco",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 660798,
-          "name": "Juan De Paula",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -67133,6 +67125,14 @@
           "war_after_move": -0.05,
           "war_during": -0.05,
           "war_after_exit": 0.39
+        },
+        {
+          "mlbam_id": 660798,
+          "name": "Juan De Paula",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -67178,16 +67178,8 @@
       "team_name": "New York Yankees",
       "move_date": "2016-08-30",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Tito Polo, Stephen Tarpley",
+      "summary": "Trade with Pittsburgh Pirates: acquired Stephen Tarpley, Tito Polo",
       "players_acquired": [
-        {
-          "mlbam_id": 622738,
-          "name": "Tito Polo",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 605501,
           "name": "Stephen Tarpley",
@@ -67195,6 +67187,14 @@
           "war_after_move": -0.29,
           "war_during": -0.29,
           "war_after_exit": -0.49
+        },
+        {
+          "mlbam_id": 622738,
+          "name": "Tito Polo",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [],
@@ -67670,11 +67670,11 @@
       "team_name": "New York Yankees",
       "move_date": "2016-08-01",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Dillon Tate, Erik Swanson, Nick Green; sent Carlos Beltr\u00e1n, Iv\u00e1n Nova",
+      "summary": "Trade with Texas Rangers: acquired Nick Green, Erik Swanson, Dillon Tate; sent Carlos Beltr\u00e1n, Iv\u00e1n Nova",
       "players_acquired": [
         {
-          "mlbam_id": 622253,
-          "name": "Dillon Tate",
+          "mlbam_id": 643340,
+          "name": "Nick Green",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -67689,8 +67689,8 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 643340,
-          "name": "Nick Green",
+          "mlbam_id": 622253,
+          "name": "Dillon Tate",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -67749,31 +67749,15 @@
       "team_name": "New York Yankees",
       "move_date": "2016-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Cleveland Guardians: acquired Clint Frazier, Ben Heller, Justus Sheffield, J.P. Feyereisen, Tyler Clippard; sent Andrew Miller, Jose Campos",
+      "summary": "Trade with Arizona Diamondbacks: acquired Tyler Clippard, J.P. Feyereisen, Clint Frazier, Justus Sheffield, Ben Heller; sent Jose Campos, Andrew Miller",
       "players_acquired": [
         {
-          "mlbam_id": 640449,
-          "name": "Clint Frazier",
-          "war_prior": 0.0,
-          "war_after_move": 0.04,
-          "war_during": 0.04,
-          "war_after_exit": -0.3
-        },
-        {
-          "mlbam_id": 621294,
-          "name": "Ben Heller",
-          "war_prior": 0.0,
-          "war_after_move": 0.73,
-          "war_during": 0.73,
-          "war_after_exit": -0.68
-        },
-        {
-          "mlbam_id": 656954,
-          "name": "Justus Sheffield",
-          "war_prior": 0.0,
-          "war_after_move": -0.07,
-          "war_during": -0.07,
-          "war_after_exit": -0.84
+          "mlbam_id": 461325,
+          "name": "Tyler Clippard",
+          "war_prior": 11.24,
+          "war_after_move": 0.38,
+          "war_during": 0.38,
+          "war_after_exit": 3.55
         },
         {
           "mlbam_id": 656420,
@@ -67784,32 +67768,48 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 461325,
-          "name": "Tyler Clippard",
-          "war_prior": 11.24,
-          "war_after_move": 0.38,
-          "war_during": 0.38,
-          "war_after_exit": 3.55
+          "mlbam_id": 640449,
+          "name": "Clint Frazier",
+          "war_prior": 0.0,
+          "war_after_move": 0.04,
+          "war_during": 0.04,
+          "war_after_exit": -0.3
+        },
+        {
+          "mlbam_id": 656954,
+          "name": "Justus Sheffield",
+          "war_prior": 0.0,
+          "war_after_move": -0.07,
+          "war_during": -0.07,
+          "war_after_exit": -0.84
+        },
+        {
+          "mlbam_id": 621294,
+          "name": "Ben Heller",
+          "war_prior": 0.0,
+          "war_after_move": 0.73,
+          "war_during": 0.73,
+          "war_after_exit": -0.68
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 453192,
-          "name": "Andrew Miller",
-          "war_prior": 2.32,
-          "war_after_move": 4.62,
-          "war_during": 2.32,
-          "war_after_exit": 4.62,
-          "war_charged": 4.62
-        },
-        {
           "mlbam_id": 553883,
           "name": "Jose Campos",
           "war_prior": 0.0,
-          "war_after_move": 0.0,
+          "war_after_move": 0.07,
           "war_during": 0.0,
-          "war_after_exit": 0.0,
+          "war_after_exit": 0.07,
           "war_charged": 0.07
+        },
+        {
+          "mlbam_id": 453192,
+          "name": "Andrew Miller",
+          "war_prior": 2.32,
+          "war_after_move": 0.0,
+          "war_during": 2.32,
+          "war_after_exit": 0.0,
+          "war_charged": 4.62
         }
       ],
       "salary_paid": 28277500.0,
@@ -67823,11 +67823,11 @@
       "war_prior_sent": 2.32,
       "war_after_exit_acquired": 1.73,
       "salary_source": "bref",
-      "counterparty": "Cleveland Guardians",
-      "counterparty_id": 114,
+      "counterparty": "Arizona Diamondbacks",
+      "counterparty_id": 109,
       "acquisition_channel": "trade",
-      "deal_archetype": "deadline_add_miss",
-      "talent_grade": -3.54,
+      "deal_archetype": "deadline_add_hit",
+      "talent_grade": 1.01,
       "talent_per_control_year": null,
       "ledger_grade": -19637500.0,
       "control_years_remaining": null,
@@ -67844,8 +67844,16 @@
       "team_name": "New York Yankees",
       "move_date": "2016-07-25",
       "move_type": "Trade",
-      "summary": "Trade with Chicago Cubs: acquired Adam Warren, Rashad Crawford, Billy McKinney, Gleyber Torres; sent Aroldis Chapman",
+      "summary": "Trade with Chicago Cubs: acquired Gleyber Torres, Adam Warren, Rashad Crawford, Billy McKinney; sent Aroldis Chapman",
       "players_acquired": [
+        {
+          "mlbam_id": 650402,
+          "name": "Gleyber Torres",
+          "war_prior": 0.0,
+          "war_after_move": 15.87,
+          "war_during": 15.87,
+          "war_after_exit": 5.03
+        },
         {
           "mlbam_id": 476589,
           "name": "Adam Warren",
@@ -67869,14 +67877,6 @@
           "war_after_move": 0.05,
           "war_during": 0.05,
           "war_after_exit": -0.15
-        },
-        {
-          "mlbam_id": 650402,
-          "name": "Gleyber Torres",
-          "war_prior": 0.0,
-          "war_after_move": 15.87,
-          "war_during": 15.87,
-          "war_after_exit": 5.06
         }
       ],
       "players_sent_away": [
@@ -67899,7 +67899,7 @@
       "war_sent_away": 1.2,
       "war_prior_acquired": 4.88,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 4.72,
+      "war_after_exit_acquired": 4.69,
       "salary_source": "bref",
       "counterparty": "Chicago Cubs",
       "counterparty_id": 112,
@@ -70042,7 +70042,7 @@
           "war_prior": 0.0,
           "war_after_move": -0.1,
           "war_during": -0.1,
-          "war_after_exit": 2.17
+          "war_after_exit": 2.16
         }
       ],
       "players_sent_away": [],
@@ -70055,7 +70055,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 2.17,
+      "war_after_exit_acquired": 2.16,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -72877,7 +72877,7 @@
           "war_prior": -0.32,
           "war_after_move": -0.07,
           "war_during": -0.07,
-          "war_after_exit": 9.24
+          "war_after_exit": 9.23
         }
       ],
       "players_sent_away": [],
@@ -72890,7 +72890,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": -0.32,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 9.24,
+      "war_after_exit_acquired": 9.23,
       "salary_source": "bref",
       "counterparty": "Cleveland Guardians",
       "counterparty_id": 114,
@@ -73001,7 +73001,7 @@
       "team_name": "New York Yankees",
       "move_date": "2015-12-28",
       "move_type": "Trade",
-      "summary": "Trade with Cincinnati Reds: acquired Aroldis Chapman; sent Caleb Cotham, Rookie Davis",
+      "summary": "Trade with Cincinnati Reds: acquired Aroldis Chapman; sent Rookie Davis, Caleb Cotham",
       "players_acquired": [
         {
           "mlbam_id": 547973,
@@ -73014,15 +73014,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 571584,
-          "name": "Caleb Cotham",
-          "war_prior": -0.08,
-          "war_after_move": -0.75,
-          "war_during": -0.08,
-          "war_after_exit": -0.75,
-          "war_charged": -0.75
-        },
-        {
           "mlbam_id": 606959,
           "name": "Rookie Davis",
           "war_prior": 0.0,
@@ -73030,6 +73021,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.81,
           "war_charged": -0.81
+        },
+        {
+          "mlbam_id": 571584,
+          "name": "Caleb Cotham",
+          "war_prior": -0.08,
+          "war_after_move": -0.75,
+          "war_during": -0.08,
+          "war_after_exit": -0.75,
+          "war_charged": -0.75
         }
       ],
       "salary_paid": 167200000.0,
@@ -74025,7 +74025,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.95,
           "war_during": 0.95,
-          "war_after_exit": 3.34
+          "war_after_exit": 3.35
         }
       ],
       "players_sent_away": [],
@@ -74038,7 +74038,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 3.34,
+      "war_after_exit_acquired": 3.35,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -74105,16 +74105,8 @@
       "team_name": "New York Yankees",
       "move_date": "2015-11-11",
       "move_type": "Trade",
-      "summary": "Trade with San Diego Padres: acquired Ronald Herrera, Aaron Hicks; sent Jos\u00e9 Pirela, John Ryan Murphy",
+      "summary": "Trade with Minnesota Twins: acquired Aaron Hicks, Ronald Herrera; sent Jos\u00e9 Pirela, John Ryan Murphy",
       "players_acquired": [
-        {
-          "mlbam_id": 622703,
-          "name": "Ronald Herrera",
-          "war_prior": 0.0,
-          "war_after_move": -0.05,
-          "war_during": -0.05,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 543305,
           "name": "Aaron Hicks",
@@ -74122,6 +74114,14 @@
           "war_after_move": 10.41,
           "war_during": 10.41,
           "war_after_exit": -0.74
+        },
+        {
+          "mlbam_id": 622703,
+          "name": "Ronald Herrera",
+          "war_prior": 0.0,
+          "war_after_move": -0.05,
+          "war_during": -0.05,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -74129,18 +74129,18 @@
           "mlbam_id": 517369,
           "name": "Jos\u00e9 Pirela",
           "war_prior": -0.39,
-          "war_after_move": 0.82,
+          "war_after_move": 0.0,
           "war_during": -0.39,
-          "war_after_exit": 0.82,
+          "war_after_exit": 0.0,
           "war_charged": 0.82
         },
         {
           "mlbam_id": 571974,
           "name": "John Ryan Murphy",
           "war_prior": 0.88,
-          "war_after_move": 0.0,
+          "war_after_move": -0.54,
           "war_during": 0.88,
-          "war_after_exit": 0.0,
+          "war_after_exit": -0.54,
           "war_charged": -0.54
         }
       ],
@@ -74155,11 +74155,11 @@
       "war_prior_sent": 0.49,
       "war_after_exit_acquired": -0.74,
       "salary_source": "bref",
-      "counterparty": "San Diego Padres",
-      "counterparty_id": 135,
+      "counterparty": "Minnesota Twins",
+      "counterparty_id": 142,
       "acquisition_channel": "trade",
       "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 9.54,
+      "talent_grade": 10.9,
       "talent_per_control_year": null,
       "ledger_grade": 39488144.0,
       "control_years_remaining": null,
@@ -75152,7 +75152,7 @@
           "war_prior": 0.0,
           "war_after_move": 11.76,
           "war_during": 11.76,
-          "war_after_exit": 4.17
+          "war_after_exit": 4.15
         }
       ],
       "players_sent_away": [],
@@ -75165,7 +75165,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 4.17,
+      "war_after_exit_acquired": 4.15,
       "salary_source": "bref",
       "counterparty": "Scranton/Wilkes-Barre RailRiders",
       "counterparty_id": null,
@@ -76755,7 +76755,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.11,
           "war_during": 0.11,
-          "war_after_exit": 1.85
+          "war_after_exit": 1.93
         }
       ],
       "players_sent_away": [],
@@ -76768,7 +76768,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 1.85,
+      "war_after_exit_acquired": 1.93,
       "salary_source": null,
       "counterparty": null,
       "counterparty_id": null,
@@ -81730,16 +81730,8 @@
       "team_name": "New York Yankees",
       "move_date": "2015-01-01",
       "move_type": "Trade",
-      "summary": "Trade with Atlanta Braves: acquired David Carpenter, Chasen Shreve; sent Manny Banuelos",
+      "summary": "Trade with Atlanta Braves: acquired Chasen Shreve, David Carpenter; sent Manny Banuelos",
       "players_acquired": [
-        {
-          "mlbam_id": 502304,
-          "name": "David Carpenter",
-          "war_prior": 1.83,
-          "war_after_move": -0.03,
-          "war_during": -0.03,
-          "war_after_exit": -0.08
-        },
         {
           "mlbam_id": 592741,
           "name": "Chasen Shreve",
@@ -81747,6 +81739,14 @@
           "war_after_move": 1.52,
           "war_during": 1.52,
           "war_after_exit": 1.27
+        },
+        {
+          "mlbam_id": 502304,
+          "name": "David Carpenter",
+          "war_prior": 1.83,
+          "war_after_move": -0.03,
+          "war_during": -0.03,
+          "war_after_exit": -0.08
         }
       ],
       "players_sent_away": [
@@ -81890,7 +81890,7 @@
       "team_name": "New York Yankees",
       "move_date": "2014-12-19",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Garrett Jones, Gonzalez Germen, Domingo Germ\u00e1n, Nathan Eovaldi; sent David Phelps, Mart\u00edn Prado",
+      "summary": "Trade with Miami Marlins: acquired Garrett Jones, Domingo Germ\u00e1n, Nathan Eovaldi, Gonzalez Germen; sent Mart\u00edn Prado, David Phelps",
       "players_acquired": [
         {
           "mlbam_id": 434540,
@@ -81898,14 +81898,6 @@
           "war_prior": 4.19,
           "war_after_move": -0.61,
           "war_during": -0.61,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 542674,
-          "name": "Gonzalez Germen",
-          "war_prior": -0.17,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
@@ -81922,19 +81914,18 @@
           "war_prior": 3.94,
           "war_after_move": 3.5,
           "war_during": 3.5,
-          "war_after_exit": 18.55
+          "war_after_exit": 18.56
+        },
+        {
+          "mlbam_id": 542674,
+          "name": "Gonzalez Germen",
+          "war_prior": -0.17,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 475479,
-          "name": "David Phelps",
-          "war_prior": 1.89,
-          "war_after_move": 3.02,
-          "war_during": 1.89,
-          "war_after_exit": 3.02,
-          "war_charged": 3.02
-        },
         {
           "mlbam_id": 445988,
           "name": "Mart\u00edn Prado",
@@ -81943,6 +81934,15 @@
           "war_during": 2.1,
           "war_after_exit": 5.54,
           "war_charged": 5.54
+        },
+        {
+          "mlbam_id": 475479,
+          "name": "David Phelps",
+          "war_prior": 1.89,
+          "war_after_move": 3.02,
+          "war_during": 1.89,
+          "war_after_exit": 3.02,
+          "war_charged": 3.02
         }
       ],
       "salary_paid": 33305000.0,
@@ -81954,7 +81954,7 @@
       "war_sent_away": 8.56,
       "war_prior_acquired": 7.96,
       "war_prior_sent": 3.99,
-      "war_after_exit_acquired": 18.04,
+      "war_after_exit_acquired": 18.05,
       "salary_source": "bref",
       "counterparty": "Miami Marlins",
       "counterparty_id": 146,
@@ -83977,16 +83977,8 @@
       "team_name": "New York Yankees",
       "move_date": "2014-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Arizona Diamondbacks: acquired Mart\u00edn Prado, Stephen Drew; sent Peter O'Brien, Kelly Johnson",
+      "summary": "Trade with Boston Red Sox: acquired Stephen Drew, Mart\u00edn Prado; sent Peter O'Brien, Kelly Johnson",
       "players_acquired": [
-        {
-          "mlbam_id": 445988,
-          "name": "Mart\u00edn Prado",
-          "war_prior": 18.77,
-          "war_after_move": 2.1,
-          "war_during": 2.1,
-          "war_after_exit": 5.54
-        },
         {
           "mlbam_id": 452220,
           "name": "Stephen Drew",
@@ -83994,6 +83986,14 @@
           "war_after_move": -0.85,
           "war_during": -0.85,
           "war_after_exit": 0.85
+        },
+        {
+          "mlbam_id": 445988,
+          "name": "Mart\u00edn Prado",
+          "war_prior": 18.77,
+          "war_after_move": 2.1,
+          "war_during": 2.1,
+          "war_after_exit": 5.54
         }
       ],
       "players_sent_away": [
@@ -84001,18 +84001,18 @@
           "mlbam_id": 598284,
           "name": "Peter O'Brien",
           "war_prior": 0.0,
-          "war_after_move": -0.53,
+          "war_after_move": 0.0,
           "war_during": 0.0,
-          "war_after_exit": -0.53,
+          "war_after_exit": 0.0,
           "war_charged": -0.53
         },
         {
           "mlbam_id": 430637,
           "name": "Kelly Johnson",
           "war_prior": 0.0,
-          "war_after_move": 0.0,
+          "war_after_move": -0.18,
           "war_during": 0.0,
-          "war_after_exit": 0.0,
+          "war_after_exit": -0.18,
           "war_charged": -0.18
         }
       ],
@@ -84027,11 +84027,11 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 6.39,
       "salary_source": "bref",
-      "counterparty": "Arizona Diamondbacks",
-      "counterparty_id": 109,
+      "counterparty": "Boston Red Sox",
+      "counterparty_id": 111,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 1.78,
+      "talent_grade": 1.43,
       "talent_per_control_year": null,
       "ledger_grade": -6000000.0,
       "control_years_remaining": null,
@@ -84444,7 +84444,7 @@
       "team_name": "New York Yankees",
       "move_date": "2014-07-22",
       "move_type": "Trade",
-      "summary": "Trade with San Diego Padres: acquired Chase Headley; sent Jose Rafael De Paula, Yangervis Solarte",
+      "summary": "Trade with San Diego Padres: acquired Chase Headley; sent Yangervis Solarte, Jose Rafael De Paula",
       "players_acquired": [
         {
           "mlbam_id": 452104,
@@ -84457,15 +84457,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 606127,
-          "name": "Jose Rafael De Paula",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 500208,
           "name": "Yangervis Solarte",
           "war_prior": 0.0,
@@ -84473,6 +84464,15 @@
           "war_during": 0.0,
           "war_after_exit": 6.62,
           "war_charged": 6.62
+        },
+        {
+          "mlbam_id": 606127,
+          "name": "Jose Rafael De Paula",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 49525000.0,
@@ -101468,7 +101468,7 @@
           "war_prior": 0.0,
           "war_after_move": 11.76,
           "war_during": 11.76,
-          "war_after_exit": 4.17
+          "war_after_exit": 4.15
         }
       ],
       "players_sent_away": [],
@@ -101481,7 +101481,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 4.17,
+      "war_after_exit_acquired": 4.15,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
@@ -112746,16 +112746,8 @@
       "team_name": "New York Yankees",
       "move_date": "2010-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Houston Astros: acquired Lance Berkman, Kerry Wood, Austin Kearns; sent Jimmy Paredes, Mark Melancon",
+      "summary": "Trade with Cleveland Guardians: acquired Kerry Wood, Lance Berkman, Austin Kearns; sent Jimmy Paredes, Mark Melancon",
       "players_acquired": [
-        {
-          "mlbam_id": 204020,
-          "name": "Lance Berkman",
-          "war_prior": 46.38,
-          "war_after_move": -0.33,
-          "war_during": -0.33,
-          "war_after_exit": 4.18
-        },
         {
           "mlbam_id": 134268,
           "name": "Kerry Wood",
@@ -112763,6 +112755,14 @@
           "war_after_move": 1.48,
           "war_during": 1.48,
           "war_after_exit": -0.06
+        },
+        {
+          "mlbam_id": 204020,
+          "name": "Lance Berkman",
+          "war_prior": 46.38,
+          "war_after_move": -0.33,
+          "war_during": -0.33,
+          "war_after_exit": 4.18
         },
         {
           "mlbam_id": 400290,
@@ -112778,18 +112778,18 @@
           "mlbam_id": 517370,
           "name": "Jimmy Paredes",
           "war_prior": 0.0,
-          "war_after_move": -1.8,
+          "war_after_move": 0.0,
           "war_during": 0.0,
-          "war_after_exit": -1.8,
+          "war_after_exit": 0.0,
           "war_charged": -1.8
         },
         {
           "mlbam_id": 453343,
           "name": "Mark Melancon",
           "war_prior": 0.21,
-          "war_after_move": 1.08,
+          "war_after_move": 0.0,
           "war_during": 0.21,
-          "war_after_exit": 1.08,
+          "war_after_exit": 0.0,
           "war_charged": 1.08
         }
       ],
@@ -112804,11 +112804,11 @@
       "war_prior_sent": 0.21,
       "war_after_exit_acquired": 3.64,
       "salary_source": null,
-      "counterparty": "Houston Astros",
-      "counterparty_id": 117,
+      "counterparty": "Cleveland Guardians",
+      "counterparty_id": 114,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 1.84,
+      "talent_grade": 1.12,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -114806,16 +114806,8 @@
       "team_name": "New York Yankees",
       "move_date": "2009-12-22",
       "move_type": "Trade",
-      "summary": "Trade with Atlanta Braves: acquired Javier Vazquez, Boone Logan; sent Arodys Vizca\u00edno, Melky Cabrera, Mike Dunn",
+      "summary": "Trade with Atlanta Braves: acquired Boone Logan, Javier Vazquez; sent Mike Dunn, Melky Cabrera, Arodys Vizca\u00edno",
       "players_acquired": [
-        {
-          "mlbam_id": 134320,
-          "name": "Javier Vazquez",
-          "war_prior": 43.33,
-          "war_after_move": -0.45,
-          "war_during": -0.45,
-          "war_after_exit": 2.72
-        },
         {
           "mlbam_id": 457429,
           "name": "Boone Logan",
@@ -114823,17 +114815,25 @@
           "war_after_move": 2.89,
           "war_during": 2.89,
           "war_after_exit": 0.06
+        },
+        {
+          "mlbam_id": 134320,
+          "name": "Javier Vazquez",
+          "war_prior": 43.33,
+          "war_after_move": -0.45,
+          "war_during": -0.45,
+          "war_after_exit": 2.72
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 527055,
-          "name": "Arodys Vizca\u00edno",
-          "war_prior": 0.0,
-          "war_after_move": 3.7,
-          "war_during": 0.0,
-          "war_after_exit": 3.7,
-          "war_charged": 3.7
+          "mlbam_id": 445197,
+          "name": "Mike Dunn",
+          "war_prior": -0.01,
+          "war_after_move": 0.58,
+          "war_during": -0.01,
+          "war_after_exit": 0.58,
+          "war_charged": 0.58
         },
         {
           "mlbam_id": 466320,
@@ -114845,13 +114845,13 @@
           "war_charged": -0.3
         },
         {
-          "mlbam_id": 445197,
-          "name": "Mike Dunn",
-          "war_prior": -0.01,
-          "war_after_move": 0.58,
-          "war_during": -0.01,
-          "war_after_exit": 0.58,
-          "war_charged": 0.58
+          "mlbam_id": 527055,
+          "name": "Arodys Vizca\u00edno",
+          "war_prior": 0.0,
+          "war_after_move": 3.7,
+          "war_during": 0.0,
+          "war_after_exit": 3.7,
+          "war_charged": 3.7
         }
       ],
       "salary_paid": 35450000.0,
@@ -115018,7 +115018,7 @@
       "team_name": "New York Yankees",
       "move_date": "2009-12-09",
       "move_type": "Trade",
-      "summary": "Trade with Detroit Tigers: acquired Curtis Granderson; sent Austin Jackson, Phil Coke, Ian Kennedy",
+      "summary": "Trade with Detroit Tigers: acquired Curtis Granderson; sent Phil Coke, Ian Kennedy, Austin Jackson",
       "players_acquired": [
         {
           "mlbam_id": 434158,
@@ -115030,15 +115030,6 @@
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 457706,
-          "name": "Austin Jackson",
-          "war_prior": 0.0,
-          "war_after_move": 20.14,
-          "war_during": 0.0,
-          "war_after_exit": 20.14,
-          "war_charged": 20.14
-        },
         {
           "mlbam_id": 457435,
           "name": "Phil Coke",
@@ -115056,6 +115047,15 @@
           "war_during": -0.13,
           "war_after_exit": 0.0,
           "war_charged": 7.84
+        },
+        {
+          "mlbam_id": 457706,
+          "name": "Austin Jackson",
+          "war_prior": 0.0,
+          "war_after_move": 20.14,
+          "war_during": 0.0,
+          "war_after_exit": 20.14,
+          "war_charged": 20.14
         }
       ],
       "salary_paid": 38750000.0,
@@ -118137,7 +118137,7 @@
           "war_prior": 0.0,
           "war_after_move": 0.95,
           "war_during": 0.95,
-          "war_after_exit": 3.34
+          "war_after_exit": 3.35
         }
       ],
       "players_sent_away": [],
@@ -118150,7 +118150,7 @@
       "war_sent_away": 0.0,
       "war_prior_acquired": 0.0,
       "war_prior_sent": 0.0,
-      "war_after_exit_acquired": 3.34,
+      "war_after_exit_acquired": 3.35,
       "salary_source": "bref",
       "counterparty": null,
       "counterparty_id": null,
