@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T22:05:10+00:00",
+  "generated_at": "2026-10-11T13:09:02+00:00",
   "data_source": "mlb-stats-api+bref",
   "scope": "league_trades",
   "season_range": [
@@ -7,7 +7,7 @@
     2026
   ],
   "as_of": "2026-08-07",
-  "fetched_through": "2026-10-10",
+  "fetched_through": "2026-10-11",
   "dollars_per_war": 8000000,
   "team_count": 30,
   "move_count": 5834,
@@ -1294,22 +1294,14 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2026-08-03",
       "move_type": "Trade",
-      "summary": "Trade with San Francisco Giants: acquired Luis Arraez, Manuel Colon, Colby Thomas, Caleb Kilian, Brooks Raley; sent Nolan Hoffman, Ramon Marquez, John Spikerman, Luke Gabrysh, Seth Johnson, Marty Gair",
+      "summary": "Trade with New York Mets: acquired Brooks Raley, Colby Thomas, Manuel Colon, Luis Arraez, Caleb Kilian; sent John Spikerman, Ramon Marquez, Nolan Hoffman, Seth Johnson, Marty Gair, Luke Gabrysh",
       "players_acquired": [
         {
-          "mlbam_id": 650333,
-          "name": "Luis Arraez",
-          "war_prior": 16.64,
-          "war_after_move": -0.12,
-          "war_during": -0.12,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 823841,
-          "name": "Manuel Colon",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
+          "mlbam_id": 548384,
+          "name": "Brooks Raley",
+          "war_prior": 2.27,
+          "war_after_move": -0.33,
+          "war_during": -0.33,
           "war_after_exit": 0.0
         },
         {
@@ -1321,31 +1313,39 @@
           "war_after_exit": 0.0
         },
         {
+          "mlbam_id": 823841,
+          "name": "Manuel Colon",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 650333,
+          "name": "Luis Arraez",
+          "war_prior": 16.64,
+          "war_after_move": -0.12,
+          "war_during": -0.12,
+          "war_after_exit": 0.0
+        },
+        {
           "mlbam_id": 668873,
           "name": "Caleb Kilian",
           "war_prior": -1.08,
           "war_after_move": -0.54,
           "war_during": -0.54,
           "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 548384,
-          "name": "Brooks Raley",
-          "war_prior": 2.27,
-          "war_after_move": -0.33,
-          "war_during": -0.33,
-          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 676510,
-          "name": "Nolan Hoffman",
-          "war_prior": -0.1,
+          "mlbam_id": 701811,
+          "name": "John Spikerman",
+          "war_prior": 0.0,
           "war_after_move": 0.0,
-          "war_during": -0.1,
+          "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": 0.13
+          "war_charged": 0.0
         },
         {
           "mlbam_id": 827408,
@@ -1357,22 +1357,13 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 701811,
-          "name": "John Spikerman",
-          "war_prior": 0.0,
+          "mlbam_id": 676510,
+          "name": "Nolan Hoffman",
+          "war_prior": -0.1,
           "war_after_move": 0.0,
-          "war_during": 0.0,
+          "war_during": -0.1,
           "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 826939,
-          "name": "Luke Gabrysh",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
+          "war_charged": 0.13
         },
         {
           "mlbam_id": 686751,
@@ -1391,6 +1382,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 826939,
+          "name": "Luke Gabrysh",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 12000000.0,
@@ -1404,8 +1404,8 @@
       "war_prior_sent": -0.48,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "San Francisco Giants",
-      "counterparty_id": 137,
+      "counterparty": "New York Mets",
+      "counterparty_id": 121,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
       "talent_grade": -0.99,
@@ -9494,7 +9494,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2026-06-11",
       "move_type": "Trade",
-      "summary": "Trade with Chicago White Sox: acquired Derek Hill; sent Dylan Campbell, Jose Colmenares",
+      "summary": "Trade with Chicago White Sox: acquired Derek Hill; sent Jose Colmenares, Dylan Campbell",
       "players_acquired": [
         {
           "mlbam_id": 656537,
@@ -9507,8 +9507,8 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 694749,
-          "name": "Dylan Campbell",
+          "mlbam_id": 683569,
+          "name": "Jose Colmenares",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -9516,8 +9516,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 683569,
-          "name": "Jose Colmenares",
+          "mlbam_id": 694749,
+          "name": "Dylan Campbell",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -11834,12 +11834,12 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2026-05-08",
       "move_type": "Trade",
-      "summary": "Trade with Baltimore Orioles: sent Maicol Lauriano, Enyel Garcia",
+      "summary": "Trade with Baltimore Orioles: sent Enyel Garcia, Maicol Lauriano",
       "players_acquired": [],
       "players_sent_away": [
         {
-          "mlbam_id": 830418,
-          "name": "Maicol Lauriano",
+          "mlbam_id": 835078,
+          "name": "Enyel Garcia",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -11847,8 +11847,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 835078,
-          "name": "Enyel Garcia",
+          "mlbam_id": 830418,
+          "name": "Maicol Lauriano",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -20442,16 +20442,8 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2025-12-19",
       "move_type": "Trade",
-      "summary": "Trade with Arizona Diamondbacks: acquired Kyle Backhus, Jonathan Bowlan; sent Matt Strahm, Avery Owusu-Asiedu",
+      "summary": "Trade with Kansas City Royals: acquired Jonathan Bowlan, Kyle Backhus; sent Avery Owusu-Asiedu, Matt Strahm",
       "players_acquired": [
-        {
-          "mlbam_id": 679775,
-          "name": "Kyle Backhus",
-          "war_prior": -0.09,
-          "war_after_move": 0.13,
-          "war_during": 0.13,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 680742,
           "name": "Jonathan Bowlan",
@@ -20459,18 +20451,17 @@
           "war_after_move": 1.3,
           "war_during": 1.3,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 679775,
+          "name": "Kyle Backhus",
+          "war_prior": -0.09,
+          "war_after_move": 0.13,
+          "war_during": 0.13,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 621381,
-          "name": "Matt Strahm",
-          "war_prior": 6.76,
-          "war_after_move": 0.0,
-          "war_during": 6.76,
-          "war_after_exit": 0.0,
-          "war_charged": -1.26
-        },
         {
           "mlbam_id": 801938,
           "name": "Avery Owusu-Asiedu",
@@ -20479,6 +20470,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 621381,
+          "name": "Matt Strahm",
+          "war_prior": 6.76,
+          "war_after_move": -1.26,
+          "war_during": 6.76,
+          "war_after_exit": -1.26,
+          "war_charged": -1.26
         }
       ],
       "salary_paid": null,
@@ -20492,11 +20492,11 @@
       "war_prior_sent": 6.76,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Arizona Diamondbacks",
-      "counterparty_id": 109,
+      "counterparty": "Kansas City Royals",
+      "counterparty_id": 118,
       "acquisition_channel": "trade",
-      "deal_archetype": "talent_swap",
-      "talent_grade": 1.43,
+      "deal_archetype": "trade_win",
+      "talent_grade": 2.69,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -41648,22 +41648,22 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2024-12-22",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Jes\u00fas Luzardo, Paul McIntosh; sent Starlyn Caba, Emaarion Boyd",
+      "summary": "Trade with Miami Marlins: acquired Paul McIntosh, Jes\u00fas Luzardo; sent Starlyn Caba, Emaarion Boyd",
       "players_acquired": [
-        {
-          "mlbam_id": 666200,
-          "name": "Jes\u00fas Luzardo",
-          "war_prior": 7.29,
-          "war_after_move": 10.24,
-          "war_during": 10.24,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 682192,
           "name": "Paul McIntosh",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 666200,
+          "name": "Jes\u00fas Luzardo",
+          "war_prior": 7.29,
+          "war_after_move": 10.24,
+          "war_during": 10.24,
           "war_after_exit": 0.0
         }
       ],
@@ -46558,14 +46558,14 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2024-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Chicago White Sox: acquired Tanner Banks, Mois\u00e9s Chace, Seth Johnson; sent William Bergolla Jr., Gregory Soto",
+      "summary": "Trade with Baltimore Orioles: acquired Seth Johnson, Mois\u00e9s Chace, Tanner Banks; sent Gregory Soto, William Bergolla Jr.",
       "players_acquired": [
         {
-          "mlbam_id": 621383,
-          "name": "Tanner Banks",
-          "war_prior": 1.12,
-          "war_after_move": 1.47,
-          "war_during": 1.47,
+          "mlbam_id": 686751,
+          "name": "Seth Johnson",
+          "war_prior": 0.0,
+          "war_after_move": -0.51,
+          "war_during": -0.51,
           "war_after_exit": 0.0
         },
         {
@@ -46577,15 +46577,24 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 686751,
-          "name": "Seth Johnson",
-          "war_prior": 0.0,
-          "war_after_move": -0.51,
-          "war_during": -0.51,
+          "mlbam_id": 621383,
+          "name": "Tanner Banks",
+          "war_prior": 1.12,
+          "war_after_move": 1.47,
+          "war_during": 1.47,
           "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
+        {
+          "mlbam_id": 642397,
+          "name": "Gregory Soto",
+          "war_prior": 0.03,
+          "war_after_move": 0.25,
+          "war_during": 0.03,
+          "war_after_exit": 0.25,
+          "war_charged": 0.25
+        },
         {
           "mlbam_id": 703151,
           "name": "William Bergolla Jr.",
@@ -46594,15 +46603,6 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 642397,
-          "name": "Gregory Soto",
-          "war_prior": 0.03,
-          "war_after_move": 0.0,
-          "war_during": 0.03,
-          "war_after_exit": 0.0,
-          "war_charged": 0.25
         }
       ],
       "salary_paid": 1200000.0,
@@ -46616,11 +46616,11 @@
       "war_prior_sent": 0.03,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Chicago White Sox",
-      "counterparty_id": 145,
+      "counterparty": "Baltimore Orioles",
+      "counterparty_id": 110,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
-      "talent_grade": 0.96,
+      "talent_grade": 0.71,
       "talent_per_control_year": null,
       "ledger_grade": 6480000.0,
       "control_years_remaining": null,
@@ -60164,12 +60164,12 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2024-03-20",
       "move_type": "Trade",
-      "summary": "Trade with Minnesota Twins: sent Ezequiel Ventura, Jason Ruffcorn",
+      "summary": "Trade with Seattle Mariners: sent Jason Ruffcorn, Ezequiel Ventura",
       "players_acquired": [],
       "players_sent_away": [
         {
-          "mlbam_id": 683652,
-          "name": "Ezequiel Ventura",
+          "mlbam_id": 674022,
+          "name": "Jason Ruffcorn",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -60177,8 +60177,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 674022,
-          "name": "Jason Ruffcorn",
+          "mlbam_id": 683652,
+          "name": "Ezequiel Ventura",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -60197,8 +60197,8 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Minnesota Twins",
-      "counterparty_id": 142,
+      "counterparty": "Seattle Mariners",
+      "counterparty_id": 136,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
       "talent_grade": 0.0,
@@ -68145,19 +68145,19 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2023-11-14",
       "move_type": "Trade",
-      "summary": "Trade with Milwaukee Brewers: acquired Hendry Mendez, Robert Moore; sent Oliver Dunn",
+      "summary": "Trade with Milwaukee Brewers: acquired Robert Moore, Hendry Mendez; sent Oliver Dunn",
       "players_acquired": [
         {
-          "mlbam_id": 694230,
-          "name": "Hendry Mendez",
+          "mlbam_id": 691001,
+          "name": "Robert Moore",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 691001,
-          "name": "Robert Moore",
+          "mlbam_id": 694230,
+          "name": "Hendry Mendez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -69862,16 +69862,8 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2023-08-01",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Rodolfo Castro, Michael Lorenzen; sent Hao-Yu Lee, Bailey Falter",
+      "summary": "Trade with Detroit Tigers: acquired Michael Lorenzen, Rodolfo Castro; sent Hao-Yu Lee, Bailey Falter",
       "players_acquired": [
-        {
-          "mlbam_id": 666801,
-          "name": "Rodolfo Castro",
-          "war_prior": 0.99,
-          "war_after_move": -0.44,
-          "war_during": -0.44,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 547179,
           "name": "Michael Lorenzen",
@@ -69879,6 +69871,14 @@
           "war_after_move": -0.14,
           "war_during": -0.14,
           "war_after_exit": 0.91
+        },
+        {
+          "mlbam_id": 666801,
+          "name": "Rodolfo Castro",
+          "war_prior": 0.99,
+          "war_after_move": -0.44,
+          "war_during": -0.44,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -69886,18 +69886,18 @@
           "mlbam_id": 701678,
           "name": "Hao-Yu Lee",
           "war_prior": 0.0,
-          "war_after_move": 0.0,
+          "war_after_move": 0.99,
           "war_during": 0.0,
-          "war_after_exit": 0.0,
+          "war_after_exit": 0.99,
           "war_charged": 0.99
         },
         {
           "mlbam_id": 663559,
           "name": "Bailey Falter",
           "war_prior": 1.01,
-          "war_after_move": 3.27,
+          "war_after_move": 0.0,
           "war_during": 1.01,
-          "war_after_exit": 3.27,
+          "war_after_exit": 0.0,
           "war_charged": 3.27
         }
       ],
@@ -69912,11 +69912,11 @@
       "war_prior_sent": 1.01,
       "war_after_exit_acquired": 0.91,
       "salary_source": null,
-      "counterparty": "Pittsburgh Pirates",
-      "counterparty_id": 134,
+      "counterparty": "Detroit Tigers",
+      "counterparty_id": 116,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_miss",
-      "talent_grade": -3.85,
+      "talent_grade": -1.57,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -77937,7 +77937,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2023-05-08",
       "move_type": "Trade",
-      "summary": "Trade with Seattle Mariners: acquired Junior Marin; sent Ethan Lindow, James McArthur",
+      "summary": "Trade with Kansas City Royals: acquired Junior Marin; sent Ethan Lindow, James McArthur",
       "players_acquired": [
         {
           "mlbam_id": 700286,
@@ -77962,9 +77962,9 @@
           "mlbam_id": 663704,
           "name": "James McArthur",
           "war_prior": 0.0,
-          "war_after_move": 0.0,
+          "war_after_move": -0.43,
           "war_during": 0.0,
-          "war_after_exit": 0.0,
+          "war_after_exit": -0.43,
           "war_charged": -0.43
         }
       ],
@@ -77979,11 +77979,11 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Seattle Mariners",
-      "counterparty_id": 136,
+      "counterparty": "Kansas City Royals",
+      "counterparty_id": 118,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
-      "talent_grade": 0.0,
+      "talent_grade": 0.43,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -83257,7 +83257,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2023-01-07",
       "move_type": "Trade",
-      "summary": "Trade with Detroit Tigers: acquired Kody Clemens, Gregory Soto; sent Donny Sands, Matt Vierling, Nick Maton",
+      "summary": "Trade with Detroit Tigers: acquired Kody Clemens, Gregory Soto; sent Donny Sands, Nick Maton, Matt Vierling",
       "players_acquired": [
         {
           "mlbam_id": 665019,
@@ -83287,15 +83287,6 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 663837,
-          "name": "Matt Vierling",
-          "war_prior": -0.19,
-          "war_after_move": 3.13,
-          "war_during": -0.19,
-          "war_after_exit": 3.13,
-          "war_charged": 3.13
-        },
-        {
           "mlbam_id": 665155,
           "name": "Nick Maton",
           "war_prior": 0.82,
@@ -83303,6 +83294,15 @@
           "war_during": 0.82,
           "war_after_exit": -1.29,
           "war_charged": -1.29
+        },
+        {
+          "mlbam_id": 663837,
+          "name": "Matt Vierling",
+          "war_prior": -0.19,
+          "war_after_move": 3.13,
+          "war_during": -0.19,
+          "war_after_exit": 3.13,
+          "war_charged": 3.13
         }
       ],
       "salary_paid": 10405000.0,
@@ -89721,22 +89721,22 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2022-08-02",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Angels: acquired Brandon Marsh, David Robertson, Noah Syndergaard; sent Ben Brown, Logan O'Hoppe, Jadiel Sanchez, Mickey Moniak",
+      "summary": "Trade with Chicago Cubs: acquired David Robertson, Brandon Marsh, Noah Syndergaard; sent Logan O'Hoppe, Jadiel Sanchez, Mickey Moniak, Ben Brown",
       "players_acquired": [
-        {
-          "mlbam_id": 669016,
-          "name": "Brandon Marsh",
-          "war_prior": 0.21,
-          "war_after_move": 9.22,
-          "war_during": 9.22,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 502085,
           "name": "David Robertson",
           "war_prior": 15.63,
           "war_after_move": 0.86,
           "war_during": 0.86,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 669016,
+          "name": "Brandon Marsh",
+          "war_prior": 0.21,
+          "war_after_move": 9.22,
+          "war_during": 9.22,
           "war_after_exit": 0.0
         },
         {
@@ -89750,21 +89750,12 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 676962,
-          "name": "Ben Brown",
+          "mlbam_id": 681351,
+          "name": "Logan O'Hoppe",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": 1.54
-        },
-        {
-          "mlbam_id": 681351,
-          "name": "Logan O'Hoppe",
-          "war_prior": 0.0,
-          "war_after_move": 2.19,
-          "war_during": 0.0,
-          "war_after_exit": 2.19,
           "war_charged": 2.19
         },
         {
@@ -89780,10 +89771,19 @@
           "mlbam_id": 666160,
           "name": "Mickey Moniak",
           "war_prior": -0.29,
-          "war_after_move": 1.68,
+          "war_after_move": 0.0,
           "war_during": -0.29,
-          "war_after_exit": 1.68,
+          "war_after_exit": 0.0,
           "war_charged": 1.68
+        },
+        {
+          "mlbam_id": 676962,
+          "name": "Ben Brown",
+          "war_prior": 0.0,
+          "war_after_move": 1.54,
+          "war_during": 0.0,
+          "war_after_exit": 1.54,
+          "war_charged": 1.54
         }
       ],
       "salary_paid": 9701000.0,
@@ -89797,11 +89797,11 @@
       "war_prior_sent": -0.29,
       "war_after_exit_acquired": -1.1,
       "salary_source": "bref",
-      "counterparty": "Los Angeles Angels",
-      "counterparty_id": 108,
+      "counterparty": "Chicago Cubs",
+      "counterparty_id": 112,
       "acquisition_channel": "trade",
-      "deal_archetype": "deadline_add_hit",
-      "talent_grade": 6.77,
+      "deal_archetype": "prospect_or_talent_haul",
+      "talent_grade": 9.1,
       "talent_per_control_year": null,
       "ledger_grade": 75419000.0,
       "control_years_remaining": null,
@@ -105657,8 +105657,16 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2021-11-19",
       "move_type": "Trade",
-      "summary": "Trade with Houston Astros: acquired Garrett Stubbs, Nick Nelson, Donny Sands; sent TJ Rumfield, Logan Cerny, Joel Valdez",
+      "summary": "Trade with New York Yankees: acquired Donny Sands, Garrett Stubbs, Nick Nelson; sent TJ Rumfield, Logan Cerny, Joel Valdez",
       "players_acquired": [
+        {
+          "mlbam_id": 664848,
+          "name": "Donny Sands",
+          "war_prior": 0.0,
+          "war_after_move": -0.07,
+          "war_during": -0.07,
+          "war_after_exit": 0.0
+        },
         {
           "mlbam_id": 596117,
           "name": "Garrett Stubbs",
@@ -105673,14 +105681,6 @@
           "war_prior": -0.98,
           "war_after_move": 0.34,
           "war_during": 0.34,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 664848,
-          "name": "Donny Sands",
-          "war_prior": 0.0,
-          "war_after_move": -0.07,
-          "war_during": -0.07,
           "war_after_exit": 0.0
         }
       ],
@@ -105724,8 +105724,8 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Houston Astros",
-      "counterparty_id": 117,
+      "counterparty": "New York Yankees",
+      "counterparty_id": 147,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
       "talent_grade": 0.74,
@@ -107751,32 +107751,8 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2021-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Kyle Gibson, Ian Kennedy, Freddy Galvis, Braeden Ogle, Hans Crouse; sent Spencer Howard, Kevin Gowdy, Tyler Burch, Abrahan Gutierrez, Josh Gessner",
+      "summary": "Trade with Pittsburgh Pirates: acquired Braeden Ogle, Hans Crouse, Freddy Galvis, Ian Kennedy, Kyle Gibson; sent Abrahan Gutierrez, Tyler Burch, Josh Gessner, Kevin Gowdy, Spencer Howard",
       "players_acquired": [
-        {
-          "mlbam_id": 502043,
-          "name": "Kyle Gibson",
-          "war_prior": 9.93,
-          "war_after_move": 0.88,
-          "war_during": 0.88,
-          "war_after_exit": 0.49
-        },
-        {
-          "mlbam_id": 453178,
-          "name": "Ian Kennedy",
-          "war_prior": 17.0,
-          "war_after_move": 0.25,
-          "war_during": 0.25,
-          "war_after_exit": -1.54
-        },
-        {
-          "mlbam_id": 520471,
-          "name": "Freddy Galvis",
-          "war_prior": 8.02,
-          "war_after_move": 0.21,
-          "war_during": 0.21,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 669180,
           "name": "Braeden Ogle",
@@ -107792,21 +107768,36 @@
           "war_after_move": 0.01,
           "war_during": 0.01,
           "war_after_exit": 0.51
+        },
+        {
+          "mlbam_id": 520471,
+          "name": "Freddy Galvis",
+          "war_prior": 8.02,
+          "war_after_move": 0.21,
+          "war_during": 0.21,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 453178,
+          "name": "Ian Kennedy",
+          "war_prior": 17.0,
+          "war_after_move": 0.25,
+          "war_during": 0.25,
+          "war_after_exit": -1.54
+        },
+        {
+          "mlbam_id": 502043,
+          "name": "Kyle Gibson",
+          "war_prior": 9.93,
+          "war_after_move": 0.88,
+          "war_during": 0.88,
+          "war_after_exit": 0.49
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 675921,
-          "name": "Spencer Howard",
-          "war_prior": 0.13,
-          "war_after_move": -2.41,
-          "war_during": 0.13,
-          "war_after_exit": -2.41,
-          "war_charged": -2.41
-        },
-        {
-          "mlbam_id": 666151,
-          "name": "Kevin Gowdy",
+          "mlbam_id": 670868,
+          "name": "Abrahan Gutierrez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -107823,15 +107814,6 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 670868,
-          "name": "Abrahan Gutierrez",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 678622,
           "name": "Josh Gessner",
           "war_prior": 0.0,
@@ -107839,6 +107821,24 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 666151,
+          "name": "Kevin Gowdy",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 675921,
+          "name": "Spencer Howard",
+          "war_prior": 0.13,
+          "war_after_move": 0.0,
+          "war_during": 0.13,
+          "war_after_exit": 0.0,
+          "war_charged": -2.41
         }
       ],
       "salary_paid": null,
@@ -107852,11 +107852,11 @@
       "war_prior_sent": 0.13,
       "war_after_exit_acquired": -0.54,
       "salary_source": null,
-      "counterparty": "Texas Rangers",
-      "counterparty_id": 140,
+      "counterparty": "Pittsburgh Pirates",
+      "counterparty_id": 134,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 3.76,
+      "talent_grade": 1.35,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -121459,7 +121459,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2021-01-30",
       "move_type": "Trade",
-      "summary": "Trade with Cincinnati Reds: sent Kyle Holder, Cole Irvin",
+      "summary": "Trade with Athletics: sent Kyle Holder, Cole Irvin",
       "players_acquired": [],
       "players_sent_away": [
         {
@@ -121475,9 +121475,9 @@
           "mlbam_id": 608344,
           "name": "Cole Irvin",
           "war_prior": -0.49,
-          "war_after_move": 0.0,
+          "war_after_move": 3.49,
           "war_during": -0.49,
-          "war_after_exit": 0.0,
+          "war_after_exit": 3.49,
           "war_charged": 3.49
         }
       ],
@@ -121492,11 +121492,11 @@
       "war_prior_sent": -0.49,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Cincinnati Reds",
-      "counterparty_id": 113,
+      "counterparty": "Athletics",
+      "counterparty_id": 133,
       "acquisition_channel": "trade",
-      "deal_archetype": "talent_swap",
-      "talent_grade": 0.0,
+      "deal_archetype": "trade_loss",
+      "talent_grade": -3.49,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -130405,8 +130405,16 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2020-08-21",
       "move_type": "Trade",
-      "summary": "Trade with Boston Red Sox: acquired Heath Hembree, Brandon Workman, David Hale; sent Addison Russ, Connor Seabold, Nick Pivetta",
+      "summary": "Trade with New York Yankees: acquired David Hale, Heath Hembree, Brandon Workman; sent Addison Russ, Nick Pivetta, Connor Seabold",
       "players_acquired": [
+        {
+          "mlbam_id": 571735,
+          "name": "David Hale",
+          "war_prior": 1.53,
+          "war_after_move": 0.1,
+          "war_during": 0.1,
+          "war_after_exit": 0.0
+        },
         {
           "mlbam_id": 592390,
           "name": "Heath Hembree",
@@ -130422,14 +130430,6 @@
           "war_after_move": -0.25,
           "war_during": -0.25,
           "war_after_exit": -0.18
-        },
-        {
-          "mlbam_id": 571735,
-          "name": "David Hale",
-          "war_prior": 1.53,
-          "war_after_move": 0.1,
-          "war_during": 0.1,
-          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -130443,22 +130443,22 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 657756,
-          "name": "Connor Seabold",
-          "war_prior": 0.0,
-          "war_after_move": -1.0,
-          "war_during": 0.0,
-          "war_after_exit": -1.0,
-          "war_charged": -1.0
-        },
-        {
           "mlbam_id": 601713,
           "name": "Nick Pivetta",
           "war_prior": 0.44,
-          "war_after_move": 9.35,
+          "war_after_move": 0.0,
           "war_during": 0.44,
-          "war_after_exit": 9.35,
+          "war_after_exit": 0.0,
           "war_charged": 9.35
+        },
+        {
+          "mlbam_id": 657756,
+          "name": "Connor Seabold",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": -1.0
         }
       ],
       "salary_paid": 1700000.0,
@@ -130472,11 +130472,11 @@
       "war_prior_sent": 0.44,
       "war_after_exit_acquired": -1.16,
       "salary_source": "bref",
-      "counterparty": "Boston Red Sox",
-      "counterparty_id": 111,
+      "counterparty": "New York Yankees",
+      "counterparty_id": 147,
       "acquisition_channel": "trade",
-      "deal_archetype": "talent_sold",
-      "talent_grade": -9.11,
+      "deal_archetype": "deadline_add",
+      "talent_grade": -0.76,
       "talent_per_control_year": null,
       "ledger_grade": -7780000.0,
       "control_years_remaining": null,
@@ -138966,16 +138966,8 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2019-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Baltimore Orioles: acquired Dan Straily, Corey Dickerson",
+      "summary": "Trade with Pittsburgh Pirates: acquired Corey Dickerson, Dan Straily",
       "players_acquired": [
-        {
-          "mlbam_id": 573185,
-          "name": "Dan Straily",
-          "war_prior": 6.51,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 572816,
           "name": "Corey Dickerson",
@@ -138983,6 +138975,14 @@
           "war_after_move": 0.37,
           "war_during": 0.37,
           "war_after_exit": -0.22
+        },
+        {
+          "mlbam_id": 573185,
+          "name": "Dan Straily",
+          "war_prior": 6.51,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [],
@@ -138997,8 +138997,8 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.22,
       "salary_source": null,
-      "counterparty": "Baltimore Orioles",
-      "counterparty_id": 110,
+      "counterparty": "Pittsburgh Pirates",
+      "counterparty_id": 134,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
       "talent_grade": 0.37,
@@ -150597,7 +150597,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2019-02-07",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired J.T. Realmuto; sent Will Stewart, Jorge Alfaro, Sixto S\u00e1nchez",
+      "summary": "Trade with Miami Marlins: acquired J.T. Realmuto; sent Will Stewart, Sixto S\u00e1nchez, Jorge Alfaro",
       "players_acquired": [
         {
           "mlbam_id": 592663,
@@ -150619,15 +150619,6 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 595751,
-          "name": "Jorge Alfaro",
-          "war_prior": 2.04,
-          "war_after_move": 0.18,
-          "war_during": 2.04,
-          "war_after_exit": 0.18,
-          "war_charged": 0.18
-        },
-        {
           "mlbam_id": 664350,
           "name": "Sixto S\u00e1nchez",
           "war_prior": 0.0,
@@ -150635,6 +150626,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.91,
           "war_charged": 0.91
+        },
+        {
+          "mlbam_id": 595751,
+          "name": "Jorge Alfaro",
+          "war_prior": 2.04,
+          "war_after_move": 0.18,
+          "war_during": 2.04,
+          "war_after_exit": 0.18,
+          "war_charged": 0.18
         }
       ],
       "salary_paid": 146400000.0,
@@ -154342,7 +154342,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2018-12-03",
       "move_type": "Trade",
-      "summary": "Trade with Seattle Mariners: acquired James Pazos, Jean Segura, Juan Nicasio; sent J.P. Crawford, Carlos Santana",
+      "summary": "Trade with Seattle Mariners: acquired James Pazos, Juan Nicasio, Jean Segura; sent J.P. Crawford, Carlos Santana",
       "players_acquired": [
         {
           "mlbam_id": 572021,
@@ -154353,20 +154353,20 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 516416,
-          "name": "Jean Segura",
-          "war_prior": 19.48,
-          "war_after_move": 8.92,
-          "war_during": 8.92,
-          "war_after_exit": -2.09
-        },
-        {
           "mlbam_id": 504379,
           "name": "Juan Nicasio",
           "war_prior": 3.0,
           "war_after_move": -0.12,
           "war_during": -0.12,
           "war_after_exit": -0.26
+        },
+        {
+          "mlbam_id": 516416,
+          "name": "Jean Segura",
+          "war_prior": 19.48,
+          "war_after_move": 8.92,
+          "war_during": 8.92,
+          "war_after_exit": -2.09
         }
       ],
       "players_sent_away": [
@@ -199684,7 +199684,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2016-11-11",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Dodgers: acquired Howie Kendrick; sent Darin Ruf, Darnell Sweeney",
+      "summary": "Trade with Los Angeles Dodgers: acquired Howie Kendrick; sent Darnell Sweeney, Darin Ruf",
       "players_acquired": [
         {
           "mlbam_id": 435062,
@@ -199697,20 +199697,20 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 573131,
-          "name": "Darin Ruf",
-          "war_prior": -0.6,
-          "war_after_move": 0.0,
-          "war_during": -0.6,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 572182,
           "name": "Darnell Sweeney",
           "war_prior": -0.36,
           "war_after_move": 0.0,
           "war_during": -0.36,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 573131,
+          "name": "Darin Ruf",
+          "war_prior": -0.6,
+          "war_after_move": 0.0,
+          "war_during": -0.6,
           "war_after_exit": 0.0,
           "war_charged": 0.0
         }
@@ -214772,32 +214772,8 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2015-12-12",
       "move_type": "Trade",
-      "summary": "Trade with Houston Astros: acquired Vince Velasquez, Thomas Eshelman, Harold Arauz, Charlie Morton, Brett Oberholtzer, Mark Appel; sent Jonathan Ara\u00faz, David Whitehead, Ken Giles",
+      "summary": "Trade with Pittsburgh Pirates: acquired Charlie Morton, Brett Oberholtzer, Mark Appel, Vince Velasquez, Harold Arauz, Thomas Eshelman; sent David Whitehead, Ken Giles, Jonathan Ara\u00faz",
       "players_acquired": [
-        {
-          "mlbam_id": 592826,
-          "name": "Vince Velasquez",
-          "war_prior": 0.14,
-          "war_after_move": 4.96,
-          "war_during": 4.96,
-          "war_after_exit": 1.27
-        },
-        {
-          "mlbam_id": 664045,
-          "name": "Thomas Eshelman",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 622693,
-          "name": "Harold Arauz",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 450203,
           "name": "Charlie Morton",
@@ -214821,18 +214797,33 @@
           "war_after_move": 0.27,
           "war_during": 0.27,
           "war_after_exit": 0.0
-        }
-      ],
-      "players_sent_away": [
+        },
         {
-          "mlbam_id": 660620,
-          "name": "Jonathan Ara\u00faz",
+          "mlbam_id": 592826,
+          "name": "Vince Velasquez",
+          "war_prior": 0.14,
+          "war_after_move": 4.96,
+          "war_during": 4.96,
+          "war_after_exit": 1.27
+        },
+        {
+          "mlbam_id": 622693,
+          "name": "Harold Arauz",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
+          "war_after_exit": 0.0
         },
+        {
+          "mlbam_id": 664045,
+          "name": "Thomas Eshelman",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        }
+      ],
+      "players_sent_away": [
         {
           "mlbam_id": 592856,
           "name": "David Whitehead",
@@ -214846,10 +214837,19 @@
           "mlbam_id": 571704,
           "name": "Ken Giles",
           "war_prior": 3.68,
-          "war_after_move": 1.55,
+          "war_after_move": 0.0,
           "war_during": 3.68,
-          "war_after_exit": 1.55,
+          "war_after_exit": 0.0,
           "war_charged": 1.55
+        },
+        {
+          "mlbam_id": 660620,
+          "name": "Jonathan Ara\u00faz",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 36378000.0,
@@ -214863,11 +214863,11 @@
       "war_prior_sent": 3.68,
       "war_after_exit_acquired": 20.23,
       "salary_source": "bref",
-      "counterparty": "Houston Astros",
-      "counterparty_id": 117,
+      "counterparty": "Pittsburgh Pirates",
+      "counterparty_id": 134,
       "acquisition_channel": "trade",
       "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 4.02,
+      "talent_grade": 5.57,
       "talent_per_control_year": null,
       "ledger_grade": 8182000.0,
       "control_years_remaining": null,
@@ -221495,16 +221495,8 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2015-08-19",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Dodgers: acquired Darnell Sweeney, John Richy; sent Chase Utley",
+      "summary": "Trade with Los Angeles Dodgers: acquired John Richy, Darnell Sweeney; sent Chase Utley",
       "players_acquired": [
-        {
-          "mlbam_id": 572182,
-          "name": "Darnell Sweeney",
-          "war_prior": 0.0,
-          "war_after_move": -0.36,
-          "war_during": -0.36,
-          "war_after_exit": -0.09
-        },
         {
           "mlbam_id": 656892,
           "name": "John Richy",
@@ -221512,6 +221504,14 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 572182,
+          "name": "Darnell Sweeney",
+          "war_prior": 0.0,
+          "war_after_move": -0.36,
+          "war_during": -0.36,
+          "war_after_exit": -0.09
         }
       ],
       "players_sent_away": [
@@ -222724,8 +222724,56 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2015-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Alberto Tirado, Jimmy Cordero, Jake Thompson, Jerad Eickhoff, Jorge Alfaro, Alec Asher, Nick Williams, Matt Harrison; sent Ben Revere, Jake Diekman, Cole Hamels",
+      "summary": "Trade with Texas Rangers: acquired Jorge Alfaro, Matt Harrison, Alec Asher, Jerad Eickhoff, Nick Williams, Jake Thompson, Alberto Tirado, Jimmy Cordero; sent Cole Hamels, Jake Diekman, Ben Revere",
       "players_acquired": [
+        {
+          "mlbam_id": 595751,
+          "name": "Jorge Alfaro",
+          "war_prior": 0.0,
+          "war_after_move": 2.04,
+          "war_during": 2.04,
+          "war_after_exit": 0.22
+        },
+        {
+          "mlbam_id": 457448,
+          "name": "Matt Harrison",
+          "war_prior": 8.9,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 594742,
+          "name": "Alec Asher",
+          "war_prior": 0.0,
+          "war_after_move": -0.34,
+          "war_during": -0.34,
+          "war_after_exit": 0.08
+        },
+        {
+          "mlbam_id": 595191,
+          "name": "Jerad Eickhoff",
+          "war_prior": 0.0,
+          "war_after_move": 5.62,
+          "war_during": 5.62,
+          "war_after_exit": -1.24
+        },
+        {
+          "mlbam_id": 608384,
+          "name": "Nick Williams",
+          "war_prior": 0.0,
+          "war_after_move": -1.52,
+          "war_during": -1.52,
+          "war_after_exit": -0.28
+        },
+        {
+          "mlbam_id": 622097,
+          "name": "Jake Thompson",
+          "war_prior": 0.0,
+          "war_after_move": 0.16,
+          "war_during": 0.16,
+          "war_after_exit": 0.0
+        },
         {
           "mlbam_id": 610143,
           "name": "Alberto Tirado",
@@ -222741,83 +222789,35 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 622097,
-          "name": "Jake Thompson",
-          "war_prior": 0.0,
-          "war_after_move": 0.16,
-          "war_during": 0.16,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 595191,
-          "name": "Jerad Eickhoff",
-          "war_prior": 0.0,
-          "war_after_move": 5.62,
-          "war_during": 5.62,
-          "war_after_exit": -1.24
-        },
-        {
-          "mlbam_id": 595751,
-          "name": "Jorge Alfaro",
-          "war_prior": 0.0,
-          "war_after_move": 2.04,
-          "war_during": 2.04,
-          "war_after_exit": 0.22
-        },
-        {
-          "mlbam_id": 594742,
-          "name": "Alec Asher",
-          "war_prior": 0.0,
-          "war_after_move": -0.34,
-          "war_during": -0.34,
-          "war_after_exit": 0.08
-        },
-        {
-          "mlbam_id": 608384,
-          "name": "Nick Williams",
-          "war_prior": 0.0,
-          "war_after_move": -1.52,
-          "war_during": -1.52,
-          "war_after_exit": -0.28
-        },
-        {
-          "mlbam_id": 457448,
-          "name": "Matt Harrison",
-          "war_prior": 8.9,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 519184,
-          "name": "Ben Revere",
-          "war_prior": 2.57,
-          "war_after_move": 0.69,
-          "war_during": 2.57,
-          "war_after_exit": 0.69,
-          "war_charged": 0.69
+          "mlbam_id": 430935,
+          "name": "Cole Hamels",
+          "war_prior": 40.47,
+          "war_after_move": 11.02,
+          "war_during": 40.47,
+          "war_after_exit": 11.02,
+          "war_charged": 11.02
         },
         {
           "mlbam_id": 518617,
           "name": "Jake Diekman",
           "war_prior": 0.05,
-          "war_after_move": 0.0,
+          "war_after_move": 3.15,
           "war_during": 0.05,
-          "war_after_exit": 0.0,
+          "war_after_exit": 3.15,
           "war_charged": 3.15
         },
         {
-          "mlbam_id": 430935,
-          "name": "Cole Hamels",
-          "war_prior": 40.47,
+          "mlbam_id": 519184,
+          "name": "Ben Revere",
+          "war_prior": 2.57,
           "war_after_move": 0.0,
-          "war_during": 40.47,
+          "war_during": 2.57,
           "war_after_exit": 0.0,
-          "war_charged": 11.02
+          "war_charged": 0.69
         }
       ],
       "salary_paid": 6897000.0,
@@ -222831,11 +222831,11 @@
       "war_prior_sent": 43.09,
       "war_after_exit_acquired": -1.22,
       "salary_source": "bref",
-      "counterparty": "Toronto Blue Jays",
-      "counterparty_id": 141,
+      "counterparty": "Texas Rangers",
+      "counterparty_id": 140,
       "acquisition_channel": "trade",
-      "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 5.27,
+      "deal_archetype": "deadline_add_miss",
+      "talent_grade": -8.21,
       "talent_per_control_year": null,
       "ledger_grade": 40783000.0,
       "control_years_remaining": null,
@@ -227044,12 +227044,12 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2015-07-05",
       "move_type": "Trade",
-      "summary": "Trade with Arizona Diamondbacks: sent Chris Oliver, Josh Taylor",
+      "summary": "Trade with Arizona Diamondbacks: sent Josh Taylor, Chris Oliver",
       "players_acquired": [],
       "players_sent_away": [
         {
-          "mlbam_id": 607217,
-          "name": "Chris Oliver",
+          "mlbam_id": 657031,
+          "name": "Josh Taylor",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -227057,8 +227057,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 657031,
-          "name": "Josh Taylor",
+          "mlbam_id": 607217,
+          "name": "Chris Oliver",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -270750,7 +270750,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2012-12-09",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Michael Young; sent Lisalverto Bonilla, Josh Lindblom",
+      "summary": "Trade with Texas Rangers: acquired Michael Young; sent Josh Lindblom, Lisalverto Bonilla",
       "players_acquired": [
         {
           "mlbam_id": 276545,
@@ -270763,15 +270763,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 570810,
-          "name": "Lisalverto Bonilla",
-          "war_prior": 0.0,
-          "war_after_move": 0.44,
-          "war_during": 0.0,
-          "war_after_exit": 0.44,
-          "war_charged": 0.44
-        },
-        {
           "mlbam_id": 458676,
           "name": "Josh Lindblom",
           "war_prior": -0.45,
@@ -270779,6 +270770,15 @@
           "war_during": -0.45,
           "war_after_exit": -0.01,
           "war_charged": -0.01
+        },
+        {
+          "mlbam_id": 570810,
+          "name": "Lisalverto Bonilla",
+          "war_prior": 0.0,
+          "war_after_move": 0.44,
+          "war_during": 0.0,
+          "war_after_exit": 0.44,
+          "war_charged": 0.44
         }
       ],
       "salary_paid": null,
@@ -271140,7 +271140,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2012-12-06",
       "move_type": "Trade",
-      "summary": "Trade with Minnesota Twins: acquired Ben Revere; sent Trevor May, Vance Worley",
+      "summary": "Trade with Minnesota Twins: acquired Ben Revere; sent Vance Worley, Trevor May",
       "players_acquired": [
         {
           "mlbam_id": 519184,
@@ -271153,15 +271153,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 543507,
-          "name": "Trevor May",
-          "war_prior": 0.0,
-          "war_after_move": 2.26,
-          "war_during": 0.0,
-          "war_after_exit": 2.26,
-          "war_charged": 2.26
-        },
-        {
           "mlbam_id": 474699,
           "name": "Vance Worley",
           "war_prior": 4.64,
@@ -271169,6 +271160,15 @@
           "war_during": 4.64,
           "war_after_exit": -1.02,
           "war_charged": -1.02
+        },
+        {
+          "mlbam_id": 543507,
+          "name": "Trevor May",
+          "war_prior": 0.0,
+          "war_after_move": 2.26,
+          "war_during": 0.0,
+          "war_after_exit": 2.26,
+          "war_charged": 2.26
         }
       ],
       "salary_paid": 6565000.0,
@@ -277095,7 +277095,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2012-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Dodgers: acquired Josh Lindblom, Nate Schierholtz, Seth Rosin, Tommy Joseph, Ethan Martin; sent Hunter Pence, Shane Victorino",
+      "summary": "Trade with Los Angeles Dodgers: acquired Josh Lindblom, Ethan Martin, Tommy Joseph, Seth Rosin, Nate Schierholtz; sent Shane Victorino, Hunter Pence",
       "players_acquired": [
         {
           "mlbam_id": 458676,
@@ -277106,19 +277106,11 @@
           "war_after_exit": -0.59
         },
         {
-          "mlbam_id": 435625,
-          "name": "Nate Schierholtz",
-          "war_prior": 2.91,
-          "war_after_move": -0.1,
-          "war_during": -0.1,
-          "war_after_exit": 0.99
-        },
-        {
-          "mlbam_id": 519229,
-          "name": "Seth Rosin",
+          "mlbam_id": 543495,
+          "name": "Ethan Martin",
           "war_prior": 0.0,
-          "war_after_move": -0.15,
-          "war_during": -0.15,
+          "war_after_move": -0.55,
+          "war_during": -0.55,
           "war_after_exit": 0.0
         },
         {
@@ -277130,24 +277122,23 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 543495,
-          "name": "Ethan Martin",
+          "mlbam_id": 519229,
+          "name": "Seth Rosin",
           "war_prior": 0.0,
-          "war_after_move": -0.55,
-          "war_during": -0.55,
+          "war_after_move": -0.15,
+          "war_during": -0.15,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 435625,
+          "name": "Nate Schierholtz",
+          "war_prior": 2.91,
+          "war_after_move": -0.1,
+          "war_during": -0.1,
+          "war_after_exit": 0.99
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 452254,
-          "name": "Hunter Pence",
-          "war_prior": 2.27,
-          "war_after_move": 0.0,
-          "war_during": 2.27,
-          "war_after_exit": 0.0,
-          "war_charged": 9.89
-        },
         {
           "mlbam_id": 425664,
           "name": "Shane Victorino",
@@ -277156,6 +277147,15 @@
           "war_during": 22.11,
           "war_after_exit": 1.11,
           "war_charged": 1.11
+        },
+        {
+          "mlbam_id": 452254,
+          "name": "Hunter Pence",
+          "war_prior": 2.27,
+          "war_after_move": 0.0,
+          "war_during": 2.27,
+          "war_after_exit": 0.0,
+          "war_charged": 9.89
         }
       ],
       "salary_paid": 1543000.0,
@@ -280585,7 +280585,7 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2012-07-01",
       "move_type": "Trade",
-      "summary": "Trade with Baltimore Orioles: acquired Kyle Simon, Gabriel Lino; sent Jim Thome, Chad Qualls",
+      "summary": "Trade with Baltimore Orioles: acquired Kyle Simon, Gabriel Lino; sent Chad Qualls, Jim Thome",
       "players_acquired": [
         {
           "mlbam_id": 605473,
@@ -280606,15 +280606,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 123272,
-          "name": "Jim Thome",
-          "war_prior": 7.99,
-          "war_after_move": 0.0,
-          "war_during": 7.99,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 430589,
           "name": "Chad Qualls",
           "war_prior": 0.0,
@@ -280622,6 +280613,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": -0.07
+        },
+        {
+          "mlbam_id": 123272,
+          "name": "Jim Thome",
+          "war_prior": 7.99,
+          "war_after_move": 0.0,
+          "war_during": 7.99,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": null,
@@ -307557,16 +307557,8 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2009-12-16",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Roy Halladay, JC Ram\u00edrez; sent Cliff Lee",
+      "summary": "Trade with Seattle Mariners: acquired JC Ram\u00edrez, Roy Halladay; sent Cliff Lee",
       "players_acquired": [
-        {
-          "mlbam_id": 136880,
-          "name": "Roy Halladay",
-          "war_prior": 48.04,
-          "war_after_move": 16.2,
-          "war_during": 16.2,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 500724,
           "name": "JC Ram\u00edrez",
@@ -307574,6 +307566,14 @@
           "war_after_move": -0.75,
           "war_during": -0.75,
           "war_after_exit": 1.1
+        },
+        {
+          "mlbam_id": 136880,
+          "name": "Roy Halladay",
+          "war_prior": 48.04,
+          "war_after_move": 16.2,
+          "war_during": 16.2,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -307581,9 +307581,9 @@
           "mlbam_id": 424324,
           "name": "Cliff Lee",
           "war_prior": 1.18,
-          "war_after_move": 0.0,
+          "war_after_move": 3.42,
           "war_during": 1.18,
-          "war_after_exit": 0.0,
+          "war_after_exit": 3.42,
           "war_charged": 3.42
         }
       ],
@@ -307598,11 +307598,11 @@
       "war_prior_sent": 1.18,
       "war_after_exit_acquired": 1.1,
       "salary_source": "bref",
-      "counterparty": "Toronto Blue Jays",
-      "counterparty_id": 141,
+      "counterparty": "Seattle Mariners",
+      "counterparty_id": 136,
       "acquisition_channel": "trade",
-      "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 15.45,
+      "deal_archetype": "trade_win",
+      "talent_grade": 12.03,
       "talent_per_control_year": null,
       "ledger_grade": -27900000.0,
       "control_years_remaining": null,
@@ -313419,16 +313419,8 @@
       "team_name": "Philadelphia Phillies",
       "move_date": "2009-07-29",
       "move_type": "Trade",
-      "summary": "Trade with Cleveland Guardians: acquired Ben Francisco, Cliff Lee",
+      "summary": "Trade with Cleveland Guardians: acquired Cliff Lee, Ben Francisco",
       "players_acquired": [
-        {
-          "mlbam_id": 450204,
-          "name": "Ben Francisco",
-          "war_prior": 2.71,
-          "war_after_move": -0.17,
-          "war_during": -0.17,
-          "war_after_exit": -1.39
-        },
         {
           "mlbam_id": 424324,
           "name": "Cliff Lee",
@@ -313436,6 +313428,14 @@
           "war_after_move": 22.24,
           "war_during": 22.24,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 450204,
+          "name": "Ben Francisco",
+          "war_prior": 2.71,
+          "war_after_move": -0.17,
+          "war_during": -0.17,
+          "war_after_exit": -1.39
         }
       ],
       "players_sent_away": [],
