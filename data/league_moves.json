@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T00:01:15+00:00",
+  "generated_at": "2026-11-05T14:51:19+00:00",
   "data_source": "mlb-stats-api+bref",
   "scope": "league_trades",
   "season_range": [
@@ -7,7 +7,7 @@
     2026
   ],
   "as_of": "2026-08-07",
-  "fetched_through": "2026-11-04",
+  "fetched_through": "2026-11-05",
   "dollars_per_war": 8000000,
   "team_count": 30,
   "move_count": 5845,
@@ -3138,19 +3138,11 @@
       "team_name": "Washington Nationals",
       "move_date": "2026-08-03",
       "move_type": "Trade",
-      "summary": "Trade with New York Yankees: acquired Ben Grable, Jack Cebert, Yovanny Cruz, Jake Bird, Nick Mitchell, Will Dion, Kendeglys Virguez, Josh Hartle, Joe Glassey; sent Luis Garc\u00eda Jr., Foster Griffin, Christian Franklin",
+      "summary": "Trade with Cleveland Guardians: acquired Nick Mitchell, Yovanny Cruz, Jake Bird, Jack Cebert, Ben Grable, Joe Glassey, Will Dion, Josh Hartle, Kendeglys Virguez; sent Christian Franklin, Foster Griffin, Luis Garc\u00eda Jr.",
       "players_acquired": [
         {
-          "mlbam_id": 695066,
-          "name": "Ben Grable",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 701411,
-          "name": "Jack Cebert",
+          "mlbam_id": 814455,
+          "name": "Nick Mitchell",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -3173,8 +3165,24 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 814455,
-          "name": "Nick Mitchell",
+          "mlbam_id": 701411,
+          "name": "Jack Cebert",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 695066,
+          "name": "Ben Grable",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 812521,
+          "name": "Joe Glassey",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -3189,14 +3197,6 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 802068,
-          "name": "Kendeglys Virguez",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
-        {
           "mlbam_id": 691776,
           "name": "Josh Hartle",
           "war_prior": 0.0,
@@ -3205,8 +3205,8 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 812521,
-          "name": "Joe Glassey",
+          "mlbam_id": 802068,
+          "name": "Kendeglys Virguez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -3215,24 +3215,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 671277,
-          "name": "Luis Garc\u00eda Jr.",
-          "war_prior": 3.31,
-          "war_after_move": 0.6,
-          "war_during": 3.31,
-          "war_after_exit": 0.6,
-          "war_charged": 0.6
-        },
-        {
-          "mlbam_id": 656492,
-          "name": "Foster Griffin",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": -0.07
-        },
-        {
           "mlbam_id": 681047,
           "name": "Christian Franklin",
           "war_prior": 0.0,
@@ -3240,6 +3222,24 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.22
+        },
+        {
+          "mlbam_id": 656492,
+          "name": "Foster Griffin",
+          "war_prior": 0.0,
+          "war_after_move": -0.07,
+          "war_during": 0.0,
+          "war_after_exit": -0.07,
+          "war_charged": -0.07
+        },
+        {
+          "mlbam_id": 671277,
+          "name": "Luis Garc\u00eda Jr.",
+          "war_prior": 3.31,
+          "war_after_move": 0.0,
+          "war_during": 3.31,
+          "war_after_exit": 0.0,
+          "war_charged": 0.6
         }
       ],
       "salary_paid": 2000000.0,
@@ -3253,11 +3253,11 @@
       "war_prior_sent": 3.31,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "New York Yankees",
-      "counterparty_id": 147,
+      "counterparty": "Cleveland Guardians",
+      "counterparty_id": 114,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
-      "talent_grade": -0.16,
+      "talent_grade": 0.51,
       "talent_per_control_year": null,
       "ledger_grade": 1520000.0,
       "control_years_remaining": null,
@@ -18480,7 +18480,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2026-01-22",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Gavin Fien, Abimelec Ortiz, Alejandro Rosario, Devin Fitz-Gerald, Yeremy Cabrera; sent MacKenzie Gore",
+      "summary": "Trade with Texas Rangers: acquired Gavin Fien, Abimelec Ortiz, Devin Fitz-Gerald, Yeremy Cabrera, Alejandro Rosario; sent MacKenzie Gore",
       "players_acquired": [
         {
           "mlbam_id": 815818,
@@ -18499,14 +18499,6 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 691730,
-          "name": "Alejandro Rosario",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
-        {
           "mlbam_id": 803849,
           "name": "Devin Fitz-Gerald",
           "war_prior": 0.0,
@@ -18517,6 +18509,14 @@
         {
           "mlbam_id": 800393,
           "name": "Yeremy Cabrera",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 691730,
+          "name": "Alejandro Rosario",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -27146,19 +27146,19 @@
       "team_name": "Washington Nationals",
       "move_date": "2025-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Dodgers: acquired Eriq Swan, Sean Paul Li\u00f1an, Christian Franklin, Ronny Cruz, R.J. Sales, Josh Randall; sent Alex Call, Michael Soroka, Kyle Finnegan",
+      "summary": "Trade with Detroit Tigers: acquired Josh Randall, R.J. Sales, Christian Franklin, Ronny Cruz, Sean Paul Li\u00f1an, Eriq Swan; sent Kyle Finnegan, Michael Soroka, Alex Call",
       "players_acquired": [
         {
-          "mlbam_id": 811291,
-          "name": "Eriq Swan",
+          "mlbam_id": 695620,
+          "name": "Josh Randall",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 800344,
-          "name": "Sean Paul Li\u00f1an",
+          "mlbam_id": 701680,
+          "name": "R.J. Sales",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -27181,16 +27181,16 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 701680,
-          "name": "R.J. Sales",
+          "mlbam_id": 800344,
+          "name": "Sean Paul Li\u00f1an",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 695620,
-          "name": "Josh Randall",
+          "mlbam_id": 811291,
+          "name": "Eriq Swan",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -27199,13 +27199,13 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 669743,
-          "name": "Alex Call",
-          "war_prior": 2.78,
-          "war_after_move": 0.54,
-          "war_during": 2.78,
-          "war_after_exit": 0.54,
-          "war_charged": 0.54
+          "mlbam_id": 640448,
+          "name": "Kyle Finnegan",
+          "war_prior": 3.33,
+          "war_after_move": 1.09,
+          "war_during": 3.33,
+          "war_after_exit": 1.09,
+          "war_charged": 1.09
         },
         {
           "mlbam_id": 647336,
@@ -27217,13 +27217,13 @@
           "war_charged": -0.1
         },
         {
-          "mlbam_id": 640448,
-          "name": "Kyle Finnegan",
-          "war_prior": 3.33,
+          "mlbam_id": 669743,
+          "name": "Alex Call",
+          "war_prior": 2.78,
           "war_after_move": 0.0,
-          "war_during": 3.33,
+          "war_during": 2.78,
           "war_after_exit": 0.0,
-          "war_charged": 1.09
+          "war_charged": 0.54
         }
       ],
       "salary_paid": null,
@@ -27237,11 +27237,11 @@
       "war_prior_sent": 6.11,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Los Angeles Dodgers",
-      "counterparty_id": 119,
+      "counterparty": "Detroit Tigers",
+      "counterparty_id": 116,
       "acquisition_channel": "trade",
-      "deal_archetype": "deadline_add",
-      "talent_grade": -0.54,
+      "deal_archetype": "deadline_add_miss",
+      "talent_grade": -1.09,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -30335,22 +30335,22 @@
       "team_name": "Washington Nationals",
       "move_date": "2025-07-26",
       "move_type": "Trade",
-      "summary": "Trade with New York Yankees: acquired Browm Martinez, Clayton Beeter; sent Amed Rosario",
+      "summary": "Trade with New York Yankees: acquired Clayton Beeter, Browm Martinez; sent Amed Rosario",
       "players_acquired": [
-        {
-          "mlbam_id": 821129,
-          "name": "Browm Martinez",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 690925,
           "name": "Clayton Beeter",
           "war_prior": 0.01,
           "war_after_move": 0.75,
           "war_during": 0.75,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 821129,
+          "name": "Browm Martinez",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
           "war_after_exit": 0.0
         }
       ],
@@ -49745,16 +49745,8 @@
       "team_name": "Washington Nationals",
       "move_date": "2024-07-29",
       "move_type": "Trade",
-      "summary": "Trade with Cleveland Guardians: acquired Rafael Ramirez Jr., Jos\u00e9 Tena, Alex Clemmey; sent Lane Thomas",
+      "summary": "Trade with Cleveland Guardians: acquired Jos\u00e9 Tena, Alex Clemmey, Rafael Ramirez Jr.; sent Lane Thomas",
       "players_acquired": [
-        {
-          "mlbam_id": 800201,
-          "name": "Rafael Ramirez Jr.",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 677588,
           "name": "Jos\u00e9 Tena",
@@ -49766,6 +49758,14 @@
         {
           "mlbam_id": 806046,
           "name": "Alex Clemmey",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 800201,
+          "name": "Rafael Ramirez Jr.",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -91456,22 +91456,22 @@
       "team_name": "Washington Nationals",
       "move_date": "2022-08-02",
       "move_type": "Trade",
-      "summary": "Trade with San Diego Padres: acquired Jarlin Susana, James Wood, MacKenzie Gore, CJ Abrams, Robert Hassell III, Luke Voit; sent Josh Bell, Juan Soto",
+      "summary": "Trade with San Diego Padres: acquired Robert Hassell III, CJ Abrams, MacKenzie Gore, James Wood, Jarlin Susana, Luke Voit; sent Josh Bell, Juan Soto",
       "players_acquired": [
         {
-          "mlbam_id": 703186,
-          "name": "Jarlin Susana",
+          "mlbam_id": 690987,
+          "name": "Robert Hassell III",
           "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
+          "war_after_move": -0.17,
+          "war_during": -0.17,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 695578,
-          "name": "James Wood",
+          "mlbam_id": 682928,
+          "name": "CJ Abrams",
           "war_prior": 0.0,
-          "war_after_move": 8.3,
-          "war_during": 8.3,
+          "war_after_move": 15.19,
+          "war_during": 15.19,
           "war_after_exit": 0.0
         },
         {
@@ -91483,19 +91483,19 @@
           "war_after_exit": 0.96
         },
         {
-          "mlbam_id": 682928,
-          "name": "CJ Abrams",
+          "mlbam_id": 695578,
+          "name": "James Wood",
           "war_prior": 0.0,
-          "war_after_move": 15.19,
-          "war_during": 15.19,
+          "war_after_move": 8.3,
+          "war_during": 8.3,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 690987,
-          "name": "Robert Hassell III",
+          "mlbam_id": 703186,
+          "name": "Jarlin Susana",
           "war_prior": 0.0,
-          "war_after_move": -0.17,
-          "war_during": -0.17,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
@@ -109248,7 +109248,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2021-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Athletics: acquired Drew Millas, Mason Thompson, Richard Guasch, Seth Shuman, Lane Thomas, Josiah Gray, Keibert Ruiz, Gerardo Carrillo, Donovan Casey; sent Trea Turner, Josh Harrison, Yan Gomes, Daniel Hudson, Jon Lester, Max Scherzer",
+      "summary": "Trade with Athletics: acquired Drew Millas, Seth Shuman, Keibert Ruiz, Josiah Gray, Donovan Casey, Gerardo Carrillo, Mason Thompson, Lane Thomas, Richard Guasch; sent Yan Gomes, Trea Turner, Max Scherzer, Daniel Hudson, Jon Lester, Josh Harrison",
       "players_acquired": [
         {
           "mlbam_id": 686452,
@@ -109256,22 +109256,6 @@
           "war_prior": 0.0,
           "war_after_move": 0.29,
           "war_during": 0.29,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 666168,
-          "name": "Mason Thompson",
-          "war_prior": 0.0,
-          "war_after_move": -0.88,
-          "war_during": -0.88,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 683014,
-          "name": "Richard Guasch",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
@@ -109283,12 +109267,12 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 657041,
-          "name": "Lane Thomas",
-          "war_prior": 0.27,
-          "war_after_move": 6.28,
-          "war_during": 6.28,
-          "war_after_exit": -0.25
+          "mlbam_id": 660688,
+          "name": "Keibert Ruiz",
+          "war_prior": 0.06,
+          "war_after_move": 6.88,
+          "war_during": 6.88,
+          "war_after_exit": 0.0
         },
         {
           "mlbam_id": 680686,
@@ -109299,11 +109283,11 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 660688,
-          "name": "Keibert Ruiz",
-          "war_prior": 0.06,
-          "war_after_move": 6.88,
-          "war_during": 6.88,
+          "mlbam_id": 661541,
+          "name": "Donovan Casey",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
@@ -109315,8 +109299,24 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 661541,
-          "name": "Donovan Casey",
+          "mlbam_id": 666168,
+          "name": "Mason Thompson",
+          "war_prior": 0.0,
+          "war_after_move": -0.88,
+          "war_during": -0.88,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 657041,
+          "name": "Lane Thomas",
+          "war_prior": 0.27,
+          "war_after_move": 6.28,
+          "war_during": 6.28,
+          "war_after_exit": -0.25
+        },
+        {
+          "mlbam_id": 683014,
+          "name": "Richard Guasch",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -109324,6 +109324,15 @@
         }
       ],
       "players_sent_away": [
+        {
+          "mlbam_id": 543228,
+          "name": "Yan Gomes",
+          "war_prior": 2.11,
+          "war_after_move": 0.31,
+          "war_during": 2.11,
+          "war_after_exit": 0.31,
+          "war_charged": 0.31
+        },
         {
           "mlbam_id": 607208,
           "name": "Trea Turner",
@@ -109334,22 +109343,13 @@
           "war_charged": 7.62
         },
         {
-          "mlbam_id": 543281,
-          "name": "Josh Harrison",
-          "war_prior": 0.34,
-          "war_after_move": -0.6,
-          "war_during": 0.34,
-          "war_after_exit": -0.6,
-          "war_charged": -0.6
-        },
-        {
-          "mlbam_id": 543228,
-          "name": "Yan Gomes",
-          "war_prior": 2.11,
-          "war_after_move": 0.31,
-          "war_during": 2.11,
-          "war_after_exit": 0.31,
-          "war_charged": 0.31
+          "mlbam_id": 453286,
+          "name": "Max Scherzer",
+          "war_prior": 37.45,
+          "war_after_move": 0.0,
+          "war_during": 37.45,
+          "war_after_exit": 0.0,
+          "war_charged": 2.47
         },
         {
           "mlbam_id": 543339,
@@ -109370,13 +109370,13 @@
           "war_charged": 0.2
         },
         {
-          "mlbam_id": 453286,
-          "name": "Max Scherzer",
-          "war_prior": 37.45,
-          "war_after_move": 0.0,
-          "war_during": 37.45,
-          "war_after_exit": 0.0,
-          "war_charged": 2.47
+          "mlbam_id": 543281,
+          "name": "Josh Harrison",
+          "war_prior": 0.34,
+          "war_after_move": -0.6,
+          "war_during": 0.34,
+          "war_after_exit": -0.6,
+          "war_charged": -0.6
         }
       ],
       "salary_paid": 30171800.0,
@@ -110632,16 +110632,8 @@
       "team_name": "Washington Nationals",
       "move_date": "2021-07-29",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Riley Adams, Aldo Ramirez; sent Brad Hand, Kyle Schwarber",
+      "summary": "Trade with Boston Red Sox: acquired Aldo Ramirez, Riley Adams; sent Kyle Schwarber, Brad Hand",
       "players_acquired": [
-        {
-          "mlbam_id": 656180,
-          "name": "Riley Adams",
-          "war_prior": 0.0,
-          "war_after_move": 2.44,
-          "war_during": 2.44,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 680048,
           "name": "Aldo Ramirez",
@@ -110649,26 +110641,34 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 656180,
+          "name": "Riley Adams",
+          "war_prior": 0.0,
+          "war_after_move": 2.44,
+          "war_during": 2.44,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 543272,
-          "name": "Brad Hand",
-          "war_prior": 0.0,
-          "war_after_move": -0.59,
-          "war_during": 0.0,
-          "war_after_exit": -0.59,
-          "war_charged": -0.59
-        },
-        {
           "mlbam_id": 656941,
           "name": "Kyle Schwarber",
+          "war_prior": 0.0,
+          "war_after_move": 1.38,
+          "war_during": 0.0,
+          "war_after_exit": 1.38,
+          "war_charged": 1.38
+        },
+        {
+          "mlbam_id": 543272,
+          "name": "Brad Hand",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": 1.38
+          "war_charged": -0.59
         }
       ],
       "salary_paid": 2329700.0,
@@ -110682,11 +110682,11 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Toronto Blue Jays",
-      "counterparty_id": 141,
+      "counterparty": "Boston Red Sox",
+      "counterparty_id": 111,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 3.03,
+      "talent_grade": 1.06,
       "talent_per_control_year": null,
       "ledger_grade": 17190300.0,
       "control_years_remaining": null,
@@ -140427,16 +140427,8 @@
       "team_name": "Washington Nationals",
       "move_date": "2019-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Daniel Hudson, Hunter Strickland, Roenis El\u00edas; sent Kyle Johnston, Aaron Fletcher, Taylor Guilbeau, Elvis Alvarado",
+      "summary": "Trade with Seattle Mariners: acquired Hunter Strickland, Roenis El\u00edas, Daniel Hudson; sent Kyle Johnston, Elvis Alvarado, Taylor Guilbeau, Aaron Fletcher",
       "players_acquired": [
-        {
-          "mlbam_id": 543339,
-          "name": "Daniel Hudson",
-          "war_prior": 4.02,
-          "war_after_move": 1.73,
-          "war_during": 1.73,
-          "war_after_exit": 1.29
-        },
         {
           "mlbam_id": 519326,
           "name": "Hunter Strickland",
@@ -140452,6 +140444,14 @@
           "war_after_move": -0.29,
           "war_during": -0.29,
           "war_after_exit": 0.06
+        },
+        {
+          "mlbam_id": 543339,
+          "name": "Daniel Hudson",
+          "war_prior": 4.02,
+          "war_after_move": 1.73,
+          "war_during": 1.73,
+          "war_after_exit": 1.29
         }
       ],
       "players_sent_away": [
@@ -140465,24 +140465,6 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 667465,
-          "name": "Aaron Fletcher",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": -0.39
-        },
-        {
-          "mlbam_id": 607555,
-          "name": "Taylor Guilbeau",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.42
-        },
-        {
           "mlbam_id": 665660,
           "name": "Elvis Alvarado",
           "war_prior": 0.0,
@@ -140490,6 +140472,24 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 607555,
+          "name": "Taylor Guilbeau",
+          "war_prior": 0.0,
+          "war_after_move": 0.42,
+          "war_during": 0.0,
+          "war_after_exit": 0.42,
+          "war_charged": 0.42
+        },
+        {
+          "mlbam_id": 667465,
+          "name": "Aaron Fletcher",
+          "war_prior": 0.0,
+          "war_after_move": -0.39,
+          "war_during": 0.0,
+          "war_after_exit": -0.39,
+          "war_charged": -0.39
         }
       ],
       "salary_paid": 17000000.0,
@@ -140503,11 +140503,11 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 3.65,
       "salary_source": "bref",
-      "counterparty": "Toronto Blue Jays",
-      "counterparty_id": 141,
+      "counterparty": "Seattle Mariners",
+      "counterparty_id": 136,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 1.42,
+      "talent_grade": 1.39,
       "talent_per_control_year": null,
       "ledger_grade": -5640000.0,
       "control_years_remaining": null,
@@ -158922,7 +158922,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2018-08-31",
       "move_type": "Trade",
-      "summary": "Trade with Milwaukee Brewers: acquired Gilbert Lara, K.J. Harrison, Andrew Istler; sent Ryan Madson, Gio Gonzalez",
+      "summary": "Trade with Milwaukee Brewers: acquired Gilbert Lara, K.J. Harrison, Andrew Istler; sent Gio Gonzalez, Ryan Madson",
       "players_acquired": [
         {
           "mlbam_id": 658677,
@@ -158951,15 +158951,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 425492,
-          "name": "Ryan Madson",
-          "war_prior": 1.0,
-          "war_after_move": 0.0,
-          "war_during": 1.0,
-          "war_after_exit": 0.0,
-          "war_charged": -0.19
-        },
-        {
           "mlbam_id": 461829,
           "name": "Gio Gonzalez",
           "war_prior": 18.75,
@@ -158967,6 +158958,15 @@
           "war_during": 18.75,
           "war_after_exit": 2.51,
           "war_charged": 2.51
+        },
+        {
+          "mlbam_id": 425492,
+          "name": "Ryan Madson",
+          "war_prior": 1.0,
+          "war_after_move": 0.0,
+          "war_during": 1.0,
+          "war_after_exit": 0.0,
+          "war_charged": -0.19
         }
       ],
       "salary_paid": null,
@@ -188373,7 +188373,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2017-07-16",
       "move_type": "Trade",
-      "summary": "Trade with Athletics: acquired Sean Doolittle, Ryan Madson; sent Blake Treinen, Sheldon Neuse, Jes\u00fas Luzardo",
+      "summary": "Trade with Athletics: acquired Sean Doolittle, Ryan Madson; sent Blake Treinen, Jes\u00fas Luzardo, Sheldon Neuse",
       "players_acquired": [
         {
           "mlbam_id": 448281,
@@ -188403,15 +188403,6 @@
           "war_charged": 5.64
         },
         {
-          "mlbam_id": 641914,
-          "name": "Sheldon Neuse",
-          "war_prior": 0.0,
-          "war_after_move": -0.34,
-          "war_during": 0.0,
-          "war_after_exit": -0.34,
-          "war_charged": -0.34
-        },
-        {
           "mlbam_id": 666200,
           "name": "Jes\u00fas Luzardo",
           "war_prior": 0.0,
@@ -188419,6 +188410,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.45,
           "war_charged": 0.45
+        },
+        {
+          "mlbam_id": 641914,
+          "name": "Sheldon Neuse",
+          "war_prior": 0.0,
+          "war_after_move": -0.34,
+          "war_during": 0.0,
+          "war_after_exit": -0.34,
+          "war_charged": -0.34
         }
       ],
       "salary_paid": 64686666.0,
@@ -198512,7 +198512,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2016-12-07",
       "move_type": "Trade",
-      "summary": "Trade with Chicago White Sox: acquired Adam Eaton; sent Reynaldo L\u00f3pez, Dane Dunning, Lucas Giolito",
+      "summary": "Trade with Chicago White Sox: acquired Adam Eaton; sent Lucas Giolito, Reynaldo L\u00f3pez, Dane Dunning",
       "players_acquired": [
         {
           "mlbam_id": 594809,
@@ -198524,6 +198524,15 @@
         }
       ],
       "players_sent_away": [
+        {
+          "mlbam_id": 608337,
+          "name": "Lucas Giolito",
+          "war_prior": -0.42,
+          "war_after_move": 13.93,
+          "war_during": -0.42,
+          "war_after_exit": 13.93,
+          "war_charged": 13.93
+        },
         {
           "mlbam_id": 625643,
           "name": "Reynaldo L\u00f3pez",
@@ -198541,15 +198550,6 @@
           "war_during": 0.0,
           "war_after_exit": 0.14,
           "war_charged": 0.14
-        },
-        {
-          "mlbam_id": 608337,
-          "name": "Lucas Giolito",
-          "war_prior": -0.42,
-          "war_after_move": 13.93,
-          "war_during": -0.42,
-          "war_after_exit": 13.93,
-          "war_charged": 13.93
         }
       ],
       "salary_paid": 27900000.0,
@@ -216115,16 +216115,8 @@
       "team_name": "Washington Nationals",
       "move_date": "2015-12-10",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Angels: acquired Michael Brady, Trevor Gott; sent Yunel Escobar",
+      "summary": "Trade with Los Angeles Angels: acquired Trevor Gott, Michael Brady; sent Yunel Escobar",
       "players_acquired": [
-        {
-          "mlbam_id": 572728,
-          "name": "Michael Brady",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 641627,
           "name": "Trevor Gott",
@@ -216132,6 +216124,14 @@
           "war_after_move": -0.49,
           "war_during": -0.49,
           "war_after_exit": -0.98
+        },
+        {
+          "mlbam_id": 572728,
+          "name": "Michael Brady",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -232318,7 +232318,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2015-03-30",
       "move_type": "Trade",
-      "summary": "Trade with New York Mets: acquired Matthew den Dekker; sent Jerry Blevins, Sandy Le\u00f3n",
+      "summary": "Trade with New York Mets: acquired Matthew den Dekker; sent Sandy Le\u00f3n, Jerry Blevins",
       "players_acquired": [
         {
           "mlbam_id": 544925,
@@ -232331,15 +232331,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 460283,
-          "name": "Jerry Blevins",
-          "war_prior": -0.4,
-          "war_after_move": 2.8,
-          "war_during": -0.4,
-          "war_after_exit": 2.8,
-          "war_charged": 2.8
-        },
-        {
           "mlbam_id": 506702,
           "name": "Sandy Le\u00f3n",
           "war_prior": 0.15,
@@ -232347,6 +232338,15 @@
           "war_during": 0.15,
           "war_after_exit": 0.0,
           "war_charged": 2.12
+        },
+        {
+          "mlbam_id": 460283,
+          "name": "Jerry Blevins",
+          "war_prior": -0.4,
+          "war_after_move": 2.8,
+          "war_during": -0.4,
+          "war_after_exit": 2.8,
+          "war_charged": 2.8
         }
       ],
       "salary_paid": 512972.0,
@@ -234924,16 +234924,8 @@
       "team_name": "Washington Nationals",
       "move_date": "2015-01-14",
       "move_type": "Trade",
-      "summary": "Trade with Athletics: acquired Yunel Escobar, Dan Butler; sent Tyler Clippard, Danny Rosenbaum",
+      "summary": "Trade with Boston Red Sox: acquired Dan Butler, Yunel Escobar; sent Danny Rosenbaum, Tyler Clippard",
       "players_acquired": [
-        {
-          "mlbam_id": 488862,
-          "name": "Yunel Escobar",
-          "war_prior": 23.16,
-          "war_after_move": 2.05,
-          "war_during": 2.05,
-          "war_after_exit": 1.67
-        },
         {
           "mlbam_id": 576788,
           "name": "Dan Butler",
@@ -234941,18 +234933,17 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 488862,
+          "name": "Yunel Escobar",
+          "war_prior": 23.16,
+          "war_after_move": 2.05,
+          "war_during": 2.05,
+          "war_after_exit": 1.67
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 461325,
-          "name": "Tyler Clippard",
-          "war_prior": 10.01,
-          "war_after_move": 0.93,
-          "war_during": 10.01,
-          "war_after_exit": 0.93,
-          "war_charged": 0.93
-        },
         {
           "mlbam_id": 572095,
           "name": "Danny Rosenbaum",
@@ -234961,6 +234952,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 461325,
+          "name": "Tyler Clippard",
+          "war_prior": 10.01,
+          "war_after_move": 0.0,
+          "war_during": 10.01,
+          "war_after_exit": 0.0,
+          "war_charged": 0.93
         }
       ],
       "salary_paid": 5000000.0,
@@ -234974,11 +234974,11 @@
       "war_prior_sent": 10.01,
       "war_after_exit_acquired": 1.67,
       "salary_source": "bref",
-      "counterparty": "Athletics",
-      "counterparty_id": 133,
+      "counterparty": "Boston Red Sox",
+      "counterparty_id": 111,
       "acquisition_channel": "trade",
-      "deal_archetype": "talent_swap",
-      "talent_grade": 1.12,
+      "deal_archetype": "trade_win",
+      "talent_grade": 2.05,
       "talent_per_control_year": null,
       "ledger_grade": 11400000.0,
       "control_years_remaining": null,
@@ -236869,7 +236869,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2014-12-19",
       "move_type": "Trade",
-      "summary": "Trade with San Diego Padres: acquired Joe Ross; sent Travis Ott, Steven Souza Jr.",
+      "summary": "Trade with San Diego Padres: acquired Joe Ross; sent Steven Souza Jr., Travis Ott",
       "players_acquired": [
         {
           "mlbam_id": 605452,
@@ -236882,15 +236882,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 643477,
-          "name": "Travis Ott",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 519306,
           "name": "Steven Souza Jr.",
           "war_prior": -0.08,
@@ -236898,6 +236889,15 @@
           "war_during": -0.08,
           "war_after_exit": 0.0,
           "war_charged": 6.19
+        },
+        {
+          "mlbam_id": 643477,
+          "name": "Travis Ott",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 7164600.0,
@@ -238304,16 +238304,8 @@
       "team_name": "Washington Nationals",
       "move_date": "2014-12-12",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Abel De Los Santos, Christopher Bostick; sent Ross Detwiler",
+      "summary": "Trade with Texas Rangers: acquired Christopher Bostick, Abel De Los Santos; sent Ross Detwiler",
       "players_acquired": [
-        {
-          "mlbam_id": 593582,
-          "name": "Abel De Los Santos",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": -0.21
-        },
         {
           "mlbam_id": 607471,
           "name": "Christopher Bostick",
@@ -238321,6 +238313,14 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 593582,
+          "name": "Abel De Los Santos",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": -0.21
         }
       ],
       "players_sent_away": [
@@ -253747,7 +253747,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2014-02-13",
       "move_type": "Trade",
-      "summary": "Trade with Tampa Bay Rays: acquired Jose Lobat\u00f3n, Felipe V\u00e1zquez, Drew Vettleson; sent Nate Karns",
+      "summary": "Trade with Tampa Bay Rays: acquired Jose Lobat\u00f3n, Drew Vettleson, Felipe V\u00e1zquez; sent Nate Karns",
       "players_acquired": [
         {
           "mlbam_id": 446653,
@@ -253758,20 +253758,20 @@
           "war_after_exit": -0.8
         },
         {
-          "mlbam_id": 553878,
-          "name": "Felipe V\u00e1zquez",
-          "war_prior": 0.0,
-          "war_after_move": 1.15,
-          "war_during": 1.15,
-          "war_after_exit": 6.95
-        },
-        {
           "mlbam_id": 592828,
           "name": "Drew Vettleson",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 553878,
+          "name": "Felipe V\u00e1zquez",
+          "war_prior": 0.0,
+          "war_after_move": 1.15,
+          "war_during": 1.15,
+          "war_after_exit": 6.95
         }
       ],
       "players_sent_away": [
@@ -257386,7 +257386,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2013-12-02",
       "move_type": "Trade",
-      "summary": "Trade with Detroit Tigers: acquired Doug Fister; sent Steve Lombardozzi Jr., Robbie Ray, Ian Krol",
+      "summary": "Trade with Detroit Tigers: acquired Doug Fister; sent Ian Krol, Steve Lombardozzi Jr., Robbie Ray",
       "players_acquired": [
         {
           "mlbam_id": 450729,
@@ -257398,6 +257398,15 @@
         }
       ],
       "players_sent_away": [
+        {
+          "mlbam_id": 571871,
+          "name": "Ian Krol",
+          "war_prior": 0.13,
+          "war_after_move": -1.02,
+          "war_during": 0.13,
+          "war_after_exit": -1.02,
+          "war_charged": -1.02
+        },
         {
           "mlbam_id": 543459,
           "name": "Steve Lombardozzi Jr.",
@@ -257415,15 +257424,6 @@
           "war_during": 0.0,
           "war_after_exit": -0.68,
           "war_charged": -0.68
-        },
-        {
-          "mlbam_id": 571871,
-          "name": "Ian Krol",
-          "war_prior": 0.13,
-          "war_after_move": -1.02,
-          "war_during": 0.13,
-          "war_after_exit": -1.02,
-          "war_charged": -1.02
         }
       ],
       "salary_paid": 37200000.0,
@@ -260816,7 +260816,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2013-08-23",
       "move_type": "Trade",
-      "summary": "Trade with Athletics: acquired Dakota Bacus; sent David DeJesus, Kurt Suzuki",
+      "summary": "Trade with Athletics: acquired Dakota Bacus; sent Kurt Suzuki, David DeJesus",
       "players_acquired": [
         {
           "mlbam_id": 621290,
@@ -260829,15 +260829,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 430203,
-          "name": "David DeJesus",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 1.73
-        },
-        {
           "mlbam_id": 435559,
           "name": "Kurt Suzuki",
           "war_prior": 0.44,
@@ -260845,6 +260836,15 @@
           "war_during": 0.44,
           "war_after_exit": 0.33,
           "war_charged": 0.33
+        },
+        {
+          "mlbam_id": 430203,
+          "name": "David DeJesus",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 1.73
         }
       ],
       "salary_paid": null,
@@ -286197,7 +286197,7 @@
       "team_name": "Washington Nationals",
       "move_date": "2011-12-23",
       "move_type": "Trade",
-      "summary": "Trade with Athletics: acquired Robert Gilliam, Gio Gonzalez; sent Derek Norris, Tommy Milone, Brad Peacock, A.J. Cole",
+      "summary": "Trade with Athletics: acquired Robert Gilliam, Gio Gonzalez; sent A.J. Cole, Brad Peacock, Derek Norris, Tommy Milone",
       "players_acquired": [
         {
           "mlbam_id": 571707,
@@ -286218,6 +286218,24 @@
       ],
       "players_sent_away": [
         {
+          "mlbam_id": 595918,
+          "name": "A.J. Cole",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 502748,
+          "name": "Brad Peacock",
+          "war_prior": 0.64,
+          "war_after_move": 0.0,
+          "war_during": 0.64,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
           "mlbam_id": 519083,
           "name": "Derek Norris",
           "war_prior": 0.0,
@@ -286234,24 +286252,6 @@
           "war_during": 0.47,
           "war_after_exit": 3.75,
           "war_charged": 3.75
-        },
-        {
-          "mlbam_id": 502748,
-          "name": "Brad Peacock",
-          "war_prior": 0.64,
-          "war_after_move": 0.0,
-          "war_during": 0.64,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 595918,
-          "name": "A.J. Cole",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
         }
       ],
       "salary_paid": 130000000.0,
@@ -291705,18 +291705,9 @@
       "team_name": "Washington Nationals",
       "move_date": "2011-07-30",
       "move_type": "Trade",
-      "summary": "Trade with another club: sent Jerry Hairston Jr., Jason Marquis",
+      "summary": "Trade with another club: sent Jason Marquis, Jerry Hairston Jr.",
       "players_acquired": [],
       "players_sent_away": [
-        {
-          "mlbam_id": 150020,
-          "name": "Jerry Hairston Jr.",
-          "war_prior": 0.0,
-          "war_after_move": 0.94,
-          "war_during": 0.0,
-          "war_after_exit": 0.94,
-          "war_charged": 0.99
-        },
         {
           "mlbam_id": 150302,
           "name": "Jason Marquis",
@@ -291725,6 +291716,15 @@
           "war_during": -1.22,
           "war_after_exit": -2.98,
           "war_charged": -0.85
+        },
+        {
+          "mlbam_id": 150020,
+          "name": "Jerry Hairston Jr.",
+          "war_prior": 0.0,
+          "war_after_move": 0.94,
+          "war_during": 0.0,
+          "war_after_exit": 0.94,
+          "war_charged": 0.99
         }
       ],
       "salary_paid": null,
@@ -316134,16 +316134,8 @@
       "team_name": "Washington Nationals",
       "move_date": "2009-06-30",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Sean Burnett, Nyjer Morgan; sent Joel Hanrahan, Lastings Milledge",
+      "summary": "Trade with Pittsburgh Pirates: acquired Nyjer Morgan, Sean Burnett; sent Joel Hanrahan, Lastings Milledge",
       "players_acquired": [
-        {
-          "mlbam_id": 430634,
-          "name": "Sean Burnett",
-          "war_prior": 0.16,
-          "war_after_move": 4.72,
-          "war_during": 4.72,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 460579,
           "name": "Nyjer Morgan",
@@ -316151,6 +316143,14 @@
           "war_after_move": 0.98,
           "war_during": 0.98,
           "war_after_exit": 3.02
+        },
+        {
+          "mlbam_id": 430634,
+          "name": "Sean Burnett",
+          "war_prior": 0.16,
+          "war_after_move": 4.72,
+          "war_during": 4.72,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
