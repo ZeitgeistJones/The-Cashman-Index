@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-08T22:34:53+00:00",
+  "generated_at": "2026-11-09T16:40:39+00:00",
   "data_source": "mlb-stats-api+bref",
   "season_range": [
     2006,
     2026
   ],
   "as_of": "2026-08-07",
-  "fetched_through": "2026-11-08",
+  "fetched_through": "2026-11-09",
   "dollars_per_war": 8000000,
   "move_count": 2642,
   "moves": [
@@ -40,7 +40,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -128,7 +128,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -436,7 +436,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -745,7 +745,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -766,16 +766,8 @@
       "team_name": "New York Yankees",
       "move_date": "2026-08-03",
       "move_type": "Trade",
-      "summary": "Trade with Washington Nationals: acquired Luis Garc\u00eda Jr., Heliot Ramos; sent Jake Bird, Jack Cebert, Yovanny Cruz, Ben Grable, Henry Lalane, Kaeden Kent",
+      "summary": "Trade with San Francisco Giants: acquired Heliot Ramos, Luis Garc\u00eda Jr.; sent Henry Lalane, Jake Bird, Ben Grable, Jack Cebert, Yovanny Cruz, Kaeden Kent",
       "players_acquired": [
-        {
-          "mlbam_id": 671277,
-          "name": "Luis Garc\u00eda Jr.",
-          "war_prior": 3.31,
-          "war_after_move": 0.6,
-          "war_during": 0.6,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 671218,
           "name": "Heliot Ramos",
@@ -783,17 +775,43 @@
           "war_after_move": -0.44,
           "war_during": -0.44,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 671277,
+          "name": "Luis Garc\u00eda Jr.",
+          "war_prior": 3.31,
+          "war_after_move": 0.6,
+          "war_during": 0.6,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
         {
+          "mlbam_id": 700649,
+          "name": "Henry Lalane",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
           "mlbam_id": 656234,
           "name": "Jake Bird",
           "war_prior": -0.54,
-          "war_after_move": 0.11,
+          "war_after_move": 0.0,
           "war_during": -0.54,
-          "war_after_exit": 0.11,
+          "war_after_exit": 0.0,
           "war_charged": 0.11
+        },
+        {
+          "mlbam_id": 695066,
+          "name": "Ben Grable",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         },
         {
           "mlbam_id": 701411,
@@ -808,28 +826,10 @@
           "mlbam_id": 672442,
           "name": "Yovanny Cruz",
           "war_prior": 0.0,
-          "war_after_move": -0.38,
+          "war_after_move": 0.0,
           "war_during": 0.0,
-          "war_after_exit": -0.38,
+          "war_after_exit": 0.0,
           "war_charged": -0.38
-        },
-        {
-          "mlbam_id": 695066,
-          "name": "Ben Grable",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 700649,
-          "name": "Henry Lalane",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
         },
         {
           "mlbam_id": 809763,
@@ -852,11 +852,11 @@
       "war_prior_sent": -0.54,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Washington Nationals",
-      "counterparty_id": 120,
+      "counterparty": "San Francisco Giants",
+      "counterparty_id": 137,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
-      "talent_grade": 0.43,
+      "talent_grade": 0.16,
       "talent_per_control_year": null,
       "ledger_grade": -5595000.0,
       "control_years_remaining": null,
@@ -1750,7 +1750,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -2542,7 +2542,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -2718,7 +2718,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -2806,7 +2806,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -3080,7 +3080,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -5201,7 +5201,7 @@
       "team_name": "New York Yankees",
       "move_date": "2026-01-13",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Ryan Weathers; sent Dylan Jasso, Juan Matheus, Dillon Lewis, Brendan Jones",
+      "summary": "Trade with Miami Marlins: acquired Ryan Weathers; sent Brendan Jones, Dillon Lewis, Juan Matheus, Dylan Jasso",
       "players_acquired": [
         {
           "mlbam_id": 677960,
@@ -5214,17 +5214,8 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 815734,
-          "name": "Dylan Jasso",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 801276,
-          "name": "Juan Matheus",
+          "mlbam_id": 800957,
+          "name": "Brendan Jones",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -5241,8 +5232,17 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 800957,
-          "name": "Brendan Jones",
+          "mlbam_id": 801276,
+          "name": "Juan Matheus",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 815734,
+          "name": "Dylan Jasso",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -6405,7 +6405,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -6449,7 +6449,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -6669,7 +6669,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -7043,14 +7043,14 @@
       "team_name": "New York Yankees",
       "move_date": "2025-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Angels: acquired Wilberson De Pena, Jake Bird, Camilo Doval, David Bednar, Jos\u00e9 Caballero; sent Oswald Peraza, Brian Sanchez, Roc Riggio, Ben Shields, Parks Harber, Jesus Rodriguez, Trystan Vrieling, Carlos De La Rosa, Rafael Flores Jr., Edgleen Perez, Everson Pereira",
+      "summary": "Trade with Pittsburgh Pirates: acquired David Bednar, Jake Bird, Camilo Doval, Jos\u00e9 Caballero, Wilberson De Pena; sent Edgleen Perez, Brian Sanchez, Ben Shields, Parks Harber, Trystan Vrieling, Jesus Rodriguez, Carlos De La Rosa, Everson Pereira, Roc Riggio, Oswald Peraza, Rafael Flores Jr.",
       "players_acquired": [
         {
-          "mlbam_id": 821648,
-          "name": "Wilberson De Pena",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
+          "mlbam_id": 670280,
+          "name": "David Bednar",
+          "war_prior": 4.79,
+          "war_after_move": 2.85,
+          "war_during": 2.85,
           "war_after_exit": 0.0
         },
         {
@@ -7070,35 +7070,26 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 670280,
-          "name": "David Bednar",
-          "war_prior": 4.79,
-          "war_after_move": 2.85,
-          "war_during": 2.85,
-          "war_after_exit": 0.0
-        },
-        {
           "mlbam_id": 676609,
           "name": "Jos\u00e9 Caballero",
           "war_prior": 4.08,
           "war_after_move": 3.33,
           "war_during": 3.33,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 821648,
+          "name": "Wilberson De Pena",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 672724,
-          "name": "Oswald Peraza",
-          "war_prior": 0.06,
-          "war_after_move": 0.58,
-          "war_during": 0.06,
-          "war_after_exit": 0.58,
-          "war_charged": 0.58
-        },
-        {
-          "mlbam_id": 809331,
-          "name": "Brian Sanchez",
+          "mlbam_id": 814297,
+          "name": "Edgleen Perez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -7106,8 +7097,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 691792,
-          "name": "Roc Riggio",
+          "mlbam_id": 809331,
+          "name": "Brian Sanchez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -7133,15 +7124,6 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 683679,
-          "name": "Jesus Rodriguez",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": -0.15
-        },
-        {
           "mlbam_id": 801639,
           "name": "Trystan Vrieling",
           "war_prior": 0.0,
@@ -7151,26 +7133,17 @@
           "war_charged": 0.0
         },
         {
+          "mlbam_id": 683679,
+          "name": "Jesus Rodriguez",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": -0.15
+        },
+        {
           "mlbam_id": 822215,
           "name": "Carlos De La Rosa",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 804668,
-          "name": "Rafael Flores Jr.",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.99
-        },
-        {
-          "mlbam_id": 814297,
-          "name": "Edgleen Perez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -7185,6 +7158,33 @@
           "war_during": -0.61,
           "war_after_exit": 0.0,
           "war_charged": -0.3
+        },
+        {
+          "mlbam_id": 691792,
+          "name": "Roc Riggio",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 672724,
+          "name": "Oswald Peraza",
+          "war_prior": 0.06,
+          "war_after_move": 0.0,
+          "war_during": 0.06,
+          "war_after_exit": 0.0,
+          "war_charged": 0.58
+        },
+        {
+          "mlbam_id": 804668,
+          "name": "Rafael Flores Jr.",
+          "war_prior": 0.0,
+          "war_after_move": 0.99,
+          "war_during": 0.0,
+          "war_after_exit": 0.99,
+          "war_charged": 0.99
         }
       ],
       "salary_paid": 20000000.0,
@@ -7198,11 +7198,11 @@
       "war_prior_sent": -0.55,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Los Angeles Angels",
-      "counterparty_id": 108,
+      "counterparty": "Pittsburgh Pirates",
+      "counterparty_id": 134,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 3.56,
+      "talent_grade": 3.15,
       "talent_per_control_year": null,
       "ledger_grade": 13120000.0,
       "control_years_remaining": null,
@@ -8787,7 +8787,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -9140,7 +9140,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.21,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -9184,7 +9184,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -9404,7 +9404,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.24,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -10065,7 +10065,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -10109,7 +10109,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -10637,7 +10637,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -10857,7 +10857,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.24,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -13334,7 +13334,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -13687,7 +13687,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -13731,7 +13731,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -13775,7 +13775,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -14259,7 +14259,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -14347,7 +14347,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 1.71,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -14588,23 +14588,15 @@
       "team_name": "New York Yankees",
       "move_date": "2024-07-30",
       "move_type": "Trade",
-      "summary": "Trade with San Diego Padres: acquired Enyel De Los Santos, Thomas Balboni Jr., Kelly Austin, Mark Leiter Jr.; sent Caleb Ferguson, Jack Neely, Ben Cowles, Brandon Lockridge",
+      "summary": "Trade with Chicago Cubs: acquired Mark Leiter Jr., Kelly Austin, Thomas Balboni Jr., Enyel De Los Santos; sent Caleb Ferguson, Brandon Lockridge, Ben Cowles, Jack Neely",
       "players_acquired": [
         {
-          "mlbam_id": 660853,
-          "name": "Enyel De Los Santos",
-          "war_prior": 1.1,
-          "war_after_move": -0.6,
-          "war_during": -0.6,
-          "war_after_exit": -0.21
-        },
-        {
-          "mlbam_id": 693647,
-          "name": "Thomas Balboni Jr.",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
+          "mlbam_id": 643410,
+          "name": "Mark Leiter Jr.",
+          "war_prior": 0.27,
+          "war_after_move": -0.67,
+          "war_during": -0.67,
+          "war_after_exit": 0.55
         },
         {
           "mlbam_id": 675502,
@@ -14615,12 +14607,20 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 643410,
-          "name": "Mark Leiter Jr.",
-          "war_prior": 0.27,
-          "war_after_move": -0.67,
-          "war_during": -0.67,
-          "war_after_exit": 0.55
+          "mlbam_id": 693647,
+          "name": "Thomas Balboni Jr.",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 660853,
+          "name": "Enyel De Los Santos",
+          "war_prior": 1.1,
+          "war_after_move": -0.6,
+          "war_during": -0.6,
+          "war_after_exit": -0.21
         }
       ],
       "players_sent_away": [
@@ -14634,13 +14634,13 @@
           "war_charged": 0.19
         },
         {
-          "mlbam_id": 680891,
-          "name": "Jack Neely",
+          "mlbam_id": 663604,
+          "name": "Brandon Lockridge",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": -0.17
+          "war_charged": -0.23
         },
         {
           "mlbam_id": 701496,
@@ -14652,13 +14652,13 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 663604,
-          "name": "Brandon Lockridge",
+          "mlbam_id": 680891,
+          "name": "Jack Neely",
           "war_prior": 0.0,
-          "war_after_move": -0.23,
+          "war_after_move": -0.17,
           "war_during": 0.0,
-          "war_after_exit": -0.23,
-          "war_charged": -0.23
+          "war_after_exit": -0.17,
+          "war_charged": -0.17
         }
       ],
       "salary_paid": 2050000.0,
@@ -14672,11 +14672,11 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.34,
       "salary_source": "bref",
-      "counterparty": "San Diego Padres",
-      "counterparty_id": 135,
+      "counterparty": "Chicago Cubs",
+      "counterparty_id": 112,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_miss",
-      "talent_grade": -1.04,
+      "talent_grade": -1.1,
       "talent_per_control_year": null,
       "ledger_grade": -12210000.0,
       "control_years_remaining": null,
@@ -14760,7 +14760,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -14825,7 +14825,7 @@
       "team_name": "New York Yankees",
       "move_date": "2024-07-27",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Jazz Chisholm Jr.; sent Agust\u00edn Ram\u00edrez, Jared Serna, Abrahan Ramirez",
+      "summary": "Trade with Miami Marlins: acquired Jazz Chisholm Jr.; sent Abrahan Ramirez, Jared Serna, Agust\u00edn Ram\u00edrez",
       "players_acquired": [
         {
           "mlbam_id": 665862,
@@ -14838,13 +14838,13 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 682663,
-          "name": "Agust\u00edn Ram\u00edrez",
+          "mlbam_id": 800254,
+          "name": "Abrahan Ramirez",
           "war_prior": 0.0,
-          "war_after_move": -0.56,
+          "war_after_move": 0.0,
           "war_during": 0.0,
-          "war_after_exit": -0.56,
-          "war_charged": -0.56
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         },
         {
           "mlbam_id": 691858,
@@ -14856,13 +14856,13 @@
           "war_charged": -0.02
         },
         {
-          "mlbam_id": 800254,
-          "name": "Abrahan Ramirez",
+          "mlbam_id": 682663,
+          "name": "Agust\u00edn Ram\u00edrez",
           "war_prior": 0.0,
-          "war_after_move": 0.0,
+          "war_after_move": -0.56,
           "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
+          "war_after_exit": -0.56,
+          "war_charged": -0.56
         }
       ],
       "salary_paid": 16050000.0,
@@ -16328,7 +16328,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -16602,7 +16602,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -16778,7 +16778,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.15,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -16822,7 +16822,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -17439,7 +17439,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -17527,7 +17527,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -17968,7 +17968,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -18144,7 +18144,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -18188,7 +18188,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 2.29,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -18365,7 +18365,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -18453,7 +18453,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -18541,7 +18541,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.19,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -18562,7 +18562,7 @@
       "team_name": "New York Yankees",
       "move_date": "2024-03-27",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Jon Berti; sent Ben Rortvedt, John Cruz",
+      "summary": "Trade with Miami Marlins: acquired Jon Berti; sent John Cruz, Ben Rortvedt",
       "players_acquired": [
         {
           "mlbam_id": 542932,
@@ -18575,15 +18575,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 666163,
-          "name": "Ben Rortvedt",
-          "war_prior": -0.2,
-          "war_after_move": 0.0,
-          "war_during": -0.2,
-          "war_after_exit": 0.0,
-          "war_charged": 0.39
-        },
-        {
           "mlbam_id": 800476,
           "name": "John Cruz",
           "war_prior": 0.0,
@@ -18591,6 +18582,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 666163,
+          "name": "Ben Rortvedt",
+          "war_prior": -0.2,
+          "war_after_move": 0.0,
+          "war_during": -0.2,
+          "war_after_exit": 0.0,
+          "war_charged": 0.39
         }
       ],
       "salary_paid": null,
@@ -21403,7 +21403,7 @@
       "team_name": "New York Yankees",
       "move_date": "2023-12-07",
       "move_type": "Trade",
-      "summary": "Trade with San Diego Padres: acquired Juan Soto, Trent Grisham; sent Jhony Brito, Kyle Higashioka, Randy V\u00e1squez, Drew Thorpe, Michael King",
+      "summary": "Trade with San Diego Padres: acquired Juan Soto, Trent Grisham; sent Michael King, Jhony Brito, Kyle Higashioka, Randy V\u00e1squez, Drew Thorpe",
       "players_acquired": [
         {
           "mlbam_id": 665742,
@@ -21423,6 +21423,15 @@
         }
       ],
       "players_sent_away": [
+        {
+          "mlbam_id": 650633,
+          "name": "Michael King",
+          "war_prior": 5.59,
+          "war_after_move": 9.52,
+          "war_during": 5.59,
+          "war_after_exit": 9.52,
+          "war_charged": 9.52
+        },
         {
           "mlbam_id": 666745,
           "name": "Jhony Brito",
@@ -21458,15 +21467,6 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 650633,
-          "name": "Michael King",
-          "war_prior": 5.59,
-          "war_after_move": 9.52,
-          "war_during": 5.59,
-          "war_after_exit": 9.52,
-          "war_charged": 9.52
         }
       ],
       "salary_paid": 31000000,
@@ -21633,7 +21633,7 @@
       "team_name": "New York Yankees",
       "move_date": "2023-12-05",
       "move_type": "Trade",
-      "summary": "Trade with Boston Red Sox: acquired Alex Verdugo; sent Richard Fitts, Nicholas Judice, Greg Weissert",
+      "summary": "Trade with Boston Red Sox: acquired Alex Verdugo; sent Richard Fitts, Greg Weissert, Nicholas Judice",
       "players_acquired": [
         {
           "mlbam_id": 657077,
@@ -21655,15 +21655,6 @@
           "war_charged": 0.3
         },
         {
-          "mlbam_id": 700113,
-          "name": "Nicholas Judice",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 669711,
           "name": "Greg Weissert",
           "war_prior": -0.1,
@@ -21671,6 +21662,15 @@
           "war_during": -0.1,
           "war_after_exit": 2.21,
           "war_charged": 2.21
+        },
+        {
+          "mlbam_id": 700113,
+          "name": "Nicholas Judice",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 8700000.0,
@@ -21749,19 +21749,19 @@
       "team_name": "New York Yankees",
       "move_date": "2023-11-17",
       "move_type": "Trade",
-      "summary": "Trade with Milwaukee Brewers: acquired Jace Avina, Brian Sanchez; sent Jake Bauers",
+      "summary": "Trade with Milwaukee Brewers: acquired Brian Sanchez, Jace Avina; sent Jake Bauers",
       "players_acquired": [
         {
-          "mlbam_id": 701778,
-          "name": "Jace Avina",
+          "mlbam_id": 809331,
+          "name": "Brian Sanchez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 809331,
-          "name": "Brian Sanchez",
+          "mlbam_id": 701778,
+          "name": "Jace Avina",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -21922,7 +21922,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.12,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -21966,7 +21966,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 1.94,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -22010,7 +22010,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -22098,7 +22098,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.1,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -22142,7 +22142,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -22186,7 +22186,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -22864,7 +22864,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -24272,7 +24272,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.15,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -24502,7 +24502,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -24590,7 +24590,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 3.52,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -24766,7 +24766,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.24,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -24898,7 +24898,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.21,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -24986,7 +24986,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.1,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -25065,7 +25065,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.55,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -25232,7 +25232,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -26573,19 +26573,19 @@
       "team_name": "New York Yankees",
       "move_date": "2022-12-28",
       "move_type": "Trade",
-      "summary": "Trade with Atlanta Braves: acquired Caleb Durbin, Indigo Diaz; sent Lucas Luetge",
+      "summary": "Trade with Atlanta Braves: acquired Indigo Diaz, Caleb Durbin; sent Lucas Luetge",
       "players_acquired": [
         {
-          "mlbam_id": 702332,
-          "name": "Caleb Durbin",
+          "mlbam_id": 666301,
+          "name": "Indigo Diaz",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 666301,
-          "name": "Indigo Diaz",
+          "mlbam_id": 702332,
+          "name": "Caleb Durbin",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -28013,7 +28013,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -28057,7 +28057,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.81,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -28101,7 +28101,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.32,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -28233,7 +28233,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.03,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -28277,7 +28277,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.54,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -28497,7 +28497,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -28585,7 +28585,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -28893,7 +28893,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 2.21,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -29266,7 +29266,7 @@
       "team_name": "New York Yankees",
       "move_date": "2022-08-02",
       "move_type": "Trade",
-      "summary": "Trade with St. Louis Cardinals: acquired Harrison Bader, Clayton Beeter; sent Jordan Montgomery, Joey Gallo",
+      "summary": "Trade with St. Louis Cardinals: acquired Harrison Bader, Clayton Beeter; sent Joey Gallo, Jordan Montgomery",
       "players_acquired": [
         {
           "mlbam_id": 664056,
@@ -29287,15 +29287,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 656756,
-          "name": "Jordan Montgomery",
-          "war_prior": 6.66,
-          "war_after_move": 3.01,
-          "war_during": 6.66,
-          "war_after_exit": 3.01,
-          "war_charged": 3.01
-        },
-        {
           "mlbam_id": 608336,
           "name": "Joey Gallo",
           "war_prior": 0.46,
@@ -29303,6 +29294,15 @@
           "war_during": 0.46,
           "war_after_exit": 0.0,
           "war_charged": 0.36
+        },
+        {
+          "mlbam_id": 656756,
+          "name": "Jordan Montgomery",
+          "war_prior": 6.66,
+          "war_after_move": 3.01,
+          "war_during": 6.66,
+          "war_after_exit": 3.01,
+          "war_charged": 3.01
         }
       ],
       "salary_paid": 740000.0,
@@ -29337,7 +29337,7 @@
       "team_name": "New York Yankees",
       "move_date": "2022-08-01",
       "move_type": "Trade",
-      "summary": "Trade with Chicago Cubs: acquired Scott Effross, Frankie Montas, Lou Trivino III; sent Cooper Bowman, Ken Waldichuk, Hayden Wesneski, JP Sears, Luis Medina",
+      "summary": "Trade with Chicago Cubs: acquired Scott Effross, Frankie Montas, Lou Trivino III; sent Hayden Wesneski, JP Sears, Ken Waldichuk, Luis Medina, Cooper Bowman",
       "players_acquired": [
         {
           "mlbam_id": 664123,
@@ -29366,24 +29366,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 688682,
-          "name": "Cooper Bowman",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 686610,
-          "name": "Ken Waldichuk",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.37
-        },
-        {
           "mlbam_id": 669713,
           "name": "Hayden Wesneski",
           "war_prior": 0.0,
@@ -29402,6 +29384,15 @@
           "war_charged": 6.53
         },
         {
+          "mlbam_id": 686610,
+          "name": "Ken Waldichuk",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.37
+        },
+        {
           "mlbam_id": 665622,
           "name": "Luis Medina",
           "war_prior": 0.0,
@@ -29409,6 +29400,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 2.36
+        },
+        {
+          "mlbam_id": 688682,
+          "name": "Cooper Bowman",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 9050000.0,
@@ -29466,7 +29466,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -29575,7 +29575,7 @@
       "team_name": "New York Yankees",
       "move_date": "2022-07-27",
       "move_type": "Trade",
-      "summary": "Trade with Kansas City Royals: acquired Andrew Benintendi; sent T.J. Sikkema, Chandler Champlain, Beck Way",
+      "summary": "Trade with Kansas City Royals: acquired Andrew Benintendi; sent T.J. Sikkema, Beck Way, Chandler Champlain",
       "players_acquired": [
         {
           "mlbam_id": 643217,
@@ -29597,15 +29597,6 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 669441,
-          "name": "Chandler Champlain",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 694360,
           "name": "Beck Way",
           "war_prior": 0.0,
@@ -29613,6 +29604,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.04,
           "war_charged": 0.04
+        },
+        {
+          "mlbam_id": 669441,
+          "name": "Chandler Champlain",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": null,
@@ -30418,7 +30418,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.1,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -30814,7 +30814,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -30991,7 +30991,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -31256,7 +31256,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -31643,7 +31643,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -31775,7 +31775,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.05,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -32206,7 +32206,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -32873,7 +32873,7 @@
       "team_name": "New York Yankees",
       "move_date": "2022-03-16",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent 1B Ronald Guzman and  to a minor league contract and invited him to spring training; New York Yankees signed free agent 3B Phillip Evans and  to a minor league contract and invited him to spring training; New York Yankees signed free agent LF Ryan LaMarre and  to a minor league contract and invited him to spring training",
+      "summary": "New York Yankees signed free agent 3B Phillip Evans and  to a minor league contract and invited him to spring training; New York Yankees signed free agent 1B Ronald Guzman and  to a minor league contract and invited him to spring training; New York Yankees signed free agent LF Ryan LaMarre and  to a minor league contract and invited him to spring training",
       "players_acquired": [],
       "players_sent_away": [],
       "salary_paid": null,
@@ -33040,8 +33040,16 @@
       "team_name": "New York Yankees",
       "move_date": "2022-03-13",
       "move_type": "Trade",
-      "summary": "Trade with Minnesota Twins: acquired Ben Rortvedt, Isiah Kiner-Falefa, Josh Donaldson; sent Gio Urshela, Gary S\u00e1nchez",
+      "summary": "Trade with Minnesota Twins: acquired Josh Donaldson, Ben Rortvedt, Isiah Kiner-Falefa; sent Gio Urshela, Gary S\u00e1nchez",
       "players_acquired": [
+        {
+          "mlbam_id": 518626,
+          "name": "Josh Donaldson",
+          "war_prior": 44.45,
+          "war_after_move": 2.23,
+          "war_during": 2.23,
+          "war_after_exit": 0.0
+        },
         {
           "mlbam_id": 666163,
           "name": "Ben Rortvedt",
@@ -33057,14 +33065,6 @@
           "war_after_move": 2.95,
           "war_during": 2.95,
           "war_after_exit": 6.64
-        },
-        {
-          "mlbam_id": 518626,
-          "name": "Josh Donaldson",
-          "war_prior": 44.45,
-          "war_after_move": 2.23,
-          "war_during": 2.23,
-          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -34924,19 +34924,19 @@
       "team_name": "New York Yankees",
       "move_date": "2021-11-19",
       "move_type": "Trade",
-      "summary": "Trade with Philadelphia Phillies: acquired Joel Valdez, TJ Rumfield; sent Donny Sands, Nick Nelson",
+      "summary": "Trade with Philadelphia Phillies: acquired TJ Rumfield, Joel Valdez; sent Nick Nelson, Donny Sands",
       "players_acquired": [
         {
-          "mlbam_id": 683638,
-          "name": "Joel Valdez",
+          "mlbam_id": 681198,
+          "name": "TJ Rumfield",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 681198,
-          "name": "TJ Rumfield",
+          "mlbam_id": 683638,
+          "name": "Joel Valdez",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -34945,15 +34945,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 664848,
-          "name": "Donny Sands",
-          "war_prior": 0.0,
-          "war_after_move": -0.07,
-          "war_during": 0.0,
-          "war_after_exit": -0.07,
-          "war_charged": -0.07
-        },
-        {
           "mlbam_id": 656793,
           "name": "Nick Nelson",
           "war_prior": -0.98,
@@ -34961,6 +34952,15 @@
           "war_during": -0.98,
           "war_after_exit": 0.34,
           "war_charged": 0.34
+        },
+        {
+          "mlbam_id": 664848,
+          "name": "Donny Sands",
+          "war_prior": 0.0,
+          "war_after_move": -0.07,
+          "war_during": 0.0,
+          "war_after_exit": -0.07,
+          "war_charged": -0.07
         }
       ],
       "salary_paid": null,
@@ -35141,7 +35141,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.11,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -35185,7 +35185,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -35229,7 +35229,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -35273,7 +35273,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 6.16,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -35361,7 +35361,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -35977,7 +35977,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.44,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -36021,7 +36021,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.05,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -36065,7 +36065,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -36373,7 +36373,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -36549,7 +36549,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.67,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -36593,7 +36593,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.05,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -36682,7 +36682,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -36726,7 +36726,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -36923,7 +36923,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Angels: acquired Andrew Heaney; sent Janson Junk, Elvis Peguero",
+      "summary": "Trade with Los Angeles Angels: acquired Andrew Heaney; sent Elvis Peguero, Janson Junk",
       "players_acquired": [
         {
           "mlbam_id": 571760,
@@ -36936,15 +36936,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 676083,
-          "name": "Janson Junk",
-          "war_prior": 0.0,
-          "war_after_move": -0.12,
-          "war_during": 0.0,
-          "war_after_exit": -0.12,
-          "war_charged": -0.12
-        },
-        {
           "mlbam_id": 665625,
           "name": "Elvis Peguero",
           "war_prior": 0.0,
@@ -36952,6 +36943,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.91,
           "war_charged": -0.91
+        },
+        {
+          "mlbam_id": 676083,
+          "name": "Janson Junk",
+          "war_prior": 0.0,
+          "war_after_move": -0.12,
+          "war_during": 0.0,
+          "war_after_exit": -0.12,
+          "war_charged": -0.12
         }
       ],
       "salary_paid": null,
@@ -36986,7 +36986,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-07-29",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Joely Rodr\u00edguez, Joey Gallo, Anthony Rizzo; sent Ezequiel Duran, Trevor Hauver, Josh Smith, Glenn Otto Jr., Alexander Vizca\u00edno, Kevin Alc\u00e1ntara",
+      "summary": "Trade with Texas Rangers: acquired Joely Rodr\u00edguez, Anthony Rizzo, Joey Gallo; sent Alexander Vizca\u00edno, Kevin Alc\u00e1ntara, Glenn Otto Jr., Josh Smith, Ezequiel Duran, Trevor Hauver",
       "players_acquired": [
         {
           "mlbam_id": 570257,
@@ -36997,59 +36997,23 @@
           "war_after_exit": -0.9
         },
         {
-          "mlbam_id": 608336,
-          "name": "Joey Gallo",
-          "war_prior": 9.88,
-          "war_after_move": 0.47,
-          "war_during": 0.47,
-          "war_after_exit": 0.73
-        },
-        {
           "mlbam_id": 519203,
           "name": "Anthony Rizzo",
           "war_prior": 35.43,
           "war_after_move": 3.7,
           "war_during": 3.7,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 608336,
+          "name": "Joey Gallo",
+          "war_prior": 9.88,
+          "war_after_move": 0.47,
+          "war_during": 0.47,
+          "war_after_exit": 0.73
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 677649,
-          "name": "Ezequiel Duran",
-          "war_prior": 0.0,
-          "war_after_move": 5.98,
-          "war_during": 0.0,
-          "war_after_exit": 5.98,
-          "war_charged": 5.98
-        },
-        {
-          "mlbam_id": 669386,
-          "name": "Trevor Hauver",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 669701,
-          "name": "Josh Smith",
-          "war_prior": 0.0,
-          "war_after_move": 6.91,
-          "war_during": 0.0,
-          "war_after_exit": 6.91,
-          "war_charged": 6.91
-        },
-        {
-          "mlbam_id": 657248,
-          "name": "Glenn Otto Jr.",
-          "war_prior": 0.0,
-          "war_after_move": -0.81,
-          "war_during": 0.0,
-          "war_after_exit": -0.81,
-          "war_charged": -0.81
-        },
         {
           "mlbam_id": 669805,
           "name": "Alexander Vizca\u00edno",
@@ -37067,6 +37031,42 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": -0.25
+        },
+        {
+          "mlbam_id": 657248,
+          "name": "Glenn Otto Jr.",
+          "war_prior": 0.0,
+          "war_after_move": -0.81,
+          "war_during": 0.0,
+          "war_after_exit": -0.81,
+          "war_charged": -0.81
+        },
+        {
+          "mlbam_id": 669701,
+          "name": "Josh Smith",
+          "war_prior": 0.0,
+          "war_after_move": 6.91,
+          "war_during": 0.0,
+          "war_after_exit": 6.91,
+          "war_charged": 6.91
+        },
+        {
+          "mlbam_id": 677649,
+          "name": "Ezequiel Duran",
+          "war_prior": 0.0,
+          "war_after_move": 5.98,
+          "war_during": 0.0,
+          "war_after_exit": 5.98,
+          "war_charged": 5.98
+        },
+        {
+          "mlbam_id": 669386,
+          "name": "Trevor Hauver",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 60275000.0,
@@ -37101,18 +37101,9 @@
       "team_name": "New York Yankees",
       "move_date": "2021-07-28",
       "move_type": "Trade",
-      "summary": "Trade with Cincinnati Reds: sent Luis Cessa, Justin Wilson",
+      "summary": "Trade with Cincinnati Reds: sent Justin Wilson, Luis Cessa",
       "players_acquired": [],
       "players_sent_away": [
-        {
-          "mlbam_id": 570666,
-          "name": "Luis Cessa",
-          "war_prior": 1.26,
-          "war_after_move": 1.24,
-          "war_during": 1.26,
-          "war_after_exit": 1.24,
-          "war_charged": 1.24
-        },
         {
           "mlbam_id": 458677,
           "name": "Justin Wilson",
@@ -37121,6 +37112,15 @@
           "war_during": 1.5,
           "war_after_exit": 0.38,
           "war_charged": 0.38
+        },
+        {
+          "mlbam_id": 570666,
+          "name": "Luis Cessa",
+          "war_prior": 1.26,
+          "war_after_move": 1.24,
+          "war_during": 1.26,
+          "war_after_exit": 1.24,
+          "war_charged": 1.24
         }
       ],
       "salary_paid": null,
@@ -37331,7 +37331,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-07-26",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Clay Holmes; sent Hoy Park, Diego Castillo",
+      "summary": "Trade with Pittsburgh Pirates: acquired Clay Holmes; sent Diego Castillo, Hoy Park",
       "players_acquired": [
         {
           "mlbam_id": 605280,
@@ -37344,15 +37344,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 660829,
-          "name": "Hoy Park",
-          "war_prior": 0.0,
-          "war_after_move": -0.6,
-          "war_during": 0.0,
-          "war_after_exit": -0.6,
-          "war_charged": -0.6
-        },
-        {
           "mlbam_id": 660636,
           "name": "Diego Castillo",
           "war_prior": 0.0,
@@ -37360,6 +37351,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.94,
           "war_charged": -0.94
+        },
+        {
+          "mlbam_id": 660829,
+          "name": "Hoy Park",
+          "war_prior": 0.0,
+          "war_after_move": -0.6,
+          "war_during": 0.0,
+          "war_after_exit": -0.6,
+          "war_charged": -0.6
         }
       ],
       "salary_paid": 10400000.0,
@@ -37505,7 +37505,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -37637,7 +37637,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -37901,7 +37901,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -38297,7 +38297,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.05,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -38341,7 +38341,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.44,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -38385,7 +38385,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.26,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -38429,7 +38429,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -39152,7 +39152,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -39284,7 +39284,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.25,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -39460,7 +39460,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -40074,7 +40074,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-03-31",
       "move_type": "Selected",
-      "summary": "New York Yankees selected the contract of P Lucas Luetge from Scranton/Wilkes-Barre RailRiders; New York Yankees selected the contract of P Lucas Luetge; New York Yankees selected the contract of LHP Lucas Luetge,  and",
+      "summary": "New York Yankees selected the contract of LHP Lucas Luetge,  and; New York Yankees selected the contract of P Lucas Luetge from Scranton/Wilkes-Barre RailRiders; New York Yankees selected the contract of P Lucas Luetge",
       "players_acquired": [
         {
           "mlbam_id": 476595,
@@ -40097,7 +40097,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.25,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -40273,7 +40273,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -40514,7 +40514,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-02-22",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent CF Brett Gardner; New York Yankees signed free agent LF Brett Gardner",
+      "summary": "New York Yankees signed free agent LF Brett Gardner; New York Yankees signed free agent CF Brett Gardner",
       "players_acquired": [
         {
           "mlbam_id": 458731,
@@ -40602,7 +40602,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-02-13",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent RHP Nick Goody to a minor league contract and invited him to spring training; New York Yankees signed free agent P Nick Goody",
+      "summary": "New York Yankees signed free agent P Nick Goody; New York Yankees signed free agent RHP Nick Goody to a minor league contract and invited him to spring training",
       "players_acquired": [
         {
           "mlbam_id": 580792,
@@ -40866,7 +40866,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-02-05",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent RHP Kyle Barraclough to a minor league contract and invited him to spring training; New York Yankees signed free agent P Kyle Barraclough",
+      "summary": "New York Yankees signed free agent P Kyle Barraclough; New York Yankees signed free agent RHP Kyle Barraclough to a minor league contract and invited him to spring training",
       "players_acquired": [
         {
           "mlbam_id": 607457,
@@ -40954,7 +40954,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-01-27",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent RHP Corey Kluber; New York Yankees signed free agent P Corey Kluber",
+      "summary": "New York Yankees signed free agent P Corey Kluber; New York Yankees signed free agent RHP Corey Kluber",
       "players_acquired": [
         {
           "mlbam_id": 446372,
@@ -41096,7 +41096,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-01-24",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Jameson Taillon; sent Maikol Escotto, Canaan Smith-Njigba, Roansy Contreras, Miguel Yajure",
+      "summary": "Trade with Pittsburgh Pirates: acquired Jameson Taillon; sent Canaan Smith-Njigba, Roansy Contreras, Maikol Escotto, Miguel Yajure",
       "players_acquired": [
         {
           "mlbam_id": 592791,
@@ -41108,15 +41108,6 @@
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 683500,
-          "name": "Maikol Escotto",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
         {
           "mlbam_id": 675986,
           "name": "Canaan Smith-Njigba",
@@ -41134,6 +41125,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.99,
           "war_charged": 0.99
+        },
+        {
+          "mlbam_id": 683500,
+          "name": "Maikol Escotto",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         },
         {
           "mlbam_id": 664337,
@@ -41539,7 +41539,7 @@
       "team_name": "New York Yankees",
       "move_date": "2021-01-04",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent LHP Nestor Cortes to a minor league contract and invited him to spring training; New York Yankees signed free agent P Nestor Cortes",
+      "summary": "New York Yankees signed free agent P Nestor Cortes; New York Yankees signed free agent LHP Nestor Cortes to a minor league contract and invited him to spring training",
       "players_acquired": [
         {
           "mlbam_id": 641482,
@@ -41627,7 +41627,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-12-14",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent C Kellin Deglan; New York Yankees signed free agent C Kellin Deglan to a minor league contract and invited him to spring training",
+      "summary": "New York Yankees signed free agent C Kellin Deglan to a minor league contract and invited him to spring training; New York Yankees signed free agent C Kellin Deglan",
       "players_acquired": [
         {
           "mlbam_id": 592256,
@@ -41847,7 +41847,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-12-12",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent C Rob Brantly; New York Yankees signed free agent C Rob Brantly to a minor league contract and invited him to spring training",
+      "summary": "New York Yankees signed free agent C Rob Brantly to a minor league contract and invited him to spring training; New York Yankees signed free agent C Rob Brantly",
       "players_acquired": [
         {
           "mlbam_id": 542963,
@@ -41891,7 +41891,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-12-11",
       "move_type": "Signed as Free Agent",
-      "summary": "New York Yankees signed free agent LHP Lucas Luetge to a minor league contract and invited him to spring training; New York Yankees signed free agent P Lucas Luetge",
+      "summary": "New York Yankees signed free agent P Lucas Luetge; New York Yankees signed free agent LHP Lucas Luetge to a minor league contract and invited him to spring training",
       "players_acquired": [
         {
           "mlbam_id": 476595,
@@ -42067,7 +42067,7 @@
       "team_name": "New York Yankees",
       "move_date": "2020-11-20",
       "move_type": "Selected",
-      "summary": "New York Yankees selected the contract of SS Oswald Peraza; New York Yankees selected the contract of SS Oswald Peraza from Charleston RiverDogs",
+      "summary": "New York Yankees selected the contract of SS Oswald Peraza from Charleston RiverDogs; New York Yankees selected the contract of SS Oswald Peraza",
       "players_acquired": [
         {
           "mlbam_id": 672724,
@@ -45509,7 +45509,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.71,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -45553,7 +45553,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.34,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -46443,7 +46443,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -47236,7 +47236,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -47324,7 +47324,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.05,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -47368,7 +47368,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.9,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -47950,7 +47950,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -50029,7 +50029,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.17,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -50161,7 +50161,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.25,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -50469,7 +50469,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.33,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -50557,7 +50557,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 3.1,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -50940,19 +50940,19 @@
       "team_name": "New York Yankees",
       "move_date": "2019-01-21",
       "move_type": "Trade",
-      "summary": "Trade with Cincinnati Reds: acquired Shed Long Jr., Josh Stowers; sent Reiver Sanmartin, Sonny Gray, Shed Long Jr.",
+      "summary": "Trade with Seattle Mariners: acquired Josh Stowers, Shed Long Jr.; sent Sonny Gray, Shed Long Jr., Reiver Sanmartin",
       "players_acquired": [
         {
-          "mlbam_id": 643418,
-          "name": "Shed Long Jr.",
+          "mlbam_id": 663618,
+          "name": "Josh Stowers",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 663618,
-          "name": "Josh Stowers",
+          "mlbam_id": 643418,
+          "name": "Shed Long Jr.",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -50961,31 +50961,31 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 665665,
-          "name": "Reiver Sanmartin",
-          "war_prior": 0.0,
-          "war_after_move": -0.47,
-          "war_during": 0.0,
-          "war_after_exit": -0.47,
-          "war_charged": -0.47
-        },
-        {
           "mlbam_id": 543243,
           "name": "Sonny Gray",
           "war_prior": 1.16,
-          "war_after_move": 9.97,
+          "war_after_move": 0.0,
           "war_during": 1.16,
-          "war_after_exit": 9.97,
+          "war_after_exit": 0.0,
           "war_charged": 9.97
         },
         {
           "mlbam_id": 643418,
           "name": "Shed Long Jr.",
           "war_prior": 0.0,
+          "war_after_move": -0.43,
+          "war_during": 0.0,
+          "war_after_exit": -0.43,
+          "war_charged": -0.43
+        },
+        {
+          "mlbam_id": 665665,
+          "name": "Reiver Sanmartin",
+          "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0,
-          "war_charged": -0.43
+          "war_charged": -0.47
         }
       ],
       "salary_paid": null,
@@ -50999,11 +50999,11 @@
       "war_prior_sent": 1.16,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Cincinnati Reds",
-      "counterparty_id": 113,
+      "counterparty": "Seattle Mariners",
+      "counterparty_id": 136,
       "acquisition_channel": "trade",
-      "deal_archetype": "talent_sold",
-      "talent_grade": -9.5,
+      "deal_archetype": "talent_swap",
+      "talent_grade": 0.43,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -51954,7 +51954,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.13,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -51975,7 +51975,7 @@
       "team_name": "New York Yankees",
       "move_date": "2018-11-19",
       "move_type": "Trade",
-      "summary": "Trade with Seattle Mariners: acquired James Paxton; sent Erik Swanson, Justus Sheffield, Dom Thompson-Williams",
+      "summary": "Trade with Seattle Mariners: acquired James Paxton; sent Justus Sheffield, Erik Swanson, Dom Thompson-Williams",
       "players_acquired": [
         {
           "mlbam_id": 572020,
@@ -51988,15 +51988,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 657024,
-          "name": "Erik Swanson",
-          "war_prior": 0.0,
-          "war_after_move": 0.9,
-          "war_during": 0.0,
-          "war_after_exit": 0.9,
-          "war_charged": 0.9
-        },
-        {
           "mlbam_id": 656954,
           "name": "Justus Sheffield",
           "war_prior": -0.07,
@@ -52004,6 +51995,15 @@
           "war_during": -0.07,
           "war_after_exit": -0.84,
           "war_charged": -0.84
+        },
+        {
+          "mlbam_id": 657024,
+          "name": "Erik Swanson",
+          "war_prior": 0.0,
+          "war_after_move": 0.9,
+          "war_during": 0.0,
+          "war_after_exit": 0.9,
+          "war_charged": 0.9
         },
         {
           "mlbam_id": 657779,
@@ -52730,7 +52730,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.84,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -52862,7 +52862,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.49,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -53329,7 +53329,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -53350,16 +53350,8 @@
       "team_name": "New York Yankees",
       "move_date": "2018-08-04",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Gio Urshela, George Kontos",
+      "summary": "Trade with Cleveland Guardians: acquired George Kontos, Gio Urshela",
       "players_acquired": [
-        {
-          "mlbam_id": 570482,
-          "name": "Gio Urshela",
-          "war_prior": -0.87,
-          "war_after_move": 6.42,
-          "war_during": 6.42,
-          "war_after_exit": 3.1
-        },
         {
           "mlbam_id": 502004,
           "name": "George Kontos",
@@ -53367,6 +53359,14 @@
           "war_after_move": 0.06,
           "war_during": 0.06,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 570482,
+          "name": "Gio Urshela",
+          "war_prior": -0.87,
+          "war_after_move": 6.42,
+          "war_during": 6.42,
+          "war_after_exit": 3.1
         }
       ],
       "players_sent_away": [],
@@ -53381,8 +53381,8 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 3.1,
       "salary_source": "bref",
-      "counterparty": "Toronto Blue Jays",
-      "counterparty_id": 141,
+      "counterparty": "Cleveland Guardians",
+      "counterparty_id": 114,
       "acquisition_channel": "trade",
       "deal_archetype": "prospect_or_talent_haul",
       "talent_grade": 6.48,
@@ -53425,7 +53425,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.19,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -53534,7 +53534,7 @@
       "team_name": "New York Yankees",
       "move_date": "2018-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Minnesota Twins: acquired Lance Lynn; sent Adam Warren, Luis Rijo, Tyler Austin",
+      "summary": "Trade with Minnesota Twins: acquired Lance Lynn; sent Adam Warren, Tyler Austin, Luis Rijo",
       "players_acquired": [
         {
           "mlbam_id": 458681,
@@ -53556,15 +53556,6 @@
           "war_charged": 0.34
         },
         {
-          "mlbam_id": 665894,
-          "name": "Luis Rijo",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 592122,
           "name": "Tyler Austin",
           "war_prior": -0.15,
@@ -53572,6 +53563,15 @@
           "war_during": -0.15,
           "war_after_exit": 0.28,
           "war_charged": 0.28
+        },
+        {
+          "mlbam_id": 665894,
+          "name": "Luis Rijo",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": null,
@@ -53606,7 +53606,7 @@
       "team_name": "New York Yankees",
       "move_date": "2018-07-29",
       "move_type": "Trade",
-      "summary": "Trade with St. Louis Cardinals: acquired Luke Voit; sent Caleb Frare, Giovanny Gallegos, Chasen Shreve",
+      "summary": "Trade with St. Louis Cardinals: acquired Luke Voit; sent Caleb Frare, Chasen Shreve, Giovanny Gallegos",
       "players_acquired": [
         {
           "mlbam_id": 572228,
@@ -53628,15 +53628,6 @@
           "war_charged": -0.08
         },
         {
-          "mlbam_id": 606149,
-          "name": "Giovanny Gallegos",
-          "war_prior": -0.01,
-          "war_after_move": 4.34,
-          "war_during": -0.01,
-          "war_after_exit": 4.34,
-          "war_charged": 4.34
-        },
-        {
           "mlbam_id": 592741,
           "name": "Chasen Shreve",
           "war_prior": 1.74,
@@ -53644,6 +53635,15 @@
           "war_during": 1.74,
           "war_after_exit": 0.22,
           "war_charged": 0.22
+        },
+        {
+          "mlbam_id": 606149,
+          "name": "Giovanny Gallegos",
+          "war_prior": -0.01,
+          "war_after_move": 4.34,
+          "war_during": -0.01,
+          "war_after_exit": 4.34,
+          "war_charged": 4.34
         }
       ],
       "salary_paid": 5273200.0,
@@ -53808,7 +53808,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -55112,7 +55112,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.17,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -57182,7 +57182,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.17,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -57402,7 +57402,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.17,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -57808,7 +57808,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -57852,7 +57852,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 1.75,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -58808,7 +58808,7 @@
       "team_name": "New York Yankees",
       "move_date": "2018-02-20",
       "move_type": "Trade",
-      "summary": "Trade with Arizona Diamondbacks: acquired Brandon Drury; sent Taylor Widener, Nick Solak",
+      "summary": "Trade with Arizona Diamondbacks: acquired Brandon Drury; sent Nick Solak, Taylor Widener",
       "players_acquired": [
         {
           "mlbam_id": 592273,
@@ -58821,15 +58821,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 642203,
-          "name": "Taylor Widener",
-          "war_prior": 0.0,
-          "war_after_move": 1.07,
-          "war_during": 0.0,
-          "war_after_exit": 1.07,
-          "war_charged": 1.07
-        },
-        {
           "mlbam_id": 669256,
           "name": "Nick Solak",
           "war_prior": 0.0,
@@ -58837,6 +58828,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 642203,
+          "name": "Taylor Widener",
+          "war_prior": 0.0,
+          "war_after_move": 1.07,
+          "war_during": 0.0,
+          "war_after_exit": 1.07,
+          "war_charged": 1.07
         }
       ],
       "salary_paid": 621900.0,
@@ -60147,7 +60147,7 @@
       "team_name": "New York Yankees",
       "move_date": "2017-12-12",
       "move_type": "Trade",
-      "summary": "Trade with San Diego Padres: acquired Jabari Blash; sent Chase Headley, Bryan Mitchell",
+      "summary": "Trade with San Diego Padres: acquired Jabari Blash; sent Bryan Mitchell, Chase Headley",
       "players_acquired": [
         {
           "mlbam_id": 518466,
@@ -60160,15 +60160,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 452104,
-          "name": "Chase Headley",
-          "war_prior": 8.52,
-          "war_after_move": -0.33,
-          "war_during": 8.52,
-          "war_after_exit": -0.33,
-          "war_charged": -0.33
-        },
-        {
           "mlbam_id": 571951,
           "name": "Bryan Mitchell",
           "war_prior": -0.23,
@@ -60176,6 +60167,15 @@
           "war_during": -0.23,
           "war_after_exit": -0.49,
           "war_charged": -0.49
+        },
+        {
+          "mlbam_id": 452104,
+          "name": "Chase Headley",
+          "war_prior": 8.52,
+          "war_after_move": -0.33,
+          "war_during": 8.52,
+          "war_after_exit": -0.33,
+          "war_charged": -0.33
         }
       ],
       "salary_paid": null,
@@ -60210,7 +60210,7 @@
       "team_name": "New York Yankees",
       "move_date": "2017-12-11",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Giancarlo Stanton; sent Jorge Guzm\u00e1n, Starlin Castro, Jos\u00e9 Devers",
+      "summary": "Trade with Miami Marlins: acquired Giancarlo Stanton; sent Jos\u00e9 Devers, Starlin Castro, Jorge Guzm\u00e1n",
       "players_acquired": [
         {
           "mlbam_id": 519317,
@@ -60223,13 +60223,13 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 660422,
-          "name": "Jorge Guzm\u00e1n",
+          "mlbam_id": 672701,
+          "name": "Jos\u00e9 Devers",
           "war_prior": 0.0,
-          "war_after_move": -0.36,
+          "war_after_move": -0.14,
           "war_during": 0.0,
-          "war_after_exit": -0.36,
-          "war_charged": -0.36
+          "war_after_exit": -0.14,
+          "war_charged": -0.14
         },
         {
           "mlbam_id": 516770,
@@ -60241,13 +60241,13 @@
           "war_charged": 2.9
         },
         {
-          "mlbam_id": 672701,
-          "name": "Jos\u00e9 Devers",
+          "mlbam_id": 660422,
+          "name": "Jorge Guzm\u00e1n",
           "war_prior": 0.0,
-          "war_after_move": -0.14,
+          "war_after_move": -0.36,
           "war_during": 0.0,
-          "war_after_exit": -0.14,
-          "war_charged": -0.14
+          "war_after_exit": -0.36,
+          "war_charged": -0.36
         }
       ],
       "salary_paid": 265000000,
@@ -60326,16 +60326,8 @@
       "team_name": "New York Yankees",
       "move_date": "2017-11-20",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Reiver Sanmartin, Michael King; sent Caleb Smith, Ronald Herrera, Garrett Cooper",
+      "summary": "Trade with Miami Marlins: acquired Michael King, Reiver Sanmartin; sent Garrett Cooper, Caleb Smith, Ronald Herrera",
       "players_acquired": [
-        {
-          "mlbam_id": 665665,
-          "name": "Reiver Sanmartin",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 650633,
           "name": "Michael King",
@@ -60343,16 +60335,33 @@
           "war_after_move": 5.59,
           "war_during": 5.59,
           "war_after_exit": 9.52
+        },
+        {
+          "mlbam_id": 665665,
+          "name": "Reiver Sanmartin",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
         {
+          "mlbam_id": 643265,
+          "name": "Garrett Cooper",
+          "war_prior": 0.2,
+          "war_after_move": 4.48,
+          "war_during": 0.2,
+          "war_after_exit": 4.48,
+          "war_charged": 4.48
+        },
+        {
           "mlbam_id": 592761,
           "name": "Caleb Smith",
           "war_prior": -0.3,
-          "war_after_move": 0.0,
+          "war_after_move": 2.77,
           "war_during": -0.3,
-          "war_after_exit": 0.0,
+          "war_after_exit": 2.77,
           "war_charged": 2.77
         },
         {
@@ -60363,15 +60372,6 @@
           "war_during": -0.05,
           "war_after_exit": 0.0,
           "war_charged": 0.0
-        },
-        {
-          "mlbam_id": 643265,
-          "name": "Garrett Cooper",
-          "war_prior": 0.2,
-          "war_after_move": 0.0,
-          "war_during": 0.2,
-          "war_after_exit": 0.0,
-          "war_charged": 4.48
         }
       ],
       "salary_paid": 1300000.0,
@@ -60385,11 +60385,11 @@
       "war_prior_sent": -0.15,
       "war_after_exit_acquired": 9.52,
       "salary_source": "bref",
-      "counterparty": "Texas Rangers",
-      "counterparty_id": 140,
+      "counterparty": "Miami Marlins",
+      "counterparty_id": 146,
       "acquisition_channel": "trade",
-      "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 5.59,
+      "deal_archetype": "talent_swap",
+      "talent_grade": -1.66,
       "talent_per_control_year": null,
       "ledger_grade": 43420000.0,
       "control_years_remaining": null,
@@ -60429,7 +60429,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.15,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -60649,7 +60649,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 5.04,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -60670,16 +60670,8 @@
       "team_name": "New York Yankees",
       "move_date": "2017-11-18",
       "move_type": "Trade",
-      "summary": "Trade with Seattle Mariners: acquired JP Sears, Juan Then; sent Nick Rumbelow",
+      "summary": "Trade with Seattle Mariners: acquired Juan Then, JP Sears; sent Nick Rumbelow",
       "players_acquired": [
-        {
-          "mlbam_id": 676664,
-          "name": "JP Sears",
-          "war_prior": 0.0,
-          "war_after_move": 0.56,
-          "war_during": 0.56,
-          "war_after_exit": 6.16
-        },
         {
           "mlbam_id": 672730,
           "name": "Juan Then",
@@ -60687,6 +60679,14 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 676664,
+          "name": "JP Sears",
+          "war_prior": 0.0,
+          "war_after_move": 0.56,
+          "war_during": 0.56,
+          "war_after_exit": 6.16
         }
       ],
       "players_sent_away": [
@@ -60799,7 +60799,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -60843,7 +60843,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -61107,7 +61107,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -61172,7 +61172,7 @@
       "team_name": "New York Yankees",
       "move_date": "2017-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Athletics: acquired Sonny Gray; sent Yefry Ram\u00edrez, Jorge Mateo, James Kaprielian, Dustin Fowler",
+      "summary": "Trade with Athletics: acquired Sonny Gray; sent James Kaprielian, Dustin Fowler, Yefry Ram\u00edrez, Jorge Mateo",
       "players_acquired": [
         {
           "mlbam_id": 543243,
@@ -61184,24 +61184,6 @@
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 606162,
-          "name": "Yefry Ram\u00edrez",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": -0.14
-        },
-        {
-          "mlbam_id": 622761,
-          "name": "Jorge Mateo",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
         {
           "mlbam_id": 621076,
           "name": "James Kaprielian",
@@ -61219,6 +61201,24 @@
           "war_during": 0.0,
           "war_after_exit": -0.98,
           "war_charged": -0.98
+        },
+        {
+          "mlbam_id": 606162,
+          "name": "Yefry Ram\u00edrez",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": -0.14
+        },
+        {
+          "mlbam_id": 622761,
+          "name": "Jorge Mateo",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 13000000.0,
@@ -61316,7 +61316,7 @@
       "team_name": "New York Yankees",
       "move_date": "2017-07-23",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Ryan McBroom; sent Rob Refsnyder, Dillon McNamara",
+      "summary": "Trade with Toronto Blue Jays: acquired Ryan McBroom; sent Dillon McNamara, Rob Refsnyder",
       "players_acquired": [
         {
           "mlbam_id": 643436,
@@ -61329,15 +61329,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 608701,
-          "name": "Rob Refsnyder",
-          "war_prior": 0.31,
-          "war_after_move": -0.21,
-          "war_during": 0.31,
-          "war_after_exit": -0.21,
-          "war_charged": -0.21
-        },
-        {
           "mlbam_id": 621200,
           "name": "Dillon McNamara",
           "war_prior": 0.0,
@@ -61345,6 +61336,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 608701,
+          "name": "Rob Refsnyder",
+          "war_prior": 0.31,
+          "war_after_move": -0.21,
+          "war_during": 0.31,
+          "war_after_exit": -0.21,
+          "war_charged": -0.21
         }
       ],
       "salary_paid": null,
@@ -61467,16 +61467,8 @@
       "team_name": "New York Yankees",
       "move_date": "2017-07-19",
       "move_type": "Trade",
-      "summary": "Trade with Chicago White Sox: acquired David Robertson, Tommy Kahnle, Todd Frazier; sent Tito Polo, Ian Clarkin, Blake Rutherford, Tyler Clippard",
+      "summary": "Trade with Chicago White Sox: acquired Tommy Kahnle, David Robertson, Todd Frazier; sent Blake Rutherford, Ian Clarkin, Tito Polo, Tyler Clippard",
       "players_acquired": [
-        {
-          "mlbam_id": 502085,
-          "name": "David Robertson",
-          "war_prior": 12.15,
-          "war_after_move": 2.47,
-          "war_during": 2.47,
-          "war_after_exit": 5.91
-        },
         {
           "mlbam_id": 592454,
           "name": "Tommy Kahnle",
@@ -61484,6 +61476,14 @@
           "war_after_move": 2.66,
           "war_during": 2.66,
           "war_after_exit": -0.38
+        },
+        {
+          "mlbam_id": 502085,
+          "name": "David Robertson",
+          "war_prior": 12.15,
+          "war_after_move": 2.47,
+          "war_during": 2.47,
+          "war_after_exit": 5.91
         },
         {
           "mlbam_id": 453943,
@@ -61496,8 +61496,8 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 622738,
-          "name": "Tito Polo",
+          "mlbam_id": 666164,
+          "name": "Blake Rutherford",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -61514,8 +61514,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 666164,
-          "name": "Blake Rutherford",
+          "mlbam_id": 622738,
+          "name": "Tito Polo",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -61587,7 +61587,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 3.93,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -61675,7 +61675,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 3.51,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -61993,7 +61993,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 5.29,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -62786,7 +62786,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.3,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -62962,7 +62962,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -63006,7 +63006,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -1.44,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -63314,7 +63314,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -2.26,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -63666,7 +63666,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.83,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -64636,7 +64636,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.52,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -66056,7 +66056,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -66276,7 +66276,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 4.3,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -66385,22 +66385,22 @@
       "team_name": "New York Yankees",
       "move_date": "2016-11-17",
       "move_type": "Trade",
-      "summary": "Trade with Houston Astros: acquired Albert Abreu, Jorge Guzm\u00e1n; sent Brian McCann",
+      "summary": "Trade with Houston Astros: acquired Jorge Guzm\u00e1n, Albert Abreu; sent Brian McCann",
       "players_acquired": [
-        {
-          "mlbam_id": 656061,
-          "name": "Albert Abreu",
-          "war_prior": 0.0,
-          "war_after_move": -0.3,
-          "war_during": -0.3,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 660422,
           "name": "Jorge Guzm\u00e1n",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 656061,
+          "name": "Albert Abreu",
+          "war_prior": 0.0,
+          "war_after_move": -0.3,
+          "war_during": -0.3,
           "war_after_exit": 0.0
         }
       ],
@@ -66514,7 +66514,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 3.35,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -66955,7 +66955,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 7.51,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -67131,7 +67131,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.39,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -67175,7 +67175,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -67310,16 +67310,8 @@
       "team_name": "New York Yankees",
       "move_date": "2016-08-30",
       "move_type": "Trade",
-      "summary": "Trade with Pittsburgh Pirates: acquired Stephen Tarpley, Tito Polo",
+      "summary": "Trade with Pittsburgh Pirates: acquired Tito Polo, Stephen Tarpley",
       "players_acquired": [
-        {
-          "mlbam_id": 605501,
-          "name": "Stephen Tarpley",
-          "war_prior": 0.0,
-          "war_after_move": -0.29,
-          "war_during": -0.29,
-          "war_after_exit": -0.49
-        },
         {
           "mlbam_id": 622738,
           "name": "Tito Polo",
@@ -67327,6 +67319,14 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 605501,
+          "name": "Stephen Tarpley",
+          "war_prior": 0.0,
+          "war_after_move": -0.29,
+          "war_during": -0.29,
+          "war_after_exit": -0.49
         }
       ],
       "players_sent_away": [],
@@ -67517,7 +67517,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -67561,7 +67561,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.47,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -67693,7 +67693,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.68,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -67802,19 +67802,19 @@
       "team_name": "New York Yankees",
       "move_date": "2016-08-01",
       "move_type": "Trade",
-      "summary": "Trade with Texas Rangers: acquired Erik Swanson, Nick Green, Dillon Tate; sent Iv\u00e1n Nova, Carlos Beltr\u00e1n",
+      "summary": "Trade with Texas Rangers: acquired Nick Green, Erik Swanson, Dillon Tate; sent Iv\u00e1n Nova, Carlos Beltr\u00e1n",
       "players_acquired": [
         {
-          "mlbam_id": 657024,
-          "name": "Erik Swanson",
+          "mlbam_id": 643340,
+          "name": "Nick Green",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 643340,
-          "name": "Nick Green",
+          "mlbam_id": 657024,
+          "name": "Erik Swanson",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -67881,16 +67881,8 @@
       "team_name": "New York Yankees",
       "move_date": "2016-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Cleveland Guardians: acquired Clint Frazier, Justus Sheffield, J.P. Feyereisen, Ben Heller, Tyler Clippard; sent Andrew Miller, Jose Campos",
+      "summary": "Trade with Cleveland Guardians: acquired Justus Sheffield, Tyler Clippard, Ben Heller, J.P. Feyereisen, Clint Frazier; sent Andrew Miller, Jose Campos",
       "players_acquired": [
-        {
-          "mlbam_id": 640449,
-          "name": "Clint Frazier",
-          "war_prior": 0.0,
-          "war_after_move": 0.04,
-          "war_during": 0.04,
-          "war_after_exit": -0.3
-        },
         {
           "mlbam_id": 656954,
           "name": "Justus Sheffield",
@@ -67900,12 +67892,12 @@
           "war_after_exit": -0.84
         },
         {
-          "mlbam_id": 656420,
-          "name": "J.P. Feyereisen",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
+          "mlbam_id": 461325,
+          "name": "Tyler Clippard",
+          "war_prior": 11.24,
+          "war_after_move": 0.38,
+          "war_during": 0.38,
+          "war_after_exit": 3.55
         },
         {
           "mlbam_id": 621294,
@@ -67916,12 +67908,20 @@
           "war_after_exit": -0.68
         },
         {
-          "mlbam_id": 461325,
-          "name": "Tyler Clippard",
-          "war_prior": 11.24,
-          "war_after_move": 0.38,
-          "war_during": 0.38,
-          "war_after_exit": 3.55
+          "mlbam_id": 656420,
+          "name": "J.P. Feyereisen",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 640449,
+          "name": "Clint Frazier",
+          "war_prior": 0.0,
+          "war_after_move": 0.04,
+          "war_during": 0.04,
+          "war_after_exit": -0.3
         }
       ],
       "players_sent_away": [
@@ -67976,15 +67976,15 @@
       "team_name": "New York Yankees",
       "move_date": "2016-07-25",
       "move_type": "Trade",
-      "summary": "Trade with Chicago Cubs: acquired Rashad Crawford, Billy McKinney, Gleyber Torres, Adam Warren; sent Aroldis Chapman",
+      "summary": "Trade with Chicago Cubs: acquired Adam Warren, Billy McKinney, Gleyber Torres, Rashad Crawford; sent Aroldis Chapman",
       "players_acquired": [
         {
-          "mlbam_id": 622197,
-          "name": "Rashad Crawford",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
+          "mlbam_id": 476589,
+          "name": "Adam Warren",
+          "war_prior": 4.88,
+          "war_after_move": 2.39,
+          "war_during": 2.39,
+          "war_after_exit": -0.19
         },
         {
           "mlbam_id": 641856,
@@ -68003,12 +68003,12 @@
           "war_after_exit": 5.04
         },
         {
-          "mlbam_id": 476589,
-          "name": "Adam Warren",
-          "war_prior": 4.88,
-          "war_after_move": 2.39,
-          "war_during": 2.39,
-          "war_after_exit": -0.19
+          "mlbam_id": 622197,
+          "name": "Rashad Crawford",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
@@ -71201,7 +71201,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 2.13,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -71245,7 +71245,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -71289,7 +71289,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 5.12,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -71597,7 +71597,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -71641,7 +71641,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.11,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -71729,7 +71729,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -73996,7 +73996,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.14,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -74040,7 +74040,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 1.75,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -74237,16 +74237,8 @@
       "team_name": "New York Yankees",
       "move_date": "2015-11-11",
       "move_type": "Trade",
-      "summary": "Trade with Minnesota Twins: acquired Aaron Hicks, Ronald Herrera; sent John Ryan Murphy, Jos\u00e9 Pirela",
+      "summary": "Trade with San Diego Padres: acquired Ronald Herrera, Aaron Hicks; sent Jos\u00e9 Pirela, John Ryan Murphy",
       "players_acquired": [
-        {
-          "mlbam_id": 543305,
-          "name": "Aaron Hicks",
-          "war_prior": 2.45,
-          "war_after_move": 10.41,
-          "war_during": 10.41,
-          "war_after_exit": -0.74
-        },
         {
           "mlbam_id": 622703,
           "name": "Ronald Herrera",
@@ -74254,26 +74246,34 @@
           "war_after_move": -0.05,
           "war_during": -0.05,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 543305,
+          "name": "Aaron Hicks",
+          "war_prior": 2.45,
+          "war_after_move": 10.41,
+          "war_during": 10.41,
+          "war_after_exit": -0.74
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 571974,
-          "name": "John Ryan Murphy",
-          "war_prior": 0.88,
-          "war_after_move": -0.54,
-          "war_during": 0.88,
-          "war_after_exit": -0.54,
-          "war_charged": -0.54
-        },
-        {
           "mlbam_id": 517369,
           "name": "Jos\u00e9 Pirela",
           "war_prior": -0.39,
-          "war_after_move": 0.0,
+          "war_after_move": 0.82,
           "war_during": -0.39,
-          "war_after_exit": 0.0,
+          "war_after_exit": 0.82,
           "war_charged": 0.82
+        },
+        {
+          "mlbam_id": 571974,
+          "name": "John Ryan Murphy",
+          "war_prior": 0.88,
+          "war_after_move": 0.0,
+          "war_during": 0.88,
+          "war_after_exit": 0.0,
+          "war_charged": -0.54
         }
       ],
       "salary_paid": 43391856.0,
@@ -74287,11 +74287,11 @@
       "war_prior_sent": 0.49,
       "war_after_exit_acquired": -0.74,
       "salary_source": "bref",
-      "counterparty": "Minnesota Twins",
-      "counterparty_id": 142,
+      "counterparty": "San Diego Padres",
+      "counterparty_id": 135,
       "acquisition_channel": "trade",
       "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 10.9,
+      "talent_grade": 9.54,
       "talent_per_control_year": null,
       "ledger_grade": 39488144.0,
       "control_years_remaining": null,
@@ -74683,7 +74683,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.21,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -74771,7 +74771,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -74815,7 +74815,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -1.22,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -74859,7 +74859,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.06,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -74903,7 +74903,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.81,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -75035,7 +75035,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.21,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -75167,7 +75167,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -75211,7 +75211,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.21,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -75299,7 +75299,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 4.17,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -75408,7 +75408,7 @@
       "team_name": "New York Yankees",
       "move_date": "2015-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Seattle Mariners: acquired Dustin Ackley; sent Jos\u00e9 Ram\u00edrez, Ram\u00f3n Flores",
+      "summary": "Trade with Seattle Mariners: acquired Dustin Ackley; sent Ram\u00f3n Flores, Jos\u00e9 Ram\u00edrez",
       "players_acquired": [
         {
           "mlbam_id": 554429,
@@ -75421,15 +75421,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 542432,
-          "name": "Jos\u00e9 Ram\u00edrez",
-          "war_prior": -0.07,
-          "war_after_move": -0.41,
-          "war_during": -0.07,
-          "war_after_exit": -0.41,
-          "war_charged": -0.41
-        },
-        {
           "mlbam_id": 570717,
           "name": "Ram\u00f3n Flores",
           "war_prior": 0.0,
@@ -75437,6 +75428,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 542432,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "war_prior": -0.07,
+          "war_after_move": -0.41,
+          "war_during": -0.07,
+          "war_after_exit": -0.41,
+          "war_charged": -0.41
         }
       ],
       "salary_paid": 3200000.0,
@@ -75494,7 +75494,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.75,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -75582,7 +75582,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.48,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -75758,7 +75758,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 2.65,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -75978,7 +75978,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.33,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -77782,7 +77782,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -78002,7 +78002,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.13,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -78046,7 +78046,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.43,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -79992,7 +79992,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -80036,7 +80036,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -80432,7 +80432,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -80476,7 +80476,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -80564,7 +80564,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.05,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -81862,16 +81862,8 @@
       "team_name": "New York Yankees",
       "move_date": "2015-01-01",
       "move_type": "Trade",
-      "summary": "Trade with Atlanta Braves: acquired David Carpenter, Chasen Shreve; sent Manny Banuelos",
+      "summary": "Trade with Atlanta Braves: acquired Chasen Shreve, David Carpenter; sent Manny Banuelos",
       "players_acquired": [
-        {
-          "mlbam_id": 502304,
-          "name": "David Carpenter",
-          "war_prior": 1.83,
-          "war_after_move": -0.03,
-          "war_during": -0.03,
-          "war_after_exit": -0.08
-        },
         {
           "mlbam_id": 592741,
           "name": "Chasen Shreve",
@@ -81879,6 +81871,14 @@
           "war_after_move": 1.52,
           "war_during": 1.52,
           "war_after_exit": 1.27
+        },
+        {
+          "mlbam_id": 502304,
+          "name": "David Carpenter",
+          "war_prior": 1.83,
+          "war_after_move": -0.03,
+          "war_during": -0.03,
+          "war_after_exit": -0.08
         }
       ],
       "players_sent_away": [
@@ -82022,24 +82022,8 @@
       "team_name": "New York Yankees",
       "move_date": "2014-12-19",
       "move_type": "Trade",
-      "summary": "Trade with New York Mets: acquired Gonzalez Germen, Garrett Jones, Domingo Germ\u00e1n, Nathan Eovaldi; sent Mart\u00edn Prado, David Phelps",
+      "summary": "Trade with Miami Marlins: acquired Domingo Germ\u00e1n, Gonzalez Germen, Nathan Eovaldi, Garrett Jones; sent David Phelps, Mart\u00edn Prado",
       "players_acquired": [
-        {
-          "mlbam_id": 542674,
-          "name": "Gonzalez Germen",
-          "war_prior": -0.17,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 434540,
-          "name": "Garrett Jones",
-          "war_prior": 4.19,
-          "war_after_move": -0.61,
-          "war_during": -0.61,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 593334,
           "name": "Domingo Germ\u00e1n",
@@ -82049,32 +82033,48 @@
           "war_after_exit": -0.51
         },
         {
+          "mlbam_id": 542674,
+          "name": "Gonzalez Germen",
+          "war_prior": -0.17,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
           "mlbam_id": 543135,
           "name": "Nathan Eovaldi",
           "war_prior": 3.94,
           "war_after_move": 3.5,
           "war_during": 3.5,
           "war_after_exit": 18.43
+        },
+        {
+          "mlbam_id": 434540,
+          "name": "Garrett Jones",
+          "war_prior": 4.19,
+          "war_after_move": -0.61,
+          "war_during": -0.61,
+          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 445988,
-          "name": "Mart\u00edn Prado",
-          "war_prior": 2.1,
-          "war_after_move": 0.0,
-          "war_during": 2.1,
-          "war_after_exit": 0.0,
-          "war_charged": 5.54
-        },
-        {
           "mlbam_id": 475479,
           "name": "David Phelps",
           "war_prior": 1.89,
-          "war_after_move": 0.0,
+          "war_after_move": 3.02,
           "war_during": 1.89,
-          "war_after_exit": 0.0,
+          "war_after_exit": 3.02,
           "war_charged": 3.02
+        },
+        {
+          "mlbam_id": 445988,
+          "name": "Mart\u00edn Prado",
+          "war_prior": 2.1,
+          "war_after_move": 5.54,
+          "war_during": 2.1,
+          "war_after_exit": 5.54,
+          "war_charged": 5.54
         }
       ],
       "salary_paid": 33305000.0,
@@ -82088,11 +82088,11 @@
       "war_prior_sent": 3.99,
       "war_after_exit_acquired": 17.92,
       "salary_source": "bref",
-      "counterparty": "New York Mets",
-      "counterparty_id": 121,
+      "counterparty": "Miami Marlins",
+      "counterparty_id": 146,
       "acquisition_channel": "trade",
-      "deal_archetype": "prospect_or_talent_haul",
-      "talent_grade": 7.37,
+      "deal_archetype": "talent_swap",
+      "talent_grade": -1.19,
       "talent_per_control_year": null,
       "ledger_grade": 25655000.0,
       "control_years_remaining": null,
@@ -82670,7 +82670,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -83340,7 +83340,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.93,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -83428,7 +83428,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 12.78,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -83472,7 +83472,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 1.35,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -83516,7 +83516,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -83560,7 +83560,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.56,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -83868,7 +83868,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -84000,7 +84000,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 12.78,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -84109,7 +84109,7 @@
       "team_name": "New York Yankees",
       "move_date": "2014-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Arizona Diamondbacks: acquired Mart\u00edn Prado, Stephen Drew; sent Kelly Johnson, Peter O'Brien",
+      "summary": "Trade with Arizona Diamondbacks: acquired Mart\u00edn Prado, Stephen Drew; sent Peter O'Brien, Kelly Johnson",
       "players_acquired": [
         {
           "mlbam_id": 445988,
@@ -84130,15 +84130,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 430637,
-          "name": "Kelly Johnson",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": -0.18
-        },
-        {
           "mlbam_id": 598284,
           "name": "Peter O'Brien",
           "war_prior": 0.0,
@@ -84146,6 +84137,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.53,
           "war_charged": -0.53
+        },
+        {
+          "mlbam_id": 430637,
+          "name": "Kelly Johnson",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": -0.18
         }
       ],
       "salary_paid": 16000000.0,
@@ -84555,7 +84555,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -84980,7 +84980,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -85068,7 +85068,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -85860,7 +85860,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -87664,7 +87664,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.05,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -87840,7 +87840,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -87928,7 +87928,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -88016,7 +88016,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -88060,7 +88060,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -88158,7 +88158,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 5.32,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -91426,7 +91426,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -91470,7 +91470,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -91514,7 +91514,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -1.32,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -91558,7 +91558,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.04,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -91778,7 +91778,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.75,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -92228,7 +92228,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -93160,7 +93160,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -94172,7 +94172,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -94216,7 +94216,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -95404,7 +95404,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -95448,7 +95448,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -95580,7 +95580,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.09,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -95668,7 +95668,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 2.96,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -95888,7 +95888,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.59,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -95976,7 +95976,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -1.09,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -96020,7 +96020,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -98161,7 +98161,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -98205,7 +98205,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -98821,7 +98821,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.27,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -100294,7 +100294,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.19,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -102055,7 +102055,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -102143,7 +102143,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.32,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -102187,7 +102187,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -1.09,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -102593,7 +102593,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.06,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -104656,7 +104656,7 @@
       "team_name": "New York Yankees",
       "move_date": "2012-01-23",
       "move_type": "Trade",
-      "summary": "Trade with Seattle Mariners: acquired Jose Campos, Michael Pineda; sent Jesus Montero, Hector Noes\u00ed",
+      "summary": "Trade with Seattle Mariners: acquired Jose Campos, Michael Pineda; sent Hector Noes\u00ed, Jesus Montero",
       "players_acquired": [
         {
           "mlbam_id": 553883,
@@ -104677,15 +104677,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 524968,
-          "name": "Jesus Montero",
-          "war_prior": 0.64,
-          "war_after_move": -1.01,
-          "war_during": 0.64,
-          "war_after_exit": -1.01,
-          "war_charged": -1.01
-        },
-        {
           "mlbam_id": 456051,
           "name": "Hector Noes\u00ed",
           "war_prior": 0.17,
@@ -104693,6 +104684,15 @@
           "war_during": 0.17,
           "war_after_exit": -1.32,
           "war_charged": -1.32
+        },
+        {
+          "mlbam_id": 524968,
+          "name": "Jesus Montero",
+          "war_prior": 0.64,
+          "war_after_move": -1.01,
+          "war_during": 0.64,
+          "war_after_exit": -1.01,
+          "war_charged": -1.01
         }
       ],
       "salary_paid": 28138475.0,
@@ -105542,7 +105542,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 5.36,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -105586,7 +105586,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -105850,7 +105850,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -1.22,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -105938,7 +105938,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -106026,7 +106026,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -1.01,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -106070,7 +106070,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -108578,7 +108578,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -108798,7 +108798,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.07,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109150,7 +109150,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.27,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109238,7 +109238,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109502,7 +109502,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.64,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109590,7 +109590,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109810,7 +109810,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 10.64,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109854,7 +109854,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 2.04,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109898,7 +109898,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109942,7 +109942,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.31,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -109986,7 +109986,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 1.31,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -111712,7 +111712,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.19,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -112285,7 +112285,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -112417,7 +112417,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -112878,8 +112878,16 @@
       "team_name": "New York Yankees",
       "move_date": "2010-07-31",
       "move_type": "Trade",
-      "summary": "Trade with Cleveland Guardians: acquired Kerry Wood, Lance Berkman, Austin Kearns; sent Jimmy Paredes, Mark Melancon",
+      "summary": "Trade with Cleveland Guardians: acquired Austin Kearns, Kerry Wood, Lance Berkman; sent Jimmy Paredes, Mark Melancon",
       "players_acquired": [
+        {
+          "mlbam_id": 400290,
+          "name": "Austin Kearns",
+          "war_prior": 12.56,
+          "war_after_move": -0.03,
+          "war_during": -0.03,
+          "war_after_exit": -0.48
+        },
         {
           "mlbam_id": 134268,
           "name": "Kerry Wood",
@@ -112895,14 +112903,6 @@
           "war_after_move": -0.33,
           "war_during": -0.33,
           "war_after_exit": 4.18
-        },
-        {
-          "mlbam_id": 400290,
-          "name": "Austin Kearns",
-          "war_prior": 12.56,
-          "war_after_move": -0.03,
-          "war_during": -0.03,
-          "war_after_exit": -0.48
         }
       ],
       "players_sent_away": [
@@ -113244,7 +113244,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.17,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -114168,7 +114168,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -114344,7 +114344,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.55,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -114938,16 +114938,8 @@
       "team_name": "New York Yankees",
       "move_date": "2009-12-22",
       "move_type": "Trade",
-      "summary": "Trade with Atlanta Braves: acquired Javier Vazquez, Boone Logan; sent Mike Dunn, Arodys Vizca\u00edno, Melky Cabrera",
+      "summary": "Trade with Atlanta Braves: acquired Boone Logan, Javier Vazquez; sent Arodys Vizca\u00edno, Mike Dunn, Melky Cabrera",
       "players_acquired": [
-        {
-          "mlbam_id": 134320,
-          "name": "Javier Vazquez",
-          "war_prior": 43.33,
-          "war_after_move": -0.45,
-          "war_during": -0.45,
-          "war_after_exit": 2.72
-        },
         {
           "mlbam_id": 457429,
           "name": "Boone Logan",
@@ -114955,18 +114947,17 @@
           "war_after_move": 2.89,
           "war_during": 2.89,
           "war_after_exit": 0.06
+        },
+        {
+          "mlbam_id": 134320,
+          "name": "Javier Vazquez",
+          "war_prior": 43.33,
+          "war_after_move": -0.45,
+          "war_during": -0.45,
+          "war_after_exit": 2.72
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 445197,
-          "name": "Mike Dunn",
-          "war_prior": -0.01,
-          "war_after_move": 0.58,
-          "war_during": -0.01,
-          "war_after_exit": 0.58,
-          "war_charged": 0.58
-        },
         {
           "mlbam_id": 527055,
           "name": "Arodys Vizca\u00edno",
@@ -114975,6 +114966,15 @@
           "war_during": 0.0,
           "war_after_exit": 3.7,
           "war_charged": 3.7
+        },
+        {
+          "mlbam_id": 445197,
+          "name": "Mike Dunn",
+          "war_prior": -0.01,
+          "war_after_move": 0.58,
+          "war_during": -0.01,
+          "war_after_exit": 0.58,
+          "war_charged": 0.58
         },
         {
           "mlbam_id": 466320,
@@ -115150,7 +115150,7 @@
       "team_name": "New York Yankees",
       "move_date": "2009-12-09",
       "move_type": "Trade",
-      "summary": "Trade with Detroit Tigers: acquired Curtis Granderson; sent Austin Jackson, Ian Kennedy, Phil Coke",
+      "summary": "Trade with Detroit Tigers: acquired Curtis Granderson; sent Austin Jackson, Phil Coke, Ian Kennedy",
       "players_acquired": [
         {
           "mlbam_id": 434158,
@@ -115172,15 +115172,6 @@
           "war_charged": 20.14
         },
         {
-          "mlbam_id": 453178,
-          "name": "Ian Kennedy",
-          "war_prior": -0.13,
-          "war_after_move": 0.0,
-          "war_during": -0.13,
-          "war_after_exit": 0.0,
-          "war_charged": 7.84
-        },
-        {
           "mlbam_id": 457435,
           "name": "Phil Coke",
           "war_prior": 1.03,
@@ -115188,6 +115179,15 @@
           "war_during": 1.03,
           "war_after_exit": 1.03,
           "war_charged": 1.03
+        },
+        {
+          "mlbam_id": 453178,
+          "name": "Ian Kennedy",
+          "war_prior": -0.13,
+          "war_after_move": 0.0,
+          "war_during": -0.13,
+          "war_after_exit": 0.0,
+          "war_charged": 7.84
         }
       ],
       "salary_paid": 38750000.0,
@@ -115378,7 +115378,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -115422,7 +115422,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 3.07,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -115510,7 +115510,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -115554,7 +115554,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -115598,7 +115598,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 1.59,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -115642,7 +115642,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -115862,7 +115862,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -115906,7 +115906,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -116214,7 +116214,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -116434,7 +116434,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 1.05,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -116610,7 +116610,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -117932,7 +117932,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.14,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -117976,7 +117976,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -1.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -118020,7 +118020,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
@@ -118064,7 +118064,7 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 13.2,
       "salary_source": "bref",
-      "counterparty": "Scranton/Wilkes-Barre RailRiders",
+      "counterparty": "Scranton/Wilkes-Barre Highlanders",
       "counterparty_id": null,
       "acquisition_channel": "rule5_or_selected",
       "deal_archetype": "selected_or_rule5",
