@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-12T23:59:22.451554+00:00",
+  "generated_at": "2026-11-13T14:48:18.045187+00:00",
   "scope": "league",
   "season_range": [
     2006,
     2026
   ],
-  "as_of": "2026-11-12",
+  "as_of": "2026-11-13",
   "framing": "How every club acquired value by channel. WAR in = production for that club after the move; net WAR uses trade exchange when applicable. Same definitions for all thirty franchises.",
   "clubs": [
     {
@@ -188,7 +188,7 @@
       "team_name": "Boston Red Sox",
       "moves": 2442,
       "war_acquired": 883.22,
-      "net_war": 622.69,
+      "net_war": 608.05,
       "channels": [
         {
           "channel": "free_agent",
@@ -212,7 +212,7 @@
           "channel": "trade",
           "moves": 223,
           "war_acquired": 175.43,
-          "net_war": -24.76
+          "net_war": -39.4
         },
         {
           "channel": "outright",
@@ -418,13 +418,13 @@
       "team_id": 144,
       "team_abbr": "ATL",
       "team_name": "Atlanta Braves",
-      "moves": 2773,
+      "moves": 2774,
       "war_acquired": 788.44,
-      "net_war": 634.07,
+      "net_war": 630.83,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1213,
+          "moves": 1214,
           "war_acquired": 107.32,
           "net_war": 107.32
         },
@@ -444,7 +444,7 @@
           "channel": "trade",
           "moves": 228,
           "war_acquired": 176.66,
-          "net_war": 73.05
+          "net_war": 69.81
         },
         {
           "channel": "outright",
@@ -878,7 +878,7 @@
       "team_name": "San Francisco Giants",
       "moves": 2428,
       "war_acquired": 666.86,
-      "net_war": 545.59,
+      "net_war": 545.24,
       "channels": [
         {
           "channel": "free_agent",
@@ -914,7 +914,7 @@
           "channel": "trade",
           "moves": 159,
           "war_acquired": 105.36,
-          "net_war": 54.25
+          "net_war": 53.9
         },
         {
           "channel": "release",
@@ -1098,7 +1098,7 @@
       "team_name": "Los Angeles Angels",
       "moves": 2729,
       "war_acquired": 636.12,
-      "net_war": 457.8,
+      "net_war": 454.94,
       "channels": [
         {
           "channel": "free_agent",
@@ -1128,7 +1128,7 @@
           "channel": "trade",
           "moves": 187,
           "war_acquired": 105.99,
-          "net_war": 25.52
+          "net_war": 22.66
         },
         {
           "channel": "waiver",
@@ -1212,9 +1212,9 @@
       "team_id": 120,
       "team_abbr": "WSH",
       "team_name": "Washington Nationals",
-      "moves": 2349,
+      "moves": 2350,
       "war_acquired": 605.66,
-      "net_war": 486.99,
+      "net_war": 500.93,
       "channels": [
         {
           "channel": "free_agent",
@@ -1244,11 +1244,11 @@
           "channel": "trade",
           "moves": 124,
           "war_acquired": 158.55,
-          "net_war": 63.09
+          "net_war": 77.03
         },
         {
           "channel": "release",
-          "moves": 104,
+          "moves": 105,
           "war_acquired": 0.0,
           "net_war": -15.75
         },
@@ -1330,7 +1330,7 @@
       "team_name": "Kansas City Royals",
       "moves": 2390,
       "war_acquired": 586.54,
-      "net_war": 464.76,
+      "net_war": 466.42,
       "channels": [
         {
           "channel": "free_agent",
@@ -1354,7 +1354,7 @@
           "channel": "trade",
           "moves": 201,
           "war_acquired": 78.43,
-          "net_war": 4.85
+          "net_war": 6.51
         },
         {
           "channel": "outright",
@@ -1728,7 +1728,7 @@
   "league_channels": [
     {
       "channel": "free_agent",
-      "moves": 33596,
+      "moves": 33597,
       "war_acquired": 4258.67,
       "net_war": 4258.74
     },
@@ -1754,7 +1754,7 @@
       "channel": "trade",
       "moves": 5847,
       "war_acquired": 4814.15,
-      "net_war": 578.21
+      "net_war": 572.72
     },
     {
       "channel": "waiver",
@@ -1764,7 +1764,7 @@
     },
     {
       "channel": "release",
-      "moves": 2473,
+      "moves": 2474,
       "war_acquired": 0.0,
       "net_war": -370.61
     },
