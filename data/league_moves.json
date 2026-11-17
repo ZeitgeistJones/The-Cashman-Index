@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T02:11:13+00:00",
+  "generated_at": "2026-11-17T16:17:12+00:00",
   "data_source": "mlb-stats-api+bref",
   "scope": "league_trades",
   "season_range": [
@@ -3888,8 +3888,32 @@
       "team_name": "Colorado Rockies",
       "move_date": "2026-08-03",
       "move_type": "Trade",
-      "summary": "Trade with Miami Marlins: acquired Aiden May, Mason Adams, Carlos Vielma, Connor Norby, Juan Martinez, Mark Manfredi; sent Brenton Doyle, Victor Vodnik, Antonio Senzatela",
+      "summary": "Trade with Chicago White Sox: acquired Carlos Vielma, Mark Manfredi, Juan Martinez, Aiden May, Mason Adams, Connor Norby; sent Antonio Senzatela, Brenton Doyle, Victor Vodnik",
       "players_acquired": [
+        {
+          "mlbam_id": 837886,
+          "name": "Carlos Vielma",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 815081,
+          "name": "Mark Manfredi",
+          "war_prior": 0.0,
+          "war_after_move": 0.64,
+          "war_during": 0.64,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 821197,
+          "name": "Juan Martinez",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
         {
           "mlbam_id": 801995,
           "name": "Aiden May",
@@ -3907,57 +3931,15 @@
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 837886,
-          "name": "Carlos Vielma",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
-        {
           "mlbam_id": 681393,
           "name": "Connor Norby",
           "war_prior": 1.1,
           "war_after_move": 0.92,
           "war_during": 0.92,
           "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 821197,
-          "name": "Juan Martinez",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0
-        },
-        {
-          "mlbam_id": 815081,
-          "name": "Mark Manfredi",
-          "war_prior": 0.0,
-          "war_after_move": 0.64,
-          "war_during": 0.64,
-          "war_after_exit": 0.0
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 686668,
-          "name": "Brenton Doyle",
-          "war_prior": 4.88,
-          "war_after_move": 0.0,
-          "war_during": 4.88,
-          "war_after_exit": 0.0,
-          "war_charged": 0.42
-        },
-        {
-          "mlbam_id": 680767,
-          "name": "Victor Vodnik",
-          "war_prior": 2.48,
-          "war_after_move": 0.01,
-          "war_during": 2.48,
-          "war_after_exit": 0.01,
-          "war_charged": 0.01
-        },
         {
           "mlbam_id": 622608,
           "name": "Antonio Senzatela",
@@ -3966,6 +3948,24 @@
           "war_during": 5.69,
           "war_after_exit": 0.0,
           "war_charged": -0.27
+        },
+        {
+          "mlbam_id": 686668,
+          "name": "Brenton Doyle",
+          "war_prior": 4.88,
+          "war_after_move": 0.42,
+          "war_during": 4.88,
+          "war_after_exit": 0.42,
+          "war_charged": 0.42
+        },
+        {
+          "mlbam_id": 680767,
+          "name": "Victor Vodnik",
+          "war_prior": 2.48,
+          "war_after_move": 0.0,
+          "war_during": 2.48,
+          "war_after_exit": 0.0,
+          "war_charged": 0.01
         }
       ],
       "salary_paid": null,
@@ -3979,11 +3979,11 @@
       "war_prior_sent": 13.05,
       "war_after_exit_acquired": 0.0,
       "salary_source": null,
-      "counterparty": "Miami Marlins",
-      "counterparty_id": 146,
+      "counterparty": "Chicago White Sox",
+      "counterparty_id": 145,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add_hit",
-      "talent_grade": 2.11,
+      "talent_grade": 1.7,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -7165,22 +7165,22 @@
       "team_name": "Colorado Rockies",
       "move_date": "2026-07-20",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Dodgers: acquired Nick Frasso, Landyn Vidourek; sent Seth Halvorsen",
+      "summary": "Trade with Los Angeles Dodgers: acquired Landyn Vidourek, Nick Frasso; sent Seth Halvorsen",
       "players_acquired": [
-        {
-          "mlbam_id": 693308,
-          "name": "Nick Frasso",
-          "war_prior": 0.0,
-          "war_after_move": 0.15,
-          "war_during": 0.15,
-          "war_after_exit": 0.0
-        },
         {
           "mlbam_id": 811716,
           "name": "Landyn Vidourek",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
+          "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 693308,
+          "name": "Nick Frasso",
+          "war_prior": 0.0,
+          "war_after_move": 0.15,
+          "war_during": 0.15,
           "war_after_exit": 0.0
         }
       ],
@@ -18277,7 +18277,7 @@
       "team_name": "Colorado Rockies",
       "move_date": "2026-01-28",
       "move_type": "Trade",
-      "summary": "Trade with Minnesota Twins: acquired Pierson Ohl, Edouard Julien, TJ Rumfield; sent Angel Chivilli, Jace Kaminska",
+      "summary": "Trade with Minnesota Twins: acquired Pierson Ohl, Edouard Julien, TJ Rumfield; sent Jace Kaminska, Angel Chivilli",
       "players_acquired": [
         {
           "mlbam_id": 701487,
@@ -18306,15 +18306,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 683409,
-          "name": "Angel Chivilli",
-          "war_prior": -0.47,
-          "war_after_move": 0.0,
-          "war_during": -0.47,
-          "war_after_exit": 0.0,
-          "war_charged": 0.09
-        },
-        {
           "mlbam_id": 700978,
           "name": "Jace Kaminska",
           "war_prior": 0.0,
@@ -18322,6 +18313,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 683409,
+          "name": "Angel Chivilli",
+          "war_prior": -0.47,
+          "war_after_move": 0.0,
+          "war_during": -0.47,
+          "war_after_exit": 0.0,
+          "war_charged": 0.09
         }
       ],
       "salary_paid": null,
@@ -30998,19 +30998,19 @@
       "team_name": "Colorado Rockies",
       "move_date": "2025-07-25",
       "move_type": "Trade",
-      "summary": "Trade with New York Yankees: acquired Josh Grosz, Griffin Herring; sent Ryan McMahon",
+      "summary": "Trade with New York Yankees: acquired Griffin Herring, Josh Grosz; sent Ryan McMahon",
       "players_acquired": [
         {
-          "mlbam_id": 701056,
-          "name": "Josh Grosz",
+          "mlbam_id": 702622,
+          "name": "Griffin Herring",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 702622,
-          "name": "Griffin Herring",
+          "mlbam_id": 701056,
+          "name": "Josh Grosz",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -51498,16 +51498,8 @@
       "team_name": "Colorado Rockies",
       "move_date": "2024-07-27",
       "move_type": "Trade",
-      "summary": "Trade with Milwaukee Brewers: acquired Bradley Blalock, Yujanyer Herrera; sent Nick Mears",
+      "summary": "Trade with Milwaukee Brewers: acquired Yujanyer Herrera, Bradley Blalock; sent Nick Mears",
       "players_acquired": [
-        {
-          "mlbam_id": 687134,
-          "name": "Bradley Blalock",
-          "war_prior": 0.0,
-          "war_after_move": -1.82,
-          "war_during": -1.82,
-          "war_after_exit": -0.04
-        },
         {
           "mlbam_id": 692632,
           "name": "Yujanyer Herrera",
@@ -51515,6 +51507,14 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 687134,
+          "name": "Bradley Blalock",
+          "war_prior": 0.0,
+          "war_after_move": -1.82,
+          "war_during": -1.82,
+          "war_after_exit": -0.04
         }
       ],
       "players_sent_away": [
@@ -60879,7 +60879,7 @@
       "team_name": "Colorado Rockies",
       "move_date": "2024-03-24",
       "move_type": "Trade",
-      "summary": "Trade with Philadelphia Phillies: acquired Jake Cave; sent PJ Poulin",
+      "summary": "Trade with Detroit Tigers: acquired Jake Cave; sent PJ Poulin",
       "players_acquired": [
         {
           "mlbam_id": 595909,
@@ -60912,8 +60912,8 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": 0.0,
       "salary_source": "bref",
-      "counterparty": "Philadelphia Phillies",
-      "counterparty_id": 143,
+      "counterparty": "Detroit Tigers",
+      "counterparty_id": 116,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
       "talent_grade": -0.75,
@@ -71814,16 +71814,8 @@
       "team_name": "Colorado Rockies",
       "move_date": "2023-08-01",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Dodgers: acquired Justin Bruihl, Alec Barger; sent Brad Hand",
+      "summary": "Trade with Atlanta Braves: acquired Alec Barger, Justin Bruihl; sent Brad Hand",
       "players_acquired": [
-        {
-          "mlbam_id": 677865,
-          "name": "Justin Bruihl",
-          "war_prior": 0.38,
-          "war_after_move": -0.36,
-          "war_during": -0.36,
-          "war_after_exit": -0.4
-        },
         {
           "mlbam_id": 681897,
           "name": "Alec Barger",
@@ -71831,6 +71823,14 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 677865,
+          "name": "Justin Bruihl",
+          "war_prior": 0.38,
+          "war_after_move": -0.36,
+          "war_during": -0.36,
+          "war_after_exit": -0.4
         }
       ],
       "players_sent_away": [
@@ -71838,9 +71838,9 @@
           "mlbam_id": 543272,
           "name": "Brad Hand",
           "war_prior": 0.0,
-          "war_after_move": 0.0,
+          "war_after_move": -0.43,
           "war_during": 0.0,
-          "war_after_exit": 0.0,
+          "war_after_exit": -0.43,
           "war_charged": -0.43
         }
       ],
@@ -71855,11 +71855,11 @@
       "war_prior_sent": 0.0,
       "war_after_exit_acquired": -0.4,
       "salary_source": null,
-      "counterparty": "Los Angeles Dodgers",
-      "counterparty_id": 119,
+      "counterparty": "Atlanta Braves",
+      "counterparty_id": 144,
       "acquisition_channel": "trade",
       "deal_archetype": "deadline_add",
-      "talent_grade": -0.36,
+      "talent_grade": 0.07,
       "talent_per_control_year": null,
       "ledger_grade": null,
       "control_years_remaining": null,
@@ -73470,19 +73470,19 @@
       "team_name": "Colorado Rockies",
       "move_date": "2023-07-30",
       "move_type": "Trade",
-      "summary": "Trade with Los Angeles Angels: acquired Jake Madden, Mason Albright; sent Randal Grichuk, C.J. Cron",
+      "summary": "Trade with Los Angeles Angels: acquired Mason Albright, Jake Madden; sent Randal Grichuk, C.J. Cron",
       "players_acquired": [
         {
-          "mlbam_id": 802409,
-          "name": "Jake Madden",
+          "mlbam_id": 695476,
+          "name": "Mason Albright",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
         },
         {
-          "mlbam_id": 695476,
-          "name": "Mason Albright",
+          "mlbam_id": 802409,
+          "name": "Jake Madden",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -103784,7 +103784,7 @@
       "team_name": "Colorado Rockies",
       "move_date": "2022-03-24",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Randal Grichuk; sent Raimel Tapia, Adrian Pinto",
+      "summary": "Trade with Toronto Blue Jays: acquired Randal Grichuk; sent Adrian Pinto, Raimel Tapia",
       "players_acquired": [
         {
           "mlbam_id": 545341,
@@ -103797,15 +103797,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 606132,
-          "name": "Raimel Tapia",
-          "war_prior": 0.53,
-          "war_after_move": 0.5,
-          "war_during": 0.53,
-          "war_after_exit": 0.5,
-          "war_charged": 0.5
-        },
-        {
           "mlbam_id": 691437,
           "name": "Adrian Pinto",
           "war_prior": 0.0,
@@ -103813,6 +103804,15 @@
           "war_during": 0.0,
           "war_after_exit": 0.0,
           "war_charged": 0.0
+        },
+        {
+          "mlbam_id": 606132,
+          "name": "Raimel Tapia",
+          "war_prior": 0.53,
+          "war_after_move": 0.5,
+          "war_during": 0.53,
+          "war_after_exit": 0.5,
+          "war_charged": 0.5
         }
       ],
       "salary_paid": null,
@@ -130022,7 +130022,7 @@
       "team_name": "Colorado Rockies",
       "move_date": "2020-08-30",
       "move_type": "Trade",
-      "summary": "Trade with Baltimore Orioles: acquired Mychal Givens; sent Terrin Vavra, Tyler Nevin",
+      "summary": "Trade with Baltimore Orioles: acquired Mychal Givens; sent Tyler Nevin, Terrin Vavra",
       "players_acquired": [
         {
           "mlbam_id": 571710,
@@ -130035,15 +130035,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 679631,
-          "name": "Terrin Vavra",
-          "war_prior": 0.0,
-          "war_after_move": -0.52,
-          "war_during": 0.0,
-          "war_after_exit": -0.52,
-          "war_charged": -0.52
-        },
-        {
           "mlbam_id": 663527,
           "name": "Tyler Nevin",
           "war_prior": 0.0,
@@ -130051,6 +130042,15 @@
           "war_during": 0.0,
           "war_after_exit": -0.32,
           "war_charged": -0.32
+        },
+        {
+          "mlbam_id": 679631,
+          "name": "Terrin Vavra",
+          "war_prior": 0.0,
+          "war_after_move": -0.52,
+          "war_during": 0.0,
+          "war_after_exit": -0.52,
+          "war_charged": -0.52
         }
       ],
       "salary_paid": 8100000.0,
@@ -165569,7 +165569,7 @@
       "team_name": "Colorado Rockies",
       "move_date": "2018-07-26",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Seunghwan Oh; sent Forrest Wall, Chad Spanberger",
+      "summary": "Trade with Toronto Blue Jays: acquired Seunghwan Oh; sent Chad Spanberger, Forrest Wall",
       "players_acquired": [
         {
           "mlbam_id": 493200,
@@ -165582,8 +165582,8 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 657088,
-          "name": "Forrest Wall",
+          "mlbam_id": 656989,
+          "name": "Chad Spanberger",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -165591,8 +165591,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 656989,
-          "name": "Chad Spanberger",
+          "mlbam_id": 657088,
+          "name": "Forrest Wall",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -213974,16 +213974,8 @@
       "team_name": "Colorado Rockies",
       "move_date": "2016-01-28",
       "move_type": "Trade",
-      "summary": "Trade with Tampa Bay Rays: acquired Jake McGee, Germ\u00e1n M\u00e1rquez; sent Kevin Padlo, Corey Dickerson",
+      "summary": "Trade with Tampa Bay Rays: acquired Germ\u00e1n M\u00e1rquez, Jake McGee; sent Corey Dickerson, Kevin Padlo",
       "players_acquired": [
-        {
-          "mlbam_id": 459429,
-          "name": "Jake McGee",
-          "war_prior": 5.76,
-          "war_after_move": 0.99,
-          "war_during": 0.99,
-          "war_after_exit": 0.35
-        },
         {
           "mlbam_id": 608566,
           "name": "Germ\u00e1n M\u00e1rquez",
@@ -213991,18 +213983,17 @@
           "war_after_move": 16.44,
           "war_during": 16.44,
           "war_after_exit": -0.18
+        },
+        {
+          "mlbam_id": 459429,
+          "name": "Jake McGee",
+          "war_prior": 5.76,
+          "war_after_move": 0.99,
+          "war_during": 0.99,
+          "war_after_exit": 0.35
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 656821,
-          "name": "Kevin Padlo",
-          "war_prior": 0.0,
-          "war_after_move": -0.1,
-          "war_during": 0.0,
-          "war_after_exit": -0.1,
-          "war_charged": -0.1
-        },
         {
           "mlbam_id": 572816,
           "name": "Corey Dickerson",
@@ -214011,6 +214002,15 @@
           "war_during": 4.35,
           "war_after_exit": 4.37,
           "war_charged": 4.37
+        },
+        {
+          "mlbam_id": 656821,
+          "name": "Kevin Padlo",
+          "war_prior": 0.0,
+          "war_after_move": -0.1,
+          "war_during": 0.0,
+          "war_after_exit": -0.1,
+          "war_charged": -0.1
         }
       ],
       "salary_paid": 122704000.0,
@@ -226493,8 +226493,16 @@
       "team_name": "Colorado Rockies",
       "move_date": "2015-07-28",
       "move_type": "Trade",
-      "summary": "Trade with Toronto Blue Jays: acquired Miguel Castro, Jeff Hoffman, Jesus Tinoco, Jos\u00e9 Reyes; sent Troy Tulowitzki, LaTroy Hawkins",
+      "summary": "Trade with Toronto Blue Jays: acquired Jos\u00e9 Reyes, Miguel Castro, Jesus Tinoco, Jeff Hoffman; sent LaTroy Hawkins, Troy Tulowitzki",
       "players_acquired": [
+        {
+          "mlbam_id": 408314,
+          "name": "Jos\u00e9 Reyes",
+          "war_prior": 36.88,
+          "war_after_move": -0.24,
+          "war_during": -0.24,
+          "war_after_exit": -0.26
+        },
         {
           "mlbam_id": 612434,
           "name": "Miguel Castro",
@@ -226502,14 +226510,6 @@
           "war_after_move": -0.35,
           "war_during": -0.35,
           "war_after_exit": 3.58
-        },
-        {
-          "mlbam_id": 656546,
-          "name": "Jeff Hoffman",
-          "war_prior": 0.0,
-          "war_after_move": -1.9,
-          "war_during": -1.9,
-          "war_after_exit": 6.57
         },
         {
           "mlbam_id": 622786,
@@ -226520,24 +226520,15 @@
           "war_after_exit": 1.58
         },
         {
-          "mlbam_id": 408314,
-          "name": "Jos\u00e9 Reyes",
-          "war_prior": 36.88,
-          "war_after_move": -0.24,
-          "war_during": -0.24,
-          "war_after_exit": -0.26
+          "mlbam_id": 656546,
+          "name": "Jeff Hoffman",
+          "war_prior": 0.0,
+          "war_after_move": -1.9,
+          "war_during": -1.9,
+          "war_after_exit": 6.57
         }
       ],
       "players_sent_away": [
-        {
-          "mlbam_id": 453064,
-          "name": "Troy Tulowitzki",
-          "war_prior": 37.83,
-          "war_after_move": 5.16,
-          "war_during": 37.83,
-          "war_after_exit": 5.16,
-          "war_charged": 5.16
-        },
         {
           "mlbam_id": 115629,
           "name": "LaTroy Hawkins",
@@ -226546,6 +226537,15 @@
           "war_during": 2.0,
           "war_after_exit": 0.14,
           "war_charged": 0.14
+        },
+        {
+          "mlbam_id": 453064,
+          "name": "Troy Tulowitzki",
+          "war_prior": 37.83,
+          "war_after_move": 5.16,
+          "war_during": 37.83,
+          "war_after_exit": 5.16,
+          "war_charged": 5.16
         }
       ],
       "salary_paid": 24113000.0,
@@ -234085,16 +234085,8 @@
       "team_name": "Colorado Rockies",
       "move_date": "2015-01-30",
       "move_type": "Trade",
-      "summary": "Trade with Atlanta Braves: acquired David Hale, Gus Schlosser; sent Chris O'Dowd, Jos\u00e9 Brice\u00f1o",
+      "summary": "Trade with Atlanta Braves: acquired Gus Schlosser, David Hale; sent Jos\u00e9 Brice\u00f1o, Chris O'Dowd",
       "players_acquired": [
-        {
-          "mlbam_id": 571735,
-          "name": "David Hale",
-          "war_prior": 1.0,
-          "war_after_move": -0.37,
-          "war_during": -0.37,
-          "war_after_exit": 1.12
-        },
         {
           "mlbam_id": 534576,
           "name": "Gus Schlosser",
@@ -234102,12 +234094,20 @@
           "war_after_move": 0.0,
           "war_during": 0.0,
           "war_after_exit": 0.0
+        },
+        {
+          "mlbam_id": 571735,
+          "name": "David Hale",
+          "war_prior": 1.0,
+          "war_after_move": -0.37,
+          "war_during": -0.37,
+          "war_after_exit": 1.12
         }
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 573069,
-          "name": "Chris O'Dowd",
+          "mlbam_id": 593993,
+          "name": "Jos\u00e9 Brice\u00f1o",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -234115,8 +234115,8 @@
           "war_charged": 0.0
         },
         {
-          "mlbam_id": 593993,
-          "name": "Jos\u00e9 Brice\u00f1o",
+          "mlbam_id": 573069,
+          "name": "Chris O'Dowd",
           "war_prior": 0.0,
           "war_after_move": 0.0,
           "war_during": 0.0,
@@ -255066,8 +255066,16 @@
       "team_name": "Colorado Rockies",
       "move_date": "2013-12-18",
       "move_type": "Trade",
-      "summary": "Trade with Boston Red Sox: acquired Franklin Morales, Chris Martin, Drew Stubbs; sent Jonathan Herrera, Josh Outman",
+      "summary": "Trade with Cleveland Guardians: acquired Drew Stubbs, Franklin Morales, Chris Martin; sent Jonathan Herrera, Josh Outman",
       "players_acquired": [
+        {
+          "mlbam_id": 453211,
+          "name": "Drew Stubbs",
+          "war_prior": 6.98,
+          "war_after_move": 2.24,
+          "war_during": 2.24,
+          "war_after_exit": -1.0
+        },
         {
           "mlbam_id": 462985,
           "name": "Franklin Morales",
@@ -255083,14 +255091,6 @@
           "war_after_move": -0.31,
           "war_during": -0.31,
           "war_after_exit": 7.18
-        },
-        {
-          "mlbam_id": 453211,
-          "name": "Drew Stubbs",
-          "war_prior": 6.98,
-          "war_after_move": 2.24,
-          "war_during": 2.24,
-          "war_after_exit": -1.0
         }
       ],
       "players_sent_away": [
@@ -255098,18 +255098,18 @@
           "mlbam_id": 468406,
           "name": "Jonathan Herrera",
           "war_prior": 1.51,
-          "war_after_move": -0.06,
+          "war_after_move": 0.0,
           "war_during": 1.51,
-          "war_after_exit": -0.06,
+          "war_after_exit": 0.0,
           "war_charged": -0.06
         },
         {
           "mlbam_id": 489189,
           "name": "Josh Outman",
           "war_prior": -0.2,
-          "war_after_move": 0.0,
+          "war_after_move": 0.36,
           "war_during": -0.2,
-          "war_after_exit": 0.0,
+          "war_after_exit": 0.36,
           "war_charged": 0.36
         }
       ],
@@ -255124,11 +255124,11 @@
       "war_prior_sent": 1.31,
       "war_after_exit_acquired": 6.85,
       "salary_source": "bref",
-      "counterparty": "Boston Red Sox",
-      "counterparty_id": 111,
+      "counterparty": "Cleveland Guardians",
+      "counterparty_id": 114,
       "acquisition_channel": "trade",
       "deal_archetype": "talent_swap",
-      "talent_grade": 1.77,
+      "talent_grade": 1.35,
       "talent_per_control_year": null,
       "ledger_grade": 330000.0,
       "control_years_remaining": null,
@@ -284753,7 +284753,7 @@
       "team_name": "Colorado Rockies",
       "move_date": "2012-02-06",
       "move_type": "Trade",
-      "summary": "Trade with Baltimore Orioles: acquired Jeremy Guthrie; sent Matt Lindstrom, Jason Hammel",
+      "summary": "Trade with Baltimore Orioles: acquired Jeremy Guthrie; sent Jason Hammel, Matt Lindstrom",
       "players_acquired": [
         {
           "mlbam_id": 425386,
@@ -284766,15 +284766,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 434637,
-          "name": "Matt Lindstrom",
-          "war_prior": 1.04,
-          "war_after_move": 0.69,
-          "war_during": 1.04,
-          "war_after_exit": 0.69,
-          "war_charged": 0.69
-        },
-        {
           "mlbam_id": 434628,
           "name": "Jason Hammel",
           "war_prior": 3.79,
@@ -284782,6 +284773,15 @@
           "war_during": 3.79,
           "war_after_exit": 2.42,
           "war_charged": 2.42
+        },
+        {
+          "mlbam_id": 434637,
+          "name": "Matt Lindstrom",
+          "war_prior": 1.04,
+          "war_after_move": 0.69,
+          "war_during": 1.04,
+          "war_after_exit": 0.69,
+          "war_charged": 0.69
         }
       ],
       "salary_paid": 16400000.0,
@@ -288015,7 +288015,7 @@
       "team_name": "Colorado Rockies",
       "move_date": "2011-12-08",
       "move_type": "Trade",
-      "summary": "Trade with Chicago Cubs: acquired Tyler Colvin, DJ LeMahieu; sent Casey Weathers, Ian Stewart",
+      "summary": "Trade with Chicago Cubs: acquired Tyler Colvin, DJ LeMahieu; sent Ian Stewart, Casey Weathers",
       "players_acquired": [
         {
           "mlbam_id": 502125,
@@ -288036,15 +288036,6 @@
       ],
       "players_sent_away": [
         {
-          "mlbam_id": 502255,
-          "name": "Casey Weathers",
-          "war_prior": 0.0,
-          "war_after_move": 0.0,
-          "war_during": 0.0,
-          "war_after_exit": 0.0,
-          "war_charged": 0.0
-        },
-        {
           "mlbam_id": 456655,
           "name": "Ian Stewart",
           "war_prior": 3.69,
@@ -288052,6 +288043,15 @@
           "war_during": 3.69,
           "war_after_exit": 0.03,
           "war_charged": 0.03
+        },
+        {
+          "mlbam_id": 502255,
+          "name": "Casey Weathers",
+          "war_prior": 0.0,
+          "war_after_move": 0.0,
+          "war_during": 0.0,
+          "war_after_exit": 0.0,
+          "war_charged": 0.0
         }
       ],
       "salary_paid": 20074500.0,
