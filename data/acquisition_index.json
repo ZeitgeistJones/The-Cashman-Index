@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-23T18:31:37.494386+00:00",
+  "generated_at": "2026-11-24T04:11:18.811246+00:00",
   "scope": "league",
   "season_range": [
     2006,
     2026
   ],
-  "as_of": "2026-11-23",
+  "as_of": "2026-11-24",
   "framing": "How every club acquired value by channel. WAR in = production for that club after the move; net WAR uses trade exchange when applicable. Same definitions for all thirty franchises.",
   "clubs": [
     {
@@ -14,7 +14,7 @@
       "team_name": "Los Angeles Dodgers",
       "moves": 2701,
       "war_acquired": 974.35,
-      "net_war": 880.41,
+      "net_war": 871.77,
       "channels": [
         {
           "channel": "free_agent",
@@ -38,7 +38,7 @@
           "channel": "trade",
           "moves": 236,
           "war_acquired": 192.86,
-          "net_war": 104.78
+          "net_war": 96.14
         },
         {
           "channel": "outright",
@@ -360,13 +360,13 @@
       "team_id": 114,
       "team_abbr": "CLE",
       "team_name": "Cleveland Guardians",
-      "moves": 2262,
+      "moves": 2263,
       "war_acquired": 792.75,
-      "net_war": 606.4,
+      "net_war": 605.68,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 902,
+          "moves": 903,
           "war_acquired": 42.71,
           "net_war": 42.71
         },
@@ -386,7 +386,7 @@
           "channel": "trade",
           "moves": 198,
           "war_acquired": 153.19,
-          "net_war": 19.2
+          "net_war": 18.48
         },
         {
           "channel": "outright",
@@ -704,7 +704,7 @@
       "team_name": "Minnesota Twins",
       "moves": 2505,
       "war_acquired": 700.17,
-      "net_war": 493.54,
+      "net_war": 484.52,
       "channels": [
         {
           "channel": "free_agent",
@@ -740,7 +740,7 @@
           "channel": "trade",
           "moves": 154,
           "war_acquired": 90.35,
-          "net_war": -23.84
+          "net_war": -32.86
         },
         {
           "channel": "release",
@@ -1212,13 +1212,13 @@
       "team_id": 120,
       "team_abbr": "WSH",
       "team_name": "Washington Nationals",
-      "moves": 2358,
+      "moves": 2360,
       "war_acquired": 605.66,
-      "net_war": 496.69,
+      "net_war": 502.26,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1152,
+          "moves": 1154,
           "war_acquired": 146.68,
           "net_war": 146.68
         },
@@ -1244,7 +1244,7 @@
           "channel": "trade",
           "moves": 125,
           "war_acquired": 158.55,
-          "net_war": 72.79
+          "net_war": 78.36
         },
         {
           "channel": "release",
@@ -1328,13 +1328,13 @@
       "team_id": 118,
       "team_abbr": "KC",
       "team_name": "Kansas City Royals",
-      "moves": 2396,
+      "moves": 2397,
       "war_acquired": 586.54,
-      "net_war": 466.86,
+      "net_war": 465.95,
       "channels": [
         {
           "channel": "free_agent",
-          "moves": 1098,
+          "moves": 1099,
           "war_acquired": 103.59,
           "net_war": 103.59
         },
@@ -1354,7 +1354,7 @@
           "channel": "trade",
           "moves": 203,
           "war_acquired": 78.43,
-          "net_war": 6.95
+          "net_war": 6.04
         },
         {
           "channel": "outright",
@@ -1614,7 +1614,7 @@
       "team_name": "Colorado Rockies",
       "moves": 2217,
       "war_acquired": 471.64,
-      "net_war": 300.94,
+      "net_war": 298.63,
       "channels": [
         {
           "channel": "free_agent",
@@ -1644,7 +1644,7 @@
           "channel": "trade",
           "moves": 132,
           "war_acquired": 59.98,
-          "net_war": -41.48
+          "net_war": -43.79
         },
         {
           "channel": "waiver",
@@ -1728,7 +1728,7 @@
   "league_channels": [
     {
       "channel": "free_agent",
-      "moves": 33682,
+      "moves": 33686,
       "war_acquired": 4258.67,
       "net_war": 4258.74
     },
@@ -1748,7 +1748,7 @@
       "channel": "trade",
       "moves": 5875,
       "war_acquired": 4814.15,
-      "net_war": 521.72
+      "net_war": 505.69
     },
     {
       "channel": "outright",
